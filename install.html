@@ -10,8 +10,8 @@
     
     <!-- Le styles -->
     <link href="dist/css/bootstrap.css" rel="stylesheet">
-    <link href="static/style-justified.css" type="text/css" rel="stylesheet">
     <link href="dist/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="static/style-justified.css" rel="stylesheet">
 
     <!-- Fav and touch icons -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/xtalopt-logo.png">
@@ -23,30 +23,25 @@
 
   <body>
 
-    <div class="container">
-        <div class="navbar navbar-inverse navbar-fixed-top">
-          <div class="navbar-inner">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
             <div class="container">
-                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="brand" href="index.html"><img src="img/xtalopt-logo.png" width="25px"></a>
-                <div class="nav-collapse collapse">
-                <ul class="nav">
-                <li><a href="download.html">Downloads</a></li>
-                <li class="active"><a href="install.html">Installation</a></li>
-                <li><a href="pub.html">Publications</a></li>
-                <li><a href="api.html">API</a></li>
-                <li><a href="tut.html">Tutorial</a></li>
-                <li><a href="contact.html">Contact</a></li>
-              </ul>
+                <div class="nav">
+                    <ul class="nav">
+                        <li><a class="brand" href="index.html"><img src="img/xtalopt-logo.png" width="25px"></a></li>
+                        <li><a href="download.html">Downloads</a></li>
+                        <li class="active"><a href="install.html">Installation</a></li>
+                        <li><a href="pub.html">Publications</a></li>
+                        <li><a href="api.html">API</a></li>
+                        <li><a href="tut.html">Tutorial</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
             </div>
-          </div>
-        </div><!-- /.navbar -->
-      </div>
+        </div>
+    </div>
 
+    <div class="container" style="padding-top: 5%">
       <!-- Jumbotron -->
       <div class="jumbotron">
 
@@ -58,7 +53,7 @@
     </p>
     <hr>
     <h2 id="Dependencies">Dependencies</h2>
-    <br>
+    <hr>
     <h3 id="EasyDependencies">"Easy" Dependencies</h3>
     <p>
     The following dependencies can be installed from the package manager of most linux distributions:
@@ -97,13 +92,13 @@
     <p>
     Change to your users home directory:
     </p>
-    <pre class="wiki">cd ~
-    </pre><p>
+    <pre class="wiki">cd ~</pre>
+    <p>
     Make a directory to hold the source code and then enter it:
     </p>
     <pre class="wiki">mkdir src
-cd src
-    </pre><p>
+cd src</pre>
+    <p>
     Check out the OpenBabel trunk sources:
     </p>
     <pre class="wiki">git clone git://github.com/openbabel/openbabel.git</pre>
@@ -111,19 +106,19 @@ cd src
     Once the above command completes, make a build subdirectory and enter it:
     </p>
     <pre class="wiki">mkdir openbabel/build
-cd openbabel/build
-    </pre><p>
+cd openbabel/build</pre>
+    <p>
     Configure OpenBabel:
     </p>
-    <pre class="wiki">cmake .. -DCMAKE_INSTALL_PREFIX=$HOME
-    </pre><p>
+    <pre class="wiki">cmake .. -DCMAKE_INSTALL_PREFIX=$HOME</pre>
+    <p>
     Compile and install:
     </p>
     <pre class="wiki">make -j3
-make install
-    </pre><hr />
+make install</pre>
+    <hr>
     <p>
-    OpenBabel should now be installed.
+    <h4>OpenBabel should now be installed.<h4>
     </p>
     <hr />
     <h3 id="Avogadro">Avogadro</h3>
@@ -136,55 +131,56 @@ make install
     <p>
     First, change to the source directory created earlier:
     </p>
-    <pre class="wiki">cd $HOME/src
-    </pre><p>
+    <pre class="wiki">cd $HOME/src</pre>
+    <p>
     Check out the dlonie Avogadro branch from GitHub:
     </p>
-    <pre class="wiki">git clone git://github.com/cryos/avogadro.git avogadro
-    </pre><p>
+    <pre class="wiki">git clone git://github.com/cryos/avogadro.git avogadro</pre>
+    <p>
     Just like with OpenBabel, make a build directory and enter it:
     </p>
     <pre class="wiki">mkdir avogadro/build
-cd avogadro/build
-    </pre><p>
+cd avogadro/build</pre>
+    <p>
     Configure, build, and install Avogadro:
     </p>
     <pre class="wiki">cmake .. -DOPENBABEL2_INCLUDE_DIR=$HOME/include/openbabel-2.0 -DOPENBABEL2_LIBRARIES=$HOME/lib/libopenbabel.so \
   -DOPENBABEL2_VERSION_MET=true -DOPENBABEL_IS_NEWER_THAN_2_2_99=true -DENABLE_PYTHON=false -DCMAKE_INSTALL_PREFIX=$HOME
 make -j3
-make install
-    </pre><hr><p>
-    You now have a working avogadro executable at $HOME/bin/avogadro.
+make install</pre>
+    <hr>
+    <p>
+    <h4>Avogadro should now be installed.</h4>
     </p>
     <hr />
     <h3 id="XtalOpt">XtalOpt</h3>
     <p>
     Installing XtalOpt from source is very similar to installing OpenBabel and Avogadro. Once again, change to your source directory:
     </p>
-    <pre class="wiki">cd $HOME/src
-    </pre><p>
+    <pre class="wiki">cd $HOME/src</pre>
+    <p>
     Check out the stable branch of the XtalOpt sources:
     </p>
-    <pre class="wiki">git clone -b stable git://github.com/dlonie/XtalOpt.git xtalopt
-    </pre><p>
+    <pre class="wiki">git clone -b stable git://github.com/dlonie/XtalOpt.git xtalopt</pre>
+    <p>
     Make a build directory and enter it:
     </p>
     <pre class="wiki">mkdir xtalopt/build
-cd xtalopt/build
-    </pre><p>
+cd xtalopt/build</pre>
+    <p>
     Configure, build, and install:
     </p>
     <pre class="wiki">cmake .. -DOPENBABEL2_INCLUDE_DIR=$HOME/include/openbabel-2.0 -DOPENBABEL2_LIBRARIES=$HOME/lib/libopenbabel.so \
   -DOPENBABEL2_VERSION_MET=true -DOPENBABEL_IS_NEWER_THAN_2_2_99=true -DCMAKE_INSTALL_PREFIX=$HOME
 make -j3
-make install
-    </pre><p>
+make install</pre>
+    <p>
     Note: if you see errors like
     </p>
     <pre class="wiki">/usr/bin/ld: cannot find -lbsdyengine
 /usr/bin/ld: cannot find -lnavigatetool
-/usr/bin/ld: cannot find -lelementcolor
-    </pre><p>
+/usr/bin/ld: cannot find -lelementcolor</pre>
+    <p>
     during the compiliation, follow the instructions <a class="ext-link" href="http://lists.openmolecules.net/pipermail/xtalopt-devel-openmolecules.net/2011-August/000081.html"><span class="icon"> </span>here</a>.
     </p>
     <p>
@@ -192,7 +188,7 @@ make install
     </p>
     <hr>
     <p>
-    XtalOpt is now installed.
+    <h4>XtalOpt is now installed.</h4>
     </p>
     <hr>
     <h3 id="Testtheinstallation">Test the installation</h3>
