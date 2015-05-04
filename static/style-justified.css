@@ -1,8 +1,8 @@
       ul {
-          margin:0 5%;
+        margin:0 5%;
       }
       ol {
-          margin:0 5%;
+        margin:0 5%;
       }
       body {
         margin: 0 auto;
@@ -10,8 +10,16 @@
         padding-top: 0px;
         padding-bottom: 5%;
       }
-      
-      /* Custom container */
+      a.anchor {
+        color:black;
+      }
+      a.anchor:hover {
+        color:black;
+        text-decoration:none;
+
+      }
+
+     /* Custom container */
       .container {
         margin: 0 auto;
         max-width: auto;
@@ -57,4 +65,18 @@
         max-width:auto;
         float:left;
         text-align:center;
+      }
+
+      ul.dropdown-menu {
+        background-color:black;
+        border-radius: 0 0 0 0;
+        height:auto;
+        overflow:hidden;
+      }
+      ul.dropdown-menu>li>a {
+        color:grey;
+      }
+      ul.dropdown-menu>li:hover>a:hover {
+        color:white;
+        background:none;
       }

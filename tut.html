@@ -22,6 +22,12 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/xtalopt-logo.png">
     <link rel="apple-touch-icon-precomposed" href="img/xtalopt-logo.png">
     <link rel="shortcut icon" href="img/xtalopt-logo.png">
+    
+    <style>
+      p {
+        text-align:left;
+      }
+    </style>
   </head>
 
   <body>
@@ -48,11 +54,10 @@
       <!-- Jumbotron -->
       <div class="jumbotron">
 
-
-        <h1><a class="anchor" id="tut">XtalOpt Tutorial</a></h1>
-        <br>
-        <h2><a class="anchor" id="Contents">Contents</a></h2>
-    
+        <h1>XtalOpt Tutorial</h1>
+        <hr>
+        <h2 align="left">Contents</h2>
+        <hr>
         <ul align="left" style="text-align:-moz-left">
             <li><a class="el" href="tut.html#launch">Launch XtalOpt</a></li>
             <li><a class="el" href="tut.html#init">Enter composition and restraints</a></li>
@@ -87,6 +92,8 @@
             </ul>
             </li>
         </ul>
+
+        <hr>
         <h2><a class="anchor" id="launch">
                 Launch XtalOpt</a></h2>
         <p>Open avogadro, go to the "Extensions" menu and select "XtalOpt".</p>
@@ -95,6 +102,7 @@
         <div align="center">
             <img src="img/struct-lim.png" alt="struct-lim.png"/>
         </div>
+        <br>
          <p>The interface opens to the "Structure Limits" tab, shown above. We will use a 6 formula unit supercell of titanium dioxide for this tutorial, so enter "Ti6 O12" for the cell composition. We will assume that we know nothing about the system and use very loose restraints. Set all cell length minima to 1 angstrom and maxima to 20 angstrom. Constrain the angles to be between 60 and 120 degrees, and the volume from between 1 and 500 cubic angstrom. Specify a minimum interatomic distance of 0.5 angstrom. (Note that due to the angle adjustment described in the CPC 2010 publication, 60-120 degrees is the largest range of cell angles that XtalOpt will generate.)</p>
          <h2><a class="anchor" id="opt">
                  Optimizer setup</a></h2>
@@ -105,9 +113,11 @@
              <img src="img/opt-set-vasp.png" alt="opt-set-vasp.png"/>
          </div>
 
-<h2><a class="anchor" id="launch"></a>Launch XtalOpt</h2>
+         <h2><a class="anchor" id="launch"></a>Launch XtalOpt</h2>
 <p>Open avogadro, go to the "Extensions" menu and select "XtalOpt".</p>
-<h2><a class="anchor" id="init"></a>Enter composition and restraints</h2>
+        
+         <h2><a class="anchor" id="init"></a>Enter composition and restraints</h2>
+         <hr>
 <div class="image">
 <img src="img/struct-lim.png" alt="struct-lim.png"/>
 </div>
@@ -163,10 +173,12 @@ PWscf</h3>
 </div>
  <p>On the next tab, load the optimization scheme that is distributed with the source code under the samples/ directory. The scheme that we want is named "pwscf-xtalopt.scheme". If the source code is not available, the scheme file can be obtained by clicking the "Original Format" link at the bottom of the page <a href="http://xtalopt.openmolecules.net/wiki/index.fcgi/browser/samples/pwscf-xtalopt.scheme">here</a>.</p>
 <p>For more details on optimization schemes, see optschemes.</p>
-<p>Each PWscf input file will need to be edited to specify:</p><ol type="1">
+<p>Each PWscf input file will need to be edited to specify:</p>
+<ol type="1" align=left style="text-align:-moz-left">
 <li>The pseudo_dir containing the pseudopotential files on the remote cluster, and</li>
 <li>The pseudopotentials for each atom (under ATOMIC_SPECIES)</li>
 </ol>
+<br>
 <p>Take a moment to look through each file for each optimization step.</p>
 <p>Notice the %keyword% values in the job.pbs templates. These are used to enter information that is specific to a search or structure when the actual input files are written prior to job submission. Click the "Help" button for a full listing of the available keywords.</p>
 <p>Be aware that every PWscf/CASTEP installation is different, and it is almost certain that the job.pbs file included with this scheme will not work on any cluster other than the Zurek group's "parity" cluster at SUNY Buffalo's Center for Computational Resources. It may take some experimentation to get jobs to submit successfully, and you may need to contact the mantainers of the cluster for assistance for information about MPI, executable locations, etc. Perhaps the easiest method to find the correct PBS script is to run some trial submissions by hand, and then replace the structure/search specific information with the appropriate keywords once a working script has been generated.</p>
@@ -200,7 +212,8 @@ Using a remote PBS cluster</h3>
 <div class="image">
 <img src="img/opt-set-pbs.png" alt="opt-set-pbs.png" style="width:50vw"/>
 </div>
- <p>Select "PBS" from the list of Queues, and then click the "Configure..." button. A new window will prompt for:</p><ul>
+ <p>Select "PBS" from the list of Queues, and then click the "Configure..." button. A new window will prompt for:</p>
+ <ul align="left" style="text-align:-moz-left">
 <li>host: The hostname of the PBS cluster's head node</li>
 <li>user: The username used to log into the cluster</li>
 <li>Working directory (Server): A directory that is readable/writable by "user" on the cluster, used when performing optimizations.</li>
@@ -256,7 +269,8 @@ Using a remote SGE cluster</h3>
 <img src="img/opt-set-pbs.png" alt="opt-set-pbs.png" style="width:50vw"/>
 </div>
   <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd>Get screenshots of SGE config dialog</dd></dl>
-<p>Select "SGE" from the list of Queues, and then click the "Configure..." button. A new window will prompt for:</p><ul>
+<p>Select "SGE" from the list of Queues, and then click the "Configure..." button. A new window will prompt for:</p>
+<ul align=left style="text-align:-moz-left">
 <li>host: The hostname of the SGE cluster's head node</li>
 <li>user: The username used to log into the cluster</li>
 <li>Working directory (Server): A directory that is readable/writable by "user" on the cluster, used when performing optimizations.</li>
@@ -275,7 +289,8 @@ Using a remote SLURM cluster</h3>
 <div class="image">
 <img src="img/opt-set-slurm.png" alt="opt-set-slurm.png" style="width:50vw"/>
 </div>
- <p>Select "SLURM" from the list of Queues, and then click the "Configure..." button. A new window will prompt for:</p><ul>
+ <p>Select "SLURM" from the list of Queues, and then click the "Configure..." button. A new window will prompt for:</p>
+ <ul align=left style="text-align:-moz-left">
 <li>host: The hostname of the SGE cluster's head node</li>
 <li>user: The username used to log into the cluster</li>
 <li>Working directory (Server): A directory that is readable/writable by "user" on the cluster, used when performing optimizations.</li>
@@ -294,7 +309,8 @@ Running optimations locally</h3>
 <div class="image">
 <img src="img/opt-set-local.png" alt="opt-set-local.png" style="width:20vw"/>
 </div>
- <p>Select "Local" from the list of Queues, and then click the configure button. A new window will prompt for:</p><ul>
+ <p>Select "Local" from the list of Queues, and then click the configure button. A new window will prompt for:</p>
+ <ul align=left style="text-align:-moz-left">
 <li>Local working directory: A directory that is readable/writable by the current user on the local computer. This is where the final structures and resume files are written.</li>
 </ul>
 <p>If the optimizer's executable (vasp, gulp, pw.x, castep, etc) is not in your system path, you will need to specify the location of the executable by clicking the "Configure..." button next to the optimizer selection menu.</p>
@@ -357,8 +373,8 @@ The ``Plot'' tab mid-run displaying enthalpy vs. volume. Each structure is label
 Error, no (or not appropriate for [OPTIMIZER]) xtal data in [DIRECTORY].
 
 This could be a result of resuming a structure that has not yet done
-any local optimizations. If so, safely ignore this message.
- </pre></div><p>As mentioned in the message, these can typically be ignored if it only happens for a handful of structures. This occurs when a structure has been generated in XtalOpt, but it has not completed any geometry optimization so there are no output files from which to load the geometry. If it happens for a significant number of structures (or structures that are known to have completed at least one geometry optimization step), the output files from the optimizer may be missing or corrupt.</p>
+any local optimizations. If so, safely ignore this message.</pre>
+</div><p>As mentioned in the message, these can typically be ignored if it only happens for a handful of structures. This occurs when a structure has been generated in XtalOpt, but it has not completed any geometry optimization so there are no output files from which to load the geometry. If it happens for a significant number of structures (or structures that are known to have completed at least one geometry optimization step), the output files from the optimizer may be missing or corrupt.</p>
  <p>After resuming a session, XtalOpt will ask if you would like to continue the search or enter read-only mode. Read-only mode will not generate new structures or submit geometry optimizations.</p>
  <dl class="note"><dt><b>Note:</b></dt><dd>If you are considering resuming a read-only session, take a look at the results.txt file in the working directory. It contains a list of all structures, sorted by enthalpy, with additional useful information. This can save some time when trying to locate the most stable structure of a old search.</dd></dl>
  <p>The working directories for XtalOpt are relocatable, meaning that the directory containing xtalopt.state and the [gen]x[id] structure folders may be moved, tarred, zipped, etc. and still be resumed at a later time from a different location on the filesystem, or even a different computer. </p>
@@ -366,18 +382,12 @@ any local optimizations. If so, safely ignore this message.
 <!-- start footer part -->
 <br>
 <hr>
-<p align="right" style="font-size:10pt">
+<p align="right" style="font-size:10pt;text-align:right">
 Generated on Sun Apr 26 2015 01:32:48 for My Project by<a href="http://www.doxygen.org/index.html">
 <img  src="img/doxygen.png" alt="doxygen" align="absmiddle" style="width:10vw">
 </a> 1.8.9.1
 </p>
 
-</div>
-
-<div id="footer">
-    Contact:<br>
-    Eva Zurek - <a class="email"; href="mailto:ezurek@buffalo.edu">ezurek@buffalo.edu</a><br>
-    Zackary Falls - <a class="email"; href="mailto:zmfalls@buffalo.edu">zmfalls@buffalo.edu</a>
 </div>
 
 </body>
