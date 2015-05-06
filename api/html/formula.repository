@@ -1,0 +1,13 @@
+\form#0:$60^\circ$
+\form#1:$120^\circ$
+\form#2:\begin{eqnarray} \left| \arccos\left(\frac{\vec{v_i}\cdot \vec{v_j}} {||\vec{v_i}||\,||\vec{v_j}||} \right) - \pi \right| &> \frac{\pi}{3} \mbox{\ ,\ and\ } ||\vec{v_i}|| &\geq ||\vec{v_j}|| \end{eqnarray}
+\form#3:$\vec{v_i}$
+\form#4:$\vec{v_i'}$
+\form#5:\[ \vec{v_i'} = \vec{v_i} - \mbox{ceil}\left(\left|\frac{\vec{v_i}\cdot \vec{v_j}} {||\vec{v_j}||^2}\right|\right)\mbox{sign}(\vec{v_i}\cdot \vec{v_j})\vec{v_j} \]
+\form#6:$\vec{a} = \pm n \vec{v_j}$
+\form#7:$\vec{v_j}$
+\form#8:$||\vec{v_j}||$
+\form#9:$n$
+\form#10:$n = \mbox{ceil}\left(\left(\left|\,\vec{v_i}\cdot \vec{v_j}/ ||\vec{v_j}||\,\right|\right)/||\vec{v_j}||\right)$
+\form#11:$n\vec{v_j}$
+\form#12:$-\mbox{sign}(\vec{v_i}\cdot\vec{v_j})$

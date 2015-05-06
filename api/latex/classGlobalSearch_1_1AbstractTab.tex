@@ -1,0 +1,353 @@
+\hypertarget{classGlobalSearch_1_1AbstractTab}{\section{Global\-Search\-:\-:Abstract\-Tab Class Reference}
+\label{classGlobalSearch_1_1AbstractTab}\index{Global\-Search\-::\-Abstract\-Tab@{Global\-Search\-::\-Abstract\-Tab}}
+}
+
+
+The base class for U\-I tabs, preconfigured to work with dialogs derived from \hyperlink{classGlobalSearch_1_1AbstractDialog}{Abstract\-Dialog}.  
+
+
+
+
+{\ttfamily \#include $<$globalsearch/ui/abstracttab.\-h$>$}
+
+Inheritance diagram for Global\-Search\-:\-:Abstract\-Tab\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGlobalSearch_1_1AbstractTab}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classGlobalSearch_1_1AbstractTab_a82adaa8137d80906a35beebe92944a3e}{lock\-G\-U\-I} ()
+\item 
+virtual void \hyperlink{classGlobalSearch_1_1AbstractTab_adc4ad2d0853e7db17a0b147857304cba}{read\-Settings} (const Q\-String \&filename=\char`\"{}\char`\"{})
+\item 
+virtual void \hyperlink{classGlobalSearch_1_1AbstractTab_a5b09ac7389e664c60ee5ab11a1f8d8fd}{write\-Settings} (const Q\-String \&filename=\char`\"{}\char`\"{})
+\item 
+virtual void \hyperlink{classGlobalSearch_1_1AbstractTab_a35194ae3ff3b875c1f2e886a69555050}{update\-G\-U\-I} ()
+\item 
+virtual void \hyperlink{classGlobalSearch_1_1AbstractTab_a63ec89943d1e740fd162877c7cb3679a}{disconnect\-G\-U\-I} ()
+\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classGlobalSearch_1_1AbstractTab_a343c4e401d69ec8364c5a0d53602bb02}{molecule\-Changed} (\hyperlink{classGlobalSearch_1_1Structure}{Global\-Search\-::\-Structure} $\ast$)
+\item 
+void \hyperlink{classGlobalSearch_1_1AbstractTab_a873c603fd50a66b14d47307aeaaa5fc8}{starting\-Background\-Processing} ()
+\item 
+void \hyperlink{classGlobalSearch_1_1AbstractTab_a5b06b32887aa1ba75cfcfad24f9c9a86}{finished\-Background\-Processing} ()
+\item 
+void \hyperlink{classGlobalSearch_1_1AbstractTab_aed63eed75abeb8c0e1e87344225f95cd}{initialized} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGlobalSearch_1_1AbstractTab_aead424f45ea35bc3b8d5d57dc64a9d70}{Abstract\-Tab} (\hyperlink{classGlobalSearch_1_1AbstractDialog}{Abstract\-Dialog} $\ast$parent, \hyperlink{classGlobalSearch_1_1OptBase}{Opt\-Base} $\ast$p)
+\item 
+virtual \hyperlink{classGlobalSearch_1_1AbstractTab_ab1c9b883cf4fc56d38045028600e20b7}{$\sim$\-Abstract\-Tab} ()
+\item 
+Q\-Widget $\ast$ \hyperlink{classGlobalSearch_1_1AbstractTab_a2ee691faf240a36dafde7620dc9a9293}{get\-Tab\-Widget} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classGlobalSearch_1_1AbstractTab_a70d03cb6f128710bd2af11a7915acad4}{initialize} ()
+\item 
+void \hyperlink{classGlobalSearch_1_1AbstractTab_a4c6f7ae72bcc7e1eaf06734b7ccb8635}{set\-Busy\-Cursor} ()
+\item 
+void \hyperlink{classGlobalSearch_1_1AbstractTab_a32efcb7e485b106fc728f39d3174df0e}{clear\-Busy\-Cursor} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classGlobalSearch_1_1AbstractTab_a7c461733097abaefd6709de1516b2b6b}{Q\-Widget $\ast$ \hyperlink{classGlobalSearch_1_1AbstractTab_a7c461733097abaefd6709de1516b2b6b}{m\-\_\-tab\-\_\-widget}}\label{classGlobalSearch_1_1AbstractTab_a7c461733097abaefd6709de1516b2b6b}
+
+\begin{DoxyCompactList}\small\item\em The actual widget that will be made into a tab. \end{DoxyCompactList}\item 
+\hypertarget{classGlobalSearch_1_1AbstractTab_a1bbcd914bf7dfc64f0c7212719ce8001}{\hyperlink{classGlobalSearch_1_1AbstractDialog}{Abstract\-Dialog} $\ast$ \hyperlink{classGlobalSearch_1_1AbstractTab_a1bbcd914bf7dfc64f0c7212719ce8001}{m\-\_\-dialog}}\label{classGlobalSearch_1_1AbstractTab_a1bbcd914bf7dfc64f0c7212719ce8001}
+
+\begin{DoxyCompactList}\small\item\em A pointer to the parent dialog. \end{DoxyCompactList}\item 
+\hypertarget{classGlobalSearch_1_1AbstractTab_a1bf5c32868bc8e6024358078838fb87a}{\hyperlink{classGlobalSearch_1_1OptBase}{Opt\-Base} $\ast$ \hyperlink{classGlobalSearch_1_1AbstractTab_a1bf5c32868bc8e6024358078838fb87a}{m\-\_\-opt}}\label{classGlobalSearch_1_1AbstractTab_a1bf5c32868bc8e6024358078838fb87a}
+
+\begin{DoxyCompactList}\small\item\em A pointer to the associated \hyperlink{classGlobalSearch_1_1OptBase}{Opt\-Base} class. \end{DoxyCompactList}\item 
+\hypertarget{classGlobalSearch_1_1AbstractTab_a98d4e176a6385cc5ef29c1436cac1e46}{bool \hyperlink{classGlobalSearch_1_1AbstractTab_a98d4e176a6385cc5ef29c1436cac1e46}{m\-\_\-is\-Initialized}}\label{classGlobalSearch_1_1AbstractTab_a98d4e176a6385cc5ef29c1436cac1e46}
+
+\begin{DoxyCompactList}\small\item\em Set to true once \hyperlink{classGlobalSearch_1_1AbstractTab_aed63eed75abeb8c0e1e87344225f95cd}{initialized()} completes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The base class for U\-I tabs, preconfigured to work with dialogs derived from \hyperlink{classGlobalSearch_1_1AbstractDialog}{Abstract\-Dialog}. 
+
+\begin{DoxyAuthor}{Author}
+David C. Lonie 
+\end{DoxyAuthor}
+
+
+Definition at line 35 of file abstracttab.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classGlobalSearch_1_1AbstractTab_aead424f45ea35bc3b8d5d57dc64a9d70}{\index{Global\-Search\-::\-Abstract\-Tab@{Global\-Search\-::\-Abstract\-Tab}!Abstract\-Tab@{Abstract\-Tab}}
+\index{Abstract\-Tab@{Abstract\-Tab}!GlobalSearch::AbstractTab@{Global\-Search\-::\-Abstract\-Tab}}
+\subsubsection[{Abstract\-Tab}]{\setlength{\rightskip}{0pt plus 5cm}Global\-Search\-::\-Abstract\-Tab\-::\-Abstract\-Tab (
+\begin{DoxyParamCaption}
+\item[{{\bf Abstract\-Dialog} $\ast$}]{parent, }
+\item[{{\bf Opt\-Base} $\ast$}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classGlobalSearch_1_1AbstractTab_aead424f45ea35bc3b8d5d57dc64a9d70}
+Constructor
+
+Minimum constructor for derived tab\-: \begin{DoxyVerb}  DerivedTab::DerivedTab(AbstractDialog *parent,
+                         OptBase *p) :
+    AbstractTab(parent, p)
+  {
+  ui.setupUi(m_tab_widget);
+
+  initialize();
+  }
+\end{DoxyVerb}
+ 
+
+Definition at line 28 of file abstracttab.\-cpp.
+
+
+
+References m\-\_\-tab\-\_\-widget.
+
+\hypertarget{classGlobalSearch_1_1AbstractTab_ab1c9b883cf4fc56d38045028600e20b7}{\index{Global\-Search\-::\-Abstract\-Tab@{Global\-Search\-::\-Abstract\-Tab}!$\sim$\-Abstract\-Tab@{$\sim$\-Abstract\-Tab}}
+\index{$\sim$\-Abstract\-Tab@{$\sim$\-Abstract\-Tab}!GlobalSearch::AbstractTab@{Global\-Search\-::\-Abstract\-Tab}}
+\subsubsection[{$\sim$\-Abstract\-Tab}]{\setlength{\rightskip}{0pt plus 5cm}Global\-Search\-::\-Abstract\-Tab\-::$\sim$\-Abstract\-Tab (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classGlobalSearch_1_1AbstractTab_ab1c9b883cf4fc56d38045028600e20b7}
+Destructor 
+
+Definition at line 72 of file abstracttab.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classGlobalSearch_1_1AbstractTab_a32efcb7e485b106fc728f39d3174df0e}{\index{Global\-Search\-::\-Abstract\-Tab@{Global\-Search\-::\-Abstract\-Tab}!clear\-Busy\-Cursor@{clear\-Busy\-Cursor}}
+\index{clear\-Busy\-Cursor@{clear\-Busy\-Cursor}!GlobalSearch::AbstractTab@{Global\-Search\-::\-Abstract\-Tab}}
+\subsubsection[{clear\-Busy\-Cursor}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Abstract\-Tab\-::clear\-Busy\-Cursor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1AbstractTab_a32efcb7e485b106fc728f39d3174df0e}
+Resets the application's busy cursor. This should not be called directly, instead emit \hyperlink{classGlobalSearch_1_1AbstractTab_a5b06b32887aa1ba75cfcfad24f9c9a86}{finished\-Background\-Processing()}, which is safe to use from a background thread.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1AbstractTab_a873c603fd50a66b14d47307aeaaa5fc8}{starting\-Background\-Processing()} 
+
+\hyperlink{classGlobalSearch_1_1AbstractTab_a5b06b32887aa1ba75cfcfad24f9c9a86}{finished\-Background\-Processing()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 84 of file abstracttab.\-cpp.
+
+
+
+Referenced by initialize().
+
+\hypertarget{classGlobalSearch_1_1AbstractTab_a63ec89943d1e740fd162877c7cb3679a}{\index{Global\-Search\-::\-Abstract\-Tab@{Global\-Search\-::\-Abstract\-Tab}!disconnect\-G\-U\-I@{disconnect\-G\-U\-I}}
+\index{disconnect\-G\-U\-I@{disconnect\-G\-U\-I}!GlobalSearch::AbstractTab@{Global\-Search\-::\-Abstract\-Tab}}
+\subsubsection[{disconnect\-G\-U\-I}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Global\-Search\-::\-Abstract\-Tab\-::disconnect\-G\-U\-I (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1AbstractTab_a63ec89943d1e740fd162877c7cb3679a}
+Used during benchmarking to disable any G\-U\-I update connections. 
+
+Definition at line 104 of file abstracttab.\-h.
+
+
+
+Referenced by initialize().
+
+\hypertarget{classGlobalSearch_1_1AbstractTab_a5b06b32887aa1ba75cfcfad24f9c9a86}{\index{Global\-Search\-::\-Abstract\-Tab@{Global\-Search\-::\-Abstract\-Tab}!finished\-Background\-Processing@{finished\-Background\-Processing}}
+\index{finished\-Background\-Processing@{finished\-Background\-Processing}!GlobalSearch::AbstractTab@{Global\-Search\-::\-Abstract\-Tab}}
+\subsubsection[{finished\-Background\-Processing}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Abstract\-Tab\-::finished\-Background\-Processing (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classGlobalSearch_1_1AbstractTab_a5b06b32887aa1ba75cfcfad24f9c9a86}
+Emit this signal after user-\/requested processing has completed. This will reset the busy cursor in the application. 
+
+Referenced by initialize().
+
+\hypertarget{classGlobalSearch_1_1AbstractTab_a2ee691faf240a36dafde7620dc9a9293}{\index{Global\-Search\-::\-Abstract\-Tab@{Global\-Search\-::\-Abstract\-Tab}!get\-Tab\-Widget@{get\-Tab\-Widget}}
+\index{get\-Tab\-Widget@{get\-Tab\-Widget}!GlobalSearch::AbstractTab@{Global\-Search\-::\-Abstract\-Tab}}
+\subsubsection[{get\-Tab\-Widget}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Widget$\ast$ Global\-Search\-::\-Abstract\-Tab\-::get\-Tab\-Widget (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classGlobalSearch_1_1AbstractTab_a2ee691faf240a36dafde7620dc9a9293}
+\begin{DoxyReturn}{Returns}
+The widget for this tab. 
+\end{DoxyReturn}
+
+
+Definition at line 66 of file abstracttab.\-h.
+
+
+
+References m\-\_\-tab\-\_\-widget.
+
+\hypertarget{classGlobalSearch_1_1AbstractTab_a70d03cb6f128710bd2af11a7915acad4}{\index{Global\-Search\-::\-Abstract\-Tab@{Global\-Search\-::\-Abstract\-Tab}!initialize@{initialize}}
+\index{initialize@{initialize}!GlobalSearch::AbstractTab@{Global\-Search\-::\-Abstract\-Tab}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Abstract\-Tab\-::initialize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1AbstractTab_a70d03cb6f128710bd2af11a7915acad4}
+Create some default connections between the main dialog and this tab. 
+
+Definition at line 38 of file abstracttab.\-cpp.
+
+
+
+References clear\-Busy\-Cursor(), disconnect\-G\-U\-I(), finished\-Background\-Processing(), initialized(), lock\-G\-U\-I(), m\-\_\-dialog, m\-\_\-is\-Initialized, molecule\-Changed(), read\-Settings(), set\-Busy\-Cursor(), starting\-Background\-Processing(), update\-G\-U\-I(), and write\-Settings().
+
+
+
+Referenced by Global\-Search\-::\-Abstract\-Edit\-Tab\-::initialize().
+
+\hypertarget{classGlobalSearch_1_1AbstractTab_aed63eed75abeb8c0e1e87344225f95cd}{\index{Global\-Search\-::\-Abstract\-Tab@{Global\-Search\-::\-Abstract\-Tab}!initialized@{initialized}}
+\index{initialized@{initialized}!GlobalSearch::AbstractTab@{Global\-Search\-::\-Abstract\-Tab}}
+\subsubsection[{initialized}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Abstract\-Tab\-::initialized (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classGlobalSearch_1_1AbstractTab_aed63eed75abeb8c0e1e87344225f95cd}
+Emitted when initialize completes 
+
+Referenced by initialize().
+
+\hypertarget{classGlobalSearch_1_1AbstractTab_a82adaa8137d80906a35beebe92944a3e}{\index{Global\-Search\-::\-Abstract\-Tab@{Global\-Search\-::\-Abstract\-Tab}!lock\-G\-U\-I@{lock\-G\-U\-I}}
+\index{lock\-G\-U\-I@{lock\-G\-U\-I}!GlobalSearch::AbstractTab@{Global\-Search\-::\-Abstract\-Tab}}
+\subsubsection[{lock\-G\-U\-I}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Global\-Search\-::\-Abstract\-Tab\-::lock\-G\-U\-I (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1AbstractTab_a82adaa8137d80906a35beebe92944a3e}
+Disable portions of the G\-U\-I that shouldn't be modified after the search has started. 
+
+Definition at line 73 of file abstracttab.\-h.
+
+
+
+Referenced by initialize().
+
+\hypertarget{classGlobalSearch_1_1AbstractTab_a343c4e401d69ec8364c5a0d53602bb02}{\index{Global\-Search\-::\-Abstract\-Tab@{Global\-Search\-::\-Abstract\-Tab}!molecule\-Changed@{molecule\-Changed}}
+\index{molecule\-Changed@{molecule\-Changed}!GlobalSearch::AbstractTab@{Global\-Search\-::\-Abstract\-Tab}}
+\subsubsection[{molecule\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Abstract\-Tab\-::molecule\-Changed (
+\begin{DoxyParamCaption}
+\item[{{\bf Global\-Search\-::\-Structure} $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classGlobalSearch_1_1AbstractTab_a343c4e401d69ec8364c5a0d53602bb02}
+Emit to update the molecule displayed in the Avogadro G\-L\-Widget 
+
+Referenced by initialize().
+
+\hypertarget{classGlobalSearch_1_1AbstractTab_adc4ad2d0853e7db17a0b147857304cba}{\index{Global\-Search\-::\-Abstract\-Tab@{Global\-Search\-::\-Abstract\-Tab}!read\-Settings@{read\-Settings}}
+\index{read\-Settings@{read\-Settings}!GlobalSearch::AbstractTab@{Global\-Search\-::\-Abstract\-Tab}}
+\subsubsection[{read\-Settings}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Global\-Search\-::\-Abstract\-Tab\-::read\-Settings (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{filename = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1AbstractTab_adc4ad2d0853e7db17a0b147857304cba}
+Load any parameters that this tab is responible for here. \begin{DoxyNote}{Note}
+In most cases, this shouldn't be called directly, but rather call the same function in the parent dialog class. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & If specified, read from given file. Otherwise read from system config file. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 82 of file abstracttab.\-h.
+
+
+
+Referenced by initialize(), and Global\-Search\-::\-Abstract\-Edit\-Tab\-::load\-Scheme().
+
+\hypertarget{classGlobalSearch_1_1AbstractTab_a4c6f7ae72bcc7e1eaf06734b7ccb8635}{\index{Global\-Search\-::\-Abstract\-Tab@{Global\-Search\-::\-Abstract\-Tab}!set\-Busy\-Cursor@{set\-Busy\-Cursor}}
+\index{set\-Busy\-Cursor@{set\-Busy\-Cursor}!GlobalSearch::AbstractTab@{Global\-Search\-::\-Abstract\-Tab}}
+\subsubsection[{set\-Busy\-Cursor}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Abstract\-Tab\-::set\-Busy\-Cursor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1AbstractTab_a4c6f7ae72bcc7e1eaf06734b7ccb8635}
+Sets the application's busy cursor. This should not be called directly, instead emit \hyperlink{classGlobalSearch_1_1AbstractTab_a873c603fd50a66b14d47307aeaaa5fc8}{starting\-Background\-Processing()}, which is safe to use from a background thread.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1AbstractTab_a873c603fd50a66b14d47307aeaaa5fc8}{starting\-Background\-Processing()} 
+
+\hyperlink{classGlobalSearch_1_1AbstractTab_a5b06b32887aa1ba75cfcfad24f9c9a86}{finished\-Background\-Processing()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 76 of file abstracttab.\-cpp.
+
+
+
+Referenced by initialize().
+
+\hypertarget{classGlobalSearch_1_1AbstractTab_a873c603fd50a66b14d47307aeaaa5fc8}{\index{Global\-Search\-::\-Abstract\-Tab@{Global\-Search\-::\-Abstract\-Tab}!starting\-Background\-Processing@{starting\-Background\-Processing}}
+\index{starting\-Background\-Processing@{starting\-Background\-Processing}!GlobalSearch::AbstractTab@{Global\-Search\-::\-Abstract\-Tab}}
+\subsubsection[{starting\-Background\-Processing}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Abstract\-Tab\-::starting\-Background\-Processing (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classGlobalSearch_1_1AbstractTab_a873c603fd50a66b14d47307aeaaa5fc8}
+Emit this signal before beginning user-\/requested processing. This will set the busy cursor in the application. 
+
+Referenced by initialize().
+
+\hypertarget{classGlobalSearch_1_1AbstractTab_a35194ae3ff3b875c1f2e886a69555050}{\index{Global\-Search\-::\-Abstract\-Tab@{Global\-Search\-::\-Abstract\-Tab}!update\-G\-U\-I@{update\-G\-U\-I}}
+\index{update\-G\-U\-I@{update\-G\-U\-I}!GlobalSearch::AbstractTab@{Global\-Search\-::\-Abstract\-Tab}}
+\subsubsection[{update\-G\-U\-I}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Global\-Search\-::\-Abstract\-Tab\-::update\-G\-U\-I (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1AbstractTab_a35194ae3ff3b875c1f2e886a69555050}
+Set any G\-U\-I elements from information in internal data structures. 
+
+Definition at line 99 of file abstracttab.\-h.
+
+
+
+Referenced by initialize().
+
+\hypertarget{classGlobalSearch_1_1AbstractTab_a5b09ac7389e664c60ee5ab11a1f8d8fd}{\index{Global\-Search\-::\-Abstract\-Tab@{Global\-Search\-::\-Abstract\-Tab}!write\-Settings@{write\-Settings}}
+\index{write\-Settings@{write\-Settings}!GlobalSearch::AbstractTab@{Global\-Search\-::\-Abstract\-Tab}}
+\subsubsection[{write\-Settings}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Global\-Search\-::\-Abstract\-Tab\-::write\-Settings (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{filename = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1AbstractTab_a5b09ac7389e664c60ee5ab11a1f8d8fd}
+Save any parameters that this tab is responible for here. \begin{DoxyNote}{Note}
+In most cases, this shouldn't be called directly, but rather call the same function in the parent dialog class. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & If specified, write to given file. Otherwise write to system config file. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 92 of file abstracttab.\-h.
+
+
+
+Referenced by initialize(), and Global\-Search\-::\-Abstract\-Edit\-Tab\-::save\-Scheme().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/globalsearch/ui/abstracttab.\-h\item 
+src/globalsearch/ui/abstracttab.\-cpp\end{DoxyCompactItemize}

@@ -1,0 +1,2601 @@
+\hypertarget{classGlobalSearch_1_1Structure}{\section{Global\-Search\-:\-:Structure Class Reference}
+\label{classGlobalSearch_1_1Structure}\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}}
+}
+
+
+Generic molecule object.  
+
+
+
+
+{\ttfamily \#include $<$globalsearch/structure.\-h$>$}
+
+Inheritance diagram for Global\-Search\-:\-:Structure\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classGlobalSearch_1_1Structure}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917}{State} \{ \\*
+\hyperlink{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917a75ed0969285b99dc1e54c654428be5e0}{Optimized} = 0, 
+\hyperlink{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917ae572101eab4010061be0073888fbee39}{Step\-Optimized}, 
+\hyperlink{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917ad4d8f76770421b6ab8d39f60e280a0a0}{Waiting\-For\-Optimization}, 
+\hyperlink{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917a4f451a4c3de6ed294e1c7d06e5b1d24c}{In\-Process}, 
+\\*
+\hyperlink{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917a1639a0fd1ec7f1bba6cdaf73a2e76582}{Empty}, 
+\hyperlink{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917ae64ed17fe917f0b8fd679078b5b12447}{Updating}, 
+\hyperlink{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917a6b33b578b7e228f289720292019a998a}{Error}, 
+\hyperlink{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917a5a0e4ad5830e2c3a9b045da79098b6c7}{Submitted}, 
+\\*
+\hyperlink{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917acd16cf0031d5e5b522b61618fd73fdc1}{Killed}, 
+\hyperlink{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917ac5686d195648a0800584c59d034e8be0}{Removed}, 
+\hyperlink{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917a1cd89f1eb6cab53ae2bb1b2ad64dfe72}{Duplicate}, 
+\hyperlink{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917a99c42cb7635428e83d759cdae79209ec}{Restart}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classGlobalSearch_1_1Structure_aff5394b9be0fa599c58f906d9a03f9d5}{setup\-Connections} ()
+\item 
+virtual void \hyperlink{classGlobalSearch_1_1Structure_a36f95cfbd571cce162a4bc59bb468f61}{enable\-Auto\-Histogram\-Generation} (bool)
+\item 
+virtual void \hyperlink{classGlobalSearch_1_1Structure_aaed562bf0ad4fe7bec1567eb84dbeee2}{request\-Histogram\-Generation} ()
+\item 
+virtual void \hyperlink{classGlobalSearch_1_1Structure_a57ae57cebf3df177a1363b91383a1c69}{generate\-Default\-Histogram} ()
+\item 
+virtual void \hyperlink{classGlobalSearch_1_1Structure_a1e30a18add5bd7e217546333262010ad}{structure\-Changed} ()
+\item 
+static bool \hyperlink{classGlobalSearch_1_1Structure_a92cca2b7d5a566d69dd228d267758c73}{compare\-I\-A\-D\-Distributions} (const std\-::vector$<$ double $>$ \&d, const std\-::vector$<$ double $>$ \&f1, const std\-::vector$<$ double $>$ \&f2, double decay, double smear, double $\ast$error)
+\item 
+static bool \hyperlink{classGlobalSearch_1_1Structure_a70f9ced5a098560bad9fe97d1bb6361a}{compare\-I\-A\-D\-Distributions} (const Q\-List$<$ double $>$ \&d, const Q\-List$<$ double $>$ \&f1, const Q\-List$<$ double $>$ \&f2, double decay, double smear, double $\ast$error)
+\item 
+static bool \hyperlink{classGlobalSearch_1_1Structure_aaed919f70884814f824aac01d619f004}{compare\-I\-A\-D\-Distributions} (const Q\-List$<$ Q\-Variant $>$ \&d, const Q\-List$<$ Q\-Variant $>$ \&f1, const Q\-List$<$ Q\-Variant $>$ \&f2, double decay, double smear, double $\ast$error)
+\item 
+virtual void \hyperlink{classGlobalSearch_1_1Structure_af6da83169c21363c545ef3ee01d891d3}{write\-Settings} (const Q\-String \&filename)
+\item 
+virtual void \hyperlink{classGlobalSearch_1_1Structure_a352a550ebb2c8e511e3ad400a98b1373}{read\-Settings} (const Q\-String \&filename)
+\item 
+virtual void \hyperlink{classGlobalSearch_1_1Structure_a29a46bef48b3c9045b6e87ca87c2c6cb}{update\-And\-Skip\-History} (const Q\-List$<$ unsigned int $>$ \&atomic\-Nums, const Q\-List$<$ Eigen\-::\-Vector3d $>$ \&coords, const double energy=0, const double enthalpy=0, const Eigen\-::\-Matrix3d \&cell=Eigen\-::\-Matrix3d\-::\-Zero())
+\item 
+virtual void \hyperlink{classGlobalSearch_1_1Structure_a9e200fa25c362859fdf2cecfd4cbaf06}{update\-And\-Add\-To\-History} (const Q\-List$<$ unsigned int $>$ \&atomic\-Nums, const Q\-List$<$ Eigen\-::\-Vector3d $>$ \&coords, const double energy=0, const double enthalpy=0, const Eigen\-::\-Matrix3d \&cell=Eigen\-::\-Matrix3d\-::\-Zero())
+\item 
+virtual void \hyperlink{classGlobalSearch_1_1Structure_ab1f8dc25ec23c06bd8edac7b0f719906}{delete\-From\-History} (unsigned int index)
+\item 
+virtual void \hyperlink{classGlobalSearch_1_1Structure_aaf7c1811bcc7f591e2f6bccd9e56e18f}{retrieve\-History\-Entry} (unsigned int index, Q\-List$<$ unsigned int $>$ $\ast$atomic\-Nums, Q\-List$<$ Eigen\-::\-Vector3d $>$ $\ast$coords, double $\ast$energy, double $\ast$enthalpy, Eigen\-::\-Matrix3d $\ast$cell)
+\item 
+virtual unsigned int \hyperlink{classGlobalSearch_1_1Structure_a92fb3f639890b9005c0559fcf843c45c}{size\-Of\-History} ()
+\item 
+void \hyperlink{classGlobalSearch_1_1Structure_a3f0ef2f62e4467c70044bbf3965b6a26}{set\-Enthalpy} (double enthalpy)
+\item 
+void \hyperlink{classGlobalSearch_1_1Structure_a4eda6eb8ce8080fae9fe91587039e748}{set\-P\-V} (double pv)
+\item 
+void \hyperlink{classGlobalSearch_1_1Structure_a947839b5088f6829b81ef7f9f9938b04}{reset\-Enthalpy} ()
+\item 
+void \hyperlink{classGlobalSearch_1_1Structure_aa3a2350ff9b13a7b84337f66a1d18cf5}{reset\-Energy} ()
+\item 
+void \hyperlink{classGlobalSearch_1_1Structure_a52962ac4b557250b84d27e90799d18d0}{set\-O\-B\-Energy} (const Q\-String \&ff=Q\-String(\char`\"{}U\-F\-F\char`\"{}))
+\item 
+void \hyperlink{classGlobalSearch_1_1Structure_a2c7020f0ea0bfb58f37dffc6e5d955be}{set\-Rank} (uint rank)
+\item 
+void \hyperlink{classGlobalSearch_1_1Structure_adbb752fe62009e8adbb55cc1fdef0de1}{set\-Job\-I\-D} (uint id)
+\item 
+void \hyperlink{classGlobalSearch_1_1Structure_a2c3d51c041d38d172f3169d8c8d31b45}{set\-Generation} (uint gen)
+\item 
+void \hyperlink{classGlobalSearch_1_1Structure_a9ecf515564a4063d37ab1d0a8eb14d11}{set\-I\-D\-Number} (uint id)
+\item 
+void \hyperlink{classGlobalSearch_1_1Structure_a9f25226379d189f1bfd9e4698585c2e9}{set\-Index} (int index)
+\item 
+void \hyperlink{classGlobalSearch_1_1Structure_a4d833bf522b24a31bfd983ae16e370fe}{set\-Parents} (const Q\-String \&p)
+\item 
+void \hyperlink{classGlobalSearch_1_1Structure_adc3f7486abf0ad3421d60f6a05f3106e}{set\-Rempath} (const Q\-String \&p)
+\item 
+void \hyperlink{classGlobalSearch_1_1Structure_aee38b5fe04ee88a4584b181fa8d0fbf9}{set\-Status} (\hyperlink{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917}{State} status)
+\item 
+void \hyperlink{classGlobalSearch_1_1Structure_a3aa37aac76ad5255e51a9113b3d64d40}{set\-Current\-Opt\-Step} (uint i)
+\item 
+void \hyperlink{classGlobalSearch_1_1Structure_a130a124d8cd7d440d4c902726492e41b}{set\-Fail\-Count} (uint count)
+\item 
+void \hyperlink{classGlobalSearch_1_1Structure_a27532f25313083bea490b3b6fa84c743}{reset\-Fail\-Count} ()
+\item 
+void \hyperlink{classGlobalSearch_1_1Structure_ab1ea99315ad11fc88f0941069f169f1a}{add\-Failure} ()
+\item 
+void \hyperlink{classGlobalSearch_1_1Structure_a59fe04ad733d7a770e3775339d71b8c3}{set\-Duplicate\-String} (const Q\-String \&s)
+\item 
+void \hyperlink{classGlobalSearch_1_1Structure_a266a812642a92c135ae5c65157d528d6}{set\-Changed\-Since\-Dup\-Checked} (bool b)
+\item 
+void \hyperlink{classGlobalSearch_1_1Structure_ae623efedfaa8980e5121199eec928298}{start\-Opt\-Timer} ()
+\item 
+void \hyperlink{classGlobalSearch_1_1Structure_a5f19c86d2e41ec95efd370e87049384f}{stop\-Opt\-Timer} ()
+\item 
+void \hyperlink{classGlobalSearch_1_1Structure_afc5507175ebfb4da413a5c40a2a8dfb3}{set\-Opt\-Timer\-Start} (const Q\-Date\-Time \&d)
+\item 
+void \hyperlink{classGlobalSearch_1_1Structure_a9ca3435fd1e634ddd665a5af63abc431}{set\-Opt\-Timer\-End} (const Q\-Date\-Time \&d)
+\item 
+virtual void \hyperlink{classGlobalSearch_1_1Structure_aa9ede9f516912b34000000caa849689c}{load} (Q\-Text\-Stream \&in)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGlobalSearch_1_1Structure_ab7e8a0041535442bca879148833831ac}{Structure} (Q\-Object $\ast$parent=0)
+\item 
+\hyperlink{classGlobalSearch_1_1Structure_ad5f2adb0f379ee6dde14984df3eb73bc}{Structure} (const \hyperlink{classGlobalSearch_1_1Structure}{Structure} \&other)
+\item 
+\hyperlink{classGlobalSearch_1_1Structure_a2630d5c42da1cd86bd0c3b7d79e69618}{Structure} (const Avogadro\-::\-Molecule \&other)
+\item 
+virtual \hyperlink{classGlobalSearch_1_1Structure_a29cc3acd03872d7641a2fd76a53e0491}{$\sim$\-Structure} ()
+\item 
+\hyperlink{classGlobalSearch_1_1Structure}{Structure} \& \hyperlink{classGlobalSearch_1_1Structure_a4b257e8547d62da1c2393c123da994f1}{operator=} (const \hyperlink{classGlobalSearch_1_1Structure}{Structure} \&other)
+\item 
+\hyperlink{classGlobalSearch_1_1Structure}{Structure} \& \hyperlink{classGlobalSearch_1_1Structure_a22737e6da3810566ad0b8c6b672e1214}{operator=} (const Avogadro\-::\-Molecule \&other)
+\item 
+\hyperlink{classGlobalSearch_1_1Structure}{Structure} \& \hyperlink{classGlobalSearch_1_1Structure_accb684b9686676fd61164f298460f195}{copy\-Structure} (const \hyperlink{classGlobalSearch_1_1Structure}{Structure} \&other)
+\item 
+bool \hyperlink{classGlobalSearch_1_1Structure_a6f963ec03dda49caa05f5eb8a9f19c39}{has\-Enthalpy} () const 
+\item 
+double \hyperlink{classGlobalSearch_1_1Structure_acc6db7487d8bbeacda3868734f4294bd}{get\-Energy} () const 
+\item 
+double \hyperlink{classGlobalSearch_1_1Structure_a45e5069495574ae2d4b73a1759b7326b}{get\-Enthalpy} () const 
+\item 
+double \hyperlink{classGlobalSearch_1_1Structure_a66f08d0683f89fa6791b5b7b9838955d}{get\-P\-V} () const 
+\item 
+uint \hyperlink{classGlobalSearch_1_1Structure_aad467ff9bf423156b7cc8df3a2fb7b13}{get\-Rank} () const 
+\item 
+uint \hyperlink{classGlobalSearch_1_1Structure_a6d044ecacb068406234a502d30664bea}{get\-Job\-I\-D} () const 
+\item 
+uint \hyperlink{classGlobalSearch_1_1Structure_a7caa9c46c88ac5711cf9d150bd0dcbd6}{get\-Generation} () const 
+\item 
+uint \hyperlink{classGlobalSearch_1_1Structure_afc86429da4b4d6673a8c33a58841905d}{get\-I\-D\-Number} () const 
+\item 
+int \hyperlink{classGlobalSearch_1_1Structure_a73f8f57a695b3bebdea8a8b3d75e4138}{get\-Index} () const 
+\item 
+Q\-String \hyperlink{classGlobalSearch_1_1Structure_a495b4fd01788d6d10b3d6b138784d52d}{get\-Duplicate\-String} () const 
+\item 
+Q\-String \hyperlink{classGlobalSearch_1_1Structure_a0b30437b5e6cc5e6f3de9c413aa04847}{get\-Parents} () const 
+\item 
+Q\-String \hyperlink{classGlobalSearch_1_1Structure_a9294a602bcf48745259368025434b796}{get\-Rempath} () const 
+\item 
+\hyperlink{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917}{State} \hyperlink{classGlobalSearch_1_1Structure_ad67c972a173cddc939e3adabf65dd72b}{get\-Status} () const 
+\item 
+uint \hyperlink{classGlobalSearch_1_1Structure_a955a416ce3d99e5ecc0a68c23e33824c}{get\-Current\-Opt\-Step} ()
+\item 
+uint \hyperlink{classGlobalSearch_1_1Structure_a39a044521e91f117be11fcf9a1a562b3}{get\-Fail\-Count} ()
+\item 
+Q\-Date\-Time \hyperlink{classGlobalSearch_1_1Structure_a17a4bd931cc52643bb89a19c9298fc7f}{get\-Opt\-Timer\-Start} () const 
+\item 
+Q\-Date\-Time \hyperlink{classGlobalSearch_1_1Structure_a720cde3d4eabbeca51fd41160a89fb70}{get\-Opt\-Timer\-End} () const 
+\item 
+Q\-String \hyperlink{classGlobalSearch_1_1Structure_a38b039e671cdcae7eab7b976c93255de}{get\-I\-D\-String} () const 
+\item 
+virtual Q\-String \hyperlink{classGlobalSearch_1_1Structure_a5f4dde0d82dbf949fffd514ccb9fd7ac}{get\-Results\-Header} () const 
+\item 
+virtual Q\-String \hyperlink{classGlobalSearch_1_1Structure_a28886a7dbbde4d7320ea05aa6c50c2e6}{get\-Results\-Entry} () const 
+\item 
+virtual bool \hyperlink{classGlobalSearch_1_1Structure_ad5d59a1e8739f9cec4c39ca6d576d22a}{get\-Nearest\-Neighbor\-Distances} (Q\-List$<$ double $>$ $\ast$list) const 
+\item 
+virtual bool \hyperlink{classGlobalSearch_1_1Structure_adee82bcb74af1c15bb91e5a9aa0e3849}{get\-Shortest\-Interatomic\-Distance} (double \&shortest) const 
+\item 
+virtual bool \hyperlink{classGlobalSearch_1_1Structure_af90032040343059ebbc91ac294a0a020}{get\-Nearest\-Neighbor\-Distance} (const double x, const double y, const double z, double \&shortest) const 
+\item 
+virtual bool \hyperlink{classGlobalSearch_1_1Structure_af7280b04c20689040bb7bc69005aef49}{get\-Nearest\-Neighbor\-Distance} (const Avogadro\-::\-Atom $\ast$atom, double \&shortest) const 
+\item 
+Q\-List$<$ Avogadro\-::\-Atom $\ast$ $>$ \hyperlink{classGlobalSearch_1_1Structure_a741bc226576a6aebdc72573afec08fe2}{get\-Neighbors} (const double x, const double y, const double z, const double cutoff, Q\-List$<$ double $>$ $\ast$distances=0) const 
+\item 
+Q\-List$<$ Avogadro\-::\-Atom $\ast$ $>$ \hyperlink{classGlobalSearch_1_1Structure_af84f72e94d8961a8804ff38b0c20b785}{get\-Neighbors} (const Avogadro\-::\-Atom $\ast$atom, const double cutoff, Q\-List$<$ double $>$ $\ast$distances=0) const 
+\item 
+virtual void \hyperlink{classGlobalSearch_1_1Structure_a668fcf6ecb33ad5fd3ef9963dd059ce0}{get\-Default\-Histogram} (Q\-List$<$ double $>$ $\ast$dist, Q\-List$<$ double $>$ $\ast$freq) const 
+\item 
+virtual void \hyperlink{classGlobalSearch_1_1Structure_a15748e6ccd1971f70dcf24d26a07388f}{get\-Default\-Histogram} (Q\-List$<$ Q\-Variant $>$ $\ast$dist, Q\-List$<$ Q\-Variant $>$ $\ast$freq) const 
+\item 
+virtual bool \hyperlink{classGlobalSearch_1_1Structure_a18edce7ebc0e1f5d0f939369a737c778}{is\-Histogram\-Generation\-Pending} () const 
+\item 
+virtual bool \hyperlink{classGlobalSearch_1_1Structure_a39c00be4b7081dea0963a9183c5d8d36}{generate\-I\-A\-D\-Histogram} (Q\-List$<$ double $>$ $\ast$distance, Q\-List$<$ double $>$ $\ast$frequency, double min=0.\-0, double max=10.\-0, double step=0.\-01, Avogadro\-::\-Atom $\ast$atom=0) const 
+\item 
+virtual bool \hyperlink{classGlobalSearch_1_1Structure_a6009cbdb3990eba689cbdd27aa0305ea}{generate\-I\-A\-D\-Histogram} (Q\-List$<$ Q\-Variant $>$ $\ast$distance, Q\-List$<$ Q\-Variant $>$ $\ast$frequency, double min=0.\-0, double max=10.\-0, double step=0.\-01, Avogadro\-::\-Atom $\ast$atom=0) const 
+\item 
+virtual bool \hyperlink{classGlobalSearch_1_1Structure_a8e0db651a3a48cd249f13f3ae0ca2b68}{add\-Atom\-Randomly} (uint atomic\-Number, double min\-I\-A\-D=0.\-0, double max\-I\-A\-D=0.\-0, int max\-Attempts=1000, Avogadro\-::\-Atom $\ast$$\ast$atom=0)
+\item 
+Q\-List$<$ Q\-String $>$ \hyperlink{classGlobalSearch_1_1Structure_ac49455f75d38a9f1779179dad2ba8815}{get\-Symbols} () const 
+\item 
+Q\-List$<$ uint $>$ \hyperlink{classGlobalSearch_1_1Structure_a447f0dd62f6546809d9b144bd971254f}{get\-Number\-Of\-Atoms\-Alpha} () const 
+\item 
+Q\-String \hyperlink{classGlobalSearch_1_1Structure_abd1f083a58dad102d0f0b3b3d89da2df}{get\-Opt\-Elapsed} () const 
+\item 
+virtual Q\-Hash$<$ Q\-String, Q\-Variant $>$ \hyperlink{classGlobalSearch_1_1Structure_afc441f647ad6f72bf415ea06a657220a}{get\-Fingerprint} () const 
+\item 
+bool \hyperlink{classGlobalSearch_1_1Structure_a30b8895da1515056a968ae9622c54408}{has\-Changed\-Since\-Dup\-Checked} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classGlobalSearch_1_1Structure_a58d72124caf9401902f6a7653e0e7646}{sort\-By\-Enthalpy} (Q\-List$<$ \hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$ $>$ $\ast$structures)
+\item 
+static void \hyperlink{classGlobalSearch_1_1Structure_af258714834ae664a9a563f1f0af4a883}{rank\-By\-Enthalpy} (const Q\-List$<$ \hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$ $>$ \&structures)
+\item 
+static void \hyperlink{classGlobalSearch_1_1Structure_a742dbf63765f00c205657366f7e5efc8}{sort\-And\-Rank\-By\-Enthalpy} (Q\-List$<$ \hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$ $>$ $\ast$structures)
+\end{DoxyCompactItemize}
+\subsection*{Protected Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classGlobalSearch_1_1Structure_aa38396dff22066272e3b47604c9ac527}{write\-Structure\-Settings} (const Q\-String \&filename)
+\item 
+void \hyperlink{classGlobalSearch_1_1Structure_abe87722af78ae2e5913aebd7ae91ae6d}{read\-Structure\-Settings} (const Q\-String \&filename)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Generic molecule object. 
+
+\begin{DoxyAuthor}{Author}
+David C. Lonie
+\end{DoxyAuthor}
+The \hyperlink{classGlobalSearch_1_1Structure}{Structure} class provides a generic data object for storing information about a molecule. It derives from Avogadro\-::\-Molecule, adding new functionality to help with common tasks during a global structure search. 
+
+Definition at line 48 of file structure.\-h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!State@{State}}
+\index{State@{State}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{State}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Global\-Search\-::\-Structure\-::\-State}}}\label{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917}
+Enum containing possible optimization statuses. \begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_aee38b5fe04ee88a4584b181fa8d0fbf9}{set\-Status} 
+
+\hyperlink{classGlobalSearch_1_1Structure_ad67c972a173cddc939e3adabf65dd72b}{get\-Status} 
+\end{DoxySeeAlso}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Optimized@{Optimized}!Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}}\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!Optimized@{Optimized}}\item[{\em 
+\hypertarget{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917a75ed0969285b99dc1e54c654428be5e0}{Optimized}\label{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917a75ed0969285b99dc1e54c654428be5e0}
+}]\hyperlink{classGlobalSearch_1_1Structure}{Structure} has completed all optimization steps \index{Step\-Optimized@{Step\-Optimized}!Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}}\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!Step\-Optimized@{Step\-Optimized}}\item[{\em 
+\hypertarget{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917ae572101eab4010061be0073888fbee39}{Step\-Optimized}\label{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917ae572101eab4010061be0073888fbee39}
+}]\hyperlink{classGlobalSearch_1_1Structure}{Structure} has completed an optimization step but may still have some to complete. \hyperlink{classGlobalSearch_1_1Structure_a955a416ce3d99e5ecc0a68c23e33824c}{get\-Current\-Opt\-Step()} shows the step that has just completed. \index{Waiting\-For\-Optimization@{Waiting\-For\-Optimization}!Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}}\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!Waiting\-For\-Optimization@{Waiting\-For\-Optimization}}\item[{\em 
+\hypertarget{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917ad4d8f76770421b6ab8d39f60e280a0a0}{Waiting\-For\-Optimization}\label{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917ad4d8f76770421b6ab8d39f60e280a0a0}
+}]\hyperlink{classGlobalSearch_1_1Structure}{Structure} is waiting to start an optimization step. \hyperlink{classGlobalSearch_1_1Structure_a955a416ce3d99e5ecc0a68c23e33824c}{get\-Current\-Opt\-Step()} shows the step it will start next. \index{In\-Process@{In\-Process}!Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}}\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!In\-Process@{In\-Process}}\item[{\em 
+\hypertarget{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917a4f451a4c3de6ed294e1c7d06e5b1d24c}{In\-Process}\label{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917a4f451a4c3de6ed294e1c7d06e5b1d24c}
+}]\hyperlink{classGlobalSearch_1_1Structure}{Structure} is currently queued or running an optimization step on the P\-B\-S server (if applicable). \index{Empty@{Empty}!Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}}\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!Empty@{Empty}}\item[{\em 
+\hypertarget{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917a1639a0fd1ec7f1bba6cdaf73a2e76582}{Empty}\label{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917a1639a0fd1ec7f1bba6cdaf73a2e76582}
+}]\hyperlink{classGlobalSearch_1_1Structure}{Structure} has just been generated, and has not yet been initialized \index{Updating@{Updating}!Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}}\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!Updating@{Updating}}\item[{\em 
+\hypertarget{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917ae64ed17fe917f0b8fd679078b5b12447}{Updating}\label{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917ae64ed17fe917f0b8fd679078b5b12447}
+}]The \hyperlink{classGlobalSearch_1_1Structure}{Structure} has completed it's current optimization step, and the results of the calculation are being transferred and applied. \index{Error@{Error}!Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}}\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!Error@{Error}}\item[{\em 
+\hypertarget{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917a6b33b578b7e228f289720292019a998a}{Error}\label{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917a6b33b578b7e228f289720292019a998a}
+}]The optimization is failing. \index{Submitted@{Submitted}!Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}}\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!Submitted@{Submitted}}\item[{\em 
+\hypertarget{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917a5a0e4ad5830e2c3a9b045da79098b6c7}{Submitted}\label{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917a5a0e4ad5830e2c3a9b045da79098b6c7}
+}]The \hyperlink{classGlobalSearch_1_1Structure}{Structure} has been submitted to the P\-B\-S server, but has not appeared in the queue yet. \index{Killed@{Killed}!Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}}\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!Killed@{Killed}}\item[{\em 
+\hypertarget{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917acd16cf0031d5e5b522b61618fd73fdc1}{Killed}\label{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917acd16cf0031d5e5b522b61618fd73fdc1}
+}]The \hyperlink{classGlobalSearch_1_1Structure}{Structure} has been killed before finishing all optimization steps. \index{Removed@{Removed}!Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}}\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!Removed@{Removed}}\item[{\em 
+\hypertarget{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917ac5686d195648a0800584c59d034e8be0}{Removed}\label{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917ac5686d195648a0800584c59d034e8be0}
+}]The \hyperlink{classGlobalSearch_1_1Structure}{Structure} has been killed after finishing all optimization steps. \index{Duplicate@{Duplicate}!Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}}\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!Duplicate@{Duplicate}}\item[{\em 
+\hypertarget{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917a1cd89f1eb6cab53ae2bb1b2ad64dfe72}{Duplicate}\label{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917a1cd89f1eb6cab53ae2bb1b2ad64dfe72}
+}]The \hyperlink{classGlobalSearch_1_1Structure}{Structure} has been found to be a duplicate of another. The other structure's information can be found in \hyperlink{classGlobalSearch_1_1Structure_a495b4fd01788d6d10b3d6b138784d52d}{get\-Duplicate\-String()}. \index{Restart@{Restart}!Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}}\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!Restart@{Restart}}\item[{\em 
+\hypertarget{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917a99c42cb7635428e83d759cdae79209ec}{Restart}\label{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917a99c42cb7635428e83d759cdae79209ec}
+}]The \hyperlink{classGlobalSearch_1_1Structure}{Structure} is about to restart it's current optimization step. \end{description}
+\end{Desc}
+
+
+Definition at line 102 of file structure.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classGlobalSearch_1_1Structure_ab7e8a0041535442bca879148833831ac}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!Structure@{Structure}}
+\index{Structure@{Structure}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{Structure}]{\setlength{\rightskip}{0pt plus 5cm}Global\-Search\-::\-Structure\-::\-Structure (
+\begin{DoxyParamCaption}
+\item[{Q\-Object $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{classGlobalSearch_1_1Structure_ab7e8a0041535442bca879148833831ac}
+Constructor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & The object parent. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 42 of file structure.\-cpp.
+
+
+
+References Empty, reset\-Fail\-Count(), and set\-Status().
+
+\hypertarget{classGlobalSearch_1_1Structure_ad5f2adb0f379ee6dde14984df3eb73bc}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!Structure@{Structure}}
+\index{Structure@{Structure}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{Structure}]{\setlength{\rightskip}{0pt plus 5cm}Global\-Search\-::\-Structure\-::\-Structure (
+\begin{DoxyParamCaption}
+\item[{const {\bf Structure} \&}]{other}
+\end{DoxyParamCaption}
+)}}\label{classGlobalSearch_1_1Structure_ad5f2adb0f379ee6dde14984df3eb73bc}
+Copy constructor. 
+
+Definition at line 61 of file structure.\-cpp.
+
+\hypertarget{classGlobalSearch_1_1Structure_a2630d5c42da1cd86bd0c3b7d79e69618}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!Structure@{Structure}}
+\index{Structure@{Structure}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{Structure}]{\setlength{\rightskip}{0pt plus 5cm}Global\-Search\-::\-Structure\-::\-Structure (
+\begin{DoxyParamCaption}
+\item[{const Avogadro\-::\-Molecule \&}]{other}
+\end{DoxyParamCaption}
+)}}\label{classGlobalSearch_1_1Structure_a2630d5c42da1cd86bd0c3b7d79e69618}
+Explicit copy constructor for Molecules. 
+
+Definition at line 77 of file structure.\-cpp.
+
+\hypertarget{classGlobalSearch_1_1Structure_a29cc3acd03872d7641a2fd76a53e0491}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!$\sim$\-Structure@{$\sim$\-Structure}}
+\index{$\sim$\-Structure@{$\sim$\-Structure}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{$\sim$\-Structure}]{\setlength{\rightskip}{0pt plus 5cm}Global\-Search\-::\-Structure\-::$\sim$\-Structure (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classGlobalSearch_1_1Structure_a29cc3acd03872d7641a2fd76a53e0491}
+Destructor. 
+
+Definition at line 189 of file structure.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classGlobalSearch_1_1Structure_a8e0db651a3a48cd249f13f3ae0ca2b68}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!add\-Atom\-Randomly@{add\-Atom\-Randomly}}
+\index{add\-Atom\-Randomly@{add\-Atom\-Randomly}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{add\-Atom\-Randomly}]{\setlength{\rightskip}{0pt plus 5cm}bool Global\-Search\-::\-Structure\-::add\-Atom\-Randomly (
+\begin{DoxyParamCaption}
+\item[{uint}]{atomic\-Number, }
+\item[{double}]{min\-I\-A\-D = {\ttfamily 0.0}, }
+\item[{double}]{max\-I\-A\-D = {\ttfamily 0.0}, }
+\item[{int}]{max\-Attempts = {\ttfamily 1000}, }
+\item[{Avogadro\-::\-Atom $\ast$$\ast$}]{atom = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classGlobalSearch_1_1Structure_a8e0db651a3a48cd249f13f3ae0ca2b68}
+Add an atom to a random position in the \hyperlink{classGlobalSearch_1_1Structure}{Structure}. If no other atoms exist in the \hyperlink{classGlobalSearch_1_1Structure}{Structure}, the new atom is placed at (0,0,0).
+
+\begin{DoxyReturn}{Returns}
+true if the atom was sucessfully added within the specified interatomic distances.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em atomic\-Number} & Atomic number of atom to add.\\
+\hline
+{\em min\-I\-A\-D} & Smallest interatomic distance allowed (N\-U\-L\-L or omit for no limit)\\
+\hline
+{\em max\-I\-A\-D} & Largest interatomic distance allowed (N\-U\-L\-L or omit for no limit)\\
+\hline
+{\em max\-Attempts} & Maximum number of tries before giving up.\\
+\hline
+{\em atom} & Returns a pointer to the new atom. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 591 of file structure.\-cpp.
+
+
+
+References get\-Nearest\-Neighbor\-Distance().
+
+\hypertarget{classGlobalSearch_1_1Structure_ab1ea99315ad11fc88f0941069f169f1a}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!add\-Failure@{add\-Failure}}
+\index{add\-Failure@{add\-Failure}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{add\-Failure}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Structure\-::add\-Failure (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Structure_ab1ea99315ad11fc88f0941069f169f1a}
+Increase the number of times this \hyperlink{classGlobalSearch_1_1Structure}{Structure} has failed the current optimization step by one.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_a27532f25313083bea490b3b6fa84c743}{reset\-Fail\-Count} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a130a124d8cd7d440d4c902726492e41b}{set\-Fail\-Count} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a39a044521e91f117be11fcf9a1a562b3}{get\-Fail\-Count} 
+\end{DoxySeeAlso}
+
+
+Definition at line 972 of file structure.\-h.
+
+
+
+References get\-Fail\-Count(), and set\-Fail\-Count().
+
+\hypertarget{classGlobalSearch_1_1Structure_a92cca2b7d5a566d69dd228d267758c73}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!compare\-I\-A\-D\-Distributions@{compare\-I\-A\-D\-Distributions}}
+\index{compare\-I\-A\-D\-Distributions@{compare\-I\-A\-D\-Distributions}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{compare\-I\-A\-D\-Distributions}]{\setlength{\rightskip}{0pt plus 5cm}bool Global\-Search\-::\-Structure\-::compare\-I\-A\-D\-Distributions (
+\begin{DoxyParamCaption}
+\item[{const std\-::vector$<$ double $>$ \&}]{d, }
+\item[{const std\-::vector$<$ double $>$ \&}]{f1, }
+\item[{const std\-::vector$<$ double $>$ \&}]{f2, }
+\item[{double}]{decay, }
+\item[{double}]{smear, }
+\item[{double $\ast$}]{error}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Structure_a92cca2b7d5a566d69dd228d267758c73}
+Compare two I\-A\-D histograms.
+
+Given two histograms over the same range with the same step, this function calculates an error value to measure the differences between the two. A boxcar smoothing is performed using a width of \char`\"{}smear\char`\"{}, and an optional weight can be applied. The weight is a standard exponential decay with a halflife of \char`\"{}decay\char`\"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & List of distances \\
+\hline
+{\em f1} & First list of frequencies \\
+\hline
+{\em f2} & Second list of frequencies \\
+\hline
+{\em decay} & Exponential decay parameter for lowering weight of large I\-A\-Ds \\
+\hline
+{\em smear} & Boxcar smoothing width in Angstroms \\
+\hline
+{\em error} & Return error value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether or not the operation could be performed. 
+\end{DoxyReturn}
+
+
+Definition at line 966 of file structure.\-cpp.
+
+
+
+Referenced by compare\-I\-A\-D\-Distributions().
+
+\hypertarget{classGlobalSearch_1_1Structure_a70f9ced5a098560bad9fe97d1bb6361a}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!compare\-I\-A\-D\-Distributions@{compare\-I\-A\-D\-Distributions}}
+\index{compare\-I\-A\-D\-Distributions@{compare\-I\-A\-D\-Distributions}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{compare\-I\-A\-D\-Distributions}]{\setlength{\rightskip}{0pt plus 5cm}bool Global\-Search\-::\-Structure\-::compare\-I\-A\-D\-Distributions (
+\begin{DoxyParamCaption}
+\item[{const Q\-List$<$ double $>$ \&}]{d, }
+\item[{const Q\-List$<$ double $>$ \&}]{f1, }
+\item[{const Q\-List$<$ double $>$ \&}]{f2, }
+\item[{double}]{decay, }
+\item[{double}]{smear, }
+\item[{double $\ast$}]{error}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Structure_a70f9ced5a098560bad9fe97d1bb6361a}
+Compare two I\-A\-D histograms.
+
+Given two histograms over the same range with the same step, this function calculates an error value to measure the differences between the two. A boxcar smoothing is performed using a width of \char`\"{}smear\char`\"{}, and an optional weight can be applied. The weight is a standard exponential decay with a halflife of \char`\"{}decay\char`\"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & List of distances \\
+\hline
+{\em f1} & First list of frequencies \\
+\hline
+{\em f2} & Second list of frequencies \\
+\hline
+{\em decay} & Exponential decay parameter for lowering weight of large I\-A\-Ds \\
+\hline
+{\em smear} & Boxcar smoothing width in Angstroms \\
+\hline
+{\em error} & Return error value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether or not the operation could be performed. 
+\end{DoxyReturn}
+
+
+Definition at line 1037 of file structure.\-cpp.
+
+
+
+References compare\-I\-A\-D\-Distributions().
+
+\hypertarget{classGlobalSearch_1_1Structure_aaed919f70884814f824aac01d619f004}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!compare\-I\-A\-D\-Distributions@{compare\-I\-A\-D\-Distributions}}
+\index{compare\-I\-A\-D\-Distributions@{compare\-I\-A\-D\-Distributions}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{compare\-I\-A\-D\-Distributions}]{\setlength{\rightskip}{0pt plus 5cm}bool Global\-Search\-::\-Structure\-::compare\-I\-A\-D\-Distributions (
+\begin{DoxyParamCaption}
+\item[{const Q\-List$<$ Q\-Variant $>$ \&}]{d, }
+\item[{const Q\-List$<$ Q\-Variant $>$ \&}]{f1, }
+\item[{const Q\-List$<$ Q\-Variant $>$ \&}]{f2, }
+\item[{double}]{decay, }
+\item[{double}]{smear, }
+\item[{double $\ast$}]{error}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Structure_aaed919f70884814f824aac01d619f004}
+Compare two I\-A\-D histograms.
+
+Given two histograms over the same range with the same step, this function calculates an error value to measure the differences between the two. A boxcar smoothing is performed using a width of \char`\"{}smear\char`\"{}, and an optional weight can be applied. The weight is a standard exponential decay with a halflife of \char`\"{}decay\char`\"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & List of distances \\
+\hline
+{\em f1} & First list of frequencies \\
+\hline
+{\em f2} & Second list of frequencies \\
+\hline
+{\em decay} & Exponential decay parameter for lowering weight of large I\-A\-Ds \\
+\hline
+{\em smear} & Boxcar smoothing width in Angstroms \\
+\hline
+{\em error} & Return error value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether or not the operation could be performed. 
+\end{DoxyReturn}
+
+
+Definition at line 1058 of file structure.\-cpp.
+
+
+
+References compare\-I\-A\-D\-Distributions().
+
+\hypertarget{classGlobalSearch_1_1Structure_accb684b9686676fd61164f298460f195}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!copy\-Structure@{copy\-Structure}}
+\index{copy\-Structure@{copy\-Structure}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{copy\-Structure}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Structure} \& Global\-Search\-::\-Structure\-::copy\-Structure (
+\begin{DoxyParamCaption}
+\item[{const {\bf Structure} \&}]{other}
+\end{DoxyParamCaption}
+)}}\label{classGlobalSearch_1_1Structure_accb684b9686676fd61164f298460f195}
+Only update this structure's atoms, bonds, and residue information from {\itshape other}. \begin{DoxySeeAlso}{See Also}
+operator= 
+\end{DoxySeeAlso}
+
+
+Definition at line 225 of file structure.\-cpp.
+
+
+
+Referenced by operator=().
+
+\hypertarget{classGlobalSearch_1_1Structure_ab1f8dc25ec23c06bd8edac7b0f719906}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!delete\-From\-History@{delete\-From\-History}}
+\index{delete\-From\-History@{delete\-From\-History}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{delete\-From\-History}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Structure\-::delete\-From\-History (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Structure_ab1f8dc25ec23c06bd8edac7b0f719906}
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of entry to remove from structure's history. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 552 of file structure.\-cpp.
+
+
+
+References size\-Of\-History().
+
+\hypertarget{classGlobalSearch_1_1Structure_a36f95cfbd571cce162a4bc59bb468f61}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!enable\-Auto\-Histogram\-Generation@{enable\-Auto\-Histogram\-Generation}}
+\index{enable\-Auto\-Histogram\-Generation@{enable\-Auto\-Histogram\-Generation}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{enable\-Auto\-Histogram\-Generation}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Structure\-::enable\-Auto\-Histogram\-Generation (
+\begin{DoxyParamCaption}
+\item[{bool}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Structure_a36f95cfbd571cce162a4bc59bb468f61}
+Set whether the default histogram generation should be performed (default is off) 
+
+Definition at line 132 of file structure.\-cpp.
+
+
+
+References request\-Histogram\-Generation().
+
+\hypertarget{classGlobalSearch_1_1Structure_a57ae57cebf3df177a1363b91383a1c69}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!generate\-Default\-Histogram@{generate\-Default\-Histogram}}
+\index{generate\-Default\-Histogram@{generate\-Default\-Histogram}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{generate\-Default\-Histogram}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Structure\-::generate\-Default\-Histogram (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Structure_a57ae57cebf3df177a1363b91383a1c69}
+Generate default histogram data (0\-:10 A, 0.\-01 A step) \begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_a18edce7ebc0e1f5d0f939369a737c778}{is\-Histogram\-Generation\-Pending()} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a668fcf6ecb33ad5fd3ef9963dd059ce0}{get\-Default\-Histogram()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 801 of file structure.\-cpp.
+
+
+
+References generate\-I\-A\-D\-Histogram().
+
+
+
+Referenced by request\-Histogram\-Generation().
+
+\hypertarget{classGlobalSearch_1_1Structure_a39c00be4b7081dea0963a9183c5d8d36}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!generate\-I\-A\-D\-Histogram@{generate\-I\-A\-D\-Histogram}}
+\index{generate\-I\-A\-D\-Histogram@{generate\-I\-A\-D\-Histogram}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{generate\-I\-A\-D\-Histogram}]{\setlength{\rightskip}{0pt plus 5cm}bool Global\-Search\-::\-Structure\-::generate\-I\-A\-D\-Histogram (
+\begin{DoxyParamCaption}
+\item[{Q\-List$<$ double $>$ $\ast$}]{distance, }
+\item[{Q\-List$<$ double $>$ $\ast$}]{frequency, }
+\item[{double}]{min = {\ttfamily 0.0}, }
+\item[{double}]{max = {\ttfamily 10.0}, }
+\item[{double}]{step = {\ttfamily 0.01}, }
+\item[{Avogadro\-::\-Atom $\ast$}]{atom = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classGlobalSearch_1_1Structure_a39c00be4b7081dea0963a9183c5d8d36}
+Generate data for a histogram of the distances between all atoms, or between one atom and all others.
+
+If the parameter atom is specified, the resulting data will represent the distance distribution between that atom and all others. If omitted (or N\-U\-L\-L), a histogram of all interatomic distances is calculated.
+
+Useful for estimating the coordination number of an atom from a plot.
+
+\begin{DoxyWarning}{Warning}
+This algorithm is not thoroughly tested and should not be relied upon. It is merely an estimation.
+\end{DoxyWarning}
+\begin{DoxyReturn}{Returns}
+true if the operation makes sense for this \hyperlink{classGlobalSearch_1_1Structure}{Structure}, false otherwise (i.\-e. fewer than one atom present)
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em distance} & List of distance values for the histogram bins.\\
+\hline
+{\em frequency} & Number of Atoms within the corresponding distance bin.\\
+\hline
+{\em min} & Value of starting histogram distance. \\
+\hline
+{\em max} & Value of ending histogram distance. \\
+\hline
+{\em step} & Increment between bins. \\
+\hline
+{\em atom} & Optional\-: Atom to calculate distances from.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_adee82bcb74af1c15bb91e5a9aa0e3849}{get\-Shortest\-Interatomic\-Distance} 
+
+\hyperlink{classGlobalSearch_1_1Structure_aaed562bf0ad4fe7bec1567eb84dbeee2}{request\-Histogram\-Generation} 
+
+\hyperlink{classGlobalSearch_1_1Structure_af90032040343059ebbc91ac294a0a020}{get\-Nearest\-Neighbor\-Distance} 
+\end{DoxySeeAlso}
+
+
+Definition at line 823 of file structure.\-cpp.
+
+
+
+Referenced by generate\-Default\-Histogram().
+
+\hypertarget{classGlobalSearch_1_1Structure_a6009cbdb3990eba689cbdd27aa0305ea}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!generate\-I\-A\-D\-Histogram@{generate\-I\-A\-D\-Histogram}}
+\index{generate\-I\-A\-D\-Histogram@{generate\-I\-A\-D\-Histogram}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{generate\-I\-A\-D\-Histogram}]{\setlength{\rightskip}{0pt plus 5cm}bool Global\-Search\-::\-Structure\-::generate\-I\-A\-D\-Histogram (
+\begin{DoxyParamCaption}
+\item[{Q\-List$<$ Q\-Variant $>$ $\ast$}]{distance, }
+\item[{Q\-List$<$ Q\-Variant $>$ $\ast$}]{frequency, }
+\item[{double}]{min = {\ttfamily 0.0}, }
+\item[{double}]{max = {\ttfamily 10.0}, }
+\item[{double}]{step = {\ttfamily 0.01}, }
+\item[{Avogadro\-::\-Atom $\ast$}]{atom = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classGlobalSearch_1_1Structure_a6009cbdb3990eba689cbdd27aa0305ea}
+Generate data for a histogram of the distances between all atoms, or between one atom and all others.
+
+If the parameter atom is specified, the resulting data will represent the distance distribution between that atom and all others. If omitted (or N\-U\-L\-L), a histogram of all interatomic distances is calculated.
+
+Useful for estimating the coordination number of an atom from a plot.
+
+\begin{DoxyWarning}{Warning}
+This algorithm is not thoroughly tested and should not be relied upon. It is merely an estimation.
+\end{DoxyWarning}
+\begin{DoxyReturn}{Returns}
+true if the operation makes sense for this \hyperlink{classGlobalSearch_1_1Structure}{Structure}, false otherwise (i.\-e. fewer than one atom present)
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em distance} & List of distance values for the histogram bins.\\
+\hline
+{\em frequency} & Number of Atoms within the corresponding distance bin.\\
+\hline
+{\em min} & Value of starting histogram distance. \\
+\hline
+{\em max} & Value of ending histogram distance. \\
+\hline
+{\em step} & Increment between bins. \\
+\hline
+{\em atom} & Optional\-: Atom to calculate distances from.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_adee82bcb74af1c15bb91e5a9aa0e3849}{get\-Shortest\-Interatomic\-Distance} 
+
+\hyperlink{classGlobalSearch_1_1Structure_aaed562bf0ad4fe7bec1567eb84dbeee2}{request\-Histogram\-Generation} 
+
+\hyperlink{classGlobalSearch_1_1Structure_af90032040343059ebbc91ac294a0a020}{get\-Nearest\-Neighbor\-Distance} 
+\end{DoxySeeAlso}
+
+
+Definition at line 897 of file structure.\-cpp.
+
+\hypertarget{classGlobalSearch_1_1Structure_a955a416ce3d99e5ecc0a68c23e33824c}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!get\-Current\-Opt\-Step@{get\-Current\-Opt\-Step}}
+\index{get\-Current\-Opt\-Step@{get\-Current\-Opt\-Step}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{get\-Current\-Opt\-Step}]{\setlength{\rightskip}{0pt plus 5cm}uint Global\-Search\-::\-Structure\-::get\-Current\-Opt\-Step (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classGlobalSearch_1_1Structure_a955a416ce3d99e5ecc0a68c23e33824c}
+\begin{DoxyReturn}{Returns}
+The current optimization step of the \hyperlink{classGlobalSearch_1_1Structure}{Structure}. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_a3aa37aac76ad5255e51a9113b3d64d40}{set\-Current\-Opt\-Step} 
+\end{DoxySeeAlso}
+
+
+Definition at line 279 of file structure.\-h.
+
+
+
+Referenced by Global\-Search\-::\-Optimizer\-::get\-Interpreted\-Templates(), Global\-Search\-::\-Opt\-Base\-::interpret\-Keyword\-\_\-base(), Global\-Search\-::\-Queue\-Manager\-::start\-Job(), and write\-Structure\-Settings().
+
+\hypertarget{classGlobalSearch_1_1Structure_a668fcf6ecb33ad5fd3ef9963dd059ce0}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!get\-Default\-Histogram@{get\-Default\-Histogram}}
+\index{get\-Default\-Histogram@{get\-Default\-Histogram}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{get\-Default\-Histogram}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Structure\-::get\-Default\-Histogram (
+\begin{DoxyParamCaption}
+\item[{Q\-List$<$ double $>$ $\ast$}]{dist, }
+\item[{Q\-List$<$ double $>$ $\ast$}]{freq}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classGlobalSearch_1_1Structure_a668fcf6ecb33ad5fd3ef9963dd059ce0}
+Get the default histogram data. 
+
+Definition at line 807 of file structure.\-cpp.
+
+\hypertarget{classGlobalSearch_1_1Structure_a15748e6ccd1971f70dcf24d26a07388f}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!get\-Default\-Histogram@{get\-Default\-Histogram}}
+\index{get\-Default\-Histogram@{get\-Default\-Histogram}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{get\-Default\-Histogram}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Structure\-::get\-Default\-Histogram (
+\begin{DoxyParamCaption}
+\item[{Q\-List$<$ Q\-Variant $>$ $\ast$}]{dist, }
+\item[{Q\-List$<$ Q\-Variant $>$ $\ast$}]{freq}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classGlobalSearch_1_1Structure_a15748e6ccd1971f70dcf24d26a07388f}
+Get the default histogram data. 
+
+Definition at line 817 of file structure.\-cpp.
+
+\hypertarget{classGlobalSearch_1_1Structure_a495b4fd01788d6d10b3d6b138784d52d}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!get\-Duplicate\-String@{get\-Duplicate\-String}}
+\index{get\-Duplicate\-String@{get\-Duplicate\-String}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{get\-Duplicate\-String}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String Global\-Search\-::\-Structure\-::get\-Duplicate\-String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classGlobalSearch_1_1Structure_a495b4fd01788d6d10b3d6b138784d52d}
+\begin{DoxyReturn}{Returns}
+A string naming the \hyperlink{classGlobalSearch_1_1Structure}{Structure} that this \hyperlink{classGlobalSearch_1_1Structure}{Structure} is a duplicate of. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_a59fe04ad733d7a770e3775339d71b8c3}{set\-Duplicate\-String} 
+\end{DoxySeeAlso}
+
+
+Definition at line 257 of file structure.\-h.
+
+\hypertarget{classGlobalSearch_1_1Structure_acc6db7487d8bbeacda3868734f4294bd}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!get\-Energy@{get\-Energy}}
+\index{get\-Energy@{get\-Energy}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{get\-Energy}]{\setlength{\rightskip}{0pt plus 5cm}double Global\-Search\-::\-Structure\-::get\-Energy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classGlobalSearch_1_1Structure_acc6db7487d8bbeacda3868734f4294bd}
+Return the energy value of the first conformer in e\-V. This is a convenience function.
+
+\begin{DoxyNote}{Note}
+The energies of the other conformers are still available using energy(int). Be aware that energy(int) returns kcal/mol. The multiplicative factor E\-V\-\_\-\-T\-O\-\_\-\-K\-C\-A\-L\-\_\-\-P\-E\-R\-\_\-\-M\-O\-L has been defined to aid conversion.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+The energy of the first conformer in e\-V. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_a3f0ef2f62e4467c70044bbf3965b6a26}{set\-Enthalpy} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a6f963ec03dda49caa05f5eb8a9f19c39}{has\-Enthalpy} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a4eda6eb8ce8080fae9fe91587039e748}{set\-P\-V} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a66f08d0683f89fa6791b5b7b9838955d}{get\-P\-V} 
+
+set\-Energy 
+
+\hyperlink{classGlobalSearch_1_1Structure_acc6db7487d8bbeacda3868734f4294bd}{get\-Energy} 
+\end{DoxySeeAlso}
+
+
+Definition at line 170 of file structure.\-h.
+
+
+
+Referenced by get\-Enthalpy().
+
+\hypertarget{classGlobalSearch_1_1Structure_a45e5069495574ae2d4b73a1759b7326b}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!get\-Enthalpy@{get\-Enthalpy}}
+\index{get\-Enthalpy@{get\-Enthalpy}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{get\-Enthalpy}]{\setlength{\rightskip}{0pt plus 5cm}double Global\-Search\-::\-Structure\-::get\-Enthalpy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classGlobalSearch_1_1Structure_a45e5069495574ae2d4b73a1759b7326b}
+Return the enthalpy value of the first conformer in e\-V.
+
+\begin{DoxyNote}{Note}
+If the enthalpy is not set but the energy is set, this function assumes that the system is at zero-\/pressure and returns the energy.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+The enthalpy of the first conformer in e\-V. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_a3f0ef2f62e4467c70044bbf3965b6a26}{set\-Enthalpy} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a6f963ec03dda49caa05f5eb8a9f19c39}{has\-Enthalpy} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a4eda6eb8ce8080fae9fe91587039e748}{set\-P\-V} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a66f08d0683f89fa6791b5b7b9838955d}{get\-P\-V} 
+
+set\-Energy 
+
+\hyperlink{classGlobalSearch_1_1Structure_acc6db7487d8bbeacda3868734f4294bd}{get\-Energy} 
+\end{DoxySeeAlso}
+
+
+Definition at line 186 of file structure.\-h.
+
+
+
+References get\-Energy().
+
+
+
+Referenced by get\-Fingerprint(), Global\-Search\-::\-Opt\-Base\-::get\-Probability\-List(), get\-Results\-Entry(), rank\-By\-Enthalpy(), and sort\-By\-Enthalpy().
+
+\hypertarget{classGlobalSearch_1_1Structure_a39a044521e91f117be11fcf9a1a562b3}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!get\-Fail\-Count@{get\-Fail\-Count}}
+\index{get\-Fail\-Count@{get\-Fail\-Count}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{get\-Fail\-Count}]{\setlength{\rightskip}{0pt plus 5cm}uint Global\-Search\-::\-Structure\-::get\-Fail\-Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classGlobalSearch_1_1Structure_a39a044521e91f117be11fcf9a1a562b3}
+\begin{DoxyReturn}{Returns}
+The number of times this \hyperlink{classGlobalSearch_1_1Structure}{Structure} has failed the current optimization step. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_a130a124d8cd7d440d4c902726492e41b}{set\-Fail\-Count} 
+
+\hyperlink{classGlobalSearch_1_1Structure_ab1ea99315ad11fc88f0941069f169f1a}{add\-Failure} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a27532f25313083bea490b3b6fa84c743}{reset\-Fail\-Count} 
+\end{DoxySeeAlso}
+
+
+Definition at line 287 of file structure.\-h.
+
+
+
+Referenced by add\-Failure(), Global\-Search\-::\-Queue\-Manager\-::check\-Population(), and write\-Structure\-Settings().
+
+\hypertarget{classGlobalSearch_1_1Structure_afc441f647ad6f72bf415ea06a657220a}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!get\-Fingerprint@{get\-Fingerprint}}
+\index{get\-Fingerprint@{get\-Fingerprint}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{get\-Fingerprint}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Hash$<$ Q\-String, Q\-Variant $>$ Global\-Search\-::\-Structure\-::get\-Fingerprint (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classGlobalSearch_1_1Structure_afc441f647ad6f72bf415ea06a657220a}
+A \char`\"{}fingerprint\char`\"{} hash of the structure. Returns \char`\"{}enthalpy\char`\"{} key with the enthalpy value as a double wrapped in a Q\-Variant. May be extended in derived classes.
+
+Used for checking if two Structures are similar enough to be marked as duplicates.
+
+\begin{DoxyReturn}{Returns}
+A hash of key/value pairs containing data that is representative of the \hyperlink{classGlobalSearch_1_1Structure}{Structure}. 
+\end{DoxyReturn}
+
+
+Definition at line 1181 of file structure.\-cpp.
+
+
+
+References get\-Enthalpy().
+
+\hypertarget{classGlobalSearch_1_1Structure_a7caa9c46c88ac5711cf9d150bd0dcbd6}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!get\-Generation@{get\-Generation}}
+\index{get\-Generation@{get\-Generation}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{get\-Generation}]{\setlength{\rightskip}{0pt plus 5cm}uint Global\-Search\-::\-Structure\-::get\-Generation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classGlobalSearch_1_1Structure_a7caa9c46c88ac5711cf9d150bd0dcbd6}
+Returns the generation number of the structure. Only useful for genetic/evolutionary algorithms. \begin{DoxyReturn}{Returns}
+Generation number 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_a2c3d51c041d38d172f3169d8c8d31b45}{set\-Generation} 
+
+\hyperlink{classGlobalSearch_1_1Structure_afc86429da4b4d6673a8c33a58841905d}{get\-I\-D\-Number} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a73f8f57a695b3bebdea8a8b3d75e4138}{get\-Index} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a9ecf515564a4063d37ab1d0a8eb14d11}{set\-I\-D\-Number} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a9f25226379d189f1bfd9e4698585c2e9}{set\-Index} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a38b039e671cdcae7eab7b976c93255de}{get\-I\-D\-String} 
+\end{DoxySeeAlso}
+
+
+Definition at line 224 of file structure.\-h.
+
+
+
+Referenced by get\-I\-D\-String(), get\-Results\-Entry(), Global\-Search\-::\-Opt\-Base\-::interpret\-Keyword\-\_\-base(), and write\-Structure\-Settings().
+
+\hypertarget{classGlobalSearch_1_1Structure_afc86429da4b4d6673a8c33a58841905d}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!get\-I\-D\-Number@{get\-I\-D\-Number}}
+\index{get\-I\-D\-Number@{get\-I\-D\-Number}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{get\-I\-D\-Number}]{\setlength{\rightskip}{0pt plus 5cm}uint Global\-Search\-::\-Structure\-::get\-I\-D\-Number (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classGlobalSearch_1_1Structure_afc86429da4b4d6673a8c33a58841905d}
+Returns an I\-D number associated with the \hyperlink{classGlobalSearch_1_1Structure}{Structure}.
+
+\begin{DoxyNote}{Note}
+If a generation number is used as well, this may not be unique. 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Identification number 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_a2c3d51c041d38d172f3169d8c8d31b45}{set\-Generation} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a7caa9c46c88ac5711cf9d150bd0dcbd6}{get\-Generation} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a73f8f57a695b3bebdea8a8b3d75e4138}{get\-Index} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a9ecf515564a4063d37ab1d0a8eb14d11}{set\-I\-D\-Number} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a9f25226379d189f1bfd9e4698585c2e9}{set\-Index} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a38b039e671cdcae7eab7b976c93255de}{get\-I\-D\-String} 
+\end{DoxySeeAlso}
+
+
+Definition at line 238 of file structure.\-h.
+
+
+
+Referenced by get\-I\-D\-String(), get\-Results\-Entry(), Global\-Search\-::\-Opt\-Base\-::interpret\-Keyword\-\_\-base(), and write\-Structure\-Settings().
+
+\hypertarget{classGlobalSearch_1_1Structure_a38b039e671cdcae7eab7b976c93255de}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!get\-I\-D\-String@{get\-I\-D\-String}}
+\index{get\-I\-D\-String@{get\-I\-D\-String}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{get\-I\-D\-String}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String Global\-Search\-::\-Structure\-::get\-I\-D\-String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classGlobalSearch_1_1Structure_a38b039e671cdcae7eab7b976c93255de}
+Returns a unique identification string. Defaults to \mbox{[}generation\mbox{]}x\mbox{[}I\-D\-Number\mbox{]}. Handy for debugging/error output. \begin{DoxyReturn}{Returns}
+Unique identification string. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_a2c3d51c041d38d172f3169d8c8d31b45}{set\-Generation} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a7caa9c46c88ac5711cf9d150bd0dcbd6}{get\-Generation} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a9f25226379d189f1bfd9e4698585c2e9}{set\-Index} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a73f8f57a695b3bebdea8a8b3d75e4138}{get\-Index} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a9ecf515564a4063d37ab1d0a8eb14d11}{set\-I\-D\-Number} 
+
+\hyperlink{classGlobalSearch_1_1Structure_afc86429da4b4d6673a8c33a58841905d}{get\-I\-D\-Number} 
+\end{DoxySeeAlso}
+
+
+Definition at line 319 of file structure.\-h.
+
+
+
+References get\-Generation(), and get\-I\-D\-Number().
+
+
+
+Referenced by Global\-Search\-::\-Optimizer\-::get\-Interpreted\-Templates(), Global\-Search\-::\-Local\-Queue\-Interface\-::get\-Status(), Global\-Search\-::\-Optimizer\-::read(), Global\-Search\-::\-Local\-Queue\-Interface\-::start\-Job(), Global\-Search\-::\-Queue\-Manager\-::start\-Job(), Global\-Search\-::\-Queue\-Manager\-::unlock\-For\-Naming(), and Global\-Search\-::\-Optimizer\-::update().
+
+\hypertarget{classGlobalSearch_1_1Structure_a73f8f57a695b3bebdea8a8b3d75e4138}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!get\-Index@{get\-Index}}
+\index{get\-Index@{get\-Index}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{get\-Index}]{\setlength{\rightskip}{0pt plus 5cm}int Global\-Search\-::\-Structure\-::get\-Index (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classGlobalSearch_1_1Structure_a73f8f57a695b3bebdea8a8b3d75e4138}
+Returns a unique I\-D number associated with the \hyperlink{classGlobalSearch_1_1Structure}{Structure}. This is typically assigned in order of introduction to a tracker.
+
+\begin{DoxyReturn}{Returns}
+Unique identification number 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_a2c3d51c041d38d172f3169d8c8d31b45}{set\-Generation} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a7caa9c46c88ac5711cf9d150bd0dcbd6}{get\-Generation} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a73f8f57a695b3bebdea8a8b3d75e4138}{get\-Index} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a9ecf515564a4063d37ab1d0a8eb14d11}{set\-I\-D\-Number} 
+
+\hyperlink{classGlobalSearch_1_1Structure_afc86429da4b4d6673a8c33a58841905d}{get\-I\-D\-Number} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a38b039e671cdcae7eab7b976c93255de}{get\-I\-D\-String} 
+\end{DoxySeeAlso}
+
+
+Definition at line 251 of file structure.\-h.
+
+
+
+Referenced by write\-Structure\-Settings().
+
+\hypertarget{classGlobalSearch_1_1Structure_a6d044ecacb068406234a502d30664bea}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!get\-Job\-I\-D@{get\-Job\-I\-D}}
+\index{get\-Job\-I\-D@{get\-Job\-I\-D}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{get\-Job\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}uint Global\-Search\-::\-Structure\-::get\-Job\-I\-D (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classGlobalSearch_1_1Structure_a6d044ecacb068406234a502d30664bea}
+Returns the Job I\-D of the \hyperlink{classGlobalSearch_1_1Structure}{Structure}'s current running optimization. Returns zero is not running. \begin{DoxyReturn}{Returns}
+Job I\-D of the structure's optimization process. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_adbb752fe62009e8adbb55cc1fdef0de1}{set\-Job\-I\-D} 
+\end{DoxySeeAlso}
+
+
+Definition at line 212 of file structure.\-h.
+
+
+
+Referenced by Global\-Search\-::\-Local\-Queue\-Interface\-::get\-Status(), Global\-Search\-::\-Local\-Queue\-Interface\-::start\-Job(), Global\-Search\-::\-Local\-Queue\-Interface\-::stop\-Job(), and write\-Structure\-Settings().
+
+\hypertarget{classGlobalSearch_1_1Structure_af90032040343059ebbc91ac294a0a020}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!get\-Nearest\-Neighbor\-Distance@{get\-Nearest\-Neighbor\-Distance}}
+\index{get\-Nearest\-Neighbor\-Distance@{get\-Nearest\-Neighbor\-Distance}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{get\-Nearest\-Neighbor\-Distance}]{\setlength{\rightskip}{0pt plus 5cm}bool Global\-Search\-::\-Structure\-::get\-Nearest\-Neighbor\-Distance (
+\begin{DoxyParamCaption}
+\item[{const double}]{x, }
+\item[{const double}]{y, }
+\item[{const double}]{z, }
+\item[{double \&}]{shortest}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classGlobalSearch_1_1Structure_af90032040343059ebbc91ac294a0a020}
+Find the distance to the nearest atom from a specified point.
+
+Useful for checking if an atom will be too close to another atom before adding it.
+
+\begin{DoxyReturn}{Returns}
+true if the operation makes sense for this \hyperlink{classGlobalSearch_1_1Structure}{Structure}, false otherwise (i.\-e. fewer than one atom present)
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Cartesian coordinate \\
+\hline
+{\em y} & Cartesian coordinate \\
+\hline
+{\em z} & Cartesian coordinate \\
+\hline
+{\em shortest} & An empty double to be overwritten with the nearest neighbor distance. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_adee82bcb74af1c15bb91e5a9aa0e3849}{get\-Shortest\-Interatomic\-Distance} 
+
+get\-Nearest\-Neighbor\-Histogram 
+
+\hyperlink{classGlobalSearch_1_1Structure_a741bc226576a6aebdc72573afec08fe2}{get\-Neighbors} 
+\end{DoxySeeAlso}
+
+
+Definition at line 722 of file structure.\-cpp.
+
+
+
+Referenced by add\-Atom\-Randomly(), get\-Nearest\-Neighbor\-Distance(), and get\-Nearest\-Neighbor\-Distances().
+
+\hypertarget{classGlobalSearch_1_1Structure_af7280b04c20689040bb7bc69005aef49}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!get\-Nearest\-Neighbor\-Distance@{get\-Nearest\-Neighbor\-Distance}}
+\index{get\-Nearest\-Neighbor\-Distance@{get\-Nearest\-Neighbor\-Distance}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{get\-Nearest\-Neighbor\-Distance}]{\setlength{\rightskip}{0pt plus 5cm}bool Global\-Search\-::\-Structure\-::get\-Nearest\-Neighbor\-Distance (
+\begin{DoxyParamCaption}
+\item[{const Avogadro\-::\-Atom $\ast$}]{atom, }
+\item[{double \&}]{shortest}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classGlobalSearch_1_1Structure_af7280b04c20689040bb7bc69005aef49}
+Find the nearest neighbor distance of a specified atom.
+
+\begin{DoxyReturn}{Returns}
+true if the operation makes sense for this \hyperlink{classGlobalSearch_1_1Structure}{Structure}, false otherwise (i.\-e. fewer than one atom present)
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em atom} & Atom of interest \\
+\hline
+{\em shortest} & An empty double to be overwritten with the nearest neighbor distance. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_adee82bcb74af1c15bb91e5a9aa0e3849}{get\-Shortest\-Interatomic\-Distance} 
+
+get\-Nearest\-Neighbor\-Histogram 
+
+\hyperlink{classGlobalSearch_1_1Structure_a741bc226576a6aebdc72573afec08fe2}{get\-Neighbors} 
+\end{DoxySeeAlso}
+
+
+Definition at line 748 of file structure.\-cpp.
+
+
+
+References get\-Nearest\-Neighbor\-Distance().
+
+\hypertarget{classGlobalSearch_1_1Structure_ad5d59a1e8739f9cec4c39ca6d576d22a}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!get\-Nearest\-Neighbor\-Distances@{get\-Nearest\-Neighbor\-Distances}}
+\index{get\-Nearest\-Neighbor\-Distances@{get\-Nearest\-Neighbor\-Distances}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{get\-Nearest\-Neighbor\-Distances}]{\setlength{\rightskip}{0pt plus 5cm}bool Global\-Search\-::\-Structure\-::get\-Nearest\-Neighbor\-Distances (
+\begin{DoxyParamCaption}
+\item[{Q\-List$<$ double $>$ $\ast$}]{list}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classGlobalSearch_1_1Structure_ad5d59a1e8739f9cec4c39ca6d576d22a}
+Find the smallest separation between all atoms in the \hyperlink{classGlobalSearch_1_1Structure}{Structure}.
+
+\begin{DoxyReturn}{Returns}
+true if the operation makes sense for this \hyperlink{classGlobalSearch_1_1Structure}{Structure}, false otherwise (i.\-e. fewer than two atoms present)
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em list} & list of distances in Angstrom \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_af90032040343059ebbc91ac294a0a020}{get\-Nearest\-Neighbor\-Distance} 
+
+get\-Nearest\-Neighbor\-Histogram 
+
+\hyperlink{classGlobalSearch_1_1Structure_a741bc226576a6aebdc72573afec08fe2}{get\-Neighbors} 
+\end{DoxySeeAlso}
+
+
+Definition at line 677 of file structure.\-cpp.
+
+
+
+References get\-Nearest\-Neighbor\-Distance().
+
+\hypertarget{classGlobalSearch_1_1Structure_a741bc226576a6aebdc72573afec08fe2}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!get\-Neighbors@{get\-Neighbors}}
+\index{get\-Neighbors@{get\-Neighbors}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{get\-Neighbors}]{\setlength{\rightskip}{0pt plus 5cm}Q\-List$<$ Atom $\ast$ $>$ Global\-Search\-::\-Structure\-::get\-Neighbors (
+\begin{DoxyParamCaption}
+\item[{const double}]{x, }
+\item[{const double}]{y, }
+\item[{const double}]{z, }
+\item[{const double}]{cutoff, }
+\item[{Q\-List$<$ double $>$ $\ast$}]{distances = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const}}\label{classGlobalSearch_1_1Structure_a741bc226576a6aebdc72573afec08fe2}
+\begin{DoxyReturn}{Returns}
+a list of all atoms within {\itshape cutoff} of ({\itshape x},{\itshape y},{\itshape z}) and, optionally, their {\itshape distances}. 
+\end{DoxyReturn}
+
+
+Definition at line 757 of file structure.\-cpp.
+
+
+
+Referenced by get\-Neighbors().
+
+\hypertarget{classGlobalSearch_1_1Structure_af84f72e94d8961a8804ff38b0c20b785}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!get\-Neighbors@{get\-Neighbors}}
+\index{get\-Neighbors@{get\-Neighbors}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{get\-Neighbors}]{\setlength{\rightskip}{0pt plus 5cm}Q\-List$<$ Atom $\ast$ $>$ Global\-Search\-::\-Structure\-::get\-Neighbors (
+\begin{DoxyParamCaption}
+\item[{const Avogadro\-::\-Atom $\ast$}]{atom, }
+\item[{const double}]{cutoff, }
+\item[{Q\-List$<$ double $>$ $\ast$}]{distances = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const}}\label{classGlobalSearch_1_1Structure_af84f72e94d8961a8804ff38b0c20b785}
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+\begin{DoxyReturn}{Returns}
+a list of all atoms within {\itshape cutoff} of {\itshape atom} and, optionally, their {\itshape distances}. 
+\end{DoxyReturn}
+
+
+Definition at line 782 of file structure.\-cpp.
+
+
+
+References get\-Neighbors().
+
+\hypertarget{classGlobalSearch_1_1Structure_a447f0dd62f6546809d9b144bd971254f}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!get\-Number\-Of\-Atoms\-Alpha@{get\-Number\-Of\-Atoms\-Alpha}}
+\index{get\-Number\-Of\-Atoms\-Alpha@{get\-Number\-Of\-Atoms\-Alpha}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{get\-Number\-Of\-Atoms\-Alpha}]{\setlength{\rightskip}{0pt plus 5cm}Q\-List$<$ uint $>$ Global\-Search\-::\-Structure\-::get\-Number\-Of\-Atoms\-Alpha (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classGlobalSearch_1_1Structure_a447f0dd62f6546809d9b144bd971254f}
+\begin{DoxyReturn}{Returns}
+A list of the number of species present that corresponds to the symbols listed in \hyperlink{classGlobalSearch_1_1Structure_ac49455f75d38a9f1779179dad2ba8815}{get\-Symbols()}. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_ac49455f75d38a9f1779179dad2ba8815}{get\-Symbols} 
+\end{DoxySeeAlso}
+
+
+Definition at line 1095 of file structure.\-cpp.
+
+
+
+References get\-Symbols().
+
+\hypertarget{classGlobalSearch_1_1Structure_abd1f083a58dad102d0f0b3b3d89da2df}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!get\-Opt\-Elapsed@{get\-Opt\-Elapsed}}
+\index{get\-Opt\-Elapsed@{get\-Opt\-Elapsed}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{get\-Opt\-Elapsed}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String Global\-Search\-::\-Structure\-::get\-Opt\-Elapsed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classGlobalSearch_1_1Structure_abd1f083a58dad102d0f0b3b3d89da2df}
+\begin{DoxyReturn}{Returns}
+A string formated \char`\"{}\-H\-H\-:\-M\-M\-:\-S\-S\char`\"{} indicating the amount of time spent in the current optimization step
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_afc5507175ebfb4da413a5c40a2a8dfb3}{set\-Opt\-Timer\-Start} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a17a4bd931cc52643bb89a19c9298fc7f}{get\-Opt\-Timer\-Start} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a9ca3435fd1e634ddd665a5af63abc431}{set\-Opt\-Timer\-End} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a720cde3d4eabbeca51fd41160a89fb70}{get\-Opt\-Timer\-End} 
+
+\hyperlink{classGlobalSearch_1_1Structure_ae623efedfaa8980e5121199eec928298}{start\-Opt\-Timer} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a5f19c86d2e41ec95efd370e87049384f}{stop\-Opt\-Timer} 
+\end{DoxySeeAlso}
+
+
+Definition at line 1115 of file structure.\-cpp.
+
+\hypertarget{classGlobalSearch_1_1Structure_a720cde3d4eabbeca51fd41160a89fb70}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!get\-Opt\-Timer\-End@{get\-Opt\-Timer\-End}}
+\index{get\-Opt\-Timer\-End@{get\-Opt\-Timer\-End}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{get\-Opt\-Timer\-End}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Date\-Time Global\-Search\-::\-Structure\-::get\-Opt\-Timer\-End (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classGlobalSearch_1_1Structure_a720cde3d4eabbeca51fd41160a89fb70}
+\begin{DoxyReturn}{Returns}
+The time that the current optimization step ended. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_a17a4bd931cc52643bb89a19c9298fc7f}{get\-Opt\-Timer\-Start} 
+
+\hyperlink{classGlobalSearch_1_1Structure_ae623efedfaa8980e5121199eec928298}{start\-Opt\-Timer} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a5f19c86d2e41ec95efd370e87049384f}{stop\-Opt\-Timer} 
+
+\hyperlink{classGlobalSearch_1_1Structure_afc5507175ebfb4da413a5c40a2a8dfb3}{set\-Opt\-Timer\-Start} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a9ca3435fd1e634ddd665a5af63abc431}{set\-Opt\-Timer\-End} 
+
+\hyperlink{classGlobalSearch_1_1Structure_abd1f083a58dad102d0f0b3b3d89da2df}{get\-Opt\-Elapsed} 
+\end{DoxySeeAlso}
+
+
+Definition at line 307 of file structure.\-h.
+
+
+
+Referenced by write\-Structure\-Settings().
+
+\hypertarget{classGlobalSearch_1_1Structure_a17a4bd931cc52643bb89a19c9298fc7f}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!get\-Opt\-Timer\-Start@{get\-Opt\-Timer\-Start}}
+\index{get\-Opt\-Timer\-Start@{get\-Opt\-Timer\-Start}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{get\-Opt\-Timer\-Start}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Date\-Time Global\-Search\-::\-Structure\-::get\-Opt\-Timer\-Start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classGlobalSearch_1_1Structure_a17a4bd931cc52643bb89a19c9298fc7f}
+\begin{DoxyReturn}{Returns}
+The time that the current optimization step started. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_a720cde3d4eabbeca51fd41160a89fb70}{get\-Opt\-Timer\-End} 
+
+\hyperlink{classGlobalSearch_1_1Structure_ae623efedfaa8980e5121199eec928298}{start\-Opt\-Timer} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a5f19c86d2e41ec95efd370e87049384f}{stop\-Opt\-Timer} 
+
+\hyperlink{classGlobalSearch_1_1Structure_afc5507175ebfb4da413a5c40a2a8dfb3}{set\-Opt\-Timer\-Start} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a9ca3435fd1e634ddd665a5af63abc431}{set\-Opt\-Timer\-End} 
+
+\hyperlink{classGlobalSearch_1_1Structure_abd1f083a58dad102d0f0b3b3d89da2df}{get\-Opt\-Elapsed} 
+\end{DoxySeeAlso}
+
+
+Definition at line 297 of file structure.\-h.
+
+
+
+Referenced by write\-Structure\-Settings().
+
+\hypertarget{classGlobalSearch_1_1Structure_a0b30437b5e6cc5e6f3de9c413aa04847}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!get\-Parents@{get\-Parents}}
+\index{get\-Parents@{get\-Parents}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{get\-Parents}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String Global\-Search\-::\-Structure\-::get\-Parents (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classGlobalSearch_1_1Structure_a0b30437b5e6cc5e6f3de9c413aa04847}
+\begin{DoxyReturn}{Returns}
+a string describing the ancestory of the \hyperlink{classGlobalSearch_1_1Structure}{Structure}. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_a4d833bf522b24a31bfd983ae16e370fe}{set\-Parents} 
+\end{DoxySeeAlso}
+
+
+Definition at line 262 of file structure.\-h.
+
+
+
+Referenced by write\-Structure\-Settings().
+
+\hypertarget{classGlobalSearch_1_1Structure_a66f08d0683f89fa6791b5b7b9838955d}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!get\-P\-V@{get\-P\-V}}
+\index{get\-P\-V@{get\-P\-V}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{get\-P\-V}]{\setlength{\rightskip}{0pt plus 5cm}double Global\-Search\-::\-Structure\-::get\-P\-V (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classGlobalSearch_1_1Structure_a66f08d0683f89fa6791b5b7b9838955d}
+Returns the value P\-V term from an enthalpy calculation (H = U
+\begin{DoxyItemize}
+\item P\-V) in e\-V.
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Returns}
+The P\-V term in e\-V. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_a45e5069495574ae2d4b73a1759b7326b}{get\-Enthalpy} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a3f0ef2f62e4467c70044bbf3965b6a26}{set\-Enthalpy} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a6f963ec03dda49caa05f5eb8a9f19c39}{has\-Enthalpy} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a4eda6eb8ce8080fae9fe91587039e748}{set\-P\-V} 
+
+set\-Energy 
+
+\hyperlink{classGlobalSearch_1_1Structure_acc6db7487d8bbeacda3868734f4294bd}{get\-Energy} 
+\end{DoxySeeAlso}
+
+
+Definition at line 199 of file structure.\-h.
+
+\hypertarget{classGlobalSearch_1_1Structure_aad467ff9bf423156b7cc8df3a2fb7b13}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!get\-Rank@{get\-Rank}}
+\index{get\-Rank@{get\-Rank}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{get\-Rank}]{\setlength{\rightskip}{0pt plus 5cm}uint Global\-Search\-::\-Structure\-::get\-Rank (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classGlobalSearch_1_1Structure_aad467ff9bf423156b7cc8df3a2fb7b13}
+Returns an energetic ranking set by \hyperlink{classGlobalSearch_1_1Structure_a2c7020f0ea0bfb58f37dffc6e5d955be}{set\-Rank(uint)}. \begin{DoxyReturn}{Returns}
+the energetic ranking. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_a2c7020f0ea0bfb58f37dffc6e5d955be}{set\-Rank} 
+\end{DoxySeeAlso}
+
+
+Definition at line 205 of file structure.\-h.
+
+
+
+Referenced by get\-Results\-Entry(), and write\-Structure\-Settings().
+
+\hypertarget{classGlobalSearch_1_1Structure_a9294a602bcf48745259368025434b796}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!get\-Rempath@{get\-Rempath}}
+\index{get\-Rempath@{get\-Rempath}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{get\-Rempath}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String Global\-Search\-::\-Structure\-::get\-Rempath (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classGlobalSearch_1_1Structure_a9294a602bcf48745259368025434b796}
+\begin{DoxyReturn}{Returns}
+The path on the remote server to write this \hyperlink{classGlobalSearch_1_1Structure}{Structure} for optimization. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_adc3f7486abf0ad3421d60f6a05f3106e}{set\-Rempath} 
+\end{DoxySeeAlso}
+
+
+Definition at line 268 of file structure.\-h.
+
+
+
+Referenced by Global\-Search\-::\-Opt\-Base\-::interpret\-Keyword\-\_\-base(), and write\-Structure\-Settings().
+
+\hypertarget{classGlobalSearch_1_1Structure_a28886a7dbbde4d7320ea05aa6c50c2e6}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!get\-Results\-Entry@{get\-Results\-Entry}}
+\index{get\-Results\-Entry@{get\-Results\-Entry}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{get\-Results\-Entry}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String Global\-Search\-::\-Structure\-::get\-Results\-Entry (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classGlobalSearch_1_1Structure_a28886a7dbbde4d7320ea05aa6c50c2e6}
+\begin{DoxyReturn}{Returns}
+A structure-\/specific entry for a results printout 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_a5f4dde0d82dbf949fffd514ccb9fd7ac}{get\-Results\-Header} 
+
+\hyperlink{classGlobalSearch_1_1OptBase_abfacbe5ffa9d69db4e27bf6db2ad62f7}{Opt\-Base\-::save} 
+\end{DoxySeeAlso}
+
+
+Definition at line 642 of file structure.\-cpp.
+
+
+
+References Duplicate, Empty, Error, get\-Enthalpy(), get\-Generation(), get\-I\-D\-Number(), get\-Rank(), get\-Status(), In\-Process, Killed, Optimized, Removed, Step\-Optimized, Submitted, Updating, and Waiting\-For\-Optimization.
+
+
+
+Referenced by Global\-Search\-::\-Opt\-Base\-::save().
+
+\hypertarget{classGlobalSearch_1_1Structure_a5f4dde0d82dbf949fffd514ccb9fd7ac}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!get\-Results\-Header@{get\-Results\-Header}}
+\index{get\-Results\-Header@{get\-Results\-Header}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{get\-Results\-Header}]{\setlength{\rightskip}{0pt plus 5cm}virtual Q\-String Global\-Search\-::\-Structure\-::get\-Results\-Header (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classGlobalSearch_1_1Structure_a5f4dde0d82dbf949fffd514ccb9fd7ac}
+\begin{DoxyReturn}{Returns}
+A header line for a results printout 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_a28886a7dbbde4d7320ea05aa6c50c2e6}{get\-Results\-Entry} 
+
+\hyperlink{classGlobalSearch_1_1OptBase_abfacbe5ffa9d69db4e27bf6db2ad62f7}{Opt\-Base\-::save} 
+\end{DoxySeeAlso}
+
+
+Definition at line 326 of file structure.\-h.
+
+\hypertarget{classGlobalSearch_1_1Structure_adee82bcb74af1c15bb91e5a9aa0e3849}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!get\-Shortest\-Interatomic\-Distance@{get\-Shortest\-Interatomic\-Distance}}
+\index{get\-Shortest\-Interatomic\-Distance@{get\-Shortest\-Interatomic\-Distance}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{get\-Shortest\-Interatomic\-Distance}]{\setlength{\rightskip}{0pt plus 5cm}bool Global\-Search\-::\-Structure\-::get\-Shortest\-Interatomic\-Distance (
+\begin{DoxyParamCaption}
+\item[{double \&}]{shortest}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classGlobalSearch_1_1Structure_adee82bcb74af1c15bb91e5a9aa0e3849}
+Return a list of nearest neighbor distances for each atom in the \hyperlink{classGlobalSearch_1_1Structure}{Structure}
+
+\begin{DoxyReturn}{Returns}
+true if the operation makes sense for this \hyperlink{classGlobalSearch_1_1Structure}{Structure}, false otherwise (i.\-e. fewer than two atoms present)
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em shortest} & An empty double to be overwritten with the shortest interatomic distance. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_af90032040343059ebbc91ac294a0a020}{get\-Nearest\-Neighbor\-Distance} 
+
+get\-Nearest\-Neighbor\-Histogram 
+
+\hyperlink{classGlobalSearch_1_1Structure_a741bc226576a6aebdc72573afec08fe2}{get\-Neighbors} 
+\end{DoxySeeAlso}
+
+
+Definition at line 696 of file structure.\-cpp.
+
+\hypertarget{classGlobalSearch_1_1Structure_ad67c972a173cddc939e3adabf65dd72b}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!get\-Status@{get\-Status}}
+\index{get\-Status@{get\-Status}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{get\-Status}]{\setlength{\rightskip}{0pt plus 5cm}{\bf State} Global\-Search\-::\-Structure\-::get\-Status (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classGlobalSearch_1_1Structure_ad67c972a173cddc939e3adabf65dd72b}
+\begin{DoxyReturn}{Returns}
+The current status of the \hyperlink{classGlobalSearch_1_1Structure}{Structure}. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_aee38b5fe04ee88a4584b181fa8d0fbf9}{set\-Status} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917}{State} 
+\end{DoxySeeAlso}
+
+
+Definition at line 274 of file structure.\-h.
+
+
+
+Referenced by Global\-Search\-::\-Queue\-Manager\-::check\-Population(), Global\-Search\-::\-Queue\-Manager\-::check\-Running(), Global\-Search\-::\-Queue\-Manager\-::get\-All\-Duplicate\-Structures(), Global\-Search\-::\-Queue\-Manager\-::get\-All\-Optimized\-Structures(), get\-Results\-Entry(), Global\-Search\-::\-Local\-Queue\-Interface\-::get\-Status(), Global\-Search\-::\-Queue\-Manager\-::kill\-Structure(), and write\-Structure\-Settings().
+
+\hypertarget{classGlobalSearch_1_1Structure_ac49455f75d38a9f1779179dad2ba8815}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!get\-Symbols@{get\-Symbols}}
+\index{get\-Symbols@{get\-Symbols}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{get\-Symbols}]{\setlength{\rightskip}{0pt plus 5cm}Q\-List$<$ Q\-String $>$ Global\-Search\-::\-Structure\-::get\-Symbols (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classGlobalSearch_1_1Structure_ac49455f75d38a9f1779179dad2ba8815}
+\begin{DoxyReturn}{Returns}
+An alphabetized list of the atomic symbols for the atomic species present in the \hyperlink{classGlobalSearch_1_1Structure}{Structure}. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_a447f0dd62f6546809d9b144bd971254f}{get\-Number\-Of\-Atoms\-Alpha} 
+\end{DoxySeeAlso}
+
+
+Definition at line 1079 of file structure.\-cpp.
+
+
+
+Referenced by get\-Number\-Of\-Atoms\-Alpha(), and Global\-Search\-::\-Opt\-Base\-::interpret\-Keyword\-\_\-base().
+
+\hypertarget{classGlobalSearch_1_1Structure_a30b8895da1515056a968ae9622c54408}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!has\-Changed\-Since\-Dup\-Checked@{has\-Changed\-Since\-Dup\-Checked}}
+\index{has\-Changed\-Since\-Dup\-Checked@{has\-Changed\-Since\-Dup\-Checked}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{has\-Changed\-Since\-Dup\-Checked}]{\setlength{\rightskip}{0pt plus 5cm}bool Global\-Search\-::\-Structure\-::has\-Changed\-Since\-Dup\-Checked (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classGlobalSearch_1_1Structure_a30b8895da1515056a968ae9622c54408}
+\hyperlink{classGlobalSearch_1_1Structure}{Structure} can track if it has changed since it was last checked in a duplicate finding routine. This is useful for cutting down on the number of comparisons needed.
+
+Must call \hyperlink{classGlobalSearch_1_1Structure_aff5394b9be0fa599c58f906d9a03f9d5}{setup\-Connections()} before using this function. \begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_a266a812642a92c135ae5c65157d528d6}{set\-Changed\-Since\-Dup\-Checked()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 586 of file structure.\-h.
+
+\hypertarget{classGlobalSearch_1_1Structure_a6f963ec03dda49caa05f5eb8a9f19c39}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!has\-Enthalpy@{has\-Enthalpy}}
+\index{has\-Enthalpy@{has\-Enthalpy}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{has\-Enthalpy}]{\setlength{\rightskip}{0pt plus 5cm}bool Global\-Search\-::\-Structure\-::has\-Enthalpy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classGlobalSearch_1_1Structure_a6f963ec03dda49caa05f5eb8a9f19c39}
+Whether the \hyperlink{classGlobalSearch_1_1Structure}{Structure} has an enthalpy value set. \begin{DoxyReturn}{Returns}
+true if enthalpy has been set, false otherwise 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_a3f0ef2f62e4467c70044bbf3965b6a26}{set\-Enthalpy} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a45e5069495574ae2d4b73a1759b7326b}{get\-Enthalpy} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a4eda6eb8ce8080fae9fe91587039e748}{set\-P\-V} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a66f08d0683f89fa6791b5b7b9838955d}{get\-P\-V} 
+
+set\-Energy 
+
+\hyperlink{classGlobalSearch_1_1Structure_acc6db7487d8bbeacda3868734f4294bd}{get\-Energy} 
+\end{DoxySeeAlso}
+
+
+Definition at line 152 of file structure.\-h.
+
+\hypertarget{classGlobalSearch_1_1Structure_a18edce7ebc0e1f5d0f939369a737c778}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!is\-Histogram\-Generation\-Pending@{is\-Histogram\-Generation\-Pending}}
+\index{is\-Histogram\-Generation\-Pending@{is\-Histogram\-Generation\-Pending}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{is\-Histogram\-Generation\-Pending}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Global\-Search\-::\-Structure\-::is\-Histogram\-Generation\-Pending (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classGlobalSearch_1_1Structure_a18edce7ebc0e1f5d0f939369a737c778}
+\begin{DoxyReturn}{Returns}
+True is histogram generation is pending. 
+\end{DoxyReturn}
+
+
+Definition at line 436 of file structure.\-h.
+
+\hypertarget{classGlobalSearch_1_1Structure_aa9ede9f516912b34000000caa849689c}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!load@{load}}
+\index{load@{load}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Structure\-::load (
+\begin{DoxyParamCaption}
+\item[{Q\-Text\-Stream \&}]{in}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Structure_aa9ede9f516912b34000000caa849689c}
+Load data into \hyperlink{classGlobalSearch_1_1Structure}{Structure}. \begin{DoxyAttention}{Attention}
+Do not use this function in new code, as it has been replaced by read\-Settings. Old code should be rewritten to use read\-Settings as well. 
+\end{DoxyAttention}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000001}{Deprecated}]Use read\-Settings instead, and call this only as a backup for outdates .state files 
+\begin{DoxyParams}{Parameters}
+{\em in} & Q\-Text\-Stream containing load data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_a352a550ebb2c8e511e3ad400a98b1373}{read\-Settings} 
+\end{DoxySeeAlso}
+\end{DoxyRefDesc}
+
+
+Definition at line 1130 of file structure.\-cpp.
+
+
+
+References In\-Process, set\-Current\-Opt\-Step(), set\-Fail\-Count(), set\-Generation(), set\-I\-D\-Number(), set\-Index(), set\-Job\-I\-D(), set\-Opt\-Timer\-End(), set\-Opt\-Timer\-Start(), set\-Parents(), set\-Rank(), set\-Rempath(), and set\-Status().
+
+
+
+Referenced by read\-Structure\-Settings().
+
+\hypertarget{classGlobalSearch_1_1Structure_a4b257e8547d62da1c2393c123da994f1}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!operator=@{operator=}}
+\index{operator=@{operator=}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Structure} \& Global\-Search\-::\-Structure\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Structure} \&}]{other}
+\end{DoxyParamCaption}
+)}}\label{classGlobalSearch_1_1Structure_a4b257e8547d62da1c2393c123da994f1}
+Assignment operator. Makes a new structure with all \hyperlink{classGlobalSearch_1_1Structure}{Structure} specific information copied from {\itshape other}. \begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_accb684b9686676fd61164f298460f195}{copy\-Structure} 
+\end{DoxySeeAlso}
+
+
+Definition at line 193 of file structure.\-cpp.
+
+
+
+References copy\-Structure().
+
+\hypertarget{classGlobalSearch_1_1Structure_a22737e6da3810566ad0b8c6b672e1214}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!operator=@{operator=}}
+\index{operator=@{operator=}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Structure} \& Global\-Search\-::\-Structure\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const Avogadro\-::\-Molecule \&}]{other}
+\end{DoxyParamCaption}
+)}}\label{classGlobalSearch_1_1Structure_a22737e6da3810566ad0b8c6b672e1214}
+Assignment operator. Makes a new structure with all Molecule specific information copied from {\itshape other}. \begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_accb684b9686676fd61164f298460f195}{copy\-Structure} 
+\end{DoxySeeAlso}
+
+
+Definition at line 219 of file structure.\-cpp.
+
+\hypertarget{classGlobalSearch_1_1Structure_af258714834ae664a9a563f1f0af4a883}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!rank\-By\-Enthalpy@{rank\-By\-Enthalpy}}
+\index{rank\-By\-Enthalpy@{rank\-By\-Enthalpy}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{rank\-By\-Enthalpy}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Structure\-::rank\-By\-Enthalpy (
+\begin{DoxyParamCaption}
+\item[{const Q\-List$<$ {\bf Structure} $\ast$ $>$ \&}]{structures}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classGlobalSearch_1_1Structure_af258714834ae664a9a563f1f0af4a883}
+Rank the listed structures by their enthalpies
+
+
+\begin{DoxyParams}{Parameters}
+{\em structures} & List of structures to assign ranks \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+sort\-Enthalpies 
+
+\hyperlink{classGlobalSearch_1_1Structure_a742dbf63765f00c205657366f7e5efc8}{sort\-And\-Rank\-By\-Enthalpy} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a2c7020f0ea0bfb58f37dffc6e5d955be}{set\-Rank} 
+
+\hyperlink{classGlobalSearch_1_1Structure_aad467ff9bf423156b7cc8df3a2fb7b13}{get\-Rank} 
+\end{DoxySeeAlso}
+
+
+Definition at line 1226 of file structure.\-cpp.
+
+
+
+References get\-Enthalpy().
+
+\hypertarget{classGlobalSearch_1_1Structure_a352a550ebb2c8e511e3ad400a98b1373}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!read\-Settings@{read\-Settings}}
+\index{read\-Settings@{read\-Settings}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{read\-Settings}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Global\-Search\-::\-Structure\-::read\-Settings (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{filename}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Structure_a352a550ebb2c8e511e3ad400a98b1373}
+Read supplementary data about this \hyperlink{classGlobalSearch_1_1Structure}{Structure} from a file. All data that is not stored in the Open\-Babel-\/readable optimizer output file should be read here.
+
+If reimplementing this in a derived class, call read\-Structure\-Settings(filename) to read inherited data. 
+\begin{DoxyParams}{Parameters}
+{\em filename} & Filename to read data from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_abe87722af78ae2e5913aebd7ae91ae6d}{read\-Structure\-Settings} 
+
+\hyperlink{classGlobalSearch_1_1Structure_af6da83169c21363c545ef3ee01d891d3}{write\-Settings} 
+\end{DoxySeeAlso}
+
+
+Definition at line 758 of file structure.\-h.
+
+
+
+References read\-Structure\-Settings().
+
+\hypertarget{classGlobalSearch_1_1Structure_abe87722af78ae2e5913aebd7ae91ae6d}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!read\-Structure\-Settings@{read\-Structure\-Settings}}
+\index{read\-Structure\-Settings@{read\-Structure\-Settings}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{read\-Structure\-Settings}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Structure\-::read\-Structure\-Settings (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{filename}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Structure_abe87722af78ae2e5913aebd7ae91ae6d}
+Read data concerning the \hyperlink{classGlobalSearch_1_1Structure}{Structure} class from a file. 
+\begin{DoxyParams}{Parameters}
+{\em filename} & Filename to read data from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_af6da83169c21363c545ef3ee01d891d3}{write\-Settings} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a352a550ebb2c8e511e3ad400a98b1373}{read\-Settings} 
+\end{DoxySeeAlso}
+
+
+Definition at line 326 of file structure.\-cpp.
+
+
+
+References load(), set\-Current\-Opt\-Step(), set\-Fail\-Count(), set\-Generation(), set\-I\-D\-Number(), set\-Index(), set\-Job\-I\-D(), set\-Opt\-Timer\-End(), set\-Opt\-Timer\-Start(), set\-Parents(), set\-Rank(), set\-Rempath(), and set\-Status().
+
+
+
+Referenced by read\-Settings().
+
+\hypertarget{classGlobalSearch_1_1Structure_aaed562bf0ad4fe7bec1567eb84dbeee2}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!request\-Histogram\-Generation@{request\-Histogram\-Generation}}
+\index{request\-Histogram\-Generation@{request\-Histogram\-Generation}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{request\-Histogram\-Generation}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Structure\-::request\-Histogram\-Generation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Structure_aaed562bf0ad4fe7bec1567eb84dbeee2}
+Request that histogram data be regenerated. This is connected to Molecule\-::update() and calls \hyperlink{classGlobalSearch_1_1Structure_a57ae57cebf3df177a1363b91383a1c69}{generate\-Default\-Histogram()}. This function is throttled to only run every 250 ms. 
+
+Definition at line 792 of file structure.\-cpp.
+
+
+
+References generate\-Default\-Histogram().
+
+
+
+Referenced by enable\-Auto\-Histogram\-Generation().
+
+\hypertarget{classGlobalSearch_1_1Structure_aa3a2350ff9b13a7b84337f66a1d18cf5}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!reset\-Energy@{reset\-Energy}}
+\index{reset\-Energy@{reset\-Energy}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{reset\-Energy}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Structure\-::reset\-Energy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Structure_aa3a2350ff9b13a7b84337f66a1d18cf5}
+Reset the \hyperlink{classGlobalSearch_1_1Structure}{Structure}'s energy to zero \begin{DoxySeeAlso}{See Also}
+set\-Energy 
+
+\hyperlink{classGlobalSearch_1_1Structure_acc6db7487d8bbeacda3868734f4294bd}{get\-Energy} 
+\end{DoxySeeAlso}
+
+
+Definition at line 865 of file structure.\-h.
+
+\hypertarget{classGlobalSearch_1_1Structure_a947839b5088f6829b81ef7f9f9938b04}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!reset\-Enthalpy@{reset\-Enthalpy}}
+\index{reset\-Enthalpy@{reset\-Enthalpy}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{reset\-Enthalpy}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Structure\-::reset\-Enthalpy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Structure_a947839b5088f6829b81ef7f9f9938b04}
+Reset the \hyperlink{classGlobalSearch_1_1Structure}{Structure}'s enthalpy and P\-V term to zero and clear \hyperlink{classGlobalSearch_1_1Structure_a6f963ec03dda49caa05f5eb8a9f19c39}{has\-Enthalpy()} \begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_a3f0ef2f62e4467c70044bbf3965b6a26}{set\-Enthalpy} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a45e5069495574ae2d4b73a1759b7326b}{get\-Enthalpy} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a6f963ec03dda49caa05f5eb8a9f19c39}{has\-Enthalpy} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a4eda6eb8ce8080fae9fe91587039e748}{set\-P\-V} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a66f08d0683f89fa6791b5b7b9838955d}{get\-P\-V} 
+\end{DoxySeeAlso}
+
+
+Definition at line 859 of file structure.\-h.
+
+\hypertarget{classGlobalSearch_1_1Structure_a27532f25313083bea490b3b6fa84c743}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!reset\-Fail\-Count@{reset\-Fail\-Count}}
+\index{reset\-Fail\-Count@{reset\-Fail\-Count}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{reset\-Fail\-Count}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Structure\-::reset\-Fail\-Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Structure_a27532f25313083bea490b3b6fa84c743}
+Reset the number of times this \hyperlink{classGlobalSearch_1_1Structure}{Structure} has failed the current optimization step.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_ab1ea99315ad11fc88f0941069f169f1a}{add\-Failure} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a130a124d8cd7d440d4c902726492e41b}{set\-Fail\-Count} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a39a044521e91f117be11fcf9a1a562b3}{get\-Fail\-Count} 
+\end{DoxySeeAlso}
+
+
+Definition at line 963 of file structure.\-h.
+
+
+
+References set\-Fail\-Count().
+
+
+
+Referenced by Structure().
+
+\hypertarget{classGlobalSearch_1_1Structure_aaf7c1811bcc7f591e2f6bccd9e56e18f}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!retrieve\-History\-Entry@{retrieve\-History\-Entry}}
+\index{retrieve\-History\-Entry@{retrieve\-History\-Entry}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{retrieve\-History\-Entry}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Structure\-::retrieve\-History\-Entry (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{index, }
+\item[{Q\-List$<$ unsigned int $>$ $\ast$}]{atomic\-Nums, }
+\item[{Q\-List$<$ Eigen\-::\-Vector3d $>$ $\ast$}]{coords, }
+\item[{double $\ast$}]{energy, }
+\item[{double $\ast$}]{enthalpy, }
+\item[{Eigen\-::\-Matrix3d $\ast$}]{cell}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Structure_aaf7c1811bcc7f591e2f6bccd9e56e18f}
+This function is used to retrieve data from the structure's history. All non-\/zero pointers will be modified to contain the information at the specified index of the history.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Entry in history to return\\
+\hline
+{\em atomic\-Nums} & Pointer to a list that will be filled with atomic numbers. Can be zero if this is not needed.\\
+\hline
+{\em coords} & Pointer to a list that will be filled with cartesian atomic coordinates. Can be zero if this is not needed.\\
+\hline
+{\em energy} & Pointer to a double that will contain the entry's energy in e\-V. Can be zero if this is not needed.\\
+\hline
+{\em enthalpy} & Pointer to a double that will contain the entry's enthalpy in e\-V. Can be zero if this is not needed.\\
+\hline
+{\em cell} & Pointer to an Eigen\-::\-Matrix3f filled with the unit cell vectors (row vectors). Can be zero if this is not needed.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+If the system is not periodic, the cell matrix will be a zero matrix. Use Eigen\-::\-Matrix3d\-::is\-Zero() to test for a valid cell. 
+\end{DoxyNote}
+
+
+Definition at line 563 of file structure.\-cpp.
+
+
+
+References size\-Of\-History().
+
+\hypertarget{classGlobalSearch_1_1Structure_a266a812642a92c135ae5c65157d528d6}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!set\-Changed\-Since\-Dup\-Checked@{set\-Changed\-Since\-Dup\-Checked}}
+\index{set\-Changed\-Since\-Dup\-Checked@{set\-Changed\-Since\-Dup\-Checked}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{set\-Changed\-Since\-Dup\-Checked}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Structure\-::set\-Changed\-Since\-Dup\-Checked (
+\begin{DoxyParamCaption}
+\item[{bool}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Structure_a266a812642a92c135ae5c65157d528d6}
+\hyperlink{classGlobalSearch_1_1Structure}{Structure} can track if it has changed since it was last checked in a duplicate finding routine. This is useful for cutting down on the number of comparisons needed.
+
+Must call \hyperlink{classGlobalSearch_1_1Structure_aff5394b9be0fa599c58f906d9a03f9d5}{setup\-Connections()} before using this function. \begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_a30b8895da1515056a968ae9622c54408}{has\-Changed\-Since\-Dup\-Checked()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 988 of file structure.\-h.
+
+\hypertarget{classGlobalSearch_1_1Structure_a3aa37aac76ad5255e51a9113b3d64d40}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!set\-Current\-Opt\-Step@{set\-Current\-Opt\-Step}}
+\index{set\-Current\-Opt\-Step@{set\-Current\-Opt\-Step}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{set\-Current\-Opt\-Step}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Structure\-::set\-Current\-Opt\-Step (
+\begin{DoxyParamCaption}
+\item[{uint}]{i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Structure_a3aa37aac76ad5255e51a9113b3d64d40}
+
+\begin{DoxyParams}{Parameters}
+{\em i} & The current optimization step of the \hyperlink{classGlobalSearch_1_1Structure}{Structure}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_a955a416ce3d99e5ecc0a68c23e33824c}{get\-Current\-Opt\-Step} 
+\end{DoxySeeAlso}
+
+
+Definition at line 946 of file structure.\-h.
+
+
+
+Referenced by load(), and read\-Structure\-Settings().
+
+\hypertarget{classGlobalSearch_1_1Structure_a59fe04ad733d7a770e3775339d71b8c3}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!set\-Duplicate\-String@{set\-Duplicate\-String}}
+\index{set\-Duplicate\-String@{set\-Duplicate\-String}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{set\-Duplicate\-String}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Structure\-::set\-Duplicate\-String (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Structure_a59fe04ad733d7a770e3775339d71b8c3}
+
+\begin{DoxyParams}{Parameters}
+{\em s} & A string naming the \hyperlink{classGlobalSearch_1_1Structure}{Structure} that this \hyperlink{classGlobalSearch_1_1Structure}{Structure} is a duplicate of. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_a495b4fd01788d6d10b3d6b138784d52d}{get\-Duplicate\-String} 
+\end{DoxySeeAlso}
+
+
+Definition at line 978 of file structure.\-h.
+
+\hypertarget{classGlobalSearch_1_1Structure_a3f0ef2f62e4467c70044bbf3965b6a26}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!set\-Enthalpy@{set\-Enthalpy}}
+\index{set\-Enthalpy@{set\-Enthalpy}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{set\-Enthalpy}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Structure\-::set\-Enthalpy (
+\begin{DoxyParamCaption}
+\item[{double}]{enthalpy}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Structure_a3f0ef2f62e4467c70044bbf3965b6a26}
+Set the enthalpy of the \hyperlink{classGlobalSearch_1_1Structure}{Structure}. 
+\begin{DoxyParams}{Parameters}
+{\em enthalpy} & The \hyperlink{classGlobalSearch_1_1Structure}{Structure}'s enthalpy \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_a45e5069495574ae2d4b73a1759b7326b}{get\-Enthalpy} 
+\end{DoxySeeAlso}
+
+
+Definition at line 843 of file structure.\-h.
+
+\hypertarget{classGlobalSearch_1_1Structure_a130a124d8cd7d440d4c902726492e41b}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!set\-Fail\-Count@{set\-Fail\-Count}}
+\index{set\-Fail\-Count@{set\-Fail\-Count}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{set\-Fail\-Count}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Structure\-::set\-Fail\-Count (
+\begin{DoxyParamCaption}
+\item[{uint}]{count}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Structure_a130a124d8cd7d440d4c902726492e41b}
+
+\begin{DoxyParams}{Parameters}
+{\em count} & The number of times this \hyperlink{classGlobalSearch_1_1Structure}{Structure} has failed the current optimization step. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_ab1ea99315ad11fc88f0941069f169f1a}{add\-Failure} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a39a044521e91f117be11fcf9a1a562b3}{get\-Fail\-Count} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a27532f25313083bea490b3b6fa84c743}{reset\-Fail\-Count} 
+\end{DoxySeeAlso}
+
+
+Definition at line 954 of file structure.\-h.
+
+
+
+Referenced by add\-Failure(), load(), read\-Structure\-Settings(), and reset\-Fail\-Count().
+
+\hypertarget{classGlobalSearch_1_1Structure_a2c3d51c041d38d172f3169d8c8d31b45}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!set\-Generation@{set\-Generation}}
+\index{set\-Generation@{set\-Generation}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{set\-Generation}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Structure\-::set\-Generation (
+\begin{DoxyParamCaption}
+\item[{uint}]{gen}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Structure_a2c3d51c041d38d172f3169d8c8d31b45}
+Set the generation number of the \hyperlink{classGlobalSearch_1_1Structure}{Structure}. 
+\begin{DoxyParams}{Parameters}
+{\em gen} & The generation number. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_a2c3d51c041d38d172f3169d8c8d31b45}{set\-Generation} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a7caa9c46c88ac5711cf9d150bd0dcbd6}{get\-Generation} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a9f25226379d189f1bfd9e4698585c2e9}{set\-Index} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a73f8f57a695b3bebdea8a8b3d75e4138}{get\-Index} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a9ecf515564a4063d37ab1d0a8eb14d11}{set\-I\-D\-Number} 
+
+\hyperlink{classGlobalSearch_1_1Structure_afc86429da4b4d6673a8c33a58841905d}{get\-I\-D\-Number} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a38b039e671cdcae7eab7b976c93255de}{get\-I\-D\-String} 
+\end{DoxySeeAlso}
+
+
+Definition at line 895 of file structure.\-h.
+
+
+
+Referenced by load(), and read\-Structure\-Settings().
+
+\hypertarget{classGlobalSearch_1_1Structure_a9ecf515564a4063d37ab1d0a8eb14d11}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!set\-I\-D\-Number@{set\-I\-D\-Number}}
+\index{set\-I\-D\-Number@{set\-I\-D\-Number}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{set\-I\-D\-Number}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Structure\-::set\-I\-D\-Number (
+\begin{DoxyParamCaption}
+\item[{uint}]{id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Structure_a9ecf515564a4063d37ab1d0a8eb14d11}
+Set the I\-D number associated with the \hyperlink{classGlobalSearch_1_1Structure}{Structure}.
+
+\begin{DoxyNote}{Note}
+If a generation number is used as well, this may not be unique. 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Identification number 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_a2c3d51c041d38d172f3169d8c8d31b45}{set\-Generation} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a7caa9c46c88ac5711cf9d150bd0dcbd6}{get\-Generation} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a9f25226379d189f1bfd9e4698585c2e9}{set\-Index} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a73f8f57a695b3bebdea8a8b3d75e4138}{get\-Index} 
+
+\hyperlink{classGlobalSearch_1_1Structure_afc86429da4b4d6673a8c33a58841905d}{get\-I\-D\-Number} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a38b039e671cdcae7eab7b976c93255de}{get\-I\-D\-String} 
+\end{DoxySeeAlso}
+
+
+Definition at line 909 of file structure.\-h.
+
+
+
+Referenced by load(), and read\-Structure\-Settings().
+
+\hypertarget{classGlobalSearch_1_1Structure_a9f25226379d189f1bfd9e4698585c2e9}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!set\-Index@{set\-Index}}
+\index{set\-Index@{set\-Index}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{set\-Index}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Structure\-::set\-Index (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Structure_a9f25226379d189f1bfd9e4698585c2e9}
+Set a unique I\-D number associated with the \hyperlink{classGlobalSearch_1_1Structure}{Structure}. This is typically assigned in order of introduction to a tracker.
+
+\begin{DoxyNote}{Note}
+If a generation number is used as well, this may not be unique. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Identification number \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_a2c3d51c041d38d172f3169d8c8d31b45}{set\-Generation} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a7caa9c46c88ac5711cf9d150bd0dcbd6}{get\-Generation} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a73f8f57a695b3bebdea8a8b3d75e4138}{get\-Index} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a9ecf515564a4063d37ab1d0a8eb14d11}{set\-I\-D\-Number} 
+
+\hyperlink{classGlobalSearch_1_1Structure_afc86429da4b4d6673a8c33a58841905d}{get\-I\-D\-Number} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a38b039e671cdcae7eab7b976c93255de}{get\-I\-D\-String} 
+\end{DoxySeeAlso}
+
+
+Definition at line 924 of file structure.\-h.
+
+
+
+Referenced by load(), read\-Structure\-Settings(), and Global\-Search\-::\-Opt\-Base\-::save().
+
+\hypertarget{classGlobalSearch_1_1Structure_adbb752fe62009e8adbb55cc1fdef0de1}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!set\-Job\-I\-D@{set\-Job\-I\-D}}
+\index{set\-Job\-I\-D@{set\-Job\-I\-D}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{set\-Job\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Structure\-::set\-Job\-I\-D (
+\begin{DoxyParamCaption}
+\item[{uint}]{id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Structure_adbb752fe62009e8adbb55cc1fdef0de1}
+Set the Job I\-D of the current optimization process. 
+\begin{DoxyParams}{Parameters}
+{\em id} & The current optimization process's Job I\-D. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_a6d044ecacb068406234a502d30664bea}{get\-Job\-I\-D} 
+\end{DoxySeeAlso}
+
+
+Definition at line 883 of file structure.\-h.
+
+
+
+Referenced by load(), read\-Structure\-Settings(), Global\-Search\-::\-Local\-Queue\-Interface\-::start\-Job(), Global\-Search\-::\-Local\-Queue\-Interface\-::stop\-Job(), and Global\-Search\-::\-Optimizer\-::update().
+
+\hypertarget{classGlobalSearch_1_1Structure_a52962ac4b557250b84d27e90799d18d0}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!set\-O\-B\-Energy@{set\-O\-B\-Energy}}
+\index{set\-O\-B\-Energy@{set\-O\-B\-Energy}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{set\-O\-B\-Energy}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Structure\-::set\-O\-B\-Energy (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{ff = {\ttfamily QString(\char`\"{}UFF\char`\"{})}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classGlobalSearch_1_1Structure_a52962ac4b557250b84d27e90799d18d0}
+Determine and set the energy using a forcefield method from Open\-Babel. 
+\begin{DoxyParams}{Parameters}
+{\em ff} & A string identifying the forcefield to use (default\-: U\-F\-F). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 629 of file structure.\-cpp.
+
+\hypertarget{classGlobalSearch_1_1Structure_a9ca3435fd1e634ddd665a5af63abc431}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!set\-Opt\-Timer\-End@{set\-Opt\-Timer\-End}}
+\index{set\-Opt\-Timer\-End@{set\-Opt\-Timer\-End}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{set\-Opt\-Timer\-End}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Structure\-::set\-Opt\-Timer\-End (
+\begin{DoxyParamCaption}
+\item[{const Q\-Date\-Time \&}]{d}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Structure_a9ca3435fd1e634ddd665a5af63abc431}
+
+\begin{DoxyParams}{Parameters}
+{\em d} & The time that the current optimization process stopped.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_afc5507175ebfb4da413a5c40a2a8dfb3}{set\-Opt\-Timer\-Start} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a17a4bd931cc52643bb89a19c9298fc7f}{get\-Opt\-Timer\-Start} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a720cde3d4eabbeca51fd41160a89fb70}{get\-Opt\-Timer\-End} 
+
+\hyperlink{classGlobalSearch_1_1Structure_ae623efedfaa8980e5121199eec928298}{start\-Opt\-Timer} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a5f19c86d2e41ec95efd370e87049384f}{stop\-Opt\-Timer} 
+
+\hyperlink{classGlobalSearch_1_1Structure_abd1f083a58dad102d0f0b3b3d89da2df}{get\-Opt\-Elapsed} 
+\end{DoxySeeAlso}
+
+
+Definition at line 1038 of file structure.\-h.
+
+
+
+Referenced by load(), and read\-Structure\-Settings().
+
+\hypertarget{classGlobalSearch_1_1Structure_afc5507175ebfb4da413a5c40a2a8dfb3}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!set\-Opt\-Timer\-Start@{set\-Opt\-Timer\-Start}}
+\index{set\-Opt\-Timer\-Start@{set\-Opt\-Timer\-Start}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{set\-Opt\-Timer\-Start}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Structure\-::set\-Opt\-Timer\-Start (
+\begin{DoxyParamCaption}
+\item[{const Q\-Date\-Time \&}]{d}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Structure_afc5507175ebfb4da413a5c40a2a8dfb3}
+
+\begin{DoxyParams}{Parameters}
+{\em d} & The time that the current optimization process started.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_a17a4bd931cc52643bb89a19c9298fc7f}{get\-Opt\-Timer\-Start} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a9ca3435fd1e634ddd665a5af63abc431}{set\-Opt\-Timer\-End} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a720cde3d4eabbeca51fd41160a89fb70}{get\-Opt\-Timer\-End} 
+
+\hyperlink{classGlobalSearch_1_1Structure_ae623efedfaa8980e5121199eec928298}{start\-Opt\-Timer} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a5f19c86d2e41ec95efd370e87049384f}{stop\-Opt\-Timer} 
+
+\hyperlink{classGlobalSearch_1_1Structure_abd1f083a58dad102d0f0b3b3d89da2df}{get\-Opt\-Elapsed} 
+\end{DoxySeeAlso}
+
+
+Definition at line 1026 of file structure.\-h.
+
+
+
+Referenced by load(), and read\-Structure\-Settings().
+
+\hypertarget{classGlobalSearch_1_1Structure_a4d833bf522b24a31bfd983ae16e370fe}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!set\-Parents@{set\-Parents}}
+\index{set\-Parents@{set\-Parents}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{set\-Parents}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Structure\-::set\-Parents (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Structure_a4d833bf522b24a31bfd983ae16e370fe}
+
+\begin{DoxyParams}{Parameters}
+{\em p} & A string describing the ancestory of the \hyperlink{classGlobalSearch_1_1Structure}{Structure}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_a0b30437b5e6cc5e6f3de9c413aa04847}{get\-Parents} 
+\end{DoxySeeAlso}
+
+
+Definition at line 929 of file structure.\-h.
+
+
+
+Referenced by load(), and read\-Structure\-Settings().
+
+\hypertarget{classGlobalSearch_1_1Structure_a4eda6eb8ce8080fae9fe91587039e748}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!set\-P\-V@{set\-P\-V}}
+\index{set\-P\-V@{set\-P\-V}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{set\-P\-V}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Structure\-::set\-P\-V (
+\begin{DoxyParamCaption}
+\item[{double}]{pv}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Structure_a4eda6eb8ce8080fae9fe91587039e748}
+Set the P\-V term of the \hyperlink{classGlobalSearch_1_1Structure}{Structure}'s enthalpy (see \hyperlink{classGlobalSearch_1_1Structure_a66f08d0683f89fa6791b5b7b9838955d}{get\-P\-V()}). 
+\begin{DoxyParams}{Parameters}
+{\em pv} & The P\-V term \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_a66f08d0683f89fa6791b5b7b9838955d}{get\-P\-V} 
+\end{DoxySeeAlso}
+
+
+Definition at line 849 of file structure.\-h.
+
+\hypertarget{classGlobalSearch_1_1Structure_a2c7020f0ea0bfb58f37dffc6e5d955be}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!set\-Rank@{set\-Rank}}
+\index{set\-Rank@{set\-Rank}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{set\-Rank}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Structure\-::set\-Rank (
+\begin{DoxyParamCaption}
+\item[{uint}]{rank}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Structure_a2c7020f0ea0bfb58f37dffc6e5d955be}
+Set the \hyperlink{classGlobalSearch_1_1Structure}{Structure}'s energetic ranking. 
+\begin{DoxyParams}{Parameters}
+{\em rank} & The \hyperlink{classGlobalSearch_1_1Structure}{Structure}'s energetic ranking. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_aad467ff9bf423156b7cc8df3a2fb7b13}{get\-Rank} 
+\end{DoxySeeAlso}
+
+
+Definition at line 877 of file structure.\-h.
+
+
+
+Referenced by load(), and read\-Structure\-Settings().
+
+\hypertarget{classGlobalSearch_1_1Structure_adc3f7486abf0ad3421d60f6a05f3106e}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!set\-Rempath@{set\-Rempath}}
+\index{set\-Rempath@{set\-Rempath}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{set\-Rempath}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Structure\-::set\-Rempath (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Structure_adc3f7486abf0ad3421d60f6a05f3106e}
+
+\begin{DoxyParams}{Parameters}
+{\em p} & The path on the remote server to write this \hyperlink{classGlobalSearch_1_1Structure}{Structure} for optimization. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_a9294a602bcf48745259368025434b796}{get\-Rempath} 
+\end{DoxySeeAlso}
+
+
+Definition at line 935 of file structure.\-h.
+
+
+
+Referenced by load(), and read\-Structure\-Settings().
+
+\hypertarget{classGlobalSearch_1_1Structure_aee38b5fe04ee88a4584b181fa8d0fbf9}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!set\-Status@{set\-Status}}
+\index{set\-Status@{set\-Status}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{set\-Status}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Structure\-::set\-Status (
+\begin{DoxyParamCaption}
+\item[{{\bf State}}]{status}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Structure_aee38b5fe04ee88a4584b181fa8d0fbf9}
+
+\begin{DoxyParams}{Parameters}
+{\em status} & The current status of the \hyperlink{classGlobalSearch_1_1Structure}{Structure}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_ad67c972a173cddc939e3adabf65dd72b}{get\-Status} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917}{State} 
+\end{DoxySeeAlso}
+
+
+Definition at line 941 of file structure.\-h.
+
+
+
+Referenced by Global\-Search\-::\-Queue\-Manager\-::kill\-Structure(), load(), read\-Structure\-Settings(), Global\-Search\-::\-Queue\-Manager\-::start\-Job(), and Structure().
+
+\hypertarget{classGlobalSearch_1_1Structure_aff5394b9be0fa599c58f906d9a03f9d5}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!setup\-Connections@{setup\-Connections}}
+\index{setup\-Connections@{setup\-Connections}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{setup\-Connections}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Structure\-::setup\-Connections (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Structure_aff5394b9be0fa599c58f906d9a03f9d5}
+Connect slots/signals within the molecule. This must be called A\-F\-T\-E\-R moving the \hyperlink{classGlobalSearch_1_1Structure}{Structure} to it's final thread. 
+
+Definition at line 93 of file structure.\-cpp.
+
+
+
+References structure\-Changed().
+
+\hypertarget{classGlobalSearch_1_1Structure_a92fb3f639890b9005c0559fcf843c45c}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!size\-Of\-History@{size\-Of\-History}}
+\index{size\-Of\-History@{size\-Of\-History}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{size\-Of\-History}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned int Global\-Search\-::\-Structure\-::size\-Of\-History (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Structure_a92fb3f639890b9005c0559fcf843c45c}
+\begin{DoxyReturn}{Returns}
+Number of history entries available 
+\end{DoxyReturn}
+
+
+Definition at line 837 of file structure.\-h.
+
+
+
+Referenced by delete\-From\-History(), and retrieve\-History\-Entry().
+
+\hypertarget{classGlobalSearch_1_1Structure_a742dbf63765f00c205657366f7e5efc8}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!sort\-And\-Rank\-By\-Enthalpy@{sort\-And\-Rank\-By\-Enthalpy}}
+\index{sort\-And\-Rank\-By\-Enthalpy@{sort\-And\-Rank\-By\-Enthalpy}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{sort\-And\-Rank\-By\-Enthalpy}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Structure\-::sort\-And\-Rank\-By\-Enthalpy (
+\begin{DoxyParamCaption}
+\item[{Q\-List$<$ {\bf Structure} $\ast$ $>$ $\ast$}]{structures}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classGlobalSearch_1_1Structure_a742dbf63765f00c205657366f7e5efc8}
+Sort and rank the listed structures by their enthalpies
+
+
+\begin{DoxyParams}{Parameters}
+{\em structures} & List of structures to sort and assign rank \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_a58d72124caf9401902f6a7653e0e7646}{sort\-By\-Enthalpy} 
+
+rank\-Enthalpies 
+
+\hyperlink{classGlobalSearch_1_1Structure_a2c7020f0ea0bfb58f37dffc6e5d955be}{set\-Rank} 
+
+\hyperlink{classGlobalSearch_1_1Structure_aad467ff9bf423156b7cc8df3a2fb7b13}{get\-Rank} 
+\end{DoxySeeAlso}
+
+
+Definition at line 1260 of file structure.\-cpp.
+
+
+
+References sort\-By\-Enthalpy().
+
+
+
+Referenced by Global\-Search\-::\-Opt\-Base\-::save().
+
+\hypertarget{classGlobalSearch_1_1Structure_a58d72124caf9401902f6a7653e0e7646}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!sort\-By\-Enthalpy@{sort\-By\-Enthalpy}}
+\index{sort\-By\-Enthalpy@{sort\-By\-Enthalpy}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{sort\-By\-Enthalpy}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Structure\-::sort\-By\-Enthalpy (
+\begin{DoxyParamCaption}
+\item[{Q\-List$<$ {\bf Structure} $\ast$ $>$ $\ast$}]{structures}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classGlobalSearch_1_1Structure_a58d72124caf9401902f6a7653e0e7646}
+Sort the listed structures by their enthalpies
+
+
+\begin{DoxyParams}{Parameters}
+{\em structures} & List of structures to sort \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+rank\-Enthalpies 
+
+\hyperlink{classGlobalSearch_1_1Structure_a742dbf63765f00c205657366f7e5efc8}{sort\-And\-Rank\-By\-Enthalpy} 
+\end{DoxySeeAlso}
+
+
+Definition at line 1188 of file structure.\-cpp.
+
+
+
+References get\-Enthalpy().
+
+
+
+Referenced by sort\-And\-Rank\-By\-Enthalpy().
+
+\hypertarget{classGlobalSearch_1_1Structure_ae623efedfaa8980e5121199eec928298}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!start\-Opt\-Timer@{start\-Opt\-Timer}}
+\index{start\-Opt\-Timer@{start\-Opt\-Timer}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{start\-Opt\-Timer}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Structure\-::start\-Opt\-Timer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Structure_ae623efedfaa8980e5121199eec928298}
+Record the current time as when the current optimization process started.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_afc5507175ebfb4da413a5c40a2a8dfb3}{set\-Opt\-Timer\-Start} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a17a4bd931cc52643bb89a19c9298fc7f}{get\-Opt\-Timer\-Start} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a9ca3435fd1e634ddd665a5af63abc431}{set\-Opt\-Timer\-End} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a720cde3d4eabbeca51fd41160a89fb70}{get\-Opt\-Timer\-End} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a5f19c86d2e41ec95efd370e87049384f}{stop\-Opt\-Timer} 
+
+\hyperlink{classGlobalSearch_1_1Structure_abd1f083a58dad102d0f0b3b3d89da2df}{get\-Opt\-Elapsed} 
+\end{DoxySeeAlso}
+
+
+Definition at line 1000 of file structure.\-h.
+
+
+
+Referenced by Global\-Search\-::\-Local\-Queue\-Interface\-::start\-Job().
+
+\hypertarget{classGlobalSearch_1_1Structure_a5f19c86d2e41ec95efd370e87049384f}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!stop\-Opt\-Timer@{stop\-Opt\-Timer}}
+\index{stop\-Opt\-Timer@{stop\-Opt\-Timer}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{stop\-Opt\-Timer}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Structure\-::stop\-Opt\-Timer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Structure_a5f19c86d2e41ec95efd370e87049384f}
+Record the current time as when the current optimization process stopped.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_afc5507175ebfb4da413a5c40a2a8dfb3}{set\-Opt\-Timer\-Start} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a17a4bd931cc52643bb89a19c9298fc7f}{get\-Opt\-Timer\-Start} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a9ca3435fd1e634ddd665a5af63abc431}{set\-Opt\-Timer\-End} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a720cde3d4eabbeca51fd41160a89fb70}{get\-Opt\-Timer\-End} 
+
+\hyperlink{classGlobalSearch_1_1Structure_ae623efedfaa8980e5121199eec928298}{start\-Opt\-Timer} 
+
+\hyperlink{classGlobalSearch_1_1Structure_abd1f083a58dad102d0f0b3b3d89da2df}{get\-Opt\-Elapsed} 
+\end{DoxySeeAlso}
+
+
+Definition at line 1013 of file structure.\-h.
+
+
+
+Referenced by Global\-Search\-::\-Queue\-Manager\-::kill\-Structure(), Global\-Search\-::\-Local\-Queue\-Interface\-::stop\-Job(), and Global\-Search\-::\-Optimizer\-::update().
+
+\hypertarget{classGlobalSearch_1_1Structure_a1e30a18add5bd7e217546333262010ad}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!structure\-Changed@{structure\-Changed}}
+\index{structure\-Changed@{structure\-Changed}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{structure\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Structure\-::structure\-Changed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Structure_a1e30a18add5bd7e217546333262010ad}
+After calling \hyperlink{classGlobalSearch_1_1Structure_aff5394b9be0fa599c58f906d9a03f9d5}{setup\-Connections()}, this will be called when the structure is update, atoms moved, added, etc... 
+
+Definition at line 446 of file structure.\-cpp.
+
+
+
+Referenced by setup\-Connections().
+
+\hypertarget{classGlobalSearch_1_1Structure_a9e200fa25c362859fdf2cecfd4cbaf06}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!update\-And\-Add\-To\-History@{update\-And\-Add\-To\-History}}
+\index{update\-And\-Add\-To\-History@{update\-And\-Add\-To\-History}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{update\-And\-Add\-To\-History}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Structure\-::update\-And\-Add\-To\-History (
+\begin{DoxyParamCaption}
+\item[{const Q\-List$<$ unsigned int $>$ \&}]{atomic\-Nums, }
+\item[{const Q\-List$<$ Eigen\-::\-Vector3d $>$ \&}]{coords, }
+\item[{const double}]{energy = {\ttfamily 0}, }
+\item[{const double}]{enthalpy = {\ttfamily 0}, }
+\item[{const Eigen\-::\-Matrix3d \&}]{cell = {\ttfamily Eigen\-:\-:Matrix3d\-:\-:Zero()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Structure_a9e200fa25c362859fdf2cecfd4cbaf06}
+Update the coordinates, enthalpy and/or energy, and optionally unit cell of the structure, appending the data to the structure's history.
+
+
+\begin{DoxyParams}{Parameters}
+{\em atomic\-Nums} & List of atomic numbers \\
+\hline
+{\em coords} & List of cartesian coordinates \\
+\hline
+{\em energy} & in e\-V \\
+\hline
+{\em enthalpy} & in e\-V \\
+\hline
+{\em cell} & Matrix of cell vectors (row vectors) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 498 of file structure.\-cpp.
+
+
+
+Referenced by Global\-Search\-::\-Optimizer\-::read().
+
+\hypertarget{classGlobalSearch_1_1Structure_a29a46bef48b3c9045b6e87ca87c2c6cb}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!update\-And\-Skip\-History@{update\-And\-Skip\-History}}
+\index{update\-And\-Skip\-History@{update\-And\-Skip\-History}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{update\-And\-Skip\-History}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Structure\-::update\-And\-Skip\-History (
+\begin{DoxyParamCaption}
+\item[{const Q\-List$<$ unsigned int $>$ \&}]{atomic\-Nums, }
+\item[{const Q\-List$<$ Eigen\-::\-Vector3d $>$ \&}]{coords, }
+\item[{const double}]{energy = {\ttfamily 0}, }
+\item[{const double}]{enthalpy = {\ttfamily 0}, }
+\item[{const Eigen\-::\-Matrix3d \&}]{cell = {\ttfamily Eigen\-:\-:Matrix3d\-:\-:Zero()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Structure_a29a46bef48b3c9045b6e87ca87c2c6cb}
+Update the coordinates, enthalpy and/or energy, and optionally unit cell of the structure, without adding the data to the structure's history.
+
+
+\begin{DoxyParams}{Parameters}
+{\em atomic\-Nums} & List of atomic numbers \\
+\hline
+{\em coords} & List of cartesian coordinates \\
+\hline
+{\em energy} & in e\-V \\
+\hline
+{\em enthalpy} & in e\-V \\
+\hline
+{\em cell} & Matrix of cell vectors (row vectors) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 451 of file structure.\-cpp.
+
+
+
+Referenced by Global\-Search\-::\-Optimizer\-::read().
+
+\hypertarget{classGlobalSearch_1_1Structure_af6da83169c21363c545ef3ee01d891d3}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!write\-Settings@{write\-Settings}}
+\index{write\-Settings@{write\-Settings}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{write\-Settings}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Global\-Search\-::\-Structure\-::write\-Settings (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{filename}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Structure_af6da83169c21363c545ef3ee01d891d3}
+Write supplementary data about this \hyperlink{classGlobalSearch_1_1Structure}{Structure} to a file. All data that is not stored in the Open\-Babel-\/readable optimizer output file should be written here.
+
+If reimplementing this in a derived class, call write\-Structure\-Settings(filename) to write inherited data. 
+\begin{DoxyParams}{Parameters}
+{\em filename} & Filename to write data to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_aa38396dff22066272e3b47604c9ac527}{write\-Structure\-Settings} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a352a550ebb2c8e511e3ad400a98b1373}{read\-Settings} 
+\end{DoxySeeAlso}
+
+
+Definition at line 744 of file structure.\-h.
+
+
+
+References write\-Structure\-Settings().
+
+
+
+Referenced by Global\-Search\-::\-Opt\-Base\-::save().
+
+\hypertarget{classGlobalSearch_1_1Structure_aa38396dff22066272e3b47604c9ac527}{\index{Global\-Search\-::\-Structure@{Global\-Search\-::\-Structure}!write\-Structure\-Settings@{write\-Structure\-Settings}}
+\index{write\-Structure\-Settings@{write\-Structure\-Settings}!GlobalSearch::Structure@{Global\-Search\-::\-Structure}}
+\subsubsection[{write\-Structure\-Settings}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Structure\-::write\-Structure\-Settings (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{filename}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Structure_aa38396dff22066272e3b47604c9ac527}
+Write data from the \hyperlink{classGlobalSearch_1_1Structure}{Structure} class to a file. 
+\begin{DoxyParams}{Parameters}
+{\em filename} & Filename to write data to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Structure_af6da83169c21363c545ef3ee01d891d3}{write\-Settings} 
+
+\hyperlink{classGlobalSearch_1_1Structure_a352a550ebb2c8e511e3ad400a98b1373}{read\-Settings} 
+\end{DoxySeeAlso}
+
+
+Definition at line 237 of file structure.\-cpp.
+
+
+
+References get\-Current\-Opt\-Step(), get\-Fail\-Count(), get\-Generation(), get\-I\-D\-Number(), get\-Index(), get\-Job\-I\-D(), get\-Opt\-Timer\-End(), get\-Opt\-Timer\-Start(), get\-Parents(), get\-Rank(), get\-Rempath(), and get\-Status().
+
+
+
+Referenced by write\-Settings().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/globalsearch/structure.\-h\item 
+src/globalsearch/structure.\-cpp\end{DoxyCompactItemize}

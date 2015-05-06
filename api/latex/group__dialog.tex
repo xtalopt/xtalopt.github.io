@@ -1,0 +1,135 @@
+\hypertarget{group__dialog}{\section{Dialog access}
+\label{group__dialog}\index{Dialog access@{Dialog access}}
+}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{group__dialog_gac4335196cdf08e3555f6d0e152761604}{Global\-Search\-::\-Optimizer\-::has\-Dialog} ()
+\item 
+virtual Q\-Dialog $\ast$ \hyperlink{group__dialog_ga9455d181accc40edd3ca6271fdc1e050}{Global\-Search\-::\-Optimizer\-::dialog} ()
+\item 
+bool \hyperlink{group__dialog_gaa78e95fa76777efba3cdfd70d8e3caf9}{Global\-Search\-::\-Queue\-Interface\-::has\-Dialog} ()
+\item 
+virtual Q\-Dialog $\ast$ \hyperlink{group__dialog_ga4457d66b93f0406af1b595659ca25dcf}{Global\-Search\-::\-Queue\-Interface\-::dialog} ()
+\item 
+virtual Q\-Dialog $\ast$ \hyperlink{group__dialog_ga4bd87bf2050209a72d1a35c824e515da}{Global\-Search\-::\-Local\-Queue\-Interface\-::dialog} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Public Slots}
+\hypertarget{group__dialog_ga4bd87bf2050209a72d1a35c824e515da}{\index{Dialog access@{Dialog access}!dialog@{dialog}}
+\index{dialog@{dialog}!Dialog access@{Dialog access}}
+\subsubsection[{dialog}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Dialog $\ast$ Global\-Search\-::\-Local\-Queue\-Interface\-::dialog (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}}\label{group__dialog_ga4bd87bf2050209a72d1a35c824e515da}
+\begin{DoxyReturn}{Returns}
+The configuration dialog for this \hyperlink{classGlobalSearch_1_1QueueInterface}{Queue\-Interface}, if it exists, otherwise 0. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__dialog_gaa78e95fa76777efba3cdfd70d8e3caf9}{has\-Dialog()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 376 of file local.\-cpp.
+
+
+
+References Global\-Search\-::\-Opt\-Base\-::dialog(), Global\-Search\-::\-Queue\-Interface\-::m\-\_\-dialog, and Global\-Search\-::\-Queue\-Interface\-::m\-\_\-opt.
+
+\hypertarget{group__dialog_ga4457d66b93f0406af1b595659ca25dcf}{\index{Dialog access@{Dialog access}!dialog@{dialog}}
+\index{dialog@{dialog}!Dialog access@{Dialog access}}
+\subsubsection[{dialog}]{\setlength{\rightskip}{0pt plus 5cm}virtual Q\-Dialog$\ast$ Global\-Search\-::\-Queue\-Interface\-::dialog (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [slot]}}}\label{group__dialog_ga4457d66b93f0406af1b595659ca25dcf}
+\begin{DoxyReturn}{Returns}
+The configuration dialog for this \hyperlink{classGlobalSearch_1_1QueueInterface}{Queue\-Interface}, if it exists, otherwise 0. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__dialog_gaa78e95fa76777efba3cdfd70d8e3caf9}{has\-Dialog()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 272 of file queueinterface.\-h.
+
+
+
+Referenced by Global\-Search\-::\-Abstract\-Edit\-Tab\-::configure\-Queue\-Interface().
+
+\hypertarget{group__dialog_ga9455d181accc40edd3ca6271fdc1e050}{\index{Dialog access@{Dialog access}!dialog@{dialog}}
+\index{dialog@{dialog}!Dialog access@{Dialog access}}
+\subsubsection[{dialog}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Dialog $\ast$ Global\-Search\-::\-Optimizer\-::dialog (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}}\label{group__dialog_ga9455d181accc40edd3ca6271fdc1e050}
+\begin{DoxyReturn}{Returns}
+The configuration dialog for this \hyperlink{classGlobalSearch_1_1QueueInterface}{Queue\-Interface}, if it exists, otherwise 0. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__dialog_gac4335196cdf08e3555f6d0e152761604}{has\-Dialog()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 329 of file optimizer.\-cpp.
+
+
+
+References Global\-Search\-::\-Opt\-Base\-::dialog(), and Global\-Search\-::\-Optimizer\-::m\-\_\-opt.
+
+
+
+Referenced by Global\-Search\-::\-Abstract\-Edit\-Tab\-::configure\-Optimizer().
+
+\hypertarget{group__dialog_gaa78e95fa76777efba3cdfd70d8e3caf9}{\index{Dialog access@{Dialog access}!has\-Dialog@{has\-Dialog}}
+\index{has\-Dialog@{has\-Dialog}!Dialog access@{Dialog access}}
+\subsubsection[{has\-Dialog}]{\setlength{\rightskip}{0pt plus 5cm}bool Global\-Search\-::\-Queue\-Interface\-::has\-Dialog (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}}\label{group__dialog_gaa78e95fa76777efba3cdfd70d8e3caf9}
+\begin{DoxyReturn}{Returns}
+True if this \hyperlink{classGlobalSearch_1_1QueueInterface}{Queue\-Interface} has a configuration dialog. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__dialog_ga4457d66b93f0406af1b595659ca25dcf}{dialog()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 264 of file queueinterface.\-h.
+
+
+
+References Global\-Search\-::\-Queue\-Interface\-::m\-\_\-has\-Dialog.
+
+
+
+Referenced by Global\-Search\-::\-Abstract\-Edit\-Tab\-::configure\-Queue\-Interface(), Global\-Search\-::\-Abstract\-Edit\-Tab\-::update\-G\-U\-I(), and Global\-Search\-::\-Abstract\-Edit\-Tab\-::update\-Queue\-Interface().
+
+\hypertarget{group__dialog_gac4335196cdf08e3555f6d0e152761604}{\index{Dialog access@{Dialog access}!has\-Dialog@{has\-Dialog}}
+\index{has\-Dialog@{has\-Dialog}!Dialog access@{Dialog access}}
+\subsubsection[{has\-Dialog}]{\setlength{\rightskip}{0pt plus 5cm}bool Global\-Search\-::\-Optimizer\-::has\-Dialog (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}}\label{group__dialog_gac4335196cdf08e3555f6d0e152761604}
+\begin{DoxyReturn}{Returns}
+True if this \hyperlink{classGlobalSearch_1_1QueueInterface}{Queue\-Interface} has a configuration dialog. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{group__dialog_ga9455d181accc40edd3ca6271fdc1e050}{dialog()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 409 of file optimizer.\-h.
+
+
+
+Referenced by Global\-Search\-::\-Abstract\-Edit\-Tab\-::configure\-Optimizer(), and Global\-Search\-::\-Abstract\-Edit\-Tab\-::update\-Optimizer().
+

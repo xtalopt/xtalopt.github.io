@@ -1,0 +1,1642 @@
+\hypertarget{classGlobalSearch_1_1Optimizer}{\section{Global\-Search\-:\-:Optimizer Class Reference}
+\label{classGlobalSearch_1_1Optimizer}\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}}
+}
+
+
+The \hyperlink{classGlobalSearch_1_1Optimizer}{Optimizer} class provides an interface between an \hyperlink{classGlobalSearch_1_1OptBase}{Opt\-Base} instance and an external optimization engine.  
+
+
+
+
+{\ttfamily \#include $<$globalsearch/optimizer.\-h$>$}
+
+Inheritance diagram for Global\-Search\-:\-:Optimizer\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classGlobalSearch_1_1Optimizer}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \hyperlink{classGlobalSearch_1_1Optimizer_a83db0ac69c8b97825fc5d8361107ada4}{set\-Template} (const Q\-String \&filename, const Q\-String \&template\-Data, int opt\-Step\-Index)
+\item 
+virtual bool \hyperlink{classGlobalSearch_1_1Optimizer_ab4be28b4fc40d106ffa5ae1c9d67a6f3}{set\-Template} (const Q\-String \&filename, const Q\-String\-List \&template\-Data)
+\item 
+virtual bool \hyperlink{classGlobalSearch_1_1Optimizer_a8734827ff8773648cf4da48988208d87}{append\-Template} (const Q\-String \&filename, const Q\-String \&template\-Data)
+\item 
+virtual bool \hyperlink{classGlobalSearch_1_1Optimizer_a894c2cc508b92f2bb1678cc750faab30}{remove\-All\-Templates\-For\-Opt\-Step} (int opt\-Step\-Index)
+\item 
+virtual bool \hyperlink{classGlobalSearch_1_1Optimizer_a0bea17818fd8f29a13542119aebf2377}{set\-Data} (const Q\-String \&identifier, const Q\-Variant \&data)
+\item 
+void \hyperlink{classGlobalSearch_1_1Optimizer_adfb8a9de9d1eac7d5b188f6ae24c5ebc}{set\-User1} (const Q\-String \&s)
+\item 
+void \hyperlink{classGlobalSearch_1_1Optimizer_a9f53a4945abb35cda9a50fb973d27890}{set\-User2} (const Q\-String \&s)
+\item 
+void \hyperlink{classGlobalSearch_1_1Optimizer_a19e2d3e7c7a31f1ae94a3a58c0b3a6bf}{set\-User3} (const Q\-String \&s)
+\item 
+void \hyperlink{classGlobalSearch_1_1Optimizer_a713a94a031fc5fa7c653d54e6ef9fb64}{set\-User4} (const Q\-String \&s)
+\item 
+Q\-String \hyperlink{classGlobalSearch_1_1Optimizer_aed5eb285d45a001c9520c2ed3a5b57a1}{local\-Run\-Command} () const 
+\item 
+Q\-String \hyperlink{classGlobalSearch_1_1Optimizer_a5964a9b38d3ae90c8ac36a75d3a35832}{stdin\-Filename} () const 
+\item 
+Q\-String \hyperlink{classGlobalSearch_1_1Optimizer_a217750aa50431f9948aa8164fb99de0c}{stdout\-Filename} () const 
+\item 
+Q\-String \hyperlink{classGlobalSearch_1_1Optimizer_acaa83cc6bf1dcc263b92450b4f8cb652}{stderr\-Filename} () const 
+\item 
+virtual Q\-Hash$<$ Q\-String, Q\-String $>$ \hyperlink{classGlobalSearch_1_1Optimizer_aaaa0f0c28058c716fc065b48090c321f}{get\-Interpreted\-Templates} (\hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$s)
+\item 
+bool \hyperlink{group__dialog_gac4335196cdf08e3555f6d0e152761604}{has\-Dialog} ()
+\item 
+virtual Q\-Dialog $\ast$ \hyperlink{group__dialog_ga9455d181accc40edd3ca6271fdc1e050}{dialog} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGlobalSearch_1_1Optimizer_a8c5a3335ff76f8a6a21a160d0139d842}{Optimizer} (\hyperlink{classGlobalSearch_1_1OptBase}{Opt\-Base} $\ast$parent, const Q\-String \&filename=\char`\"{}\char`\"{})
+\item 
+virtual \hyperlink{classGlobalSearch_1_1Optimizer_ace719aed9bbba0b3a568513ff68f8067}{$\sim$\-Optimizer} ()
+\item 
+virtual void \hyperlink{classGlobalSearch_1_1Optimizer_afef2dc22aa09df5e50e2f7b4f492091a}{read\-Settings} (const Q\-String \&filename=\char`\"{}\char`\"{})
+\item 
+virtual void \hyperlink{classGlobalSearch_1_1Optimizer_af67c36d87d7b41b1e91773b519d77829}{write\-Settings} (const Q\-String \&filename=\char`\"{}\char`\"{})
+\item 
+virtual Q\-String \hyperlink{classGlobalSearch_1_1Optimizer_aa81df016b0c8f3055a5e9e917eaefc75}{get\-I\-D\-String} ()
+\item 
+virtual int \hyperlink{classGlobalSearch_1_1Optimizer_aeeb18e38fa60535f74b577591400dd60}{get\-Number\-Of\-Opt\-Steps} ()
+\item 
+virtual bool \hyperlink{classGlobalSearch_1_1Optimizer_a10d37164307814e91c55bf846a59a80b}{is\-Ready\-To\-Search} (Q\-String $\ast$err)
+\item 
+virtual bool \hyperlink{classGlobalSearch_1_1Optimizer_afb5058a5e6a94e49c249284401680d5f}{check\-If\-Output\-File\-Exists} (\hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$s, bool $\ast$exists)
+\item 
+virtual bool \hyperlink{classGlobalSearch_1_1Optimizer_a8d9373ded1b851ae6fdcbff41ed911cf}{check\-For\-Successful\-Output} (\hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$s, bool $\ast$success)
+\item 
+virtual bool \hyperlink{classGlobalSearch_1_1Optimizer_a7e57844e4e6d713c87e6cf29ea03c5e2}{update} (\hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$structure)
+\item 
+virtual bool \hyperlink{classGlobalSearch_1_1Optimizer_a5a2c5bc75be24ee41c27c1a2fe0e446a}{load} (\hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$structure)
+\item 
+virtual bool \hyperlink{classGlobalSearch_1_1Optimizer_a671035cb8c0afbb4a1755b395bd063bd}{read} (\hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$structure, const Q\-String \&filename)
+\item 
+virtual Q\-String \hyperlink{classGlobalSearch_1_1Optimizer_a739ab995b0a4cfcf8b9c8fd86e3a9f24}{get\-Template} (const Q\-String \&filename, int opt\-Step\-Index)
+\item 
+virtual Q\-String\-List \hyperlink{classGlobalSearch_1_1Optimizer_af46e4dd4e1e7dca1c3389fc8f30ea74e}{get\-Template} (const Q\-String \&filename)
+\item 
+virtual Q\-Variant \hyperlink{classGlobalSearch_1_1Optimizer_a512b302d7bc91999350ead624259a3cf}{get\-Data} (const Q\-String \&identifier)
+\item 
+virtual Q\-String\-List \hyperlink{classGlobalSearch_1_1Optimizer_a2819ce65995524d999c61b017192f77d}{get\-Template\-Names} ()
+\item 
+virtual Q\-String\-List \hyperlink{classGlobalSearch_1_1Optimizer_a4fb3da2a83d851f3ab53b8bc29026886}{get\-Data\-Identifiers} ()
+\item 
+Q\-String \hyperlink{classGlobalSearch_1_1Optimizer_a414f7b1587c6048451191bc915b640c5}{get\-User1} ()
+\item 
+Q\-String \hyperlink{classGlobalSearch_1_1Optimizer_a26166bc3bc6c3af4baa0e3f12ac41d38}{get\-User2} ()
+\item 
+Q\-String \hyperlink{classGlobalSearch_1_1Optimizer_a8b93a20caff4d31524283695f011ab85}{get\-User3} ()
+\item 
+Q\-String \hyperlink{classGlobalSearch_1_1Optimizer_a854917e1b3ba0bc164ab8edff823a3ae}{get\-User4} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classGlobalSearch_1_1Optimizer_ad9c1899c333b7aa692bfe7ff252a6222}{update\-Queue\-Interface} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classGlobalSearch_1_1Optimizer_a2e365a82ae293c91516270f5e6534960}{read\-Templates\-From\-Settings} (const Q\-String \&filename=\char`\"{}\char`\"{})
+\item 
+virtual void \hyperlink{classGlobalSearch_1_1Optimizer_a9c1a95c53dcdb90dce83be3ad07ac719}{write\-Templates\-To\-Settings} (const Q\-String \&filename=\char`\"{}\char`\"{})
+\item 
+virtual void \hyperlink{classGlobalSearch_1_1Optimizer_a5cc22352d86ce253a0aa8d9b2ee8c951}{read\-User\-Values\-From\-Settings} (const Q\-String \&filename=\char`\"{}\char`\"{})
+\item 
+virtual void \hyperlink{classGlobalSearch_1_1Optimizer_afa884a475b8001a43e592f466cf2318c}{write\-User\-Values\-To\-Settings} (const Q\-String \&filename=\char`\"{}\char`\"{})
+\item 
+virtual void \hyperlink{classGlobalSearch_1_1Optimizer_a17b4f7c9fd176d976d652598497ff70e}{read\-Data\-From\-Settings} (const Q\-String \&filename=\char`\"{}\char`\"{})
+\item 
+virtual void \hyperlink{classGlobalSearch_1_1Optimizer_a115e78eb651af3e0fbb9fe188d50ecdc}{write\-Data\-To\-Settings} (const Q\-String \&filename=\char`\"{}\char`\"{})
+\item 
+Q\-Hash$<$ Q\-String, Q\-String\-List $>$ \& \hyperlink{classGlobalSearch_1_1Optimizer_a56df447e7eab1eb64bd66f4e3bd4594d}{resolve\-Template\-Hash} (const Q\-String \&filename)
+\item 
+const Q\-Hash$<$ Q\-String, \\*
+Q\-String\-List $>$ \& \hyperlink{classGlobalSearch_1_1Optimizer_a139e0f44d76b023c82e48149e595cbc5}{resolve\-Template\-Hash} (const Q\-String \&filename) const 
+\item 
+virtual void \hyperlink{classGlobalSearch_1_1Optimizer_a8205c1cb67d2111c0a9e13e78a543f00}{fix\-Template\-Lengths} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\-Hash$<$ Q\-String, Q\-Variant $>$ \hyperlink{classGlobalSearch_1_1Optimizer_a5cf732e34a6eaa4a7b1781d23e6e1c6e}{m\-\_\-data}
+\item 
+Q\-Hash$<$ Q\-String, Q\-String\-List $>$ \hyperlink{classGlobalSearch_1_1Optimizer_aa5892c64826b7cc7a2baa092efc8c66d}{m\-\_\-templates}
+\item 
+Q\-Hash$<$ Q\-String, Q\-String\-List $>$ \hyperlink{classGlobalSearch_1_1Optimizer_ac23d5114bf09b816666351868d49d1f8}{m\-\_\-\-Q\-I\-Templates}
+\item 
+Q\-String \hyperlink{classGlobalSearch_1_1Optimizer_a5e7a476823bc2d4b63939a9ada4f8ed0}{m\-\_\-completion\-Filename}
+\item 
+Q\-String\-List \hyperlink{classGlobalSearch_1_1Optimizer_a65ee33ee8778c366e8b197e75ae8e674}{m\-\_\-completion\-Strings}
+\item 
+Q\-String\-List \hyperlink{classGlobalSearch_1_1Optimizer_a28a8bf74bf7bdf00d453890796574c7d}{m\-\_\-output\-Filenames}
+\item 
+Q\-String \hyperlink{classGlobalSearch_1_1Optimizer_a1cdb6b6c5e929e84c834ba93148fb31e}{m\-\_\-local\-Run\-Command}
+\item 
+Q\-String \hyperlink{classGlobalSearch_1_1Optimizer_aca91d12d7aecae052d6ab5ae158acec6}{m\-\_\-stdin\-Filename}
+\item 
+Q\-String \hyperlink{classGlobalSearch_1_1Optimizer_a5ed04fdd5f8b511249e408adcd174550}{m\-\_\-stdout\-Filename}
+\item 
+Q\-String \hyperlink{classGlobalSearch_1_1Optimizer_a75b800a7f90a03d551f6795404d0c8f1}{m\-\_\-stderr\-Filename}
+\item 
+Q\-String \hyperlink{classGlobalSearch_1_1Optimizer_ae300aaecb74a7a61a501e4b8bd988957}{m\-\_\-user1}
+\item 
+Q\-String \hyperlink{classGlobalSearch_1_1Optimizer_a5ca1294d2a3aa119dfab655dfa270d3a}{m\-\_\-user2}
+\item 
+Q\-String \hyperlink{classGlobalSearch_1_1Optimizer_a279ca8ed61d6ca36f70c5c69b4d57397}{m\-\_\-user3}
+\item 
+Q\-String \hyperlink{classGlobalSearch_1_1Optimizer_aefab51b84978d2fb49eaf3585894808a}{m\-\_\-user4}
+\item 
+\hyperlink{classGlobalSearch_1_1OptBase}{Opt\-Base} $\ast$ \hyperlink{classGlobalSearch_1_1Optimizer_a689df6e2c0d8bbfff99585ca54199696}{m\-\_\-opt}
+\item 
+Q\-String \hyperlink{classGlobalSearch_1_1Optimizer_a4d2dc8b7aaa3bb6fed8c28547460def8}{m\-\_\-id\-String}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classGlobalSearch_1_1Optimizer_a820134b906cccccfc214c45661db99bf}{class {\bfseries Optimizer\-Config\-Dialog}}\label{classGlobalSearch_1_1Optimizer_a820134b906cccccfc214c45661db99bf}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classGlobalSearch_1_1Optimizer}{Optimizer} class provides an interface between an \hyperlink{classGlobalSearch_1_1OptBase}{Opt\-Base} instance and an external optimization engine. 
+
+\begin{DoxyAuthor}{Author}
+David C. Lonie
+\end{DoxyAuthor}
+The \hyperlink{classGlobalSearch_1_1Optimizer}{Optimizer} class standardizes communication between an \hyperlink{classGlobalSearch_1_1OptBase}{Opt\-Base} instance and an external chemical optimization engine, such as G\-A\-M\-E\-S\-S, A\-D\-F, V\-A\-S\-P, etc.
+
+The file contents may be set using the set\-Template, append\-Template, and remove\-Template functions. These will be passed through the associated \hyperlink{classGlobalSearch_1_1OptBase}{Opt\-Base}'s template interpreter prior to writing.
+
+Once the \hyperlink{classGlobalSearch_1_1Optimizer}{Optimizer} is attached to the \hyperlink{classGlobalSearch_1_1OptBase}{Opt\-Base} instance and the templates are set, the \hyperlink{classGlobalSearch_1_1QueueManager}{Queue\-Manager} handles all job submission, file writing, and \hyperlink{classGlobalSearch_1_1Structure}{Structure} updating automatically. 
+
+Definition at line 52 of file optimizer.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classGlobalSearch_1_1Optimizer_a8c5a3335ff76f8a6a21a160d0139d842}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!Optimizer@{Optimizer}}
+\index{Optimizer@{Optimizer}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{Optimizer}]{\setlength{\rightskip}{0pt plus 5cm}Global\-Search\-::\-Optimizer\-::\-Optimizer (
+\begin{DoxyParamCaption}
+\item[{{\bf Opt\-Base} $\ast$}]{parent, }
+\item[{const Q\-String \&}]{filename = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classGlobalSearch_1_1Optimizer_a8c5a3335ff76f8a6a21a160d0139d842}
+Constructor
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & \hyperlink{classGlobalSearch_1_1OptBase}{Opt\-Base} parent \\
+\hline
+{\em filename} & Optional filename to load data from (scheme or resume file) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 41 of file optimizer.\-cpp.
+
+
+
+References m\-\_\-id\-String, m\-\_\-opt, m\-\_\-stderr\-Filename, m\-\_\-stdin\-Filename, m\-\_\-stdout\-Filename, Global\-Search\-::\-Opt\-Base\-::queue\-Interface(), read\-Settings(), and update\-Queue\-Interface().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_ace719aed9bbba0b3a568513ff68f8067}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!$\sim$\-Optimizer@{$\sim$\-Optimizer}}
+\index{$\sim$\-Optimizer@{$\sim$\-Optimizer}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{$\sim$\-Optimizer}]{\setlength{\rightskip}{0pt plus 5cm}Global\-Search\-::\-Optimizer\-::$\sim$\-Optimizer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classGlobalSearch_1_1Optimizer_ace719aed9bbba0b3a568513ff68f8067}
+Destructor 
+
+Definition at line 107 of file optimizer.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classGlobalSearch_1_1Optimizer_a8734827ff8773648cf4da48988208d87}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!append\-Template@{append\-Template}}
+\index{append\-Template@{append\-Template}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{append\-Template}]{\setlength{\rightskip}{0pt plus 5cm}bool Global\-Search\-::\-Optimizer\-::append\-Template (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{filename, }
+\item[{const Q\-String \&}]{template\-Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Optimizer_a8734827ff8773648cf4da48988208d87}
+Add a new optimization step for a given filename.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Filename identifying the template \\
+\hline
+{\em template\-Data} & Template string of the new optimization step.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if successful, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 583 of file optimizer.\-cpp.
+
+
+
+References m\-\_\-\-Q\-I\-Templates, m\-\_\-templates, and resolve\-Template\-Hash().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_a8d9373ded1b851ae6fdcbff41ed911cf}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!check\-For\-Successful\-Output@{check\-For\-Successful\-Output}}
+\index{check\-For\-Successful\-Output@{check\-For\-Successful\-Output}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{check\-For\-Successful\-Output}]{\setlength{\rightskip}{0pt plus 5cm}bool Global\-Search\-::\-Optimizer\-::check\-For\-Successful\-Output (
+\begin{DoxyParamCaption}
+\item[{{\bf Structure} $\ast$}]{s, }
+\item[{bool $\ast$}]{success}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classGlobalSearch_1_1Optimizer_a8d9373ded1b851ae6fdcbff41ed911cf}
+Check m\-\_\-completion\-Filename for any of the m\-\_\-completion\-Strings in the working directory of \hyperlink{classGlobalSearch_1_1Structure}{Structure} {\itshape s}. If any are found, {\itshape success} is set to true.
+
+\begin{DoxyNote}{Note}
+This function uses the argument {\itshape success} to report whether or not m\-\_\-completion\-File\-Name contains any m\-\_\-completion\-Strings. The return value indicates whether the file check was performed without errors (e.\-g. network errors).
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+True if the test encountered no errors, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 369 of file optimizer.\-cpp.
+
+
+
+References Global\-Search\-::\-Queue\-Interface\-::grep\-File(), m\-\_\-completion\-Filename, m\-\_\-completion\-Strings, m\-\_\-opt, and Global\-Search\-::\-Opt\-Base\-::queue\-Interface().
+
+
+
+Referenced by Global\-Search\-::\-Local\-Queue\-Interface\-::get\-Status().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_afb5058a5e6a94e49c249284401680d5f}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!check\-If\-Output\-File\-Exists@{check\-If\-Output\-File\-Exists}}
+\index{check\-If\-Output\-File\-Exists@{check\-If\-Output\-File\-Exists}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{check\-If\-Output\-File\-Exists}]{\setlength{\rightskip}{0pt plus 5cm}bool Global\-Search\-::\-Optimizer\-::check\-If\-Output\-File\-Exists (
+\begin{DoxyParamCaption}
+\item[{{\bf Structure} $\ast$}]{s, }
+\item[{bool $\ast$}]{exists}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classGlobalSearch_1_1Optimizer_afb5058a5e6a94e49c249284401680d5f}
+Check if the file m\-\_\-completion\-Filename exists in the working directory of \hyperlink{classGlobalSearch_1_1Structure}{Structure} {\itshape s} and store the result in {\itshape exists}.
+
+\begin{DoxyNote}{Note}
+This function uses the argument {\itshape exists} to report whether or not the file exists. The return value indicates whether the file check was performed without errors (e.\-g. network errors).
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+True if the test encountered no errors, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 362 of file optimizer.\-cpp.
+
+
+
+References Global\-Search\-::\-Queue\-Interface\-::check\-If\-File\-Exists(), m\-\_\-completion\-Filename, m\-\_\-opt, and Global\-Search\-::\-Opt\-Base\-::queue\-Interface().
+
+
+
+Referenced by Global\-Search\-::\-Local\-Queue\-Interface\-::get\-Status().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_a8205c1cb67d2111c0a9e13e78a543f00}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!fix\-Template\-Lengths@{fix\-Template\-Lengths}}
+\index{fix\-Template\-Lengths@{fix\-Template\-Lengths}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{fix\-Template\-Lengths}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Optimizer\-::fix\-Template\-Lengths (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classGlobalSearch_1_1Optimizer_a8205c1cb67d2111c0a9e13e78a543f00}
+Ensure that all template lists in m\-\_\-templates and m\-\_\-\-Q\-I\-Templates contain \hyperlink{classGlobalSearch_1_1Optimizer_aeeb18e38fa60535f74b577591400dd60}{get\-Number\-Of\-Opt\-Steps()} optimization steps.
+
+If a template list has too few entries, empty strings are appended. 
+
+Definition at line 672 of file optimizer.\-cpp.
+
+
+
+References get\-Number\-Of\-Opt\-Steps(), m\-\_\-\-Q\-I\-Templates, and m\-\_\-templates.
+
+
+
+Referenced by read\-Templates\-From\-Settings().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_a512b302d7bc91999350ead624259a3cf}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!get\-Data@{get\-Data}}
+\index{get\-Data@{get\-Data}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{get\-Data}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Variant Global\-Search\-::\-Optimizer\-::get\-Data (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{identifier}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classGlobalSearch_1_1Optimizer_a512b302d7bc91999350ead624259a3cf}
+Get generic data associated with the optimizer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em identifier} & Q\-String identifying the data needed.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A Q\-Variant version of the generic data. 
+\end{DoxyReturn}
+
+
+Definition at line 625 of file optimizer.\-cpp.
+
+
+
+References m\-\_\-data.
+
+\hypertarget{classGlobalSearch_1_1Optimizer_a4fb3da2a83d851f3ab53b8bc29026886}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!get\-Data\-Identifiers@{get\-Data\-Identifiers}}
+\index{get\-Data\-Identifiers@{get\-Data\-Identifiers}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{get\-Data\-Identifiers}]{\setlength{\rightskip}{0pt plus 5cm}virtual Q\-String\-List Global\-Search\-::\-Optimizer\-::get\-Data\-Identifiers (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classGlobalSearch_1_1Optimizer_a4fb3da2a83d851f3ab53b8bc29026886}
+\begin{DoxyReturn}{Returns}
+All strings that identify valid generic data sets. 
+\end{DoxyReturn}
+
+
+Definition at line 217 of file optimizer.\-h.
+
+
+
+References m\-\_\-data.
+
+
+
+Referenced by read\-Data\-From\-Settings(), and write\-Data\-To\-Settings().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_aa81df016b0c8f3055a5e9e917eaefc75}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!get\-I\-D\-String@{get\-I\-D\-String}}
+\index{get\-I\-D\-String@{get\-I\-D\-String}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{get\-I\-D\-String}]{\setlength{\rightskip}{0pt plus 5cm}virtual Q\-String Global\-Search\-::\-Optimizer\-::get\-I\-D\-String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classGlobalSearch_1_1Optimizer_aa81df016b0c8f3055a5e9e917eaefc75}
+\begin{DoxyReturn}{Returns}
+A string identifying the \hyperlink{classGlobalSearch_1_1Optimizer}{Optimizer} 
+\end{DoxyReturn}
+
+
+Definition at line 96 of file optimizer.\-h.
+
+
+
+References m\-\_\-id\-String.
+
+
+
+Referenced by read\-Data\-From\-Settings(), read\-Templates\-From\-Settings(), read\-User\-Values\-From\-Settings(), Global\-Search\-::\-Abstract\-Edit\-Tab\-::save\-Scheme(), write\-Data\-To\-Settings(), write\-Templates\-To\-Settings(), and write\-User\-Values\-To\-Settings().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_aaaa0f0c28058c716fc065b48090c321f}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!get\-Interpreted\-Templates@{get\-Interpreted\-Templates}}
+\index{get\-Interpreted\-Templates@{get\-Interpreted\-Templates}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{get\-Interpreted\-Templates}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Hash$<$ Q\-String, Q\-String $>$ Global\-Search\-::\-Optimizer\-::get\-Interpreted\-Templates (
+\begin{DoxyParamCaption}
+\item[{{\bf Structure} $\ast$}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Optimizer_aaaa0f0c28058c716fc065b48090c321f}
+Interpret all templates in m\-\_\-templates at the \hyperlink{classGlobalSearch_1_1Structure}{Structure}'s current optimization step.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & \hyperlink{classGlobalSearch_1_1Structure}{Structure} of interest\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A hash containing the interpreted templates, key\-: filename, value\-: file contents 
+\end{DoxyReturn}
+
+
+Definition at line 281 of file optimizer.\-cpp.
+
+
+
+References Global\-Search\-::\-Structure\-::get\-Current\-Opt\-Step(), Global\-Search\-::\-Structure\-::get\-I\-D\-String(), get\-Number\-Of\-Opt\-Steps(), Global\-Search\-::\-Opt\-Base\-::interpret\-Template(), m\-\_\-opt, m\-\_\-\-Q\-I\-Templates, m\-\_\-templates, Global\-Search\-::\-Opt\-Base\-::optimizer(), Global\-Search\-::\-Opt\-Base\-::queue\-Interface(), and Global\-Search\-::\-Queue\-Interface\-::stop\-Job().
+
+
+
+Referenced by Global\-Search\-::\-Queue\-Interface\-::write\-Input\-Files().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_aeeb18e38fa60535f74b577591400dd60}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!get\-Number\-Of\-Opt\-Steps@{get\-Number\-Of\-Opt\-Steps}}
+\index{get\-Number\-Of\-Opt\-Steps@{get\-Number\-Of\-Opt\-Steps}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{get\-Number\-Of\-Opt\-Steps}]{\setlength{\rightskip}{0pt plus 5cm}int Global\-Search\-::\-Optimizer\-::get\-Number\-Of\-Opt\-Steps (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classGlobalSearch_1_1Optimizer_aeeb18e38fa60535f74b577591400dd60}
+\begin{DoxyReturn}{Returns}
+The total number of optimization steps 
+\end{DoxyReturn}
+
+
+Definition at line 535 of file optimizer.\-cpp.
+
+
+
+References m\-\_\-templates.
+
+
+
+Referenced by Global\-Search\-::\-Abstract\-Edit\-Tab\-::append\-Opt\-Step(), fix\-Template\-Lengths(), get\-Interpreted\-Templates(), get\-Template(), Global\-Search\-::\-Abstract\-Edit\-Tab\-::populate\-Opt\-Step\-List(), remove\-All\-Templates\-For\-Opt\-Step(), Global\-Search\-::\-Abstract\-Edit\-Tab\-::remove\-Current\-Opt\-Step(), Global\-Search\-::\-Abstract\-Edit\-Tab\-::save\-Current\-Template(), set\-Template(), Global\-Search\-::\-Abstract\-Edit\-Tab\-::update\-Edit\-Widget(), and update\-Queue\-Interface().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_a739ab995b0a4cfcf8b9c8fd86e3a9f24}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!get\-Template@{get\-Template}}
+\index{get\-Template@{get\-Template}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{get\-Template}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String Global\-Search\-::\-Optimizer\-::get\-Template (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{filename, }
+\item[{int}]{opt\-Step\-Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classGlobalSearch_1_1Optimizer_a739ab995b0a4cfcf8b9c8fd86e3a9f24}
+Return a specified template.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Filename of template \\
+\hline
+{\em opt\-Step\-Index} & Optimization step index of template to retrieve.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The requested template 
+\end{DoxyReturn}
+
+
+Definition at line 565 of file optimizer.\-cpp.
+
+
+
+References get\-Number\-Of\-Opt\-Steps(), m\-\_\-\-Q\-I\-Templates, m\-\_\-templates, and resolve\-Template\-Hash().
+
+
+
+Referenced by Global\-Search\-::\-Abstract\-Edit\-Tab\-::update\-Edit\-Widget().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_af46e4dd4e1e7dca1c3389fc8f30ea74e}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!get\-Template@{get\-Template}}
+\index{get\-Template@{get\-Template}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{get\-Template}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String\-List Global\-Search\-::\-Optimizer\-::get\-Template (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{filename}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classGlobalSearch_1_1Optimizer_af46e4dd4e1e7dca1c3389fc8f30ea74e}
+Return a list of all templates for a given filename
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Filename of template\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A list of all template matching the given filename, in order of optimization step. 
+\end{DoxyReturn}
+
+
+Definition at line 575 of file optimizer.\-cpp.
+
+
+
+References m\-\_\-\-Q\-I\-Templates, m\-\_\-templates, and resolve\-Template\-Hash().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_a2819ce65995524d999c61b017192f77d}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!get\-Template\-Names@{get\-Template\-Names}}
+\index{get\-Template\-Names@{get\-Template\-Names}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{get\-Template\-Names}]{\setlength{\rightskip}{0pt plus 5cm}virtual Q\-String\-List Global\-Search\-::\-Optimizer\-::get\-Template\-Names (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classGlobalSearch_1_1Optimizer_a2819ce65995524d999c61b017192f77d}
+\begin{DoxyReturn}{Returns}
+All filenames that the optimizer can store templates for. 
+\end{DoxyReturn}
+
+
+Definition at line 212 of file optimizer.\-h.
+
+
+
+References m\-\_\-templates.
+
+
+
+Referenced by Global\-Search\-::\-Abstract\-Edit\-Tab\-::get\-Template\-Names(), read\-Templates\-From\-Settings(), and write\-Templates\-To\-Settings().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_a414f7b1587c6048451191bc915b640c5}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!get\-User1@{get\-User1}}
+\index{get\-User1@{get\-User1}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{get\-User1}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String Global\-Search\-::\-Optimizer\-::get\-User1 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classGlobalSearch_1_1Optimizer_a414f7b1587c6048451191bc915b640c5}
+\begin{DoxyReturn}{Returns}
+A user customizable string that is used in template interpretation. 
+\end{DoxyReturn}
+
+
+Definition at line 223 of file optimizer.\-h.
+
+
+
+References m\-\_\-user1.
+
+
+
+Referenced by Global\-Search\-::\-Opt\-Base\-::interpret\-Keyword\-\_\-base(), and Global\-Search\-::\-Abstract\-Edit\-Tab\-::update\-G\-U\-I().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_a26166bc3bc6c3af4baa0e3f12ac41d38}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!get\-User2@{get\-User2}}
+\index{get\-User2@{get\-User2}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{get\-User2}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String Global\-Search\-::\-Optimizer\-::get\-User2 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classGlobalSearch_1_1Optimizer_a26166bc3bc6c3af4baa0e3f12ac41d38}
+\begin{DoxyReturn}{Returns}
+A user customizable string that is used in template interpretation. 
+\end{DoxyReturn}
+
+
+Definition at line 229 of file optimizer.\-h.
+
+
+
+References m\-\_\-user2.
+
+
+
+Referenced by Global\-Search\-::\-Opt\-Base\-::interpret\-Keyword\-\_\-base(), and Global\-Search\-::\-Abstract\-Edit\-Tab\-::update\-G\-U\-I().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_a8b93a20caff4d31524283695f011ab85}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!get\-User3@{get\-User3}}
+\index{get\-User3@{get\-User3}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{get\-User3}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String Global\-Search\-::\-Optimizer\-::get\-User3 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classGlobalSearch_1_1Optimizer_a8b93a20caff4d31524283695f011ab85}
+\begin{DoxyReturn}{Returns}
+A user customizable string that is used in template interpretation. 
+\end{DoxyReturn}
+
+
+Definition at line 235 of file optimizer.\-h.
+
+
+
+References m\-\_\-user3.
+
+
+
+Referenced by Global\-Search\-::\-Opt\-Base\-::interpret\-Keyword\-\_\-base(), and Global\-Search\-::\-Abstract\-Edit\-Tab\-::update\-G\-U\-I().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_a854917e1b3ba0bc164ab8edff823a3ae}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!get\-User4@{get\-User4}}
+\index{get\-User4@{get\-User4}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{get\-User4}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String Global\-Search\-::\-Optimizer\-::get\-User4 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classGlobalSearch_1_1Optimizer_a854917e1b3ba0bc164ab8edff823a3ae}
+\begin{DoxyReturn}{Returns}
+A user customizable string that is used in template interpretation. 
+\end{DoxyReturn}
+
+
+Definition at line 241 of file optimizer.\-h.
+
+
+
+References m\-\_\-user4.
+
+
+
+Referenced by Global\-Search\-::\-Opt\-Base\-::interpret\-Keyword\-\_\-base(), and Global\-Search\-::\-Abstract\-Edit\-Tab\-::update\-G\-U\-I().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_a10d37164307814e91c55bf846a59a80b}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!is\-Ready\-To\-Search@{is\-Ready\-To\-Search}}
+\index{is\-Ready\-To\-Search@{is\-Ready\-To\-Search}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{is\-Ready\-To\-Search}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Global\-Search\-::\-Optimizer\-::is\-Ready\-To\-Search (
+\begin{DoxyParamCaption}
+\item[{Q\-String $\ast$}]{err}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classGlobalSearch_1_1Optimizer_a10d37164307814e91c55bf846a59a80b}
+Check that all mandatory internal variables are set. Check this before starting a search.
+
+
+\begin{DoxyParams}{Parameters}
+{\em err} & String to be overwritten with an error message\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if all variables are initialized, false otherwise. If false, {\itshape err} will be overwritten with a user-\/friendly error message. 
+\end{DoxyReturn}
+
+
+Definition at line 113 of file optimizer.\-h.
+
+\hypertarget{classGlobalSearch_1_1Optimizer_a5a2c5bc75be24ee41c27c1a2fe0e446a}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!load@{load}}
+\index{load@{load}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}bool Global\-Search\-::\-Optimizer\-::load (
+\begin{DoxyParamCaption}
+\item[{{\bf Structure} $\ast$}]{structure}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classGlobalSearch_1_1Optimizer_a5a2c5bc75be24ee41c27c1a2fe0e446a}
+Update the \hyperlink{classGlobalSearch_1_1Structure}{Structure} from the files in the \hyperlink{classGlobalSearch_1_1Structure}{Structure}'s local file path.
+
+
+\begin{DoxyParams}{Parameters}
+{\em structure} & \hyperlink{classGlobalSearch_1_1Structure}{Structure} to be updated.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if successful, false otherwise. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Optimizer_a7e57844e4e6d713c87e6cf29ea03c5e2}{update} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_a671035cb8c0afbb4a1755b395bd063bd}{read} 
+\end{DoxySeeAlso}
+
+
+Definition at line 430 of file optimizer.\-cpp.
+
+
+
+References m\-\_\-opt, m\-\_\-output\-Filenames, read(), and Global\-Search\-::\-Opt\-Base\-::warning().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_aed5eb285d45a001c9520c2ed3a5b57a1}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!local\-Run\-Command@{local\-Run\-Command}}
+\index{local\-Run\-Command@{local\-Run\-Command}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{local\-Run\-Command}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String Global\-Search\-::\-Optimizer\-::local\-Run\-Command (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Optimizer_aed5eb285d45a001c9520c2ed3a5b57a1}
+Command line used in local execution
+
+Details given in m\-\_\-local\-Run\-Command.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Optimizer_a5964a9b38d3ae90c8ac36a75d3a35832}{stdin\-Filename} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_a217750aa50431f9948aa8164fb99de0c}{stdout\-Filename} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_acaa83cc6bf1dcc263b92450b4f8cb652}{stderr\-Filename} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_a1cdb6b6c5e929e84c834ba93148fb31e}{m\-\_\-local\-Run\-Command} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_aca91d12d7aecae052d6ab5ae158acec6}{m\-\_\-stdin\-Filename} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_a5ed04fdd5f8b511249e408adcd174550}{m\-\_\-stdout\-Filename} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_a75b800a7f90a03d551f6795404d0c8f1}{m\-\_\-stderr\-Filename} 
+\end{DoxySeeAlso}
+
+
+Definition at line 344 of file optimizer.\-h.
+
+
+
+References m\-\_\-local\-Run\-Command.
+
+
+
+Referenced by Global\-Search\-::\-Local\-Queue\-Interface\-::start\-Job().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_a671035cb8c0afbb4a1755b395bd063bd}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!read@{read}}
+\index{read@{read}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{read}]{\setlength{\rightskip}{0pt plus 5cm}bool Global\-Search\-::\-Optimizer\-::read (
+\begin{DoxyParamCaption}
+\item[{{\bf Structure} $\ast$}]{structure, }
+\item[{const Q\-String \&}]{filename}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classGlobalSearch_1_1Optimizer_a671035cb8c0afbb4a1755b395bd063bd}
+Update the \hyperlink{classGlobalSearch_1_1Structure}{Structure} from the specified filename.
+
+
+\begin{DoxyParams}{Parameters}
+{\em structure} & \hyperlink{classGlobalSearch_1_1Structure}{Structure} to be updated \\
+\hline
+{\em filename} & Filename to read\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if successful, false otherwise. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Optimizer_a7e57844e4e6d713c87e6cf29ea03c5e2}{update} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_a5a2c5bc75be24ee41c27c1a2fe0e446a}{load} 
+\end{DoxySeeAlso}
+
+
+Definition at line 451 of file optimizer.\-cpp.
+
+
+
+References Global\-Search\-::\-Opt\-Base\-::error(), Global\-Search\-::\-Structure\-::get\-I\-D\-String(), Global\-Search\-::\-Opt\-Base\-::is\-Starting, m\-\_\-opt, Global\-Search\-::\-Opt\-Base\-::s\-O\-B\-Mutex, Global\-Search\-::\-Structure\-::update\-And\-Add\-To\-History(), Global\-Search\-::\-Structure\-::update\-And\-Skip\-History(), and Global\-Search\-::\-Opt\-Base\-::warning().
+
+
+
+Referenced by load(), and update().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_a17b4f7c9fd176d976d652598497ff70e}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!read\-Data\-From\-Settings@{read\-Data\-From\-Settings}}
+\index{read\-Data\-From\-Settings@{read\-Data\-From\-Settings}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{read\-Data\-From\-Settings}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Optimizer\-::read\-Data\-From\-Settings (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{filename = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classGlobalSearch_1_1Optimizer_a17b4f7c9fd176d976d652598497ff70e}
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Scheme or state file from which to load all generic data values in m\-\_\-data \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 175 of file optimizer.\-cpp.
+
+
+
+References get\-Data\-Identifiers(), Global\-Search\-::\-Opt\-Base\-::get\-I\-D\-String(), get\-I\-D\-String(), m\-\_\-data, and m\-\_\-opt.
+
+
+
+Referenced by read\-Settings().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_afef2dc22aa09df5e50e2f7b4f492091a}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!read\-Settings@{read\-Settings}}
+\index{read\-Settings@{read\-Settings}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{read\-Settings}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Optimizer\-::read\-Settings (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{filename = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classGlobalSearch_1_1Optimizer_afef2dc22aa09df5e50e2f7b4f492091a}
+Read optimizer data from file (.scheme or .state). If called without an argument, this function does nothing, i.\-e. it will not read optimizer data from the system config file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Scheme or state file to load data from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Optimizer_af67c36d87d7b41b1e91773b519d77829}{write\-Settings} 
+\end{DoxySeeAlso}
+
+
+Definition at line 111 of file optimizer.\-cpp.
+
+
+
+References read\-Data\-From\-Settings(), read\-Templates\-From\-Settings(), and read\-User\-Values\-From\-Settings().
+
+
+
+Referenced by Optimizer().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_a2e365a82ae293c91516270f5e6534960}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!read\-Templates\-From\-Settings@{read\-Templates\-From\-Settings}}
+\index{read\-Templates\-From\-Settings@{read\-Templates\-From\-Settings}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{read\-Templates\-From\-Settings}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Optimizer\-::read\-Templates\-From\-Settings (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{filename = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classGlobalSearch_1_1Optimizer_a2e365a82ae293c91516270f5e6534960}
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Scheme or state file from which to load all templates in m\-\_\-templates \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 125 of file optimizer.\-cpp.
+
+
+
+References fix\-Template\-Lengths(), Global\-Search\-::\-Opt\-Base\-::get\-I\-D\-String(), get\-I\-D\-String(), Global\-Search\-::\-Queue\-Interface\-::get\-I\-D\-String(), get\-Template\-Names(), m\-\_\-opt, m\-\_\-\-Q\-I\-Templates, m\-\_\-templates, and Global\-Search\-::\-Opt\-Base\-::queue\-Interface().
+
+
+
+Referenced by read\-Settings().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_a5cc22352d86ce253a0aa8d9b2ee8c951}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!read\-User\-Values\-From\-Settings@{read\-User\-Values\-From\-Settings}}
+\index{read\-User\-Values\-From\-Settings@{read\-User\-Values\-From\-Settings}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{read\-User\-Values\-From\-Settings}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Optimizer\-::read\-User\-Values\-From\-Settings (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{filename = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classGlobalSearch_1_1Optimizer_a5cc22352d86ce253a0aa8d9b2ee8c951}
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Scheme or state file from which to load all user values (m\-\_\-user\mbox{[}1-\/4\mbox{]}) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 161 of file optimizer.\-cpp.
+
+
+
+References Global\-Search\-::\-Opt\-Base\-::get\-I\-D\-String(), get\-I\-D\-String(), m\-\_\-opt, m\-\_\-user1, m\-\_\-user2, m\-\_\-user3, and m\-\_\-user4.
+
+
+
+Referenced by read\-Settings().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_a894c2cc508b92f2bb1678cc750faab30}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!remove\-All\-Templates\-For\-Opt\-Step@{remove\-All\-Templates\-For\-Opt\-Step}}
+\index{remove\-All\-Templates\-For\-Opt\-Step@{remove\-All\-Templates\-For\-Opt\-Step}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{remove\-All\-Templates\-For\-Opt\-Step}]{\setlength{\rightskip}{0pt plus 5cm}bool Global\-Search\-::\-Optimizer\-::remove\-All\-Templates\-For\-Opt\-Step (
+\begin{DoxyParamCaption}
+\item[{int}]{opt\-Step\-Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Optimizer_a894c2cc508b92f2bb1678cc750faab30}
+Removes all template entries for the given optstep.
+
+\begin{DoxyNote}{Note}
+This function will remove the template for the current \hyperlink{classGlobalSearch_1_1Optimizer}{Optimizer} and \hyperlink{classGlobalSearch_1_1QueueInterface}{Queue\-Interface}, but will not modify any \char`\"{}data\char`\"{} entries in the \hyperlink{classGlobalSearch_1_1Optimizer}{Optimizer}.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em opt\-Step\-Index} & Optimization step index to remove\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if successful, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 593 of file optimizer.\-cpp.
+
+
+
+References get\-Number\-Of\-Opt\-Steps(), m\-\_\-\-Q\-I\-Templates, and m\-\_\-templates.
+
+
+
+Referenced by Global\-Search\-::\-Abstract\-Edit\-Tab\-::remove\-Current\-Opt\-Step().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_a56df447e7eab1eb64bd66f4e3bd4594d}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!resolve\-Template\-Hash@{resolve\-Template\-Hash}}
+\index{resolve\-Template\-Hash@{resolve\-Template\-Hash}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{resolve\-Template\-Hash}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Hash$<$ Q\-String, Q\-String\-List $>$ \& Global\-Search\-::\-Optimizer\-::resolve\-Template\-Hash (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{filename}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classGlobalSearch_1_1Optimizer_a56df447e7eab1eb64bd66f4e3bd4594d}
+Determine which internal template hash contains {\itshape filename} and return a reference to the correct hash. 
+
+Definition at line 633 of file optimizer.\-cpp.
+
+
+
+References m\-\_\-\-Q\-I\-Templates, and m\-\_\-templates.
+
+
+
+Referenced by append\-Template(), get\-Template(), and set\-Template().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_a139e0f44d76b023c82e48149e595cbc5}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!resolve\-Template\-Hash@{resolve\-Template\-Hash}}
+\index{resolve\-Template\-Hash@{resolve\-Template\-Hash}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{resolve\-Template\-Hash}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-Hash$<$ Q\-String, Q\-String\-List $>$ \& Global\-Search\-::\-Optimizer\-::resolve\-Template\-Hash (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{filename}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}}\label{classGlobalSearch_1_1Optimizer_a139e0f44d76b023c82e48149e595cbc5}
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Determine which internal template hash contains {\itshape filename} and return a reference to the correct hash. 
+
+Definition at line 653 of file optimizer.\-cpp.
+
+
+
+References m\-\_\-\-Q\-I\-Templates, and m\-\_\-templates.
+
+\hypertarget{classGlobalSearch_1_1Optimizer_a0bea17818fd8f29a13542119aebf2377}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!set\-Data@{set\-Data}}
+\index{set\-Data@{set\-Data}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{set\-Data}]{\setlength{\rightskip}{0pt plus 5cm}bool Global\-Search\-::\-Optimizer\-::set\-Data (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{identifier, }
+\item[{const Q\-Variant \&}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Optimizer_a0bea17818fd8f29a13542119aebf2377}
+Set a generic data entry.
+
+
+\begin{DoxyParams}{Parameters}
+{\em identifier} & A valid data identifier \\
+\hline
+{\em data} & Q\-Variant of data\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if successful, false otherwise. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Optimizer_a512b302d7bc91999350ead624259a3cf}{get\-Data} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_a4fb3da2a83d851f3ab53b8bc29026886}{get\-Data\-Identifiers} 
+\end{DoxySeeAlso}
+
+
+Definition at line 617 of file optimizer.\-cpp.
+
+
+
+References m\-\_\-data.
+
+\hypertarget{classGlobalSearch_1_1Optimizer_a83db0ac69c8b97825fc5d8361107ada4}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!set\-Template@{set\-Template}}
+\index{set\-Template@{set\-Template}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{set\-Template}]{\setlength{\rightskip}{0pt plus 5cm}bool Global\-Search\-::\-Optimizer\-::set\-Template (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{filename, }
+\item[{const Q\-String \&}]{template\-Data, }
+\item[{int}]{opt\-Step\-Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Optimizer_a83db0ac69c8b97825fc5d8361107ada4}
+Set the template for the specified filename and optimization step.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Filename of template \\
+\hline
+{\em template\-Data} & Template string \\
+\hline
+{\em opt\-Step\-Index} & Optimization step (index, starts at 0)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if successful, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 542 of file optimizer.\-cpp.
+
+
+
+References get\-Number\-Of\-Opt\-Steps(), m\-\_\-\-Q\-I\-Templates, m\-\_\-templates, and resolve\-Template\-Hash().
+
+
+
+Referenced by Global\-Search\-::\-Abstract\-Edit\-Tab\-::save\-Current\-Template().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_ab4be28b4fc40d106ffa5ae1c9d67a6f3}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!set\-Template@{set\-Template}}
+\index{set\-Template@{set\-Template}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{set\-Template}]{\setlength{\rightskip}{0pt plus 5cm}bool Global\-Search\-::\-Optimizer\-::set\-Template (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{filename, }
+\item[{const Q\-String\-List \&}]{template\-Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Optimizer_ab4be28b4fc40d106ffa5ae1c9d67a6f3}
+Set all templates for the specified filename.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Filename of template \\
+\hline
+{\em template\-Data} & List of template strings in order of optimization step\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if successful, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 554 of file optimizer.\-cpp.
+
+
+
+References m\-\_\-\-Q\-I\-Templates, m\-\_\-templates, and resolve\-Template\-Hash().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_adfb8a9de9d1eac7d5b188f6ae24c5ebc}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!set\-User1@{set\-User1}}
+\index{set\-User1@{set\-User1}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{set\-User1}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Optimizer\-::set\-User1 (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Optimizer_adfb8a9de9d1eac7d5b188f6ae24c5ebc}
+
+\begin{DoxyParams}{Parameters}
+{\em s} & A user customizable string that is used in template interpretation. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 311 of file optimizer.\-h.
+
+
+
+References m\-\_\-user1.
+
+
+
+Referenced by Global\-Search\-::\-Abstract\-Edit\-Tab\-::update\-User\-Values().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_a9f53a4945abb35cda9a50fb973d27890}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!set\-User2@{set\-User2}}
+\index{set\-User2@{set\-User2}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{set\-User2}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Optimizer\-::set\-User2 (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Optimizer_a9f53a4945abb35cda9a50fb973d27890}
+
+\begin{DoxyParams}{Parameters}
+{\em s} & A user customizable string that is used in template interpretation. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 317 of file optimizer.\-h.
+
+
+
+References m\-\_\-user2.
+
+
+
+Referenced by Global\-Search\-::\-Abstract\-Edit\-Tab\-::update\-User\-Values().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_a19e2d3e7c7a31f1ae94a3a58c0b3a6bf}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!set\-User3@{set\-User3}}
+\index{set\-User3@{set\-User3}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{set\-User3}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Optimizer\-::set\-User3 (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Optimizer_a19e2d3e7c7a31f1ae94a3a58c0b3a6bf}
+
+\begin{DoxyParams}{Parameters}
+{\em s} & A user customizable string that is used in template interpretation. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 323 of file optimizer.\-h.
+
+
+
+References m\-\_\-user3.
+
+
+
+Referenced by Global\-Search\-::\-Abstract\-Edit\-Tab\-::update\-User\-Values().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_a713a94a031fc5fa7c653d54e6ef9fb64}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!set\-User4@{set\-User4}}
+\index{set\-User4@{set\-User4}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{set\-User4}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Optimizer\-::set\-User4 (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Optimizer_a713a94a031fc5fa7c653d54e6ef9fb64}
+
+\begin{DoxyParams}{Parameters}
+{\em s} & A user customizable string that is used in template interpretation. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 329 of file optimizer.\-h.
+
+
+
+References m\-\_\-user4.
+
+
+
+Referenced by Global\-Search\-::\-Abstract\-Edit\-Tab\-::update\-User\-Values().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_acaa83cc6bf1dcc263b92450b4f8cb652}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!stderr\-Filename@{stderr\-Filename}}
+\index{stderr\-Filename@{stderr\-Filename}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{stderr\-Filename}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String Global\-Search\-::\-Optimizer\-::stderr\-Filename (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Optimizer_acaa83cc6bf1dcc263b92450b4f8cb652}
+Filename for standard error
+
+Details given in m\-\_\-local\-Run\-Command.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Optimizer_aed5eb285d45a001c9520c2ed3a5b57a1}{local\-Run\-Command} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_a5964a9b38d3ae90c8ac36a75d3a35832}{stdin\-Filename} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_a217750aa50431f9948aa8164fb99de0c}{stdout\-Filename} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_a1cdb6b6c5e929e84c834ba93148fb31e}{m\-\_\-local\-Run\-Command} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_aca91d12d7aecae052d6ab5ae158acec6}{m\-\_\-stdin\-Filename} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_a5ed04fdd5f8b511249e408adcd174550}{m\-\_\-stdout\-Filename} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_a75b800a7f90a03d551f6795404d0c8f1}{m\-\_\-stderr\-Filename} 
+\end{DoxySeeAlso}
+
+
+Definition at line 389 of file optimizer.\-h.
+
+
+
+References m\-\_\-stderr\-Filename.
+
+
+
+Referenced by Global\-Search\-::\-Local\-Queue\-Interface\-::start\-Job().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_a5964a9b38d3ae90c8ac36a75d3a35832}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!stdin\-Filename@{stdin\-Filename}}
+\index{stdin\-Filename@{stdin\-Filename}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{stdin\-Filename}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String Global\-Search\-::\-Optimizer\-::stdin\-Filename (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Optimizer_a5964a9b38d3ae90c8ac36a75d3a35832}
+Filename for standard input
+
+Details given in m\-\_\-local\-Run\-Command.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Optimizer_aed5eb285d45a001c9520c2ed3a5b57a1}{local\-Run\-Command} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_a217750aa50431f9948aa8164fb99de0c}{stdout\-Filename} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_acaa83cc6bf1dcc263b92450b4f8cb652}{stderr\-Filename} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_a1cdb6b6c5e929e84c834ba93148fb31e}{m\-\_\-local\-Run\-Command} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_aca91d12d7aecae052d6ab5ae158acec6}{m\-\_\-stdin\-Filename} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_a5ed04fdd5f8b511249e408adcd174550}{m\-\_\-stdout\-Filename} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_a75b800a7f90a03d551f6795404d0c8f1}{m\-\_\-stderr\-Filename} 
+\end{DoxySeeAlso}
+
+
+Definition at line 359 of file optimizer.\-h.
+
+
+
+References m\-\_\-stdin\-Filename.
+
+
+
+Referenced by Global\-Search\-::\-Local\-Queue\-Interface\-::start\-Job().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_a217750aa50431f9948aa8164fb99de0c}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!stdout\-Filename@{stdout\-Filename}}
+\index{stdout\-Filename@{stdout\-Filename}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{stdout\-Filename}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String Global\-Search\-::\-Optimizer\-::stdout\-Filename (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Optimizer_a217750aa50431f9948aa8164fb99de0c}
+Filename for standard output
+
+Details given in m\-\_\-local\-Run\-Command.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Optimizer_aed5eb285d45a001c9520c2ed3a5b57a1}{local\-Run\-Command} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_a5964a9b38d3ae90c8ac36a75d3a35832}{stdin\-Filename} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_acaa83cc6bf1dcc263b92450b4f8cb652}{stderr\-Filename} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_a1cdb6b6c5e929e84c834ba93148fb31e}{m\-\_\-local\-Run\-Command} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_aca91d12d7aecae052d6ab5ae158acec6}{m\-\_\-stdin\-Filename} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_a5ed04fdd5f8b511249e408adcd174550}{m\-\_\-stdout\-Filename} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_a75b800a7f90a03d551f6795404d0c8f1}{m\-\_\-stderr\-Filename} 
+\end{DoxySeeAlso}
+
+
+Definition at line 374 of file optimizer.\-h.
+
+
+
+References m\-\_\-stdout\-Filename.
+
+
+
+Referenced by Global\-Search\-::\-Local\-Queue\-Interface\-::start\-Job().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_a7e57844e4e6d713c87e6cf29ea03c5e2}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!update@{update}}
+\index{update@{update}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}bool Global\-Search\-::\-Optimizer\-::update (
+\begin{DoxyParamCaption}
+\item[{{\bf Structure} $\ast$}]{structure}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classGlobalSearch_1_1Optimizer_a7e57844e4e6d713c87e6cf29ea03c5e2}
+Copy the files from the \hyperlink{classGlobalSearch_1_1Structure}{Structure}'s remote path to the local path, and then update the \hyperlink{classGlobalSearch_1_1Structure}{Structure} based on the optimization results.
+
+
+\begin{DoxyParams}{Parameters}
+{\em structure} & \hyperlink{classGlobalSearch_1_1Structure}{Structure} to be updated.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if successful, false otherwise. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Optimizer_a5a2c5bc75be24ee41c27c1a2fe0e446a}{load} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_a671035cb8c0afbb4a1755b395bd063bd}{read} 
+\end{DoxySeeAlso}
+
+
+Definition at line 393 of file optimizer.\-cpp.
+
+
+
+References Global\-Search\-::\-Structure\-::get\-I\-D\-String(), m\-\_\-opt, m\-\_\-output\-Filenames, Global\-Search\-::\-Queue\-Interface\-::prepare\-For\-Structure\-Update(), Global\-Search\-::\-Opt\-Base\-::queue\-Interface(), read(), Global\-Search\-::\-Structure\-::set\-Job\-I\-D(), Global\-Search\-::\-Structure\-::stop\-Opt\-Timer(), and Global\-Search\-::\-Opt\-Base\-::warning().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_ad9c1899c333b7aa692bfe7ff252a6222}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!update\-Queue\-Interface@{update\-Queue\-Interface}}
+\index{update\-Queue\-Interface@{update\-Queue\-Interface}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{update\-Queue\-Interface}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Optimizer\-::update\-Queue\-Interface (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1Optimizer_ad9c1899c333b7aa692bfe7ff252a6222}
+Update the m\-\_\-\-Q\-I\-Templates hash.
+
+Automatically connected to m\-\_\-opt's queue\-Interface\-Changed signal. Should not need to be called directly. 
+
+Definition at line 343 of file optimizer.\-cpp.
+
+
+
+References get\-Number\-Of\-Opt\-Steps(), Global\-Search\-::\-Queue\-Interface\-::get\-Template\-File\-Names(), m\-\_\-opt, m\-\_\-\-Q\-I\-Templates, and Global\-Search\-::\-Opt\-Base\-::queue\-Interface().
+
+
+
+Referenced by Optimizer().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_a115e78eb651af3e0fbb9fe188d50ecdc}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!write\-Data\-To\-Settings@{write\-Data\-To\-Settings}}
+\index{write\-Data\-To\-Settings@{write\-Data\-To\-Settings}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{write\-Data\-To\-Settings}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Optimizer\-::write\-Data\-To\-Settings (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{filename = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classGlobalSearch_1_1Optimizer_a115e78eb651af3e0fbb9fe188d50ecdc}
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Scheme or state file in which to write all generic data values in m\-\_\-data \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 266 of file optimizer.\-cpp.
+
+
+
+References get\-Data\-Identifiers(), Global\-Search\-::\-Opt\-Base\-::get\-I\-D\-String(), get\-I\-D\-String(), m\-\_\-data, and m\-\_\-opt.
+
+
+
+Referenced by write\-Settings().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_af67c36d87d7b41b1e91773b519d77829}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!write\-Settings@{write\-Settings}}
+\index{write\-Settings@{write\-Settings}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{write\-Settings}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Optimizer\-::write\-Settings (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{filename = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classGlobalSearch_1_1Optimizer_af67c36d87d7b41b1e91773b519d77829}
+Write optimizer data to file (.scheme or .state). If called without an argument, this function does nothing, i.\-e. it will not write optimizer data to the system config file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Scheme or state file to write data to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Optimizer_afef2dc22aa09df5e50e2f7b4f492091a}{read\-Settings} 
+\end{DoxySeeAlso}
+
+
+Definition at line 190 of file optimizer.\-cpp.
+
+
+
+References m\-\_\-opt, Global\-Search\-::\-Opt\-Base\-::queue\-Interface(), write\-Data\-To\-Settings(), Global\-Search\-::\-Queue\-Interface\-::write\-Settings(), write\-Templates\-To\-Settings(), and write\-User\-Values\-To\-Settings().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_a9c1a95c53dcdb90dce83be3ad07ac719}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!write\-Templates\-To\-Settings@{write\-Templates\-To\-Settings}}
+\index{write\-Templates\-To\-Settings@{write\-Templates\-To\-Settings}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{write\-Templates\-To\-Settings}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Optimizer\-::write\-Templates\-To\-Settings (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{filename = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classGlobalSearch_1_1Optimizer_a9c1a95c53dcdb90dce83be3ad07ac719}
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Scheme or state file in which to write all templates in m\-\_\-templates \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 209 of file optimizer.\-cpp.
+
+
+
+References Global\-Search\-::\-Opt\-Base\-::get\-I\-D\-String(), get\-I\-D\-String(), Global\-Search\-::\-Queue\-Interface\-::get\-I\-D\-String(), get\-Template\-Names(), m\-\_\-opt, m\-\_\-\-Q\-I\-Templates, m\-\_\-templates, and Global\-Search\-::\-Opt\-Base\-::queue\-Interface().
+
+
+
+Referenced by write\-Settings().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_afa884a475b8001a43e592f466cf2318c}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!write\-User\-Values\-To\-Settings@{write\-User\-Values\-To\-Settings}}
+\index{write\-User\-Values\-To\-Settings@{write\-User\-Values\-To\-Settings}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{write\-User\-Values\-To\-Settings}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Optimizer\-::write\-User\-Values\-To\-Settings (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{filename = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classGlobalSearch_1_1Optimizer_afa884a475b8001a43e592f466cf2318c}
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Scheme or state file in which to write all user values (m\-\_\-user\mbox{[}1-\/4\mbox{]}) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 240 of file optimizer.\-cpp.
+
+
+
+References Global\-Search\-::\-Opt\-Base\-::get\-I\-D\-String(), get\-I\-D\-String(), m\-\_\-opt, m\-\_\-user1, m\-\_\-user2, m\-\_\-user3, and m\-\_\-user4.
+
+
+
+Referenced by write\-Settings().
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classGlobalSearch_1_1Optimizer_a5e7a476823bc2d4b63939a9ada4f8ed0}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!m\-\_\-completion\-Filename@{m\-\_\-completion\-Filename}}
+\index{m\-\_\-completion\-Filename@{m\-\_\-completion\-Filename}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{m\-\_\-completion\-Filename}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String Global\-Search\-::\-Optimizer\-::m\-\_\-completion\-Filename\hspace{0.3cm}{\ttfamily [protected]}}}\label{classGlobalSearch_1_1Optimizer_a5e7a476823bc2d4b63939a9ada4f8ed0}
+File to check if optimization has complete successfully. \begin{DoxySeeAlso}{See Also}
+m\-\_\-completion\-String 
+\end{DoxySeeAlso}
+
+
+Definition at line 512 of file optimizer.\-h.
+
+
+
+Referenced by check\-For\-Successful\-Output(), and check\-If\-Output\-File\-Exists().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_a65ee33ee8778c366e8b197e75ae8e674}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!m\-\_\-completion\-Strings@{m\-\_\-completion\-Strings}}
+\index{m\-\_\-completion\-Strings@{m\-\_\-completion\-Strings}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{m\-\_\-completion\-Strings}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String\-List Global\-Search\-::\-Optimizer\-::m\-\_\-completion\-Strings\hspace{0.3cm}{\ttfamily [protected]}}}\label{classGlobalSearch_1_1Optimizer_a65ee33ee8778c366e8b197e75ae8e674}
+String to search for in m\-\_\-completion\-Filename when checking if optimization has complete successfully. \begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Optimizer_a5e7a476823bc2d4b63939a9ada4f8ed0}{m\-\_\-completion\-Filename}. 
+\end{DoxySeeAlso}
+
+
+Definition at line 519 of file optimizer.\-h.
+
+
+
+Referenced by check\-For\-Successful\-Output().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_a5cf732e34a6eaa4a7b1781d23e6e1c6e}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!m\-\_\-data@{m\-\_\-data}}
+\index{m\-\_\-data@{m\-\_\-data}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{m\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Hash$<$Q\-String, Q\-Variant$>$ Global\-Search\-::\-Optimizer\-::m\-\_\-data\hspace{0.3cm}{\ttfamily [protected]}}}\label{classGlobalSearch_1_1Optimizer_a5cf732e34a6eaa4a7b1781d23e6e1c6e}
+Store generic data types. This is not commonly used, see Xtal\-Opt's V\-A\-S\-P\-Optimizer for an example where it is used to store information about pseudopotentials. 
+
+Definition at line 470 of file optimizer.\-h.
+
+
+
+Referenced by get\-Data(), get\-Data\-Identifiers(), read\-Data\-From\-Settings(), set\-Data(), and write\-Data\-To\-Settings().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_a4d2dc8b7aaa3bb6fed8c28547460def8}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!m\-\_\-id\-String@{m\-\_\-id\-String}}
+\index{m\-\_\-id\-String@{m\-\_\-id\-String}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{m\-\_\-id\-String}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String Global\-Search\-::\-Optimizer\-::m\-\_\-id\-String\hspace{0.3cm}{\ttfamily [protected]}}}\label{classGlobalSearch_1_1Optimizer_a4d2dc8b7aaa3bb6fed8c28547460def8}
+Unique identification string for this \hyperlink{classGlobalSearch_1_1Optimizer}{Optimizer}. 
+
+Definition at line 640 of file optimizer.\-h.
+
+
+
+Referenced by get\-I\-D\-String(), and Optimizer().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_a1cdb6b6c5e929e84c834ba93148fb31e}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!m\-\_\-local\-Run\-Command@{m\-\_\-local\-Run\-Command}}
+\index{m\-\_\-local\-Run\-Command@{m\-\_\-local\-Run\-Command}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{m\-\_\-local\-Run\-Command}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String Global\-Search\-::\-Optimizer\-::m\-\_\-local\-Run\-Command\hspace{0.3cm}{\ttfamily [protected]}}}\label{classGlobalSearch_1_1Optimizer_a1cdb6b6c5e929e84c834ba93148fb31e}
+Commandline instruction to run this program locally
+
+Three common scenarios\-:
+
+V\-A\-S\-P-\/esque\-: \$ vasp Runs in working directory reading from predefined input filenames (ie. P\-O\-S\-C\-A\-R). Set m\-\_\-local\-Run\-Command=\char`\"{}vasp\char`\"{}, and m\-\_\-stdin\-Filename=m\-\_\-stdout\-Filename=m\-\_\-stderr\-Filename=\char`\"{}\char`\"{};
+
+G\-U\-L\-P-\/esque\-: \$ gulp $<$ job.\-gin 1$>$job.\-got 2$>$job.\-err
+
+Runs in working directory using redirection to specify input/output. Set m\-\_\-local\-Run\-Command=\char`\"{}gulp\char`\"{}, m\-\_\-stdin\-Filename=\char`\"{}job.\-gin\char`\"{}, m\-\_\-stdout\-Filename=\char`\"{}job.\-got\char`\"{}, m\-\_\-stderr\-Filename=\char`\"{}job.\-err\char`\"{}.
+
+M\-O\-P\-A\-C-\/esque\-: \$ mopac job
+
+Runs in working directory, specifying either an input filename or a base name. In both cases, put the entire command line into m\-\_\-local\-Run\-Command, =\char`\"{}mopac job\char`\"{}, m\-\_\-stdin\-Filename=m\-\_\-stdout\-Filename=m\-\_\-stderr\-Filename=\char`\"{}\char`\"{}
+
+Stdin/out/err is not used (=\char`\"{}\char`\"{}) by default.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Optimizer_aed5eb285d45a001c9520c2ed3a5b57a1}{local\-Run\-Command} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_a5964a9b38d3ae90c8ac36a75d3a35832}{stdin\-Filename} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_a217750aa50431f9948aa8164fb99de0c}{stdout\-Filename} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_acaa83cc6bf1dcc263b92450b4f8cb652}{stderr\-Filename} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_aca91d12d7aecae052d6ab5ae158acec6}{m\-\_\-stdin\-Filename} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_a5ed04fdd5f8b511249e408adcd174550}{m\-\_\-stdout\-Filename} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_a75b800a7f90a03d551f6795404d0c8f1}{m\-\_\-stderr\-Filename} 
+\end{DoxySeeAlso}
+
+
+Definition at line 561 of file optimizer.\-h.
+
+
+
+Referenced by local\-Run\-Command().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_a689df6e2c0d8bbfff99585ca54199696}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!m\-\_\-opt@{m\-\_\-opt}}
+\index{m\-\_\-opt@{m\-\_\-opt}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{m\-\_\-opt}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Opt\-Base}$\ast$ Global\-Search\-::\-Optimizer\-::m\-\_\-opt\hspace{0.3cm}{\ttfamily [protected]}}}\label{classGlobalSearch_1_1Optimizer_a689df6e2c0d8bbfff99585ca54199696}
+Cached pointer to the associated \hyperlink{classGlobalSearch_1_1OptBase}{Opt\-Base} instance 
+
+Definition at line 635 of file optimizer.\-h.
+
+
+
+Referenced by check\-For\-Successful\-Output(), check\-If\-Output\-File\-Exists(), dialog(), get\-Interpreted\-Templates(), load(), Optimizer(), read(), read\-Data\-From\-Settings(), read\-Templates\-From\-Settings(), read\-User\-Values\-From\-Settings(), update(), update\-Queue\-Interface(), write\-Data\-To\-Settings(), write\-Settings(), write\-Templates\-To\-Settings(), and write\-User\-Values\-To\-Settings().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_a28a8bf74bf7bdf00d453890796574c7d}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!m\-\_\-output\-Filenames@{m\-\_\-output\-Filenames}}
+\index{m\-\_\-output\-Filenames@{m\-\_\-output\-Filenames}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{m\-\_\-output\-Filenames}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String\-List Global\-Search\-::\-Optimizer\-::m\-\_\-output\-Filenames\hspace{0.3cm}{\ttfamily [protected]}}}\label{classGlobalSearch_1_1Optimizer_a28a8bf74bf7bdf00d453890796574c7d}
+List of filenames to check when updating structure (will be checked in order of index). 
+
+Definition at line 525 of file optimizer.\-h.
+
+
+
+Referenced by load(), and update().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_ac23d5114bf09b816666351868d49d1f8}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!m\-\_\-\-Q\-I\-Templates@{m\-\_\-\-Q\-I\-Templates}}
+\index{m\-\_\-\-Q\-I\-Templates@{m\-\_\-\-Q\-I\-Templates}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{m\-\_\-\-Q\-I\-Templates}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Hash$<$Q\-String, Q\-String\-List $>$ Global\-Search\-::\-Optimizer\-::m\-\_\-\-Q\-I\-Templates\hspace{0.3cm}{\ttfamily [protected]}}}\label{classGlobalSearch_1_1Optimizer_ac23d5114bf09b816666351868d49d1f8}
+Stores all template data for the current \hyperlink{classGlobalSearch_1_1QueueInterface}{Queue\-Interface}. Key is the filename to be written and the value is a list of corresponding templates in order of optimization step. 
+
+Definition at line 506 of file optimizer.\-h.
+
+
+
+Referenced by append\-Template(), fix\-Template\-Lengths(), get\-Interpreted\-Templates(), get\-Template(), read\-Templates\-From\-Settings(), remove\-All\-Templates\-For\-Opt\-Step(), resolve\-Template\-Hash(), set\-Template(), update\-Queue\-Interface(), and write\-Templates\-To\-Settings().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_a75b800a7f90a03d551f6795404d0c8f1}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!m\-\_\-stderr\-Filename@{m\-\_\-stderr\-Filename}}
+\index{m\-\_\-stderr\-Filename@{m\-\_\-stderr\-Filename}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{m\-\_\-stderr\-Filename}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String Global\-Search\-::\-Optimizer\-::m\-\_\-stderr\-Filename\hspace{0.3cm}{\ttfamily [protected]}}}\label{classGlobalSearch_1_1Optimizer_a75b800a7f90a03d551f6795404d0c8f1}
+Filename for standard error
+
+Details given in m\-\_\-local\-Run\-Command.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Optimizer_aed5eb285d45a001c9520c2ed3a5b57a1}{local\-Run\-Command} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_a5964a9b38d3ae90c8ac36a75d3a35832}{stdin\-Filename} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_a217750aa50431f9948aa8164fb99de0c}{stdout\-Filename} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_acaa83cc6bf1dcc263b92450b4f8cb652}{stderr\-Filename} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_a1cdb6b6c5e929e84c834ba93148fb31e}{m\-\_\-local\-Run\-Command} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_aca91d12d7aecae052d6ab5ae158acec6}{m\-\_\-stdin\-Filename} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_a5ed04fdd5f8b511249e408adcd174550}{m\-\_\-stdout\-Filename} 
+\end{DoxySeeAlso}
+
+
+Definition at line 606 of file optimizer.\-h.
+
+
+
+Referenced by Optimizer(), and stderr\-Filename().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_aca91d12d7aecae052d6ab5ae158acec6}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!m\-\_\-stdin\-Filename@{m\-\_\-stdin\-Filename}}
+\index{m\-\_\-stdin\-Filename@{m\-\_\-stdin\-Filename}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{m\-\_\-stdin\-Filename}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String Global\-Search\-::\-Optimizer\-::m\-\_\-stdin\-Filename\hspace{0.3cm}{\ttfamily [protected]}}}\label{classGlobalSearch_1_1Optimizer_aca91d12d7aecae052d6ab5ae158acec6}
+Filename for standard input
+
+Details given in m\-\_\-local\-Run\-Command.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Optimizer_aed5eb285d45a001c9520c2ed3a5b57a1}{local\-Run\-Command} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_a5964a9b38d3ae90c8ac36a75d3a35832}{stdin\-Filename} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_a217750aa50431f9948aa8164fb99de0c}{stdout\-Filename} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_acaa83cc6bf1dcc263b92450b4f8cb652}{stderr\-Filename} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_a1cdb6b6c5e929e84c834ba93148fb31e}{m\-\_\-local\-Run\-Command} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_a5ed04fdd5f8b511249e408adcd174550}{m\-\_\-stdout\-Filename} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_a75b800a7f90a03d551f6795404d0c8f1}{m\-\_\-stderr\-Filename} 
+\end{DoxySeeAlso}
+
+
+Definition at line 576 of file optimizer.\-h.
+
+
+
+Referenced by Optimizer(), and stdin\-Filename().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_a5ed04fdd5f8b511249e408adcd174550}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!m\-\_\-stdout\-Filename@{m\-\_\-stdout\-Filename}}
+\index{m\-\_\-stdout\-Filename@{m\-\_\-stdout\-Filename}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{m\-\_\-stdout\-Filename}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String Global\-Search\-::\-Optimizer\-::m\-\_\-stdout\-Filename\hspace{0.3cm}{\ttfamily [protected]}}}\label{classGlobalSearch_1_1Optimizer_a5ed04fdd5f8b511249e408adcd174550}
+Filename for standard output
+
+Details given in m\-\_\-local\-Run\-Command.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1Optimizer_aed5eb285d45a001c9520c2ed3a5b57a1}{local\-Run\-Command} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_a5964a9b38d3ae90c8ac36a75d3a35832}{stdin\-Filename} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_a217750aa50431f9948aa8164fb99de0c}{stdout\-Filename} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_acaa83cc6bf1dcc263b92450b4f8cb652}{stderr\-Filename} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_a1cdb6b6c5e929e84c834ba93148fb31e}{m\-\_\-local\-Run\-Command} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_aca91d12d7aecae052d6ab5ae158acec6}{m\-\_\-stdin\-Filename} 
+
+\hyperlink{classGlobalSearch_1_1Optimizer_a75b800a7f90a03d551f6795404d0c8f1}{m\-\_\-stderr\-Filename} 
+\end{DoxySeeAlso}
+
+
+Definition at line 591 of file optimizer.\-h.
+
+
+
+Referenced by Optimizer(), and stdout\-Filename().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_aa5892c64826b7cc7a2baa092efc8c66d}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!m\-\_\-templates@{m\-\_\-templates}}
+\index{m\-\_\-templates@{m\-\_\-templates}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{m\-\_\-templates}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Hash$<$Q\-String, Q\-String\-List $>$ Global\-Search\-::\-Optimizer\-::m\-\_\-templates\hspace{0.3cm}{\ttfamily [protected]}}}\label{classGlobalSearch_1_1Optimizer_aa5892c64826b7cc7a2baa092efc8c66d}
+Stores all template data for this optimizer. Key is the filename to be written and the value is a list of corresponding templates in order of optimization step. 
+
+Definition at line 499 of file optimizer.\-h.
+
+
+
+Referenced by append\-Template(), fix\-Template\-Lengths(), get\-Interpreted\-Templates(), get\-Number\-Of\-Opt\-Steps(), get\-Template(), get\-Template\-Names(), read\-Templates\-From\-Settings(), remove\-All\-Templates\-For\-Opt\-Step(), resolve\-Template\-Hash(), set\-Template(), and write\-Templates\-To\-Settings().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_ae300aaecb74a7a61a501e4b8bd988957}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!m\-\_\-user1@{m\-\_\-user1}}
+\index{m\-\_\-user1@{m\-\_\-user1}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{m\-\_\-user1}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String Global\-Search\-::\-Optimizer\-::m\-\_\-user1\hspace{0.3cm}{\ttfamily [protected]}}}\label{classGlobalSearch_1_1Optimizer_ae300aaecb74a7a61a501e4b8bd988957}
+User defined string that is used during template interpretation. 
+
+Definition at line 612 of file optimizer.\-h.
+
+
+
+Referenced by get\-User1(), read\-User\-Values\-From\-Settings(), set\-User1(), and write\-User\-Values\-To\-Settings().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_a5ca1294d2a3aa119dfab655dfa270d3a}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!m\-\_\-user2@{m\-\_\-user2}}
+\index{m\-\_\-user2@{m\-\_\-user2}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{m\-\_\-user2}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String Global\-Search\-::\-Optimizer\-::m\-\_\-user2\hspace{0.3cm}{\ttfamily [protected]}}}\label{classGlobalSearch_1_1Optimizer_a5ca1294d2a3aa119dfab655dfa270d3a}
+User defined string that is used during template interpretation. 
+
+Definition at line 618 of file optimizer.\-h.
+
+
+
+Referenced by get\-User2(), read\-User\-Values\-From\-Settings(), set\-User2(), and write\-User\-Values\-To\-Settings().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_a279ca8ed61d6ca36f70c5c69b4d57397}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!m\-\_\-user3@{m\-\_\-user3}}
+\index{m\-\_\-user3@{m\-\_\-user3}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{m\-\_\-user3}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String Global\-Search\-::\-Optimizer\-::m\-\_\-user3\hspace{0.3cm}{\ttfamily [protected]}}}\label{classGlobalSearch_1_1Optimizer_a279ca8ed61d6ca36f70c5c69b4d57397}
+User defined string that is used during template interpretation. 
+
+Definition at line 624 of file optimizer.\-h.
+
+
+
+Referenced by get\-User3(), read\-User\-Values\-From\-Settings(), set\-User3(), and write\-User\-Values\-To\-Settings().
+
+\hypertarget{classGlobalSearch_1_1Optimizer_aefab51b84978d2fb49eaf3585894808a}{\index{Global\-Search\-::\-Optimizer@{Global\-Search\-::\-Optimizer}!m\-\_\-user4@{m\-\_\-user4}}
+\index{m\-\_\-user4@{m\-\_\-user4}!GlobalSearch::Optimizer@{Global\-Search\-::\-Optimizer}}
+\subsubsection[{m\-\_\-user4}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String Global\-Search\-::\-Optimizer\-::m\-\_\-user4\hspace{0.3cm}{\ttfamily [protected]}}}\label{classGlobalSearch_1_1Optimizer_aefab51b84978d2fb49eaf3585894808a}
+User defined string that is used during template interpretation. 
+
+Definition at line 630 of file optimizer.\-h.
+
+
+
+Referenced by get\-User4(), read\-User\-Values\-From\-Settings(), set\-User4(), and write\-User\-Values\-To\-Settings().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/globalsearch/optimizer.\-h\item 
+src/globalsearch/optimizer.\-cpp\end{DoxyCompactItemize}

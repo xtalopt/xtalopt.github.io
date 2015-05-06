@@ -1,0 +1,216 @@
+\hypertarget{classGlobalSearch_1_1SlottedWaitCondition}{\section{Global\-Search\-:\-:Slotted\-Wait\-Condition Class Reference}
+\label{classGlobalSearch_1_1SlottedWaitCondition}\index{Global\-Search\-::\-Slotted\-Wait\-Condition@{Global\-Search\-::\-Slotted\-Wait\-Condition}}
+}
+
+
+A wrapper for Q\-Wait\-Condition that has slots for wake\-One and wake\-All. See warning in expanded documentation.  
+
+
+
+
+{\ttfamily \#include $<$globalsearch/slottedwaitcondition.\-h$>$}
+
+Inheritance diagram for Global\-Search\-:\-:Slotted\-Wait\-Condition\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classGlobalSearch_1_1SlottedWaitCondition}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classGlobalSearch_1_1SlottedWaitCondition_a26b060dde9c49345da5fe1c8dbd3374c}{wake\-One\-Slot} ()
+\item 
+void \hyperlink{classGlobalSearch_1_1SlottedWaitCondition_a4024066fe5db52f2e2c9257fcfbb5320}{wake\-All\-Slot} ()
+\item 
+void \hyperlink{classGlobalSearch_1_1SlottedWaitCondition_afb1ba4315ffa2de59eaf5045d2a4c09f}{prewait\-Lock} ()
+\item 
+void \hyperlink{classGlobalSearch_1_1SlottedWaitCondition_a3c9f9e3ba7eebdc3cc270445385e334c}{postwait\-Unlock} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGlobalSearch_1_1SlottedWaitCondition_a4fd4c5343242d8961fd893012ba9f54b}{Slotted\-Wait\-Condition} (Q\-Object $\ast$parent)
+\item 
+virtual \hyperlink{classGlobalSearch_1_1SlottedWaitCondition_a5b504c643c03b6b9e2e30e4a7613f43c}{$\sim$\-Slotted\-Wait\-Condition} ()
+\item 
+Q\-Mutex $\ast$ \hyperlink{classGlobalSearch_1_1SlottedWaitCondition_af548d9a604d2ec84083e5c92ca1a3849}{mutex} ()
+\item 
+void \hyperlink{classGlobalSearch_1_1SlottedWaitCondition_a30999486ab4737cda3c4e93f8625ac1f}{wait} (unsigned long timeout)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A wrapper for Q\-Wait\-Condition that has slots for wake\-One and wake\-All. See warning in expanded documentation. 
+
+\begin{DoxyWarning}{Warning}
+Misuse of this class can easily lead to a deadlock. If all calls to the wake$\ast$ slots are made before \hyperlink{classGlobalSearch_1_1SlottedWaitCondition_a30999486ab4737cda3c4e93f8625ac1f}{wait()} is called, the code may hang indefinitely. Ensure that \hyperlink{classGlobalSearch_1_1SlottedWaitCondition_a30999486ab4737cda3c4e93f8625ac1f}{wait()} is not called without setting a timeout to prevent this. For similar reasons, it is recommended that this construct is only used for trivial applications, such as G\-U\-I updates.
+\end{DoxyWarning}
+This class adds a few new functions to Q\-Wait\-Condition\-:
+\begin{DoxyItemize}
+\item \hyperlink{classGlobalSearch_1_1SlottedWaitCondition_a26b060dde9c49345da5fe1c8dbd3374c}{wake\-One\-Slot()}\-: A slot that calls Q\-Wait\-Condition\-::wake\-One()
+\item \hyperlink{classGlobalSearch_1_1SlottedWaitCondition_a4024066fe5db52f2e2c9257fcfbb5320}{wake\-All\-Slot()}\-: A slot that calls Q\-Wait\-Condition\-::wake\-All()
+\item \hyperlink{classGlobalSearch_1_1SlottedWaitCondition_af548d9a604d2ec84083e5c92ca1a3849}{mutex()}\-: Returns a pointer to the internal mutex (see below)
+\item \hyperlink{classGlobalSearch_1_1SlottedWaitCondition_afb1ba4315ffa2de59eaf5045d2a4c09f}{prewait\-Lock()}\-: A slot that locks the internal mutex (see below)
+\item \hyperlink{classGlobalSearch_1_1SlottedWaitCondition_a3c9f9e3ba7eebdc3cc270445385e334c}{postwait\-Unlock()}\-: A slot that unlocks the internal mutex (see below)
+\end{DoxyItemize}
+
+\hyperlink{classGlobalSearch_1_1SlottedWaitCondition}{Slotted\-Wait\-Condition} also includes an internal mutex that can be used for create critical sections before and after calls to \hyperlink{classGlobalSearch_1_1SlottedWaitCondition_a30999486ab4737cda3c4e93f8625ac1f}{wait()}. Normally an external mutex is used for this, but calls to \hyperlink{classGlobalSearch_1_1SlottedWaitCondition_a30999486ab4737cda3c4e93f8625ac1f}{wait()}, \hyperlink{classGlobalSearch_1_1SlottedWaitCondition_afb1ba4315ffa2de59eaf5045d2a4c09f}{prewait\-Lock()}, and \hyperlink{classGlobalSearch_1_1SlottedWaitCondition_a3c9f9e3ba7eebdc3cc270445385e334c}{postwait\-Unlock()} use the internal mutex. Calling \hyperlink{classGlobalSearch_1_1SlottedWaitCondition_af548d9a604d2ec84083e5c92ca1a3849}{mutex()} will return a pointer to this mutex. Typical usage of this wait condition is\-: 
+\begin{DoxyCode}
+\hyperlink{classGlobalSearch_1_1SlottedWaitCondition_a4fd4c5343242d8961fd893012ba9f54b}{SlottedWaitCondition} slottedWC;
+...
+connect(sender, SIGNAL(somethingThatFreesSlottedWCsResources()),
+        &slottedWC, SLOT(\hyperlink{classGlobalSearch_1_1SlottedWaitCondition_a4024066fe5db52f2e2c9257fcfbb5320}{wakeAllSlot}()));
+
+slottedWC->prewaitLock();
+\textcolor{comment}{// Do any work that needs to be peformed in a critical section before waiting}
+...
+
+\textcolor{comment}{// Check every 250 milliseconds that we still need to be waiting}
+while (someConditionIsTrue) \{
+  slottedWC->wait(250);
+\}
+
+\textcolor{comment}{// Do any work that needs to be done in a critical section after waking}
+...
+
+slottedWC->postwaitUnlock();
+\end{DoxyCode}
+ \begin{DoxyVerb} @author David C. Lonie\end{DoxyVerb}
+ 
+
+Definition at line 74 of file slottedwaitcondition.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classGlobalSearch_1_1SlottedWaitCondition_a4fd4c5343242d8961fd893012ba9f54b}{\index{Global\-Search\-::\-Slotted\-Wait\-Condition@{Global\-Search\-::\-Slotted\-Wait\-Condition}!Slotted\-Wait\-Condition@{Slotted\-Wait\-Condition}}
+\index{Slotted\-Wait\-Condition@{Slotted\-Wait\-Condition}!GlobalSearch::SlottedWaitCondition@{Global\-Search\-::\-Slotted\-Wait\-Condition}}
+\subsubsection[{Slotted\-Wait\-Condition}]{\setlength{\rightskip}{0pt plus 5cm}Global\-Search\-::\-Slotted\-Wait\-Condition\-::\-Slotted\-Wait\-Condition (
+\begin{DoxyParamCaption}
+\item[{Q\-Object $\ast$}]{parent}
+\end{DoxyParamCaption}
+)}}\label{classGlobalSearch_1_1SlottedWaitCondition_a4fd4c5343242d8961fd893012ba9f54b}
+Constructor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & Parent for Q\-Object. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 20 of file slottedwaitcondition.\-cpp.
+
+\hypertarget{classGlobalSearch_1_1SlottedWaitCondition_a5b504c643c03b6b9e2e30e4a7613f43c}{\index{Global\-Search\-::\-Slotted\-Wait\-Condition@{Global\-Search\-::\-Slotted\-Wait\-Condition}!$\sim$\-Slotted\-Wait\-Condition@{$\sim$\-Slotted\-Wait\-Condition}}
+\index{$\sim$\-Slotted\-Wait\-Condition@{$\sim$\-Slotted\-Wait\-Condition}!GlobalSearch::SlottedWaitCondition@{Global\-Search\-::\-Slotted\-Wait\-Condition}}
+\subsubsection[{$\sim$\-Slotted\-Wait\-Condition}]{\setlength{\rightskip}{0pt plus 5cm}Global\-Search\-::\-Slotted\-Wait\-Condition\-::$\sim$\-Slotted\-Wait\-Condition (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classGlobalSearch_1_1SlottedWaitCondition_a5b504c643c03b6b9e2e30e4a7613f43c}
+Destructor. 
+
+Definition at line 27 of file slottedwaitcondition.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classGlobalSearch_1_1SlottedWaitCondition_af548d9a604d2ec84083e5c92ca1a3849}{\index{Global\-Search\-::\-Slotted\-Wait\-Condition@{Global\-Search\-::\-Slotted\-Wait\-Condition}!mutex@{mutex}}
+\index{mutex@{mutex}!GlobalSearch::SlottedWaitCondition@{Global\-Search\-::\-Slotted\-Wait\-Condition}}
+\subsubsection[{mutex}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Mutex$\ast$ Global\-Search\-::\-Slotted\-Wait\-Condition\-::mutex (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classGlobalSearch_1_1SlottedWaitCondition_af548d9a604d2ec84083e5c92ca1a3849}
+\begin{DoxyReturn}{Returns}
+A pointer to the internal mutex, m\-\_\-mutex. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classGlobalSearch_1_1SlottedWaitCondition_afb1ba4315ffa2de59eaf5045d2a4c09f}{prewait\-Lock} 
+
+\hyperlink{classGlobalSearch_1_1SlottedWaitCondition_a3c9f9e3ba7eebdc3cc270445385e334c}{postwait\-Unlock} 
+
+\hyperlink{classGlobalSearch_1_1SlottedWaitCondition_a30999486ab4737cda3c4e93f8625ac1f}{wait} 
+\end{DoxySeeAlso}
+
+
+Definition at line 108 of file slottedwaitcondition.\-h.
+
+\hypertarget{classGlobalSearch_1_1SlottedWaitCondition_a3c9f9e3ba7eebdc3cc270445385e334c}{\index{Global\-Search\-::\-Slotted\-Wait\-Condition@{Global\-Search\-::\-Slotted\-Wait\-Condition}!postwait\-Unlock@{postwait\-Unlock}}
+\index{postwait\-Unlock@{postwait\-Unlock}!GlobalSearch::SlottedWaitCondition@{Global\-Search\-::\-Slotted\-Wait\-Condition}}
+\subsubsection[{postwait\-Unlock}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Slotted\-Wait\-Condition\-::postwait\-Unlock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1SlottedWaitCondition_a3c9f9e3ba7eebdc3cc270445385e334c}
+Unlock the internal mutex, m\-\_\-mutex, to end the critical section after calling \hyperlink{classGlobalSearch_1_1SlottedWaitCondition_a30999486ab4737cda3c4e93f8625ac1f}{wait()}. 
+
+Definition at line 159 of file slottedwaitcondition.\-h.
+
+\hypertarget{classGlobalSearch_1_1SlottedWaitCondition_afb1ba4315ffa2de59eaf5045d2a4c09f}{\index{Global\-Search\-::\-Slotted\-Wait\-Condition@{Global\-Search\-::\-Slotted\-Wait\-Condition}!prewait\-Lock@{prewait\-Lock}}
+\index{prewait\-Lock@{prewait\-Lock}!GlobalSearch::SlottedWaitCondition@{Global\-Search\-::\-Slotted\-Wait\-Condition}}
+\subsubsection[{prewait\-Lock}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Slotted\-Wait\-Condition\-::prewait\-Lock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1SlottedWaitCondition_afb1ba4315ffa2de59eaf5045d2a4c09f}
+Lock the internal mutex, m\-\_\-mutex, to create a critical section before calling \hyperlink{classGlobalSearch_1_1SlottedWaitCondition_a30999486ab4737cda3c4e93f8625ac1f}{wait()}. 
+
+Definition at line 153 of file slottedwaitcondition.\-h.
+
+\hypertarget{classGlobalSearch_1_1SlottedWaitCondition_a30999486ab4737cda3c4e93f8625ac1f}{\index{Global\-Search\-::\-Slotted\-Wait\-Condition@{Global\-Search\-::\-Slotted\-Wait\-Condition}!wait@{wait}}
+\index{wait@{wait}!GlobalSearch::SlottedWaitCondition@{Global\-Search\-::\-Slotted\-Wait\-Condition}}
+\subsubsection[{wait}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Slotted\-Wait\-Condition\-::wait (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{timeout}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classGlobalSearch_1_1SlottedWaitCondition_a30999486ab4737cda3c4e93f8625ac1f}
+Wait until woken up by one of\-:
+\begin{DoxyItemize}
+\item Q\-Wait\-Condition\-::wake\-One()
+\item Q\-Wait\-Condition\-::wake\-All()
+\item \hyperlink{classGlobalSearch_1_1SlottedWaitCondition_a26b060dde9c49345da5fe1c8dbd3374c}{Slotted\-Wait\-Condition\-::wake\-One\-Slot()}
+\item \hyperlink{classGlobalSearch_1_1SlottedWaitCondition_a4024066fe5db52f2e2c9257fcfbb5320}{Slotted\-Wait\-Condition\-::wake\-All\-Slot()}
+\end{DoxyItemize}
+
+\begin{DoxyWarning}{Warning}
+Misuse of this function can easily lead to a deadlock. If all calls to the wake$\ast$ slots are made before \hyperlink{classGlobalSearch_1_1SlottedWaitCondition_a30999486ab4737cda3c4e93f8625ac1f}{wait()} is called, the code may hang indefinitely. Ensure that \hyperlink{classGlobalSearch_1_1SlottedWaitCondition_a30999486ab4737cda3c4e93f8625ac1f}{wait()} is only called using a reasonable timeout to prevent this. For similar reasons, it is recommended that this construct is only used for trivial applications, such as G\-U\-I updates.
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em timeout} & Timeout in milliseconds. After this time, the wait condition will wake itself and continue.\\
+\hline
+\end{DoxyParams}
+This function expects the internal mutex, m\-\_\-mutex, to be locked before prior to using being called. This can be accomplished by calling lock() on \hyperlink{classGlobalSearch_1_1SlottedWaitCondition_af548d9a604d2ec84083e5c92ca1a3849}{mutex()} or \hyperlink{classGlobalSearch_1_1SlottedWaitCondition_afb1ba4315ffa2de59eaf5045d2a4c09f}{prewait\-Lock()}. The internal mutex will be locked before returning from this function. The mutex can be unlocked by calling the convenience function \hyperlink{classGlobalSearch_1_1SlottedWaitCondition_a3c9f9e3ba7eebdc3cc270445385e334c}{postwait\-Unlock()}. See class description for example usage. 
+
+Definition at line 135 of file slottedwaitcondition.\-h.
+
+\hypertarget{classGlobalSearch_1_1SlottedWaitCondition_a4024066fe5db52f2e2c9257fcfbb5320}{\index{Global\-Search\-::\-Slotted\-Wait\-Condition@{Global\-Search\-::\-Slotted\-Wait\-Condition}!wake\-All\-Slot@{wake\-All\-Slot}}
+\index{wake\-All\-Slot@{wake\-All\-Slot}!GlobalSearch::SlottedWaitCondition@{Global\-Search\-::\-Slotted\-Wait\-Condition}}
+\subsubsection[{wake\-All\-Slot}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Slotted\-Wait\-Condition\-::wake\-All\-Slot (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1SlottedWaitCondition_a4024066fe5db52f2e2c9257fcfbb5320}
+Slot that calls Q\-Wait\-Condition\-::wake\-All() 
+
+Definition at line 147 of file slottedwaitcondition.\-h.
+
+\hypertarget{classGlobalSearch_1_1SlottedWaitCondition_a26b060dde9c49345da5fe1c8dbd3374c}{\index{Global\-Search\-::\-Slotted\-Wait\-Condition@{Global\-Search\-::\-Slotted\-Wait\-Condition}!wake\-One\-Slot@{wake\-One\-Slot}}
+\index{wake\-One\-Slot@{wake\-One\-Slot}!GlobalSearch::SlottedWaitCondition@{Global\-Search\-::\-Slotted\-Wait\-Condition}}
+\subsubsection[{wake\-One\-Slot}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Slotted\-Wait\-Condition\-::wake\-One\-Slot (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1SlottedWaitCondition_a26b060dde9c49345da5fe1c8dbd3374c}
+Slot that calls Q\-Wait\-Condition\-::wake\-One() 
+
+Definition at line 142 of file slottedwaitcondition.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/globalsearch/slottedwaitcondition.\-h\item 
+src/globalsearch/slottedwaitcondition.\-cpp\end{DoxyCompactItemize}
