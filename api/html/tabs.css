@@ -1,6 +1,7 @@
 .tabs, .tabs2, .tabs3 {
     background-image: url('tab_b.png');
-    width: 100%;
+    max-width: auto;
+    margin: 0 auto;
     z-index: 101;
     font-size: 13px;
     font-family: 'Lucida Grande',Geneva,Helvetica,Arial,sans-serif;

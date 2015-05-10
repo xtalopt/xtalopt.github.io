@@ -1,8 +1,6 @@
 /* The standard CSS for doxygen 1.8.6 */
 
 body, table, div, p, dl {
-    margin: 0 auto;
-    max-width: auto;
 	font: 400 14px/22px Roboto,sans-serif;
 }
 
@@ -260,14 +258,14 @@ div.groupText {
 
 body {
 	background-color: white;
+    max-width: auto;
 	color: black;
-        margin: 0;
+        margin: 0 auto;
 }
 
 div.contents {
-	margin-top: 10px;
-	margin-left: 12px;
-	margin-right: 8px;
+    margin: 0 auto;
+    max-width: auto;
 }
 
 td.indexkey {
