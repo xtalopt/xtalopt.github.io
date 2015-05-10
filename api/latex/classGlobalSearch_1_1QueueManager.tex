@@ -1,16 +1,15 @@
-\hypertarget{classGlobalSearch_1_1QueueManager}{\section{Global\-Search\-:\-:Queue\-Manager Class Reference}
-\label{classGlobalSearch_1_1QueueManager}\index{Global\-Search\-::\-Queue\-Manager@{Global\-Search\-::\-Queue\-Manager}}
-}
+\hypertarget{classGlobalSearch_1_1QueueManager}{}\section{Global\+Search\+:\+:Queue\+Manager Class Reference}
+\label{classGlobalSearch_1_1QueueManager}\index{Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}}
 
 
-The \hyperlink{classGlobalSearch_1_1QueueManager}{Queue\-Manager} monitors the running jobs and updates \hyperlink{classGlobalSearch_1_1Structure}{Structure} status.  
+The \hyperlink{classGlobalSearch_1_1QueueManager}{Queue\+Manager} monitors the running jobs and updates \hyperlink{classGlobalSearch_1_1Structure}{Structure} status.  
 
 
 
 
-{\ttfamily \#include $<$globalsearch/queuemanager.\-h$>$}
+{\ttfamily \#include $<$globalsearch/queuemanager.\+h$>$}
 
-Inheritance diagram for Global\-Search\-:\-:Queue\-Manager\-:\begin{figure}[H]
+Inheritance diagram for Global\+Search\+:\+:Queue\+Manager\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[height=2.000000cm]{classGlobalSearch_1_1QueueManager}
@@ -21,142 +20,142 @@ Inheritance diagram for Global\-Search\-:\-:Queue\-Manager\-:\begin{figure}[H]
 \item 
 void \hyperlink{classGlobalSearch_1_1QueueManager_a36c7fd5b33bd74babfd68ee746e5017c}{reset} ()
 \item 
-void \hyperlink{classGlobalSearch_1_1QueueManager_aa79f26f791ec8315f2ae36d820bfa0ac}{kill\-Structure} (\hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$s)
+void \hyperlink{classGlobalSearch_1_1QueueManager_aa79f26f791ec8315f2ae36d820bfa0ac}{kill\+Structure} (\hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$s)
 \item 
-void \hyperlink{classGlobalSearch_1_1QueueManager_aa010ca43a5ec0c5ce653c4ab5bfebb27}{append\-To\-Job\-Start\-Tracker} (\hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$s)
+void \hyperlink{classGlobalSearch_1_1QueueManager_aa010ca43a5ec0c5ce653c4ab5bfebb27}{append\+To\+Job\+Start\+Tracker} (\hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$s)
 \item 
-void \hyperlink{classGlobalSearch_1_1QueueManager_ab04255999ca9a52f471b37141e9e3f6e}{add\-Manual\-Structure\-Request} (int requests=1)
+void \hyperlink{classGlobalSearch_1_1QueueManager_ab04255999ca9a52f471b37141e9e3f6e}{add\+Manual\+Structure\+Request} (int requests=1)
 \item 
-Q\-List$<$ \hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$ $>$ \hyperlink{classGlobalSearch_1_1QueueManager_abb5985273cbb0126bf065acb76c2be51}{get\-All\-Running\-Structures} ()
+Q\+List$<$ \hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$ $>$ \hyperlink{classGlobalSearch_1_1QueueManager_abb5985273cbb0126bf065acb76c2be51}{get\+All\+Running\+Structures} ()
 \item 
-Q\-List$<$ \hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$ $>$ \hyperlink{classGlobalSearch_1_1QueueManager_a05ab94e45df60fb8c9078fbf81a2d80c}{get\-All\-Optimized\-Structures} ()
+Q\+List$<$ \hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$ $>$ \hyperlink{classGlobalSearch_1_1QueueManager_a05ab94e45df60fb8c9078fbf81a2d80c}{get\+All\+Optimized\+Structures} ()
 \item 
-Q\-List$<$ \hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$ $>$ \hyperlink{classGlobalSearch_1_1QueueManager_a14ab987c7a7939e27ba84010e9943bdd}{get\-All\-Duplicate\-Structures} ()
+Q\+List$<$ \hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$ $>$ \hyperlink{classGlobalSearch_1_1QueueManager_a14ab987c7a7939e27ba84010e9943bdd}{get\+All\+Duplicate\+Structures} ()
 \item 
-Q\-List$<$ \hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$ $>$ \hyperlink{classGlobalSearch_1_1QueueManager_ad77db239019da90a79040b680f2398dc}{get\-All\-Structures} ()
+Q\+List$<$ \hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$ $>$ \hyperlink{classGlobalSearch_1_1QueueManager_ad77db239019da90a79040b680f2398dc}{get\+All\+Structures} ()
 \item 
-Q\-List$<$ \hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$ $>$ \hyperlink{classGlobalSearch_1_1QueueManager_a11aa65d1cc9c13424a8eac1c08fe9c0b}{lock\-For\-Naming} ()
+Q\+List$<$ \hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$ $>$ \hyperlink{classGlobalSearch_1_1QueueManager_a11aa65d1cc9c13424a8eac1c08fe9c0b}{lock\+For\+Naming} ()
 \item 
-void \hyperlink{classGlobalSearch_1_1QueueManager_a5f8012e4b5d002c444bfc486084feec1}{unlock\-For\-Naming} (\hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$s=0)
+void \hyperlink{classGlobalSearch_1_1QueueManager_a5f8012e4b5d002c444bfc486084feec1}{unlock\+For\+Naming} (\hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$s=0)
 \end{DoxyCompactItemize}
 \subsection*{Signals}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{classGlobalSearch_1_1QueueManager_a1453d56d967bc6ddaaca951c5a7d8c8f}{moved\-To\-Q\-M\-Thread} ()
+void \hyperlink{classGlobalSearch_1_1QueueManager_a1453d56d967bc6ddaaca951c5a7d8c8f}{moved\+To\+Q\+M\+Thread} ()
 \item 
-void \hyperlink{classGlobalSearch_1_1QueueManager_a4309c24054c4752705f1d66d08358c9f}{structure\-Started} (\hyperlink{classGlobalSearch_1_1Structure}{Global\-Search\-::\-Structure} $\ast$s)
+void \hyperlink{classGlobalSearch_1_1QueueManager_a4309c24054c4752705f1d66d08358c9f}{structure\+Started} (\hyperlink{classGlobalSearch_1_1Structure}{Global\+Search\+::\+Structure} $\ast$s)
 \item 
-void \hyperlink{classGlobalSearch_1_1QueueManager_a97ce1e692cd752d62ebea8b2c56e1cd2}{structure\-Submitted} (\hyperlink{classGlobalSearch_1_1Structure}{Global\-Search\-::\-Structure} $\ast$s)
+void \hyperlink{classGlobalSearch_1_1QueueManager_a97ce1e692cd752d62ebea8b2c56e1cd2}{structure\+Submitted} (\hyperlink{classGlobalSearch_1_1Structure}{Global\+Search\+::\+Structure} $\ast$s)
 \item 
-void \hyperlink{classGlobalSearch_1_1QueueManager_ad6e65416801d0cad4086fafb03990273}{structure\-Killed} (\hyperlink{classGlobalSearch_1_1Structure}{Global\-Search\-::\-Structure} $\ast$s)
+void \hyperlink{classGlobalSearch_1_1QueueManager_ad6e65416801d0cad4086fafb03990273}{structure\+Killed} (\hyperlink{classGlobalSearch_1_1Structure}{Global\+Search\+::\+Structure} $\ast$s)
 \item 
-void \hyperlink{classGlobalSearch_1_1QueueManager_aaf98cf54afb9751e185a5450c32f4595}{structure\-Updated} (\hyperlink{classGlobalSearch_1_1Structure}{Global\-Search\-::\-Structure} $\ast$s)
+void \hyperlink{classGlobalSearch_1_1QueueManager_aaf98cf54afb9751e185a5450c32f4595}{structure\+Updated} (\hyperlink{classGlobalSearch_1_1Structure}{Global\+Search\+::\+Structure} $\ast$s)
 \item 
-void \hyperlink{classGlobalSearch_1_1QueueManager_a9ce76b6d4be1aaa3e1f04724f9baa03a}{structure\-Finished} (\hyperlink{classGlobalSearch_1_1Structure}{Global\-Search\-::\-Structure} $\ast$s)
+void \hyperlink{classGlobalSearch_1_1QueueManager_a9ce76b6d4be1aaa3e1f04724f9baa03a}{structure\+Finished} (\hyperlink{classGlobalSearch_1_1Structure}{Global\+Search\+::\+Structure} $\ast$s)
 \item 
-void \hyperlink{classGlobalSearch_1_1QueueManager_a4b50dbd51e53b1d0d5cb93e9d7380c1c}{need\-New\-Structure} ()
+void \hyperlink{classGlobalSearch_1_1QueueManager_a4b50dbd51e53b1d0d5cb93e9d7380c1c}{need\+New\+Structure} ()
 \item 
-void \hyperlink{classGlobalSearch_1_1QueueManager_af37eb7a9e54e347a81dc3a1e373c8d54}{new\-Status\-Overview} (int optimized, int running, int failing)
+void \hyperlink{classGlobalSearch_1_1QueueManager_af37eb7a9e54e347a81dc3a1e373c8d54}{new\+Status\+Overview} (int optimized, int running, int failing)
 \end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classGlobalSearch_1_1QueueManager_a41ab0186ccec173fe9400368ca2573be}{Queue\-Manager} (Q\-Thread $\ast$thread, \hyperlink{classGlobalSearch_1_1OptBase}{Opt\-Base} $\ast$parent)
+\hyperlink{classGlobalSearch_1_1QueueManager_a41ab0186ccec173fe9400368ca2573be}{Queue\+Manager} (Q\+Thread $\ast$thread, \hyperlink{classGlobalSearch_1_1OptBase}{Opt\+Base} $\ast$parent)
 \item 
-virtual \hyperlink{classGlobalSearch_1_1QueueManager_a6eb307bcd037cd493d81dee2eeb87a52}{$\sim$\-Queue\-Manager} ()
+virtual \hyperlink{classGlobalSearch_1_1QueueManager_a6eb307bcd037cd493d81dee2eeb87a52}{$\sim$\+Queue\+Manager} ()
 \end{DoxyCompactItemize}
 \subsection*{Protected Slots}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{classGlobalSearch_1_1QueueManager_a14256e9fd1827889506d8a767c19d55a}{check\-Loop} ()
+void \hyperlink{classGlobalSearch_1_1QueueManager_a14256e9fd1827889506d8a767c19d55a}{check\+Loop} ()
 \item 
-void \hyperlink{classGlobalSearch_1_1QueueManager_a01a7a54687dfcf9929e274a0e451e52a}{add\-Structure\-To\-Submission\-Queue} (\hyperlink{classGlobalSearch_1_1Structure}{Global\-Search\-::\-Structure} $\ast$s, int opt\-Step)
+void \hyperlink{classGlobalSearch_1_1QueueManager_a01a7a54687dfcf9929e274a0e451e52a}{add\+Structure\+To\+Submission\+Queue} (\hyperlink{classGlobalSearch_1_1Structure}{Global\+Search\+::\+Structure} $\ast$s, int opt\+Step)
 \item 
-void \hyperlink{classGlobalSearch_1_1QueueManager_a1eb84caa0ddac997149487cffb30074a}{add\-Structure\-To\-Submission\-Queue} (\hyperlink{classGlobalSearch_1_1Structure}{Global\-Search\-::\-Structure} $\ast$s)
+void \hyperlink{classGlobalSearch_1_1QueueManager_a1eb84caa0ddac997149487cffb30074a}{add\+Structure\+To\+Submission\+Queue} (\hyperlink{classGlobalSearch_1_1Structure}{Global\+Search\+::\+Structure} $\ast$s)
 \item 
-void \hyperlink{classGlobalSearch_1_1QueueManager_a34f54a19ab868ce38fea4d27c27d60d8}{move\-To\-Q\-M\-Thread} ()
+void \hyperlink{classGlobalSearch_1_1QueueManager_a34f54a19ab868ce38fea4d27c27d60d8}{move\+To\+Q\+M\+Thread} ()
 \item 
-void \hyperlink{classGlobalSearch_1_1QueueManager_a3c2e07f49b09be24271551d85b7f312f}{setup\-Connections} ()
+void \hyperlink{classGlobalSearch_1_1QueueManager_a3c2e07f49b09be24271551d85b7f312f}{setup\+Connections} ()
 \end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{classGlobalSearch_1_1QueueManager_a6fba282892d588e57520718d2f42401a}{update\-Queue} ()
+void \hyperlink{classGlobalSearch_1_1QueueManager_a6fba282892d588e57520718d2f42401a}{update\+Queue} ()
 \item 
-void \hyperlink{classGlobalSearch_1_1QueueManager_a47014fddb8cfd2547899ca272dfb8b0a}{update\-Structure} (\hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$s)
+void \hyperlink{classGlobalSearch_1_1QueueManager_a47014fddb8cfd2547899ca272dfb8b0a}{update\+Structure} (\hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$s)
 \item 
-void \hyperlink{classGlobalSearch_1_1QueueManager_a643db68e2525754c897359dfff4dad66}{start\-Job} ()
+void \hyperlink{classGlobalSearch_1_1QueueManager_a643db68e2525754c897359dfff4dad66}{start\+Job} ()
 \item 
-void \hyperlink{classGlobalSearch_1_1QueueManager_ab4e0fef123622188942b2a4fe676dbd7}{stop\-Job} (\hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$s)
+void \hyperlink{classGlobalSearch_1_1QueueManager_ab4e0fef123622188942b2a4fe676dbd7}{stop\+Job} (\hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$s)
 \item 
-void \hyperlink{classGlobalSearch_1_1QueueManager_a3c3de93fbb6a3f33d14ce74c541ba690}{check\-Population} ()
+void \hyperlink{classGlobalSearch_1_1QueueManager_a3c3de93fbb6a3f33d14ce74c541ba690}{check\+Population} ()
 \item 
-void \hyperlink{classGlobalSearch_1_1QueueManager_a2a85ad6729d9e0eb13782699b6cd5ccd}{check\-Running} ()
+void \hyperlink{classGlobalSearch_1_1QueueManager_a2a85ad6729d9e0eb13782699b6cd5ccd}{check\+Running} ()
 \item 
-void \hyperlink{classGlobalSearch_1_1QueueManager_aabd2eebaed91b006309adff376cfc22a}{handle\-Optimized\-Structure} (\hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$s)
+void \hyperlink{classGlobalSearch_1_1QueueManager_aabd2eebaed91b006309adff376cfc22a}{handle\+Optimized\+Structure} (\hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$s)
 \item 
-void \hyperlink{classGlobalSearch_1_1QueueManager_ab9feeb85163af25cd067a5279cccff44}{handle\-Step\-Optimized\-Structure} (\hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$s)
+void \hyperlink{classGlobalSearch_1_1QueueManager_ab9feeb85163af25cd067a5279cccff44}{handle\+Step\+Optimized\+Structure} (\hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$s)
 \item 
-void \hyperlink{classGlobalSearch_1_1QueueManager_a6333f3ba572efd281e6dfd489c01ef8d}{handle\-Waiting\-For\-Optimization\-Structure} (\hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$s)
+void \hyperlink{classGlobalSearch_1_1QueueManager_a6333f3ba572efd281e6dfd489c01ef8d}{handle\+Waiting\+For\+Optimization\+Structure} (\hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$s)
 \item 
-void \hyperlink{classGlobalSearch_1_1QueueManager_a14667778b10fd542941121f75c01e522}{handle\-In\-Process\-Structure} (\hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$s)
+void \hyperlink{classGlobalSearch_1_1QueueManager_a14667778b10fd542941121f75c01e522}{handle\+In\+Process\+Structure} (\hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$s)
 \item 
-void \hyperlink{classGlobalSearch_1_1QueueManager_afe51c49057d5d0b8fa5ac1272e31fe9f}{handle\-Empty\-Structure} (\hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$s)
+void \hyperlink{classGlobalSearch_1_1QueueManager_afe51c49057d5d0b8fa5ac1272e31fe9f}{handle\+Empty\+Structure} (\hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$s)
 \item 
-void \hyperlink{classGlobalSearch_1_1QueueManager_a82b9d1f1df369bf14c1de84e0b4b5d70}{handle\-Updating\-Structure} (\hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$s)
+void \hyperlink{classGlobalSearch_1_1QueueManager_a82b9d1f1df369bf14c1de84e0b4b5d70}{handle\+Updating\+Structure} (\hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$s)
 \item 
-void \hyperlink{classGlobalSearch_1_1QueueManager_a11c594794b1b96ad8524a88866acac3f}{handle\-Error\-Structure} (\hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$s)
+void \hyperlink{classGlobalSearch_1_1QueueManager_a11c594794b1b96ad8524a88866acac3f}{handle\+Error\+Structure} (\hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$s)
 \item 
-void \hyperlink{classGlobalSearch_1_1QueueManager_a01c36b34d2fc7ca0bf03a929a4da9e4d}{handle\-Submitted\-Structure} (\hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$s)
+void \hyperlink{classGlobalSearch_1_1QueueManager_a01c36b34d2fc7ca0bf03a929a4da9e4d}{handle\+Submitted\+Structure} (\hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$s)
 \item 
-void \hyperlink{classGlobalSearch_1_1QueueManager_a80e344243b5a701da60d8b7917013fd1}{handle\-Killed\-Structure} (\hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$s)
+void \hyperlink{classGlobalSearch_1_1QueueManager_a80e344243b5a701da60d8b7917013fd1}{handle\+Killed\+Structure} (\hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$s)
 \item 
-void \hyperlink{classGlobalSearch_1_1QueueManager_ab715f5753ac932c47facb214573f8b8b}{handle\-Removed\-Structure} (\hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$s)
+void \hyperlink{classGlobalSearch_1_1QueueManager_ab715f5753ac932c47facb214573f8b8b}{handle\+Removed\+Structure} (\hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$s)
 \item 
-void \hyperlink{classGlobalSearch_1_1QueueManager_a84149fe85ad675e47950a69d32ad7c6a}{handle\-Duplicate\-Structure} (\hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$s)
+void \hyperlink{classGlobalSearch_1_1QueueManager_a84149fe85ad675e47950a69d32ad7c6a}{handle\+Duplicate\+Structure} (\hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$s)
 \item 
-void \hyperlink{classGlobalSearch_1_1QueueManager_a81c488f9671a05b9d51eff9c2fc514d6}{handle\-Restart\-Structure} (\hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$s)
+void \hyperlink{classGlobalSearch_1_1QueueManager_a81c488f9671a05b9d51eff9c2fc514d6}{handle\+Restart\+Structure} (\hyperlink{classGlobalSearch_1_1Structure}{Structure} $\ast$s)
 \end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classGlobalSearch_1_1QueueManager_a73408b74ae38d28709cc86211e569b66}{\hyperlink{classGlobalSearch_1_1OptBase}{Opt\-Base} $\ast$ \hyperlink{classGlobalSearch_1_1QueueManager_a73408b74ae38d28709cc86211e569b66}{m\-\_\-opt}}\label{classGlobalSearch_1_1QueueManager_a73408b74ae38d28709cc86211e569b66}
+\hypertarget{classGlobalSearch_1_1QueueManager_a73408b74ae38d28709cc86211e569b66}{}\hyperlink{classGlobalSearch_1_1OptBase}{Opt\+Base} $\ast$ \hyperlink{classGlobalSearch_1_1QueueManager_a73408b74ae38d28709cc86211e569b66}{m\+\_\+opt}\label{classGlobalSearch_1_1QueueManager_a73408b74ae38d28709cc86211e569b66}
 
 \begin{DoxyCompactList}\small\item\em Cached pointer to main optbase class. \end{DoxyCompactList}\item 
-\hypertarget{classGlobalSearch_1_1QueueManager_aad3c44dad7c196ee965cdf4e1c66322c}{Q\-Thread $\ast$ \hyperlink{classGlobalSearch_1_1QueueManager_aad3c44dad7c196ee965cdf4e1c66322c}{m\-\_\-thread}}\label{classGlobalSearch_1_1QueueManager_aad3c44dad7c196ee965cdf4e1c66322c}
+\hypertarget{classGlobalSearch_1_1QueueManager_aad3c44dad7c196ee965cdf4e1c66322c}{}Q\+Thread $\ast$ \hyperlink{classGlobalSearch_1_1QueueManager_aad3c44dad7c196ee965cdf4e1c66322c}{m\+\_\+thread}\label{classGlobalSearch_1_1QueueManager_aad3c44dad7c196ee965cdf4e1c66322c}
 
 \begin{DoxyCompactList}\small\item\em Pointer to the thread where the queuemanager lives. \end{DoxyCompactList}\item 
-\hypertarget{classGlobalSearch_1_1QueueManager_ab41f6210551ab04ed0518cd4f40d8e0d}{\hyperlink{classGlobalSearch_1_1Tracker}{Tracker} $\ast$ \hyperlink{classGlobalSearch_1_1QueueManager_ab41f6210551ab04ed0518cd4f40d8e0d}{m\-\_\-tracker}}\label{classGlobalSearch_1_1QueueManager_ab41f6210551ab04ed0518cd4f40d8e0d}
+\hypertarget{classGlobalSearch_1_1QueueManager_ab41f6210551ab04ed0518cd4f40d8e0d}{}\hyperlink{classGlobalSearch_1_1Tracker}{Tracker} $\ast$ \hyperlink{classGlobalSearch_1_1QueueManager_ab41f6210551ab04ed0518cd4f40d8e0d}{m\+\_\+tracker}\label{classGlobalSearch_1_1QueueManager_ab41f6210551ab04ed0518cd4f40d8e0d}
 
-\begin{DoxyCompactList}\small\item\em Convenience pointer to m\-\_\-opt-\/$>$tracker() \end{DoxyCompactList}\item 
-\hypertarget{classGlobalSearch_1_1QueueManager_af081fe2ea7f98693ae5a4cbc4246a812}{\hyperlink{classGlobalSearch_1_1Tracker}{Tracker} \hyperlink{classGlobalSearch_1_1QueueManager_af081fe2ea7f98693ae5a4cbc4246a812}{m\-\_\-running\-Tracker}}\label{classGlobalSearch_1_1QueueManager_af081fe2ea7f98693ae5a4cbc4246a812}
+\begin{DoxyCompactList}\small\item\em Convenience pointer to m\+\_\+opt-\/$>$tracker() \end{DoxyCompactList}\item 
+\hypertarget{classGlobalSearch_1_1QueueManager_af081fe2ea7f98693ae5a4cbc4246a812}{}\hyperlink{classGlobalSearch_1_1Tracker}{Tracker} \hyperlink{classGlobalSearch_1_1QueueManager_af081fe2ea7f98693ae5a4cbc4246a812}{m\+\_\+running\+Tracker}\label{classGlobalSearch_1_1QueueManager_af081fe2ea7f98693ae5a4cbc4246a812}
 
 \begin{DoxyCompactList}\small\item\em Tracks which structures are currently running. \end{DoxyCompactList}\item 
-\hypertarget{classGlobalSearch_1_1QueueManager_a1d9b17d2b9a12f6641282b9bab327046}{\hyperlink{classGlobalSearch_1_1Tracker}{Tracker} \hyperlink{classGlobalSearch_1_1QueueManager_a1d9b17d2b9a12f6641282b9bab327046}{m\-\_\-job\-Start\-Tracker}}\label{classGlobalSearch_1_1QueueManager_a1d9b17d2b9a12f6641282b9bab327046}
+\hypertarget{classGlobalSearch_1_1QueueManager_a1d9b17d2b9a12f6641282b9bab327046}{}\hyperlink{classGlobalSearch_1_1Tracker}{Tracker} \hyperlink{classGlobalSearch_1_1QueueManager_a1d9b17d2b9a12f6641282b9bab327046}{m\+\_\+job\+Start\+Tracker}\label{classGlobalSearch_1_1QueueManager_a1d9b17d2b9a12f6641282b9bab327046}
 
 \begin{DoxyCompactList}\small\item\em Tracks which structures are queued to be submitted. \end{DoxyCompactList}\item 
-\hyperlink{classGlobalSearch_1_1Tracker}{Tracker} \hyperlink{classGlobalSearch_1_1QueueManager_ab93522c4a198ea3401baf662b00a7ec7}{m\-\_\-new\-Structure\-Tracker}
+\hyperlink{classGlobalSearch_1_1Tracker}{Tracker} \hyperlink{classGlobalSearch_1_1QueueManager_ab93522c4a198ea3401baf662b00a7ec7}{m\+\_\+new\+Structure\+Tracker}
 \item 
-\hypertarget{classGlobalSearch_1_1QueueManager_ae8f5365d11d9db4bb8607a909b843cce}{int \hyperlink{classGlobalSearch_1_1QueueManager_ae8f5365d11d9db4bb8607a909b843cce}{m\-\_\-requested\-Structures}}\label{classGlobalSearch_1_1QueueManager_ae8f5365d11d9db4bb8607a909b843cce}
+\hypertarget{classGlobalSearch_1_1QueueManager_ae8f5365d11d9db4bb8607a909b843cce}{}int \hyperlink{classGlobalSearch_1_1QueueManager_ae8f5365d11d9db4bb8607a909b843cce}{m\+\_\+requested\+Structures}\label{classGlobalSearch_1_1QueueManager_ae8f5365d11d9db4bb8607a909b843cce}
 
 \begin{DoxyCompactList}\small\item\em Number of structure requests pending. \end{DoxyCompactList}\item 
-\hypertarget{classGlobalSearch_1_1QueueManager_a33201e78793ede9a0b2bc233e180664c}{bool \hyperlink{classGlobalSearch_1_1QueueManager_a33201e78793ede9a0b2bc233e180664c}{m\-\_\-is\-Destroying}}\label{classGlobalSearch_1_1QueueManager_a33201e78793ede9a0b2bc233e180664c}
+\hypertarget{classGlobalSearch_1_1QueueManager_a33201e78793ede9a0b2bc233e180664c}{}bool \hyperlink{classGlobalSearch_1_1QueueManager_a33201e78793ede9a0b2bc233e180664c}{m\+\_\+is\+Destroying}\label{classGlobalSearch_1_1QueueManager_a33201e78793ede9a0b2bc233e180664c}
 
 \begin{DoxyCompactList}\small\item\em Boolean set to true while the destructor is running. \end{DoxyCompactList}\item 
-\hypertarget{classGlobalSearch_1_1QueueManager_a94ba4286ec00cec9516ef9766e4d76a1}{Q\-Date\-Time $\ast$ \hyperlink{classGlobalSearch_1_1QueueManager_a94ba4286ec00cec9516ef9766e4d76a1}{m\-\_\-last\-Submission\-Time\-Stamp}}\label{classGlobalSearch_1_1QueueManager_a94ba4286ec00cec9516ef9766e4d76a1}
+\hypertarget{classGlobalSearch_1_1QueueManager_a94ba4286ec00cec9516ef9766e4d76a1}{}Q\+Date\+Time $\ast$ \hyperlink{classGlobalSearch_1_1QueueManager_a94ba4286ec00cec9516ef9766e4d76a1}{m\+\_\+last\+Submission\+Time\+Stamp}\label{classGlobalSearch_1_1QueueManager_a94ba4286ec00cec9516ef9766e4d76a1}
 
 \begin{DoxyCompactList}\small\item\em Used to throttle job submissions. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-The \hyperlink{classGlobalSearch_1_1QueueManager}{Queue\-Manager} monitors the running jobs and updates \hyperlink{classGlobalSearch_1_1Structure}{Structure} status. 
+The \hyperlink{classGlobalSearch_1_1QueueManager}{Queue\+Manager} monitors the running jobs and updates \hyperlink{classGlobalSearch_1_1Structure}{Structure} status. 
 
 \begin{DoxyAuthor}{Author}
 David C. Lonie
 \end{DoxyAuthor}
-The \hyperlink{classGlobalSearch_1_1QueueManager}{Queue\-Manager} creates a local queue and monitoring system control the submission of Structures to an optimization engine or queue.
+The \hyperlink{classGlobalSearch_1_1QueueManager}{Queue\+Manager} creates a local queue and monitoring system control the submission of Structures to an optimization engine or queue.
 
-For basic usage, connect the \hyperlink{classGlobalSearch_1_1QueueManager_a4b50dbd51e53b1d0d5cb93e9d7380c1c}{need\-New\-Structure()} signal to slot that will generate a new \hyperlink{classGlobalSearch_1_1Structure}{Structure} and submit it the following way\-: \begin{DoxyVerb}// lockForNaming() returns a list of all structures that the main
+For basic usage, connect the \hyperlink{classGlobalSearch_1_1QueueManager_a4b50dbd51e53b1d0d5cb93e9d7380c1c}{need\+New\+Structure()} signal to slot that will generate a new \hyperlink{classGlobalSearch_1_1Structure}{Structure} and submit it the following way\+: \begin{DoxyVerb}// lockForNaming() returns a list of all structures that the main
 // tracker is aware of. It also locks a naming mutex to prevent
 // simultaneous naming of Structures, avoiding duplicate
 // Structure indices, ID numbers, etc.
@@ -207,109 +206,109 @@ m_queue->unlockForNaming(newStructure);
  automatically called when needed. Check the source if in doubt.\end{DoxyVerb}
  
 
-Definition at line 94 of file queuemanager.\-h.
+Definition at line 94 of file queuemanager.\+h.
 
 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classGlobalSearch_1_1QueueManager_a41ab0186ccec173fe9400368ca2573be}{\index{Global\-Search\-::\-Queue\-Manager@{Global\-Search\-::\-Queue\-Manager}!Queue\-Manager@{Queue\-Manager}}
-\index{Queue\-Manager@{Queue\-Manager}!GlobalSearch::QueueManager@{Global\-Search\-::\-Queue\-Manager}}
-\subsubsection[{Queue\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}Global\-Search\-::\-Queue\-Manager\-::\-Queue\-Manager (
+\hypertarget{classGlobalSearch_1_1QueueManager_a41ab0186ccec173fe9400368ca2573be}{}\index{Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}!Queue\+Manager@{Queue\+Manager}}
+\index{Queue\+Manager@{Queue\+Manager}!Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}}
+\subsubsection[{Queue\+Manager}]{\setlength{\rightskip}{0pt plus 5cm}Global\+Search\+::\+Queue\+Manager\+::\+Queue\+Manager (
 \begin{DoxyParamCaption}
-\item[{Q\-Thread $\ast$}]{thread, }
-\item[{{\bf Opt\-Base} $\ast$}]{parent}
+\item[{Q\+Thread $\ast$}]{thread, }
+\item[{{\bf Opt\+Base} $\ast$}]{parent}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classGlobalSearch_1_1QueueManager_a41ab0186ccec173fe9400368ca2573be}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\label{classGlobalSearch_1_1QueueManager_a41ab0186ccec173fe9400368ca2573be}
 Constructor.
 
 
 \begin{DoxyParams}{Parameters}
-{\em thread} & A Q\-Thread instance to run in \\
+{\em thread} & A Q\+Thread instance to run in \\
 \hline
-{\em parent} & The \hyperlink{classGlobalSearch_1_1OptBase}{Opt\-Base} class the \hyperlink{classGlobalSearch_1_1QueueManager}{Queue\-Manager} uses \\
+{\em parent} & The \hyperlink{classGlobalSearch_1_1OptBase}{Opt\+Base} class the \hyperlink{classGlobalSearch_1_1QueueManager}{Queue\+Manager} uses \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line 59 of file queuemanager.\-cpp.
+Definition at line 59 of file queuemanager.\+cpp.
 
 
 
-References m\-\_\-thread, and move\-To\-Q\-M\-Thread().
+References m\+\_\+thread, and move\+To\+Q\+M\+Thread().
 
-\hypertarget{classGlobalSearch_1_1QueueManager_a6eb307bcd037cd493d81dee2eeb87a52}{\index{Global\-Search\-::\-Queue\-Manager@{Global\-Search\-::\-Queue\-Manager}!$\sim$\-Queue\-Manager@{$\sim$\-Queue\-Manager}}
-\index{$\sim$\-Queue\-Manager@{$\sim$\-Queue\-Manager}!GlobalSearch::QueueManager@{Global\-Search\-::\-Queue\-Manager}}
-\subsubsection[{$\sim$\-Queue\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}Global\-Search\-::\-Queue\-Manager\-::$\sim$\-Queue\-Manager (
+\hypertarget{classGlobalSearch_1_1QueueManager_a6eb307bcd037cd493d81dee2eeb87a52}{}\index{Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}!````~Queue\+Manager@{$\sim$\+Queue\+Manager}}
+\index{````~Queue\+Manager@{$\sim$\+Queue\+Manager}!Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}}
+\subsubsection[{$\sim$\+Queue\+Manager}]{\setlength{\rightskip}{0pt plus 5cm}Global\+Search\+::\+Queue\+Manager\+::$\sim$\+Queue\+Manager (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classGlobalSearch_1_1QueueManager_a6eb307bcd037cd493d81dee2eeb87a52}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classGlobalSearch_1_1QueueManager_a6eb307bcd037cd493d81dee2eeb87a52}
 Destructor. 
 
-Definition at line 73 of file queuemanager.\-cpp.
+Definition at line 73 of file queuemanager.\+cpp.
 
 
 
-References m\-\_\-is\-Destroying, m\-\_\-last\-Submission\-Time\-Stamp, and m\-\_\-requested\-Structures.
+References m\+\_\+is\+Destroying, m\+\_\+last\+Submission\+Time\+Stamp, and m\+\_\+requested\+Structures.
 
 
 
 \subsection{Member Function Documentation}
-\hypertarget{classGlobalSearch_1_1QueueManager_ab04255999ca9a52f471b37141e9e3f6e}{\index{Global\-Search\-::\-Queue\-Manager@{Global\-Search\-::\-Queue\-Manager}!add\-Manual\-Structure\-Request@{add\-Manual\-Structure\-Request}}
-\index{add\-Manual\-Structure\-Request@{add\-Manual\-Structure\-Request}!GlobalSearch::QueueManager@{Global\-Search\-::\-Queue\-Manager}}
-\subsubsection[{add\-Manual\-Structure\-Request}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Queue\-Manager\-::add\-Manual\-Structure\-Request (
+\hypertarget{classGlobalSearch_1_1QueueManager_ab04255999ca9a52f471b37141e9e3f6e}{}\index{Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}!add\+Manual\+Structure\+Request@{add\+Manual\+Structure\+Request}}
+\index{add\+Manual\+Structure\+Request@{add\+Manual\+Structure\+Request}!Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}}
+\subsubsection[{add\+Manual\+Structure\+Request}]{\setlength{\rightskip}{0pt plus 5cm}void Global\+Search\+::\+Queue\+Manager\+::add\+Manual\+Structure\+Request (
 \begin{DoxyParamCaption}
 \item[{int}]{requests = {\ttfamily 1}}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classGlobalSearch_1_1QueueManager_ab04255999ca9a52f471b37141e9e3f6e}
-Add a structure request. This must be called every time a structure is added via \hyperlink{classGlobalSearch_1_1QueueManager_a5f8012e4b5d002c444bfc486084feec1}{unlock\-For\-Naming()}, and must be called first. This will not actually request the structure, it is only used for internal bookkeeping.
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classGlobalSearch_1_1QueueManager_ab04255999ca9a52f471b37141e9e3f6e}
+Add a structure request. This must be called every time a structure is added via \hyperlink{classGlobalSearch_1_1QueueManager_a5f8012e4b5d002c444bfc486084feec1}{unlock\+For\+Naming()}, and must be called first. This will not actually request the structure, it is only used for internal bookkeeping.
 
 \begin{DoxyNote}{Note}
-The mutex of m\-\_\-tracker is locked while incrementing the request counter. 
+The mutex of m\+\_\+tracker is locked while incrementing the request counter. 
 \end{DoxyNote}
 
 
-Definition at line 1011 of file queuemanager.\-cpp.
+Definition at line 1011 of file queuemanager.\+cpp.
 
 
 
-References Global\-Search\-::\-Tracker\-::lock\-For\-Write(), m\-\_\-requested\-Structures, m\-\_\-tracker, and Global\-Search\-::\-Tracker\-::unlock().
+References Global\+Search\+::\+Tracker\+::lock\+For\+Write(), m\+\_\+requested\+Structures, and Global\+Search\+::\+Tracker\+::unlock().
 
-\hypertarget{classGlobalSearch_1_1QueueManager_a01a7a54687dfcf9929e274a0e451e52a}{\index{Global\-Search\-::\-Queue\-Manager@{Global\-Search\-::\-Queue\-Manager}!add\-Structure\-To\-Submission\-Queue@{add\-Structure\-To\-Submission\-Queue}}
-\index{add\-Structure\-To\-Submission\-Queue@{add\-Structure\-To\-Submission\-Queue}!GlobalSearch::QueueManager@{Global\-Search\-::\-Queue\-Manager}}
-\subsubsection[{add\-Structure\-To\-Submission\-Queue}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Queue\-Manager\-::add\-Structure\-To\-Submission\-Queue (
+\hypertarget{classGlobalSearch_1_1QueueManager_a01a7a54687dfcf9929e274a0e451e52a}{}\index{Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}!add\+Structure\+To\+Submission\+Queue@{add\+Structure\+To\+Submission\+Queue}}
+\index{add\+Structure\+To\+Submission\+Queue@{add\+Structure\+To\+Submission\+Queue}!Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}}
+\subsubsection[{add\+Structure\+To\+Submission\+Queue}]{\setlength{\rightskip}{0pt plus 5cm}void Global\+Search\+::\+Queue\+Manager\+::add\+Structure\+To\+Submission\+Queue (
 \begin{DoxyParamCaption}
-\item[{{\bf Global\-Search\-::\-Structure} $\ast$}]{s, }
-\item[{int}]{opt\-Step}
+\item[{{\bf Global\+Search\+::\+Structure} $\ast$}]{s, }
+\item[{int}]{opt\+Step}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1QueueManager_a01a7a54687dfcf9929e274a0e451e52a}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [slot]}}\label{classGlobalSearch_1_1QueueManager_a01a7a54687dfcf9929e274a0e451e52a}
 Writes the input files for the optimization process and queues the \hyperlink{classGlobalSearch_1_1Structure}{Structure} to be submitted for optimization.
 
 
 \begin{DoxyParams}{Parameters}
 {\em s} & The \hyperlink{classGlobalSearch_1_1Structure}{Structure} to be submitted \\
 \hline
-{\em opt\-Step} & The opt\-Step to perform. s-\/$>$current\-Opt\-Step is used if opt\-Step==0. \\
+{\em opt\+Step} & The opt\+Step to perform. s-\/$>$current\+Opt\+Step is used if opt\+Step==0. \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line 809 of file queuemanager.\-cpp.
+Definition at line 809 of file queuemanager.\+cpp.
 
 
 
-Referenced by add\-Structure\-To\-Submission\-Queue(), and setup\-Connections().
+Referenced by add\+Structure\+To\+Submission\+Queue(), and setup\+Connections().
 
-\hypertarget{classGlobalSearch_1_1QueueManager_a1eb84caa0ddac997149487cffb30074a}{\index{Global\-Search\-::\-Queue\-Manager@{Global\-Search\-::\-Queue\-Manager}!add\-Structure\-To\-Submission\-Queue@{add\-Structure\-To\-Submission\-Queue}}
-\index{add\-Structure\-To\-Submission\-Queue@{add\-Structure\-To\-Submission\-Queue}!GlobalSearch::QueueManager@{Global\-Search\-::\-Queue\-Manager}}
-\subsubsection[{add\-Structure\-To\-Submission\-Queue}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Queue\-Manager\-::add\-Structure\-To\-Submission\-Queue (
+\hypertarget{classGlobalSearch_1_1QueueManager_a1eb84caa0ddac997149487cffb30074a}{}\index{Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}!add\+Structure\+To\+Submission\+Queue@{add\+Structure\+To\+Submission\+Queue}}
+\index{add\+Structure\+To\+Submission\+Queue@{add\+Structure\+To\+Submission\+Queue}!Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}}
+\subsubsection[{add\+Structure\+To\+Submission\+Queue}]{\setlength{\rightskip}{0pt plus 5cm}void Global\+Search\+::\+Queue\+Manager\+::add\+Structure\+To\+Submission\+Queue (
 \begin{DoxyParamCaption}
-\item[{{\bf Global\-Search\-::\-Structure} $\ast$}]{s}
+\item[{{\bf Global\+Search\+::\+Structure} $\ast$}]{s}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1QueueManager_a1eb84caa0ddac997149487cffb30074a}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [slot]}}\label{classGlobalSearch_1_1QueueManager_a1eb84caa0ddac997149487cffb30074a}
 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
 
-Writes the input files for the optimization process and queues the \hyperlink{classGlobalSearch_1_1Structure}{Structure} to be submitted for optimization at its current opt\-Step.
+Writes the input files for the optimization process and queues the \hyperlink{classGlobalSearch_1_1Structure}{Structure} to be submitted for optimization at its current opt\+Step.
 
 
 \begin{DoxyParams}{Parameters}
@@ -318,201 +317,201 @@ Writes the input files for the optimization process and queues the \hyperlink{cl
 \end{DoxyParams}
 
 
-Definition at line 285 of file queuemanager.\-h.
+Definition at line 285 of file queuemanager.\+h.
 
 
 
-References add\-Structure\-To\-Submission\-Queue().
+References add\+Structure\+To\+Submission\+Queue().
 
-\hypertarget{classGlobalSearch_1_1QueueManager_aa010ca43a5ec0c5ce653c4ab5bfebb27}{\index{Global\-Search\-::\-Queue\-Manager@{Global\-Search\-::\-Queue\-Manager}!append\-To\-Job\-Start\-Tracker@{append\-To\-Job\-Start\-Tracker}}
-\index{append\-To\-Job\-Start\-Tracker@{append\-To\-Job\-Start\-Tracker}!GlobalSearch::QueueManager@{Global\-Search\-::\-Queue\-Manager}}
-\subsubsection[{append\-To\-Job\-Start\-Tracker}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Queue\-Manager\-::append\-To\-Job\-Start\-Tracker (
+\hypertarget{classGlobalSearch_1_1QueueManager_aa010ca43a5ec0c5ce653c4ab5bfebb27}{}\index{Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}!append\+To\+Job\+Start\+Tracker@{append\+To\+Job\+Start\+Tracker}}
+\index{append\+To\+Job\+Start\+Tracker@{append\+To\+Job\+Start\+Tracker}!Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}}
+\subsubsection[{append\+To\+Job\+Start\+Tracker}]{\setlength{\rightskip}{0pt plus 5cm}void Global\+Search\+::\+Queue\+Manager\+::append\+To\+Job\+Start\+Tracker (
 \begin{DoxyParamCaption}
 \item[{{\bf Structure} $\ast$}]{s}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classGlobalSearch_1_1QueueManager_aa010ca43a5ec0c5ce653c4ab5bfebb27}
-Appends a \hyperlink{classGlobalSearch_1_1Structure}{Structure} to m\-\_\-job\-Start\-Tracker. This should not be used unless resuming a session, and then only for structures that are marked \hyperlink{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917ad4d8f76770421b6ab8d39f60e280a0a0}{Structure\-::\-Waiting\-For\-Optimization}.
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classGlobalSearch_1_1QueueManager_aa010ca43a5ec0c5ce653c4ab5bfebb27}
+Appends a \hyperlink{classGlobalSearch_1_1Structure}{Structure} to m\+\_\+job\+Start\+Tracker. This should not be used unless resuming a session, and then only for structures that are marked \hyperlink{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917ad4d8f76770421b6ab8d39f60e280a0a0}{Structure\+::\+Waiting\+For\+Optimization}.
 
-All other cases should use prepare\-Structure\-For\-Submission(\-Structure$\ast$)
+All other cases should use prepare\+Structure\+For\+Submission(\+Structure$\ast$)
 
 
 \begin{DoxyParams}{Parameters}
 {\em s} & The \hyperlink{classGlobalSearch_1_1Structure}{Structure} to be appended \\
 \hline
 \end{DoxyParams}
-\begin{DoxySeeAlso}{See Also}
-prepare\-Structure\-For\-Submission 
+\begin{DoxySeeAlso}{See also}
+prepare\+Structure\+For\+Submission 
 \end{DoxySeeAlso}
 
 
-Definition at line 1018 of file queuemanager.\-cpp.
+Definition at line 1018 of file queuemanager.\+cpp.
 
 
 
-References Global\-Search\-::\-Tracker\-::append(), Global\-Search\-::\-Tracker\-::lock\-For\-Write(), m\-\_\-job\-Start\-Tracker, and Global\-Search\-::\-Tracker\-::unlock().
+References Global\+Search\+::\+Tracker\+::append(), Global\+Search\+::\+Tracker\+::lock\+For\+Write(), m\+\_\+job\+Start\+Tracker, and Global\+Search\+::\+Tracker\+::unlock().
 
-\hypertarget{classGlobalSearch_1_1QueueManager_a14256e9fd1827889506d8a767c19d55a}{\index{Global\-Search\-::\-Queue\-Manager@{Global\-Search\-::\-Queue\-Manager}!check\-Loop@{check\-Loop}}
-\index{check\-Loop@{check\-Loop}!GlobalSearch::QueueManager@{Global\-Search\-::\-Queue\-Manager}}
-\subsubsection[{check\-Loop}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Queue\-Manager\-::check\-Loop (
+\hypertarget{classGlobalSearch_1_1QueueManager_a14256e9fd1827889506d8a767c19d55a}{}\index{Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}!check\+Loop@{check\+Loop}}
+\index{check\+Loop@{check\+Loop}!Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}}
+\subsubsection[{check\+Loop}]{\setlength{\rightskip}{0pt plus 5cm}void Global\+Search\+::\+Queue\+Manager\+::check\+Loop (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1QueueManager_a14256e9fd1827889506d8a767c19d55a}
-This is called automatically when the \hyperlink{classGlobalSearch_1_1QueueManager}{Queue\-Manager} is started. This function sets up a simple event loop that will run check\-Population and check\-Running regularly. 
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [slot]}}\label{classGlobalSearch_1_1QueueManager_a14256e9fd1827889506d8a767c19d55a}
+This is called automatically when the \hyperlink{classGlobalSearch_1_1QueueManager}{Queue\+Manager} is started. This function sets up a simple event loop that will run check\+Population and check\+Running regularly. 
 
-Definition at line 188 of file queuemanager.\-cpp.
-
-
-
-References check\-Population(), check\-Running(), Global\-Search\-::\-Opt\-Base\-::is\-Starting, m\-\_\-opt, m\-\_\-thread, and Global\-Search\-::\-Opt\-Base\-::read\-Only.
+Definition at line 188 of file queuemanager.\+cpp.
 
 
 
-Referenced by setup\-Connections().
+References check\+Population(), check\+Running(), Global\+Search\+::\+Opt\+Base\+::is\+Starting, m\+\_\+opt, m\+\_\+thread, and Global\+Search\+::\+Opt\+Base\+::read\+Only.
 
-\hypertarget{classGlobalSearch_1_1QueueManager_a3c3de93fbb6a3f33d14ce74c541ba690}{\index{Global\-Search\-::\-Queue\-Manager@{Global\-Search\-::\-Queue\-Manager}!check\-Population@{check\-Population}}
-\index{check\-Population@{check\-Population}!GlobalSearch::QueueManager@{Global\-Search\-::\-Queue\-Manager}}
-\subsubsection[{check\-Population}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Queue\-Manager\-::check\-Population (
+
+
+Referenced by setup\+Connections().
+
+\hypertarget{classGlobalSearch_1_1QueueManager_a3c3de93fbb6a3f33d14ce74c541ba690}{}\index{Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}!check\+Population@{check\+Population}}
+\index{check\+Population@{check\+Population}!Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}}
+\subsubsection[{check\+Population}]{\setlength{\rightskip}{0pt plus 5cm}void Global\+Search\+::\+Queue\+Manager\+::check\+Population (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classGlobalSearch_1_1QueueManager_a3c3de93fbb6a3f33d14ce74c541ba690}
-Check all Structures in the main \hyperlink{classGlobalSearch_1_1Tracker}{Tracker} and assign them to other trackers as needed (running\-Tracker, etc.).
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classGlobalSearch_1_1QueueManager_a3c3de93fbb6a3f33d14ce74c541ba690}
+Check all Structures in the main \hyperlink{classGlobalSearch_1_1Tracker}{Tracker} and assign them to other trackers as needed (running\+Tracker, etc.).
 
-If more structures are needed, they are requested in this function by emitting \hyperlink{classGlobalSearch_1_1QueueManager_a4b50dbd51e53b1d0d5cb93e9d7380c1c}{need\-New\-Structure()}.
+If more structures are needed, they are requested in this function by emitting \hyperlink{classGlobalSearch_1_1QueueManager_a4b50dbd51e53b1d0d5cb93e9d7380c1c}{need\+New\+Structure()}.
 
 This function also submits new structures to the optimization engine if needed.
 
-Also emits new\-Status\-Overview for a summary of the queue's status.
+Also emits new\+Status\+Overview for a summary of the queue\textquotesingle{}s status.
 
-\begin{DoxySeeAlso}{See Also}
-\hyperlink{classGlobalSearch_1_1QueueManager_af37eb7a9e54e347a81dc3a1e373c8d54}{new\-Status\-Overview} 
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classGlobalSearch_1_1QueueManager_af37eb7a9e54e347a81dc3a1e373c8d54}{new\+Status\+Overview} 
 
-\hyperlink{classGlobalSearch_1_1QueueManager_a4b50dbd51e53b1d0d5cb93e9d7380c1c}{need\-New\-Structure} 
+\hyperlink{classGlobalSearch_1_1QueueManager_a4b50dbd51e53b1d0d5cb93e9d7380c1c}{need\+New\+Structure} 
 \end{DoxySeeAlso}
 
 
-Definition at line 205 of file queuemanager.\-cpp.
+Definition at line 205 of file queuemanager.\+cpp.
 
 
 
-References Global\-Search\-::\-Tracker\-::append(), Global\-Search\-::\-Opt\-Base\-::cont\-Structs, Global\-Search\-::\-Opt\-Base\-::cutoff, Global\-Search\-::\-Structure\-::\-Duplicate, Global\-Search\-::\-Structure\-::get\-Fail\-Count(), Global\-Search\-::\-Structure\-::get\-Status(), Global\-Search\-::\-Structure\-::\-In\-Process, Global\-Search\-::\-Structure\-::\-Killed, Global\-Search\-::\-Opt\-Base\-::limit\-Running\-Jobs, Global\-Search\-::\-Tracker\-::list(), Global\-Search\-::\-Tracker\-::lock\-For\-Read(), Global\-Search\-::\-Tracker\-::lock\-For\-Write(), m\-\_\-job\-Start\-Tracker, m\-\_\-last\-Submission\-Time\-Stamp, m\-\_\-new\-Structure\-Tracker, m\-\_\-opt, m\-\_\-requested\-Structures, m\-\_\-running\-Tracker, m\-\_\-tracker, need\-New\-Structure(), new\-Status\-Overview(), Global\-Search\-::\-Structure\-::\-Optimized, Global\-Search\-::\-Opt\-Base\-::queue\-Interface(), Global\-Search\-::\-Tracker\-::remove(), Global\-Search\-::\-Structure\-::\-Removed, Global\-Search\-::\-Tracker\-::size(), start\-Job(), Global\-Search\-::\-Structure\-::\-Submitted, Global\-Search\-::\-Opt\-Base\-::testing\-Mode, and Global\-Search\-::\-Tracker\-::unlock().
+References Global\+Search\+::\+Tracker\+::append(), Global\+Search\+::\+Opt\+Base\+::cont\+Structs, Global\+Search\+::\+Opt\+Base\+::cutoff, Global\+Search\+::\+Structure\+::\+Duplicate, Global\+Search\+::\+Structure\+::get\+Fail\+Count(), Global\+Search\+::\+Structure\+::get\+Status(), Global\+Search\+::\+Structure\+::\+In\+Process, Global\+Search\+::\+Structure\+::\+Killed, Global\+Search\+::\+Opt\+Base\+::limit\+Running\+Jobs, Global\+Search\+::\+Tracker\+::list(), Global\+Search\+::\+Tracker\+::lock\+For\+Read(), Global\+Search\+::\+Tracker\+::lock\+For\+Write(), m\+\_\+job\+Start\+Tracker, m\+\_\+last\+Submission\+Time\+Stamp, m\+\_\+new\+Structure\+Tracker, m\+\_\+opt, m\+\_\+requested\+Structures, m\+\_\+running\+Tracker, need\+New\+Structure(), new\+Status\+Overview(), Global\+Search\+::\+Structure\+::\+Optimized, Global\+Search\+::\+Opt\+Base\+::queue\+Interface(), Global\+Search\+::\+Tracker\+::remove(), Global\+Search\+::\+Structure\+::\+Removed, Global\+Search\+::\+Tracker\+::size(), start\+Job(), Global\+Search\+::\+Structure\+::\+Submitted, Global\+Search\+::\+Opt\+Base\+::testing\+Mode, and Global\+Search\+::\+Tracker\+::unlock().
 
 
 
-Referenced by check\-Loop().
+Referenced by check\+Loop().
 
-\hypertarget{classGlobalSearch_1_1QueueManager_a2a85ad6729d9e0eb13782699b6cd5ccd}{\index{Global\-Search\-::\-Queue\-Manager@{Global\-Search\-::\-Queue\-Manager}!check\-Running@{check\-Running}}
-\index{check\-Running@{check\-Running}!GlobalSearch::QueueManager@{Global\-Search\-::\-Queue\-Manager}}
-\subsubsection[{check\-Running}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Queue\-Manager\-::check\-Running (
+\hypertarget{classGlobalSearch_1_1QueueManager_a2a85ad6729d9e0eb13782699b6cd5ccd}{}\index{Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}!check\+Running@{check\+Running}}
+\index{check\+Running@{check\+Running}!Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}}
+\subsubsection[{check\+Running}]{\setlength{\rightskip}{0pt plus 5cm}void Global\+Search\+::\+Queue\+Manager\+::check\+Running (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classGlobalSearch_1_1QueueManager_a2a85ad6729d9e0eb13782699b6cd5ccd}
-Monitors the Structures in \hyperlink{classGlobalSearch_1_1QueueManager_abb5985273cbb0126bf065acb76c2be51}{get\-All\-Running\-Structures()} and updates their statuses if they've changed.
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classGlobalSearch_1_1QueueManager_a2a85ad6729d9e0eb13782699b6cd5ccd}
+Monitors the Structures in \hyperlink{classGlobalSearch_1_1QueueManager_abb5985273cbb0126bf065acb76c2be51}{get\+All\+Running\+Structures()} and updates their statuses if they\textquotesingle{}ve changed.
 
 \begin{DoxyNote}{Note}
-Do note call this function directly; it is called automatically by the check\-Loop function 
+Do note call this function directly; it is called automatically by the check\+Loop function 
 \end{DoxyNote}
 
 
-Definition at line 329 of file queuemanager.\-cpp.
+Definition at line 329 of file queuemanager.\+cpp.
 
 
 
-References Global\-Search\-::\-Structure\-::\-Duplicate, Global\-Search\-::\-Structure\-::\-Empty, Global\-Search\-::\-Structure\-::\-Error, get\-All\-Running\-Structures(), Global\-Search\-::\-Structure\-::get\-Status(), handle\-Duplicate\-Structure(), handle\-Empty\-Structure(), handle\-Error\-Structure(), handle\-In\-Process\-Structure(), handle\-Killed\-Structure(), handle\-Removed\-Structure(), handle\-Restart\-Structure(), handle\-Step\-Optimized\-Structure(), handle\-Submitted\-Structure(), handle\-Updating\-Structure(), handle\-Waiting\-For\-Optimization\-Structure(), Global\-Search\-::\-Structure\-::\-In\-Process, Global\-Search\-::\-Structure\-::\-Killed, m\-\_\-thread, Global\-Search\-::\-Structure\-::\-Optimized, Global\-Search\-::\-Structure\-::\-Removed, Global\-Search\-::\-Structure\-::\-Restart, Global\-Search\-::\-Structure\-::\-Step\-Optimized, Global\-Search\-::\-Structure\-::\-Submitted, Global\-Search\-::\-Structure\-::\-Updating, and Global\-Search\-::\-Structure\-::\-Waiting\-For\-Optimization.
+References Global\+Search\+::\+Structure\+::\+Duplicate, Global\+Search\+::\+Structure\+::\+Empty, Global\+Search\+::\+Structure\+::\+Error, get\+All\+Running\+Structures(), Global\+Search\+::\+Structure\+::get\+Status(), handle\+Duplicate\+Structure(), handle\+Empty\+Structure(), handle\+Error\+Structure(), handle\+In\+Process\+Structure(), handle\+Killed\+Structure(), handle\+Removed\+Structure(), handle\+Restart\+Structure(), handle\+Step\+Optimized\+Structure(), handle\+Submitted\+Structure(), handle\+Updating\+Structure(), handle\+Waiting\+For\+Optimization\+Structure(), Global\+Search\+::\+Structure\+::\+In\+Process, Global\+Search\+::\+Structure\+::\+Killed, m\+\_\+thread, Global\+Search\+::\+Structure\+::\+Optimized, Global\+Search\+::\+Structure\+::\+Removed, Global\+Search\+::\+Structure\+::\+Restart, Global\+Search\+::\+Structure\+::\+Step\+Optimized, Global\+Search\+::\+Structure\+::\+Submitted, Global\+Search\+::\+Structure\+::\+Updating, and Global\+Search\+::\+Structure\+::\+Waiting\+For\+Optimization.
 
 
 
-Referenced by check\-Loop().
+Referenced by check\+Loop().
 
-\hypertarget{classGlobalSearch_1_1QueueManager_a14ab987c7a7939e27ba84010e9943bdd}{\index{Global\-Search\-::\-Queue\-Manager@{Global\-Search\-::\-Queue\-Manager}!get\-All\-Duplicate\-Structures@{get\-All\-Duplicate\-Structures}}
-\index{get\-All\-Duplicate\-Structures@{get\-All\-Duplicate\-Structures}!GlobalSearch::QueueManager@{Global\-Search\-::\-Queue\-Manager}}
-\subsubsection[{get\-All\-Duplicate\-Structures}]{\setlength{\rightskip}{0pt plus 5cm}Q\-List$<$ {\bf Structure} $\ast$ $>$ Global\-Search\-::\-Queue\-Manager\-::get\-All\-Duplicate\-Structures (
+\hypertarget{classGlobalSearch_1_1QueueManager_a14ab987c7a7939e27ba84010e9943bdd}{}\index{Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}!get\+All\+Duplicate\+Structures@{get\+All\+Duplicate\+Structures}}
+\index{get\+All\+Duplicate\+Structures@{get\+All\+Duplicate\+Structures}!Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}}
+\subsubsection[{get\+All\+Duplicate\+Structures}]{\setlength{\rightskip}{0pt plus 5cm}Q\+List$<$ {\bf Structure} $\ast$ $>$ Global\+Search\+::\+Queue\+Manager\+::get\+All\+Duplicate\+Structures (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classGlobalSearch_1_1QueueManager_a14ab987c7a7939e27ba84010e9943bdd}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classGlobalSearch_1_1QueueManager_a14ab987c7a7939e27ba84010e9943bdd}
 \begin{DoxyReturn}{Returns}
-All Structures in m\-\_\-tracker with status \hyperlink{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917a1cd89f1eb6cab53ae2bb1b2ad64dfe72}{Structure\-::\-Duplicate}. 
+All Structures in m\+\_\+tracker with status \hyperlink{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917a1cd89f1eb6cab53ae2bb1b2ad64dfe72}{Structure\+::\+Duplicate}. 
 \end{DoxyReturn}
 
 
-Definition at line 909 of file queuemanager.\-cpp.
+Definition at line 909 of file queuemanager.\+cpp.
 
 
 
-References Global\-Search\-::\-Structure\-::\-Duplicate, Global\-Search\-::\-Structure\-::get\-Status(), Global\-Search\-::\-Tracker\-::list(), Global\-Search\-::\-Tracker\-::lock\-For\-Read(), m\-\_\-tracker, and Global\-Search\-::\-Tracker\-::unlock().
+References Global\+Search\+::\+Structure\+::\+Duplicate, Global\+Search\+::\+Structure\+::get\+Status(), Global\+Search\+::\+Tracker\+::list(), Global\+Search\+::\+Tracker\+::lock\+For\+Read(), and Global\+Search\+::\+Tracker\+::unlock().
 
-\hypertarget{classGlobalSearch_1_1QueueManager_a05ab94e45df60fb8c9078fbf81a2d80c}{\index{Global\-Search\-::\-Queue\-Manager@{Global\-Search\-::\-Queue\-Manager}!get\-All\-Optimized\-Structures@{get\-All\-Optimized\-Structures}}
-\index{get\-All\-Optimized\-Structures@{get\-All\-Optimized\-Structures}!GlobalSearch::QueueManager@{Global\-Search\-::\-Queue\-Manager}}
-\subsubsection[{get\-All\-Optimized\-Structures}]{\setlength{\rightskip}{0pt plus 5cm}Q\-List$<$ {\bf Structure} $\ast$ $>$ Global\-Search\-::\-Queue\-Manager\-::get\-All\-Optimized\-Structures (
+\hypertarget{classGlobalSearch_1_1QueueManager_a05ab94e45df60fb8c9078fbf81a2d80c}{}\index{Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}!get\+All\+Optimized\+Structures@{get\+All\+Optimized\+Structures}}
+\index{get\+All\+Optimized\+Structures@{get\+All\+Optimized\+Structures}!Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}}
+\subsubsection[{get\+All\+Optimized\+Structures}]{\setlength{\rightskip}{0pt plus 5cm}Q\+List$<$ {\bf Structure} $\ast$ $>$ Global\+Search\+::\+Queue\+Manager\+::get\+All\+Optimized\+Structures (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classGlobalSearch_1_1QueueManager_a05ab94e45df60fb8c9078fbf81a2d80c}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classGlobalSearch_1_1QueueManager_a05ab94e45df60fb8c9078fbf81a2d80c}
 \begin{DoxyReturn}{Returns}
-All Structures in m\-\_\-tracker with status \hyperlink{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917a75ed0969285b99dc1e54c654428be5e0}{Structure\-::\-Optimized}. 
+All Structures in m\+\_\+tracker with status \hyperlink{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917a75ed0969285b99dc1e54c654428be5e0}{Structure\+::\+Optimized}. 
 \end{DoxyReturn}
 
 
-Definition at line 893 of file queuemanager.\-cpp.
+Definition at line 893 of file queuemanager.\+cpp.
 
 
 
-References Global\-Search\-::\-Structure\-::get\-Status(), Global\-Search\-::\-Tracker\-::list(), Global\-Search\-::\-Tracker\-::lock\-For\-Read(), m\-\_\-tracker, Global\-Search\-::\-Structure\-::\-Optimized, and Global\-Search\-::\-Tracker\-::unlock().
+References Global\+Search\+::\+Structure\+::get\+Status(), Global\+Search\+::\+Tracker\+::list(), Global\+Search\+::\+Tracker\+::lock\+For\+Read(), Global\+Search\+::\+Structure\+::\+Optimized, and Global\+Search\+::\+Tracker\+::unlock().
 
-\hypertarget{classGlobalSearch_1_1QueueManager_abb5985273cbb0126bf065acb76c2be51}{\index{Global\-Search\-::\-Queue\-Manager@{Global\-Search\-::\-Queue\-Manager}!get\-All\-Running\-Structures@{get\-All\-Running\-Structures}}
-\index{get\-All\-Running\-Structures@{get\-All\-Running\-Structures}!GlobalSearch::QueueManager@{Global\-Search\-::\-Queue\-Manager}}
-\subsubsection[{get\-All\-Running\-Structures}]{\setlength{\rightskip}{0pt plus 5cm}Q\-List$<$ {\bf Structure} $\ast$ $>$ Global\-Search\-::\-Queue\-Manager\-::get\-All\-Running\-Structures (
+\hypertarget{classGlobalSearch_1_1QueueManager_abb5985273cbb0126bf065acb76c2be51}{}\index{Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}!get\+All\+Running\+Structures@{get\+All\+Running\+Structures}}
+\index{get\+All\+Running\+Structures@{get\+All\+Running\+Structures}!Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}}
+\subsubsection[{get\+All\+Running\+Structures}]{\setlength{\rightskip}{0pt plus 5cm}Q\+List$<$ {\bf Structure} $\ast$ $>$ Global\+Search\+::\+Queue\+Manager\+::get\+All\+Running\+Structures (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classGlobalSearch_1_1QueueManager_abb5985273cbb0126bf065acb76c2be51}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classGlobalSearch_1_1QueueManager_abb5985273cbb0126bf065acb76c2be51}
 \begin{DoxyReturn}{Returns}
-All Structures in m\-\_\-running\-Tracker 
+All Structures in m\+\_\+running\+Tracker 
 \end{DoxyReturn}
 
 
-Definition at line 882 of file queuemanager.\-cpp.
+Definition at line 882 of file queuemanager.\+cpp.
 
 
 
-References Global\-Search\-::\-Tracker\-::list(), Global\-Search\-::\-Tracker\-::lock\-For\-Read(), m\-\_\-new\-Structure\-Tracker, m\-\_\-running\-Tracker, and Global\-Search\-::\-Tracker\-::unlock().
+References Global\+Search\+::\+Tracker\+::list(), Global\+Search\+::\+Tracker\+::lock\+For\+Read(), m\+\_\+new\+Structure\+Tracker, m\+\_\+running\+Tracker, and Global\+Search\+::\+Tracker\+::unlock().
 
 
 
-Referenced by check\-Running().
+Referenced by check\+Running().
 
-\hypertarget{classGlobalSearch_1_1QueueManager_ad77db239019da90a79040b680f2398dc}{\index{Global\-Search\-::\-Queue\-Manager@{Global\-Search\-::\-Queue\-Manager}!get\-All\-Structures@{get\-All\-Structures}}
-\index{get\-All\-Structures@{get\-All\-Structures}!GlobalSearch::QueueManager@{Global\-Search\-::\-Queue\-Manager}}
-\subsubsection[{get\-All\-Structures}]{\setlength{\rightskip}{0pt plus 5cm}Q\-List$<$ {\bf Structure} $\ast$ $>$ Global\-Search\-::\-Queue\-Manager\-::get\-All\-Structures (
+\hypertarget{classGlobalSearch_1_1QueueManager_ad77db239019da90a79040b680f2398dc}{}\index{Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}!get\+All\+Structures@{get\+All\+Structures}}
+\index{get\+All\+Structures@{get\+All\+Structures}!Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}}
+\subsubsection[{get\+All\+Structures}]{\setlength{\rightskip}{0pt plus 5cm}Q\+List$<$ {\bf Structure} $\ast$ $>$ Global\+Search\+::\+Queue\+Manager\+::get\+All\+Structures (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classGlobalSearch_1_1QueueManager_ad77db239019da90a79040b680f2398dc}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classGlobalSearch_1_1QueueManager_ad77db239019da90a79040b680f2398dc}
 \begin{DoxyReturn}{Returns}
-All Structures in m\-\_\-tracker and m\-\_\-start\-Pending\-Tracker 
+All Structures in m\+\_\+tracker and m\+\_\+start\+Pending\+Tracker 
 \end{DoxyReturn}
 
 
-Definition at line 925 of file queuemanager.\-cpp.
+Definition at line 925 of file queuemanager.\+cpp.
 
 
 
-References Global\-Search\-::\-Tracker\-::list(), Global\-Search\-::\-Tracker\-::lock\-For\-Read(), m\-\_\-new\-Structure\-Tracker, m\-\_\-tracker, and Global\-Search\-::\-Tracker\-::unlock().
+References Global\+Search\+::\+Tracker\+::list(), Global\+Search\+::\+Tracker\+::lock\+For\+Read(), m\+\_\+new\+Structure\+Tracker, and Global\+Search\+::\+Tracker\+::unlock().
 
 
 
-Referenced by lock\-For\-Naming().
+Referenced by lock\+For\+Naming().
 
-\hypertarget{classGlobalSearch_1_1QueueManager_a84149fe85ad675e47950a69d32ad7c6a}{\index{Global\-Search\-::\-Queue\-Manager@{Global\-Search\-::\-Queue\-Manager}!handle\-Duplicate\-Structure@{handle\-Duplicate\-Structure}}
-\index{handle\-Duplicate\-Structure@{handle\-Duplicate\-Structure}!GlobalSearch::QueueManager@{Global\-Search\-::\-Queue\-Manager}}
-\subsubsection[{handle\-Duplicate\-Structure}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Queue\-Manager\-::handle\-Duplicate\-Structure (
+\hypertarget{classGlobalSearch_1_1QueueManager_a84149fe85ad675e47950a69d32ad7c6a}{}\index{Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}!handle\+Duplicate\+Structure@{handle\+Duplicate\+Structure}}
+\index{handle\+Duplicate\+Structure@{handle\+Duplicate\+Structure}!Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}}
+\subsubsection[{handle\+Duplicate\+Structure}]{\setlength{\rightskip}{0pt plus 5cm}void Global\+Search\+::\+Queue\+Manager\+::handle\+Duplicate\+Structure (
 \begin{DoxyParamCaption}
 \item[{{\bf Structure} $\ast$}]{s}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classGlobalSearch_1_1QueueManager_a84149fe85ad675e47950a69d32ad7c6a}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classGlobalSearch_1_1QueueManager_a84149fe85ad675e47950a69d32ad7c6a}
 Perform actions on the Duplicate \hyperlink{classGlobalSearch_1_1Structure}{Structure} {\itshape s}.
 
 
@@ -522,19 +521,19 @@ Perform actions on the Duplicate \hyperlink{classGlobalSearch_1_1Structure}{Stru
 \end{DoxyParams}
 
 
-Definition at line 713 of file queuemanager.\-cpp.
+Definition at line 713 of file queuemanager.\+cpp.
 
 
 
-Referenced by check\-Running().
+Referenced by check\+Running().
 
-\hypertarget{classGlobalSearch_1_1QueueManager_afe51c49057d5d0b8fa5ac1272e31fe9f}{\index{Global\-Search\-::\-Queue\-Manager@{Global\-Search\-::\-Queue\-Manager}!handle\-Empty\-Structure@{handle\-Empty\-Structure}}
-\index{handle\-Empty\-Structure@{handle\-Empty\-Structure}!GlobalSearch::QueueManager@{Global\-Search\-::\-Queue\-Manager}}
-\subsubsection[{handle\-Empty\-Structure}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Queue\-Manager\-::handle\-Empty\-Structure (
+\hypertarget{classGlobalSearch_1_1QueueManager_afe51c49057d5d0b8fa5ac1272e31fe9f}{}\index{Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}!handle\+Empty\+Structure@{handle\+Empty\+Structure}}
+\index{handle\+Empty\+Structure@{handle\+Empty\+Structure}!Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}}
+\subsubsection[{handle\+Empty\+Structure}]{\setlength{\rightskip}{0pt plus 5cm}void Global\+Search\+::\+Queue\+Manager\+::handle\+Empty\+Structure (
 \begin{DoxyParamCaption}
 \item[{{\bf Structure} $\ast$}]{s}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classGlobalSearch_1_1QueueManager_afe51c49057d5d0b8fa5ac1272e31fe9f}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classGlobalSearch_1_1QueueManager_afe51c49057d5d0b8fa5ac1272e31fe9f}
 Perform actions on the Empty \hyperlink{classGlobalSearch_1_1Structure}{Structure} {\itshape s}.
 
 
@@ -544,20 +543,20 @@ Perform actions on the Empty \hyperlink{classGlobalSearch_1_1Structure}{Structur
 \end{DoxyParams}
 
 
-Definition at line 549 of file queuemanager.\-cpp.
+Definition at line 549 of file queuemanager.\+cpp.
 
 
 
-Referenced by check\-Running().
+Referenced by check\+Running().
 
-\hypertarget{classGlobalSearch_1_1QueueManager_a11c594794b1b96ad8524a88866acac3f}{\index{Global\-Search\-::\-Queue\-Manager@{Global\-Search\-::\-Queue\-Manager}!handle\-Error\-Structure@{handle\-Error\-Structure}}
-\index{handle\-Error\-Structure@{handle\-Error\-Structure}!GlobalSearch::QueueManager@{Global\-Search\-::\-Queue\-Manager}}
-\subsubsection[{handle\-Error\-Structure}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Queue\-Manager\-::handle\-Error\-Structure (
+\hypertarget{classGlobalSearch_1_1QueueManager_a11c594794b1b96ad8524a88866acac3f}{}\index{Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}!handle\+Error\+Structure@{handle\+Error\+Structure}}
+\index{handle\+Error\+Structure@{handle\+Error\+Structure}!Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}}
+\subsubsection[{handle\+Error\+Structure}]{\setlength{\rightskip}{0pt plus 5cm}void Global\+Search\+::\+Queue\+Manager\+::handle\+Error\+Structure (
 \begin{DoxyParamCaption}
 \item[{{\bf Structure} $\ast$}]{s}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classGlobalSearch_1_1QueueManager_a11c594794b1b96ad8524a88866acac3f}
-Perform actions on the Error'd \hyperlink{classGlobalSearch_1_1Structure}{Structure} {\itshape s}.
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classGlobalSearch_1_1QueueManager_a11c594794b1b96ad8524a88866acac3f}
+Perform actions on the Error\textquotesingle{}d \hyperlink{classGlobalSearch_1_1Structure}{Structure} {\itshape s}.
 
 
 \begin{DoxyParams}{Parameters}
@@ -566,20 +565,20 @@ Perform actions on the Error'd \hyperlink{classGlobalSearch_1_1Structure}{Struct
 \end{DoxyParams}
 
 
-Definition at line 559 of file queuemanager.\-cpp.
+Definition at line 559 of file queuemanager.\+cpp.
 
 
 
-Referenced by check\-Running().
+Referenced by check\+Running().
 
-\hypertarget{classGlobalSearch_1_1QueueManager_a14667778b10fd542941121f75c01e522}{\index{Global\-Search\-::\-Queue\-Manager@{Global\-Search\-::\-Queue\-Manager}!handle\-In\-Process\-Structure@{handle\-In\-Process\-Structure}}
-\index{handle\-In\-Process\-Structure@{handle\-In\-Process\-Structure}!GlobalSearch::QueueManager@{Global\-Search\-::\-Queue\-Manager}}
-\subsubsection[{handle\-In\-Process\-Structure}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Queue\-Manager\-::handle\-In\-Process\-Structure (
+\hypertarget{classGlobalSearch_1_1QueueManager_a14667778b10fd542941121f75c01e522}{}\index{Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}!handle\+In\+Process\+Structure@{handle\+In\+Process\+Structure}}
+\index{handle\+In\+Process\+Structure@{handle\+In\+Process\+Structure}!Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}}
+\subsubsection[{handle\+In\+Process\+Structure}]{\setlength{\rightskip}{0pt plus 5cm}void Global\+Search\+::\+Queue\+Manager\+::handle\+In\+Process\+Structure (
 \begin{DoxyParamCaption}
 \item[{{\bf Structure} $\ast$}]{s}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classGlobalSearch_1_1QueueManager_a14667778b10fd542941121f75c01e522}
-Perform actions on the In\-Process \hyperlink{classGlobalSearch_1_1Structure}{Structure} {\itshape s}.
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classGlobalSearch_1_1QueueManager_a14667778b10fd542941121f75c01e522}
+Perform actions on the In\+Process \hyperlink{classGlobalSearch_1_1Structure}{Structure} {\itshape s}.
 
 
 \begin{DoxyParams}{Parameters}
@@ -588,19 +587,19 @@ Perform actions on the In\-Process \hyperlink{classGlobalSearch_1_1Structure}{St
 \end{DoxyParams}
 
 
-Definition at line 416 of file queuemanager.\-cpp.
+Definition at line 416 of file queuemanager.\+cpp.
 
 
 
-Referenced by check\-Running().
+Referenced by check\+Running().
 
-\hypertarget{classGlobalSearch_1_1QueueManager_a80e344243b5a701da60d8b7917013fd1}{\index{Global\-Search\-::\-Queue\-Manager@{Global\-Search\-::\-Queue\-Manager}!handle\-Killed\-Structure@{handle\-Killed\-Structure}}
-\index{handle\-Killed\-Structure@{handle\-Killed\-Structure}!GlobalSearch::QueueManager@{Global\-Search\-::\-Queue\-Manager}}
-\subsubsection[{handle\-Killed\-Structure}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Queue\-Manager\-::handle\-Killed\-Structure (
+\hypertarget{classGlobalSearch_1_1QueueManager_a80e344243b5a701da60d8b7917013fd1}{}\index{Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}!handle\+Killed\+Structure@{handle\+Killed\+Structure}}
+\index{handle\+Killed\+Structure@{handle\+Killed\+Structure}!Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}}
+\subsubsection[{handle\+Killed\+Structure}]{\setlength{\rightskip}{0pt plus 5cm}void Global\+Search\+::\+Queue\+Manager\+::handle\+Killed\+Structure (
 \begin{DoxyParamCaption}
 \item[{{\bf Structure} $\ast$}]{s}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classGlobalSearch_1_1QueueManager_a80e344243b5a701da60d8b7917013fd1}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classGlobalSearch_1_1QueueManager_a80e344243b5a701da60d8b7917013fd1}
 Perform actions on the Killed \hyperlink{classGlobalSearch_1_1Structure}{Structure} {\itshape s}.
 
 
@@ -610,19 +609,19 @@ Perform actions on the Killed \hyperlink{classGlobalSearch_1_1Structure}{Structu
 \end{DoxyParams}
 
 
-Definition at line 674 of file queuemanager.\-cpp.
+Definition at line 674 of file queuemanager.\+cpp.
 
 
 
-Referenced by check\-Running(), and handle\-Removed\-Structure().
+Referenced by check\+Running(), and handle\+Removed\+Structure().
 
-\hypertarget{classGlobalSearch_1_1QueueManager_aabd2eebaed91b006309adff376cfc22a}{\index{Global\-Search\-::\-Queue\-Manager@{Global\-Search\-::\-Queue\-Manager}!handle\-Optimized\-Structure@{handle\-Optimized\-Structure}}
-\index{handle\-Optimized\-Structure@{handle\-Optimized\-Structure}!GlobalSearch::QueueManager@{Global\-Search\-::\-Queue\-Manager}}
-\subsubsection[{handle\-Optimized\-Structure}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Queue\-Manager\-::handle\-Optimized\-Structure (
+\hypertarget{classGlobalSearch_1_1QueueManager_aabd2eebaed91b006309adff376cfc22a}{}\index{Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}!handle\+Optimized\+Structure@{handle\+Optimized\+Structure}}
+\index{handle\+Optimized\+Structure@{handle\+Optimized\+Structure}!Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}}
+\subsubsection[{handle\+Optimized\+Structure}]{\setlength{\rightskip}{0pt plus 5cm}void Global\+Search\+::\+Queue\+Manager\+::handle\+Optimized\+Structure (
 \begin{DoxyParamCaption}
 \item[{{\bf Structure} $\ast$}]{s}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classGlobalSearch_1_1QueueManager_aabd2eebaed91b006309adff376cfc22a}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classGlobalSearch_1_1QueueManager_aabd2eebaed91b006309adff376cfc22a}
 Perform actions on the Optimized \hyperlink{classGlobalSearch_1_1Structure}{Structure} {\itshape s}.
 
 
@@ -632,15 +631,15 @@ Perform actions on the Optimized \hyperlink{classGlobalSearch_1_1Structure}{Stru
 \end{DoxyParams}
 
 
-Definition at line 462 of file queuemanager.\-cpp.
+Definition at line 462 of file queuemanager.\+cpp.
 
-\hypertarget{classGlobalSearch_1_1QueueManager_ab715f5753ac932c47facb214573f8b8b}{\index{Global\-Search\-::\-Queue\-Manager@{Global\-Search\-::\-Queue\-Manager}!handle\-Removed\-Structure@{handle\-Removed\-Structure}}
-\index{handle\-Removed\-Structure@{handle\-Removed\-Structure}!GlobalSearch::QueueManager@{Global\-Search\-::\-Queue\-Manager}}
-\subsubsection[{handle\-Removed\-Structure}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Queue\-Manager\-::handle\-Removed\-Structure (
+\hypertarget{classGlobalSearch_1_1QueueManager_ab715f5753ac932c47facb214573f8b8b}{}\index{Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}!handle\+Removed\+Structure@{handle\+Removed\+Structure}}
+\index{handle\+Removed\+Structure@{handle\+Removed\+Structure}!Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}}
+\subsubsection[{handle\+Removed\+Structure}]{\setlength{\rightskip}{0pt plus 5cm}void Global\+Search\+::\+Queue\+Manager\+::handle\+Removed\+Structure (
 \begin{DoxyParamCaption}
 \item[{{\bf Structure} $\ast$}]{s}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classGlobalSearch_1_1QueueManager_ab715f5753ac932c47facb214573f8b8b}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classGlobalSearch_1_1QueueManager_ab715f5753ac932c47facb214573f8b8b}
 Perform actions on the Removed \hyperlink{classGlobalSearch_1_1Structure}{Structure} {\itshape s}.
 
 
@@ -650,24 +649,24 @@ Perform actions on the Removed \hyperlink{classGlobalSearch_1_1Structure}{Struct
 \end{DoxyParams}
 
 
-Definition at line 708 of file queuemanager.\-cpp.
+Definition at line 708 of file queuemanager.\+cpp.
 
 
 
-References handle\-Killed\-Structure().
+References handle\+Killed\+Structure().
 
 
 
-Referenced by check\-Running().
+Referenced by check\+Running().
 
-\hypertarget{classGlobalSearch_1_1QueueManager_a81c488f9671a05b9d51eff9c2fc514d6}{\index{Global\-Search\-::\-Queue\-Manager@{Global\-Search\-::\-Queue\-Manager}!handle\-Restart\-Structure@{handle\-Restart\-Structure}}
-\index{handle\-Restart\-Structure@{handle\-Restart\-Structure}!GlobalSearch::QueueManager@{Global\-Search\-::\-Queue\-Manager}}
-\subsubsection[{handle\-Restart\-Structure}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Queue\-Manager\-::handle\-Restart\-Structure (
+\hypertarget{classGlobalSearch_1_1QueueManager_a81c488f9671a05b9d51eff9c2fc514d6}{}\index{Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}!handle\+Restart\+Structure@{handle\+Restart\+Structure}}
+\index{handle\+Restart\+Structure@{handle\+Restart\+Structure}!Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}}
+\subsubsection[{handle\+Restart\+Structure}]{\setlength{\rightskip}{0pt plus 5cm}void Global\+Search\+::\+Queue\+Manager\+::handle\+Restart\+Structure (
 \begin{DoxyParamCaption}
 \item[{{\bf Structure} $\ast$}]{s}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classGlobalSearch_1_1QueueManager_a81c488f9671a05b9d51eff9c2fc514d6}
-Perform actions on the Restart'ing \hyperlink{classGlobalSearch_1_1Structure}{Structure} {\itshape s}.
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classGlobalSearch_1_1QueueManager_a81c488f9671a05b9d51eff9c2fc514d6}
+Perform actions on the Restart\textquotesingle{}ing \hyperlink{classGlobalSearch_1_1Structure}{Structure} {\itshape s}.
 
 
 \begin{DoxyParams}{Parameters}
@@ -676,20 +675,20 @@ Perform actions on the Restart'ing \hyperlink{classGlobalSearch_1_1Structure}{St
 \end{DoxyParams}
 
 
-Definition at line 744 of file queuemanager.\-cpp.
+Definition at line 744 of file queuemanager.\+cpp.
 
 
 
-Referenced by check\-Running().
+Referenced by check\+Running().
 
-\hypertarget{classGlobalSearch_1_1QueueManager_ab9feeb85163af25cd067a5279cccff44}{\index{Global\-Search\-::\-Queue\-Manager@{Global\-Search\-::\-Queue\-Manager}!handle\-Step\-Optimized\-Structure@{handle\-Step\-Optimized\-Structure}}
-\index{handle\-Step\-Optimized\-Structure@{handle\-Step\-Optimized\-Structure}!GlobalSearch::QueueManager@{Global\-Search\-::\-Queue\-Manager}}
-\subsubsection[{handle\-Step\-Optimized\-Structure}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Queue\-Manager\-::handle\-Step\-Optimized\-Structure (
+\hypertarget{classGlobalSearch_1_1QueueManager_ab9feeb85163af25cd067a5279cccff44}{}\index{Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}!handle\+Step\+Optimized\+Structure@{handle\+Step\+Optimized\+Structure}}
+\index{handle\+Step\+Optimized\+Structure@{handle\+Step\+Optimized\+Structure}!Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}}
+\subsubsection[{handle\+Step\+Optimized\+Structure}]{\setlength{\rightskip}{0pt plus 5cm}void Global\+Search\+::\+Queue\+Manager\+::handle\+Step\+Optimized\+Structure (
 \begin{DoxyParamCaption}
 \item[{{\bf Structure} $\ast$}]{s}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classGlobalSearch_1_1QueueManager_ab9feeb85163af25cd067a5279cccff44}
-Perform actions on the Step\-Optimized \hyperlink{classGlobalSearch_1_1Structure}{Structure} {\itshape s}.
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classGlobalSearch_1_1QueueManager_ab9feeb85163af25cd067a5279cccff44}
+Perform actions on the Step\+Optimized \hyperlink{classGlobalSearch_1_1Structure}{Structure} {\itshape s}.
 
 
 \begin{DoxyParams}{Parameters}
@@ -698,19 +697,19 @@ Perform actions on the Step\-Optimized \hyperlink{classGlobalSearch_1_1Structure
 \end{DoxyParams}
 
 
-Definition at line 496 of file queuemanager.\-cpp.
+Definition at line 496 of file queuemanager.\+cpp.
 
 
 
-Referenced by check\-Running().
+Referenced by check\+Running().
 
-\hypertarget{classGlobalSearch_1_1QueueManager_a01c36b34d2fc7ca0bf03a929a4da9e4d}{\index{Global\-Search\-::\-Queue\-Manager@{Global\-Search\-::\-Queue\-Manager}!handle\-Submitted\-Structure@{handle\-Submitted\-Structure}}
-\index{handle\-Submitted\-Structure@{handle\-Submitted\-Structure}!GlobalSearch::QueueManager@{Global\-Search\-::\-Queue\-Manager}}
-\subsubsection[{handle\-Submitted\-Structure}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Queue\-Manager\-::handle\-Submitted\-Structure (
+\hypertarget{classGlobalSearch_1_1QueueManager_a01c36b34d2fc7ca0bf03a929a4da9e4d}{}\index{Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}!handle\+Submitted\+Structure@{handle\+Submitted\+Structure}}
+\index{handle\+Submitted\+Structure@{handle\+Submitted\+Structure}!Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}}
+\subsubsection[{handle\+Submitted\+Structure}]{\setlength{\rightskip}{0pt plus 5cm}void Global\+Search\+::\+Queue\+Manager\+::handle\+Submitted\+Structure (
 \begin{DoxyParamCaption}
 \item[{{\bf Structure} $\ast$}]{s}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classGlobalSearch_1_1QueueManager_a01c36b34d2fc7ca0bf03a929a4da9e4d}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classGlobalSearch_1_1QueueManager_a01c36b34d2fc7ca0bf03a929a4da9e4d}
 Perform actions on the Submitted \hyperlink{classGlobalSearch_1_1Structure}{Structure} {\itshape s}.
 
 
@@ -720,19 +719,19 @@ Perform actions on the Submitted \hyperlink{classGlobalSearch_1_1Structure}{Stru
 \end{DoxyParams}
 
 
-Definition at line 626 of file queuemanager.\-cpp.
+Definition at line 626 of file queuemanager.\+cpp.
 
 
 
-Referenced by check\-Running().
+Referenced by check\+Running().
 
-\hypertarget{classGlobalSearch_1_1QueueManager_a82b9d1f1df369bf14c1de84e0b4b5d70}{\index{Global\-Search\-::\-Queue\-Manager@{Global\-Search\-::\-Queue\-Manager}!handle\-Updating\-Structure@{handle\-Updating\-Structure}}
-\index{handle\-Updating\-Structure@{handle\-Updating\-Structure}!GlobalSearch::QueueManager@{Global\-Search\-::\-Queue\-Manager}}
-\subsubsection[{handle\-Updating\-Structure}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Queue\-Manager\-::handle\-Updating\-Structure (
+\hypertarget{classGlobalSearch_1_1QueueManager_a82b9d1f1df369bf14c1de84e0b4b5d70}{}\index{Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}!handle\+Updating\+Structure@{handle\+Updating\+Structure}}
+\index{handle\+Updating\+Structure@{handle\+Updating\+Structure}!Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}}
+\subsubsection[{handle\+Updating\+Structure}]{\setlength{\rightskip}{0pt plus 5cm}void Global\+Search\+::\+Queue\+Manager\+::handle\+Updating\+Structure (
 \begin{DoxyParamCaption}
 \item[{{\bf Structure} $\ast$}]{s}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classGlobalSearch_1_1QueueManager_a82b9d1f1df369bf14c1de84e0b4b5d70}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classGlobalSearch_1_1QueueManager_a82b9d1f1df369bf14c1de84e0b4b5d70}
 Perform actions on the Updating \hyperlink{classGlobalSearch_1_1Structure}{Structure} {\itshape s}.
 
 
@@ -742,20 +741,20 @@ Perform actions on the Updating \hyperlink{classGlobalSearch_1_1Structure}{Struc
 \end{DoxyParams}
 
 
-Definition at line 554 of file queuemanager.\-cpp.
+Definition at line 554 of file queuemanager.\+cpp.
 
 
 
-Referenced by check\-Running().
+Referenced by check\+Running().
 
-\hypertarget{classGlobalSearch_1_1QueueManager_a6333f3ba572efd281e6dfd489c01ef8d}{\index{Global\-Search\-::\-Queue\-Manager@{Global\-Search\-::\-Queue\-Manager}!handle\-Waiting\-For\-Optimization\-Structure@{handle\-Waiting\-For\-Optimization\-Structure}}
-\index{handle\-Waiting\-For\-Optimization\-Structure@{handle\-Waiting\-For\-Optimization\-Structure}!GlobalSearch::QueueManager@{Global\-Search\-::\-Queue\-Manager}}
-\subsubsection[{handle\-Waiting\-For\-Optimization\-Structure}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Queue\-Manager\-::handle\-Waiting\-For\-Optimization\-Structure (
+\hypertarget{classGlobalSearch_1_1QueueManager_a6333f3ba572efd281e6dfd489c01ef8d}{}\index{Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}!handle\+Waiting\+For\+Optimization\+Structure@{handle\+Waiting\+For\+Optimization\+Structure}}
+\index{handle\+Waiting\+For\+Optimization\+Structure@{handle\+Waiting\+For\+Optimization\+Structure}!Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}}
+\subsubsection[{handle\+Waiting\+For\+Optimization\+Structure}]{\setlength{\rightskip}{0pt plus 5cm}void Global\+Search\+::\+Queue\+Manager\+::handle\+Waiting\+For\+Optimization\+Structure (
 \begin{DoxyParamCaption}
 \item[{{\bf Structure} $\ast$}]{s}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classGlobalSearch_1_1QueueManager_a6333f3ba572efd281e6dfd489c01ef8d}
-Perform actions on the Waiting\-For\-Optimization \hyperlink{classGlobalSearch_1_1Structure}{Structure} {\itshape s}.
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classGlobalSearch_1_1QueueManager_a6333f3ba572efd281e6dfd489c01ef8d}
+Perform actions on the Waiting\+For\+Optimization \hyperlink{classGlobalSearch_1_1Structure}{Structure} {\itshape s}.
 
 
 \begin{DoxyParams}{Parameters}
@@ -764,193 +763,193 @@ Perform actions on the Waiting\-For\-Optimization \hyperlink{classGlobalSearch_1
 \end{DoxyParams}
 
 
-Definition at line 544 of file queuemanager.\-cpp.
+Definition at line 544 of file queuemanager.\+cpp.
 
 
 
-Referenced by check\-Running().
+Referenced by check\+Running().
 
-\hypertarget{classGlobalSearch_1_1QueueManager_aa79f26f791ec8315f2ae36d820bfa0ac}{\index{Global\-Search\-::\-Queue\-Manager@{Global\-Search\-::\-Queue\-Manager}!kill\-Structure@{kill\-Structure}}
-\index{kill\-Structure@{kill\-Structure}!GlobalSearch::QueueManager@{Global\-Search\-::\-Queue\-Manager}}
-\subsubsection[{kill\-Structure}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Queue\-Manager\-::kill\-Structure (
+\hypertarget{classGlobalSearch_1_1QueueManager_aa79f26f791ec8315f2ae36d820bfa0ac}{}\index{Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}!kill\+Structure@{kill\+Structure}}
+\index{kill\+Structure@{kill\+Structure}!Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}}
+\subsubsection[{kill\+Structure}]{\setlength{\rightskip}{0pt plus 5cm}void Global\+Search\+::\+Queue\+Manager\+::kill\+Structure (
 \begin{DoxyParamCaption}
 \item[{{\bf Structure} $\ast$}]{s}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classGlobalSearch_1_1QueueManager_aa79f26f791ec8315f2ae36d820bfa0ac}
-Stops any running optimization processes associated with a structure and sets its status to \hyperlink{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917acd16cf0031d5e5b522b61618fd73fdc1}{Structure\-::\-Killed}.
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classGlobalSearch_1_1QueueManager_aa79f26f791ec8315f2ae36d820bfa0ac}
+Stops any running optimization processes associated with a structure and sets its status to \hyperlink{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917acd16cf0031d5e5b522b61618fd73fdc1}{Structure\+::\+Killed}.
 
-The structure\-Killed signal is emitted as well.
+The structure\+Killed signal is emitted as well.
 
 
 \begin{DoxyParams}{Parameters}
 {\em s} & The \hyperlink{classGlobalSearch_1_1Structure}{Structure} to kill. \\
 \hline
 \end{DoxyParams}
-\begin{DoxySeeAlso}{See Also}
-\hyperlink{classGlobalSearch_1_1QueueManager_ad6e65416801d0cad4086fafb03990273}{structure\-Killed} 
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classGlobalSearch_1_1QueueManager_ad6e65416801d0cad4086fafb03990273}{structure\+Killed} 
 \end{DoxySeeAlso}
 
 
-Definition at line 791 of file queuemanager.\-cpp.
+Definition at line 791 of file queuemanager.\+cpp.
 
 
 
-References Global\-Search\-::\-Structure\-::get\-Status(), Global\-Search\-::\-Structure\-::\-Killed, Global\-Search\-::\-Structure\-::\-Optimized, Global\-Search\-::\-Structure\-::\-Removed, Global\-Search\-::\-Structure\-::set\-Status(), stop\-Job(), Global\-Search\-::\-Structure\-::stop\-Opt\-Timer(), and structure\-Killed().
+References Global\+Search\+::\+Structure\+::get\+Status(), Global\+Search\+::\+Structure\+::\+Killed, Global\+Search\+::\+Structure\+::\+Optimized, Global\+Search\+::\+Structure\+::\+Removed, Global\+Search\+::\+Structure\+::set\+Status(), stop\+Job(), Global\+Search\+::\+Structure\+::stop\+Opt\+Timer(), and structure\+Killed().
 
-\hypertarget{classGlobalSearch_1_1QueueManager_a11aa65d1cc9c13424a8eac1c08fe9c0b}{\index{Global\-Search\-::\-Queue\-Manager@{Global\-Search\-::\-Queue\-Manager}!lock\-For\-Naming@{lock\-For\-Naming}}
-\index{lock\-For\-Naming@{lock\-For\-Naming}!GlobalSearch::QueueManager@{Global\-Search\-::\-Queue\-Manager}}
-\subsubsection[{lock\-For\-Naming}]{\setlength{\rightskip}{0pt plus 5cm}Q\-List$<$ {\bf Structure} $\ast$ $>$ Global\-Search\-::\-Queue\-Manager\-::lock\-For\-Naming (
+\hypertarget{classGlobalSearch_1_1QueueManager_a11aa65d1cc9c13424a8eac1c08fe9c0b}{}\index{Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}!lock\+For\+Naming@{lock\+For\+Naming}}
+\index{lock\+For\+Naming@{lock\+For\+Naming}!Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}}
+\subsubsection[{lock\+For\+Naming}]{\setlength{\rightskip}{0pt plus 5cm}Q\+List$<$ {\bf Structure} $\ast$ $>$ Global\+Search\+::\+Queue\+Manager\+::lock\+For\+Naming (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classGlobalSearch_1_1QueueManager_a11aa65d1cc9c13424a8eac1c08fe9c0b}
-Locks the m\-\_\-tracker and m\-\_\-new\-Structure for reading.
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classGlobalSearch_1_1QueueManager_a11aa65d1cc9c13424a8eac1c08fe9c0b}
+Locks the m\+\_\+tracker and m\+\_\+new\+Structure for reading.
 
 \begin{DoxyReturn}{Returns}
-All Structures in \hyperlink{classGlobalSearch_1_1QueueManager_ad77db239019da90a79040b680f2398dc}{get\-All\-Structures()} 
+All Structures in \hyperlink{classGlobalSearch_1_1QueueManager_ad77db239019da90a79040b680f2398dc}{get\+All\+Structures()} 
 \end{DoxyReturn}
 
 
-Definition at line 936 of file queuemanager.\-cpp.
+Definition at line 936 of file queuemanager.\+cpp.
 
 
 
-References get\-All\-Structures(), Global\-Search\-::\-Tracker\-::lock\-For\-Read(), and m\-\_\-tracker.
+References get\+All\+Structures(), and Global\+Search\+::\+Tracker\+::lock\+For\+Read().
 
-\hypertarget{classGlobalSearch_1_1QueueManager_a1453d56d967bc6ddaaca951c5a7d8c8f}{\index{Global\-Search\-::\-Queue\-Manager@{Global\-Search\-::\-Queue\-Manager}!moved\-To\-Q\-M\-Thread@{moved\-To\-Q\-M\-Thread}}
-\index{moved\-To\-Q\-M\-Thread@{moved\-To\-Q\-M\-Thread}!GlobalSearch::QueueManager@{Global\-Search\-::\-Queue\-Manager}}
-\subsubsection[{moved\-To\-Q\-M\-Thread}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Queue\-Manager\-::moved\-To\-Q\-M\-Thread (
+\hypertarget{classGlobalSearch_1_1QueueManager_a1453d56d967bc6ddaaca951c5a7d8c8f}{}\index{Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}!moved\+To\+Q\+M\+Thread@{moved\+To\+Q\+M\+Thread}}
+\index{moved\+To\+Q\+M\+Thread@{moved\+To\+Q\+M\+Thread}!Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}}
+\subsubsection[{moved\+To\+Q\+M\+Thread}]{\setlength{\rightskip}{0pt plus 5cm}void Global\+Search\+::\+Queue\+Manager\+::moved\+To\+Q\+M\+Thread (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classGlobalSearch_1_1QueueManager_a1453d56d967bc6ddaaca951c5a7d8c8f}
-Emitted when the \hyperlink{classGlobalSearch_1_1QueueManager}{Queue\-Manager} has been moved to it's final thread and is ready to accept connections. 
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{classGlobalSearch_1_1QueueManager_a1453d56d967bc6ddaaca951c5a7d8c8f}
+Emitted when the \hyperlink{classGlobalSearch_1_1QueueManager}{Queue\+Manager} has been moved to it\textquotesingle{}s final thread and is ready to accept connections. 
 
-Referenced by move\-To\-Q\-M\-Thread().
+Referenced by move\+To\+Q\+M\+Thread().
 
-\hypertarget{classGlobalSearch_1_1QueueManager_a34f54a19ab868ce38fea4d27c27d60d8}{\index{Global\-Search\-::\-Queue\-Manager@{Global\-Search\-::\-Queue\-Manager}!move\-To\-Q\-M\-Thread@{move\-To\-Q\-M\-Thread}}
-\index{move\-To\-Q\-M\-Thread@{move\-To\-Q\-M\-Thread}!GlobalSearch::QueueManager@{Global\-Search\-::\-Queue\-Manager}}
-\subsubsection[{move\-To\-Q\-M\-Thread}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Queue\-Manager\-::move\-To\-Q\-M\-Thread (
+\hypertarget{classGlobalSearch_1_1QueueManager_a34f54a19ab868ce38fea4d27c27d60d8}{}\index{Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}!move\+To\+Q\+M\+Thread@{move\+To\+Q\+M\+Thread}}
+\index{move\+To\+Q\+M\+Thread@{move\+To\+Q\+M\+Thread}!Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}}
+\subsubsection[{move\+To\+Q\+M\+Thread}]{\setlength{\rightskip}{0pt plus 5cm}void Global\+Search\+::\+Queue\+Manager\+::move\+To\+Q\+M\+Thread (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1QueueManager_a34f54a19ab868ce38fea4d27c27d60d8}
-Move {\bfseries this} to the Q\-Thread specified in the constructor and setup connections in that thread's event loop. 
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [slot]}}\label{classGlobalSearch_1_1QueueManager_a34f54a19ab868ce38fea4d27c27d60d8}
+Move {\bfseries this} to the Q\+Thread specified in the constructor and setup connections in that thread\textquotesingle{}s event loop. 
 
-Definition at line 117 of file queuemanager.\-cpp.
-
-
-
-References m\-\_\-thread, moved\-To\-Q\-M\-Thread(), and setup\-Connections().
+Definition at line 117 of file queuemanager.\+cpp.
 
 
 
-Referenced by Queue\-Manager().
+References m\+\_\+thread, moved\+To\+Q\+M\+Thread(), and setup\+Connections().
 
-\hypertarget{classGlobalSearch_1_1QueueManager_a4b50dbd51e53b1d0d5cb93e9d7380c1c}{\index{Global\-Search\-::\-Queue\-Manager@{Global\-Search\-::\-Queue\-Manager}!need\-New\-Structure@{need\-New\-Structure}}
-\index{need\-New\-Structure@{need\-New\-Structure}!GlobalSearch::QueueManager@{Global\-Search\-::\-Queue\-Manager}}
-\subsubsection[{need\-New\-Structure}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Queue\-Manager\-::need\-New\-Structure (
+
+
+Referenced by Queue\+Manager().
+
+\hypertarget{classGlobalSearch_1_1QueueManager_a4b50dbd51e53b1d0d5cb93e9d7380c1c}{}\index{Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}!need\+New\+Structure@{need\+New\+Structure}}
+\index{need\+New\+Structure@{need\+New\+Structure}!Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}}
+\subsubsection[{need\+New\+Structure}]{\setlength{\rightskip}{0pt plus 5cm}void Global\+Search\+::\+Queue\+Manager\+::need\+New\+Structure (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classGlobalSearch_1_1QueueManager_a4b50dbd51e53b1d0d5cb93e9d7380c1c}
-Emitted when the number of unoptimized Structures drops below \hyperlink{classGlobalSearch_1_1OptBase_a973fbcff3e2abbc66c19236092439ce1}{Opt\-Base\-::cont\-Structs}. This is connected to \hyperlink{classGlobalSearch_1_1OptBase_a24b6e929232e6b82551c3917bf7dcc1c}{Opt\-Base\-::generate\-New\-Structure()} by default. 
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{classGlobalSearch_1_1QueueManager_a4b50dbd51e53b1d0d5cb93e9d7380c1c}
+Emitted when the number of unoptimized Structures drops below \hyperlink{classGlobalSearch_1_1OptBase_a973fbcff3e2abbc66c19236092439ce1}{Opt\+Base\+::cont\+Structs}. This is connected to \hyperlink{classGlobalSearch_1_1OptBase_a24b6e929232e6b82551c3917bf7dcc1c}{Opt\+Base\+::generate\+New\+Structure()} by default. 
 
-Referenced by check\-Population(), and setup\-Connections().
+Referenced by check\+Population(), and setup\+Connections().
 
-\hypertarget{classGlobalSearch_1_1QueueManager_af37eb7a9e54e347a81dc3a1e373c8d54}{\index{Global\-Search\-::\-Queue\-Manager@{Global\-Search\-::\-Queue\-Manager}!new\-Status\-Overview@{new\-Status\-Overview}}
-\index{new\-Status\-Overview@{new\-Status\-Overview}!GlobalSearch::QueueManager@{Global\-Search\-::\-Queue\-Manager}}
-\subsubsection[{new\-Status\-Overview}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Queue\-Manager\-::new\-Status\-Overview (
+\hypertarget{classGlobalSearch_1_1QueueManager_af37eb7a9e54e347a81dc3a1e373c8d54}{}\index{Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}!new\+Status\+Overview@{new\+Status\+Overview}}
+\index{new\+Status\+Overview@{new\+Status\+Overview}!Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}}
+\subsubsection[{new\+Status\+Overview}]{\setlength{\rightskip}{0pt plus 5cm}void Global\+Search\+::\+Queue\+Manager\+::new\+Status\+Overview (
 \begin{DoxyParamCaption}
 \item[{int}]{optimized, }
 \item[{int}]{running, }
 \item[{int}]{failing}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classGlobalSearch_1_1QueueManager_af37eb7a9e54e347a81dc3a1e373c8d54}
-Emitted when \hyperlink{classGlobalSearch_1_1QueueManager_a3c3de93fbb6a3f33d14ce74c541ba690}{check\-Population()} is called to provide a short summary of the queuemanager's status.
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{classGlobalSearch_1_1QueueManager_af37eb7a9e54e347a81dc3a1e373c8d54}
+Emitted when \hyperlink{classGlobalSearch_1_1QueueManager_a3c3de93fbb6a3f33d14ce74c541ba690}{check\+Population()} is called to provide a short summary of the queuemanager\textquotesingle{}s status.
 
 
 \begin{DoxyParams}{Parameters}
 {\em optimized} & Number of optimized structures \\
 \hline
-{\em running} & Number of running structures (e.\-g. submitted for optimization) \\
+{\em running} & Number of running structures (e.\+g. submitted for optimization) \\
 \hline
-{\em failing} & Number of structures with a get\-Fail\-Count() $>$ 0 \\
+{\em failing} & Number of structures with a get\+Fail\+Count() $>$ 0 \\
 \hline
 \end{DoxyParams}
 
 
-Referenced by check\-Population().
+Referenced by check\+Population().
 
-\hypertarget{classGlobalSearch_1_1QueueManager_a36c7fd5b33bd74babfd68ee746e5017c}{\index{Global\-Search\-::\-Queue\-Manager@{Global\-Search\-::\-Queue\-Manager}!reset@{reset}}
-\index{reset@{reset}!GlobalSearch::QueueManager@{Global\-Search\-::\-Queue\-Manager}}
-\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Queue\-Manager\-::reset (
+\hypertarget{classGlobalSearch_1_1QueueManager_a36c7fd5b33bd74babfd68ee746e5017c}{}\index{Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}!reset@{reset}}
+\index{reset@{reset}!Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}void Global\+Search\+::\+Queue\+Manager\+::reset (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classGlobalSearch_1_1QueueManager_a36c7fd5b33bd74babfd68ee746e5017c}
-Reset all trackers in tracker\-List 
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classGlobalSearch_1_1QueueManager_a36c7fd5b33bd74babfd68ee746e5017c}
+Reset all trackers in tracker\+List 
 
-Definition at line 160 of file queuemanager.\-cpp.
-
-
-
-References m\-\_\-job\-Start\-Tracker, m\-\_\-new\-Structure\-Tracker, m\-\_\-running\-Tracker, and m\-\_\-tracker.
+Definition at line 160 of file queuemanager.\+cpp.
 
 
 
-Referenced by Global\-Search\-::\-Opt\-Base\-::reset().
+References m\+\_\+job\+Start\+Tracker, m\+\_\+new\+Structure\+Tracker, and m\+\_\+running\+Tracker.
 
-\hypertarget{classGlobalSearch_1_1QueueManager_a3c2e07f49b09be24271551d85b7f312f}{\index{Global\-Search\-::\-Queue\-Manager@{Global\-Search\-::\-Queue\-Manager}!setup\-Connections@{setup\-Connections}}
-\index{setup\-Connections@{setup\-Connections}!GlobalSearch::QueueManager@{Global\-Search\-::\-Queue\-Manager}}
-\subsubsection[{setup\-Connections}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Queue\-Manager\-::setup\-Connections (
+
+
+Referenced by Global\+Search\+::\+Opt\+Base\+::reset().
+
+\hypertarget{classGlobalSearch_1_1QueueManager_a3c2e07f49b09be24271551d85b7f312f}{}\index{Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}!setup\+Connections@{setup\+Connections}}
+\index{setup\+Connections@{setup\+Connections}!Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}}
+\subsubsection[{setup\+Connections}]{\setlength{\rightskip}{0pt plus 5cm}void Global\+Search\+::\+Queue\+Manager\+::setup\+Connections (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [slot]}}}\label{classGlobalSearch_1_1QueueManager_a3c2e07f49b09be24271551d85b7f312f}
-Called by \hyperlink{classGlobalSearch_1_1QueueManager_a34f54a19ab868ce38fea4d27c27d60d8}{move\-To\-Q\-M\-Thread()}, this function installs connections in the owning thread's event loop. 
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [slot]}}\label{classGlobalSearch_1_1QueueManager_a3c2e07f49b09be24271551d85b7f312f}
+Called by \hyperlink{classGlobalSearch_1_1QueueManager_a34f54a19ab868ce38fea4d27c27d60d8}{move\+To\+Q\+M\+Thread()}, this function installs connections in the owning thread\textquotesingle{}s event loop. 
 
-Definition at line 128 of file queuemanager.\-cpp.
-
-
-
-References add\-Structure\-To\-Submission\-Queue(), check\-Loop(), m\-\_\-opt, need\-New\-Structure(), structure\-Finished(), structure\-Killed(), structure\-Started(), structure\-Submitted(), and structure\-Updated().
+Definition at line 128 of file queuemanager.\+cpp.
 
 
 
-Referenced by move\-To\-Q\-M\-Thread().
+References add\+Structure\+To\+Submission\+Queue(), check\+Loop(), m\+\_\+opt, need\+New\+Structure(), structure\+Finished(), structure\+Killed(), structure\+Started(), structure\+Submitted(), and structure\+Updated().
 
-\hypertarget{classGlobalSearch_1_1QueueManager_a643db68e2525754c897359dfff4dad66}{\index{Global\-Search\-::\-Queue\-Manager@{Global\-Search\-::\-Queue\-Manager}!start\-Job@{start\-Job}}
-\index{start\-Job@{start\-Job}!GlobalSearch::QueueManager@{Global\-Search\-::\-Queue\-Manager}}
-\subsubsection[{start\-Job}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Queue\-Manager\-::start\-Job (
+
+
+Referenced by move\+To\+Q\+M\+Thread().
+
+\hypertarget{classGlobalSearch_1_1QueueManager_a643db68e2525754c897359dfff4dad66}{}\index{Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}!start\+Job@{start\+Job}}
+\index{start\+Job@{start\+Job}!Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}}
+\subsubsection[{start\+Job}]{\setlength{\rightskip}{0pt plus 5cm}void Global\+Search\+::\+Queue\+Manager\+::start\+Job (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classGlobalSearch_1_1QueueManager_a643db68e2525754c897359dfff4dad66}
-Submits the first \hyperlink{classGlobalSearch_1_1Structure}{Structure} in m\-\_\-job\-Start\-Tracker for submission. This should not be called directly, instead call prepare\-Structure\-For\-Submission(\-Structure$\ast$).
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classGlobalSearch_1_1QueueManager_a643db68e2525754c897359dfff4dad66}
+Submits the first \hyperlink{classGlobalSearch_1_1Structure}{Structure} in m\+\_\+job\+Start\+Tracker for submission. This should not be called directly, instead call prepare\+Structure\+For\+Submission(\+Structure$\ast$).
 
-\begin{DoxySeeAlso}{See Also}
-prepare\-Structure\-For\-Submission 
+\begin{DoxySeeAlso}{See also}
+prepare\+Structure\+For\+Submission 
 \end{DoxySeeAlso}
 
 
-Definition at line 852 of file queuemanager.\-cpp.
+Definition at line 852 of file queuemanager.\+cpp.
 
 
 
-References Global\-Search\-::\-Structure\-::\-Error, Global\-Search\-::\-Structure\-::get\-Current\-Opt\-Step(), Global\-Search\-::\-Structure\-::get\-I\-D\-String(), m\-\_\-job\-Start\-Tracker, m\-\_\-opt, Global\-Search\-::\-Tracker\-::pop\-First(), Global\-Search\-::\-Opt\-Base\-::queue\-Interface(), Global\-Search\-::\-Structure\-::set\-Status(), Global\-Search\-::\-Queue\-Interface\-::start\-Job(), structure\-Submitted(), Global\-Search\-::\-Structure\-::\-Submitted, and Global\-Search\-::\-Opt\-Base\-::warning().
+References Global\+Search\+::\+Structure\+::\+Error, Global\+Search\+::\+Structure\+::get\+Current\+Opt\+Step(), Global\+Search\+::\+Structure\+::get\+I\+D\+String(), m\+\_\+job\+Start\+Tracker, m\+\_\+opt, Global\+Search\+::\+Tracker\+::pop\+First(), Global\+Search\+::\+Opt\+Base\+::queue\+Interface(), Global\+Search\+::\+Structure\+::set\+Status(), Global\+Search\+::\+Queue\+Interface\+::start\+Job(), structure\+Submitted(), Global\+Search\+::\+Structure\+::\+Submitted, and Global\+Search\+::\+Opt\+Base\+::warning().
 
 
 
-Referenced by check\-Population().
+Referenced by check\+Population().
 
-\hypertarget{classGlobalSearch_1_1QueueManager_ab4e0fef123622188942b2a4fe676dbd7}{\index{Global\-Search\-::\-Queue\-Manager@{Global\-Search\-::\-Queue\-Manager}!stop\-Job@{stop\-Job}}
-\index{stop\-Job@{stop\-Job}!GlobalSearch::QueueManager@{Global\-Search\-::\-Queue\-Manager}}
-\subsubsection[{stop\-Job}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Queue\-Manager\-::stop\-Job (
+\hypertarget{classGlobalSearch_1_1QueueManager_ab4e0fef123622188942b2a4fe676dbd7}{}\index{Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}!stop\+Job@{stop\+Job}}
+\index{stop\+Job@{stop\+Job}!Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}}
+\subsubsection[{stop\+Job}]{\setlength{\rightskip}{0pt plus 5cm}void Global\+Search\+::\+Queue\+Manager\+::stop\+Job (
 \begin{DoxyParamCaption}
 \item[{{\bf Structure} $\ast$}]{s}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classGlobalSearch_1_1QueueManager_ab4e0fef123622188942b2a4fe676dbd7}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classGlobalSearch_1_1QueueManager_ab4e0fef123622188942b2a4fe676dbd7}
 Kills the optimization process for the indicated \hyperlink{classGlobalSearch_1_1Structure}{Structure}.
 
 
@@ -960,23 +959,23 @@ Kills the optimization process for the indicated \hyperlink{classGlobalSearch_1_
 \end{DoxyParams}
 
 
-Definition at line 877 of file queuemanager.\-cpp.
+Definition at line 877 of file queuemanager.\+cpp.
 
 
 
-References m\-\_\-opt, Global\-Search\-::\-Opt\-Base\-::queue\-Interface(), and Global\-Search\-::\-Queue\-Interface\-::stop\-Job().
+References m\+\_\+opt, Global\+Search\+::\+Opt\+Base\+::queue\+Interface(), and Global\+Search\+::\+Queue\+Interface\+::stop\+Job().
 
 
 
-Referenced by kill\-Structure().
+Referenced by kill\+Structure().
 
-\hypertarget{classGlobalSearch_1_1QueueManager_a9ce76b6d4be1aaa3e1f04724f9baa03a}{\index{Global\-Search\-::\-Queue\-Manager@{Global\-Search\-::\-Queue\-Manager}!structure\-Finished@{structure\-Finished}}
-\index{structure\-Finished@{structure\-Finished}!GlobalSearch::QueueManager@{Global\-Search\-::\-Queue\-Manager}}
-\subsubsection[{structure\-Finished}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Queue\-Manager\-::structure\-Finished (
+\hypertarget{classGlobalSearch_1_1QueueManager_a9ce76b6d4be1aaa3e1f04724f9baa03a}{}\index{Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}!structure\+Finished@{structure\+Finished}}
+\index{structure\+Finished@{structure\+Finished}!Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}}
+\subsubsection[{structure\+Finished}]{\setlength{\rightskip}{0pt plus 5cm}void Global\+Search\+::\+Queue\+Manager\+::structure\+Finished (
 \begin{DoxyParamCaption}
-\item[{{\bf Global\-Search\-::\-Structure} $\ast$}]{s}
+\item[{{\bf Global\+Search\+::\+Structure} $\ast$}]{s}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classGlobalSearch_1_1QueueManager_a9ce76b6d4be1aaa3e1f04724f9baa03a}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{classGlobalSearch_1_1QueueManager_a9ce76b6d4be1aaa3e1f04724f9baa03a}
 Emitted when a \hyperlink{classGlobalSearch_1_1Structure}{Structure} has completed all optimization steps.
 
 
@@ -986,55 +985,55 @@ Emitted when a \hyperlink{classGlobalSearch_1_1Structure}{Structure} has complet
 \end{DoxyParams}
 
 
-Referenced by setup\-Connections().
+Referenced by setup\+Connections().
 
-\hypertarget{classGlobalSearch_1_1QueueManager_ad6e65416801d0cad4086fafb03990273}{\index{Global\-Search\-::\-Queue\-Manager@{Global\-Search\-::\-Queue\-Manager}!structure\-Killed@{structure\-Killed}}
-\index{structure\-Killed@{structure\-Killed}!GlobalSearch::QueueManager@{Global\-Search\-::\-Queue\-Manager}}
-\subsubsection[{structure\-Killed}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Queue\-Manager\-::structure\-Killed (
+\hypertarget{classGlobalSearch_1_1QueueManager_ad6e65416801d0cad4086fafb03990273}{}\index{Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}!structure\+Killed@{structure\+Killed}}
+\index{structure\+Killed@{structure\+Killed}!Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}}
+\subsubsection[{structure\+Killed}]{\setlength{\rightskip}{0pt plus 5cm}void Global\+Search\+::\+Queue\+Manager\+::structure\+Killed (
 \begin{DoxyParamCaption}
-\item[{{\bf Global\-Search\-::\-Structure} $\ast$}]{s}
+\item[{{\bf Global\+Search\+::\+Structure} $\ast$}]{s}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classGlobalSearch_1_1QueueManager_ad6e65416801d0cad4086fafb03990273}
-Emitted when a \hyperlink{classGlobalSearch_1_1Structure}{Structure} has been killed through \hyperlink{classGlobalSearch_1_1QueueManager_aa79f26f791ec8315f2ae36d820bfa0ac}{kill\-Structure(\-Structure$\ast$)} 
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{classGlobalSearch_1_1QueueManager_ad6e65416801d0cad4086fafb03990273}
+Emitted when a \hyperlink{classGlobalSearch_1_1Structure}{Structure} has been killed through \hyperlink{classGlobalSearch_1_1QueueManager_aa79f26f791ec8315f2ae36d820bfa0ac}{kill\+Structure(\+Structure$\ast$)} 
 \begin{DoxyParams}{Parameters}
 {\em s} & The \hyperlink{classGlobalSearch_1_1Structure}{Structure} that has been killed \\
 \hline
 \end{DoxyParams}
-\begin{DoxySeeAlso}{See Also}
-\hyperlink{classGlobalSearch_1_1QueueManager_aa79f26f791ec8315f2ae36d820bfa0ac}{kill\-Structure} 
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classGlobalSearch_1_1QueueManager_aa79f26f791ec8315f2ae36d820bfa0ac}{kill\+Structure} 
 \end{DoxySeeAlso}
 
 
-Referenced by kill\-Structure(), and setup\-Connections().
+Referenced by kill\+Structure(), and setup\+Connections().
 
-\hypertarget{classGlobalSearch_1_1QueueManager_a4309c24054c4752705f1d66d08358c9f}{\index{Global\-Search\-::\-Queue\-Manager@{Global\-Search\-::\-Queue\-Manager}!structure\-Started@{structure\-Started}}
-\index{structure\-Started@{structure\-Started}!GlobalSearch::QueueManager@{Global\-Search\-::\-Queue\-Manager}}
-\subsubsection[{structure\-Started}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Queue\-Manager\-::structure\-Started (
+\hypertarget{classGlobalSearch_1_1QueueManager_a4309c24054c4752705f1d66d08358c9f}{}\index{Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}!structure\+Started@{structure\+Started}}
+\index{structure\+Started@{structure\+Started}!Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}}
+\subsubsection[{structure\+Started}]{\setlength{\rightskip}{0pt plus 5cm}void Global\+Search\+::\+Queue\+Manager\+::structure\+Started (
 \begin{DoxyParamCaption}
-\item[{{\bf Global\-Search\-::\-Structure} $\ast$}]{s}
+\item[{{\bf Global\+Search\+::\+Structure} $\ast$}]{s}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classGlobalSearch_1_1QueueManager_a4309c24054c4752705f1d66d08358c9f}
-Emitted when a \hyperlink{classGlobalSearch_1_1Structure}{Structure} is accepted into the queuemanager (e.\-g. after submission through \hyperlink{classGlobalSearch_1_1QueueManager_a5f8012e4b5d002c444bfc486084feec1}{unlock\-For\-Naming(\-Structure$\ast$)} 
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{classGlobalSearch_1_1QueueManager_a4309c24054c4752705f1d66d08358c9f}
+Emitted when a \hyperlink{classGlobalSearch_1_1Structure}{Structure} is accepted into the queuemanager (e.\+g. after submission through \hyperlink{classGlobalSearch_1_1QueueManager_a5f8012e4b5d002c444bfc486084feec1}{unlock\+For\+Naming(\+Structure$\ast$)} 
 \begin{DoxyParams}{Parameters}
 {\em s} & The \hyperlink{classGlobalSearch_1_1Structure}{Structure} that has been accepted \\
 \hline
 \end{DoxyParams}
-\begin{DoxySeeAlso}{See Also}
-\hyperlink{classGlobalSearch_1_1QueueManager_a11aa65d1cc9c13424a8eac1c08fe9c0b}{lock\-For\-Naming} 
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classGlobalSearch_1_1QueueManager_a11aa65d1cc9c13424a8eac1c08fe9c0b}{lock\+For\+Naming} 
 
-\hyperlink{classGlobalSearch_1_1QueueManager_a5f8012e4b5d002c444bfc486084feec1}{unlock\-For\-Naming} 
+\hyperlink{classGlobalSearch_1_1QueueManager_a5f8012e4b5d002c444bfc486084feec1}{unlock\+For\+Naming} 
 \end{DoxySeeAlso}
 
 
-Referenced by setup\-Connections().
+Referenced by setup\+Connections().
 
-\hypertarget{classGlobalSearch_1_1QueueManager_a97ce1e692cd752d62ebea8b2c56e1cd2}{\index{Global\-Search\-::\-Queue\-Manager@{Global\-Search\-::\-Queue\-Manager}!structure\-Submitted@{structure\-Submitted}}
-\index{structure\-Submitted@{structure\-Submitted}!GlobalSearch::QueueManager@{Global\-Search\-::\-Queue\-Manager}}
-\subsubsection[{structure\-Submitted}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Queue\-Manager\-::structure\-Submitted (
+\hypertarget{classGlobalSearch_1_1QueueManager_a97ce1e692cd752d62ebea8b2c56e1cd2}{}\index{Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}!structure\+Submitted@{structure\+Submitted}}
+\index{structure\+Submitted@{structure\+Submitted}!Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}}
+\subsubsection[{structure\+Submitted}]{\setlength{\rightskip}{0pt plus 5cm}void Global\+Search\+::\+Queue\+Manager\+::structure\+Submitted (
 \begin{DoxyParamCaption}
-\item[{{\bf Global\-Search\-::\-Structure} $\ast$}]{s}
+\item[{{\bf Global\+Search\+::\+Structure} $\ast$}]{s}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classGlobalSearch_1_1QueueManager_a97ce1e692cd752d62ebea8b2c56e1cd2}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{classGlobalSearch_1_1QueueManager_a97ce1e692cd752d62ebea8b2c56e1cd2}
 Emitted when a \hyperlink{classGlobalSearch_1_1Structure}{Structure} is submitted for optimization 
 \begin{DoxyParams}{Parameters}
 {\em s} & The \hyperlink{classGlobalSearch_1_1Structure}{Structure} that has been submitted \\
@@ -1042,15 +1041,15 @@ Emitted when a \hyperlink{classGlobalSearch_1_1Structure}{Structure} is submitte
 \end{DoxyParams}
 
 
-Referenced by setup\-Connections(), and start\-Job().
+Referenced by setup\+Connections(), and start\+Job().
 
-\hypertarget{classGlobalSearch_1_1QueueManager_aaf98cf54afb9751e185a5450c32f4595}{\index{Global\-Search\-::\-Queue\-Manager@{Global\-Search\-::\-Queue\-Manager}!structure\-Updated@{structure\-Updated}}
-\index{structure\-Updated@{structure\-Updated}!GlobalSearch::QueueManager@{Global\-Search\-::\-Queue\-Manager}}
-\subsubsection[{structure\-Updated}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Queue\-Manager\-::structure\-Updated (
+\hypertarget{classGlobalSearch_1_1QueueManager_aaf98cf54afb9751e185a5450c32f4595}{}\index{Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}!structure\+Updated@{structure\+Updated}}
+\index{structure\+Updated@{structure\+Updated}!Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}}
+\subsubsection[{structure\+Updated}]{\setlength{\rightskip}{0pt plus 5cm}void Global\+Search\+::\+Queue\+Manager\+::structure\+Updated (
 \begin{DoxyParamCaption}
-\item[{{\bf Global\-Search\-::\-Structure} $\ast$}]{s}
+\item[{{\bf Global\+Search\+::\+Structure} $\ast$}]{s}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classGlobalSearch_1_1QueueManager_aaf98cf54afb9751e185a5450c32f4595}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{classGlobalSearch_1_1QueueManager_aaf98cf54afb9751e185a5450c32f4595}
 Emitted when a \hyperlink{classGlobalSearch_1_1Structure}{Structure} has changed status. Useful for updating progress tables, plots, etc 
 \begin{DoxyParams}{Parameters}
 {\em s} & The \hyperlink{classGlobalSearch_1_1Structure}{Structure} that has been updated \\
@@ -1058,16 +1057,16 @@ Emitted when a \hyperlink{classGlobalSearch_1_1Structure}{Structure} has changed
 \end{DoxyParams}
 
 
-Referenced by setup\-Connections().
+Referenced by setup\+Connections().
 
-\hypertarget{classGlobalSearch_1_1QueueManager_a5f8012e4b5d002c444bfc486084feec1}{\index{Global\-Search\-::\-Queue\-Manager@{Global\-Search\-::\-Queue\-Manager}!unlock\-For\-Naming@{unlock\-For\-Naming}}
-\index{unlock\-For\-Naming@{unlock\-For\-Naming}!GlobalSearch::QueueManager@{Global\-Search\-::\-Queue\-Manager}}
-\subsubsection[{unlock\-For\-Naming}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Queue\-Manager\-::unlock\-For\-Naming (
+\hypertarget{classGlobalSearch_1_1QueueManager_a5f8012e4b5d002c444bfc486084feec1}{}\index{Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}!unlock\+For\+Naming@{unlock\+For\+Naming}}
+\index{unlock\+For\+Naming@{unlock\+For\+Naming}!Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}}
+\subsubsection[{unlock\+For\+Naming}]{\setlength{\rightskip}{0pt plus 5cm}void Global\+Search\+::\+Queue\+Manager\+::unlock\+For\+Naming (
 \begin{DoxyParamCaption}
 \item[{{\bf Structure} $\ast$}]{s = {\ttfamily 0}}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classGlobalSearch_1_1QueueManager_a5f8012e4b5d002c444bfc486084feec1}
-Unlocks both the main and start\-Pending trackers.
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classGlobalSearch_1_1QueueManager_a5f8012e4b5d002c444bfc486084feec1}
+Unlocks both the main and start\+Pending trackers.
 
 
 \begin{DoxyParams}{Parameters}
@@ -1076,53 +1075,53 @@ Unlocks both the main and start\-Pending trackers.
 \end{DoxyParams}
 
 
-Definition at line 946 of file queuemanager.\-cpp.
+Definition at line 946 of file queuemanager.\+cpp.
 
 
 
-References Global\-Search\-::\-Tracker\-::append(), Global\-Search\-::\-Structure\-::get\-I\-D\-String(), Global\-Search\-::\-Opt\-Base\-::is\-Starting, Global\-Search\-::\-Tracker\-::lock\-For\-Write(), m\-\_\-is\-Destroying, m\-\_\-new\-Structure\-Tracker, m\-\_\-opt, m\-\_\-requested\-Structures, m\-\_\-tracker, and Global\-Search\-::\-Tracker\-::unlock().
+References Global\+Search\+::\+Tracker\+::append(), Global\+Search\+::\+Structure\+::get\+I\+D\+String(), Global\+Search\+::\+Opt\+Base\+::is\+Starting, Global\+Search\+::\+Tracker\+::lock\+For\+Write(), m\+\_\+is\+Destroying, m\+\_\+new\+Structure\+Tracker, m\+\_\+opt, m\+\_\+requested\+Structures, and Global\+Search\+::\+Tracker\+::unlock().
 
-\hypertarget{classGlobalSearch_1_1QueueManager_a6fba282892d588e57520718d2f42401a}{\index{Global\-Search\-::\-Queue\-Manager@{Global\-Search\-::\-Queue\-Manager}!update\-Queue@{update\-Queue}}
-\index{update\-Queue@{update\-Queue}!GlobalSearch::QueueManager@{Global\-Search\-::\-Queue\-Manager}}
-\subsubsection[{update\-Queue}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Queue\-Manager\-::update\-Queue (
+\hypertarget{classGlobalSearch_1_1QueueManager_a6fba282892d588e57520718d2f42401a}{}\index{Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}!update\+Queue@{update\+Queue}}
+\index{update\+Queue@{update\+Queue}!Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}}
+\subsubsection[{update\+Queue}]{\setlength{\rightskip}{0pt plus 5cm}void Global\+Search\+::\+Queue\+Manager\+::update\+Queue (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classGlobalSearch_1_1QueueManager_a6fba282892d588e57520718d2f42401a}
-Update the data from the remote P\-B\-S queue. \hypertarget{classGlobalSearch_1_1QueueManager_a47014fddb8cfd2547899ca272dfb8b0a}{\index{Global\-Search\-::\-Queue\-Manager@{Global\-Search\-::\-Queue\-Manager}!update\-Structure@{update\-Structure}}
-\index{update\-Structure@{update\-Structure}!GlobalSearch::QueueManager@{Global\-Search\-::\-Queue\-Manager}}
-\subsubsection[{update\-Structure}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Search\-::\-Queue\-Manager\-::update\-Structure (
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classGlobalSearch_1_1QueueManager_a6fba282892d588e57520718d2f42401a}
+Update the data from the remote P\+B\+S queue. \hypertarget{classGlobalSearch_1_1QueueManager_a47014fddb8cfd2547899ca272dfb8b0a}{}\index{Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}!update\+Structure@{update\+Structure}}
+\index{update\+Structure@{update\+Structure}!Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}}
+\subsubsection[{update\+Structure}]{\setlength{\rightskip}{0pt plus 5cm}void Global\+Search\+::\+Queue\+Manager\+::update\+Structure (
 \begin{DoxyParamCaption}
 \item[{{\bf Structure} $\ast$}]{s}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classGlobalSearch_1_1QueueManager_a47014fddb8cfd2547899ca272dfb8b0a}
-Called on Structures that are \hyperlink{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917ae572101eab4010061be0073888fbee39}{Structure\-::\-Step\-Optimized}, this function will update the \hyperlink{classGlobalSearch_1_1Structure}{Structure} with the results of the optimization and pass it along to prepare\-Structure\-For\-Next\-Opt\-Step.
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classGlobalSearch_1_1QueueManager_a47014fddb8cfd2547899ca272dfb8b0a}
+Called on Structures that are \hyperlink{classGlobalSearch_1_1Structure_a3f1e44cb4f603fe1b3fbc8e813535917ae572101eab4010061be0073888fbee39}{Structure\+::\+Step\+Optimized}, this function will update the \hyperlink{classGlobalSearch_1_1Structure}{Structure} with the results of the optimization and pass it along to prepare\+Structure\+For\+Next\+Opt\+Step.
 
 
 \begin{DoxyParams}{Parameters}
 {\em s} & The step optimized structure \\
 \hline
 \end{DoxyParams}
-\begin{DoxySeeAlso}{See Also}
-prepare\-Structure\-For\-Next\-Opt\-Step 
+\begin{DoxySeeAlso}{See also}
+prepare\+Structure\+For\+Next\+Opt\+Step 
 \end{DoxySeeAlso}
 
 
 \subsection{Member Data Documentation}
-\hypertarget{classGlobalSearch_1_1QueueManager_ab93522c4a198ea3401baf662b00a7ec7}{\index{Global\-Search\-::\-Queue\-Manager@{Global\-Search\-::\-Queue\-Manager}!m\-\_\-new\-Structure\-Tracker@{m\-\_\-new\-Structure\-Tracker}}
-\index{m\-\_\-new\-Structure\-Tracker@{m\-\_\-new\-Structure\-Tracker}!GlobalSearch::QueueManager@{Global\-Search\-::\-Queue\-Manager}}
-\subsubsection[{m\-\_\-new\-Structure\-Tracker}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tracker} Global\-Search\-::\-Queue\-Manager\-::m\-\_\-new\-Structure\-Tracker\hspace{0.3cm}{\ttfamily [protected]}}}\label{classGlobalSearch_1_1QueueManager_ab93522c4a198ea3401baf662b00a7ec7}
-Tracks structures that have been returned from m\-\_\-opt but have not yet been accepted into m\-\_\-tracker. 
+\hypertarget{classGlobalSearch_1_1QueueManager_ab93522c4a198ea3401baf662b00a7ec7}{}\index{Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}!m\+\_\+new\+Structure\+Tracker@{m\+\_\+new\+Structure\+Tracker}}
+\index{m\+\_\+new\+Structure\+Tracker@{m\+\_\+new\+Structure\+Tracker}!Global\+Search\+::\+Queue\+Manager@{Global\+Search\+::\+Queue\+Manager}}
+\subsubsection[{m\+\_\+new\+Structure\+Tracker}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tracker} Global\+Search\+::\+Queue\+Manager\+::m\+\_\+new\+Structure\+Tracker\hspace{0.3cm}{\ttfamily [protected]}}\label{classGlobalSearch_1_1QueueManager_ab93522c4a198ea3401baf662b00a7ec7}
+Tracks structures that have been returned from m\+\_\+opt but have not yet been accepted into m\+\_\+tracker. 
 
-Definition at line 499 of file queuemanager.\-h.
-
-
-
-Referenced by check\-Population(), get\-All\-Running\-Structures(), get\-All\-Structures(), reset(), and unlock\-For\-Naming().
+Definition at line 499 of file queuemanager.\+h.
 
 
 
-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+Referenced by check\+Population(), get\+All\+Running\+Structures(), get\+All\+Structures(), reset(), and unlock\+For\+Naming().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/globalsearch/queuemanager.\-h\item 
-src/globalsearch/queuemanager.\-cpp\end{DoxyCompactItemize}
+src/globalsearch/queuemanager.\+h\item 
+src/globalsearch/queuemanager.\+cpp\end{DoxyCompactItemize}
