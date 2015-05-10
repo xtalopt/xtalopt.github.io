@@ -1,6 +1,7 @@
 /* The standard CSS for doxygen 1.8.6 */
 
 body, table, div, p, dl {
+    margin: 0 auto;
 	font: 400 14px/22px Roboto,sans-serif;
 }
 
