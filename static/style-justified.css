@@ -80,6 +80,9 @@
       }
 
       @media (max-width: 980px) {
+        button {
+            height: 32px;
+        }
         .navbar-header {
             z-index: 999;
             margin: auto auto;
@@ -88,6 +91,7 @@
             left: 4px;
         }
         .navbar-inner {
+            height: 40px;
             width: 100%;
             position: fixed;
             top: 0;
