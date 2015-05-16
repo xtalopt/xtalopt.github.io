@@ -8,13 +8,18 @@
     <meta name="author" content="Zackary Falls">
     <link rel="icon" href="img/xtalopt-logo.png">
     <title>
-        XtalOpt - Installation
+        XtalOpt - Linux Install
     </title>    
+   
+    <!-- Scripts --> 
+    <script src="dist/js/jquery.js"></script>
+    <script type="text/javascript" src='dist/js/bootstrap.min.js'></script>
+    
     <!-- Le styles -->
     <link href="dist/css/bootstrap.css" rel="stylesheet">
     <link href="dist/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="static/style-justified.css" rel="stylesheet">
-
+    
     <!-- Fav and touch icons -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/xtalopt-logo.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/xtalopt-logo.png">
@@ -32,11 +37,17 @@
                     <ul class="nav">
                         <li><a class="brand" href="index.html"><img src="img/xtalopt-logo.png" width="25px"></a></li>
                         <li><a href="download.html">Downloads</a></li>
-                        <li class="active"><a href="install.html">Installation</a></li>
+                        <li class="dropdown">
+                          <a href="#" data-toggle="dropdown" class="dropdown-toggle">Installation<b class="caret"></b></a>
+                          <ul class="dropdown-menu">
+                            <li><a href="install-linux.html">Linux</a></li>
+                            <li class="active"><a href="install-mac.html">Mac OS X</a></li>
+                            <li><a href="install-win.html">Windows</a></li>
+                          </ul>
                         <li><a href="pub.html">Publications</a></li>
                         <li><a href="api.html">API</a></li>
                         <li><a href="tut.html">Tutorial</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="xtalcomp.html">XtalComp</a></li>
                     </ul>
                 </div>
             </div>
@@ -47,18 +58,17 @@
       <!-- Jumbotron -->
       <div class="jumbotron">
 
-    <h1 class="text">Installation</h1>
+    <h1 class="text">Installation for Mac OS X</h1>
     <hr>
     <h2 id="Anoteonversions">A note on versions...</h2>
     <p>
-    Installation of XtalOpt itself is a trivial task once the proper dependencies are in place. XtalOpt <strong>requires</strong> development versions of several other packages -- <strong>If a development package is specifed below, do not try to use non-development versions</strong>; they will not work. The instructions on this page walk through the steps of installing XtalOpt on your Linux system.
+    Installation of XtalOpt itself is a trivial task once the proper dependencies are in place. XtalOpt <strong>requires</strong> development versions of several other packages -- <strong>If a development package is specifed below, do not try to use non-development versions</strong>; they will not work. The instructions on this page walk through the steps of installing XtalOpt on your Mac OS X system.
     </p>
     <hr>
     <h2 id="Dependencies">Dependencies</h2>
     <hr>
-    <h3 id="EasyDependencies">"Easy" Dependencies</h3>
     <p>
-    The following dependencies can be installed from the package manager of most linux distributions:
+    The following dependencies can be installed from the package manager <a class="ext-link" href="https://www.macports.org">MacPorts</a> or <a class="ext-link" href="http://brew.sh/">Homebrew</a>:
     </p>
     <ul style="list-style-type:none"><li><tt>cmake</tt> (and optionally the ncurses GUI, <tt>ccmake</tt>) &gt;= 2.6
         </li><li><tt>Qt</tt> &gt;= 4.6.0
@@ -83,6 +93,10 @@
     Using the package manager for your linux distribution, install the dependencies listed above. For example, on Arch Linux, one can use the command
     </p>
     <pre class="wiki">pacman -S cmake qt eigen git subversion openssh</pre>
+    <p>
+    On Ubuntu, one can use the command
+    </p>
+    <pre class="wiki">sudo apt-get cmake qt eigen git subversion openssh</pre>
     <hr>
     <h2 id="SourceInstallations">Source Installations</h2>
     <hr>

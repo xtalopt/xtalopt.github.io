@@ -10,6 +10,11 @@
         padding-top: 0px;
         padding-bottom: 5%;
       }
+      pre {
+        overflow: auto;
+        color: white;
+        background-color: black;
+      }
       a.anchor {
         color:black;
       }
@@ -42,15 +47,12 @@
         font-size: 24px;
         line-height: 1.25;
       }
-      .jumbotron .btn {
-        font-size: 20px;
-        padding: 14px 24px;
-      }
 
       .navbar .navbar-inner {
         padding: 0;
         max-width: auto;
         margin: 0 auto;
+        background: black;
       }
       .navbar .nav {
         max-width: auto;
@@ -58,6 +60,7 @@
         display: table;
         float:none;
         table-layout:auto;
+        background: black;
       }
       .navbar .nav li {
         margin: 0 auto;
@@ -66,17 +69,68 @@
         float:left;
         text-align:center;
       }
+      .navbar .nav > .active > a {
+          background: none;
+      }
+      .navbar .nav > .active > a:hover {
+          background: none;
+      }
+      .navbar .nav > .active > a:focus {
+          background: none;
+      }
+
+      @media (max-width: 980px) {
+        .navbar-header {
+            z-index: 999;
+            max-width: auto;
+            margin: auto auto;
+            position: fixed;
+            top: 4px;
+            left: 4px;
+        }
+        .navbar .nav .navbar-collapse{
+            padding: 0;
+            max-height: none;
+        }
+        .navbar .nav ul {
+            float: none;
+            display: block;
+        }
+        .navbar .nav li {
+            float: none;
+            display: block;
+        }
+        .navbar .nav li a {
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
+      }
+      @media (min-width: 981px) {
+          .navbar-collapse {
+            overflow: visible;
+          }
+          .navbar-collapse.collapse {
+            overflow: visible;
+          }
+          .navbar-header {
+            display: none;
+          }
+      }
 
       ul.dropdown-menu {
-        background-color:black;
+        background-color: black;
         border-radius: 0 0 0 0;
-        height:auto;
-        overflow:hidden;
+        height: auto;
+        overflow: hidden;
       }
       ul.dropdown-menu>li>a {
-        color:grey;
+        color: grey;
       }
       ul.dropdown-menu>li:hover>a:hover {
-        color:white;
-        background:none;
+        color: white;
+        background: none;
+      }
+      ul.dropdown-menu>li.active>a {
+        color: white;
+        background: none;
       }

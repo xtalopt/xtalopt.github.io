@@ -10,6 +10,11 @@
     <title>
         XtalOpt - Publications
     </title>    
+    
+    <!-- Scripts --> 
+    <script src="dist/js/jquery.js"></script>
+    <script type="text/javascript" src='dist/js/bootstrap.min.js'></script>
+    
     <!-- Le styles -->
     <link href="dist/css/bootstrap.css" rel="stylesheet">
     <link href="dist/css/bootstrap-responsive.css" rel="stylesheet">
@@ -32,11 +37,17 @@
                     <ul class="nav">
                         <li><a class="brand" href="index.html"><img src="img/xtalopt-logo.png" width="25px"></a></li>
                         <li><a href="download.html">Downloads</a></li>
-                        <li><a href="install.html">Installation</a></li>
+                        <li class="dropdown">
+                          <a href="#" data-toggle="dropdown" class="dropdown-toggle">Installation<b class="caret"></b></a>
+                          <ul class="dropdown-menu">
+                            <li><a href="install-linux.html">Linux</a></li>
+                            <li><a href="install-mac.html">Mac OS X</a></li>
+                            <li><a href="install-win.html">Windows</a></li>
+                          </ul>
                         <li class="active"><a href="pub.html">Publications</a></li>
                         <li><a href="api.html">API</a></li>
                         <li><a href="tut.html">Tutorial</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="xtalcomp.html">XtalComp</a></li>
                     </ul>
                 </div>
             </div>
@@ -59,22 +70,22 @@
     The following publication details the implementation of XtalOpt, examining NaH, TiO<sub>2</sub>, and SrTiO<sub>3</sub> as benchmarking cases:
     </p>
     <ul align="left" style="text-align:-moz-left">
-        <li style="margin:2%">David C. Lonie, Eva Zurek; <strong>XtalOpt: An Open-Source Evolutionary Algorithm for Crystal Structure Prediction</strong>, Computer Physics Communications 182 (2011) pp. 372-387 <a class="ext-link" href="http://dx.doi.org/10.1016/j.cpc.2010.07.048"><span class="icon"> </span>doi:10.1016/j.cpc.2010.07.048</a>. <a class="ext-link" href="http://xtalopt.openmolecules.net/preprints/2010-CPIP-lonie-zurek.pdf"><span class="icon"> </span>Preprint (free)</a>
+        <li style="margin:2%">David C. Lonie, Eva Zurek; <strong>XtalOpt: An Open-Source Evolutionary Algorithm for Crystal Structure Prediction</strong>, Computer Physics Communications 182 (2011) pp. 372-387 <a class="ext-link" href="http://dx.doi.org/10.1016/j.cpc.2010.07.048"><span class="icon"> </span>doi:10.1016/j.cpc.2010.07.048</a>. <a href="preprints/2010-CPIP-lonie-zurek.pdf"><span class="icon"> </span>Preprint (free)</a>
     </li>
     </ul>
     <br>
     <p>
-    This paper describes the duplicate matching algorithm used by XtalOpt, named XtalComp, which is available as an <a class="ext-link" href="http://www.github.com/dlonie/XtalComp"><span class="icon"> </span>open-source code</a> and has a <a class="ext-link" href="http://xtalopt.openmolecules.net/xtalcomp/xtalcomp.html"><span class="icon"> </span>public web interface</a>.
+    This paper describes the duplicate matching algorithm used by XtalOpt, named XtalComp, which is available as an <a class="ext-link" href="http://www.github.com/xtalopt/XtalComp"><span class="icon"> </span>open-source code</a> and has a <a class="ext-link" href="http://xtalopt.openmolecules.net/xtalcomp/xtalcomp.html"><span class="icon"> </span>public web interface</a>.
     </p>
     <ul align="left" style="text-align:-moz-left">
-        <li style="margin:2%">David C. Lonie, Eva Zurek; <strong>Identifying Duplicate Crystal Structures: XtalComp, an Open-Source Solution</strong>, Computer Physics Communications 183 (2012) pp. 690-697 <a class="ext-link" href="http://dx.doi.org/10.1016/j.cpc.2011.11.007"><span class="icon"> </span>doi:10.1016/j.cpc.2011.11.007</a>. <a class="ext-link" href="http://xtalopt.openmolecules.net/preprints/2011-XtalComp-lonie-zurek.pdf"><span class="icon"> </span>Preprint (free)</a>
+        <li style="margin:2%">David C. Lonie, Eva Zurek; <strong>Identifying Duplicate Crystal Structures: XtalComp, an Open-Source Solution</strong>, Computer Physics Communications 183 (2012) pp. 690-697 <a class="ext-link" href="http://dx.doi.org/10.1016/j.cpc.2011.11.007"><span class="icon"> </span>doi:10.1016/j.cpc.2011.11.007</a>. <a href="preprints/2011-XtalComp-lonie-zurek.pdf"><span class="icon"> </span>Preprint (free)</a>
     </li>
     </ul>
     <hr>
     <h2 id="NewVersionAnnouncements">New Version Announcements</h2>
     <hr>
     <ul align="left" style="text-align:-moz-left">
-        <li style="margin:2%"><strong>Version r7.0</strong> David C. Lonie, Eva Zurek; <strong>XtalOpt Version r7: An Open-Source Evolutionary Algorithm for Crystal Structure Prediction</strong>, Computer Physics Communications 182 (2011) pp. 2305-2306 <a class="ext-link" href="http://dx.doi.org/10.1016/j.cpc.2011.06.003"><span class="icon"> </span>doi:10.1016/j.cpc.2011.06.003</a>. <a class="ext-link" href="http://xtalopt.openmolecules.net/preprints/2011-NVAr7-lonie-zurek.pdf"><span class="icon"> </span>Preprint (free)</a>
+        <li style="margin:2%"><strong>Version r7.0</strong> David C. Lonie, Eva Zurek; <strong>XtalOpt Version r7: An Open-Source Evolutionary Algorithm for Crystal Structure Prediction</strong>, Computer Physics Communications 182 (2011) pp. 2305-2306 <a class="ext-link" href="http://dx.doi.org/10.1016/j.cpc.2011.06.003"><span class="icon"> </span>doi:10.1016/j.cpc.2011.06.003</a>. <a href="preprints/2011-NVAr7-lonie-zurek.pdf"><span class="icon"> </span>Preprint (free)</a>
     </li>
     </ul>
     <hr>

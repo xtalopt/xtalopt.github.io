@@ -11,9 +11,11 @@
         XtalOpt
     </title>  
 
-    <!-- Le styles -->
+    <!-- Scripts -->
     <script src="dist/js/jquery.js"></script>
     <script type="text/javascript" src='dist/js/bootstrap.min.js'></script>
+    
+    <!-- Le styles -->
     <link href="dist/css/bootstrap.css" rel="stylesheet">
     <link href="dist/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="static/style-justified.css" rel="stylesheet">
@@ -30,16 +32,23 @@
 
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="navbar-inner">
-            <div class="container">
-                <div class="nav">
+            <div class="container" align="center">
+                <div class="navbar-header">
+                <button type="button" style="background-color:black" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <img src="img/xtalopt-logo.png" width="25px">
+                    <span style="color:grey;font-weight:bold;font-size:19px;vertical-align:text-top">Menu</span>
+                </button>
+            </div>
+                <div id="myNavbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-center">
-                        <li class="active"><a class="brand" href="index.html"><img src="img/xtalopt-logo.png" width="25px"></a></li>
+                        <li class="active"><a href="index.html">XtalOpt</a></li>
                         <li><a href="download.html">Downloads</a></li>
                         <li><a href="install.html">Installation</a></li>
                         <li><a href="pub.html">Publications</a></li>
                         <li><a href="api/html/annotated.html">API</a></li>
                         <li><a href="tut.html">Tutorial</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="xtalcomp.html">XtalComp</a></li>
+                        <li><a href="randomdock.html">RandomDock</a></li>
                     </ul>
                 </div>
             </div>
@@ -49,10 +58,10 @@
     <div class="container" style="padding-top: 5%">
       <!-- Jumbotron -->
       <div class="jumbotron">
-        <h1>Welcome to XtalOpt!!!</h1>
+          <img src="img/xtalopt-banner.png" width="auto">
         <hr>
         <p class="lead">XtalOpt is a free and truly <a href="http://opensource.org/">open source</a> evolutionary algorithm designed to predict crystal structures. </p>
-        <a class="btn btn-large btn-success" href="download.html">Download today</a>
+        <a class="btn btn-large btn-inverse" href="download.html">Download today</a>
       <hr>
         <h2 align="left">News:</h2>
         
