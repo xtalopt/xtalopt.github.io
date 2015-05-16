@@ -80,13 +80,22 @@
       }
 
       @media (max-width: 980px) {
+        body {
+            padding-left: 113px;
+        }
         .navbar-header {
             z-index: 999;
             max-width: auto;
             margin: auto auto;
             position: fixed;
-            top: 4px;
-            left: 4px;
+            top: 0px;
+            left: 0px;
+        }
+        .navbar-inner {
+            height: 100%;
+            position: fixed;
+            top: 42px;
+            left: 0;
         }
         .navbar .nav .navbar-collapse{
             padding: 0;
