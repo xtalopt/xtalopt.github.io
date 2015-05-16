@@ -80,6 +80,9 @@
       }
 
       @media (max-width: 980px) {
+        body {
+            padding-top: 12px;
+        }
         button {
             height: 32px;
         }
@@ -87,7 +90,7 @@
             z-index: 999;
             margin: auto auto;
             position: fixed;
-            top: 4px;
+            top: 6px;
             left: 4px;
         }
         .navbar-inner {
