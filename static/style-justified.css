@@ -81,7 +81,8 @@
 
       @media (max-width: 980px) {
         body {
-            padding-top: 21px;
+            padding-top: 24px;
+            width: auto;
         }
         button {
             height: 32px;
@@ -102,6 +103,7 @@
         }
         .navbar .nav .navbar-collapse{
             padding: 0;
+            width: auto;
             max-height: none;
         }
         .navbar .nav ul {
