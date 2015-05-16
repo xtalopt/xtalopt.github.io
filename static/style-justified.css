@@ -80,20 +80,17 @@
       }
 
       @media (max-width: 980px) {
-        button {
-            width: 140px;
-        }
         .navbar-header {
             z-index: 999;
             margin: auto auto;
             position: fixed;
-            top: 0px;
-            left: 0px;
+            top: 4px;
+            left: 4px;
         }
         .navbar-inner {
-            width: 140px;
+            width: 100%;
             position: fixed;
-            top: 42px;
+            top: 0;
             left: 0;
         }
         .navbar .nav .navbar-collapse{
