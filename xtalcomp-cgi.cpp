@@ -135,7 +135,7 @@ char **getcgivars() {
 
 /***************** end of the getcgivars() module ********************/
 
-#include "../xtalcomp.h"
+#include "xtalcomp.h"
 
 #include <iostream>
 #include <sstream>
