@@ -85,14 +85,15 @@
             width: auto;
         }
         button {
-            height: 32px;
+            height: 40px;
+            width: 120px;
         }
         .navbar-header {
             z-index: 999;
             margin: auto auto;
             position: fixed;
-            top: 6px;
-            left: 4px;
+            top: auto;
+            left: auto;
         }
         .navbar-inner {
             height: 40px;
@@ -100,6 +101,10 @@
             position: fixed;
             top: 0;
             left: 0;
+        }
+        .navbar .nav {
+            margin: 40px auto 0 0;
+            width: 120px;
         }
         .navbar .nav .navbar-collapse{
             padding: 0;
