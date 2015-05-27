@@ -1,73 +1,75 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Github Page for XtalOpt, an evolutionary algortihm designed to predict crystal structures.">
-    <meta name="author" content="Zackary Falls">
-    <link rel="icon" href="img/xtalopt-logo.png">
-    <title>
-        XtalOpt - XtalComp
-    </title>  
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Github Page for XtalOpt, an evolutionary algortihm designed to predict crystal structures.">
+  <meta name="author" content="Zackary Falls">
+  <link rel="icon" href="img/xtalopt-logo.png">
+  <title>
+      XtalOpt - XtalComp 
+  </title>  
+  
+  <!-- Scripts --> 
+  <script src="dist/js/jquery.js"></script>
+  <script type="text/javascript" src='dist/js/bootstrap.min.js'></script>
+  
+  <!-- Styles -->
+  <link href="dist/css/bootstrap.css" rel="stylesheet">
+  <link href="dist/css/bootstrap-responsive.css" rel="stylesheet">
+  <link href="static/style-justified.css" rel="stylesheet">
 
-    <!-- Scripts -->
-    <script src="dist/js/jquery.js"></script>
-    <script type="text/javascript" src='dist/js/bootstrap.min.js'></script>
-    
-    <!-- Le styles -->
-    <link href="dist/css/bootstrap.css" rel="stylesheet">
-    <link href="dist/css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="static/style-justified.css" rel="stylesheet">
+  <!-- Fav and touch icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/xtalopt-logo.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/xtalopt-logo.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/xtalopt-logo.png">
+  <link rel="apple-touch-icon-precomposed" href="img/xtalopt-logo.png">
+  <link rel="shortcut icon" href="img/xtalopt-logo.png">
+  <style>
+    p {
+      text-align:left;
+    }
+  </style>
+</head>
 
-    <!-- Fav and touch icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/xtalopt-logo.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/xtalopt-logo.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/xtalopt-logo.png">
-    <link rel="apple-touch-icon-precomposed" href="img/xtalopt-logo.png">
-    <link rel="shortcut icon" href="img/xtalopt-logo.png">
-  </head>
-
-  <body>
-
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <div class="nav">
-                    <ul class="nav navbar-center">
-                        <li class="active"><a class="brand" href="index.html"><img src="img/xtalopt-logo.png" width="25px"></a></li>
-                        <li><a href="download.html">Downloads</a></li>
-                        <li class="dropdown">
-                          <a href="#" data-toggle="dropdown" class="dropdown-toggle">Installation<b class="caret"></b></a>
-                          <ul class="dropdown-menu">
-                            <li><a href="install-linux.html">Linux</a></li>
-                            <li><a href="install-mac.html">Mac OS X</a></li>
-                            <li><a href="install-win.html">Windows</a></li>
-                          </ul>
-                        <li><a href="pub.html">Publications</a></li>
-                        <li><a href="api/html/annotated.html">API</a></li>
-                        <li><a href="tut.html">Tutorial</a></li>
-                        <li class="active"><a href="xtalcomp.html">XtalComp</a></li>
-                    </ul>
-                </div>
-            </div>
+<body>
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container" align="center">
+        <div class="navbar-header">
+          <button type="button" style="background-color:black" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <img src="img/xtalopt-logo.png" width="25px">
+            <span style="color:grey;font-weight:bold;font-size:19px;vertical-align:text-top">Menu</span>
+          </button>
         </div>
+        <div id="myNavbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-center">
+            <li><a href="index.html">XtalOpt</a></li>
+            <li><a href="download.html">Downloads</a></li>
+            <li><a href="install.html">Installation</a></li>
+            <li><a href="pub.html">Publications</a></li>
+            <li><a href="api/html/annotated.html">API</a></li>
+            <li><a href="tut.html">Tutorial</a></li>
+            <li class="active"><a href="xtalcomp.html">XtalComp</a></li>
+            <li><a href="randomdock.html">RandomDock</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <div class="container" style="padding-top: 5%">
-      <!-- Jumbotron -->
-      <div class="jumbotron">
+  <div class="container" style="padding-top: 5%">
+    <div class="jumbotron">
 
-        <form action="xtalcomp.cgi" method="POST">
+      <form action="xtalcomp.cgi" method="POST">
 
-        <h1>XtalComp Web Interface: </h1>
-        <hr>
-        <h2>Enter POSCAR files</h2>
-Paste a POSCAR file into each of the following boxes and hit "Compare"
-to let <b>XtalComp</b> determine if they describe the same
-structure.
-<br>
-<br>
+      <h1>XtalComp Web Interface: </h1>
+      <hr>
+      <h2>Enter POSCAR files</h2>
+        Paste a POSCAR file into each of the following boxes and hit "Compare" to let <b>XtalComp</b> determine if they describe the same structure.
+      <br>
+      <br>
 <textarea name="pos1" rows=20 cols=40>
 </textarea>
 
@@ -104,7 +106,7 @@ Angular tolerance for lattice comparisons (default = 0.25 degrees):
 <b>XtalComp</b> is an algorithm developed
 by <a href="mailto:loniedavid@gmail.com">David C. Lonie</a> for the
 genetic
-algorithm <a href="http://xtalopt.openmolecules.net"><b>XtalOpt</b></a>.
+algorithm <a href="index.html"><b>XtalOpt</b></a>.
 It will determine if two crystal structure descriptions refer to the
 same underlying structure, despite choice of unit cell vectors,
 rotations, reflections, translations, and numerical
