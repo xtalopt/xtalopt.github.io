@@ -79,6 +79,12 @@
           background: none;
       }
 
+      iframe {
+          position:fixed;
+          overflow:hidden;
+          padding-top: 40px;
+      }
+
       @media (max-width: 980px) {
         body {
             padding-top: 24px;
