@@ -80,17 +80,11 @@
       }
 
       iframe {
-          height:90vh;
-          width:95%;
+          height:90%;
+          width:100%;
           z-index:-1;
           position:fixed;
-          overflow:hidden;
           padding-top: 40px;
-      }
-
-      .scroll-wrapper {
-          -webkit-overflow-scrolling: touch;
-          overflow-y: scroll;
       }
 
       @media (max-width: 980px) {
