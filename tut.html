@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Github Page for XtalOpt, an evolutionary algortihm designed to predict crystal structures.">
   <meta name="author" content="Zackary Falls">
-  <link rel="icon" href="img/xtalopt-logo.png">
+  <link rel="icon" href="dist/img/xtalopt-logo.png">
   <title>
       XtalOpt - Tutorials 
   </title>  
@@ -59,8 +59,7 @@
     </div>
   </div>
 
-    <div class="container" style="padding-top: 5%">
-      <!-- Jumbotron -->
+    <div class="container" style="padding-top:52px">
       <div class="jumbotron">
 
         <h1>XtalOpt Tutorial</h1>
@@ -113,8 +112,12 @@
         </div>
         <br>
          <p>The interface opens to the "Structure Limits" tab, shown above. We will use a 6 formula unit supercell of titanium dioxide for this tutorial, so enter "Ti6 O12" for the cell composition. We will assume that we know nothing about the system and use very loose restraints. Set all cell length minima to 1 angstrom and maxima to 20 angstrom. Constrain the angles to be between 60 and 120 degrees, and the volume from between 1 and 500 cubic angstrom. Specify a minimum interatomic distance of 0.5 angstrom. (Note that due to the angle adjustment described in the CPC 2010 publication, 60-120 degrees is the largest range of cell angles that XtalOpt will generate.)</p>
-         <h2><a class="anchor" id="opt">
-                 Optimizer setup</a></h2>
+
+    <a class="anchor" id="opt"> 
+      <br><hr><br> 
+    </a>
+
+         <h2>Optimizer setup</a></h2>
          <p>XtalOpt currently supports the <a class="el" href="tut.html#vasp-opt">VASP</a>, <a class="el" href="tut.html#gulp-opt">GULP</a>, <a class="el" href="tut.html#pwscf-opt">PWscf</a>, and <a class="el" href="tut.html#castep-opt">CASTEP</a> codes for performing geometry optimizations. Each is detailed in its own section below.</p>
          <h3><a class="anchor" id="vasp-opt">
                  VASP</a></h3>
