@@ -47,7 +47,7 @@
             <li><a href="pub.html">Publications</a></li>
             <li><a href="api/html/annotated.html">API</a></li>
             <li><a href="tut.html">Tutorial</a></li>
-            <li><a href="xtalcomp.html">XtalComp</a></li>
+            <li><a href="http://xtalopt.openmolecules.net/xtalcomp/xtalcomp.html">XtalComp</a></li>
             <li><a href="randomdock.html">RandomDock</a></li>
           </ul>
         </div>
@@ -87,18 +87,43 @@
 
     <div class="jumbotron">
       <h2>Release 9.0</h2>
+
       <div class="row-fluid">
-        <div class="span8">
-          <a href="dist/img/xtalopt-init+mitosis.png">
-            <img src="dist/img/xtalopt-init+mitosis.png" alt="xtalopt-init+mitosis.png">
-          </a>  
-        </div>
-        <div class="span4">
-          <br>
+        <div class="span6">
+          <ul align="left" style="text-align:-moz-left">
+            <li>Added support for the MOPAC semi-empirical quantum mechanics code and the SIESTA ab initio molecular dynamics code.</li>
+            <li>Customizable polling interval for updating remote queue information.</li>
+            <li>Automatic removal of remote working files optional.</li>
+            <li>Optional removal of unnecessary files for VASP caluclations.</li>
+            <li>Option to rank all current structures and export structures to a new subdirectory as .cml, CONTCAR, or .got.</li>
+            <li>Added a new "mitosis" function used to generate higher local order for initial structures.
+          </ul>
           <br>
           <a class="popup" href="dist/img/mitosis.png">
-            <img src="dist/img/mitosis.png" alt="mitosis.png">
-          </a>  
+            <img width="300px" src="dist/img/mitosis.png" alt="mitosis.png">
+          </a>       
+          <br>
+          <br>
+          <p>
+            Options for the "mitosis" function found in the "Structure Limits" tab.
+          </p>
+         <br>
+        </div>
+        <div class="span6">
+          <ul align="left" style="text-align:-moz-left">
+            <li>Limit the total number of structures created during a run.</li>
+            <li>New option to replace a failing structure with a new offspring.</li>
+            <li>Ability to “inject” (seed) a structure mid-run</li>
+            <li>Minimum atomic separation now specified as a fraction of the sum of atomic radii, with a hard minimum.</li>
+            <li>Submission of remote calculations is throttled to ease DRMS load.</li>
+            <li>More server-friendly method of fetching queue data.</li>
+            <li>Support for GULP shell/core calculations added.</li>
+            <li>Fix compilation against Qt 4.6.3 and 4.8.0.</li>
+            <li>Updated space-group detection library to spglib 1.0.8.</li>
+            <li>Bundled libssh library removed, now an optional dependency.</li>
+            <li>Added option to use command-line ssh/scp interfaces when libssh is unavailable or Kerberos authentication is needed.</li> 
+            <li>Numerous misc bugfixes.</li>
+          </ul>
         </div>
       </div> 
     </div> 
@@ -109,8 +134,21 @@
 
     <div class="jumbotron">
       <h2>Release 8.0</h2>       
-        <img src="dist/img/xtalopt-queue.png" alt="xtalopt-queue.png">
-        <img src="dist/img/xtalopt-dup.png" alt="xtalopt-dup.png">
+      <div class="row-fluid">
+        <div class="span4">
+          <img src="dist/img/xtalopt-queue.png" alt="xtalopt-queue.png">
+        </div>  
+        <div class="span8">
+          <ul align="left" style="text-align:-moz-left">  
+            <li>Incorporated the XtalComp library for duplicate structure removal (niching).</li>
+          </ul>
+          <br>
+          <img width="200px" src="dist/img/xtalopt-dup.png" alt="xtalopt-dup.png">
+          <br>
+          <ul align="left" style="text-align:-moz-left">  
+          </ul>
+        </div>  
+      </div>  
     </div>
  
     <a class="anchor" id="r7"> 
