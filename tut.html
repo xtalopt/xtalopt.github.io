@@ -18,14 +18,14 @@
   <!-- Styles -->
   <link href="dist/css/bootstrap.css" rel="stylesheet">
   <link href="dist/css/bootstrap-responsive.css" rel="stylesheet">
-  <link href="static/style-justified.css" rel="stylesheet">
+  <link href="dist/css/style.css" rel="stylesheet">
 
   <!-- Fav and touch icons -->
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/xtalopt-logo.png">
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/xtalopt-logo.png">
-  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/xtalopt-logo.png">
-  <link rel="apple-touch-icon-precomposed" href="img/xtalopt-logo.png">
-  <link rel="shortcut icon" href="img/xtalopt-logo.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="dist/img/xtalopt-logo.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="dist/img/xtalopt-logo.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="dist/img/xtalopt-logo.png">
+  <link rel="apple-touch-icon-precomposed" href="dist/img/xtalopt-logo.png">
+  <link rel="shortcut icon" href="dist/img/xtalopt-logo.png">
   <style>
     p {
       text-align:left;
@@ -39,7 +39,7 @@
       <div class="container" align="center">
         <div class="navbar-header">
           <button type="button" style="background-color:black" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-            <img src="img/xtalopt-logo.png" width="25px">
+            <img src="dist/img/xtalopt-logo.png" width="25px">
             <span style="color:grey;font-weight:bold;font-size:19px;vertical-align:text-top">Menu</span>
           </button>
         </div>
@@ -108,7 +108,7 @@
         <h2><a class="anchor" id="init">
                 Enter composition and restraints</a></h2>
         <div align="center">
-            <img src="img/struct-lim.png" alt="struct-lim.png"/>
+            <img src="dist/img/struct-lim.png" alt="struct-lim.png"/>
         </div>
         <br>
          <p>The interface opens to the "Structure Limits" tab, shown above. We will use a 6 formula unit supercell of titanium dioxide for this tutorial, so enter "Ti6 O12" for the cell composition. We will assume that we know nothing about the system and use very loose restraints. Set all cell length minima to 1 angstrom and maxima to 20 angstrom. Constrain the angles to be between 60 and 120 degrees, and the volume from between 1 and 500 cubic angstrom. Specify a minimum interatomic distance of 0.5 angstrom. (Note that due to the angle adjustment described in the CPC 2010 publication, 60-120 degrees is the largest range of cell angles that XtalOpt will generate.)</p>
@@ -122,7 +122,7 @@
          <h3><a class="anchor" id="vasp-opt">
                  VASP</a></h3>
          <div align="center">
-             <img src="img/opt-set-vasp.png" alt="opt-set-vasp.png"/>
+             <img src="dist/img/opt-set-vasp.png" alt="opt-set-vasp.png"/>
          </div>
 
          <h2><a class="anchor" id="launch"></a>Launch XtalOpt</h2>
@@ -131,7 +131,7 @@
          <h2><a class="anchor" id="init"></a>Enter composition and restraints</h2>
          <hr>
 <div class="image">
-<img src="img/struct-lim.png" alt="struct-lim.png"/>
+<img src="dist/img/struct-lim.png" alt="struct-lim.png"/>
 </div>
  <p>The interface opens to the "Structure Limits" tab, shown above. We will use a 6 formula unit supercell of titanium dioxide for this tutorial, so enter "Ti6 O12" for the cell composition. We will assume that we know nothing about the system and use very loose restraints. Set all cell length minima to 1 angstrom and maxima to 20 angstrom. Constrain the angles to be between 60 and 120 degrees, and the volume from between 1 and 500 cubic angstrom. Specify a minimum interatomic distance of 0.5 angstrom. (Note that due to the angle adjustment described in the CPC 2010 publication, 60-120 degrees is the largest range of cell angles that XtalOpt will generate.)</p>
 <h2><a class="anchor" id="opt"></a>
@@ -140,7 +140,7 @@ Optimizer setup</h2>
 <h3><a class="anchor" id="vasp-opt"></a>
 VASP</h3>
 <div class="image">
-<img src="img/opt-set-vasp.png" alt="opt-set-vasp.png"/>
+<img src="dist/img/opt-set-vasp.png" alt="opt-set-vasp.png"/>
 </div>
  <p>On the next tab, load the optimization scheme by clicking the "Load
 Opt Scheme" button and selecting the "samples/vasp-xtalopt.scheme" file that is distributed with the source code. If you do not have a copy of the source code, the scheme file can be obtained by clicking the "Original Format" link at the bottom of the page <a href="http://xtalopt.openmolecules.net/wiki/index.fcgi/browser/samples/vasp-xtalopt.scheme">here</a>.</p>
@@ -153,7 +153,7 @@ Opt Scheme" button and selecting the "samples/vasp-xtalopt.scheme" file that is 
 <h3><a class="anchor" id="gulp-opt"></a>
 GULP</h3>
 <div class="image">
-<img src="img/opt-set-gulp.png" alt="opt-set-gulp.png"/>
+<img src="dist/img/opt-set-gulp.png" alt="opt-set-gulp.png"/>
 </div>
  <p>On the next tab we choose GULP for the local optimizer and enter a template for GULP to use. Select "GULP" as the "Optimizer" and "xtal.gin" as "Template". Next, fill out the text field on the right with the following template: </p><div class="fragment"><div class="line">opti conj conp</div>
 <div class="line">switch_minimiser bfgs gnorm 0.5</div>
@@ -181,7 +181,7 @@ GULP</h3>
 <h3><a class="anchor" id="pwscf-opt"></a>
 PWscf</h3>
 <div class="image">
-<img src="img/opt-set-pwscf.png" alt="opt-set-pwscf.png"/>
+<img src="dist/img/opt-set-pwscf.png" alt="opt-set-pwscf.png"/>
 </div>
  <p>On the next tab, load the optimization scheme that is distributed with the source code under the samples/ directory. The scheme that we want is named "pwscf-xtalopt.scheme". If the source code is not available, the scheme file can be obtained by clicking the "Original Format" link at the bottom of the page <a href="http://xtalopt.openmolecules.net/wiki/index.fcgi/browser/samples/pwscf-xtalopt.scheme">here</a>.</p>
 <p>For more details on optimization schemes, see optschemes.</p>
@@ -200,7 +200,7 @@ PWscf</h3>
 <h3><a class="anchor" id="castep-opt"></a>
 CASTEP</h3>
 <div class="image">
-<img src="img/opt-set-castep.png" alt="opt-set-castep.png"/>
+<img src="dist/img/opt-set-castep.png" alt="opt-set-castep.png"/>
 </div>
  <p>On the next tab, load the optimization scheme that is distributed with the source code under the samples/ directory. The scheme that we want is named "castep-xtalopt.scheme". If the source code is not available, the scheme file can be obtained by clicking the "Original Format" link at the bottom of the page <a href="http://xtalopt.openmolecules.net/wiki/index.fcgi/browser/samples/castep-xtalopt.scheme">here</a>.</p>
 <p>For more details on optimization schemes, see optschemes.</p>
@@ -222,7 +222,7 @@ Queue setup</h2>
 <h3><a class="anchor" id="remotepbs"></a>
 Using a remote PBS cluster</h3>
 <div class="image">
-<img src="img/opt-set-pbs.png" alt="opt-set-pbs.png" style="width:50vw"/>
+<img src="dist/img/opt-set-pbs.png" alt="opt-set-pbs.png" style="width:50vw"/>
 </div>
  <p>Select "PBS" from the list of Queues, and then click the "Configure..." button. A new window will prompt for:</p>
  <ul align="left" style="text-align:-moz-left">
@@ -278,7 +278,7 @@ Using a remote PBS cluster</h3>
 <h3><a class="anchor" id="remotesge"></a>
 Using a remote SGE cluster</h3>
 <div class="image">
-<img src="img/opt-set-pbs.png" alt="opt-set-pbs.png" style="width:50vw"/>
+<img src="dist/img/opt-set-pbs.png" alt="opt-set-pbs.png" style="width:50vw"/>
 </div>
   <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd>Get screenshots of SGE config dialog</dd></dl>
 <p>Select "SGE" from the list of Queues, and then click the "Configure..." button. A new window will prompt for:</p>
@@ -299,7 +299,7 @@ Using a remote SGE cluster</h3>
 <h3><a class="anchor" id="remoteslurm"></a>
 Using a remote SLURM cluster</h3>
 <div class="image">
-<img src="img/opt-set-slurm.png" alt="opt-set-slurm.png" style="width:50vw"/>
+<img src="dist/img/opt-set-slurm.png" alt="opt-set-slurm.png" style="width:50vw"/>
 </div>
  <p>Select "SLURM" from the list of Queues, and then click the "Configure..." button. A new window will prompt for:</p>
  <ul align=left style="text-align:-moz-left">
@@ -319,7 +319,7 @@ Using a remote SLURM cluster</h3>
 <h3><a class="anchor" id="localqi"></a>
 Running optimations locally</h3>
 <div class="image">
-<img src="img/opt-set-local.png" alt="opt-set-local.png" style="width:20vw"/>
+<img src="dist/img/opt-set-local.png" alt="opt-set-local.png" style="width:20vw"/>
 </div>
  <p>Select "Local" from the list of Queues, and then click the configure button. A new window will prompt for:</p>
  <ul align=left style="text-align:-moz-left">
@@ -339,14 +339,14 @@ What is written to the local directory?</h2>
 <h2><a class="anchor" id="search-set"></a>
 Search Settings</h2>
 <div class="image">
-<img src="img/search-set.png" alt="search-set.png"/>
+<img src="dist/img/search-set.png" alt="search-set.png"/>
 </div>
  <p>In the "Search Settings" tab, most of the default settings should suffice (See CPC 2010 publication). We arbitrarily set the initial structures to 20 and the continuous structures to 5, although these may need to be adjusted based on available resources. We will not specify initial seeds, but the option to do so exists on this screen.</p>
 <p>It is not neccessary to limit the number of running jobs unless running locally, as the PBS queue on the cluster will manage job control for us. If running locally, set the job limit no higher than [number of available processor cores] - 1 (e.g. for a quadcore processor, allow three jobs to run simultaneously). This allows one core to remain free for the system to run.</p>
 <h2><a class="anchor" id="begin"></a>
 "Begin"</h2>
 <div class="image">
-<img src="img/prog-start.png" alt="prog-start.png"/>
+<img src="dist/img/prog-start.png" alt="prog-start.png"/>
 <div class="caption">
 The ``Progress'' tab immediately after starting a search</div></div>
 <p>XtalOpt has everything it needs to start its search at this point; click the "Begin" button in the lower right corner of the application to tell it to start the search algorithm. A progress bar appears as the random first generation is created. Switch to the "Progress" tab and 20 entries will appear, all with a status of "Waiting for
@@ -354,7 +354,7 @@ Optimization". Click "Refresh" on this tab to begin the local optimizations. Fro
 <h2><a class="anchor" id="prog-mon"></a>
 Monitor progress</h2>
 <div class="image">
-<img src="img/prog-mon.png" alt="prog-mon.png"/>
+<img src="dist/img/prog-mon.png" alt="prog-mon.png"/>
 <div class="caption">
 The ``Progress'' tab mid-run</div></div>
 <p>As XtalOpt performs the search, the progress table continuously updates, providing information about each structure. We see individuals in various stages of completion: most are optimized (in yellow), structure 2x7 has been automatically marked as a duplicate (dark green) of structure 3x3 and removed from the breeding pool, structure 4x4 is currently undergoing a local optimization (light green), while structure 4x5 is waiting to be optimized (blue).</p>
@@ -363,7 +363,7 @@ The ``Progress'' tab mid-run</div></div>
 <h3><a class="anchor" id="trends"></a>
 View trends</h3>
 <div class="image">
-<img src="img/trend-view.png" alt="trend-view.png"/>
+<img src="dist/img/trend-view.png" alt="trend-view.png"/>
 <div class="caption">
 The ``Plot'' tab mid-run displaying enthalpy vs. volume. Each structure is labeled with its Hermann Mauguin spacegroup symbol.</div></div>
 <p>Another visualization and analysis tool available during the search is the interactive plot. The plot is capable of investigating trends in the search by plotting a point for each individual using structure number, generation number, enthalpy, energy, $PV$ enthalpy term, lattice parameters, or cell volume on either axis. This powerful feature allows the user to visualize complex relationships present in the generated structures. E.g., a plot of enthalpy vs. structure number provides an overview of the search's progress. Or, recalling that H = U + PV, plotting enthalpy vs. PV enthalpy term or energy lends insight into whether the enthalpy (H) is dominated by atomic interactions (U) or cell parameters (PV). Further information is available by labeling the points with the individual's spacegroup number, Hermann Mauguin spacegroup symbol, enthalpy, energy, PV term, volume, generation, or index number.</p>
@@ -371,7 +371,7 @@ The ``Plot'' tab mid-run displaying enthalpy vs. volume. Each structure is label
 <p>The plot is also interactive; zooming and panning are possible using simple mouse controls. Clicking on a structure's point on the plot will load it in the main Avogadro window, allow all the same functionality as described above in <a class="el" href="tut.html#prog-mon">Monitor progress</a>.</p>
 
 <h2><a class="anchor" id="sr">Saving and Resuming Sessions in XtalOpt</a></h2>
-<img src="img/xo-saveresume.png" alt="xo-saveresume.png"/>
+<img src="dist/img/xo-saveresume.png" alt="xo-saveresume.png"/>
 </div>
  <h3><a class="anchor" id="sr_saving">
          How to save your session</a></h3>
