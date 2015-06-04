@@ -1,79 +1,91 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Github Page for XtalOpt, an evolutionary algortihm designed to predict crystal structures.">
-    <meta name="author" content="Zackary Falls">
-    <link rel="icon" href="img/xtalopt-logo.png">
-    <title>
-        XtalOpt
-    </title>  
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Github Page for XtalOpt, an evolutionary algortihm designed to predict crystal structures.">
+  <meta name="author" content="Zackary Falls">
+  <link rel="icon" href="img/xtalopt-logo.png">
+  <title>
+      XtalOpt - Citation
+  </title>    
+ 
+  <!-- Scripts --> 
+  <script src="dist/js/jquery.js"></script>
+  <script type="text/javascript" src='dist/js/bootstrap.min.js'></script>
+  
+  <!-- Styles -->
+  <link href="dist/css/bootstrap.css" rel="stylesheet">
+  <link href="dist/css/bootstrap-responsive.css" rel="stylesheet">
+  <link href="dist/css/style.css" rel="stylesheet">
+  
+  <!-- Fav and touch icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/xtalopt-logo.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/xtalopt-logo.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/xtalopt-logo.png">
+  <link rel="apple-touch-icon-precomposed" href="img/xtalopt-logo.png">
+  <link rel="shortcut icon" href="img/xtalopt-logo.png">
+</head>
 
-    <!-- Le styles -->
-    <link href="dist/css/bootstrap.css" rel="stylesheet">
-    <link href="dist/css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="static/style-justified.css" rel="stylesheet">
+<body>
 
-    <!-- Fav and touch icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/xtalopt-logo.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/xtalopt-logo.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/xtalopt-logo.png">
-    <link rel="apple-touch-icon-precomposed" href="img/xtalopt-logo.png">
-    <link rel="shortcut icon" href="img/xtalopt-logo.png">
-  </head>
-
-  <body>
-
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <div class="nav">
-                    <ul class="nav navbar-center">
-                        <li class="active"><a class="brand" href="index.html"><img src="img/xtalopt-logo.png" width="25px"></a></li>
-                        <li><a href="download.html">Downloads</a></li>
-                        <li><a href="install.html">Installation</a></li>
-                        <li><a href="pub.html">Publications</a></li>
-                        <li><a href="api.html">API</a></li>
-                        <li><a href="tut.html">Tutorial</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container" align="center">
+        <div class="navbar-header">
+          <button type="button" style="background-color:black" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <img src="img/xtalopt-logo.png" width="25px">
+            <span style="color:grey;font-weight:bold;font-size:19px;vertical-align:text-top">Menu</span>
+          </button>
         </div>
+        <div id="myNavbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-center">
+            <li><a href="index.html">XtalOpt</a></li>
+            <li><a href="download.html">Downloads</a></li>
+            <li><a href="install.html">Installation</a></li>
+            <li class="active"><a href="pub.html">Publications</a></li>
+            <li><a href="api/html/annotated.html">API</a></li>
+            <li><a href="tut.html">Tutorial</a></li>
+            <li><a href="http://xtalopt.openmolecules.net/xtalcomp/xtalcomp.html">XtalComp</a></li>
+            <li><a href="randomdock.html">RandomDock</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <div class="container" style="padding-top: 5%">
-      <!-- Jumbotron -->
-      <div class="jumbotron">
-        <h1 class="text">Applications</h1>
-        <hr>
-    <p>
-    If you use XtalOpt for the prediction of a new structure, please cite:
-    </p>
-    <ol align="left" style="text-align:-moz-left"><li>The original implementation paper: David C. Lonie, Eva Zurek; <em>XtalOpt: An Open-Source Evolutionary Algorithm for Crystal Structure Prediction</em>, Computer Physics Communications 182 (2011) pp. 372-387 <a class="ext-link" href="http://dx.doi.org/10.1016/j.cpc.2010.07.048"><span class="icon"> </span>doi:10.1016/j.cpc.2010.07.048</a>.
-        </li>
-        <li>The most recent New Version Announcement (NVA) for the version of XtalOpt used in the search (See <a class="wiki" href="../publications/pub.html">the list of publications</a> for the list of all NVAs).
-    </li></ol>
-    <br>
-    <p>
-    We also ask that you include the XtalOpt parameters used in the search.
-    </p>
-    <p>
-    As free software published under the GPLv2 license, we do <strong>not</strong> require co-authorship as a contractual obligation, nor do we request it. As the XtalOpt authors have not characterized or studied the chemical system in your application paper, we would consider such attribution unnecessary, perhaps even dishonest. A simple citation of the implementation paper and a recent NVA is sufficient for most cases.
-    </p>
-        <hr>
-    <h1 id="MethodImprovements">Method Improvements</h1>
-        <hr>
-    <p>
-    XtalOpt's open-source license was chosen to encourage open collaboration and to lower the barrier to researchers interested in developing new predictive techniques. We welcome contributions and encourage independent method improvement. If significant effort has been made by the XtalOpt authors to assist in implementing your technique, we may request coauthorship. However, scholarly articles describing independent modifications to, improvements to, or characterization of the XtalOpt code may follow the same citation guidelines as an application paper.
-    </p>
-    <p>
-    Please note that if a modification to the XtalOpt code is published, scientific ethics (see <a class="ext-link" href="http://en.wikipedia.org/wiki/Reproducibility"><span class="icon"> </span>here</a>) require that the algorithm be made publicly available. Further, the GPLv2 license of XtalOpt requires that derived works be published under a similar open-source license. If you are unable to publish your changes online, we may be able to host your work on the XtalOpt site or, preferably, integrate your changes into the main XtalOpt sources. Please contact <a class="ext-link" href="mailto:ezurek@buffalo.edu"><span class="icon"> </span>Eva Zurek</a> if you are interested in either of these options.
-    </p>
-    
-</div>
+  <div class="container" style="padding-top:52px">
+    <div class="jumbotron">
+      <h1 class="text">Applications</h1>
+      <hr>
+      <p>
+        If you use XtalOpt for the prediction of a new structure, please cite:
+      </p>
+      <ol align="left" style="text-align:-moz-left">
+        <li>The original implementation paper: David C. Lonie, Eva Zurek; <em>XtalOpt: An Open-Source Evolutionary Algorithm for Crystal Structure Prediction</em>, Computer Physics Communications 182 (2011) pp. 372-387 <a class="ext-link" href="http://dx.doi.org/10.1016/j.cpc.2010.07.048"><span class="icon"> </span>doi:10.1016/j.cpc.2010.07.048</a>.</li>
+        <li>The most recent New Version Announcement (NVA) for the version of XtalOpt used in the search (See <a class="wiki" href="../publications/pub.html">the list of publications</a> for the list of all NVAs).</li>
+      </ol>
+      
+      <br>
+      <p>
+        We also ask that you include the XtalOpt parameters used in the search.
+      </p>
+      <p>
+        As free software published under the GPLv2 license, we do <strong>not</strong> require co-authorship as a contractual obligation, nor do we request it. As the XtalOpt authors have not characterized or studied the chemical system in your application paper, we would consider such attribution unnecessary, perhaps even dishonest. A simple citation of the implementation paper and a recent NVA is sufficient for most cases.
+      </p>
+      
+      <hr>
+      <h1 id="MethodImprovements">Method Improvements</h1>
+      <hr>
+      <p>
+        XtalOpt's open-source license was chosen to encourage open collaboration and to lower the barrier to researchers interested in developing new predictive techniques. We welcome contributions and encourage independent method improvement. If significant effort has been made by the XtalOpt authors to assist in implementing your technique, we may request coauthorship. However, scholarly articles describing independent modifications to, improvements to, or characterization of the XtalOpt code may follow the same citation guidelines as an application paper.
+      </p>
+      <p>
+        Please note that if a modification to the XtalOpt code is published, scientific ethics (see <a class="ext-link" href="http://en.wikipedia.org/wiki/Reproducibility"><span class="icon"> </span>here</a>) require that the algorithm be made publicly available. Further, the GPLv2 license of XtalOpt requires that derived works be published under a similar open-source license. If you are unable to publish your changes online, we may be able to host your work on the XtalOpt site or, preferably, integrate your changes into the main XtalOpt sources. Please contact <a class="ext-link" href="mailto:ezurek@buffalo.edu"><span class="icon"> </span>Eva Zurek</a> if you are interested in either of these options.
+      </p>
+    </div>
+  </div>
 
 </body>
 </html>
