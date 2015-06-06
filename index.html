@@ -60,7 +60,7 @@
       <img src="dist/img/xtalopt-banner.png" width="auto">
       <hr>
       <p class="lead">XtalOpt is a free and truly <a href="http://opensource.org/">open source</a> evolutionary algorithm designed to predict crystal structures. </p>
-      <a class="btn btn-large btn-inverse" href="download.html">Download today</a>
+      <a class="btn btn-large btn-primary" href="download.html">Download today</a>
       <br>
       <br>
       <a class="btn btn-large btn-default" href="index.html#xtalopt">Learn more</a>
@@ -207,23 +207,32 @@
     <div class="jumbotron">
       <h1>XtalOpt</h1>
       <br>
-      <p class="lead">
-        XtalOpt is implemented as an extension to the <a class="ext-link" href="http://avogadro.cc/wiki/Main_Page">Avogadro</a> molecular editor.
-      </p>
-      <p style="font-size:40px">
-        <img src="dist/img/avogadro-logo.png" alt="avogadro-logo.png" style="max-width:72px">
-        +
-        <img src="dist/img/xtalopt-logo.png" alt="xtalopt-logo.png" style="max-width:72px">
-      </p>     <img src="dist/img/avogadro-screenshot.png" alt="avogadro-screenshot.png">
+      <div class="row-fluid">
+        <div class="span6">
+          <br><br><br><br><br><br>
+          <p style="font-size:40px">
+            <img src="dist/img/avogadro-logo.png" alt="avogadro-logo.png" style="max-width:72px">
+            +
+            <img src="dist/img/xtalopt-logo.png" alt="xtalopt-logo.png" style="max-width:72px">
+          </p>     
+          <p>
+            XtalOpt is implemented as an extension to the <a class="ext-link" href="http://avogadro.cc/wiki/Main_Page">Avogadro</a> molecular editor.
+          </p>     
+        </div>
+        <div class="span6">
+          <img src="dist/img/avogadro-screenshot.png" alt="avogadro-screenshot.png">
+          <p>
+            Screenshot of Avogadro visualizing a 16 x TiO<sub>2</sub> cell.
+        </div>
+      </div>
     </div>
-    
     
     <a class="anchor" id="interface"> 
       <br><hr><br> 
     </a>
 
     <div class="jumbotron">       
-      <a data-toggle="collapse" href="#collapseInterface">
+      <a data-toggle="collapse" href="#collapseInterface" style="color:black">
         <h2>User Interface</h2>
       </a>
       <div id="collapseInterface" class="collapse out">
@@ -325,7 +334,7 @@
     </a>
 
     <div class="jumbotron">
-      <a data-toggle="collapse" href="#collapseOperators">
+      <a data-toggle="collapse" href="#collapseOperators" style="color:black">
         <h2>Mutation Operators</h2>
       </a>
       <div id="collapseOperators" class="collapse out">
@@ -345,7 +354,7 @@
       
       <div class="row-fluid">
         <div class="span6">
-          <h3>Ripple</h3>
+          <h3>Crossover</h3>
           <img src="dist/img/" alt="crossover.png">
         </div>
       </div>
@@ -356,7 +365,7 @@
     </a>
 
     <div class="jumbotron">   
-      <a data-toggle="collapse" href="#collapseOther">
+      <a data-toggle="collapse" href="#collapseOther" style="color:black">
         <h2>Other Avogadro Extensions...</h2>
       </a>
       <div id="collapseOther" class="collapse out">
@@ -366,16 +375,18 @@
           <div class="span4">
             <br>
             <br>
+            <p align="left" style="text-align:-moz-left">
+              Avogadro contains a nanotube builder extension (shown on the right). The extension generates a single-wall carbon nanotube from an (n,m) specification. More info can be found <a class="ext-link" href="http://davidlonie.blogspot.com/2011/10/nanotube-builder-for-avogadro.html">here</a>.
+            </p>  
             <img src="dist/img/avogadro-nanotube-menu.png" alt="avogadro-nanotube-menu.png">
             <br>
             <br>
-          <p align="left" style="text-align:-moz-left">
-            Avogadro contains a nanotube builder extension (shown on the right). The extension generates a single-wall carbon nanotube from an (n,m) specification. More info can be found <a class="ext-link" href="http://davidlonie.blogspot.com/2011/10/nanotube-builder-for-avogadro.html">here</a>.
-          </p>
-        </div>
-        <div class="span8">
-          <img src="dist/img/avogadro-nanotube.png" alt="avogadro-nanotube.png">
-          A 20 angstrom, hydrogen capped (6,6) nanotube.
+          </div>
+          <div class="span8">
+            <img src="dist/img/avogadro-nanotube.png" alt="avogadro-nanotube.png">
+              A 20 angstrom, hydrogen capped (6,6) nanotube.
+            </div>
+          </div>
         </div>
       </div>
     </div>
