@@ -31,10 +31,9 @@
 <body>
   <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
-      <div class="container" align="center">
         <div class="navbar-header">
           <button type="button" style="background-color:black" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-            <img src="img/xtalopt-logo.png" width="25px">
+            <img src="dist/img/xtalopt-logo.png" width="25px">
             <span style="color:grey;font-weight:bold;font-size:19px;vertical-align:text-top">Menu</span>
           </button>
         </div>
@@ -42,8 +41,8 @@
           <ul class="nav navbar-center">
             <li><a href="index.html">XtalOpt</a></li>
             <li><a href="download.html">Downloads</a></li>
-            <li><a href="install.html">Installation</a></li>
-            <li class="active"><a href="pub.html">Publications</a></li>
+            <li class="active"><a href="install.html">Installation</a></li>
+            <li><a href="pub.html">Publications</a></li>
             <li><a href="api/html/annotated.html">API</a></li>
             <li><a href="tut.html">Tutorial</a></li>
             <li><a href="http://xtalopt.openmolecules.net/xtalcomp/xtalcomp.html">XtalComp</a></li>
@@ -52,9 +51,8 @@
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="container" style="padding-top:52px">
+  <div class="container">
     <div class="jumbotron">
       <h1>Installation</h1>
     </div>  
@@ -118,7 +116,7 @@
     <p>
     On Ubuntu, one can use the command
     </p>
-    <pre class="wiki">sudo apt-get cmake qt eigen git subversion openssh</pre>
+    <pre class="wiki">sudo apt-get cmake qt4-default libeigen-2-dev libeigen3-dev git subversion ssh</pre>
     <hr>
     <h2 id="SourceInstallations">Source Installations</h2>
     <hr>
@@ -201,7 +199,7 @@ make install</pre>
     <p>
     Check out the stable branch of the XtalOpt sources:
     </p>
-    <pre class="wiki">git clone -b stable git://github.com/dlonie/XtalOpt.git xtalopt</pre>
+    <pre class="wiki">git clone -b stable git://github.com/xtalopt/XtalOpt.git xtalopt</pre>
     <p>
     Make a build directory and enter it:
     </p>
