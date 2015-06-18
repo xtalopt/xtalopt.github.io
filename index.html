@@ -87,15 +87,14 @@
                 <li>Added a new "mitosis" function used to generate higher local order for initial structures.
               </ul>
               <br>
-              <a class="popup" href="dist/img/mitosis.png">
-                <img width="300px" src="dist/img/mitosis.png" alt="mitosis.png">
-              </a>       
-              <br>
-              <br>
-              <p>
-                Options for the "mitosis" function found in the "Structure Limits" tab.
-              </p>
-              <br>
+              <center>
+                <a class="popup" href="dist/img/mitosis.png">
+                  <img width="300px" src="dist/img/mitosis.png" alt="mitosis.png" style="border:2px solid grey;border-radius:10px">
+                </a>    
+                <p style="font-size:10px">
+                  Options for the "mitosis" function found in the "Structure Limits" tab.
+                </p>
+              </center>   
             </div>
             <div class="span6">
               <ul align="left" style="text-align:-moz-left">
@@ -132,7 +131,9 @@
                 <li>Incorporated the XtalComp library for duplicate structure removal (niching).</li>
               </ul>
               <br>
-              <img width="200px" src="dist/img/xtalopt-dup.png" alt="xtalopt-dup.png">
+              <center>
+                <img width="200px" src="dist/img/xtalopt-dup.png" alt="xtalopt-dup.png" style="border:2px solid grey;border-radius:10px">
+              </center>
               <br>
               <ul align="left" style="text-align:-moz-left">  
               </ul>
@@ -162,10 +163,12 @@
               </ul>
             </div>
             <div class="span6">
-              <img src="dist/img/xtalopt-queue-menu.png" alt="xtalopt-queue-menu.png">
-              <p>
-                XtalOpt r7.0 will add support for SLURM and LSF (Load Sharing Facility) queuing systems.
-              </p>
+              <center>
+                <img src="dist/img/xtalopt-queue-menu.png" alt="xtalopt-queue-menu.png">
+                <p style="font-size:10px">
+                  XtalOpt r7.0 will add support for SLURM and LSF (Load Sharing Facility) queuing systems.
+                </p>
+              </center>
             </div>
           </div>
           <br>  
@@ -344,21 +347,21 @@
         <h3>Ripple</h3>
         <div class="row-fluid">
           <div class="span6">
-            <img src="dist/img/" alt="ripple.png">
+            <img src="dist/img/xtalopt-ripple.png" alt="xtalopt-ripple.png">
           </div>
         </div>
       
         <h3>Strain</h3>
         <div class="row-fluid">
           <div class="span6">
-            <img src="dist/img/strain.png" alt="strain.png">
+            <img src="dist/img/xtalopt-strain.png" alt="xtalopt-strain.png">
           </div>
         </div>
       
       <h3>Crossover</h3>
       <div class="row-fluid">
         <div class="span6">
-          <img src="dist/img/" alt="crossover.png">
+          <img src="dist/img/xtalopt-crossover.png" alt="xtalopt-crossover.png">
         </div>
       </div>
     </div>
@@ -389,8 +392,109 @@
             </div>
           </div>
         </div>
+        <h3>Crystallography Extension</h3>
+        <div class="row-fluid">
+          <div class="span5">
+            <br>
+            <p align="left" style="text-align:-moz-left">
+              While Avogadro has provided basic crystallography tools through its existing Unit Cell and Super Cell extensions (which enabled users to modify unit cell parameters and build supercells, respectively), advanced tasks such as space group detection and primitive cell reduction have required closed source (and often expensive!) tools such as Materials Studio or ISOTROPY/FINDSYM.
+            </p>
+            <p align="left" style="text-align:-moz-left">
+              As I've developed XtalOpt over the last year or so, I've encountered several of these problems and written or found open-source solutions for them. 
+              Over the past couple of weeks I've started working on a Crystallography extension to Avogadro to collect these features and make them more broadly available. 
+              My intention is to make these common tasks easier and more accessible to those of us who do simulations on extended systems.
+            </p>
+          </div>
+          <div class="span7">
+            <img src="dist/img/avogadro-crystal.png" alt="avogadro-crystal.png">
+            </div>
+          </div>
+        </div>
+        <div class="row-fluid">
+          <div class="span3">
+            <img src="dist/img/avogadro-crystal-menu.png" alt="avogadro-crystal-menu.png">
+            <p style="font-size:11px">
+              Some of the new tools in the Crystallography menu
+            </p>
+          </div>
+          <div class="span9">
+            <p align="left" style="text-align:-moz-left">
+              After several iterations and feedback from my colleagues and fellow devs, I'm finally ready to announce that the extension is ready for wider user testing and code review. 
+            </p>
+            <p align="left" style="text-align:-moz-left">
+              So what new functionality does the extension add? 
+              The short answer: Everything I could think of. 
+              The long answer? 
+              Well, that needs a list or two:
+            </p>  
+            <p align="left" style="text-align:-moz-left">
+              First, the relatively boring stuff: Coordinate / cell editing:
+            </p>
+            <p align="left" style="text-align:-moz-left">
+              <ul align="left" style="text-align:-moz-left">
+                <li>Customizable docking editors allow direct editing of:
+                <ul align="left" style="text-align:-moz-left">
+                  <li>Cell parameters a, b, c, alpha, beta, and gamma
+                  <li>The cell matrix, as either row or column vectors
+                  <li>The atomic coordinates, in either cartesian or fractional units
+                  <li>Customizable unit display:
+                  <li>All lengths (parameters, cell matrix, cartesian coordinates) can be displayed in Angstrom, Bohr, nanometer, or picometer
+                  <li>All angles can be displayed in degree or radian
+                  <li>Immediate feedback on invalid entry: Text turns red when an invalid entry is made
+                  <li>Plain text entry -- perfect for copy/pasting to/from input/output files.
+                </ul>
+              </ul>
+            </p>
+          </div>
+        </div>
+        <div class="row-fluid">
+          <div class="span4">
+            <img src="dist/img/avogadro-crystal-edit.png" alt="avogadro-crystal-edit.png" style="max-width:70%;border:2px solid grey;border-radius:10px">
+            <p style="font-size:11px">
+              The docking editors. 
+              The Cell Matrix editor shows the on-the-fly input checking. 
+              As soon as an invalid character is entered (note the extra 0's in the final row), the text turns red. 
+            </p>
+          </div>
+          <div class="span8">
+            <p align="left" style="text-align:-moz-left">
+              <ul align="left" style="text-align:-moz-left">
+                <li>Some of the new tools in the Crystallography menu:
+                <ul align="left" style="text-align:-moz-left">
+                  <li>Add / Remove unit cell Symmetry tools:
+                  <ul align="left" style="text-align:-moz-left">
+                    <li>Detect spacegroup
+                    <li>Manually set spacegroup
+                    <li>Symmetrize cell and coordinates to detected space group
+                  </ul>
+                  <li>Fill unit cell using a few atoms and the current space group's symmetry operations
+                  <li>Structure reductions:
+                    <ul align="left" style="text-align:-moz-left">
+                      <li>Reduce to primitive cell
+                      <li>Reduce to Niggli cell
+                    </ul>
+                  <li>Option to preserve either cartesian or fractional coordinates when the cell is modified
+                  <li>Display fractionalization matrix
+                  <li>Import POSCAR style data from clipboard (more formats to come)
+                  <li>Copy POSCAR to clipboard
+                  <li>Translate ("wrap") atoms to lie inside unit cell
+                  <li>Rotate to standard orientation (i.e. A along x, B in x,y plane)
+                  <li>Scale cell to a specified volume (isotropic scaling)
+                </ul>
+                <li>On-screen display of crystallographic properties:
+                  <ul align="left" style="text-align:-moz-left">
+                    <li>Lattice type
+                    <li>Space group
+                    <li>Cell Volume
+                  </ul>
+              </ul>
+            </p>
+            <p align="left" style="text-align:-moz-left">
+              Many of these great features would not have been possible without the contributions of other open-source programmers, namely Atsushi Togo for spglib, a BSD-licensed library which provides the awesome symmetry tools, and Jean Bréfort for contributing the space group transform database and unit cell implementation and tools in Open Babel. 
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
 
     <a class="anchor" id="support"> 
       <br><hr><br> 
@@ -398,7 +502,10 @@
 
     <div class="jumbotron">
       <h2>Supporters</h2>
+      <img src="dist/img/ub-logo.png" alt="ub-logo.png" style="max-width:90px">
       <img src="dist/img/nsf_seal_scaled.png" alt="nsf_seal_scaled.png">
+      <br>
+      <img src="dist/img/ub-ccr-logo.jpg" alt="ub-ccr-logo.jpg" style="max-width:500px">
     </div>
   </div>
 
