@@ -14,6 +14,20 @@
   <!-- Scripts --> 
   <script src="dist/js/jquery.js"></script>
   <script type="text/javascript" src='dist/js/bootstrap.min.js'></script>
+    <script> 
+      $(function(){
+        $("#navbar").load("navbar.html"); 
+      });
+    </script> 
+    <script> 
+      $(function() {
+        var pgurl = window.location.href.substr(window.location.href.lastIndexOf("/")+1);
+        $(".navbar .nav a").each(function(){
+          if($(this).attr("href") == pgurl || $(this).attr("href") == '' )
+            $(this).addClass("active");
+        })
+      });
+    </script>     
   
   <!-- Styles -->
   <link href="dist/css/bootstrap.css" rel="stylesheet">
@@ -33,30 +47,10 @@
   </style>
 </head>
 
-<body>
-  <div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="navbar-inner">
-        <div class="navbar-header">
-          <button type="button" style="background-color:black" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-            <img src="dist/img/xtalopt-logo.png" width="25px">
-            <span style="color:grey;font-weight:bold;font-size:19px;vertical-align:text-top">Menu</span>
-          </button>
-        </div>
-        <div id="myNavbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-center">
-            <li><a href="index.html">XtalOpt</a></li>
-            <li><a href="download.html">Downloads</a></li>
-            <li><a href="install.html">Installation</a></li>
-            <li><a href="pub.html">Publications</a></li>
-            <li><a href="api/html/annotated.html">API</a></li>
-            <li class="active"><a href="tut.html">Tutorial</a></li>
-            <li><a href="http://xtalopt.openmolecules.net/xtalcomp/xtalcomp.html">XtalComp</a></li>
-            <li><a href="randomdock.html">RandomDock</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
+  <body>
+    <!--NavBar-->
+    <div id="navbar"></div>
+ 
     <div class="container">
       <div class="jumbotron">
 
