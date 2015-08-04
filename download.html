@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Github Page for XtalOpt, an evolutionary algortihm designed to predict crystal structures.">
   <meta name="author" content="Zackary Falls">
-  <link rel="icon" href="img/xtalopt-logo.png">
+  <link rel="icon" href="dist/img/xtalopt-logo.png">
   <title>
       XtalOpt - Downloads
   </title>  
@@ -14,6 +14,7 @@
   <!-- Scripts --> 
   <script src="dist/js/jquery.js"></script>
   <script type="text/javascript" src='dist/js/bootstrap.min.js'></script>
+  <!-- <script type="text/javascript" src='dist/js/bootstrap.js'></script> -->
   <script> 
     $(function(){
       $("#navbar").load("navbar.html"); 
@@ -30,7 +31,8 @@
   </script>  
   
   <!-- Styles -->
-  <link href="dist/css/bootstrap.css" rel="stylesheet">
+  <!--  <link href="dist/css/bootstrap.css" rel="stylesheet"> -->
+  <link href="dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="dist/css/bootstrap-responsive.css" rel="stylesheet">
   <link href="dist/css/style.css" rel="stylesheet">
   
@@ -60,41 +62,75 @@
       <p>
         Omit "-b stable" for development code
       </p>
-    </div>
+  </div>
+  <br>  
     <div class="jumbotron">
       <div class="row-fluid">
         <div class="span4">
-          <hr>
-          <h2>Windows</h2>  
-          <h4>Release 7.0</h4>
-          <a class="btn btn-medium btn-danger" href="downloads/win/XtalOpt-Avogadro-r7.0-1.1.0-win32.exe">.exe installer</a> 
-          <hr>
+          <h2>Windows</h2>    
+          <hr> 
+          <h3>Release 9.0</h3>    
+          <a class="btn btn-medium btn-danger" href="downloads/win/XtalOpt-Avogadro-r9.0-1.1.0-win32.exe">exe</a>         
+          <br>
+          <br>
+          <a href="#" class="btn btn-medium btn-danger" data-toggle="collapse" data-target="#win" data-parent="#menu" >Previous Versions</a>
+          <br>
+          <div id="win" class="btn-group-vertical collapse">
+            <a class="btn btn-medium btn-default" href="downloads/win/XtalOpt-Avogadro-r7.0-1.1.0-win32.exe">release 7.0</a>         
+            <a class="btn btn-medium btn-default" href="downloads/win/XtalOpt-Avogadro-r6.1-1.1.0-win32.exe">release 6.1</a>         
+            <a class="btn btn-medium btn-default" href="downloads/win/XtalOpt-Avogadro-r5.0-1.1.0-win32.exe">release 5.0</a>         
+            <a class="btn btn-medium btn-default" href="downloads/win/XtalOpt-Avogadro-r4.0-1.1.0-win32.exe">release 4.0</a>
+            <a class="btn btn-medium btn-default" href="downloads/win/XtalOpt-Avogadro-r3.0-1.1.0-win32.exe">release 3.0</a>
+            <a class="btn btn-medium btn-default" href="downloads/win/XtalOpt-Avogadro-r2.0-1.1.0-win32.exe">release 2.0</a>
+            <a class="btn btn-medium btn-default" href="downloads/win/XtalOpt-Avogadro-r1.0-1.1.0-win32.exe">release 1.0</a>
+          </div>
         </div>
+        
         <div class="span4">
-          <hr>
-          <h2>
-            Mac OS X
-          </h2>   
-          <a class="btn btn-medium btn-primary" href="">.dmg installer</a> 
+          <h2>Mac OS X</h2>   
+          <hr> 
+          <h3>Release 9.0</h3>
+          <a class="btn btn-medium btn-primary" href="">.dmg</a> 
           <h3>Coming soon...</h3>
-          <hr>
+          <a href="#" class="btn btn-medium btn-primary" data-toggle="collapse" data-target="#mac" data-parent="#menu" >Previous Versions</a>
+          <br>
+          <div id="mac" class="btn-group-vertical collapse">
+            <a class="btn btn-medium btn-default" href="downloads/mac">release 7.0</a>         
+            <a class="btn btn-medium btn-default" href="downloads/mac">release 6.1</a>         
+            <a class="btn btn-medium btn-default" href="downloads/mac">release 5.0</a>         
+            <a class="btn btn-medium btn-default" href="downloads/mac">release 4.0</a>
+            <a class="btn btn-medium btn-default" href="downloads/mac">release 3.0</a>
+            <a class="btn btn-medium btn-default" href="downloads/mac">release 2.0</a>
+            <a class="btn btn-medium btn-default" href="downloads/mac">release 1.0</a>
+          </div>
         </div>
+        
         <div class="span4">
-          <hr>
-          <h2>
-            Linux
-          </h2> 
+          <h2>Linux</h2>
+          <hr> 
+          <h3>Release 7.0</h3>  
           <h4>Stable</h4>  
-            <a class="btn btn-medium btn-default" href="http://github.com/dlonie/XtalOpt/tarball/stable">tar</a> 
-            <a class="btn btn-medium btn-default" href="http://github.com/dlonie/XtalOpt/zipball/stable">zip</a>       
-            <h4>Development</h4>  
-            <a class="btn btn-medium btn-warning" href="http://github.com/dlonie/XtalOpt/tarball/master">tar</a> 
-            <a class="btn btn-medium btn-warning" href="http://github.com/dlonie/XtalOpt/zipball/master">zip</a> 
-          <hr>
+          <a class="btn btn-medium btn-warning" href="http://github.com/dlonie/XtalOpt/tarball/stable">tar</a> 
+          <a class="btn btn-medium btn-warning" href="http://github.com/dlonie/XtalOpt/zipball/stable">zip</a>       
+          <h4>Development</h4>  
+          <a class="btn btn-medium btn-warning" href="http://github.com/dlonie/XtalOpt/tarball/master">tar</a> 
+          <a class="btn btn-medium btn-warning" href="http://github.com/dlonie/XtalOpt/zipball/master">zip</a> 
+          <br>
+          <br>
+          <a href="#" class="btn btn-medium btn-warning" data-toggle="collapse" data-target="#linux" data-parent="#menu" >Previous Versions</a>
+          <br>
+          <div id="linux" class="btn-group-vertical collapse">
+            <a class="btn btn-medium btn-default" href="">release 6.1</a>         
+            <a class="btn btn-medium btn-default" href="">release 5.0</a>         
+            <a class="btn btn-medium btn-default" href="">release 4.0</a>
+            <a class="btn btn-medium btn-default" href="">release 3.0</a>
+            <a class="btn btn-medium btn-default" href="">release 2.0</a>
+            <a class="btn btn-medium btn-default" href="">release 1.0</a>
           </div>
         </div>
       </div>
     </div>
+  </div>
       
     <!-- Javascript
     ================================================== -->

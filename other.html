@@ -52,7 +52,7 @@
       </div> 
 
       <a class="anchor" id="randomdock"> 
-        <br><hr><br> 
+        <br><br> 
       </a>
    
     <div class="jumbotron">
@@ -61,7 +61,7 @@
     </div>
 
     <a class="anchor" id="nanotube"> 
-      <br><hr><br> 
+      <br><br> 
     </a>
 
     <div class="jumbotron">   
@@ -84,53 +84,38 @@
     </div>
  
     <a class="anchor" id="crystal"> 
-      <br><hr><br> 
+      <br><br> 
     </a>
 
     <div class="jumbotron">   
       <h2>Crystallography Extension</h2>
-      <div class="row-fluid">
-        <div class="span5">
-          <br>
-          <p align="left" style="text-align:-moz-left">
-            While Avogadro has provided basic crystallography tools through its existing Unit Cell and Super Cell extensions (which enabled users to modify unit cell parameters and build supercells, respectively), advanced tasks such as space group detection and primitive cell reduction have required closed source (and often expensive!) tools such as Materials Studio or ISOTROPY/FINDSYM.
-          </p>
-          <p align="left" style="text-align:-moz-left">
-            As I've developed XtalOpt over the last year or so, I've encountered several of these problems and written or found open-source solutions for them. 
-            Over the past couple of weeks I've started working on a Crystallography extension to Avogadro to collect these features and make them more broadly available. 
-            My intention is to make these common tasks easier and more accessible to those of us who do simulations on extended systems.
-          </p>
-        </div>
-        <div class="span7">
-          <img src="dist/img/avogadro-crystal.png" alt="avogadro-crystal.png">
-            <p style="font-size:11px">
-              Screenshot of Avogadro visualizing a MgTiO<sub>3</sub> cell and displaying the crystallographic properties. 
-            </p> 
-          </div>
-        </div>
-      </div>
+      <br>
+      <p align="left" style="text-align:-moz-left">
+        While Avogadro has provided basic crystallography tools through its existing Unit Cell and Super Cell extensions (which enabled users to modify unit cell parameters and build supercells, respectively), advanced tasks such as space group detection and primitive cell reduction have required closed source (and often expensive!) tools such as Materials Studio or ISOTROPY/FINDSYM.
+      </p>
+      <img src="dist/img/avogadro-crystal.png" alt="avogadro-crystal.png">
+      <p style="font-size:11px">
+        Screenshot of Avogadro visualizing a MgTiO<sub>3</sub> cell and displaying the crystallographic properties. 
+      </p> 
+      <br>      
       <div class="row-fluid">
         <div class="span3">
           <center>
-            <img src="dist/img/avogadro-crystal-menu.png" alt="avogadro-crystal-menu.png">
+            <img src="dist/img/avogadro-crystal-edit.png" alt="avogadro-crystal-edit.png" style="max-width:70%;border:2px solid grey;border-radius:10px">
             <p style="font-size:11px">
-              Some of the new tools in the Crystallography menu
+              The docking editors. 
+              The Cell Matrix editor shows the on-the-fly input checking. 
+              As soon as an invalid character is entered (note the extra 0's in the final row), the text turns red. 
             </p>
           </center>
         </div>
         <div class="span9">
-          <p align="left" style="text-align:-moz-left">
-            After several iterations and feedback from my colleagues and fellow devs, I'm finally ready to announce that the extension is ready for wider user testing and code review. 
-          </p>
           <p align="left" style="text-align:-moz-left">
             So what new functionality does the extension add? 
             The short answer: Everything I could think of. 
             The long answer? 
             Well, that needs a list or two:
           </p>  
-          <p align="left" style="text-align:-moz-left">
-            First, the relatively boring stuff: Coordinate / cell editing:
-          </p>
           <p align="left" style="text-align:-moz-left">
             <ul align="left" style="text-align:-moz-left">
               <li>Customizable docking editors allow direct editing of:
@@ -149,17 +134,15 @@
         </div>
       </div>
       <div class="row-fluid">
-        <div class="span4">
+        <div class="span3">
           <center>
-            <img src="dist/img/avogadro-crystal-edit.png" alt="avogadro-crystal-edit.png" style="max-width:70%;border:2px solid grey;border-radius:10px">
+            <img src="dist/img/avogadro-crystal-menu.png" alt="avogadro-crystal-menu.png">
             <p style="font-size:11px">
-              The docking editors. 
-              The Cell Matrix editor shows the on-the-fly input checking. 
-              As soon as an invalid character is entered (note the extra 0's in the final row), the text turns red. 
+              Some of the new tools in the Crystallography menu
             </p>
           </center>
         </div>
-        <div class="span8">
+        <div class="span9">
           <p align="left" style="text-align:-moz-left">
             <ul align="left" style="text-align:-moz-left">
               <li>Some of the new tools in the Crystallography menu:
@@ -192,10 +175,10 @@
               </ul>
             </ul>
           </p>
-          <p align="left" style="text-align:-moz-left">
-            Many of these great features would not have been possible without the contributions of other open-source programmers, namely Atsushi Togo for spglib, a BSD-licensed library which provides the awesome symmetry tools, and Jean Bréfort for contributing the space group transform database and unit cell implementation and tools in Open Babel. 
-          </p>
         </div>
+        <p align="left" style="text-align:-moz-left">
+          Many of these great features would not have been possible without the contributions of other open-source programmers, namely Atsushi Togo for spglib, a BSD-licensed library which provides the awesome symmetry tools, and Jean Bréfort for contributing the space group transform database and unit cell implementation and tools in Open Babel. 
+        </p>
       </div>
 
   <!-- Javascript

@@ -16,6 +16,11 @@
         overflow: auto;
         color: white;
         background-color: black;
+        font-family: monospace;
+      }
+      hr {
+        background-color: grey;
+        height: 1px;
       }
       a.anchor {
         color:black;
@@ -35,15 +40,15 @@
         border:1px solid grey;
         border-radius:10px;
       }
-      .container > hr {
-        margin: 0 0;
-      }
 
      /* Jumbotron */
       .jumbotron {
         margin: 0 auto;
         max-width: auto;
         text-align: center;
+        padding: 12px 12px 12px 12px;
+        border:1px solid grey;
+        border-radius:10px;
       }
       .jumbotron h1 {
         margin: 0 auto;
