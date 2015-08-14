@@ -2,24 +2,24 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Github Page for XtalOpt, an evolutionary algortihm designed to predict crystal structures.">
   <meta name="author" content="Zackary Falls">
   <link rel="icon" href="img/xtalopt-logo.png">
   <title>
       XtalOpt - Windows Install
-  </title>    
- 
-  <!-- Scripts --> 
+  </title>
+
+  <!-- Scripts -->
   <script src="dist/js/jquery.js"></script>
   <script type="text/javascript" src='dist/js/bootstrap.min.js'></script>
-    <script> 
+    <script>
       $(function(){
-        $("#navbar").load("navbar.html"); 
+        $("#navbar").load("navbar.html");
       });
-    </script> 
-    <script> 
+    </script>
+    <script>
       $(function() {
         var pgurl = window.location.href.substr(window.location.href.lastIndexOf("/")+1);
         $("#nav ul li a").each(function(){
@@ -27,13 +27,13 @@
             $(this).addClass("active");
         })
       });
-    </script>     
-  
+    </script>
+
   <!-- Styles -->
   <link href="dist/css/bootstrap.css" rel="stylesheet">
   <link href="dist/css/bootstrap-responsive.css" rel="stylesheet">
   <link href="dist/css/style.css" rel="stylesheet">
-  
+
   <!-- Fav and touch icons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="dist/img/xtalopt-logo.png">
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="dist/img/xtalopt-logo.png">
@@ -45,26 +45,26 @@
   <body>
     <!--NavBar-->
     <div id="navbar"></div>
- 
+
   <div class="container">
     <div class="jumbotron">
       <h1>Installation</h1>
       <hr>
       <div class="row-fluid">
         <div class="span4">
-          <a class="btn btn-large btn-danger" href="install-win.html">Windows</a> 
+          <a class="btn btn-large btn-danger" href="install-win.html">Windows</a>
         </div>
         <div class="span4">
-          <a class="btn btn-large btn-primary" href="install-mac.html">Mac OS X</a> 
+          <a class="btn btn-large btn-primary" href="install-mac.html">Mac OS X</a>
         </div>
         <div class="span4">
-          <a class="btn btn-large btn-warning" href="install-linux.html">Linux</a> 
+          <a class="btn btn-large btn-warning" href="install-linux.html">Linux</a>
         </div>
       </div>
     </div>
-    
+
     <br>
-    
+
     <div class="jumbotron">
       <h2 class="text">Installation for Mac OS X</h2>
       <hr>
@@ -84,7 +84,7 @@
         <li><tt>Eigen</tt> &gt;= 2</li>
         <li><tt>git</tt>, any version</li>
       </ul>
-    
+
       <h3 id="SourceDependencies">Source Dependencies</h3>
       <p>
         The following <strong>must</strong> be built from the development sources:
@@ -93,7 +93,7 @@
         <li><tt>Avogadro</tt>, <a class="ext-link" href="http://github.com/dlonie/avogadro"><span class="icon"> </span>dlonie's GitHub fork</a>: <a class="ext-link" href="http://avogadro.openmolecules.net/wiki/Compiling_on_Linux_and_Mac_OS_X"><span class="icon"> </span>installation instructions</a></li>
       </ul>
       <p>
-        <em>Remember to uninstall any non-development installations of OpenBabel and Avogadro before installing the development versions.<strong> 
+        <em>Remember to uninstall any non-development installations of OpenBabel and Avogadro before installing the development versions.<strong>
     </strong></em>
       </p>
       <hr>
@@ -103,11 +103,11 @@
       <p>
         Using the package manager for your linux distribution, install the dependencies listed above. For example, on Arch Linux, one can use the command
       </p>
-      <pre class="wiki">pacman -S cmake qt eigen git subversion openssh</pre>
+      <pre class="wiki">pacman -S cmake git eigen glu qt4 libssh openssh</pre>
       <p>
         On Ubuntu, one can use the command
       </p>
-      <pre class="wiki">sudo apt-get cmake qt eigen git subversion openssh</pre>
+      <pre class="wiki">sudo apt-get cmake qt4-default qt4-dev-tools libeigen-3-dev git libssh-dev zlib1g-dev</pre>
       <hr>
       <h2 id="SourceInstallations">Source Installations</h2>
       <hr>
@@ -116,7 +116,7 @@
         First, the <strong>development</strong> version of OpenBabel must be installed from source. These instructions will build and install the packages in your user's <tt>$HOME</tt> directory.
       </p>
       <p>
-        <em>Remember to uninstall any non-development installations of OpenBabel and Avogadro before installing the development versions.<strong> 
+        <em>Remember to uninstall any non-development installations of OpenBabel and Avogadro before installing the development versions.<strong>
     </strong></em>
       </p>
       <p>
@@ -156,7 +156,7 @@ make install</pre>
         Next, Avogadro must be installed. The dlonie GitHub fork of Avogadro is used below, and is recommended to ensure that XtalOpt and Avogadro work together.
       </p>
       <p>
-    <em>Remember to uninstall any non-development installations of OpenBabel and Avogadro before installing the development versions.<strong> 
+    <em>Remember to uninstall any non-development installations of OpenBabel and Avogadro before installing the development versions.<strong>
     </strong></em></p>
     <p>
     First, change to the source directory created earlier:
@@ -174,8 +174,7 @@ cd avogadro/build</pre>
     <p>
     Configure, build, and install Avogadro:
     </p>
-    <pre class="wiki">cmake .. -DOPENBABEL2_INCLUDE_DIR=$HOME/include/openbabel-2.0 -DOPENBABEL2_LIBRARIES=$HOME/lib/libopenbabel.so \
-  -DOPENBABEL2_VERSION_MET=true -DOPENBABEL_IS_NEWER_THAN_2_2_99=true -DENABLE_PYTHON=false -DCMAKE_INSTALL_PREFIX=$HOME
+    <pre class="wiki">cmake .. -DOPENBABEL2_INCLUDE_DIR=$HOME/include/openbabel-2.0 -DOPENBABEL2_LIBRARIES=$HOME/lib/libopenbabel.so -DOPENBABEL2_VERSION_MET=true -DOPENBABEL_IS_NEWER_THAN_2_2_99=true -DENABLE_PYTHON=false -DCMAKE_INSTALL_PREFIX=$HOME
 make -j3
 make install</pre>
     <hr>
@@ -200,8 +199,7 @@ cd xtalopt/build</pre>
     <p>
     Configure, build, and install:
     </p>
-    <pre class="wiki">cmake .. -DOPENBABEL2_INCLUDE_DIR=$HOME/include/openbabel-2.0 -DOPENBABEL2_LIBRARIES=$HOME/lib/libopenbabel.so \
-  -DOPENBABEL2_VERSION_MET=true -DOPENBABEL_IS_NEWER_THAN_2_2_99=true -DCMAKE_INSTALL_PREFIX=$HOME
+    <pre class="wiki">cmake .. -DOPENBABEL2_INCLUDE_DIR=$HOME/include/openbabel-2.0 -DOPENBABEL2_LIBRARIES=$HOME/lib/libopenbabel.so -DOPENBABEL2_VERSION_MET=true -DOPENBABEL_IS_NEWER_THAN_2_2_99=true -DCMAKE_INSTALL_PREFIX=$HOME
 make -j3
 make install</pre>
     <p>

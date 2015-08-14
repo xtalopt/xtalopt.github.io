@@ -83,8 +83,8 @@
         </li><li><tt>Qt4</tt> &gt;= 4.6.0
         </li><li><tt>Eigen</tt> &gt;= 2
         </li><li><tt>git</tt>, any version
-        </li><li><tt></tt>
-        </li><li><tt>If you wish to enable SSH (default), you will also need:</tt>
+        <br><br>
+        </li><li><p>If you wish to enable SSH (default), you will also need:</p>
         </li><li><tt>openssh</tt>, any version
         </li><li><tt>libssh</tt>, any version
     </li></ul>
@@ -200,8 +200,7 @@ cd xtalopt/build</pre>
     <p>
     Configure, build, and install:
     </p>
-    <pre class="wiki">cmake .. -DOPENBABEL2_INCLUDE_DIR=$HOME/include/openbabel-2.0 -DOPENBABEL2_LIBRARIES=$HOME/lib/libopenbabel.so \
-  -DOPENBABEL2_VERSION_MET=true -DOPENBABEL_IS_NEWER_THAN_2_2_99=true -DCMAKE_INSTALL_PREFIX=$HOME
+    <pre class="wiki">cmake .. -DOPENBABEL2_INCLUDE_DIR=$HOME/include/openbabel-2.0 -DOPENBABEL2_LIBRARIES=$HOME/lib/libopenbabel.so -DOPENBABEL2_VERSION_MET=true -DOPENBABEL_IS_NEWER_THAN_2_2_99=true -DCMAKE_INSTALL_PREFIX=$HOME
 make -j3
 make install</pre>
     <p>
