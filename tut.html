@@ -64,6 +64,7 @@
                 <li><a class="el" href="tut.html#gulp-opt">GULP</a></li>
                 <li><a class="el" href="tut.html#pwscf-opt">PWscf</a></li>
                 <li><a class="el" href="tut.html#castep-opt">CASTEP</a></li>
+                <li><a class="el" href="tut.html#siesta-opt">SIESTA</a></li>
             </ul>
             </li>
             <li><a class="el" href="tut.html#qisetup">Queue setup</a><ul>
@@ -122,7 +123,7 @@
 
       <div class="jumbotron">
          <h2>Optimizer setup</a></h2>
-         <p>XtalOpt currently supports the <a class="el" href="tut.html#vasp-opt">VASP</a>, <a class="el" href="tut.html#gulp-opt">GULP</a>, <a class="el" href="tut.html#pwscf-opt">PWscf</a>, and <a class="el" href="tut.html#castep-opt">CASTEP</a> codes for performing geometry optimizations. Each is detailed in its own section below.</p>
+         <p>XtalOpt currently supports the <a class="el" href="tut.html#vasp-opt">VASP</a>, <a class="el" href="tut.html#gulp-opt">GULP</a>, <a class="el" href="tut.html#pwscf-opt">PWscf</a>, <a class="el" href="tut.html#castep-opt">CASTEP</a>, and <a class="el" href="tut.html#siesta-opt">SIESTA</a> codes for performing geometry optimizations. Each is detailed in its own section below.</p>
 
     <a class="anchor" id="vasp-opt"> 
         <br><br>
@@ -151,7 +152,7 @@ Opt Scheme" button and selecting the "samples/vasp-xtalopt.scheme" file that is 
         <br>
         <br>
  <p>On the next tab we choose GULP for the local optimizer and enter a template for GULP to use. Select "GULP" as the "Optimizer" and "xtal.gin" as "Template". Next, fill out the text field on the right with the following template: </p>
- <div align="center">
+ 
  <pre align="left" style="text-align:-moz-left">opti conj conp
 switch_minimiser bfgs gnorm 0.5
 
@@ -174,7 +175,6 @@ lennard 12 6
   Ti Ti 1 0 15
   O  O  1 0 15
   Ti O  1 0 15</pre>
- </div>
  <br>
 
  <p>
@@ -219,7 +219,7 @@ XtalOpt expects GULP to use the following filenames:
 <p>Be aware that every PWscf/CASTEP installation is different, and it is almost certain that the job.pbs file included with this scheme will not work on any cluster other than the Zurek group's "parity" cluster at SUNY Buffalo's Center for Computational Resources. It may take some experimentation to get jobs to submit successfully, and you may need to contact the mantainers of the cluster for assistance for information about MPI, executable locations, etc. Perhaps the easiest method to find the correct PBS script is to run some trial submissions by hand, and then replace the structure/search specific information with the appropriate keywords once a working script has been generated.</p>
 <p>XtalOpt expects PWscf to use the following filenames:</p>
 
-<div class="fragment"><div class="line">pw.x &lt; xtal.in &gt; xtal.out</div>
+<div class="fragment"><div class="line"><pre>pw.x &lt; xtal.in &gt; xtal.out</pre></div>
 </div><!-- fragment --><p>
 
 <br>
@@ -254,8 +254,84 @@ XtalOpt expects GULP to use the following filenames:
 <div class="line">castep xtal</div>
 <div class="line"><span class="preprocessor"># CASTEP will create xtal.castep</span></div>
 </div><!-- fragment -->
-</div>
+<br>
+
+<p>
+  <a class="el" href="tut.html#qisetup">Skip to next section.</a>
+</p>
+
+
+    <a class="anchor" id="siesta-opt"> 
+        <br><br>
+    </a>
+      
+    <h3>SIESTA</h3>
     
+    <p>On the next tab we choose GULP for the local optimizer and enter a template for SIESTA to use. Select "SIESTA" as the "Optimizer" and "xtal.fdf" as "Template".</p>
+    
+    <p>Next, fill out the text field on the right with the following template:</p>
+
+ <pre align="left" style="text-align:-moz-left">SystemName %description%
+SystemLabel %description%-%gen%x%id%
+
+NumberOfAtoms %numAtoms%
+NumberOfSpecies %numSpecies% 
+
+%block Chemical_Species_Label
+%chemicalSpeciesLabel%
+%endblock Chemical_Species_Label
+
+PAO.BasisSize SZ
+
+# Lattice, coordinates, k-sampling
+AtomicCoordinatesFormat Fractional
+AtomicCoorFormatOut Ang
+
+%block% AtomicCoordinatesAndAtomicSpecies
+%atomicCoordsAndAtomicSpecies%
+%endblock% AtomicCoordinatesAndAtomicSpecies
+
+LatticeConstant 4.10 Ang
+%block% LatticeVectors
+%cellMatrixAngstrom%
+%endblock% LatticeVectors
+
+kgrid_cutoff 7. Ang
+
+# DFT, Grid, SCF
+XC.functional LDA # Exchange-correlation functional type
+XC.authors CA # Particular parametrization of xc func
+SpinPolarized .false. # Spin unpolarized calculation
+MeshCutoff 200. Ry # Equivalent planewave cutoff for the grid
+MaxSCFIterations 100 # Maximum number of SCF iterations per step
+DM.MixingWeight 0.3 # New DM amount for next SCF cycle
+DM.Tolerance 1.d-4 # Tolerance in maximum difference
+
+# between input and output DM
+DM.NumberPulay 3 # Number of SCF steps between pulay mixing
+
+# Eigenvalue problem: order-N or diagonalization
+SolutionMethod diagon # OrderN or Diagon
+ElectronicTemperature 5 K # Temp. for Fermi smearing
+
+# Molecular dynamics and relaxations
+MD.TypeOfRun cg # Type of dynamics:</pre>
+
+ <p>Or load the optimization scheme by clicking the "Load Opt Scheme" button and selecting the "samples/siesta-xtalopt.scheme" file that is distributed with the source code.</p>
+
+ <p>For more details on optimization schemes, see optschemes.</p>
+
+ <p>After loading the optimization scheme, XtalOpt will prompt for the xtal.psf files to use. Select files appropriated for the prompted atom. XtalOpt will copy the individual files over to each structure directory when the calculation is submitted. See the SIESTA manual for information on obtaining the .psf files.</p>
+ 
+ <p>Notice the other %keyword% values in the xtal.fdf templates. These are used to enter information that is specific to a search or structure when the actual input files are written prior to job submission. Click the "Help" button for a full listing of the available keywords.</p>
+
+ <p>XtalOpt expects SIESTA to use the following filenames:</p>
+
+ <pre>siesta < xtal.fdf > xtal.out</pre>
+
+ </div>
+
+
     <a class="anchor" id="qisetup"> 
       <br>
     </a>
