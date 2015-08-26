@@ -71,6 +71,8 @@
                 <li><a class="el" href="tut.html#remotepbs">Using a remote PBS cluster</a></li>
                 <li><a class="el" href="tut.html#remotesge">Using a remote SGE cluster</a></li>
                 <li><a class="el" href="tut.html#remoteslurm">Using a remote SLURM cluster</a></li>
+                <li><a class="el" href="tut.html#remotelsf">Using a remote LSF cluster</a></li>
+                <li><a class="el" href="tut.html#remotell">Using a remote LoadLeveler cluster</a></li>
                 <li><a class="el" href="tut.html#localqi">Running optimations locally</a></li>
             </ul>
             </li>
@@ -338,8 +340,11 @@ MD.TypeOfRun cg # Type of dynamics:</pre>
 
       <div class="jumbotron">
 <h2>Queue setup</h2>
-<p>XtalOpt currently supports using the <a class="el" href="tut.html#remotepbs">PBS</a>, <a class="el" href="tut.html#remotesge">SGE</a>, and <a class="el" href="tut.html#remoteslurm">SLURM</a> queuing systems on remote SSH-accessible clusters, as well as an internal <a class="el" href="tut.html#localqi">local</a> queue that manages calculations on the user's workstation. Each queueing interface is detailed in its own section below.</p>
+<p>XtalOpt currently supports using the <a class="el" href="tut.html#remotepbs">PBS</a>, <a class="el" href="tut.html#remotesge">SGE</a>, <a class="el" href="tut.html#remoteslurm">SLURM</a>, <a class="el" href="tut.html#remotelsf">LSF</a>, and <a class="el" href="tut.html#remotell">LoadLeveler</a> queuing systems on remote SSH-accessible clusters, as well as an internal <a class="el" href="tut.html#localqi">local</a> queue that manages calculations on the user's workstation. Each queueing interface is detailed in its own section below.</p>
 
+
+
+<!-- Remote - SGE -->
     <a class="anchor" id="remotepbs"> 
         <br><br>
     </a>
@@ -360,7 +365,6 @@ MD.TypeOfRun cg # Type of dynamics:</pre>
 <li>Path to qstat: Where to find the qstat executable on the remote cluster. Note that if qstat is in the cluster's $PATH, setting this to just 'qstat' will work.</li>
 </ul>
 <p>A new template, "job.pbs" is added to the list of available templates. This is the job submission script for PBS. This script should roughly follow this design:</p>
-
 
 <div class="fragment"><div class="line"><span class="preprocessor">#/bin/bash</span></div>
 <div class="line"><span class="preprocessor">#PBS -l nodes=1:ppn=8</span></div>
@@ -402,21 +406,22 @@ MD.TypeOfRun cg # Type of dynamics:</pre>
 <p>Be aware that every installation is different, and it is almost certain that the job.pbs file included with this scheme will not work on any cluster other than the Zurek group's "parity" cluster at SUNY Buffalo's Center for Computational Resources. It may take some experimentation to get jobs to submit successfully, and you may need to contact the mantainers of the cluster for assistance or information about MPI, executable locations, etc. Perhaps the easiest method to find the correct PBS script is to run some trial submissions by hand, and then replace the structure/search specific information with the appropriate keywords once a working script has been generated.</p>
 <p>A handy trick for monitoring jobs outside of XtalOpt is to include the following line in job.pbs:</p>
 
-
 <div class="fragment"><div class="line"><span class="preprocessor">#PBS -N %description%-%gen%x%id%-%optstep%</span></div>
 </div><!-- fragment -->
-
 
 <p>This will name each job, for example, xtalSearch-3x4-2, where xtalSearch is a user-specified description of the search, and 3x4-2 means that it is the fourth structure in the third generation running its second optimization step.</p>
 <br>
 <p><a class="el" href="tut.html#files">Skip to next section.</a></p>
 
+
+
+<!-- Remote - SGE -->
     <a class="anchor" id="remotesge"> 
         <br><br>
     </a>
 
 <h3>Using a remote SGE cluster</h3>
-<img src="dist/img/opt-set-pbs.png" alt="opt-set-pbs.png" width="50%"/>
+<img src="dist/img/opt-set-sge.png" alt="opt-set-sge.png" width="50%"/>
 <br>
 <br>
 <p>Select "SGE" from the list of Queues, and then click the "Configure..." button. A new window will prompt for:</p>
@@ -434,6 +439,9 @@ MD.TypeOfRun cg # Type of dynamics:</pre>
 <p>For more details on optimization schemes, see optschemes.</p>
 <p><a class="el" href="tut.html#files">Skip to next section.</a></p>
 
+
+
+<!-- Remote - SLURM -->
     <a class="anchor" id="remoteslurm"> 
         <br><br>
     </a>
@@ -457,6 +465,62 @@ MD.TypeOfRun cg # Type of dynamics:</pre>
 <p>For more details on optimization schemes, see optschemes.</p>
 <p><a class="el" href="tut.html#files">Skip to next section.</a></p>
 
+
+
+<!-- Remote - LSF -->
+    <a class="anchor" id="remotelsf"> 
+        <br><br>
+    </a>
+
+<h3>Using a remote LSF cluster</h3>
+<img src="dist/img/opt-set-lsf.png" alt="opt-set-lsf.png" width="50%"/>
+<br>
+<br>
+<p>Select "LSF" from the list of Queues, and then click the "Configure..." button. A new window will prompt for:</p>
+ <ul align=left style="text-align:-moz-left">
+<li>host: The hostname of the LSF cluster's head node</li>
+<li>user: The username used to log into the cluster</li>
+<li>Working directory (Server): A directory that is readable/writable by "user" on the cluster, used when performing optimizations.</li>
+<li>Working directory (Local): A directory that is readable/writable by the current user on the local computer. This is where the final structures and resume files are written.</li>
+<li>Description: Used for the %description% keyword in input templates.</li>
+<li>Path to bsub: Where to find the bsub executable on the remote cluster. Note that if bsub is in the cluster's $PATH, setting this to just 'bsub' will work.</li>
+<li>Path to bkill: Where to find the bkill executable on the remote cluster. Note that if bkill is in the cluster's $PATH, setting this to just 'bkill' will work.</li>
+<li>Path to bjobs: Where to find the bjobs executable on the remote cluster. Note that if bjobs is in the cluster's $PATH, setting this to just 'bjobs' will work.</li>
+</ul>
+<p>A new template, "job.lsf" is added to the list of available templates. This is the job submission script for LSF. It may take some experimentation to get jobs to submit successfully, and you may need to contact the mantainers of the cluster for assistance or information about MPI, executable locations, etc. Perhaps the easiest method to find the correct LSF script is to run some trial submissions by hand, and then replace the structure/search specific information with the appropriate keywords once a working script has been generated.</p>
+<p>For more details on optimization schemes, see optschemes.</p>
+<p><a class="el" href="tut.html#files">Skip to next section.</a></p>
+
+
+
+<!-- Remote - LoadLeveler -->
+    <a class="anchor" id="remotell"> 
+        <br><br>
+    </a>
+
+<h3>Using a remote LoadLeveler cluster</h3>
+<img src="dist/img/opt-set-ll.png" alt="opt-set-ll.png" width="50%"/>
+<br>
+<br>
+<p>Select "LoadLeveler" from the list of Queues, and then click the "Configure..." button. A new window will prompt for:</p>
+ <ul align=left style="text-align:-moz-left">
+<li>host: The hostname of the LoadLeveler cluster's head node</li>
+<li>user: The username used to log into the cluster</li>
+<li>Working directory (Server): A directory that is readable/writable by "user" on the cluster, used when performing optimizations.</li>
+<li>Working directory (Local): A directory that is readable/writable by the current user on the local computer. This is where the final structures and resume files are written.</li>
+<li>Description: Used for the %description% keyword in input templates.</li>
+<li>Path to llsubmit: Where to find the llsubmit executable on the remote cluster. Note that if llsubmit is in the cluster's $PATH, setting this to just 'llsubmit' will work.</li>
+<li>Path to llcancel: Where to find the llcancel executable on the remote cluster. Note that if llcancel is in the cluster's $PATH, setting this to just 'llcancel' will work.</li>
+<li>Path to llq: Where to find the llq executable on the remote cluster. Note that if llq is in the cluster's $PATH, setting this to just 'llq' will work.</li>
+</ul>
+<p>A new template, "job.ll" is added to the list of available templates. This is the job submission script for LoadLeveler. It may take some experimentation to get jobs to submit successfully, and you may need to contact the mantainers of the cluster for assistance or information about MPI, executable locations, etc. Perhaps the easiest method to find the correct LoadLeveler script is to run some trial submissions by hand, and then replace the structure/search specific information with the appropriate keywords once a working script has been generated.</p>
+<p>For more details on optimization schemes, see optschemes.</p>
+<p><a class="el" href="tut.html#files">Skip to next section.</a></p>
+
+
+
+
+
     <a class="anchor" id="localqi"> 
         <br><br>
     </a>
@@ -473,10 +537,11 @@ MD.TypeOfRun cg # Type of dynamics:</pre>
 <p>For more details on optimization schemes, see optschemes.</p>
 </div>
 
+
+
     <a class="anchor" id="files"> 
         <br>
     </a>
-
 
       <div class="jumbotron">
 <h2>What is written to the local directory?</h2>
@@ -488,6 +553,8 @@ MD.TypeOfRun cg # Type of dynamics:</pre>
 <div class="fragment"><div class="line">[Local working directory]/results.txt</div>
 </div><!-- fragment --><p>which stores a list of all structures sorted by increasing enthalpy. The latter file is handy for offline analysis, since there is no need to open XtalOpt to find the most stable structures of a previous search.</p>
     </div>
+
+
 
     <a class="anchor" id="search-set"> 
         <br><br>
@@ -501,6 +568,8 @@ MD.TypeOfRun cg # Type of dynamics:</pre>
  <p>In the "Search Settings" tab, most of the default settings should suffice (See CPC 2010 publication). We arbitrarily set the initial structures to 20 and the continuous structures to 5, although these may need to be adjusted based on available resources. We will not specify initial seeds, but the option to do so exists on this screen.</p>
 <p>It is not neccessary to limit the number of running jobs unless running locally, as the PBS queue on the cluster will manage job control for us. If running locally, set the job limit no higher than [number of available processor cores] - 1 (e.g. for a quadcore processor, allow three jobs to run simultaneously). This allows one core to remain free for the system to run.</p>
     </div>
+
+
 
     <a class="anchor" id="begin"> 
         <br><br>
