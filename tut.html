@@ -127,6 +127,9 @@
          <h2>Optimizer setup</a></h2>
          <p>XtalOpt currently supports the <a class="el" href="tut.html#vasp-opt">VASP</a>, <a class="el" href="tut.html#gulp-opt">GULP</a>, <a class="el" href="tut.html#pwscf-opt">PWscf</a>, <a class="el" href="tut.html#castep-opt">CASTEP</a>, and <a class="el" href="tut.html#siesta-opt">SIESTA</a> codes for performing geometry optimizations. Each is detailed in its own section below.</p>
 
+
+
+<!-- VASP -->         
     <a class="anchor" id="vasp-opt"> 
         <br><br>
     </a>
@@ -137,7 +140,7 @@
         <br>
         <p>
         On the next tab, load the optimization scheme by clicking the "Load
-Opt Scheme" button and selecting the "samples/vasp-xtalopt.scheme" file that is distributed with the source code. If you do not have a copy of the source code, the scheme file can be obtained by clicking the "Original Format" link at the bottom of the page <a href="http://xtalopt.openmolecules.net/wiki/index.fcgi/browser/samples/vasp-xtalopt.scheme">here</a>.</p>
+Opt Scheme" button and selecting the "samples/vasp-xtalopt.scheme" file that is distributed with the source code. If you do not have a copy of the source code, the scheme file can be obtained by clicking the "Original Format" link at the bottom of the page <a href="samples/vasp-xtalopt.scheme">here</a>.</p>
 <p>For more details on optimization schemes, see optschemes.</p>
 <p>After loading the optimization scheme, XtalOpt will prompt for the POTCAR files to use. Select files appropriated for the prompted atom. XtalOpt will construct the POTCAR files on the local computer, and then copy them over to the cluster when the calculation is submitted. It is necessary to have the VASP POTCAR files for each atomic species located somewhere on the local computer. See the VASP manual for information on obtaining the POTCAR files.</p>
 <p>Take a moment to look through each file for each optimization step. Notice that the INCAR template includes two user-specified values, %user2% and %user3% for the external pressure and the energy cutoff, respectively. By entering appropriate values in the "user2:" and "user3:" fields on the left, it is easy to update these values for all optimization steps.</p>
@@ -145,6 +148,9 @@ Opt Scheme" button and selecting the "samples/vasp-xtalopt.scheme" file that is 
 <p>XtalOpt expects VASP to use the default filenames, mainly POSCAR, CONTCAR, and OUTCAR.</p>
 <p><a class="el" href="tut.html#qisetup">Skip to next section.</a></p>
 
+
+
+<!-- GULP -->         
     <a class="anchor" id="gulp-opt"> 
         <br><br>
     </a>
