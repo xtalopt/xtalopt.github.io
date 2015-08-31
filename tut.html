@@ -2,24 +2,24 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Github Page for XtalOpt, an evolutionary algortihm designed to predict crystal structures.">
   <meta name="author" content="Zackary Falls">
   <link rel="icon" href="dist/img/xtalopt-logo.png">
   <title>
-      XtalOpt - Tutorials 
-  </title>  
-  
-  <!-- Scripts --> 
+      XtalOpt - Tutorials
+  </title>
+
+  <!-- Scripts -->
   <script src="dist/js/jquery.js"></script>
   <script type="text/javascript" src='dist/js/bootstrap.min.js'></script>
-    <script> 
+    <script>
       $(function(){
-        $("#navbar").load("navbar.html"); 
+        $("#navbar").load("navbar.html");
       });
-    </script> 
-    <script> 
+    </script>
+    <script>
       $(function() {
         var pgurl = window.location.href.substr(window.location.href.lastIndexOf("/")+1);
         $(".navbar .nav a").each(function(){
@@ -27,8 +27,8 @@
             $(this).addClass("active");
         })
       });
-    </script>     
-  
+    </script>
+
   <!-- Styles -->
   <link href="dist/css/bootstrap.css" rel="stylesheet">
   <link href="dist/css/bootstrap-responsive.css" rel="stylesheet">
@@ -45,7 +45,7 @@
   <body>
     <!--NavBar-->
     <div id="navbar"></div>
- 
+
     <div class="container">
       <div class="jumbotron">
         <h1>XtalOpt Tutorial</h1>
@@ -54,9 +54,9 @@
         PDF format available <a class="el" target="_blank" href="docs/latex/refman.pdf">here</a>
         </p>
       </div>
-      
+
       <br>
-      
+
       <div class="jumbotron">
         <h2 align="left">Contents</h2>
         <hr>
@@ -77,7 +77,7 @@
                 <li><a class="el" href="tut.html#remoteslurm">Using a remote SLURM cluster</a></li>
                 <li><a class="el" href="tut.html#remotelsf">Using a remote LSF cluster</a></li>
                 <li><a class="el" href="tut.html#remotell">Using a remote LoadLeveler cluster</a></li>
-                <li><a class="el" href="tut.html#localqi">Running optimations locally</a></li>
+                <li><a class="el" href="tut.html#localqi">Running optimizations locally</a></li>
             </ul>
             </li>
             <li><a class="el" href="tut.html#files">What is written to the local directory?</a></li>
@@ -118,22 +118,22 @@
             </li>
         </ul>
       </div>
-      
+
       <a class="anchor" id="launch">
         <br>
       </a>
-        
+
       <br>
-      
+
       <div class="jumbotron">
         <h2>Launch XtalOpt</h2>
         <p>Open avogadro, go to the "Extensions" menu and select "XtalOpt".</p>
       </div>
-      
+
       <a class="anchor" id="init">
         <br>
       </a>
- 
+
       <div class="jumbotron">
         <h2>Enter composition and restraints</h2>
         <div align="center">
@@ -143,7 +143,7 @@
          <p>The interface opens to the "Structure Limits" tab, shown above. We will use a 6 formula unit supercell of titanium dioxide for this tutorial, so enter "Ti6 O12" for the cell composition. We will assume that we know nothing about the system and use very loose restraints. Set all cell length minima to 1 angstrom and maxima to 20 angstrom. Constrain the angles to be between 60 and 120 degrees, and the volume from between 1 and 500 cubic angstrom. Specify a minimum interatomic distance of 0.5 angstrom. (Note that due to the angle adjustment described in the CPC 2010 publication, 60-120 degrees is the largest range of cell angles that XtalOpt will generate.)</p>
       </div>
 
-      <a class="anchor" id="opt"> 
+      <a class="anchor" id="opt">
         <br>
       </a>
 
@@ -153,8 +153,8 @@
 
 
 
-<!-- VASP -->         
-    <a class="anchor" id="vasp-opt"> 
+<!-- VASP -->
+    <a class="anchor" id="vasp-opt">
         <br><br>
     </a>
 
@@ -174,8 +174,8 @@ Opt Scheme" button and selecting the "samples/vasp-xtalopt.scheme" file that is 
 
 
 
-<!-- GULP -->         
-    <a class="anchor" id="gulp-opt"> 
+<!-- GULP -->
+    <a class="anchor" id="gulp-opt">
         <br><br>
     </a>
 
@@ -184,7 +184,7 @@ Opt Scheme" button and selecting the "samples/vasp-xtalopt.scheme" file that is 
         <br>
         <br>
  <p>On the next tab we choose GULP for the local optimizer and enter a template for GULP to use. Select "GULP" as the "Optimizer" and "xtal.gin" as "Template". Next, fill out the text field on the right with the following template: </p>
- 
+
  <pre align="left" style="text-align:-moz-left">opti conj conp
 switch_minimiser bfgs gnorm 0.5
 
@@ -230,7 +230,7 @@ XtalOpt expects GULP to use the following filenames:
   <a class="el" href="tut.html#qisetup">Skip to next section.</a>
 </p>
 
-    <a class="anchor" id="pwscf-opt"> 
+    <a class="anchor" id="pwscf-opt">
         <br><br>
     </a>
 
@@ -257,7 +257,7 @@ XtalOpt expects GULP to use the following filenames:
 <br>
 <a class="el" href="tut.html#qisetup">Skip to next section.</a></p>
 
-    <a class="anchor" id="castep-opt"> 
+    <a class="anchor" id="castep-opt">
         <br><br>
     </a>
 
@@ -293,21 +293,21 @@ XtalOpt expects GULP to use the following filenames:
 </p>
 
 
-    <a class="anchor" id="siesta-opt"> 
+    <a class="anchor" id="siesta-opt">
         <br><br>
     </a>
-      
+
     <h3>SIESTA</h3>
-    
+
     <p>On the next tab we choose GULP for the local optimizer and enter a template for SIESTA to use. Select "SIESTA" as the "Optimizer" and "xtal.fdf" as "Template".</p>
-    
+
     <p>Next, fill out the text field on the right with the following template:</p>
 
  <pre align="left" style="text-align:-moz-left">SystemName %description%
 SystemLabel %description%-%gen%x%id%
 
 NumberOfAtoms %numAtoms%
-NumberOfSpecies %numSpecies% 
+NumberOfSpecies %numSpecies%
 
 %block Chemical_Species_Label
 %chemicalSpeciesLabel%
@@ -354,7 +354,7 @@ MD.TypeOfRun cg # Type of dynamics:</pre>
  <p>For more details on optimization schemes, see <a class="el" href="tut.html#optschemes">optschemes</a>.</p>
 
  <p>After loading the optimization scheme, XtalOpt will prompt for the xtal.psf files to use. Select files appropriated for the prompted atom. XtalOpt will copy the individual files over to each structure directory when the calculation is submitted. See the SIESTA manual for information on obtaining the .psf files.</p>
- 
+
  <p>Notice the other %keyword% values in the xtal.fdf templates. These are used to enter information that is specific to a search or structure when the actual input files are written prior to job submission. Click the "Help" button for a full listing of the available keywords.</p>
 
  <p>XtalOpt expects SIESTA to use the following filenames:</p>
@@ -364,7 +364,7 @@ MD.TypeOfRun cg # Type of dynamics:</pre>
  </div>
 
 
-    <a class="anchor" id="qisetup"> 
+    <a class="anchor" id="qisetup">
       <br>
     </a>
 
@@ -375,7 +375,7 @@ MD.TypeOfRun cg # Type of dynamics:</pre>
 
 
 <!-- Remote - SGE -->
-    <a class="anchor" id="remotepbs"> 
+    <a class="anchor" id="remotepbs">
         <br><br>
     </a>
 
@@ -446,7 +446,7 @@ MD.TypeOfRun cg # Type of dynamics:</pre>
 
 
 <!-- Remote - SGE -->
-    <a class="anchor" id="remotesge"> 
+    <a class="anchor" id="remotesge">
         <br><br>
     </a>
 
@@ -472,7 +472,7 @@ MD.TypeOfRun cg # Type of dynamics:</pre>
 
 
 <!-- Remote - SLURM -->
-    <a class="anchor" id="remoteslurm"> 
+    <a class="anchor" id="remoteslurm">
         <br><br>
     </a>
 
@@ -498,7 +498,7 @@ MD.TypeOfRun cg # Type of dynamics:</pre>
 
 
 <!-- Remote - LSF -->
-    <a class="anchor" id="remotelsf"> 
+    <a class="anchor" id="remotelsf">
         <br><br>
     </a>
 
@@ -524,7 +524,7 @@ MD.TypeOfRun cg # Type of dynamics:</pre>
 
 
 <!-- Remote - LoadLeveler -->
-    <a class="anchor" id="remotell"> 
+    <a class="anchor" id="remotell">
         <br><br>
     </a>
 
@@ -551,11 +551,11 @@ MD.TypeOfRun cg # Type of dynamics:</pre>
 
 
 
-    <a class="anchor" id="localqi"> 
+    <a class="anchor" id="localqi">
         <br><br>
     </a>
 
-<h3>Running optimations locally</h3>
+<h3>Running optimizations locally</h3>
 <img src="dist/img/opt-set-local.png" alt="opt-set-local.png" width="25%">
 <br>
 <br>
@@ -569,7 +569,7 @@ MD.TypeOfRun cg # Type of dynamics:</pre>
 
 
 
-    <a class="anchor" id="files"> 
+    <a class="anchor" id="files">
         <br>
     </a>
 
@@ -586,7 +586,7 @@ MD.TypeOfRun cg # Type of dynamics:</pre>
 
 
 
-    <a class="anchor" id="search-set"> 
+    <a class="anchor" id="search-set">
         <br><br>
     </a>
 
@@ -602,7 +602,7 @@ MD.TypeOfRun cg # Type of dynamics:</pre>
 
 
 
-    <a class="anchor" id="begin"> 
+    <a class="anchor" id="begin">
         <br><br>
     </a>
 
@@ -616,7 +616,7 @@ The ``Progress'' tab immediately after starting a search</div></div>
 Optimization". Click "Refresh" on this tab to begin the local optimizations. From here, XtalOpt will continue to run without user input, starting new optimizations and generating new structures until it is stopped by the user.</p>
     </div>
 
-    <a class="anchor" id="prog-mon"> 
+    <a class="anchor" id="prog-mon">
         <br><br>
     </a>
 
@@ -637,7 +637,7 @@ View trends</h3>
 <div class="caption">
 The ``Plot'' tab mid-run displaying enthalpy vs. volume. Each structure is labeled with its Hermann Mauguin spacegroup symbol.</div></div>
 <p>Another visualization and analysis tool available during the search is the interactive plot. The plot is capable of investigating trends in the search by plotting a point for each individual using structure number, generation number, enthalpy, energy, $PV$ enthalpy term, lattice parameters, or cell volume on either axis. This powerful feature allows the user to visualize complex relationships present in the generated structures. E.g., a plot of enthalpy vs. structure number provides an overview of the search's progress. Or, recalling that H = U + PV, plotting enthalpy vs. PV enthalpy term or energy lends insight into whether the enthalpy (H) is dominated by atomic interactions (U) or cell parameters (PV). Further information is available by labeling the points with the individual's spacegroup number, Hermann Mauguin spacegroup symbol, enthalpy, energy, PV term, volume, generation, or index number.</p>
-<p>A particularly useful plot is that of enthalpy vs. cell volume, as shown above. From this view, we see a general trend that enthalpy increases with volume (the effect is much more pronounced for systems at higher pressures), and also that below a certain volume enthalpy rises sharply. From this data set, we see that there is a cluster of very low enthalpy structures with cell volumes around 180 cubic angstroms. Armed with this data, we can update the starting volume on the Cell Initialization tab mid-run to reflect this new piece of information that the search has provided us. Many of the other parameters governing structure generation and algorithm specifics can be similarly modified during a search without the need to restart the algorithm.</p>
+<p>A particularly useful plot is that of enthalpy vs. cell volume, as shown above. From this view, we see a general trend that enthalpy increases with volume (the effect is much more pronounced for systems at higher pressures), and also that below a certain volume enthalpy rises sharply. From this data set, we see that there is a cluster of very low enthalpy structures with cell volumes around 180 cubic angstroms. Armed with this data, we can update the starting volume on the Structure Limits tab mid-run to reflect this new piece of information that the search has provided us. Many of the other parameters governing structure generation and algorithm specifics can be similarly modified during a search without the need to restart the algorithm.</p>
 <p>The plot is also interactive; zooming and panning are possible using simple mouse controls. Clicking on a structure's point on the plot will load it in the main Avogadro window, allow all the same functionality as described above in <a class="el" href="tut.html#prog-mon">Monitor progress</a>.</p>
     </div>
 
@@ -876,9 +876,9 @@ Error, no (or not appropriate for [OPTIMIZER]) xtal data in [DIRECTORY].
 
 This could be a result of resuming a structure that has not yet done
 any local optimizations. If so, safely ignore this message.</pre>
-</div><p>As mentioned in the message, these can typically be ignored if it only happens for a handful of structures. This occurs when a structure has been generated in XtalOpt, but it has not completed any geometry optimization so there are no output files from which to load the geometry. If it happens for a significant number of structures (or structures that are known to have completed at least one geometry optimization step), the output files from the optimizer may be missing or corrupt.</p>
+</div><p>As mentioned in the message, these can typically be ignored if it only happens for a handful of structures. This occurs when a structure has been generated in XtalOpt, but it has not completed any geometry optimizations so there are no output files from which to load the geometry. If it happens for a significant number of structures (or structures that are known to have completed at least one geometry optimization step), the output files from the optimizer may be missing or corrupt.</p>
  <p>After resuming a session, XtalOpt will ask if you would like to continue the search or enter read-only mode. Read-only mode will not generate new structures or submit geometry optimizations.</p>
- <dl class="note"><dt><b>Note:</b></dt><dd>If you are considering resuming a read-only session, take a look at the results.txt file in the working directory. It contains a list of all structures, sorted by enthalpy, with additional useful information. This can save some time when trying to locate the most stable structure of a old search.</dd></dl>
+ <dl class="note"><dt><b>Note:</b></dt><dd>If you are considering resuming a read-only session, take a look at the results.txt file in the working directory. It contains a list of all structures, sorted by enthalpy, with additional useful information. This can save some time when trying to locate the most stable structure of an old search.</dd></dl>
  <p>The working directories for XtalOpt are relocatable, meaning that the directory containing xtalopt.state and the [gen]x[id] structure folders may be moved, tarred, zipped, etc. and still be resumed at a later time from a different location on the filesystem, or even a different computer. </p>
 </div>
 
