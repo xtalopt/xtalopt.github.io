@@ -1,0 +1,169 @@
+rm: *bbl: No such file or directory
+rm: *aux: No such file or directory
+rm: *blg: No such file or directory
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/MacPorts 2015_2) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./refman.tex
+LaTeX2e <2015/01/01>
+Babel <3.9l> and hyphenation patterns for 44 languages loaded.
+(/opt/local/share/texmf-texlive/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/opt/local/share/texmf-texlive/tex/latex/base/size10.clo))
+(/opt/local/share/texmf-texlive/tex/latex/base/fixltx2e.sty
+
+Package fixltx2e Warning: fixltx2e is not required with releases after 2015
+(fixltx2e)                All fixes are now in the LaTeX kernel.
+(fixltx2e)                See the latexrelease package for details.
+
+) (/opt/local/share/texmf-texlive/tex/latex/tools/calc.sty) (./doxygen.sty
+(/opt/local/share/texmf-texlive/tex/latex/base/alltt.sty)
+(/opt/local/share/texmf-texlive/tex/latex/tools/array.sty)
+(/opt/local/share/texmf-texlive/tex/latex/float/float.sty)
+(/opt/local/share/texmf-texlive/tex/latex/base/ifthen.sty)
+(/opt/local/share/texmf-texlive/tex/latex/tools/verbatim.sty)
+(/opt/local/share/texmf-texlive/tex/latex/xcolor/xcolor.sty
+(/opt/local/share/texmf-texlive/tex/latex/latexconfig/color.cfg)
+(/opt/local/share/texmf-texlive/tex/latex/graphics/dvips.def)
+(/opt/local/share/texmf-texlive/tex/latex/colortbl/colortbl.sty))
+
+! LaTeX Error: File `xtab.sty' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
+! Emergency stop.
+<read *> 
+         
+l.13 ^^M
+        
+No pages of output.
+Transcript written on refman.log.
+/Users/Zeek/bin/runlatex: line 8: makeglossaries: command not found
+I couldn't open file name `refman.aux'
+I couldn't open file name `refman.aux'
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/MacPorts 2015_2) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./refman.tex
+LaTeX2e <2015/01/01>
+Babel <3.9l> and hyphenation patterns for 44 languages loaded.
+(/opt/local/share/texmf-texlive/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/opt/local/share/texmf-texlive/tex/latex/base/size10.clo))
+(/opt/local/share/texmf-texlive/tex/latex/base/fixltx2e.sty
+
+Package fixltx2e Warning: fixltx2e is not required with releases after 2015
+(fixltx2e)                All fixes are now in the LaTeX kernel.
+(fixltx2e)                See the latexrelease package for details.
+
+) (/opt/local/share/texmf-texlive/tex/latex/tools/calc.sty) (./doxygen.sty
+(/opt/local/share/texmf-texlive/tex/latex/base/alltt.sty)
+(/opt/local/share/texmf-texlive/tex/latex/tools/array.sty)
+(/opt/local/share/texmf-texlive/tex/latex/float/float.sty)
+(/opt/local/share/texmf-texlive/tex/latex/base/ifthen.sty)
+(/opt/local/share/texmf-texlive/tex/latex/tools/verbatim.sty)
+(/opt/local/share/texmf-texlive/tex/latex/xcolor/xcolor.sty
+(/opt/local/share/texmf-texlive/tex/latex/latexconfig/color.cfg)
+(/opt/local/share/texmf-texlive/tex/latex/graphics/dvips.def)
+(/opt/local/share/texmf-texlive/tex/latex/colortbl/colortbl.sty))
+
+! LaTeX Error: File `xtab.sty' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
+! Emergency stop.
+<read *> 
+         
+l.13 ^^M
+        
+No pages of output.
+Transcript written on refman.log.
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/MacPorts 2015_2) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./refman.tex
+LaTeX2e <2015/01/01>
+Babel <3.9l> and hyphenation patterns for 44 languages loaded.
+(/opt/local/share/texmf-texlive/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/opt/local/share/texmf-texlive/tex/latex/base/size10.clo))
+(/opt/local/share/texmf-texlive/tex/latex/base/fixltx2e.sty
+
+Package fixltx2e Warning: fixltx2e is not required with releases after 2015
+(fixltx2e)                All fixes are now in the LaTeX kernel.
+(fixltx2e)                See the latexrelease package for details.
+
+) (/opt/local/share/texmf-texlive/tex/latex/tools/calc.sty) (./doxygen.sty
+(/opt/local/share/texmf-texlive/tex/latex/base/alltt.sty)
+(/opt/local/share/texmf-texlive/tex/latex/tools/array.sty)
+(/opt/local/share/texmf-texlive/tex/latex/float/float.sty)
+(/opt/local/share/texmf-texlive/tex/latex/base/ifthen.sty)
+(/opt/local/share/texmf-texlive/tex/latex/tools/verbatim.sty)
+(/opt/local/share/texmf-texlive/tex/latex/xcolor/xcolor.sty
+(/opt/local/share/texmf-texlive/tex/latex/latexconfig/color.cfg)
+(/opt/local/share/texmf-texlive/tex/latex/graphics/dvips.def)
+(/opt/local/share/texmf-texlive/tex/latex/colortbl/colortbl.sty))
+
+! LaTeX Error: File `xtab.sty' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
+! Emergency stop.
+<read *> 
+         
+l.13 ^^M
+        
+No pages of output.
+Transcript written on refman.log.
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/MacPorts 2015_2) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./refman.tex
+LaTeX2e <2015/01/01>
+Babel <3.9l> and hyphenation patterns for 44 languages loaded.
+(/opt/local/share/texmf-texlive/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/opt/local/share/texmf-texlive/tex/latex/base/size10.clo))
+(/opt/local/share/texmf-texlive/tex/latex/base/fixltx2e.sty
+
+Package fixltx2e Warning: fixltx2e is not required with releases after 2015
+(fixltx2e)                All fixes are now in the LaTeX kernel.
+(fixltx2e)                See the latexrelease package for details.
+
+) (/opt/local/share/texmf-texlive/tex/latex/tools/calc.sty) (./doxygen.sty
+(/opt/local/share/texmf-texlive/tex/latex/base/alltt.sty)
+(/opt/local/share/texmf-texlive/tex/latex/tools/array.sty)
+(/opt/local/share/texmf-texlive/tex/latex/float/float.sty)
+(/opt/local/share/texmf-texlive/tex/latex/base/ifthen.sty)
+(/opt/local/share/texmf-texlive/tex/latex/tools/verbatim.sty)
+(/opt/local/share/texmf-texlive/tex/latex/xcolor/xcolor.sty
+(/opt/local/share/texmf-texlive/tex/latex/latexconfig/color.cfg)
+(/opt/local/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
+(/opt/local/share/texmf-texlive/tex/generic/oberdiek/infwarerr.sty)
+(/opt/local/share/texmf-texlive/tex/generic/oberdiek/ltxcmds.sty))
+(/opt/local/share/texmf-texlive/tex/latex/colortbl/colortbl.sty))
+
+! LaTeX Error: File `xtab.sty' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
+! Emergency stop.
+<read *> 
+         
+l.13 ^^M
+        
+!  ==> Fatal error occurred, no output PDF file produced!
+Transcript written on refman.log.
+/Users/Zeek/bin/runlatex: line 15: makeglossaries: command not found
+I couldn't open file name `refman.aux'
+I couldn't open file name `refman.aux'
+/Users/Zeek/bin/runlatex: line 18: pdfltex: command not found
+/Users/Zeek/bin/runlatex: line 19: pdfLtex: command not found

@@ -9,12 +9,15 @@
 \item \hyperlink{tut-xo_gulp-opt}{G\+U\+L\+P}
 \item \hyperlink{tut-xo_pwscf-opt}{P\+Wscf}
 \item \hyperlink{tut-xo_castep-opt}{C\+A\+S\+T\+E\+P}
+\item \hyperlink{tut-xo_siesta-opt}{S\+I\+E\+S\+T\+A}
 \end{DoxyItemize}
 \item \hyperlink{tut-xo_qisetup}{Queue setup}
 \begin{DoxyItemize}
 \item \hyperlink{tut-xo_remotepbs}{Using a remote P\+B\+S cluster}
 \item \hyperlink{tut-xo_remotesge}{Using a remote S\+G\+E cluster}
 \item \hyperlink{tut-xo_remoteslurm}{Using a remote S\+L\+U\+R\+M cluster}
+\item \hyperlink{tut-xo_remotelsf}{Using a remote L\+S\+F cluster}
+\item \hyperlink{tut-xo_remotell}{Using a remote Load\+Leveler cluster}
 \item \hyperlink{tut-xo_localqi}{Running optimations locally}
 \end{DoxyItemize}
 \item \hyperlink{tut-xo_files}{What is written to the local directory?}
@@ -23,11 +26,6 @@
 \item \hyperlink{tut-xo_prog-mon}{Monitor progress}
 \begin{DoxyItemize}
 \item \hyperlink{tut-xo_trends}{View trends}
-\end{DoxyItemize}
-\item \hyperlink{tut-xo_xo_tut_further}{Further reading}
-\begin{DoxyItemize}
-\item \hyperlink{optschemes}{Optimization Schemes}
-\item \hyperlink{xo_saveresume}{Saving and Resuming Sessions in Xtal\+Opt}
 \end{DoxyItemize}
 \end{DoxyItemize}\hypertarget{tut-xo_launch}{}\section{Launch Xtal\+Opt}\label{tut-xo_launch}
 Open avogadro, go to the \char`\"{}\+Extensions\char`\"{} menu and select \char`\"{}\+Xtal\+Opt\char`\"{}.\hypertarget{tut-xo_init}{}\section{Enter composition and restraints}\label{tut-xo_init}
@@ -38,7 +36,7 @@ Open avogadro, go to the \char`\"{}\+Extensions\char`\"{} menu and select \char`
 
 
 The interface opens to the \char`\"{}\+Structure Limits\char`\"{} tab, shown above. We will use a 6 formula unit supercell of titanium dioxide for this tutorial, so enter \char`\"{}\+Ti6 O12\char`\"{} for the cell composition. We will assume that we know nothing about the system and use very loose restraints. Set all cell length minima to 1 angstrom and maxima to 20 angstrom. Constrain the angles to be between 60 and 120 degrees, and the volume from between 1 and 500 cubic angstrom. Specify a minimum interatomic distance of 0.\+5 angstrom. (Note that due to the angle adjustment described in the C\+P\+C 2010 publication, 60-\/120 degrees is the largest range of cell angles that Xtal\+Opt will generate.)\hypertarget{tut-xo_opt}{}\section{Optimizer setup}\label{tut-xo_opt}
-Xtal\+Opt currently supports the \hyperlink{tut-xo_vasp-opt}{V\+A\+S\+P}, \hyperlink{tut-xo_gulp-opt}{G\+U\+L\+P}, \hyperlink{tut-xo_pwscf-opt}{P\+Wscf}, and \hyperlink{tut-xo_castep-opt}{C\+A\+S\+T\+E\+P} codes for performing geometry optimizations. Each is detailed in its own section below.\hypertarget{tut-xo_vasp-opt}{}\subsection{V\+A\+S\+P}\label{tut-xo_vasp-opt}
+Xtal\+Opt currently supports the \hyperlink{tut-xo_vasp-opt}{V\+A\+S\+P}, \hyperlink{tut-xo_gulp-opt}{G\+U\+L\+P}, \hyperlink{tut-xo_pwscf-opt}{P\+Wscf}, \hyperlink{tut-xo_castep-opt}{C\+A\+S\+T\+E\+P}, and \hyperlink{tut-xo_siesta-opt}{S\+I\+E\+S\+T\+A} codes for performing geometry optimizations. Each is detailed in its own section below.\hypertarget{tut-xo_vasp-opt}{}\subsection{V\+A\+S\+P}\label{tut-xo_vasp-opt}
  
 \begin{DoxyImageNoCaption}
   \mbox{\includegraphics[width=\textwidth]{opt-set-vasp.png}}
@@ -169,8 +167,38 @@ Xtal\+Opt expects C\+A\+S\+T\+E\+P to use the following filenames\+:
 castep xtal
 \textcolor{preprocessor}{# CASTEP will create xtal.castep}
 \end{DoxyCode}
+
+
+\hyperlink{tut-xo_qisetup}{Skip to next section.}\hypertarget{tut-xo_siesta-opt}{}\subsection{S\+I\+E\+S\+T\+A}\label{tut-xo_siesta-opt}
+ 
+\begin{DoxyImageNoCaption}
+  \mbox{\includegraphics[width=\textwidth]{opt-set-siesta.png}}
+\end{DoxyImageNoCaption}
+
+
+On the next tab we choose G\+U\+L\+P for the local optimizer and enter a template for S\+I\+E\+S\+T\+A to use. Select \char`\"{}\+S\+I\+E\+S\+T\+A\char`\"{} as the \char`\"{}\+Optimizer\char`\"{} and \char`\"{}xtal.\+fdf\char`\"{} as \char`\"{}\+Template\char`\"{}.
+
+Next, fill out the text field on the right with the following template\+:
+
+
+\begin{DoxyCode}
+\end{DoxyCode}
+
+
+Or load the optimization scheme by clicking the \char`\"{}\+Load Opt Scheme\char`\"{} button and selecting the \char`\"{}samples/siesta-\/xtalopt.\+scheme\char`\"{} file that is distributed with the source code.
+
+For more details on optimization schemes, see \hyperlink{optschemes}{Optimization Schemes}.
+
+After loading the optimization scheme, Xtal\+Opt will prompt for the xtal.\+psf files to use. Select files appropriated for the prompted atom. Xtal\+Opt will copy the individual files over to each structure directory when the calculation is submitted. See the S\+I\+E\+S\+T\+A manual for information on obtaining the .psf files.
+
+Notice the other keyword\% values in the xtal.\+fdf templates. These are used to enter information that is specific to a search or structure when the actual input files are written prior to job submission. Click the \char`\"{}\+Help\char`\"{} button for a full listing of the available keywords.
+
+Xtal\+Opt expects S\+I\+E\+S\+T\+A to use the following filenames\+:
+
+
+\begin{DoxyPre}siesta < xtal.fdf > xtal.out\end{DoxyPre}
 \hypertarget{tut-xo_qisetup}{}\section{Queue setup}\label{tut-xo_qisetup}
-Xtal\+Opt currently supports using the \hyperlink{tut-xo_remotepbs}{P\+B\+S}, \hyperlink{tut-xo_remotesge}{S\+G\+E}, and \hyperlink{tut-xo_remoteslurm}{S\+L\+U\+R\+M} queuing systems on remote S\+S\+H-\/accessible clusters, as well as an internal \hyperlink{tut-xo_localqi}{local} queue that manages calculations on the user\textquotesingle{}s workstation. Each queueing interface is detailed in its own section below.\hypertarget{tut-xo_remotepbs}{}\subsection{Using a remote P\+B\+S cluster}\label{tut-xo_remotepbs}
+Xtal\+Opt currently supports using the \hyperlink{tut-xo_remotepbs}{P\+B\+S}, \hyperlink{tut-xo_remotesge}{S\+G\+E}, \hyperlink{tut-xo_remoteslurm}{S\+L\+U\+R\+M}, \hyperlink{tut-xo_remotelsf}{L\+S\+F}, and \hyperlink{tut-xo_remotell}{Load\+Leveler} queuing systems on remote S\+S\+H-\/accessible clusters, as well as an internal \hyperlink{tut-xo_localqi}{local} queue that manages calculations on the user\textquotesingle{}s workstation. Each queueing interface is detailed in its own section below.\hypertarget{tut-xo_remotepbs}{}\subsection{Using a remote P\+B\+S cluster}\label{tut-xo_remotepbs}
  
 \begin{DoxyImageNoCaption}
   \mbox{\includegraphics[width=\textwidth]{opt-set-pbs.png}}
@@ -299,10 +327,58 @@ A new template, \char`\"{}job.\+slurm\char`\"{} is added to the list of availabl
 
 For more details on optimization schemes, see \hyperlink{optschemes}{Optimization Schemes}.
 
+\hyperlink{tut-xo_files}{Skip to next section.}\hypertarget{tut-xo_remotelsf}{}\subsection{Using a remote L\+S\+F cluster}\label{tut-xo_remotelsf}
+ 
+\begin{DoxyImageNoCaption}
+  \mbox{\includegraphics[width=\textwidth]{opt-set-lsf.png}}
+\end{DoxyImageNoCaption}
+
+
+Select \char`\"{}\+L\+S\+F\char`\"{} from the list of Queues, and then click the \char`\"{}\+Configure...\char`\"{} button. A new window will prompt for\+:
+\begin{DoxyItemize}
+\item host\+: The hostname of the L\+S\+F cluster\textquotesingle{}s head node
+\item user\+: The username used to log into the cluster
+\item Working directory (Server)\+: A directory that is readable/writable by \char`\"{}user\char`\"{} on the cluster, used when performing optimizations.
+\item Working directory (Local)\+: A directory that is readable/writable by the current user on the local computer. This is where the final structures and resume files are written.
+\begin{DoxyItemize}
+\item Description\+: Used for the description\% keyword in input templates.
+\item Path to bsub\+: Where to find the bsub executable on the remote cluster. Note that if bsub is in the cluster\textquotesingle{}s \$\+P\+A\+T\+H, setting this to just \textquotesingle{}bsub\textquotesingle{} will work.
+\item Path to bkill\+: Where to find the bkill executable on the remote cluster. Note that if bkill is in the cluster\textquotesingle{}s \$\+P\+A\+T\+H, setting this to just \textquotesingle{}bkill\textquotesingle{} will work.
+\item Path to bjobs\+: Where to find the bjobs executable on the remote cluster. Note that if bjobs is in the cluster\textquotesingle{}s \$\+P\+A\+T\+H, setting this to just \textquotesingle{}bjobs\textquotesingle{} will work.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+A new template, \char`\"{}job.\+lsf\char`\"{} is added to the list of available templates. This is the job submission script for L\+S\+F. It may take some experimentation to get jobs to submit successfully, and you may need to contact the mantainers of the cluster for assistance or information about M\+P\+I, executable locations, etc. Perhaps the easiest method to find the correct L\+S\+F script is to run some trial submissions by hand, and then replace the structure/search specific information with the appropriate keywords once a working script has been generated.
+
+For more details on optimization schemes, see \hyperlink{optschemes}{Optimization Schemes}.
+
+\hyperlink{tut-xo_files}{Skip to next section.}\hypertarget{tut-xo_remotell}{}\subsection{Using a remote Load\+Leveler cluster}\label{tut-xo_remotell}
+ 
+\begin{DoxyImageNoCaption}
+  \mbox{\includegraphics[width=\textwidth]{opt-set-ll.png}}
+\end{DoxyImageNoCaption}
+
+
+Select \char`\"{}\+Load\+Leveler\char`\"{} from the list of Queues, and then click the \char`\"{}\+Configure...\char`\"{} button. A new window will prompt for\+:
+\begin{DoxyItemize}
+\item host\+: The hostname of the Load\+Leveler cluster\textquotesingle{}s head node
+\item user\+: The username used to log into the cluster
+\item Working directory (Server)\+: A directory that is readable/writable by \char`\"{}user\char`\"{} on the cluster, used when performing optimizations.
+\item Working directory (Local)\+: A directory that is readable/writable by the current user on the local computer. This is where the final structures and resume files are written.
+\item Description\+: Used for the description\% keyword in input templates.
+\item Path to llsubmit\+: Where to find the llsubmit executable on the remote cluster. Note that if llsubmit is in the cluster\textquotesingle{}s \$\+P\+A\+T\+H, setting this to just \textquotesingle{}llsubmit\textquotesingle{} will work.
+\item Path to llcancel\+: Where to find the llcancel executable on the remote cluster. Note that if llcancel is in the cluster\textquotesingle{}s \$\+P\+A\+T\+H, setting this to just \textquotesingle{}llcancel\textquotesingle{} will work.
+\item Path to llq\+: Where to find the llq executable on the remote cluster. Note that if llq is in the cluster\textquotesingle{}s \$\+P\+A\+T\+H, setting this to just \textquotesingle{}llq\textquotesingle{} will work.
+\end{DoxyItemize}
+
+A new template, \char`\"{}job.\+ll\char`\"{} is added to the list of available templates. This is the job submission script for Load\+Leveler. It may take some experimentation to get jobs to submit successfully, and you may need to contact the mantainers of the cluster for assistance or information about M\+P\+I, executable locations, etc. Perhaps the easiest method to find the correct Load\+Leveler script is to run some trial submissions by hand, and then replace the structure/search specific information with the appropriate keywords once a working script has been generated.
+
+For more details on optimization schemes, see \hyperlink{optschemes}{Optimization Schemes}.
+
 \hyperlink{tut-xo_files}{Skip to next section.}\hypertarget{tut-xo_localqi}{}\subsection{Running optimations locally}\label{tut-xo_localqi}
  
 \begin{DoxyImageNoCaption}
-  \mbox{\includegraphics[width=\textwidth]{opt-set-local.png}}
+  \mbox{\includegraphics[width=.5\textwidth]{opt-set-local.png}}
 \end{DoxyImageNoCaption}
 
 
@@ -380,9 +456,4 @@ Another visualization and analysis tool available during the search is the inter
 
 A particularly useful plot is that of enthalpy vs. cell volume, as shown above. From this view, we see a general trend that enthalpy increases with volume (the effect is much more pronounced for systems at higher pressures), and also that below a certain volume enthalpy rises sharply. From this data set, we see that there is a cluster of very low enthalpy structures with cell volumes around 180 cubic angstroms. Armed with this data, we can update the starting volume on the Cell Initialization tab mid-\/run to reflect this new piece of information that the search has provided us. Many of the other parameters governing structure generation and algorithm specifics can be similarly modified during a search without the need to restart the algorithm.
 
-The plot is also interactive; zooming and panning are possible using simple mouse controls. Clicking on a structure\textquotesingle{}s point on the plot will load it in the main Avogadro window, allow all the same functionality as described above in \hyperlink{tut-xo_prog-mon}{Monitor progress}.\hypertarget{tut-xo_xo_tut_further}{}\section{Further reading}\label{tut-xo_xo_tut_further}
-From here, you may be interested in\+:
-\begin{DoxyItemize}
-\item \hyperlink{optschemes}{Optimization Schemes}
-\item \hyperlink{xo_saveresume}{Saving and Resuming Sessions in Xtal\+Opt} 
-\end{DoxyItemize}
+The plot is also interactive; zooming and panning are possible using simple mouse controls. Clicking on a structure\textquotesingle{}s point on the plot will load it in the main Avogadro window, allow all the same functionality as described above in \hyperlink{tut-xo_prog-mon}{Monitor progress}. 

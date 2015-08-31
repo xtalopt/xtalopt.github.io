@@ -34,14 +34,14 @@
   <link rel="apple-touch-icon-precomposed" href="../../dist/img/xtalopt-logo.png">
   <link rel="shortcut icon" href="../../dist/img/xtalopt-logo.png">
 </head>
-<body style="padding:0 0 0 0">
+<body style="padding:0 0 0 ">
   <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
-        <div class="navbar-header">
-          <button type="button" style="background-color:black" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-            <img src="../../dist/img/xtalopt-logo.png" width="25px">
-            <span style="color:grey;font-weight:bold;font-size:19px;vertical-align:text-top">Menu</span>
-          </button>
+      <div class="navbar-header">
+        <button style="border: 1px solid grey;border-radius:0px;" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <img src="../../dist/img/xtalopt-logo.png" width="25px" style="vertical-align:text-bottom">
+          <span style="color:grey;font-weight:bold;font-size:19px;vertical-align:text-bottom">Menu</span>
+        </button>
         </div>
         <div id="myNavbar" class="collapse navbar-collapse">
           <ul class="nav navbar-center">
@@ -49,7 +49,7 @@
             <li><a href="../../download.html">Downloads</a></li>
             <li><a href="../../install.html">Installation</a></li>
             <li><a href="../../pub.html">Publications</a></li>
-            <li class="active"><a href="annotated.html">API</a></li>
+            <li><a href="annotated.html">API</a></li>
             <li><a href="../../tut.html">Tutorial</a></li>
             <li><a href="http://xtalopt.openmolecules.net/xtalcomp/xtalcomp.html">XtalComp</a></li>
             <li><a href="../../other.html">Other</a></li>
@@ -119,12 +119,15 @@ Contents</h1>
 <li><a class="el" href="tut-xo.html#gulp-opt">GULP</a></li>
 <li><a class="el" href="tut-xo.html#pwscf-opt">PWscf</a></li>
 <li><a class="el" href="tut-xo.html#castep-opt">CASTEP</a></li>
+<li><a class="el" href="tut-xo.html#siesta-opt">SIESTA</a></li>
 </ul>
 </li>
 <li><a class="el" href="tut-xo.html#qisetup">Queue setup</a><ul>
 <li><a class="el" href="tut-xo.html#remotepbs">Using a remote PBS cluster</a></li>
 <li><a class="el" href="tut-xo.html#remotesge">Using a remote SGE cluster</a></li>
 <li><a class="el" href="tut-xo.html#remoteslurm">Using a remote SLURM cluster</a></li>
+<li><a class="el" href="tut-xo.html#remotelsf">Using a remote LSF cluster</a></li>
+<li><a class="el" href="tut-xo.html#remotell">Using a remote LoadLeveler cluster</a></li>
 <li><a class="el" href="tut-xo.html#localqi">Running optimations locally</a></li>
 </ul>
 </li>
@@ -133,11 +136,6 @@ Contents</h1>
 <li><a class="el" href="tut-xo.html#begin">"Begin"</a></li>
 <li><a class="el" href="tut-xo.html#prog-mon">Monitor progress</a><ul>
 <li><a class="el" href="tut-xo.html#trends">View trends</a></li>
-</ul>
-</li>
-<li><a class="el" href="tut-xo.html#xo_tut_further">Further reading</a><ul>
-<li><a class="el" href="optschemes.html">Optimization Schemes</a></li>
-<li><a class="el" href="xo_saveresume.html">Saving and Resuming Sessions in XtalOpt</a></li>
 </ul>
 </li>
 </ul>
@@ -152,7 +150,7 @@ Enter composition and restraints</h1>
  <p>The interface opens to the "Structure Limits" tab, shown above. We will use a 6 formula unit supercell of titanium dioxide for this tutorial, so enter "Ti6 O12" for the cell composition. We will assume that we know nothing about the system and use very loose restraints. Set all cell length minima to 1 angstrom and maxima to 20 angstrom. Constrain the angles to be between 60 and 120 degrees, and the volume from between 1 and 500 cubic angstrom. Specify a minimum interatomic distance of 0.5 angstrom. (Note that due to the angle adjustment described in the CPC 2010 publication, 60-120 degrees is the largest range of cell angles that XtalOpt will generate.)</p>
 <h1><a class="anchor" id="opt"></a>
 Optimizer setup</h1>
-<p>XtalOpt currently supports the <a class="el" href="tut-xo.html#vasp-opt">VASP</a>, <a class="el" href="tut-xo.html#gulp-opt">GULP</a>, <a class="el" href="tut-xo.html#pwscf-opt">PWscf</a>, and <a class="el" href="tut-xo.html#castep-opt">CASTEP</a> codes for performing geometry optimizations. Each is detailed in its own section below.</p>
+<p>XtalOpt currently supports the <a class="el" href="tut-xo.html#vasp-opt">VASP</a>, <a class="el" href="tut-xo.html#gulp-opt">GULP</a>, <a class="el" href="tut-xo.html#pwscf-opt">PWscf</a>, <a class="el" href="tut-xo.html#castep-opt">CASTEP</a>, and <a class="el" href="tut-xo.html#siesta-opt">SIESTA</a> codes for performing geometry optimizations. Each is detailed in its own section below.</p>
 <h2><a class="anchor" id="vasp-opt"></a>
 VASP</h2>
 <div class="image">
@@ -230,9 +228,22 @@ CASTEP</h2>
 <div class="fragment"><div class="line"><span class="preprocessor"># XtalOpt will write xtal.cell, xtal.param</span></div>
 <div class="line">castep xtal</div>
 <div class="line"><span class="preprocessor"># CASTEP will create xtal.castep</span></div>
-</div><!-- fragment --><h1><a class="anchor" id="qisetup"></a>
+</div><!-- fragment --><p><a class="el" href="tut-xo.html#qisetup">Skip to next section.</a></p>
+<h2><a class="anchor" id="siesta-opt"></a>
+SIESTA</h2>
+<div class="image">
+<img src="opt-set-siesta.png" alt="opt-set-siesta.png"/>
+</div>
+ <p>On the next tab we choose GULP for the local optimizer and enter a template for SIESTA to use. Select "SIESTA" as the "Optimizer" and "xtal.fdf" as "Template".</p>
+<p>Next, fill out the text field on the right with the following template:</p>
+<div class="fragment"></div><!-- fragment --><p>Or load the optimization scheme by clicking the "Load Opt Scheme" button and selecting the "samples/siesta-xtalopt.scheme" file that is distributed with the source code.</p>
+<p>For more details on optimization schemes, see <a class="el" href="optschemes.html">Optimization Schemes</a>.</p>
+<p>After loading the optimization scheme, XtalOpt will prompt for the xtal.psf files to use. Select files appropriated for the prompted atom. XtalOpt will copy the individual files over to each structure directory when the calculation is submitted. See the SIESTA manual for information on obtaining the .psf files.</p>
+<p>Notice the other keyword% values in the xtal.fdf templates. These are used to enter information that is specific to a search or structure when the actual input files are written prior to job submission. Click the "Help" button for a full listing of the available keywords.</p>
+<p>XtalOpt expects SIESTA to use the following filenames:</p>
+<pre>siesta &lt; xtal.fdf &gt; xtal.out</pre><h1><a class="anchor" id="qisetup"></a>
 Queue setup</h1>
-<p>XtalOpt currently supports using the <a class="el" href="tut-xo.html#remotepbs">PBS</a>, <a class="el" href="tut-xo.html#remotesge">SGE</a>, and <a class="el" href="tut-xo.html#remoteslurm">SLURM</a> queuing systems on remote SSH-accessible clusters, as well as an internal <a class="el" href="tut-xo.html#localqi">local</a> queue that manages calculations on the user's workstation. Each queueing interface is detailed in its own section below.</p>
+<p>XtalOpt currently supports using the <a class="el" href="tut-xo.html#remotepbs">PBS</a>, <a class="el" href="tut-xo.html#remotesge">SGE</a>, <a class="el" href="tut-xo.html#remoteslurm">SLURM</a>, <a class="el" href="tut-xo.html#remotelsf">LSF</a>, and <a class="el" href="tut-xo.html#remotell">LoadLeveler</a> queuing systems on remote SSH-accessible clusters, as well as an internal <a class="el" href="tut-xo.html#localqi">local</a> queue that manages calculations on the user's workstation. Each queueing interface is detailed in its own section below.</p>
 <h2><a class="anchor" id="remotepbs"></a>
 Using a remote PBS cluster</h2>
 <div class="image">
@@ -327,6 +338,44 @@ Using a remote SLURM cluster</h2>
 <p>A new template, "job.slurm" is added to the list of available templates. This is the job submission script for SLURM. It may take some experimentation to get jobs to submit successfully, and you may need to contact the mantainers of the cluster for assistance or information about MPI, executable locations, etc. Perhaps the easiest method to find the correct SLURM script is to run some trial submissions by hand, and then replace the structure/search specific information with the appropriate keywords once a working script has been generated.</p>
 <p>For more details on optimization schemes, see <a class="el" href="optschemes.html">Optimization Schemes</a>.</p>
 <p><a class="el" href="tut-xo.html#files">Skip to next section.</a></p>
+<h2><a class="anchor" id="remotelsf"></a>
+Using a remote LSF cluster</h2>
+<div class="image">
+<img src="opt-set-lsf.png" alt="opt-set-lsf.png"/>
+</div>
+ <p>Select "LSF" from the list of Queues, and then click the "Configure..." button. A new window will prompt for:</p><ul>
+<li>host: The hostname of the LSF cluster's head node</li>
+<li>user: The username used to log into the cluster</li>
+<li>Working directory (Server): A directory that is readable/writable by "user" on the cluster, used when performing optimizations.</li>
+<li>Working directory (Local): A directory that is readable/writable by the current user on the local computer. This is where the final structures and resume files are written.<ul>
+<li>Description: Used for the description% keyword in input templates.</li>
+<li>Path to bsub: Where to find the bsub executable on the remote cluster. Note that if bsub is in the cluster's $PATH, setting this to just 'bsub' will work.</li>
+<li>Path to bkill: Where to find the bkill executable on the remote cluster. Note that if bkill is in the cluster's $PATH, setting this to just 'bkill' will work.</li>
+<li>Path to bjobs: Where to find the bjobs executable on the remote cluster. Note that if bjobs is in the cluster's $PATH, setting this to just 'bjobs' will work.</li>
+</ul>
+</li>
+</ul>
+<p>A new template, "job.lsf" is added to the list of available templates. This is the job submission script for LSF. It may take some experimentation to get jobs to submit successfully, and you may need to contact the mantainers of the cluster for assistance or information about MPI, executable locations, etc. Perhaps the easiest method to find the correct LSF script is to run some trial submissions by hand, and then replace the structure/search specific information with the appropriate keywords once a working script has been generated.</p>
+<p>For more details on optimization schemes, see <a class="el" href="optschemes.html">Optimization Schemes</a>.</p>
+<p><a class="el" href="tut-xo.html#files">Skip to next section.</a></p>
+<h2><a class="anchor" id="remotell"></a>
+Using a remote LoadLeveler cluster</h2>
+<div class="image">
+<img src="opt-set-ll.png" alt="opt-set-ll.png"/>
+</div>
+ <p>Select "LoadLeveler" from the list of Queues, and then click the "Configure..." button. A new window will prompt for:</p><ul>
+<li>host: The hostname of the LoadLeveler cluster's head node</li>
+<li>user: The username used to log into the cluster</li>
+<li>Working directory (Server): A directory that is readable/writable by "user" on the cluster, used when performing optimizations.</li>
+<li>Working directory (Local): A directory that is readable/writable by the current user on the local computer. This is where the final structures and resume files are written.</li>
+<li>Description: Used for the description% keyword in input templates.</li>
+<li>Path to llsubmit: Where to find the llsubmit executable on the remote cluster. Note that if llsubmit is in the cluster's $PATH, setting this to just 'llsubmit' will work.</li>
+<li>Path to llcancel: Where to find the llcancel executable on the remote cluster. Note that if llcancel is in the cluster's $PATH, setting this to just 'llcancel' will work.</li>
+<li>Path to llq: Where to find the llq executable on the remote cluster. Note that if llq is in the cluster's $PATH, setting this to just 'llq' will work.</li>
+</ul>
+<p>A new template, "job.ll" is added to the list of available templates. This is the job submission script for LoadLeveler. It may take some experimentation to get jobs to submit successfully, and you may need to contact the mantainers of the cluster for assistance or information about MPI, executable locations, etc. Perhaps the easiest method to find the correct LoadLeveler script is to run some trial submissions by hand, and then replace the structure/search specific information with the appropriate keywords once a working script has been generated.</p>
+<p>For more details on optimization schemes, see <a class="el" href="optschemes.html">Optimization Schemes</a>.</p>
+<p><a class="el" href="tut-xo.html#files">Skip to next section.</a></p>
 <h2><a class="anchor" id="localqi"></a>
 Running optimations locally</h2>
 <div class="image">
@@ -378,18 +427,12 @@ View trends</h2>
 The ``Plot'' tab mid-run displaying enthalpy vs. volume. Each structure is labeled with its Hermann Mauguin spacegroup symbol.</div></div>
 <p>Another visualization and analysis tool available during the search is the interactive plot. The plot is capable of investigating trends in the search by plotting a point for each individual using structure number, generation number, enthalpy, energy, $PV$ enthalpy term, lattice parameters, or cell volume on either axis. This powerful feature allows the user to visualize complex relationships present in the generated structures. E.g., a plot of enthalpy vs. structure number provides an overview of the search's progress. Or, recalling that H = U + PV, plotting enthalpy vs. PV enthalpy term or energy lends insight into whether the enthalpy (H) is dominated by atomic interactions (U) or cell parameters (PV). Further information is available by labeling the points with the individual's spacegroup number, Hermann Mauguin spacegroup symbol, enthalpy, energy, PV term, volume, generation, or index number.</p>
 <p>A particularly useful plot is that of enthalpy vs. cell volume, as shown above. From this view, we see a general trend that enthalpy increases with volume (the effect is much more pronounced for systems at higher pressures), and also that below a certain volume enthalpy rises sharply. From this data set, we see that there is a cluster of very low enthalpy structures with cell volumes around 180 cubic angstroms. Armed with this data, we can update the starting volume on the Cell Initialization tab mid-run to reflect this new piece of information that the search has provided us. Many of the other parameters governing structure generation and algorithm specifics can be similarly modified during a search without the need to restart the algorithm.</p>
-<p>The plot is also interactive; zooming and panning are possible using simple mouse controls. Clicking on a structure's point on the plot will load it in the main Avogadro window, allow all the same functionality as described above in <a class="el" href="tut-xo.html#prog-mon">Monitor progress</a>.</p>
-<h1><a class="anchor" id="xo_tut_further"></a>
-Further reading</h1>
-<p>From here, you may be interested in:</p><ul>
-<li><a class="el" href="optschemes.html">Optimization Schemes</a></li>
-<li><a class="el" href="xo_saveresume.html">Saving and Resuming Sessions in XtalOpt</a> </li>
-</ul>
+<p>The plot is also interactive; zooming and panning are possible using simple mouse controls. Clicking on a structure's point on the plot will load it in the main Avogadro window, allow all the same functionality as described above in <a class="el" href="tut-xo.html#prog-mon">Monitor progress</a>. </p>
 </div></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.6-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jun 23 2015 13:36:32 for GlobalSearch by<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 31 2015 13:43:21 for GlobalSearch by<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

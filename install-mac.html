@@ -8,7 +8,7 @@
   <meta name="author" content="Zackary Falls">
   <link rel="icon" href="img/xtalopt-logo.png">
   <title>
-      XtalOpt - Windows Install
+      XtalOpt - Mac OS X Install
   </title>
 
   <!-- Scripts -->
@@ -68,13 +68,11 @@
     <div class="jumbotron">
       <h2 class="text">Installation for Mac OS X</h2>
       <hr>
-      <h2 id="Anoteonversions">A note on versions...</h2>
+      <h3 id="Dependencies">Dependencies</h3>
+      <hr>
       <p>
-        Installation of XtalOpt itself is a trivial task once the proper dependencies are in place. XtalOpt <strong>requires</strong> development versions of several other packages -- <strong>If a development package is specifed below, do not try to use non-development versions</strong>; they will not work. The instructions on this page walk through the steps of installing XtalOpt on your Mac OS X system.
+        First, and foremost, Mac OS X users must install <a class="ext-link" href="https://developer.apple.com/xcode/">Xcode</a> to begin compiling the following programs.
       </p>
-      <hr>
-      <h2 id="Dependencies">Dependencies</h2>
-      <hr>
       <p>
         The following dependencies can be installed from the package manager <a class="ext-link" href="https://www.macports.org">MacPorts</a> or <a class="ext-link" href="http://brew.sh/">Homebrew</a>:
       </p>
@@ -85,32 +83,21 @@
         <li><tt>git</tt>, any version</li>
       </ul>
 
-      <h3 id="SourceDependencies">Source Dependencies</h3>
+     
       <p>
-        The following <strong>must</strong> be built from the development sources:
-      </p>
-      <ul style="list-style-type:none"><li><tt>OpenBabel</tt>, svn trunk: (<a class="ext-link" href="http://openbabel.org/wiki/Subversion"><span class="icon"> </span>info</a>, <a class="ext-link" href="http://openbabel.org/wiki/Install_%28source_code%29"><span class="icon"> </span>instructions</a>)</li>
-        <li><tt>Avogadro</tt>, <a class="ext-link" href="http://github.com/dlonie/avogadro"><span class="icon"> </span>dlonie's GitHub fork</a>: <a class="ext-link" href="http://avogadro.openmolecules.net/wiki/Compiling_on_Linux_and_Mac_OS_X"><span class="icon"> </span>installation instructions</a></li>
-      </ul>
-      <p>
-        <em>Remember to uninstall any non-development installations of OpenBabel and Avogadro before installing the development versions.<strong>
-    </strong></em>
-      </p>
-      <hr>
-      <h2 id="Instructions">Instructions</h2>
-      <hr>
-      <h3 id="EasyDependencies1">"Easy" Dependencies</h3>
-      <p>
-      <a class="ext-link" href="https://developer.apple.com/xcode/">Xcode</a> must be installed on your machine.
-
       Using the package manager for your mac distribution, install the dependencies listed above. For example, using <a class="ext-link" href="https://www.macports.org">MacPorts</a>,
       </p>
-      <pre class="wiki">port install cmake git eigen qt4-mac cairo libssh openssh</pre>
+      
+      <pre class="wiki">port install cmake git eigen qt4-mac cairo libssh</pre>
+
       <p>
-      Other pacakge managers are available for mac distributions.
+        or using <a class="ext-link" href="http://brew.sh/">Homebrew</a>,
       </p>
+
+      <pre class="wiki">brew install cmake git eigen qt cairo libssh</pre>
+
       <hr>
-      <h2 id="SourceInstallations">Source Installations</h2>
+      <h3 id="SourceInstallations">Source Installations</h3>
       <hr>
       <h3 id="OpenBabel">OpenBabel</h3>
       <p>
@@ -141,7 +128,7 @@ cd openbabel/build</pre>
       <p>
         Configure OpenBabel:
       </p>
-      <pre class="wiki">cmake .. -DCMAKE_INSTALL_PREFIX=$HOME</pre>
+      <pre class="wiki">cmake .. -DCMAKE_CXX_FLAGS=-stdlib=libstdc++ -DCMAKE_INSTALL_PREFIX=$HOME -DBUILD_GUI=FALSE</pre>
       <p>
         Compile and install:
       </p>
@@ -154,7 +141,7 @@ make install</pre>
       <hr>
       <h3 id="Avogadro">Avogadro</h3>
       <p>
-        Next, Avogadro must be installed. The dlonie GitHub fork of Avogadro is used below, and is recommended to ensure that XtalOpt and Avogadro work together.
+        Next, Avogadro must be installed. 
       </p>
       <p>
     <em>Remember to uninstall any non-development installations of OpenBabel and Avogadro before installing the development versions.<strong>
@@ -166,7 +153,7 @@ make install</pre>
     <p>
     Check out the dlonie Avogadro branch from GitHub:
     </p>
-    <pre class="wiki">git clone git://github.com/cryos/avogadro.git avogadro</pre>
+    <pre class="wiki">git clone git://github.com/cryos/avogadro.git</pre>
     <p>
     Just like with OpenBabel, make a build directory and enter it:
     </p>
@@ -175,7 +162,7 @@ cd avogadro/build</pre>
     <p>
     Configure, build, and install Avogadro:
     </p>
-    <pre class="wiki">cmake .. -DOPENBABEL2_INCLUDE_DIR=$HOME/include/openbabel-2.0 -DOPENBABEL2_LIBRARIES=$HOME/lib/libopenbabel.so -DOPENBABEL2_VERSION_MET=true -DOPENBABEL_IS_NEWER_THAN_2_2_99=true -DENABLE_PYTHON=false -DCMAKE_INSTALL_PREFIX=$HOME
+    <pre class="wiki">cmake .. -DCMAKE_CXX_FLAGS=-stdlib=libstdc++ -DOPENBABEL2_INCLUDE_DIR=$HOME/include/openbabel-2.0 -DOPENBABEL2_LIBRARIES=$HOME/lib/libopenbabel.4.0.0.dylib -DOPENBABEL2_VERSION_MET=true -DOPENBABEL_IS_NEWER_THAN_2_2_99=true -DENABLE_PYTHON=false -DCMAKE_INSTALL_PREFIX=$HOME
 make -j3
 make install</pre>
     <hr>
@@ -200,7 +187,7 @@ cd xtalopt/build</pre>
     <p>
     Configure, build, and install:
     </p>
-    <pre class="wiki">cmake .. -DOPENBABEL2_INCLUDE_DIR=$HOME/include/openbabel-2.0 -DOPENBABEL2_LIBRARIES=$HOME/lib/libopenbabel.so -DOPENBABEL2_VERSION_MET=true -DOPENBABEL_IS_NEWER_THAN_2_2_99=true -DCMAKE_INSTALL_PREFIX=$HOME
+    <pre class="wiki">cmake .. -DCMAKE_CXX_FLAGS=-stdlib=libstdc++ -DOPENBABEL2_INCLUDE_DIR=$HOME/include/openbabel-2.0 -DOPENBABEL2_LIBRARIES=$HOME/lib/libopenbabel.4.0.0.dylib -DOPENBABEL2_VERSION_MET=true -DOPENBABEL_IS_NEWER_THAN_2_2_99=true -DCMAKE_INSTALL_PREFIX=$HOME
 make -j3
 make install</pre>
     <p>
@@ -224,12 +211,13 @@ make install</pre>
     <p>
     To use XtalOpt, you need to run the avogadro executable installed above. There are two ways to do this:
     </p>
-    <ol align="left"><li>Run <tt>$HOME/bin/avogadro</tt> from a terminal, or
-        </li><li>Add <tt>$HOME/bin</tt> to your $PATH environment variable and then just run <tt>avogadro</tt>.
-    </li></ol>
+    <ol align="left">
+        <li>Run <tt>/Applications/Avogadro.app/bin/avogadro</tt> from a terminal, or</li>
+        <li>Add <tt>/Applications/Avogadro.app/bin</tt> to your $PATH environment variable and then just run <tt>avogadro</tt>.</li>
+    </ol>
     <br>
       <p>
-        Once Avogadro is running, check for "Crystal Optimization..." in the Extensions menu. If you see it, the installation completed successfully.
+        Once Avogadro is running, check for "XtalOpt" in the "Extensions" menu. If you see it, the installation completed successfully.
       </p>
     </div>
   </div>

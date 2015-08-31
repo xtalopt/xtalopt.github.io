@@ -11,19 +11,22 @@ namespace XtalOpt {
     - \ref gulp-opt
     - \ref pwscf-opt
     - \ref castep-opt
+    - \ref siesta-opt
   - \ref qisetup
     - \ref remotepbs
     - \ref remotesge
     - \ref remoteslurm
+    - \ref remotelsf
+    - \ref remotell
     - \ref localqi
   - \ref files
   - \ref search-set
   - \ref begin
   - \ref prog-mon
     - \ref trends
-  - \ref xo_tut_further
-    - \ref optschemes
-    - \ref xo_saveresume
+
+
+
 
 @section launch Launch XtalOpt
 Open avogadro, go to the "Extensions" menu and select
@@ -47,7 +50,7 @@ the largest range of cell angles that XtalOpt will generate.)
 @section opt Optimizer setup
 
 XtalOpt currently supports the \ref vasp-opt, \ref gulp-opt, \ref
-pwscf-opt, and \ref castep-opt codes for performing geometry
+pwscf-opt, \ref castep-opt, and \ref siesta-opt codes for performing geometry
 optimizations. Each is detailed in its own section below.
 
 @subsection vasp-opt VASP
@@ -58,8 +61,7 @@ On the next tab, load the optimization scheme by clicking the "Load
 Opt Scheme" button and selecting the "samples/vasp-xtalopt.scheme"
 file that is distributed with the source code. If you do not have a
 copy of the source code, the scheme file can be obtained by clicking
-the "Original Format" link at the bottom of the page <a
-href="http://xtalopt.openmolecules.net/wiki/index.fcgi/browser/samples/vasp-xtalopt.scheme">
+the <a href="http://xtalopt.github.io/samples/vasp-xtalopt.scheme">
 here</a>.
 
 For more details on optimization schemes, see \ref optschemes.
@@ -119,9 +121,7 @@ Ti O  1 0 15
 
 Alternatively, one can load the scheme file distributed with the
 source code under samples/gulp-TiO-xtalopt.scheme. If the source code
-is not available, the scheme file can be obtained by clicking the
-"Original Format" link at the bottom of the page <a
-href="http://xtalopt.openmolecules.net/wiki/index.fcgi/browser/samples/gulp-TiO-xtalopt.scheme">
+is not available, the scheme file can be obtained by clicking <a href="http://xtalopt.github.io/samples/gulp-TiO-xtalopt.scheme">
 here</a>.
 
 For more details on optimization schemes, see \ref optschemes.
@@ -152,7 +152,7 @@ the source code under the samples/ directory. The scheme that we want
 is named "pwscf-xtalopt.scheme". If the source code is not available,
 the scheme file can be obtained by clicking the "Original Format" link
 at the bottom of the page <a
-href="http://xtalopt.openmolecules.net/wiki/index.fcgi/browser/samples/pwscf-xtalopt.scheme">
+href="http://xtalopt.github.io/samples/pwscf-xtalopt.scheme">
 here</a>.
 
 For more details on optimization schemes, see \ref optschemes.
@@ -197,7 +197,7 @@ the source code under the samples/ directory. The scheme that we want
 is named "castep-xtalopt.scheme". If the source code is not available,
 the scheme file can be obtained by clicking the "Original Format" link
 at the bottom of the page <a
-href="http://xtalopt.openmolecules.net/wiki/index.fcgi/browser/samples/castep-xtalopt.scheme">
+href="http://xtalopt.github.io/samples/castep-xtalopt.scheme">
 here</a>.
 
 For more details on optimization schemes, see \ref optschemes.
@@ -243,10 +243,39 @@ castep xtal
 # CASTEP will create xtal.castep
 \endcode
 
+\ref qisetup "Skip to next section."
+
+@subsection siesta-opt SIESTA
+\image html opt-set-siesta.png
+\image latex opt-set-siesta.png width=\textwidth
+
+On the next tab we choose GULP for the local optimizer and enter a template for SIESTA to use. Select "SIESTA" as the "Optimizer" and "xtal.fdf" as "Template".
+    
+Next, fill out the text field on the right with the following template:
+
+@code
+@endcode
+
+Or load the optimization scheme by clicking the "Load Opt Scheme" button and selecting the "samples/siesta-xtalopt.scheme" file that is distributed with the source code.
+
+For more details on optimization schemes, see \ref optschemes.
+
+ <p>After loading the optimization scheme, XtalOpt will prompt for the xtal.psf files to use. Select files appropriated for the prompted atom. XtalOpt will copy the individual files over to each structure directory when the calculation is submitted. See the SIESTA manual for information on obtaining the .psf files.</p>
+ 
+ <p>Notice the other %keyword% values in the xtal.fdf templates. These are used to enter information that is specific to a search or structure when the actual input files are written prior to job submission. Click the "Help" button for a full listing of the available keywords.</p>
+
+ <p>XtalOpt expects SIESTA to use the following filenames:</p>
+
+ <pre>siesta < xtal.fdf > xtal.out</pre>
+
+ </div>
+
+
+
 @section qisetup Queue setup
 
 XtalOpt currently supports using the \ref remotepbs "PBS", \ref
-remotesge "SGE", and \ref remoteslurm "SLURM" queuing systems on
+remotesge "SGE", \ref remoteslurm "SLURM", \ref remotelsf "LSF", and \ref remotell "LoadLeveler" queuing systems on
 remote SSH-accessible clusters, as well as an internal \ref localqi
 "local" queue that manages calculations on the user's
 workstation. Each queueing interface is detailed in its own section
@@ -423,9 +452,49 @@ For more details on optimization schemes, see \ref optschemes.
 
 \ref files "Skip to next section."
 
+@subsection remotelsf Using a remote LSF cluster
+\image html opt-set-lsf.png
+\image latex opt-set-lsf.png width=\textwidth
+
+Select "LSF" from the list of Queues, and then click the "Configure..." button. A new window will prompt for:
+    - host: The hostname of the LSF cluster's head node
+    - user: The username used to log into the cluster
+    - Working directory (Server): A directory that is readable/writable by "user" on the cluster, used when performing optimizations.
+    - Working directory (Local): A directory that is readable/writable by the current user on the local computer. This is where the final structures and resume files are written.
+	- Description: Used for the %description% keyword in input templates.
+	- Path to bsub: Where to find the bsub executable on the remote cluster. Note that if bsub is in the cluster's $PATH, setting this to just 'bsub' will work.
+	- Path to bkill: Where to find the bkill executable on the remote cluster. Note that if bkill is in the cluster's $PATH, setting this to just 'bkill' will work.
+	- Path to bjobs: Where to find the bjobs executable on the remote cluster. Note that if bjobs is in the cluster's $PATH, setting this to just 'bjobs' will work.
+
+A new template, "job.lsf" is added to the list of available templates. This is the job submission script for LSF. It may take some experimentation to get jobs to submit successfully, and you may need to contact the mantainers of the cluster for assistance or information about MPI, executable locations, etc. Perhaps the easiest method to find the correct LSF script is to run some trial submissions by hand, and then replace the structure/search specific information with the appropriate keywords once a working script has been generated.
+
+For more details on optimization schemes, see \ref optschemes.
+
+\ref files "Skip to next section."
+
+@subsection remotell Using a remote LoadLeveler cluster
+\image html opt-set-ll.png
+\image latex opt-set-ll.png width=\textwidth
+
+Select "LoadLeveler" from the list of Queues, and then click the "Configure..." button. A new window will prompt for:
+	- host: The hostname of the LoadLeveler cluster's head node
+	- user: The username used to log into the cluster
+	- Working directory (Server): A directory that is readable/writable by "user" on the cluster, used when performing optimizations.
+	- Working directory (Local): A directory that is readable/writable by the current user on the local computer. This is where the final structures and resume files are written.
+	- Description: Used for the %description% keyword in input templates.
+	- Path to llsubmit: Where to find the llsubmit executable on the remote cluster. Note that if llsubmit is in the cluster's $PATH, setting this to just 'llsubmit' will work.
+	- Path to llcancel: Where to find the llcancel executable on the remote cluster. Note that if llcancel is in the cluster's $PATH, setting this to just 'llcancel' will work.
+	- Path to llq: Where to find the llq executable on the remote cluster. Note that if llq is in the cluster's $PATH, setting this to just 'llq' will work.
+
+A new template, "job.ll" is added to the list of available templates. This is the job submission script for LoadLeveler. It may take some experimentation to get jobs to submit successfully, and you may need to contact the mantainers of the cluster for assistance or information about MPI, executable locations, etc. Perhaps the easiest method to find the correct LoadLeveler script is to run some trial submissions by hand, and then replace the structure/search specific information with the appropriate keywords once a working script has been generated.
+
+For more details on optimization schemes, see \ref optschemes.
+
+\ref files "Skip to next section."
+
 @subsection localqi Running optimations locally
 \image html opt-set-local.png
-\image latex opt-set-local.png width=\textwidth
+\image latex opt-set-local.png width=.5\textwidth
 
 Select "Local" from the list of Queues, and then click the configure
 button. A new window will prompt for:
@@ -484,6 +553,8 @@ control for us. If running locally, set the job limit no higher than
 processor, allow three jobs to run simultaneously). This allows one
 core to remain free for the system to run.
 
+There is now a termination criteria called "Total Number of Structures" that will end the run once a certain number of strcutures have been produced by XtalOpt.
+
 \section begin "Begin"
 \image html prog-start.png "The ``Progress'' tab immediately after starting a search"
 \image latex prog-start.png "The ``Progress'' tab immediately after starting a search" width=\textwidth
@@ -505,10 +576,10 @@ it is stopped by the user.
 As XtalOpt performs the search, the progress table continuously
 updates, providing information about each structure. We see
 individuals in various stages of completion: most are optimized (in
-yellow), structure 2x7 has been automatically marked as a duplicate
+blue), structure 2x7 has been automatically marked as a duplicate
 (dark green) of structure 3x3 and removed from the breeding pool,
 structure 4x4 is currently undergoing a local optimization (light
-green), while structure 4x5 is waiting to be optimized (blue).
+green), while structure 4x5 is waiting to be optimized (light blue).
 
 Other useful information is displayed about each structure, such as
 the time spent in optimization, the optimized enthalpy, the cell
@@ -529,6 +600,8 @@ the progress table. The context menu provides tools to (un)kill a
 structure, resubmit for local optimization at an arbitrary
 optimization step, or replace a problematic structure with a new,
 random individual.
+
+Three additional buttons found near the "Refresh All" button in this tab are also available. The "Print Results File" button generates a run-results.txt file that lists all of the information about each structure in order of generation and structure number (As compared to the results.txt file which ranks the structures). The "Remove Extra Files" button is used for VASP runs. It removes any extraneous files in each local subdirectory in order to reduce disk usage. Files kept are structure.state, POTCAR, CONTCAR, OSZICAR, job.slurm and OUTCAR. Finally, the "Rank All" button ranks all currently optimized structures and exports them to a subdirectory (Ranked) in two forms (depending on the optimizer): POSCAR/.got and .cif. Each can be found in separate directories. (Only works for GULP and VASP runs currently).
 
 \subsection trends View trends
 \image html trend-view.png "The ``Plot'' tab mid-run displaying enthalpy vs. volume. Each structure is labeled with its Hermann Mauguin spacegroup symbol."
@@ -567,11 +640,6 @@ simple mouse controls. Clicking on a structure's point on the plot
 will load it in the main Avogadro window, allow all the same
 functionality as described above in \ref prog-mon.
 
-@section xo_tut_further Further reading
-
-From here, you may be interested in:
-  - \ref optschemes
-  - \ref xo_saveresume
 
 */
 

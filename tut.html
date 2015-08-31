@@ -49,6 +49,10 @@
     <div class="container">
       <div class="jumbotron">
         <h1>XtalOpt Tutorial</h1>
+      <br>
+        <p>
+        PDF format available <a class="el" target="_blank" href="docs/latex/refman.pdf">here</a>
+        </p>
       </div>
       
       <br>
@@ -83,10 +87,30 @@
                 <li><a class="el" href="tut.html#trends">View trends</a></li>
             </ul>
             </li>
-            <li><a class="el" href="tut.html#xo_tut_further">Further reading</a><ul>
-                <li><a class="el" href="optschemes.html">Optimization Schemes</a></li>
-                <li><a class="el" href="xo__saveresume.html">Saving and Resuming Sessions in XtalOpt</a></li>
-            </ul>
+            <li><a class="el" href="tut.html#optschemes">Optimization Schemes</a></li>
+            <ul>
+                <li><a class="el" href="tut.html#quick-over">In a nutshell..</a></li>
+                <li><a class="el" href="tut.html#detailed-over">More details</a></li>
+</li>
+<li><a class="el" href="tut.html#gui">Optimization scheme user interface</a><ul>
+<li><a class="el" href="tut.html#gui-list">Optimization step list</a></li>
+<li><a class="el" href="tut.html#gui-add">Add new optimization step</a></li>
+<li><a class="el" href="tut.html#gui-rem">Remove current optimization step</a></li>
+<li><a class="el" href="tut.html#gui-tselect">Select template</a></li>
+<li><a class="el" href="tut.html#gui-editor">Template editor</a></li>
+<li><a class="el" href="tut.html#gui-save">Save scheme</a></li>
+<li><a class="el" href="tut.html#gui-load">Resume scheme</a></li>
+</ul>
+</li>
+<li><a class="el" href="tut.html#creating">How to build an optimization scheme?</a></li>
+<li><a class="el" href="tut.html#saving">How to save an optimization scheme for later?</a></li>
+<li><a class="el" href="tut.html#loading">How to load an optimization scheme?</a></li>
+<li><a class="el" href="tut.html#format">What is saved?</a></li>
+<li><a class="el" href="tut.html#suggest">Suggestions for optimization schemes</a><ul>
+<li><a class="el" href="tut.html#sug-xtal">Crystals (XtalOpt)</a></li>
+</ul>
+</li>
+   </ul>             
             <li><a class="el" href="tut.html#sr">Saving and Resuming Sessions in XtalOpt</a><ul>
                 <li><a class="el" href="tut.html#sr_saving">How to save your session</a></li>
                 <li><a class="el" href="tut.html#sr_resuming">How to resume your session</a></li>
@@ -141,7 +165,7 @@
         <p>
         On the next tab, load the optimization scheme by clicking the "Load
 Opt Scheme" button and selecting the "samples/vasp-xtalopt.scheme" file that is distributed with the source code. If you do not have a copy of the source code, the scheme file can be obtained by clicking the "Original Format" link at the bottom of the page <a href="samples/vasp-xtalopt.scheme">here</a>.</p>
-<p>For more details on optimization schemes, see optschemes.</p>
+<p>For more details on optimization schemes, see <a class="el" href="tut.html#optschemes">optschemes</a>.</p>
 <p>After loading the optimization scheme, XtalOpt will prompt for the POTCAR files to use. Select files appropriated for the prompted atom. XtalOpt will construct the POTCAR files on the local computer, and then copy them over to the cluster when the calculation is submitted. It is necessary to have the VASP POTCAR files for each atomic species located somewhere on the local computer. See the VASP manual for information on obtaining the POTCAR files.</p>
 <p>Take a moment to look through each file for each optimization step. Notice that the INCAR template includes two user-specified values, %user2% and %user3% for the external pressure and the energy cutoff, respectively. By entering appropriate values in the "user2:" and "user3:" fields on the left, it is easy to update these values for all optimization steps.</p>
 <p>Notice the other %keyword% values in the job.pbs templates. These are used to enter information that is specific to a search or structure when the actual input files are written prior to job submission. Click the "Help" button for a full listing of the available keywords.</p>
@@ -186,10 +210,10 @@ lennard 12 6
  <br>
 
  <p>
- Alternatively, one can load the scheme file distributed with the source code under samples/gulp-TiO-xtalopt.scheme. If the source code is not available, the scheme file can be obtained by clicking the "Original Format" link at the bottom of the page <a href="http://xtalopt.openmolecules.net/wiki/index.fcgi/browser/samples/gulp-TiO-xtalopt.scheme">here</a>.
+ Alternatively, one can load the scheme file distributed with the source code under samples/gulp-TiO-xtalopt.scheme. If the source code is not available, the scheme file can be obtained by clicking <a href="samples/gulp-TiO-xtalopt.scheme">here</a>.
  </p>
  <p>
- For more details on optimization schemes, see optschemes.
+ For more details on optimization schemes, see <a class="el" href="tut.html#optschemes">optschemes</a>.
  </p>
 <p>
 Note the "%" surrounding various keywords. These will be replaced by the structure-specific data when the optimizer is invoked for each structure. Click "Help" to view all of the keywords available. The number of optimization steps can be modified with the "Add/Resume" buttons. The "user" fields in the lower left corner allow users to specify their own keyword/value pairs, which is useful for making changes to multiple optimization steps at once. We will only be using one optimization step in this tutorial.
@@ -214,8 +238,8 @@ XtalOpt expects GULP to use the following filenames:
 <img src="dist/img/opt-set-pwscf.png" alt="opt-set-pwscf.png" width="80%">
         <br>
         <br>
- <p>On the next tab, load the optimization scheme that is distributed with the source code under the samples/ directory. The scheme that we want is named "pwscf-xtalopt.scheme". If the source code is not available, the scheme file can be obtained by clicking the "Original Format" link at the bottom of the page <a href="http://xtalopt.openmolecules.net/wiki/index.fcgi/browser/samples/pwscf-xtalopt.scheme">here</a>.</p>
-<p>For more details on optimization schemes, see optschemes.</p>
+ <p>On the next tab, load the optimization scheme that is distributed with the source code under the samples/ directory. The scheme that we want is named "pwscf-xtalopt.scheme". If the source code is not available, the scheme file can be obtained by clicking the "Original Format" link at the bottom of the page <a href="samples/pwscf-xtalopt.scheme">here</a>.</p>
+ <p>For more details on optimization schemes, see <a class="el" href="tut.html#optschemes">optschemes</a>.</p>
 <p>Each PWscf input file will need to be edited to specify:</p>
 <ol type="1" align=left style="text-align:-moz-left">
   <li>The pseudo_dir containing the pseudopotential files on the remote cluster, and</li>
@@ -241,8 +265,8 @@ XtalOpt expects GULP to use the following filenames:
 <img src="dist/img/opt-set-castep.png" alt="opt-set-castep.png" width="80%">
         <br>
         <br>
- <p>On the next tab, load the optimization scheme that is distributed with the source code under the samples/ directory. The scheme that we want is named "castep-xtalopt.scheme". If the source code is not available, the scheme file can be obtained by clicking the "Original Format" link at the bottom of the page <a href="http://xtalopt.openmolecules.net/wiki/index.fcgi/browser/samples/castep-xtalopt.scheme">here</a>.</p>
-<p>For more details on optimization schemes, see optschemes.</p>
+ <p>On the next tab, load the optimization scheme that is distributed with the source code under the samples/ directory. The scheme that we want is named "castep-xtalopt.scheme". If the source code is not available, the scheme file can be obtained by clicking the "Original Format" link at the bottom of the page <a href="samples/castep-xtalopt.scheme">here</a>.</p>
+ <p>For more details on optimization schemes, see <a class="el" href="tut.html#optschemes">optschemes</a>.</p>
 <p>It is important to note that CASTEP input files require the "%" character to define blocks. The percent character is special in the XtalOpt input template parser to define keywords (see below). To insert a literal "%" into the input, use percent%.</p>
 <p>E.g. Specification of the fractional coordinate block in the .cell template should look like:</p>
 
@@ -327,7 +351,7 @@ MD.TypeOfRun cg # Type of dynamics:</pre>
 
  <p>Or load the optimization scheme by clicking the "Load Opt Scheme" button and selecting the "samples/siesta-xtalopt.scheme" file that is distributed with the source code.</p>
 
- <p>For more details on optimization schemes, see optschemes.</p>
+ <p>For more details on optimization schemes, see <a class="el" href="tut.html#optschemes">optschemes</a>.</p>
 
  <p>After loading the optimization scheme, XtalOpt will prompt for the xtal.psf files to use. Select files appropriated for the prompted atom. XtalOpt will copy the individual files over to each structure directory when the calculation is submitted. See the SIESTA manual for information on obtaining the .psf files.</p>
  
@@ -408,7 +432,7 @@ MD.TypeOfRun cg # Type of dynamics:</pre>
 </div><!-- fragment -->
 
 
-<p>For more details on optimization schemes, see optschemes.</p>
+<p>For more details on optimization schemes, see <a class="el" href="tut.html#optschemes">optschemes</a>.</p>
 <p>Be aware that every installation is different, and it is almost certain that the job.pbs file included with this scheme will not work on any cluster other than the Zurek group's "parity" cluster at SUNY Buffalo's Center for Computational Resources. It may take some experimentation to get jobs to submit successfully, and you may need to contact the mantainers of the cluster for assistance or information about MPI, executable locations, etc. Perhaps the easiest method to find the correct PBS script is to run some trial submissions by hand, and then replace the structure/search specific information with the appropriate keywords once a working script has been generated.</p>
 <p>A handy trick for monitoring jobs outside of XtalOpt is to include the following line in job.pbs:</p>
 
@@ -442,7 +466,7 @@ MD.TypeOfRun cg # Type of dynamics:</pre>
 <li>Path to qstat: Where to find the qstat executable on the remote cluster. Note that if qstat is in the cluster's $PATH, setting this to just 'qstat' will work.</li>
 </ul>
 <p>A new template, "job.sge" is added to the list of available templates. This is the job submission script for SGE. It may take some experimentation to get jobs to submit successfully, and you may need to contact the mantainers of the cluster for assistance or information about MPI, executable locations, etc. Perhaps the easiest method to find the correct SGE script is to run some trial submissions by hand, and then replace the structure/search specific information with the appropriate keywords once a working script has been generated.</p>
-<p>For more details on optimization schemes, see optschemes.</p>
+<p>For more details on optimization schemes, see <a class="el" href="tut.html#optschemes">optschemes</a>.</p>
 <p><a class="el" href="tut.html#files">Skip to next section.</a></p>
 
 
@@ -468,7 +492,7 @@ MD.TypeOfRun cg # Type of dynamics:</pre>
 <li>Path to squeue: Where to find the squeue executable on the remote cluster. Note that if squeue is in the cluster's $PATH, setting this to just 'squeue' will work.</li>
 </ul>
 <p>A new template, "job.slurm" is added to the list of available templates. This is the job submission script for SLURM. It may take some experimentation to get jobs to submit successfully, and you may need to contact the mantainers of the cluster for assistance or information about MPI, executable locations, etc. Perhaps the easiest method to find the correct SLURM script is to run some trial submissions by hand, and then replace the structure/search specific information with the appropriate keywords once a working script has been generated.</p>
-<p>For more details on optimization schemes, see optschemes.</p>
+<p>For more details on optimization schemes, see <a class="el" href="tut.html#optschemes">optschemes</a>.</p>
 <p><a class="el" href="tut.html#files">Skip to next section.</a></p>
 
 
@@ -494,7 +518,7 @@ MD.TypeOfRun cg # Type of dynamics:</pre>
 <li>Path to bjobs: Where to find the bjobs executable on the remote cluster. Note that if bjobs is in the cluster's $PATH, setting this to just 'bjobs' will work.</li>
 </ul>
 <p>A new template, "job.lsf" is added to the list of available templates. This is the job submission script for LSF. It may take some experimentation to get jobs to submit successfully, and you may need to contact the mantainers of the cluster for assistance or information about MPI, executable locations, etc. Perhaps the easiest method to find the correct LSF script is to run some trial submissions by hand, and then replace the structure/search specific information with the appropriate keywords once a working script has been generated.</p>
-<p>For more details on optimization schemes, see optschemes.</p>
+<p>For more details on optimization schemes, see <a class="el" href="tut.html#optschemes">optschemes</a>.</p>
 <p><a class="el" href="tut.html#files">Skip to next section.</a></p>
 
 
@@ -520,7 +544,7 @@ MD.TypeOfRun cg # Type of dynamics:</pre>
 <li>Path to llq: Where to find the llq executable on the remote cluster. Note that if llq is in the cluster's $PATH, setting this to just 'llq' will work.</li>
 </ul>
 <p>A new template, "job.ll" is added to the list of available templates. This is the job submission script for LoadLeveler. It may take some experimentation to get jobs to submit successfully, and you may need to contact the mantainers of the cluster for assistance or information about MPI, executable locations, etc. Perhaps the easiest method to find the correct LoadLeveler script is to run some trial submissions by hand, and then replace the structure/search specific information with the appropriate keywords once a working script has been generated.</p>
-<p>For more details on optimization schemes, see optschemes.</p>
+<p>For more details on optimization schemes, see <a class="el" href="tut.html#optschemes">optschemes</a>.</p>
 <p><a class="el" href="tut.html#files">Skip to next section.</a></p>
 
 
@@ -540,7 +564,7 @@ MD.TypeOfRun cg # Type of dynamics:</pre>
 <li>Local working directory: A directory that is readable/writable by the current user on the local computer. This is where the final structures and resume files are written.</li>
 </ul>
 <p>If the optimizer's executable (vasp, gulp, pw.x, castep, etc) is not in your system path, you will need to specify the location of the executable by clicking the "Configure..." button next to the optimizer selection menu.</p>
-<p>For more details on optimization schemes, see optschemes.</p>
+<p>For more details on optimization schemes, see <a class="el" href="tut.html#optschemes">optschemes</a>.</p>
 </div>
 
 
@@ -573,6 +597,7 @@ MD.TypeOfRun cg # Type of dynamics:</pre>
 </div>
  <p>In the "Search Settings" tab, most of the default settings should suffice (See CPC 2010 publication). We arbitrarily set the initial structures to 20 and the continuous structures to 5, although these may need to be adjusted based on available resources. We will not specify initial seeds, but the option to do so exists on this screen.</p>
 <p>It is not neccessary to limit the number of running jobs unless running locally, as the PBS queue on the cluster will manage job control for us. If running locally, set the job limit no higher than [number of available processor cores] - 1 (e.g. for a quadcore processor, allow three jobs to run simultaneously). This allows one core to remain free for the system to run.</p>
+<p>There is now a termination criteria called "Total Number of Structures" that will end the run once a certain number of strcutures have been produced by XtalOpt.</p>
     </div>
 
 
@@ -601,9 +626,10 @@ Optimization". Click "Refresh" on this tab to begin the local optimizations. Fro
 <img src="dist/img/prog-mon.png" alt="prog-mon.png"/>
 <div class="caption">
 The ``Progress'' tab mid-run</div></div>
-<p>As XtalOpt performs the search, the progress table continuously updates, providing information about each structure. We see individuals in various stages of completion: most are optimized (in yellow), structure 2x7 has been automatically marked as a duplicate (dark green) of structure 3x3 and removed from the breeding pool, structure 4x4 is currently undergoing a local optimization (light green), while structure 4x5 is waiting to be optimized (blue).</p>
+<p>As XtalOpt performs the search, the progress table continuously updates, providing information about each structure. We see individuals in various stages of completion: most are optimized (in blue), structure 2x7 has been automatically marked as a duplicate (dark green) of structure 3x3 and removed from the breeding pool, structure 4x4 is currently undergoing a local optimization (light green), while structure 4x5 is waiting to be optimized (light blue).</p>
 <p>Other useful information is displayed about each structure, such as the time spent in optimization, the optimized enthalpy, the cell volume, spacegroup, and each structure's ancestory (i.e. parent(s) and parameters for the genetic operator that generated it). A status bar on the bottom of the window shows the number of structures that are optimized, running, and failing at any given time. This information is visible regardless of which tab is currently being viewed.</p>
 <p>An additional feature of the progress table is the ability to immediately visualize any of the individuals in the Avogadro main window &ndash; simply clicking on a row in this table will display the three-dimensional structure in Avogadro, where it can be visualized, modified, or exported. If the user would like to add a bit of "intelligent design" to the evolutionary process, a structure can be modified and then resubmitted using a context (right-click) menu from the progress table. The context menu provides tools to (un)kill a structure, resubmit for local optimization at an arbitrary optimization step, or replace a problematic structure with a new, random individual.</p>
+<p>Three additional buttons found near the "Refresh All" button in this tab are also available. The "Print Results File" button generates a run-results.txt file that lists all of the information about each structure in order of generation and structure number (As compared to the results.txt file which ranks the structures). The "Remove Extra Files" button is used for VASP runs. It removes any extraneous files in each local subdirectory in order to reduce disk usage. Files kept are structure.state, POTCAR, CONTCAR, OSZICAR, job.slurm and OUTCAR. Finally, the "Rank All" button ranks all currently optimized structures and exports them to a subdirectory (Ranked) in two forms (depending on the optimizer): POSCAR/.got and .cif. Each can be found in separate directories. (Only works for GULP and VASP runs currently).</p>
 <h3><a class="anchor" id="trends"></a>
 View trends</h3>
 <div class="image">
@@ -615,6 +641,209 @@ The ``Plot'' tab mid-run displaying enthalpy vs. volume. Each structure is label
 <p>The plot is also interactive; zooming and panning are possible using simple mouse controls. Clicking on a structure's point on the plot will load it in the main Avogadro window, allow all the same functionality as described above in <a class="el" href="tut.html#prog-mon">Monitor progress</a>.</p>
     </div>
 
+
+
+<!-- Optimization Schemes -->
+    <a class="anchor" id="optschemes"> 
+        <br><br>
+    </a>
+
+    <div class="jumbotron">
+    <h1>What are optimimization schemes, and why use them?</h1>
+
+
+
+    <a class="anchor" id="quick-over">
+        <br><br>
+    </a>
+    
+    <h2>In a nutshell..</h2>
+    
+    <p>An optimization scheme is a series of optimization steps ("optsteps") that are to be performed in sequence on a structure. Each optimization step consists of a set of input file templates for the queuing system and optimizer to be used, and the structure is updated after each completes. So if an optimization scheme contains three optimization steps, a stucture's lifecycle is:</p>
+    <ol align=left style="text-align:-moz-left" type="1">
+        <li>Generation of initial structure</li>
+        <li>Perform optstep 1 on initial structure</li>
+        <li>Update structure from the results of optstep 1</li>
+        <li>Perform optstep 2 on current structure (result of optstep 1)</li>
+        <li>Update structure from the results of optstep 2</li>
+        <li>Perform optstep 3 on current structure (result of optstep 2)</li>
+        <li>Update structure from the results of optstep 3</li>
+        <li>Current structure (result of optstep 3) is either accepted into the breeding pool or discarded, depending on its enthalpy relative to the other optimized structures.</li>
+    </ol>
+
+
+
+    <a class="anchor" id="detailed-over">
+        <br><br>
+    </a>
+    
+    <h2>More details</h2>
+    
+    <p>The efficiency of searching a potential energy surface for a global minimum can be significantly improved by moving each candidate structure to the nearest local minimum, i.e. performing a geometry optimization. The differences between searching with and without carrying out these local optimizations are explored in detail in Woodley SM, Catlow CRA. Comp. Mat. Sci. 2009;45(1):84-95 (Available at: <a href="http://linkinghub.elsevier.com/retrieve/pii/S0927025608003030">http://linkinghub.elsevier.com/retrieve/pii/S0927025608003030</a> ).</p>
+
+    <p>Why not just perform a single geometry optimization on each structure? Stochastic search techniques, such as XtalOpt, will often need to perform geometry optimizations on structures that are far from a stationary point on the potential energy surface. For example, the randomly generated structures in the first generation of an evolutionary search are often highly disordered with unrealistic atomic separations. If these structures were to be optimized in a single step with accurately small convergence criteria, it would be quite expensive. Also, it is more than likely that most of the optimizations would not finish successfully before reaching the maximum number of geometry steps allowed by the optimizer or specified in the input. A second issue is that complex structures (periodic crystals, for example) often have so many degrees of freedom that convergence in a single step is difficult from a poor starting point (consider the effect on atomic coordinates when a unit cell's translation vector is modified).</p>
+
+    <p>The first problem (effectively optimizing to small convergence) can be solved by implementing an optimization scheme that optimizes to successively smaller convergence cutoffs.</p>
+
+    <p>The second problem can be addressed by reducing the degrees of freedom in the early optsteps and only optimizing everything once each component has individually converged to a reasonable parameterization. See <a class="el" href="tut.html#suggest">Suggestions for optimization schemes</a> for examples.</p>
+
+
+
+    <a class="anchor" id="gui">
+        <br><br>
+    </a>
+    <h2>Optimization scheme user interface</h2>
+
+    <br>
+    <div class="image">
+<img src="dist/img/optschemes-numberededitor.png" alt="optschemes-numberededitor.png"/>
+</div>
+ <p>We will use the above screenshot as we describe the process of creating, saving, and loading optimization schemes. The numbers indicate:</p>
+<ol align=left style="text-align:-moz-left" type="1">
+    <li>List of optimization steps</li>
+    <li>Button to add new optimization step</li>
+    <li>Button to remove current optimization step</li>
+    <li>Template selection menu</li>
+    <li>Template editor</li>
+    <li>Button to save current optimization scheme to file</li>
+    <li>Button to load optimization scheme from file</li>
+</ol>
+
+    <a class="anchor" id="gui-list">
+        <br>
+    </a>
+
+<h3>Optimization step list</h3>
+<p>This list shows the currently available optimization steps in the order that they will be performed. The optstep that is currently selected for editing is highlighted, and the editable optstep can be selected by clicking the appropriate entry.</p>
+
+    <a class="anchor" id="gui-add">
+        <br>
+    </a>
+
+<h3>Add new optimization step</h3>
+<p>Clicking this button will append a new optimization step to the optstep list. The new optstep's templates will be copies of the currently selected optstep's templates.</p>
+
+    <a class="anchor" id="gui-rem">
+        <br>
+    </a>
+
+<h3>Remove current optimization step</h3>
+<p>Click this button to delete the currently selected optimization step.</p>
+
+    <a class="anchor" id="gui-tselect">
+        <br>
+    </a>
+
+<h3>Select template</h3>
+<p>This menu contains the filenames of the templates that are required by the currently selected queuing system (e.g. PBS, SGE, local...) and optimizer. The currently selected template is displayed in the template editor, and selecting a different template will update the editor.</p>
+
+    <a class="anchor" id="gui-editor">
+        <br>
+    </a>
+
+<h3>Template editor</h3>
+<p>This text editor is used to view and edit the currently selected template for the current optstep.</p>
+
+    <a class="anchor" id="gui-save">
+        <br>
+    </a>
+
+<h3>Save scheme</h3>
+<p>This button will prompt for a location to save a .scheme file containing the current optimization step.</p>
+
+    <a class="anchor" id="gui-load">
+        <br>
+    </a>
+
+<h3>Resume scheme</h3>
+<p>This button will prompt for an existing .scheme file to load.</p>
+
+
+
+    <a class="anchor" id="creating">
+       <br><br>
+    </a>
+
+<h2>How to build an optimization scheme?</h2>
+<p>Creating a working scheme from scratch may take some time. We recommend checking the samples/ directory of the source code to obtain sample scheme for each optimizer (see <a class="el" href="optschemes.html#loading">How to load an optimization scheme?</a>) and verifying that they are appropriate for the system under consideration before starting a search.</p>
+<p>If there is not an appropriate sample, the following prescription may be used to generate your own:</p>
+
+<ol align=left style="text-align:-moz-left" type="1">
+    <li>Generate a random structure of the system under consideration. This may be done by hand, or by running a search just long enough to create the first random generation and saving one of the structures.</li>
+    <li>Create a starting optstep with the desired convergence criteria</li>
+    <li>Manually submit the optimization</li>
+    <li>If the optimization fails:
+        <ol type="a">
+            <li>First determine why &ndash; if the maximum iterations were exceeded or the optimization was aborted due to a badly performing minimizer, try one of the ideas below. Other optimization problems are beyond the scope of this document.</li>
+            <li>Reduce the convergence criteria of the current trial optstep</li>
+            <li>Remove degrees of freedom, e.g. by fixing cell parameters, atomic positions, etc</li>
+            <li>Reduce the accuracy of the calculation in other ways (use a courser integration grid, etc).</li>
+            <li>Change the minimizer (e.g. tell the optimizer to use conjugate gradients rather than BFGS, etc)</li>
+        </ol>
+    </li>
+    <li>Once the optimization succeeds, create another set of input files with the desired convergence criteria for all degrees of freedom.</li>
+    <li>Manually submit the new optimization step. If it fails, try the ideas above until it converges.</li>
+    <li>Once the structure has converged to the desired level of accuracy, try to optimize another randomly generated structure using the optsteps that succeeded previously. Refine them if needed.</li>
+    <li>Once you have successfully optimized enough random structures that you are confident in your method, gather all of the inputs used and write your scheme from them.</li>
+</ol>
+
+<p>The scheme may be written by copying each input file into the template editor (with the appropriate optstep and template selected, of course) and replacing the structure-specific information with the appropriate keywords. Click the "Help" button for the complete list of keywords.</p>
+<p>We have found that the optimization schemes are surprisingly transferable within an optimizer, so once you have a working optimization scheme for a given optimization code only minor tweaks (usually to the energy cutoffs, etc ) are necessary to use it on a different chemical system.</p>
+
+
+    <a class="anchor" id="saving">
+        <br><br>
+    </a>
+
+<h2>How to save an optimization scheme for later?</h2>
+<p>Once you have written your optimization scheme, you will want to save it for fast retrieval later (otherwise you will need to copy/paste and edit all of the templates again!). To save, simply click the "Save Opt
+Scheme" button and enter an appropriate filename with an extension of .scheme.</p>
+
+
+    <a class="anchor" id="loading">
+        <br><br>
+    </a>
+
+<h2>How to load an optimization scheme?</h2>
+<p>Loading an optimization is quite simple &ndash; just click the "Load Opt
+Scheme" button and select the .scheme file you wish to load. This will also update the current queuing system and optimizer to those specified by the scheme.</p>
+
+
+    <a class="anchor" id="format">
+        <br><br>
+    </a>
+
+<h2>What is saved?</h2>
+<p>The optimization scheme files contain more than just the templates for each optstep. They also store queue and optimizer specific settings. This is useful for storing configuration options for different clusters along with the scheme. Note that although XtalOpt will prompt for an SSH password if needed, it is <b>NOT</b> stored in the scheme file.</p>
+
+
+    <a class="anchor" id="suggest">
+       <br><br>
+    </a>
+
+<h2>Suggestions for optimization schemes</h2>
+
+
+<a class="anchor" id="sug-xtal">
+       <br><br>
+</a>
+
+<h3>Crystals (XtalOpt)</h3>
+<p>The following list describes the optimization steps used in the samples/vasp-xtalopt.scheme file distributed with the XtalOpt source code:</p>
+<ol align=left style="text-align:-moz-left" type="1">
+    <li>Fix unit cell, only optimize atomic coordinates. A very loose convergence criterion is used, and the number of KPOINTs is kept small.</li>
+    <li>The cell volume is fixed, but atomic positions and cell parameters are allowed to vary. The convergence criteria is the same as before, as is the KPOINT grid.</li>
+    <li>All degrees of freedom are considered using the same convergence criteria as before, but with a finer KPOINT grid.</li>
+    <li>Same as before, but with a stricter convergence criteria.</li>
+    <li>Same as before, but with a stricter convergence criteria and more KPOINTs.</li>
+    <li>Same as before, but with more KPOINTs.</li>
+</ol>
+<p>This is only one of many possible optimization schemes that may work for crystals. It may need to be modified to work for your particular system. </p>
+</div>
+
+
+
+<!-- Save and Resume -->
     <a class="anchor" id="sr"> 
         <br><br>
     </a>
@@ -622,12 +851,24 @@ The ``Plot'' tab mid-run displaying enthalpy vs. volume. Each structure is label
     <div class="jumbotron">
 <h2>Saving and Resuming Sessions in XtalOpt</h2>
 <img src="dist/img/xo-saveresume.png" alt="xo-saveresume.png"/>
- <h3><a class="anchor" id="sr_saving">
-         How to save your session</a></h3>
- <p>XtalOpt will write a small file named xtalopt.state to its working directory that contains the information necessary to resume the session at a later time. The file can be rewritten manually by clicking the "Save Session" button highlighted above, and XtalOpt will automatically save the session every time a structure is updated.</p>
+
+
+
+    <a class="anchor" id="sr_saving">
+        <br><br>
+    </a>
+
+    <h3>How to save your session</h3>
+    <p>XtalOpt will write a small file named xtalopt.state to its working directory that contains the information necessary to resume the session at a later time. The file can be rewritten manually by clicking the "Save Session" button highlighted above, and XtalOpt will automatically save the session every time a structure is updated.</p>
  <p>XtalOpt will also write a file "structure.state" in each candidate structure's directory. This file stores XtalOpt-specific information about the structure.</p>
- <h3><a class="anchor" id="sr_resuming">
-         How to resume your session</a></h3>
+
+
+
+    <a class="anchor" id="sr_resuming">
+        <br><br>
+    </a>
+
+    <h3>How to resume your session</h3>
  <p>To resume a session, simply click "Resume stored session" (highlighted above) and select the xtalopt.state file in the working directory of the session you would like to resume. XtalOpt will then begin to load the structures and search parameters. You can monitor the progress with the progress bar that appears at the bottom of the window.</p>
  <p>While the structures are loading, you may encounter errors that say:</p>
  <div class="fragment"><pre class="fragment">
@@ -640,6 +881,8 @@ any local optimizations. If so, safely ignore this message.</pre>
  <dl class="note"><dt><b>Note:</b></dt><dd>If you are considering resuming a read-only session, take a look at the results.txt file in the working directory. It contains a list of all structures, sorted by enthalpy, with additional useful information. This can save some time when trying to locate the most stable structure of a old search.</dd></dl>
  <p>The working directories for XtalOpt are relocatable, meaning that the directory containing xtalopt.state and the [gen]x[id] structure folders may be moved, tarred, zipped, etc. and still be resumed at a later time from a different location on the filesystem, or even a different computer. </p>
 </div>
+
+
 
 <!-- start footer part -->
 <br>
