@@ -44,7 +44,7 @@ Xtal\+Opt currently supports the \hyperlink{tut-xo_vasp-opt}{V\+A\+S\+P}, \hyper
 
 
 On the next tab, load the optimization scheme by clicking the \char`\"{}\+Load
-\+Opt Scheme\char`\"{} button and selecting the \char`\"{}samples/vasp-\/xtalopt.\+scheme\char`\"{} file that is distributed with the source code. If you do not have a copy of the source code, the scheme file can be obtained by clicking the \char`\"{}\+Original Format\char`\"{} link at the bottom of the page \href{http://xtalopt.openmolecules.net/wiki/index.fcgi/browser/samples/vasp-xtalopt.scheme}{\tt here}.
+\+Opt Scheme\char`\"{} button and selecting the \char`\"{}samples/vasp-\/xtalopt.\+scheme\char`\"{} file that is distributed with the source code. If you do not have a copy of the source code, the scheme file can be obtained by clicking the \href{http://xtalopt.github.io/samples/vasp-xtalopt.scheme}{\tt here}.
 
 For more details on optimization schemes, see \hyperlink{optschemes}{Optimization Schemes}.
 
@@ -85,7 +85,7 @@ Ti O  1 0 15
 \end{DoxyCode}
 
 
-Alternatively, one can load the scheme file distributed with the source code under samples/gulp-\/\+Ti\+O-\/xtalopt.\+scheme. If the source code is not available, the scheme file can be obtained by clicking the \char`\"{}\+Original Format\char`\"{} link at the bottom of the page \href{http://xtalopt.openmolecules.net/wiki/index.fcgi/browser/samples/gulp-TiO-xtalopt.scheme}{\tt here}.
+Alternatively, one can load the scheme file distributed with the source code under samples/gulp-\/\+Ti\+O-\/xtalopt.\+scheme. If the source code is not available, the scheme file can be obtained by clicking \href{http://xtalopt.github.io/samples/gulp-TiO-xtalopt.scheme}{\tt here}.
 
 For more details on optimization schemes, see \hyperlink{optschemes}{Optimization Schemes}.
 
@@ -106,7 +106,7 @@ gulp < xtal.gin > xtal.got
 \end{DoxyImageNoCaption}
 
 
-On the next tab, load the optimization scheme that is distributed with the source code under the samples/ directory. The scheme that we want is named \char`\"{}pwscf-\/xtalopt.\+scheme\char`\"{}. If the source code is not available, the scheme file can be obtained by clicking the \char`\"{}\+Original Format\char`\"{} link at the bottom of the page \href{http://xtalopt.openmolecules.net/wiki/index.fcgi/browser/samples/pwscf-xtalopt.scheme}{\tt here}.
+On the next tab, load the optimization scheme that is distributed with the source code under the samples/ directory. The scheme that we want is named \char`\"{}pwscf-\/xtalopt.\+scheme\char`\"{}. If the source code is not available, the scheme file can be obtained by clicking the \char`\"{}\+Original Format\char`\"{} link at the bottom of the page \href{http://xtalopt.github.io/samples/pwscf-xtalopt.scheme}{\tt here}.
 
 For more details on optimization schemes, see \hyperlink{optschemes}{Optimization Schemes}.
 
@@ -137,7 +137,7 @@ pw.x < xtal.in > xtal.out
 \end{DoxyImageNoCaption}
 
 
-On the next tab, load the optimization scheme that is distributed with the source code under the samples/ directory. The scheme that we want is named \char`\"{}castep-\/xtalopt.\+scheme\char`\"{}. If the source code is not available, the scheme file can be obtained by clicking the \char`\"{}\+Original Format\char`\"{} link at the bottom of the page \href{http://xtalopt.openmolecules.net/wiki/index.fcgi/browser/samples/castep-xtalopt.scheme}{\tt here}.
+On the next tab, load the optimization scheme that is distributed with the source code under the samples/ directory. The scheme that we want is named \char`\"{}castep-\/xtalopt.\+scheme\char`\"{}. If the source code is not available, the scheme file can be obtained by clicking the \char`\"{}\+Original Format\char`\"{} link at the bottom of the page \href{http://xtalopt.github.io/samples/castep-xtalopt.scheme}{\tt here}.
 
 For more details on optimization schemes, see \hyperlink{optschemes}{Optimization Schemes}.
 
@@ -182,10 +182,87 @@ Next, fill out the text field on the right with the following template\+:
 
 
 \begin{DoxyCode}
+SystemName          %description%-%gen%x%\textcolor{keywordtype}{id}%
+SystemLabel         xtal
+
+NumberOfAtoms       %numAtoms%
+NumberOfSpecies     %numSpecies%
+
+%block% ChemicalSpeciesLabel
+%chemicalSpeciesLabel%
+%endblock% ChemicalSpeciesLabel
+
+%block% PAO.Basis                 # Define Basis set
+Ti    5      1.91
+ n=3    0    1   E     93.95      5.20
+   5.69946662616249
+   1.00000000000000
+ n=3    1    1   E     95.47      5.20
+   5.69941339465994
+   1.00000000000000
+ n=4    0    2   E     96.47      5.60
+   6.09996398975307        5.09944363262274
+   1.00000000000000        1.00000000000000
+ n=3    2    2   E     46.05      4.95
+   5.94327035784617        4.70009988294302
+   1.00000000000000        1.00000000000000
+ n=4    1    1   E      0.50      1.77
+   3.05365979938936
+   1.00000000000000
+%endblock% PAO.Basis
+
+%block% PAO.BasisSizes
+        O      DZP
+%endblock% PAO.BasisSizes
+
+XC.functional GGA
+XC.authors    PBE
+
+LatticeConstant          1 Ang
+%block% LatticeVectors
+%cellMatrixAngstrom%
+%endblock% LatticeVectors
+
+%block% kgrid\_Monkhorst\_Pack
+   3  0  0  0.5
+   0  3  0  0.5
+   0  0  3  0.5
+%endblock% Kgrid\_Monkhorst\_Pack
+
+MeshCutoff         100.0 Ry
+
+MaxSCFIterations     1000
+DM.MixingWeight      0.05
+DM.NumberPulay       3
+DM.Tolerance         1.d-4
+
+SolutionMethod       diagon
+
+SpinPolarized   \textcolor{keyword}{true}
+LongOutput \textcolor{keyword}{true}
+
+MD.TypeOfRun        cg
+MD.NumCGsteps       1000
+MD.VariableCell     \textcolor{keyword}{true}
+MD.MaxForceTol      0.01 eV/Ang  #0.005 eV/Ang
+WriteForces         \textcolor{keyword}{true}
+WriteCoorCerius     \textcolor{keyword}{true}
+WriteCoorXmol       \textcolor{keyword}{false}
+WriteDenchar        \textcolor{keyword}{true}
+WriteMullikenPop    1
+
+UseSaveData         \textcolor{keyword}{true}
+
+\textcolor{preprocessor}{#Diag.ParallelOverK true}
+
+AtomicCoordinatesFormat Fractional
+%block% AtomicCoordinatesAndAtomicSpecies
+%atomicCoordsAndAtomicSpecies%
+%endblock% AtomicCoordinatesAndAtomicSpecies
 \end{DoxyCode}
 
 
-Or load the optimization scheme by clicking the \char`\"{}\+Load Opt Scheme\char`\"{} button and selecting the \char`\"{}samples/siesta-\/xtalopt.\+scheme\char`\"{} file that is distributed with the source code.
+Or load the optimization scheme by clicking the \char`\"{}\+Load Opt Scheme\char`\"{} button and selecting the \char`\"{}samples/siesta-\/\+Ti\+O-\/xtalopt.\+scheme\char`\"{} file that is distributed with the source code. If the source code is not available, the scheme file can be obtained by clicking \href{http://xtalopt.github.io/samples/siesta-TiO-xtalopt.scheme}{\tt here}.
 
 For more details on optimization schemes, see \hyperlink{optschemes}{Optimization Schemes}.
 
@@ -423,7 +500,9 @@ which stores a list of all structures sorted by increasing enthalpy. The latter 
 
 In the \char`\"{}\+Search Settings\char`\"{} tab, most of the default settings should suffice (See C\+P\+C 2010 publication). We arbitrarily set the initial structures to 20 and the continuous structures to 5, although these may need to be adjusted based on available resources. We will not specify initial seeds, but the option to do so exists on this screen.
 
-It is not neccessary to limit the number of running jobs unless running locally, as the P\+B\+S queue on the cluster will manage job control for us. If running locally, set the job limit no higher than \mbox{[}number of available processor cores\mbox{]} -\/ 1 (e.\+g. for a quadcore processor, allow three jobs to run simultaneously). This allows one core to remain free for the system to run.\hypertarget{tut-xo_begin}{}\section{\char`\"{}\+Begin\char`\"{}}\label{tut-xo_begin}
+It is not neccessary to limit the number of running jobs unless running locally, as the P\+B\+S queue on the cluster will manage job control for us. If running locally, set the job limit no higher than \mbox{[}number of available processor cores\mbox{]} -\/ 1 (e.\+g. for a quadcore processor, allow three jobs to run simultaneously). This allows one core to remain free for the system to run.
+
+There is now a termination criteria called \char`\"{}\+Total Number of Structures\char`\"{} that will end the run once a certain number of strcutures have been produced by Xtal\+Opt.\hypertarget{tut-xo_begin}{}\section{\char`\"{}\+Begin\char`\"{}}\label{tut-xo_begin}
 
 \begin{DoxyImage}
 \includegraphics[width=\textwidth]{prog-start.png}
@@ -440,11 +519,13 @@ Xtal\+Opt has everything it needs to start its search at this point; click the \
 \end{DoxyImage}
 
 
-As Xtal\+Opt performs the search, the progress table continuously updates, providing information about each structure. We see individuals in various stages of completion\+: most are optimized (in yellow), structure 2x7 has been automatically marked as a duplicate (dark green) of structure 3x3 and removed from the breeding pool, structure 4x4 is currently undergoing a local optimization (light green), while structure 4x5 is waiting to be optimized (blue).
+As Xtal\+Opt performs the search, the progress table continuously updates, providing information about each structure. We see individuals in various stages of completion\+: most are optimized (in blue), structure 2x7 has been automatically marked as a duplicate (dark green) of structure 3x3 and removed from the breeding pool, structure 4x4 is currently undergoing a local optimization (light green), while structure 4x5 is waiting to be optimized (light blue).
 
 Other useful information is displayed about each structure, such as the time spent in optimization, the optimized enthalpy, the cell volume, spacegroup, and each structure\textquotesingle{}s ancestory (i.\+e. parent(s) and parameters for the genetic operator that generated it). A status bar on the bottom of the window shows the number of structures that are optimized, running, and failing at any given time. This information is visible regardless of which tab is currently being viewed.
 
-An additional feature of the progress table is the ability to immediately visualize any of the individuals in the Avogadro main window -- simply clicking on a row in this table will display the three-\/dimensional structure in Avogadro, where it can be visualized, modified, or exported. If the user would like to add a bit of \char`\"{}intelligent design\char`\"{} to the evolutionary process, a structure can be modified and then resubmitted using a context (right-\/click) menu from the progress table. The context menu provides tools to (un)kill a structure, resubmit for local optimization at an arbitrary optimization step, or replace a problematic structure with a new, random individual.\hypertarget{tut-xo_trends}{}\subsection{View trends}\label{tut-xo_trends}
+An additional feature of the progress table is the ability to immediately visualize any of the individuals in the Avogadro main window -- simply clicking on a row in this table will display the three-\/dimensional structure in Avogadro, where it can be visualized, modified, or exported. If the user would like to add a bit of \char`\"{}intelligent design\char`\"{} to the evolutionary process, a structure can be modified and then resubmitted using a context (right-\/click) menu from the progress table. The context menu provides tools to (un)kill a structure, resubmit for local optimization at an arbitrary optimization step, or replace a problematic structure with a new, random individual.
+
+Three additional buttons found near the \char`\"{}\+Refresh All\char`\"{} button in this tab are also available. The \char`\"{}\+Print Results File\char`\"{} button generates a run-\/results.\+txt file that lists all of the information about each structure in order of generation and structure number (As compared to the results.\+txt file which ranks the structures). The \char`\"{}\+Remove Extra Files\char`\"{} button is used for V\+A\+S\+P runs. It removes any extraneous files in each local subdirectory in order to reduce disk usage. Files kept are structure.\+state, P\+O\+T\+C\+A\+R, C\+O\+N\+T\+C\+A\+R, O\+S\+Z\+I\+C\+A\+R, job.\+slurm and O\+U\+T\+C\+A\+R. Finally, the \char`\"{}\+Rank All\char`\"{} button ranks all currently optimized structures and exports them to a subdirectory (Ranked) in two forms (depending on the optimizer)\+: P\+O\+S\+C\+A\+R/.got and .cif. Each can be found in separate directories. (Only works for G\+U\+L\+P and V\+A\+S\+P runs currently).\hypertarget{tut-xo_trends}{}\subsection{View trends}\label{tut-xo_trends}
 
 \begin{DoxyImage}
 \includegraphics[width=\textwidth]{trend-view.png}

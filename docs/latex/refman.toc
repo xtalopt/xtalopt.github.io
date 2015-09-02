@@ -9,37 +9,37 @@
 \contentsline {subsubsection}{\numberline {1.4.4}C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}T\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}E\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}P}{6}{subsubsection.1.4.4}
 \contentsline {subsubsection}{\numberline {1.4.5}S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}I\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}E\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}T\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}A}{7}{subsubsection.1.4.5}
 \contentsline {subsection}{\numberline {1.5}Queue setup}{8}{subsection.1.5}
-\contentsline {subsubsection}{\numberline {1.5.1}Using a remote P\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}B\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}S cluster}{8}{subsubsection.1.5.1}
-\contentsline {subsubsection}{\numberline {1.5.2}Using a remote S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}G\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}E cluster}{10}{subsubsection.1.5.2}
-\contentsline {subsubsection}{\numberline {1.5.3}Using a remote S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}L\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}U\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}R\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}M cluster}{11}{subsubsection.1.5.3}
-\contentsline {subsubsection}{\numberline {1.5.4}Using a remote L\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}F cluster}{12}{subsubsection.1.5.4}
-\contentsline {subsubsection}{\numberline {1.5.5}Using a remote Load\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Leveler cluster}{13}{subsubsection.1.5.5}
-\contentsline {subsubsection}{\numberline {1.5.6}Running optimations locally}{14}{subsubsection.1.5.6}
-\contentsline {subsection}{\numberline {1.6}What is written to the local directory?}{14}{subsection.1.6}
-\contentsline {subsection}{\numberline {1.7}Search Settings}{15}{subsection.1.7}
-\contentsline {subsection}{\numberline {1.8}\char `\"{}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Begin\char `\"{}}{16}{subsection.1.8}
-\contentsline {subsection}{\numberline {1.9}Monitor progress}{17}{subsection.1.9}
-\contentsline {subsubsection}{\numberline {1.9.1}View trends}{18}{subsubsection.1.9.1}
-\contentsline {section}{\numberline {2}Saving and Resuming Sessions in Xtal\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Opt}{19}{section.2}
-\contentsline {subsection}{\numberline {2.1}Contents}{19}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}How to save your session}{19}{subsection.2.2}
-\contentsline {subsection}{\numberline {2.3}How to resume your session}{19}{subsection.2.3}
-\contentsline {section}{\numberline {3}Optimization Schemes}{20}{section.3}
-\contentsline {subsection}{\numberline {3.1}Contents}{20}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Overview\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}: What are optimimization schemes, and why use them?}{20}{subsection.3.2}
-\contentsline {subsubsection}{\numberline {3.2.1}In a nutshell..}{20}{subsubsection.3.2.1}
-\contentsline {subsubsection}{\numberline {3.2.2}More details}{21}{subsubsection.3.2.2}
-\contentsline {subsection}{\numberline {3.3}Optimization scheme user interface}{22}{subsection.3.3}
-\contentsline {subsubsection}{\numberline {3.3.1}Optimization step list}{22}{subsubsection.3.3.1}
-\contentsline {subsubsection}{\numberline {3.3.2}Add new optimization step}{22}{subsubsection.3.3.2}
-\contentsline {subsubsection}{\numberline {3.3.3}Remove current optimization step}{22}{subsubsection.3.3.3}
-\contentsline {subsubsection}{\numberline {3.3.4}Select template}{23}{subsubsection.3.3.4}
-\contentsline {subsubsection}{\numberline {3.3.5}Template editor}{23}{subsubsection.3.3.5}
-\contentsline {subsubsection}{\numberline {3.3.6}Save scheme}{23}{subsubsection.3.3.6}
-\contentsline {subsubsection}{\numberline {3.3.7}Resume scheme}{23}{subsubsection.3.3.7}
-\contentsline {subsection}{\numberline {3.4}How to build an optimization scheme?}{23}{subsection.3.4}
-\contentsline {subsection}{\numberline {3.5}How to save an optimization scheme for later?}{24}{subsection.3.5}
-\contentsline {subsection}{\numberline {3.6}How to load an optimization scheme?}{24}{subsection.3.6}
-\contentsline {subsection}{\numberline {3.7}What is saved?}{24}{subsection.3.7}
-\contentsline {subsection}{\numberline {3.8}Suggestions for optimization schemes}{24}{subsection.3.8}
-\contentsline {subsubsection}{\numberline {3.8.1}Crystals (\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Xtal\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Opt)}{24}{subsubsection.3.8.1}
+\contentsline {subsubsection}{\numberline {1.5.1}Using a remote P\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}B\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}S cluster}{9}{subsubsection.1.5.1}
+\contentsline {subsubsection}{\numberline {1.5.2}Using a remote S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}G\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}E cluster}{11}{subsubsection.1.5.2}
+\contentsline {subsubsection}{\numberline {1.5.3}Using a remote S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}L\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}U\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}R\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}M cluster}{12}{subsubsection.1.5.3}
+\contentsline {subsubsection}{\numberline {1.5.4}Using a remote L\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}F cluster}{13}{subsubsection.1.5.4}
+\contentsline {subsubsection}{\numberline {1.5.5}Using a remote Load\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Leveler cluster}{14}{subsubsection.1.5.5}
+\contentsline {subsubsection}{\numberline {1.5.6}Running optimations locally}{15}{subsubsection.1.5.6}
+\contentsline {subsection}{\numberline {1.6}What is written to the local directory?}{15}{subsection.1.6}
+\contentsline {subsection}{\numberline {1.7}Search Settings}{16}{subsection.1.7}
+\contentsline {subsection}{\numberline {1.8}\char `\"{}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Begin\char `\"{}}{17}{subsection.1.8}
+\contentsline {subsection}{\numberline {1.9}Monitor progress}{18}{subsection.1.9}
+\contentsline {subsubsection}{\numberline {1.9.1}View trends}{19}{subsubsection.1.9.1}
+\contentsline {section}{\numberline {2}Saving and Resuming Sessions in Xtal\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Opt}{20}{section.2}
+\contentsline {subsection}{\numberline {2.1}Contents}{20}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}How to save your session}{20}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}How to resume your session}{20}{subsection.2.3}
+\contentsline {section}{\numberline {3}Optimization Schemes}{21}{section.3}
+\contentsline {subsection}{\numberline {3.1}Contents}{21}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Overview\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}: What are optimimization schemes, and why use them?}{21}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}In a nutshell..}{21}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}More details}{22}{subsubsection.3.2.2}
+\contentsline {subsection}{\numberline {3.3}Optimization scheme user interface}{23}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}Optimization step list}{23}{subsubsection.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.2}Add new optimization step}{23}{subsubsection.3.3.2}
+\contentsline {subsubsection}{\numberline {3.3.3}Remove current optimization step}{23}{subsubsection.3.3.3}
+\contentsline {subsubsection}{\numberline {3.3.4}Select template}{24}{subsubsection.3.3.4}
+\contentsline {subsubsection}{\numberline {3.3.5}Template editor}{24}{subsubsection.3.3.5}
+\contentsline {subsubsection}{\numberline {3.3.6}Save scheme}{24}{subsubsection.3.3.6}
+\contentsline {subsubsection}{\numberline {3.3.7}Resume scheme}{24}{subsubsection.3.3.7}
+\contentsline {subsection}{\numberline {3.4}How to build an optimization scheme?}{24}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.5}How to save an optimization scheme for later?}{25}{subsection.3.5}
+\contentsline {subsection}{\numberline {3.6}How to load an optimization scheme?}{25}{subsection.3.6}
+\contentsline {subsection}{\numberline {3.7}What is saved?}{25}{subsection.3.7}
+\contentsline {subsection}{\numberline {3.8}Suggestions for optimization schemes}{25}{subsection.3.8}
+\contentsline {subsubsection}{\numberline {3.8.1}Crystals (\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Xtal\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Opt)}{25}{subsubsection.3.8.1}

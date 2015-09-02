@@ -213,7 +213,84 @@ SIESTA</h2>
 </div>
  <p>On the next tab we choose GULP for the local optimizer and enter a template for SIESTA to use. Select "SIESTA" as the "Optimizer" and "xtal.fdf" as "Template".</p>
 <p>Next, fill out the text field on the right with the following template:</p>
-<div class="fragment"></div><!-- fragment --><p>Or load the optimization scheme by clicking the "Load Opt Scheme" button and selecting the "samples/siesta-xtalopt.scheme" file that is distributed with the source code.</p>
+<div class="fragment"><div class="line">SystemName          %description%-%gen%x%<span class="keywordtype">id</span>%</div>
+<div class="line">SystemLabel         xtal</div>
+<div class="line"></div>
+<div class="line">NumberOfAtoms       %numAtoms%</div>
+<div class="line">NumberOfSpecies     %numSpecies%</div>
+<div class="line"></div>
+<div class="line">%block% ChemicalSpeciesLabel</div>
+<div class="line">%chemicalSpeciesLabel%</div>
+<div class="line">%endblock% ChemicalSpeciesLabel</div>
+<div class="line"></div>
+<div class="line">%block% PAO.Basis                 # Define Basis set</div>
+<div class="line">Ti    5      1.91</div>
+<div class="line"> n=3    0    1   E     93.95      5.20</div>
+<div class="line">   5.69946662616249</div>
+<div class="line">   1.00000000000000</div>
+<div class="line"> n=3    1    1   E     95.47      5.20</div>
+<div class="line">   5.69941339465994</div>
+<div class="line">   1.00000000000000</div>
+<div class="line"> n=4    0    2   E     96.47      5.60</div>
+<div class="line">   6.09996398975307        5.09944363262274</div>
+<div class="line">   1.00000000000000        1.00000000000000</div>
+<div class="line"> n=3    2    2   E     46.05      4.95</div>
+<div class="line">   5.94327035784617        4.70009988294302</div>
+<div class="line">   1.00000000000000        1.00000000000000</div>
+<div class="line"> n=4    1    1   E      0.50      1.77</div>
+<div class="line">   3.05365979938936</div>
+<div class="line">   1.00000000000000</div>
+<div class="line">%endblock% PAO.Basis</div>
+<div class="line"></div>
+<div class="line">%block% PAO.BasisSizes</div>
+<div class="line">        O      DZP</div>
+<div class="line">%endblock% PAO.BasisSizes</div>
+<div class="line"></div>
+<div class="line">XC.functional GGA</div>
+<div class="line">XC.authors    PBE</div>
+<div class="line"></div>
+<div class="line">LatticeConstant          1 Ang</div>
+<div class="line">%block% LatticeVectors</div>
+<div class="line">%cellMatrixAngstrom%</div>
+<div class="line">%endblock% LatticeVectors</div>
+<div class="line"></div>
+<div class="line">%block% kgrid_Monkhorst_Pack</div>
+<div class="line">   3  0  0  0.5</div>
+<div class="line">   0  3  0  0.5</div>
+<div class="line">   0  0  3  0.5</div>
+<div class="line">%endblock% Kgrid_Monkhorst_Pack</div>
+<div class="line"></div>
+<div class="line">MeshCutoff         100.0 Ry</div>
+<div class="line"></div>
+<div class="line">MaxSCFIterations     1000</div>
+<div class="line">DM.MixingWeight      0.05</div>
+<div class="line">DM.NumberPulay       3</div>
+<div class="line">DM.Tolerance         1.d-4</div>
+<div class="line"></div>
+<div class="line">SolutionMethod       diagon</div>
+<div class="line"></div>
+<div class="line">SpinPolarized   <span class="keyword">true</span></div>
+<div class="line">LongOutput <span class="keyword">true</span></div>
+<div class="line"></div>
+<div class="line">MD.TypeOfRun        cg</div>
+<div class="line">MD.NumCGsteps       1000</div>
+<div class="line">MD.VariableCell     <span class="keyword">true</span></div>
+<div class="line">MD.MaxForceTol      0.01 eV/Ang  #0.005 eV/Ang</div>
+<div class="line">WriteForces         <span class="keyword">true</span></div>
+<div class="line">WriteCoorCerius     <span class="keyword">true</span></div>
+<div class="line">WriteCoorXmol       <span class="keyword">false</span></div>
+<div class="line">WriteDenchar        <span class="keyword">true</span></div>
+<div class="line">WriteMullikenPop    1</div>
+<div class="line"></div>
+<div class="line">UseSaveData         <span class="keyword">true</span></div>
+<div class="line"></div>
+<div class="line"><span class="preprocessor">#Diag.ParallelOverK true</span></div>
+<div class="line"></div>
+<div class="line">AtomicCoordinatesFormat Fractional</div>
+<div class="line">%block% AtomicCoordinatesAndAtomicSpecies</div>
+<div class="line">%atomicCoordsAndAtomicSpecies%</div>
+<div class="line">%endblock% AtomicCoordinatesAndAtomicSpecies</div>
+</div><!-- fragment --><p>Or load the optimization scheme by clicking the "Load Opt Scheme" button and selecting the "samples/siesta-TiO-xtalopt.scheme" file that is distributed with the source code. If the source code is not available, the scheme file can be obtained by clicking <a href="http://xtalopt.github.io/samples/siesta-TiO-xtalopt.scheme">here</a>.</p>
 <p>For more details on optimization schemes, see <a class="el" href="optschemes.html">Optimization Schemes</a>.</p>
 <p>After loading the optimization scheme, XtalOpt will prompt for the xtal.psf files to use. Select files appropriated for the prompted atom. XtalOpt will copy the individual files over to each structure directory when the calculation is submitted. See the SIESTA manual for information on obtaining the .psf files.</p>
 <p>Notice the other keyword% values in the xtal.fdf templates. These are used to enter information that is specific to a search or structure when the actual input files are written prior to job submission. Click the "Help" button for a full listing of the available keywords.</p>
@@ -408,7 +485,7 @@ The ``Plot'' tab mid-run displaying enthalpy vs. volume. Each structure is label
 <!-- HTML footer for doxygen 1.8.6-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 31 2015 14:52:58 for XtalOpt Guide by<a href="http://www.doxygen.org/index.html">
+Generated on Tue Sep 1 2015 13:18:46 for XtalOpt User Guide by<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

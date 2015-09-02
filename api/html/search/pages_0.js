@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['angle_20correction_20in_20xtalopt',['Angle correction in XtalOpt',['../fixAngles.html',1,'']]]
+  ['deprecated_20list',['Deprecated List',['../deprecated.html',1,'']]]
 ];

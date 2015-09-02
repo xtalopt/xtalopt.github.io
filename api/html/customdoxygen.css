@@ -161,7 +161,8 @@ dl.el {
 
 pre.fragment {
         border: 1px solid #C4CFE5;
-        background-color: #FBFCFD;
+        background-color: #000000;
+        color: #FBFCFD;
         padding: 4px 6px;
         margin: 4px 8px 4px 2px;
         overflow: auto;
@@ -175,7 +176,8 @@ pre.fragment {
 div.fragment {
         padding: 4px 6px;
         margin: 4px 8px 4px 2px;
-	background-color: #FBFCFD;
+	background-color: #000000;
+        color: #FBFCFD;
 	border: 1px solid #C4CFE5;
 }
 

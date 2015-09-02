@@ -85,6 +85,5 @@ var searchData=
   ['structuresubmitted',['structureSubmitted',['../classGlobalSearch_1_1QueueManager.html#a97ce1e692cd752d62ebea8b2c56e1cd2',1,'GlobalSearch::QueueManager']]],
   ['structureupdated',['structureUpdated',['../classGlobalSearch_1_1QueueManager.html#aaf98cf54afb9751e185a5450c32f4595',1,'GlobalSearch::QueueManager']]],
   ['submitted',['Submitted',['../classGlobalSearch_1_1Structure.html#a3f1e44cb4f603fe1b3fbc8e813535917a5a0e4ad5830e2c3a9b045da79098b6c7',1,'GlobalSearch::Structure']]],
-  ['success',['Success',['../classGlobalSearch_1_1QueueInterface.html#a08dcf06d1b99f6333472470490ca9a6da4be480247388114f3860f7e746df65e9',1,'GlobalSearch::QueueInterface']]],
-  ['saving_20and_20resuming_20sessions_20in_20xtalopt',['Saving and Resuming Sessions in XtalOpt',['../xo_saveresume.html',1,'']]]
+  ['success',['Success',['../classGlobalSearch_1_1QueueInterface.html#a08dcf06d1b99f6333472470490ca9a6da4be480247388114f3860f7e746df65e9',1,'GlobalSearch::QueueInterface']]]
 ];

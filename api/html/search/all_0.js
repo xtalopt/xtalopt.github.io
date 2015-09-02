@@ -14,6 +14,5 @@ var searchData=
   ['appendoptstep',['appendOptStep',['../classGlobalSearch_1_1AbstractEditTab.html#ae86997d35f9d05458638766b4378b92d',1,'GlobalSearch::AbstractEditTab']]],
   ['appendtemplate',['appendTemplate',['../classGlobalSearch_1_1Optimizer.html#a8734827ff8773648cf4da48988208d87',1,'GlobalSearch::Optimizer']]],
   ['appendtojobstarttracker',['appendToJobStartTracker',['../classGlobalSearch_1_1QueueManager.html#aa010ca43a5ec0c5ce653c4ab5bfebb27',1,'GlobalSearch::QueueManager']]],
-  ['at',['at',['../classGlobalSearch_1_1Tracker.html#ab1457df5dea634a1f9b482cab0c8edb0',1,'GlobalSearch::Tracker']]],
-  ['angle_20correction_20in_20xtalopt',['Angle correction in XtalOpt',['../fixAngles.html',1,'']]]
+  ['at',['at',['../classGlobalSearch_1_1Tracker.html#ab1457df5dea634a1f9b482cab0c8edb0',1,'GlobalSearch::Tracker']]]
 ];

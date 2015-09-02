@@ -157,7 +157,7 @@ VASP</h2>
 <img src="opt-set-vasp.png" alt="opt-set-vasp.png"/>
 </div>
  <p>On the next tab, load the optimization scheme by clicking the "Load
-Opt Scheme" button and selecting the "samples/vasp-xtalopt.scheme" file that is distributed with the source code. If you do not have a copy of the source code, the scheme file can be obtained by clicking the "Original Format" link at the bottom of the page <a href="http://xtalopt.openmolecules.net/wiki/index.fcgi/browser/samples/vasp-xtalopt.scheme">here</a>.</p>
+Opt Scheme" button and selecting the "samples/vasp-xtalopt.scheme" file that is distributed with the source code. If you do not have a copy of the source code, the scheme file can be obtained by clicking the <a href="http://xtalopt.github.io/samples/vasp-xtalopt.scheme">here</a>.</p>
 <p>For more details on optimization schemes, see <a class="el" href="optschemes.html">Optimization Schemes</a>.</p>
 <p>After loading the optimization scheme, XtalOpt will prompt for the POTCAR files to use. Select files appropriated for the prompted atom. XtalOpt will construct the POTCAR files on the local computer, and then copy them over to the cluster when the calculation is submitted. It is necessary to have the VASP POTCAR files for each atomic species located somewhere on the local computer. See the VASP manual for information on obtaining the POTCAR files.</p>
 <p>Take a moment to look through each file for each optimization step. Notice that the INCAR template includes two user-specified values, %user2% and %user3% for the external pressure and the energy cutoff, respectively. By entering appropriate values in the "user2:" and "user3:" fields on the left, it is easy to update these values for all optimization steps.</p>
@@ -186,7 +186,7 @@ GULP</h2>
 <div class="line">Ti Ti 1 0 15</div>
 <div class="line">O  O  1 0 15</div>
 <div class="line">Ti O  1 0 15</div>
-</div><!-- fragment --><p>Alternatively, one can load the scheme file distributed with the source code under samples/gulp-TiO-xtalopt.scheme. If the source code is not available, the scheme file can be obtained by clicking the "Original Format" link at the bottom of the page <a href="http://xtalopt.openmolecules.net/wiki/index.fcgi/browser/samples/gulp-TiO-xtalopt.scheme">here</a>.</p>
+</div><!-- fragment --><p>Alternatively, one can load the scheme file distributed with the source code under samples/gulp-TiO-xtalopt.scheme. If the source code is not available, the scheme file can be obtained by clicking <a href="http://xtalopt.github.io/samples/gulp-TiO-xtalopt.scheme">here</a>.</p>
 <p>For more details on optimization schemes, see <a class="el" href="optschemes.html">Optimization Schemes</a>.</p>
 <p>Note the "%" surrounding various keywords. These will be replaced by the structure-specific data when the optimizer is invoked for each structure. Click "Help" to view all of the keywords available. The number of optimization steps can be modified with the "Add/Resume" buttons. The "user" fields in the lower left corner allow users to specify their own keyword/value pairs, which is useful for making changes to multiple optimization steps at once. We will only be using one optimization step in this tutorial.</p>
 <p>XtalOpt expects GULP to use the following filenames:</p>
@@ -197,7 +197,7 @@ PWscf</h2>
 <div class="image">
 <img src="opt-set-pwscf.png" alt="opt-set-pwscf.png"/>
 </div>
- <p>On the next tab, load the optimization scheme that is distributed with the source code under the samples/ directory. The scheme that we want is named "pwscf-xtalopt.scheme". If the source code is not available, the scheme file can be obtained by clicking the "Original Format" link at the bottom of the page <a href="http://xtalopt.openmolecules.net/wiki/index.fcgi/browser/samples/pwscf-xtalopt.scheme">here</a>.</p>
+ <p>On the next tab, load the optimization scheme that is distributed with the source code under the samples/ directory. The scheme that we want is named "pwscf-xtalopt.scheme". If the source code is not available, the scheme file can be obtained by clicking the "Original Format" link at the bottom of the page <a href="http://xtalopt.github.io/samples/pwscf-xtalopt.scheme">here</a>.</p>
 <p>For more details on optimization schemes, see <a class="el" href="optschemes.html">Optimization Schemes</a>.</p>
 <p>Each PWscf input file will need to be edited to specify:</p><ol type="1">
 <li>The pseudo_dir containing the pseudopotential files on the remote cluster, and</li>
@@ -214,7 +214,7 @@ CASTEP</h2>
 <div class="image">
 <img src="opt-set-castep.png" alt="opt-set-castep.png"/>
 </div>
- <p>On the next tab, load the optimization scheme that is distributed with the source code under the samples/ directory. The scheme that we want is named "castep-xtalopt.scheme". If the source code is not available, the scheme file can be obtained by clicking the "Original Format" link at the bottom of the page <a href="http://xtalopt.openmolecules.net/wiki/index.fcgi/browser/samples/castep-xtalopt.scheme">here</a>.</p>
+ <p>On the next tab, load the optimization scheme that is distributed with the source code under the samples/ directory. The scheme that we want is named "castep-xtalopt.scheme". If the source code is not available, the scheme file can be obtained by clicking the "Original Format" link at the bottom of the page <a href="http://xtalopt.github.io/samples/castep-xtalopt.scheme">here</a>.</p>
 <p>For more details on optimization schemes, see <a class="el" href="optschemes.html">Optimization Schemes</a>.</p>
 <p>It is important to note that CASTEP input files require the "%" character to define blocks. The percent character is special in the XtalOpt input template parser to define keywords (see below). To insert a literal "%" into the input, use percent%.</p>
 <p>E.g. Specification of the fractional coordinate block in the .cell template should look like:</p>
@@ -236,7 +236,84 @@ SIESTA</h2>
 </div>
  <p>On the next tab we choose GULP for the local optimizer and enter a template for SIESTA to use. Select "SIESTA" as the "Optimizer" and "xtal.fdf" as "Template".</p>
 <p>Next, fill out the text field on the right with the following template:</p>
-<div class="fragment"></div><!-- fragment --><p>Or load the optimization scheme by clicking the "Load Opt Scheme" button and selecting the "samples/siesta-xtalopt.scheme" file that is distributed with the source code.</p>
+<div class="fragment"><div class="line">SystemName          %description%-%gen%x%<span class="keywordtype">id</span>%</div>
+<div class="line">SystemLabel         xtal</div>
+<div class="line"></div>
+<div class="line">NumberOfAtoms       %numAtoms%</div>
+<div class="line">NumberOfSpecies     %numSpecies%</div>
+<div class="line"></div>
+<div class="line">%block% ChemicalSpeciesLabel</div>
+<div class="line">%chemicalSpeciesLabel%</div>
+<div class="line">%endblock% ChemicalSpeciesLabel</div>
+<div class="line"></div>
+<div class="line">%block% PAO.Basis                 # Define Basis set</div>
+<div class="line">Ti    5      1.91</div>
+<div class="line"> n=3    0    1   E     93.95      5.20</div>
+<div class="line">   5.69946662616249</div>
+<div class="line">   1.00000000000000</div>
+<div class="line"> n=3    1    1   E     95.47      5.20</div>
+<div class="line">   5.69941339465994</div>
+<div class="line">   1.00000000000000</div>
+<div class="line"> n=4    0    2   E     96.47      5.60</div>
+<div class="line">   6.09996398975307        5.09944363262274</div>
+<div class="line">   1.00000000000000        1.00000000000000</div>
+<div class="line"> n=3    2    2   E     46.05      4.95</div>
+<div class="line">   5.94327035784617        4.70009988294302</div>
+<div class="line">   1.00000000000000        1.00000000000000</div>
+<div class="line"> n=4    1    1   E      0.50      1.77</div>
+<div class="line">   3.05365979938936</div>
+<div class="line">   1.00000000000000</div>
+<div class="line">%endblock% PAO.Basis</div>
+<div class="line"></div>
+<div class="line">%block% PAO.BasisSizes</div>
+<div class="line">        O      DZP</div>
+<div class="line">%endblock% PAO.BasisSizes</div>
+<div class="line"></div>
+<div class="line">XC.functional GGA</div>
+<div class="line">XC.authors    PBE</div>
+<div class="line"></div>
+<div class="line">LatticeConstant          1 Ang</div>
+<div class="line">%block% LatticeVectors</div>
+<div class="line">%cellMatrixAngstrom%</div>
+<div class="line">%endblock% LatticeVectors</div>
+<div class="line"></div>
+<div class="line">%block% kgrid_Monkhorst_Pack</div>
+<div class="line">   3  0  0  0.5</div>
+<div class="line">   0  3  0  0.5</div>
+<div class="line">   0  0  3  0.5</div>
+<div class="line">%endblock% Kgrid_Monkhorst_Pack</div>
+<div class="line"></div>
+<div class="line">MeshCutoff         100.0 Ry</div>
+<div class="line"></div>
+<div class="line">MaxSCFIterations     1000</div>
+<div class="line">DM.MixingWeight      0.05</div>
+<div class="line">DM.NumberPulay       3</div>
+<div class="line">DM.Tolerance         1.d-4</div>
+<div class="line"></div>
+<div class="line">SolutionMethod       diagon</div>
+<div class="line"></div>
+<div class="line">SpinPolarized   <span class="keyword">true</span></div>
+<div class="line">LongOutput <span class="keyword">true</span></div>
+<div class="line"></div>
+<div class="line">MD.TypeOfRun        cg</div>
+<div class="line">MD.NumCGsteps       1000</div>
+<div class="line">MD.VariableCell     <span class="keyword">true</span></div>
+<div class="line">MD.MaxForceTol      0.01 eV/Ang  #0.005 eV/Ang</div>
+<div class="line">WriteForces         <span class="keyword">true</span></div>
+<div class="line">WriteCoorCerius     <span class="keyword">true</span></div>
+<div class="line">WriteCoorXmol       <span class="keyword">false</span></div>
+<div class="line">WriteDenchar        <span class="keyword">true</span></div>
+<div class="line">WriteMullikenPop    1</div>
+<div class="line"></div>
+<div class="line">UseSaveData         <span class="keyword">true</span></div>
+<div class="line"></div>
+<div class="line"><span class="preprocessor">#Diag.ParallelOverK true</span></div>
+<div class="line"></div>
+<div class="line">AtomicCoordinatesFormat Fractional</div>
+<div class="line">%block% AtomicCoordinatesAndAtomicSpecies</div>
+<div class="line">%atomicCoordsAndAtomicSpecies%</div>
+<div class="line">%endblock% AtomicCoordinatesAndAtomicSpecies</div>
+</div><!-- fragment --><p>Or load the optimization scheme by clicking the "Load Opt Scheme" button and selecting the "samples/siesta-TiO-xtalopt.scheme" file that is distributed with the source code. If the source code is not available, the scheme file can be obtained by clicking <a href="http://xtalopt.github.io/samples/siesta-TiO-xtalopt.scheme">here</a>.</p>
 <p>For more details on optimization schemes, see <a class="el" href="optschemes.html">Optimization Schemes</a>.</p>
 <p>After loading the optimization scheme, XtalOpt will prompt for the xtal.psf files to use. Select files appropriated for the prompted atom. XtalOpt will copy the individual files over to each structure directory when the calculation is submitted. See the SIESTA manual for information on obtaining the .psf files.</p>
 <p>Notice the other keyword% values in the xtal.fdf templates. These are used to enter information that is specific to a search or structure when the actual input files are written prior to job submission. Click the "Help" button for a full listing of the available keywords.</p>
@@ -402,6 +479,7 @@ Search Settings</h1>
 </div>
  <p>In the "Search Settings" tab, most of the default settings should suffice (See CPC 2010 publication). We arbitrarily set the initial structures to 20 and the continuous structures to 5, although these may need to be adjusted based on available resources. We will not specify initial seeds, but the option to do so exists on this screen.</p>
 <p>It is not neccessary to limit the number of running jobs unless running locally, as the PBS queue on the cluster will manage job control for us. If running locally, set the job limit no higher than [number of available processor cores] - 1 (e.g. for a quadcore processor, allow three jobs to run simultaneously). This allows one core to remain free for the system to run.</p>
+<p>There is now a termination criteria called "Total Number of Structures" that will end the run once a certain number of strcutures have been produced by XtalOpt.</p>
 <h1><a class="anchor" id="begin"></a>
 "Begin"</h1>
 <div class="image">
@@ -416,9 +494,10 @@ Monitor progress</h1>
 <img src="prog-mon.png" alt="prog-mon.png"/>
 <div class="caption">
 The ``Progress'' tab mid-run</div></div>
-<p>As XtalOpt performs the search, the progress table continuously updates, providing information about each structure. We see individuals in various stages of completion: most are optimized (in yellow), structure 2x7 has been automatically marked as a duplicate (dark green) of structure 3x3 and removed from the breeding pool, structure 4x4 is currently undergoing a local optimization (light green), while structure 4x5 is waiting to be optimized (blue).</p>
+<p>As XtalOpt performs the search, the progress table continuously updates, providing information about each structure. We see individuals in various stages of completion: most are optimized (in blue), structure 2x7 has been automatically marked as a duplicate (dark green) of structure 3x3 and removed from the breeding pool, structure 4x4 is currently undergoing a local optimization (light green), while structure 4x5 is waiting to be optimized (light blue).</p>
 <p>Other useful information is displayed about each structure, such as the time spent in optimization, the optimized enthalpy, the cell volume, spacegroup, and each structure's ancestory (i.e. parent(s) and parameters for the genetic operator that generated it). A status bar on the bottom of the window shows the number of structures that are optimized, running, and failing at any given time. This information is visible regardless of which tab is currently being viewed.</p>
 <p>An additional feature of the progress table is the ability to immediately visualize any of the individuals in the Avogadro main window &ndash; simply clicking on a row in this table will display the three-dimensional structure in Avogadro, where it can be visualized, modified, or exported. If the user would like to add a bit of "intelligent design" to the evolutionary process, a structure can be modified and then resubmitted using a context (right-click) menu from the progress table. The context menu provides tools to (un)kill a structure, resubmit for local optimization at an arbitrary optimization step, or replace a problematic structure with a new, random individual.</p>
+<p>Three additional buttons found near the "Refresh All" button in this tab are also available. The "Print Results File" button generates a run-results.txt file that lists all of the information about each structure in order of generation and structure number (As compared to the results.txt file which ranks the structures). The "Remove Extra Files" button is used for VASP runs. It removes any extraneous files in each local subdirectory in order to reduce disk usage. Files kept are structure.state, POTCAR, CONTCAR, OSZICAR, job.slurm and OUTCAR. Finally, the "Rank All" button ranks all currently optimized structures and exports them to a subdirectory (Ranked) in two forms (depending on the optimizer): POSCAR/.got and .cif. Each can be found in separate directories. (Only works for GULP and VASP runs currently).</p>
 <h2><a class="anchor" id="trends"></a>
 View trends</h2>
 <div class="image">
@@ -432,7 +511,7 @@ The ``Plot'' tab mid-run displaying enthalpy vs. volume. Each structure is label
 <!-- HTML footer for doxygen 1.8.6-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 31 2015 13:43:21 for GlobalSearch by<a href="http://www.doxygen.org/index.html">
+Generated on Tue Sep 1 2015 11:39:57 for GlobalSearch by<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

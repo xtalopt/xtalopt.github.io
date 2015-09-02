@@ -254,9 +254,86 @@ On the next tab we choose GULP for the local optimizer and enter a template for 
 Next, fill out the text field on the right with the following template:
 
 @code
+SystemName          %description%-%gen%x%id%
+SystemLabel         xtal
+
+NumberOfAtoms       %numAtoms%
+NumberOfSpecies     %numSpecies%
+
+%block% ChemicalSpeciesLabel
+%chemicalSpeciesLabel%
+%endblock% ChemicalSpeciesLabel
+
+%block% PAO.Basis                 # Define Basis set
+Ti    5      1.91
+ n=3    0    1   E     93.95      5.20
+   5.69946662616249
+   1.00000000000000
+ n=3    1    1   E     95.47      5.20
+   5.69941339465994
+   1.00000000000000
+ n=4    0    2   E     96.47      5.60
+   6.09996398975307        5.09944363262274
+   1.00000000000000        1.00000000000000
+ n=3    2    2   E     46.05      4.95
+   5.94327035784617        4.70009988294302
+   1.00000000000000        1.00000000000000
+ n=4    1    1   E      0.50      1.77
+   3.05365979938936
+   1.00000000000000
+%endblock% PAO.Basis
+
+%block% PAO.BasisSizes
+        O      DZP
+%endblock% PAO.BasisSizes
+
+XC.functional GGA
+XC.authors    PBE
+
+LatticeConstant          1 Ang
+%block% LatticeVectors
+%cellMatrixAngstrom%
+%endblock% LatticeVectors
+
+%block% kgrid_Monkhorst_Pack
+   3  0  0  0.5
+   0  3  0  0.5
+   0  0  3  0.5
+%endblock% Kgrid_Monkhorst_Pack
+
+MeshCutoff         100.0 Ry
+
+MaxSCFIterations     1000
+DM.MixingWeight      0.05
+DM.NumberPulay       3
+DM.Tolerance         1.d-4
+
+SolutionMethod       diagon
+
+SpinPolarized   true
+LongOutput true
+
+MD.TypeOfRun        cg
+MD.NumCGsteps       1000
+MD.VariableCell     true
+MD.MaxForceTol      0.01 eV/Ang  #0.005 eV/Ang
+WriteForces         true
+WriteCoorCerius     true
+WriteCoorXmol       false
+WriteDenchar        true
+WriteMullikenPop    1
+
+UseSaveData         true
+
+#Diag.ParallelOverK true
+
+AtomicCoordinatesFormat Fractional
+%block% AtomicCoordinatesAndAtomicSpecies
+%atomicCoordsAndAtomicSpecies%
+%endblock% AtomicCoordinatesAndAtomicSpecies
 @endcode
 
-Or load the optimization scheme by clicking the "Load Opt Scheme" button and selecting the "samples/siesta-xtalopt.scheme" file that is distributed with the source code.
+<p>Or load the optimization scheme by clicking the "Load Opt Scheme" button and selecting the "samples/siesta-TiO-xtalopt.scheme" file that is distributed with the source code. If the source code is not available, the scheme file can be obtained by clicking <a href="http://xtalopt.github.io/samples/siesta-TiO-xtalopt.scheme">here</a>.</p>
 
 For more details on optimization schemes, see \ref optschemes.
 
@@ -267,9 +344,6 @@ For more details on optimization schemes, see \ref optschemes.
  <p>XtalOpt expects SIESTA to use the following filenames:</p>
 
  <pre>siesta < xtal.fdf > xtal.out</pre>
-
- </div>
-
 
 
 @section qisetup Queue setup
