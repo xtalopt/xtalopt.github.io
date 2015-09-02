@@ -1,0 +1,14 @@
+namespace XtalOpt {
+/**
+
+@page install-win Installation for Windows
+
+@section instruct Instructions
+
+  -# Download the Windows .exe installer <a href="http://xtalopt.github.io/download.html">here</a>.
+  -# Follow the instructions to install Avogadro with the XtalOpt extension.
+  -# Run the program.
+
+*/
+
+}

@@ -1,0 +1,169 @@
+namespace XtalOpt {
+/**
+
+@page install-mac Installation for Mac OS X
+
+@section depend Dependencies
+
+First, and foremost, Mac OS X users must install <a href="https://developer.apple.com/xcode/">Xcode</a> to begin compiling the following programs.
+
+        The following dependencies can be installed from the package manager <a href="https://www.macports.org">MacPorts</a> or <a href="http://brew.sh/">Homebrew</a>:
+
+  - \c cmake (and optionally the ncurses GUI, ccmake) >= 2.6
+  - \c Qt >= 4.6.0
+  - \c Eigen >= 2
+  - \c git, any version
+
+If you wish to enable SSH (default), you will also need:
+
+  - <tt>libssh</tt>, any version
+ 
+Using the package manager for your mac distribution, install the dependencies listed above. For example, using MacPorts,
+
+\code
+port install cmake git eigen qt4-mac cairo libssh
+\endcode
+
+or using Homebrew,
+
+\code
+brew install cmake git eigen qt cairo libssh
+\endcode
+
+@section src Source Installations
+
+Remember to uninstall any non-development installations of OpenBabel and Avogadro before installing the development versions.
+
+@subsection ob OpenBabel
+
+First, the development version of OpenBabel must be installed from source. These instructions will build and install the packages in your user's <tt>$HOME</tt> directory.
+
+Change to your users home directory:
+
+\code
+cd ~
+\endcode
+
+Make a directory to hold the source code and then enter it:
+
+\code
+mkdir src
+cd src
+\endcode
+
+Check out the OpenBabel trunk sources:
+
+\code
+git clone git://github.com/openbabel/openbabel.git
+\endcode
+
+Once the above command completes, make a build subdirectory and enter it:
+
+\code
+mkdir openbabel/build
+cd openbabel/build
+\endcode
+
+Configure OpenBabel:
+
+\code
+cmake .. -DCMAKE_CXX_FLAGS=-stdlib=libstdc++ -DCMAKE_INSTALL_PREFIX=$HOME -DBUILD_GUI=FALSE
+\endcode
+
+Compile and install:
+
+\code
+make -j3
+make install
+\endcode
+
+OpenBabel should now be installed.
+
+@subsection avo Avogadro
+
+Next, Avogadro must be installed.
+
+First, change to the source directory created earlier:
+
+\code
+cd $HOME/src
+\endcode
+
+Check out Avogadro from GitHub:
+
+\code
+git clone git://github.com/cryos/avogadro.git
+\endcode
+
+Just like with OpenBabel, make a build directory and enter it:
+
+\code
+mkdir avogadro/build
+cd avogadro/build
+\endcode
+
+Configure, build, and install Avogadro:
+
+\code
+cmake .. -DCMAKE_CXX_FLAGS=-stdlib=libstdc++ -DOPENBABEL2_INCLUDE_DIR=$HOME/include/openbabel-2.0 -DOPENBABEL2_LIBRARIES=$HOME/lib/libopenbabel.4.0.0.dylib -DOPENBABEL2_VERSION_MET=true -DOPENBABEL_IS_NEWER_THAN_2_2_99=true -DENABLE_PYTHON=false -DCMAKE_INSTALL_PREFIX=$HOME
+make -j3
+make install
+\endcode
+
+Avogadro should now be installed.
+
+@section xo XtalOpt
+
+Installing XtalOpt from source is very similar to installing OpenBabel and Avogadro. Once again, change to your source directory:
+
+\code
+cd $HOME/src
+\endcode
+
+Check out the stable branch of the XtalOpt sources:
+
+\code
+git clone -b stable git://github.com/dlonie/XtalOpt.git xtalopt
+\endcode
+
+Make a build directory and enter it:
+
+\code
+mkdir xtalopt/build
+cd xtalopt/build
+\endcode
+
+Configure, build, and install:
+
+\code
+cmake .. -DCMAKE_CXX_FLAGS=-stdlib=libstdc++ -DOPENBABEL2_INCLUDE_DIR=$HOME/include/openbabel-2.0 -DOPENBABEL2_LIBRARIES=$HOME/lib/libopenbabel.4.0.0.dylib -DOPENBABEL2_VERSION_MET=true -DOPENBABEL_IS_NEWER_THAN_2_2_99=true -DCMAKE_INSTALL_PREFIX=$HOME
+make -j3
+make install
+\endcode
+
+Note: if you see errors like
+
+\code
+/usr/bin/ld: cannot find -lbsdyengine
+/usr/bin/ld: cannot find -lnavigatetool
+/usr/bin/ld: cannot find -lelementcolor
+\endcode
+
+during the compiliation, follow the instructions <a href="http://lists.openmolecules.net/pipermail/xtalopt-devel-openmolecules.net/2011-August/000081.html">here</a>.
+
+Note: if you need to use Kerberos authentication to establish a SSH connection to the remote server, the <tt>libssh</tt> library used by XtalOpt will not work. There is a workaround for Linux (and possibly Mac) users, which will call the command line <tt>ssh</tt>/<tt>scp</tt> commands to communicate with the remote cluster. This can be enabled by adding <tt>-DUSE_CLI_SSH=true</tt> to the cmake command above. This <tt>ssh</tt> backend will not prompt for a password, and expects the <tt>ssh</tt> commands to "just work". Passwordless <tt>ssh</tt> logins can be enabled using the <a href="http://linux.die.net/man/1/ssh-copy-id">ssh-copy-id</a> command.
+
+XtalOpt is now installed.
+
+@section test Test the installation
+
+To use XtalOpt, you need to run the avogadro executable installed above. There are two ways to do this:
+
+  - Run <tt>/Applications/Avogadro.app/Contents/MacOS/Avogadro</tt> from a terminal, or
+  - Open Finder and run Avogadro in <tt>/Applications</tt>.
+
+Once Avogadro is running, check for "XtalOpt" in the "Extensions" menu. If you see it, the installation completed successfully.
+
+*/
+
+}
