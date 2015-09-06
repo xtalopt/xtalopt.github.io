@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Github Page for XtalOpt, an evolutionary algortihm designed to predict crystal structures.">
+  <meta name="description" content="Github Page for XtalOpt, an evolutionary algortihm designed for a priori crystal structure prediction.">
   <meta name="author" content="Zackary Falls">
   <link rel="icon" href="img/xtalopt-logo.png">
   <title>
@@ -52,7 +52,7 @@
     <div class="jumbotron">
       <img src="dist/img/xtalopt-banner.png" width="auto">
       <hr>
-      <p class="lead">XtalOpt is a free and truly <a href="http://opensource.org/">open source</a> evolutionary algorithm designed to predict crystal structures. </p>
+      <p class="lead">XtalOpt is a free and truly <a href="http://opensource.org/">open source</a> evolutionary algorithm designed for a priori crystal structure prediction. </p>
       <a class="btn btn-large btn-primary" href="download.html">Download today</a>
       <br>
       <br>
@@ -71,7 +71,6 @@
       <div class="row-fluid">
         <div class="span6">
           <ul align="left" style="text-align:-moz-left">
-            <li>Added support for the MOPAC semi-empirical quantum chemistry code.</li>
             <li>Customizable polling interval for updating remote queue information.</li>
             <li>Automatic removal of remote working files optional.</li>
             <center>
@@ -79,7 +78,7 @@
                 <img width="100%" src="dist/img/xtalopt-queue.png" alt="xtalopt-queue.png" max-width="85%">
               </a>
             </center>  
-            <li>Optional removal of unnecessary files for VASP caluclations.</li>
+            <li>Optional removal of unnecessary files for VASP calculations.</li>
             <li>Added a new "mitosis" function used to generate higher local order for initial structures.
             <br>
             <br>
@@ -115,6 +114,7 @@
             <li>Updated space-group detection library to spglib 1.0.8.</li>
             <li>Bundled libssh library removed, now an optional dependency.</li>
             <li>Added option to use command-line ssh/scp interfaces when libssh is unavailable or Kerberos authentication is needed.</li> 
+            <li>Implemented an extension for an automated stochastic docking program (RandomDock) that supports MOPAC, ADF, GAMESS and Gaussian as back-end molecular quantum chemistry engines. 
             <li>Numerous misc bugfixes.</li>
           </ul>
         </div>
@@ -216,10 +216,10 @@
           <br>
           <ul>
               <li style="padding-top:7px">"Search Settings" is where the user can alter how the search will procede.
-              <li style="padding-top:7px">The number of randomly generated initial structures and number of concurrently running structures and controlled in this tab.
+              <li style="padding-top:7px">The number of randomly generated initial structures and number of concurrently running structures are controlled in this tab.
               <li style="padding-top:7px">The termination criteria of final number of structures can be set here, as well.
               <li style="padding-top:7px">Users can adjust the percentage of occurence of each operator type.
-              <li style="padding-top:7px">Furthermore, the individual paramters of each opertaor can be fine tuned (number of exchanges in a "permustrain" or minimum contribution from a parent during a "crossover").  
+              <li style="padding-top:7px">Furthermore, the individual parameters of each opertaor can be fine tuned (number of exchanges in a "permustrain" or minimum contribution from a parent during a "crossover").  
               <li style="padding-top:7px">Duplicate matching parameters are also found here.
           </ul>
         </div>
@@ -229,7 +229,9 @@
           <ul align="left" style="text-align:-moz-left">
             <li style="padding-top:7px">As XtalOpt performs the search, the progress table continuously updates, providing information about each structure. 
             <li style="padding-top:7px">In the figure we see individuals in various stages of completion:
-            <li style="padding-top:7px">One structure XtalOpt displays is optimized (in blue), another structure has been automatically marked as a duplicate (dark green) and removed from the breeding pool, yet another structure is currently undergoing a local optimization (light green), while is waiting to be optimized (light blue).
+            <ul align="left" style="text-align:-moz-left">
+                <li style="padding-top:7px">One structure XtalOpt displays is optimized (in blue), another structure has been automatically marked as a duplicate (dark green) and removed from the breeding pool, yet another structure is currently undergoing a local optimization (light green), while another structure is waiting to be optimized (light blue).
+            </ul>
             <li style="padding-top:7px">Other useful information is displayed about each structure, such as the time spent in optimization, the optimized enthalpy, the cell volume, spacegroup, and each structure’s ancestory (i.e. parent(s) and parameters for the evolutionary operator that generated it). 
             <li style="padding-top:7px">A status bar on the bottom of the window shows the number of structures that are optimized, running, and failing at any given time. 
             <li style="padding-top:7px">This information is visible regardless of which tab is currently being viewed.
@@ -284,7 +286,7 @@
       <h3>Strain</h3>
       <p>
         <ul align="left" style="text-align:-moz-left">
-          <li style="padding-bottom:7px">The strain operator allows XtalOpt to mutate the unit cell paramters, but not the fractional positions of the atoms.
+          <li style="padding-bottom:7px">The strain operator allows XtalOpt to mutate the unit cell parameters, but not the fractional positions of the atoms.
           <li style="padding-bottom:7px">One can multiply the cell row vectors by the symmetric voight matrix, as shown below,
           <center>
             <p lang="latex">
@@ -348,10 +350,10 @@
       <h3>Crossover</h3>
       <p>
         <ul align="left" style="text-align:-moz-left">
-          <li style="padding-bottom:7px">The crossover, or "cut and splice", operator is the biological equivalent of breeding in which two parents are combined to form an offspring.
+          <li style="padding-bottom:7px">The crossover, or "cut and splice", operator is the equivalent of breeding in biology of breeding in which two parents are combined to form an offspring.
           <li style="padding-bottom:7px">This is the only operator in XtalOpt that requires two parents to generate an offspring.
           <li style="padding-bottom:7px">For XtalOpt's implentation, two parents are selected from the breeding pool.
-          <li style="padding-bottom:7px">Both parent structures are operated on by a randomly selected reflection and rotation to avoid biasing one given orientation.
+          <li style="padding-bottom:7px">The atoms in both parent structures are randomly reflected and rotated to avoid biasing one given orientation.
           <li style="padding-bottom:7px">Each newly mutated parent is then "cut" to form the two halves of what will be the offspring structure.
           <li style="padding-bottom:7px">Finally, the two halves are "spliced" together.
           <li style="padding-bottom:7px">This occurs through first joining the atomic positions in fractional coordinates.

@@ -58,6 +58,18 @@
     <div class="jumbotron">
       <h2>RandomDock</h2>
       <img src="dist/img/rd-menu.png" alt="rd-menu.png">
+
+          Below we provide details about the computational setup of RandomDock. This section is also intended to serve as a short manual for the program. The AVOGADRO1 builder was used to construct and preoptimize the systems, as well as to run the RandomDock extension. RandomDock is included with XTALOPT,2 an open–source evolutionary algorithm for crystal structure prediction, which can be downloaded from the internet at: http://xtalopt.openmolecules.net. The RandomDock extension is built by configuring XTALOPT with the ‘-DENABLE_RandomDock=1’ flag during the cmake step of the installation. RandomDock generates a user–specified number of geometries which are sent out for relaxation by an external quantum chemical program. These are generated as follows:
+            • The substrate (template) and matrix (monomer) molecules can be drawn and pre–optimized by AVOGADRO or imported into AVOGADRO from a file using one of the common chemical structure formats. The number of matrix and substrate molecules are specified in the GUI. Either isolated molecules or complexes (dimers, trimers etc.) may be employed.
+             • Conformers of the substrate and/or matrix molecules are generated and pre–optimized using one of the force field implementations in the OPENBABEL library.3,4 Either an exhaustive search can be performed, or a specified number of conformers may be created. The latter option does not guarantee that the most stable conformers will be found, since the conformer­generating algorithm stops once the specified number has been reached.
+             • Conformers of the matrix and/or substrate molecules are chosen such that the probability pi of selecting a given individual is calculated from its energy Ei (evaluated via the specified force field) as:
+             pi=N(1− Ei−Emin ) , (1) Emax−Emin
+             where Emin and Emax are the energies of the most stable and the least stable conformer, and N is a normalization factor ensuring that ∑pi = 1.
+             • The matrix molecules are placed randomly about the substrate subject to user–specified distance constraints. A range for the interatomic distances (IAD) between all atoms in the matrix and substrate molecules may be specified. This ensures that all atoms between any template­matrix pair are separated by at least the minimum IAD (in angstroms), but at least one pair, from each matrix molecule, must be closer than the IAD maximum value.
+             • An option to force the formation of hydrogen bonds ensures that each configuration has at least one short X–H–X contact between the matrix and the substrate, where X is F, O, or N.
+             • The ‘cluster’ option changes the intermolecular distance constraint. Instead of ensuring that each matrix molecule is close to the substrate, it enforces each matrix molecule to be close to the substrate or another matrix molecule.
+             • The structures are submitted for optimization by an external program. Currently, ADF,5 GAMESS6 and MOPAC7 are supported. The calculations may be performed on a remote supercomputing cluster by specifying secure­shell login credentials and selecting a queuing system type, or on a local workstation. Remote calculations are automatically staged, copied, submitted, monitored, and analyzed by RandomDock, making searches fully automatic. Configuration of remote computational resources and optimizer input files can be performed as described in Ref.2
+
     </div>
 
     <a class="anchor" id="nanotube"> 

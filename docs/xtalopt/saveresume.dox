@@ -57,7 +57,7 @@ generate new structures or submit geometry optimizations.
 at the results.txt file in the working directory. It contains a list
 of all structures, sorted by enthalpy, with additional useful
 information. This can save some time when trying to locate the most
-stable structure of a old search.
+stable structure of an old search.
 
 The working directories for XtalOpt are relocatable, meaning that the
 directory containing xtalopt.state and the [gen]x[id] structure

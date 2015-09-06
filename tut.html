@@ -106,16 +106,18 @@
 <li><a class="el" href="tut.html#saving">How to save an optimization scheme for later?</a></li>
 <li><a class="el" href="tut.html#loading">How to load an optimization scheme?</a></li>
 <li><a class="el" href="tut.html#format">What is saved?</a></li>
-<li><a class="el" href="tut.html#suggest">Suggestions for optimization schemes</a><ul>
-<li><a class="el" href="tut.html#sug-xtal">Crystals (XtalOpt)</a></li>
-</ul>
+<li><a class="el" href="tut.html#suggest">Suggestions for optimization schemes</a>
+  <ul>
+    <li><a class="el" href="tut.html#sug-xtal">Crystals (XtalOpt)</a></li>
+  </ul>
 </li>
    </ul>             
-            <li><a class="el" href="tut.html#sr">Saving and Resuming Sessions in XtalOpt</a><ul>
-                <li><a class="el" href="tut.html#sr_saving">How to save your session</a></li>
-                <li><a class="el" href="tut.html#sr_resuming">How to resume your session</a></li>
-            </ul>
-            </li>
+     <li><a class="el" href="tut.html#sr">Saving and Resuming Sessions in XtalOpt</a>
+     <ul>
+       <li><a class="el" href="tut.html#sr_saving">How to save your session</a></li>
+       <li><a class="el" href="tut.html#sr_resuming">How to resume your session</a></li>
+     </ul>   
+     </li>
         </ul>
       </div>
 
@@ -140,7 +142,7 @@
             <img src="dist/img/struct-lim.png" alt="struct-lim.png" width="80%">
         </div>
         <br>
-         <p>The interface opens to the "Structure Limits" tab, shown above. We will use a 6 formula unit supercell of titanium dioxide for this tutorial, so enter "Ti6 O12" for the cell composition. We will assume that we know nothing about the system and use very loose restraints. Set all cell length minima to 1 angstrom and maxima to 20 angstrom. Constrain the angles to be between 60 and 120 degrees, and the volume from between 1 and 500 cubic angstrom. Specify a minimum interatomic distance of 0.5 angstrom. (Note that due to the angle adjustment described in the CPC 2010 publication, 60-120 degrees is the largest range of cell angles that XtalOpt will generate.)</p>
+        <p>The interface opens to the "Structure Limits" tab, shown above. We will use a 6 formula unit supercell of titanium dioxide for this tutorial, so enter "Ti6 O12" for the cell composition. We will assume that we know nothing about the system and use very loose restraints (however, note that a search is much more effective if chemically reasonable restraints are used). Set all cell length minima to 1 angstrom and maxima to 20 angstroms. Constrain the angles to be between 60 and 120 degrees, and the volume from between 1 and 500 cubic angstroms. Specify a minimum interatomic distance of 0.5 angstroms. (Note that due to the angle adjustment described in <a href="preprints/2010-CPIP-lonie-zurek">CPC, 2011, 182, 372-387</a>, 60-120 degrees is the largest range of cell angles that XtalOpt will generate.)</p>
       </div>
 
       <a class="anchor" id="opt">
@@ -164,9 +166,9 @@
         <br>
         <p>
         On the next tab, load the optimization scheme by clicking the "Load
-Opt Scheme" button and selecting the "samples/vasp-xtalopt.scheme" file that is distributed with the source code. If you do not have a copy of the source code, the scheme file can be obtained by clicking the "Original Format" link at the bottom of the page <a href="samples/vasp-xtalopt.scheme">here</a>.</p>
+Opt Scheme" button and selecting the "samples/vasp-xtalopt.scheme" file that is distributed with the source code. If you do not have a copy of the source code, the scheme file can be obtained by clicking <a href="samples/vasp-xtalopt.scheme">here</a>.</p>
 <p>For more details on optimization schemes, see <a class="el" href="tut.html#optschemes">optschemes</a>.</p>
-<p>After loading the optimization scheme, XtalOpt will prompt for the POTCAR files to use. Select files appropriated for the prompted atom. XtalOpt will construct the POTCAR files on the local computer, and then copy them over to the cluster when the calculation is submitted. It is necessary to have the VASP POTCAR files for each atomic species located somewhere on the local computer. See the VASP manual for information on obtaining the POTCAR files.</p>
+<p>After loading the optimization scheme, XtalOpt will prompt for the POTCAR files to use. Select files appropriate for the prompted atom. XtalOpt will construct the POTCAR files on the local computer, and then copy them over to the cluster when the calculation is submitted. It is necessary to have the VASP POTCAR files for each atomic species located somewhere on the local computer. See the VASP manual for information on obtaining the POTCAR files.</p>
 <p>Take a moment to look through each file for each optimization step. Notice that the INCAR template includes two user-specified values, %user2% and %user3% for the external pressure and the energy cutoff, respectively. By entering appropriate values in the "user2:" and "user3:" fields on the left, it is easy to update these values for all optimization steps.</p>
 <p>Notice the other %keyword% values in the job.pbs templates. These are used to enter information that is specific to a search or structure when the actual input files are written prior to job submission. Click the "Help" button for a full listing of the available keywords.</p>
 <p>XtalOpt expects VASP to use the default filenames, mainly POSCAR, CONTCAR, and OUTCAR.</p>
@@ -248,7 +250,7 @@ XtalOpt expects GULP to use the following filenames:
 <br>
 <p>Take a moment to look through each file for each optimization step.</p>
 <p>Notice the %keyword% values in the job.pbs templates. These are used to enter information that is specific to a search or structure when the actual input files are written prior to job submission. Click the "Help" button for a full listing of the available keywords.</p>
-<p>Be aware that every PWscf/CASTEP installation is different, and it is almost certain that the job.pbs file included with this scheme will not work on any cluster other than the Zurek group's "parity" cluster at SUNY Buffalo's Center for Computational Resources. It may take some experimentation to get jobs to submit successfully, and you may need to contact the mantainers of the cluster for assistance for information about MPI, executable locations, etc. Perhaps the easiest method to find the correct PBS script is to run some trial submissions by hand, and then replace the structure/search specific information with the appropriate keywords once a working script has been generated.</p>
+<p>Be aware that every PWscf/CASTEP installation is different, and it is almost certain that the job.pbs file included with this scheme will not work on any cluster other than the Zurek group's "parity" cluster at SUNY Buffalo's Center for Computational Resources. It may take some experimentation to get jobs to submit successfully, and you may need to contact the system administrators of the cluster for assistance for information about MPI, executable locations, etc. Perhaps the easiest method to find the correct PBS script is to run some trial submissions by hand, and then replace the structure/search specific information with the appropriate keywords once a working script has been generated.</p>
 <p>XtalOpt expects PWscf to use the following filenames:</p>
 
 <div class="fragment"><div class="line"><pre>pw.x &lt; xtal.in &gt; xtal.out</pre></div>
@@ -278,7 +280,7 @@ XtalOpt expects GULP to use the following filenames:
 
 
 <p>Notice the %keyword% values in the job.pbs templates. These are used to enter information that is specific to a search or structure when the actual input files are written prior to job submission. Click the "Help" button for a full listing of the available keywords.</p>
-<p>Be aware that every PWscf/CASTEP installation is different, and it is almost certain that the job.pbs file included with this scheme will not work on any cluster other than the Zurek group's "parity" cluster at SUNY Buffalo's Center for Computational Resources. It may take some experimentation to get jobs to submit successfully, and you may need to contact the mantainers of the cluster for assistance for information about MPI, executable locations, etc. Perhaps the easiest method to find the correct PBS script is to run some trial submissions by hand, and then replace the structure/search specific information with the appropriate keywords once a working script has been generated.</p>
+<p>Be aware that every PWscf/CASTEP installation is different, and it is almost certain that the job.pbs file included with this scheme will not work on any cluster other than the Zurek group's "parity" cluster at SUNY Buffalo's Center for Computational Resources. It may take some experimentation to get jobs to submit successfully, and you may need to contact the system administrators of the cluster for assistance for information about MPI, executable locations, etc. Perhaps the easiest method to find the correct PBS script is to run some trial submissions by hand, and then replace the structure/search specific information with the appropriate keywords once a working script has been generated.</p>
 <p>XtalOpt expects CASTEP to use the following filenames:</p>
 
 
@@ -299,7 +301,7 @@ XtalOpt expects GULP to use the following filenames:
 
     <h3>SIESTA</h3>
 
-    <p>On the next tab we choose GULP for the local optimizer and enter a template for SIESTA to use. Select "SIESTA" as the "Optimizer" and "xtal.fdf" as "Template".</p>
+    <p>On the next tab we choose SIESTA for the local optimizer and enter a template for SIESTA to use. Select "SIESTA" as the "Optimizer" and "xtal.fdf" as "Template".</p>
 
     <p>Next, fill out the text field on the right with the following template:</p>
 
@@ -353,9 +355,11 @@ MD.TypeOfRun cg # Type of dynamics:</pre>
 
  <p>For more details on optimization schemes, see <a class="el" href="tut.html#optschemes">optschemes</a>.</p>
 
- <p>After loading the optimization scheme, XtalOpt will prompt for the xtal.psf files to use. Select files appropriated for the prompted atom. XtalOpt will copy the individual files over to each structure directory when the calculation is submitted. See the SIESTA manual for information on obtaining the .psf files.</p>
+ <p>After loading the optimization scheme, XtalOpt will prompt for the xtal.psf files to use. Select files appropriate for the prompted atom. XtalOpt will copy the individual files over to each structure directory when the calculation is submitted. See the SIESTA manual for information on obtaining the .psf files.</p>
 
  <p>Notice the other %keyword% values in the xtal.fdf templates. These are used to enter information that is specific to a search or structure when the actual input files are written prior to job submission. Click the "Help" button for a full listing of the available keywords.</p>
+
+ <p>Note that in the current implementation XtalOpt uses the Total Final Energy printed in the output to determine the fitness of a structure. If the user would like to use a different thermodynamic quantity for the fitness, please contact the XtalOpt developers.</p>
 
  <p>XtalOpt expects SIESTA to use the following filenames:</p>
 
@@ -433,7 +437,7 @@ MD.TypeOfRun cg # Type of dynamics:</pre>
 
 
 <p>For more details on optimization schemes, see <a class="el" href="tut.html#optschemes">optschemes</a>.</p>
-<p>Be aware that every installation is different, and it is almost certain that the job.pbs file included with this scheme will not work on any cluster other than the Zurek group's "parity" cluster at SUNY Buffalo's Center for Computational Resources. It may take some experimentation to get jobs to submit successfully, and you may need to contact the mantainers of the cluster for assistance or information about MPI, executable locations, etc. Perhaps the easiest method to find the correct PBS script is to run some trial submissions by hand, and then replace the structure/search specific information with the appropriate keywords once a working script has been generated.</p>
+<p>Be aware that every installation is different, and it is almost certain that the job.pbs file included with this scheme will not work on any cluster other than the Zurek group's "parity" cluster at SUNY Buffalo's Center for Computational Resources. It may take some experimentation to get jobs to submit successfully, and you may need to contact the system administrators of the cluster for assistance or information about MPI, executable locations, etc. Perhaps the easiest method to find the correct PBS script is to run some trial submissions by hand, and then replace the structure/search specific information with the appropriate keywords once a working script has been generated.</p>
 <p>A handy trick for monitoring jobs outside of XtalOpt is to include the following line in job.pbs:</p>
 
 <div class="fragment"><div class="line"><span class="preprocessor">#PBS -N %description%-%gen%x%id%-%optstep%</span></div>
@@ -464,8 +468,9 @@ MD.TypeOfRun cg # Type of dynamics:</pre>
 <li>Path to qsub: Where to find the qsub executable on the remote cluster. Note that if qsub is in the cluster's $PATH, setting this to just 'qsub' will work.</li>
 <li>Path to qdel: Where to find the qdel executable on the remote cluster. Note that if qdel is in the cluster's $PATH, setting this to just 'qdel' will work.</li>
 <li>Path to qstat: Where to find the qstat executable on the remote cluster. Note that if qstat is in the cluster's $PATH, setting this to just 'qstat' will work.</li>
+<li>"Clean remote directories when finished": will remove all of the generated files from the cluster. Only the files on the local computer will be kept. If you do not want this to occur, make sure to uncheck this option.</li>
 </ul>
-<p>A new template, "job.sge" is added to the list of available templates. This is the job submission script for SGE. It may take some experimentation to get jobs to submit successfully, and you may need to contact the mantainers of the cluster for assistance or information about MPI, executable locations, etc. Perhaps the easiest method to find the correct SGE script is to run some trial submissions by hand, and then replace the structure/search specific information with the appropriate keywords once a working script has been generated.</p>
+<p>A new template, "job.sge" is added to the list of available templates. This is the job submission script for SGE. It may take some experimentation to get jobs to submit successfully, and you may need to contact the system administrators of the cluster for assistance or information about MPI, executable locations, etc. Perhaps the easiest method to find the correct SGE script is to run some trial submissions by hand, and then replace the structure/search specific information with the appropriate keywords once a working script has been generated.</p>
 <p>For more details on optimization schemes, see <a class="el" href="tut.html#optschemes">optschemes</a>.</p>
 <p><a class="el" href="tut.html#files">Skip to next section.</a></p>
 
@@ -490,8 +495,9 @@ MD.TypeOfRun cg # Type of dynamics:</pre>
 <li>Path to sbatch: Where to find the sbatch executable on the remote cluster. Note that if sbatch is in the cluster's $PATH, setting this to just 'sbatch' will work.</li>
 <li>Path to scancel: Where to find the scancel executable on the remote cluster. Note that if scancel is in the cluster's $PATH, setting this to just 'scancel' will work.</li>
 <li>Path to squeue: Where to find the squeue executable on the remote cluster. Note that if squeue is in the cluster's $PATH, setting this to just 'squeue' will work.</li>
+<li>"Clean remote directories when finished": will remove all of the generated files from the cluster. Only the files on the local computer will be kept. If you do not want this to occur, make sure to uncheck this option.</li>
 </ul>
-<p>A new template, "job.slurm" is added to the list of available templates. This is the job submission script for SLURM. It may take some experimentation to get jobs to submit successfully, and you may need to contact the mantainers of the cluster for assistance or information about MPI, executable locations, etc. Perhaps the easiest method to find the correct SLURM script is to run some trial submissions by hand, and then replace the structure/search specific information with the appropriate keywords once a working script has been generated.</p>
+<p>A new template, "job.slurm" is added to the list of available templates. This is the job submission script for SLURM. It may take some experimentation to get jobs to submit successfully, and you may need to contact the system administrators of the cluster for assistance or information about MPI, executable locations, etc. Perhaps the easiest method to find the correct SLURM script is to run some trial submissions by hand, and then replace the structure/search specific information with the appropriate keywords once a working script has been generated.</p>
 <p>For more details on optimization schemes, see <a class="el" href="tut.html#optschemes">optschemes</a>.</p>
 <p><a class="el" href="tut.html#files">Skip to next section.</a></p>
 
@@ -516,8 +522,9 @@ MD.TypeOfRun cg # Type of dynamics:</pre>
 <li>Path to bsub: Where to find the bsub executable on the remote cluster. Note that if bsub is in the cluster's $PATH, setting this to just 'bsub' will work.</li>
 <li>Path to bkill: Where to find the bkill executable on the remote cluster. Note that if bkill is in the cluster's $PATH, setting this to just 'bkill' will work.</li>
 <li>Path to bjobs: Where to find the bjobs executable on the remote cluster. Note that if bjobs is in the cluster's $PATH, setting this to just 'bjobs' will work.</li>
+<li>"Clean remote directories when finished": will remove all of the generated files from the cluster. Only the files on the local computer will be kept. If you do not want this to occur, make sure to uncheck this option.</li>
 </ul>
-<p>A new template, "job.lsf" is added to the list of available templates. This is the job submission script for LSF. It may take some experimentation to get jobs to submit successfully, and you may need to contact the mantainers of the cluster for assistance or information about MPI, executable locations, etc. Perhaps the easiest method to find the correct LSF script is to run some trial submissions by hand, and then replace the structure/search specific information with the appropriate keywords once a working script has been generated.</p>
+<p>A new template, "job.lsf" is added to the list of available templates. This is the job submission script for LSF. It may take some experimentation to get jobs to submit successfully, and you may need to contact the system administrators of the cluster for assistance or information about MPI, executable locations, etc. Perhaps the easiest method to find the correct LSF script is to run some trial submissions by hand, and then replace the structure/search specific information with the appropriate keywords once a working script has been generated.</p>
 <p>For more details on optimization schemes, see <a class="el" href="tut.html#optschemes">optschemes</a>.</p>
 <p><a class="el" href="tut.html#files">Skip to next section.</a></p>
 
@@ -542,8 +549,9 @@ MD.TypeOfRun cg # Type of dynamics:</pre>
 <li>Path to llsubmit: Where to find the llsubmit executable on the remote cluster. Note that if llsubmit is in the cluster's $PATH, setting this to just 'llsubmit' will work.</li>
 <li>Path to llcancel: Where to find the llcancel executable on the remote cluster. Note that if llcancel is in the cluster's $PATH, setting this to just 'llcancel' will work.</li>
 <li>Path to llq: Where to find the llq executable on the remote cluster. Note that if llq is in the cluster's $PATH, setting this to just 'llq' will work.</li>
+<li>"Clean remote directories when finished": will remove all of the generated files from the cluster. Only the files on the local computer will be kept. If you do not want this to occur, make sure to uncheck this option.</li>
 </ul>
-<p>A new template, "job.ll" is added to the list of available templates. This is the job submission script for LoadLeveler. It may take some experimentation to get jobs to submit successfully, and you may need to contact the mantainers of the cluster for assistance or information about MPI, executable locations, etc. Perhaps the easiest method to find the correct LoadLeveler script is to run some trial submissions by hand, and then replace the structure/search specific information with the appropriate keywords once a working script has been generated.</p>
+<p>A new template, "job.ll" is added to the list of available templates. This is the job submission script for LoadLeveler. It may take some experimentation to get jobs to submit successfully, and you may need to contact the system administrators of the cluster for assistance or information about MPI, executable locations, etc. Perhaps the easiest method to find the correct LoadLeveler script is to run some trial submissions by hand, and then replace the structure/search specific information with the appropriate keywords once a working script has been generated.</p>
 <p>For more details on optimization schemes, see <a class="el" href="tut.html#optschemes">optschemes</a>.</p>
 <p><a class="el" href="tut.html#files">Skip to next section.</a></p>
 
@@ -595,9 +603,9 @@ MD.TypeOfRun cg # Type of dynamics:</pre>
 <div class="image">
 <img src="dist/img/search-set.png" alt="search-set.png"/>
 </div>
- <p>In the "Search Settings" tab, most of the default settings should suffice (See CPC 2010 publication). We arbitrarily set the initial structures to 20 and the continuous structures to 5, although these may need to be adjusted based on available resources. We will not specify initial seeds, but the option to do so exists on this screen.</p>
+ <p>In the "Search Settings" tab, most of the default settings should suffice (See <a href="preprints/2010-CPIP-lonie-zurek">CPC, 2011, 182, 372-387</a>). We arbitrarily set the initial structures to 20 and the continuous structures to 5, although these may need to be adjusted based on available resources. We will not specify initial seeds, but the option to do so exists on this screen.</p>
 <p>It is not neccessary to limit the number of running jobs unless running locally, as the PBS queue on the cluster will manage job control for us. If running locally, set the job limit no higher than [number of available processor cores] - 1 (e.g. for a quadcore processor, allow three jobs to run simultaneously). This allows one core to remain free for the system to run.</p>
-<p>There is now a termination criteria called "Total Number of Structures" that will end the run once a certain number of strcutures have been produced by XtalOpt.</p>
+<p>There is now a termination criteria called "Total Number of Structures" that will end the run once a certain number of structures have been produced by XtalOpt.</p>
     </div>
 
 
@@ -626,7 +634,7 @@ Optimization". Click "Refresh" on this tab to begin the local optimizations. Fro
 <img src="dist/img/prog-mon.png" alt="prog-mon.png"/>
 <div class="caption">
 The ``Progress'' tab mid-run</div></div>
-<p>As XtalOpt performs the search, the progress table continuously updates, providing information about each structure. We see individuals in various stages of completion: most are optimized (in blue), structure 2x7 has been automatically marked as a duplicate (dark green) of structure 3x3 and removed from the breeding pool, structure 4x4 is currently undergoing a local optimization (light green), while structure 4x5 is waiting to be optimized (light blue).</p>
+<p>As XtalOpt performs the search, the progress table continuously updates, providing information about each structure. We see individuals in various stages of completion: most are optimized (in blue), structure 2x2 has been automatically marked as a duplicate (dark green) of structure 1x2 and removed from the breeding pool, structure 3x4 is currently undergoing a local optimization (light green), while structure 2x10 is waiting to be optimized (light blue).</p>
 <p>Other useful information is displayed about each structure, such as the time spent in optimization, the optimized enthalpy, the cell volume, spacegroup, and each structure's ancestory (i.e. parent(s) and parameters for the genetic operator that generated it). A status bar on the bottom of the window shows the number of structures that are optimized, running, and failing at any given time. This information is visible regardless of which tab is currently being viewed.</p>
 <p>An additional feature of the progress table is the ability to immediately visualize any of the individuals in the Avogadro main window &ndash; simply clicking on a row in this table will display the three-dimensional structure in Avogadro, where it can be visualized, modified, or exported. If the user would like to add a bit of "intelligent design" to the evolutionary process, a structure can be modified and then resubmitted using a context (right-click) menu from the progress table. The context menu provides tools to (un)kill a structure, resubmit for local optimization at an arbitrary optimization step, or replace a problematic structure with a new, random individual.</p>
 <p>Three additional buttons found near the "Refresh All" button in this tab are also available. The "Print Results File" button generates a run-results.txt file that lists all of the information about each structure in order of generation and structure number (As compared to the results.txt file which ranks the structures). The "Remove Extra Files" button is used for VASP runs. It removes any extraneous files in each local subdirectory in order to reduce disk usage. Files kept are structure.state, POTCAR, CONTCAR, OSZICAR, job.slurm and OUTCAR. Finally, the "Rank All" button ranks all currently optimized structures and exports them to a subdirectory (Ranked) in two forms (depending on the optimizer): POSCAR/.got and .cif. Each can be found in separate directories. (Only works for GULP and VASP runs currently).</p>
@@ -881,6 +889,55 @@ any local optimizations. If so, safely ignore this message.</pre>
  <dl class="note"><dt><b>Note:</b></dt><dd>If you are considering resuming a read-only session, take a look at the results.txt file in the working directory. It contains a list of all structures, sorted by enthalpy, with additional useful information. This can save some time when trying to locate the most stable structure of an old search.</dd></dl>
  <p>The working directories for XtalOpt are relocatable, meaning that the directory containing xtalopt.state and the [gen]x[id] structure folders may be moved, tarred, zipped, etc. and still be resumed at a later time from a different location on the filesystem, or even a different computer. </p>
 </div>
+
+
+
+    <a class="anchor" id="randomdock">
+        <br><br>
+    </a>
+
+      <div class="jumbotron">
+        <h1>RandomDock Tutorial</h1>
+        <br>
+        <p>
+          PDF format available <a class="el" target="_blank" href="docs/randomdock/latex/refman.pdf">here</a>
+        </p>
+      </div>
+
+
+
+     <a class="anchor" id="randomdock">
+        <br><br>
+     </a>  
+  
+     <div class="jumbotron">
+     <h2>RandomDock Tutorial</h2>
+
+     <p>RandomDock generates random structures of ensembles of molecules by arranging them in 3D space subject to several constraints:
+       <ul align=left style="text-align:-moz-left">
+         <li>One molecule is specified as the substrate</li>
+         <li>One or more matrix molecules are added. These molecules will be used to form a “cage” around the substrate. Their stoichiometries may be adjusted to control the relative quantities of each.</li>
+
+         <img src="dist/img/rd-struct.png" alt="rd-struct.png"/>
+         
+         <li>The conformation and orientation of each matrix and substrate molecule is randomized in each scene.</li>
+         <li>Matrix molecules are placed at random positions within a specified distance of the substrate's geometric center.</li>
+         <li>One atom of each matrix molecule must be within a specified distance from any atom in the substrate.</li>
+         <li>No two atoms from distinct molecules in the scene may be closer than a specified minimum distance.</li>
+         <li>Optionally, it may be required that at least one possible hydrogen bond exists between each matrix molecule and any other molecule in the scene.</li>
+         <li>Several of the constraints are parametrized, and may be modified via the user interface shown below.</li>
+     </ul>    
+     </p>
+     
+     <p>After the scene has been generated, the atomic positions are optimized using either ADF, GAMESS, or MOPAC. The calculations may be performed on a remote supercomputing cluster by specifying SSH login details, or locally on the user's workstation. Remote calculations are automatically staged, copied, submitted, monitored, retrieved, and analyzed by RandomDock, making searches fully automatic. Configuration of remote computational resources and optimizer input files is performed using the same procedure as XtalOpt.</p>
+
+     <p>The default behavior of RandomDock is to generate a single, possibly partial, shell of matrix molecules around the substrate, suitable for producing simple solvation models or studying binding interactions. Alternatively, it can be configured to generate molecular clusters. This mode produces clusters of molecules with randomized positions and orientations of molecules. A RandomDock search will continue until a specified number of scenes have been generated and optimized.
+
+     <p>Before any scenes are generated, a cached set of conformations for each molecule is generated. Conformers are relaxed and ranked using the force­field implementations in the OpenBabel library. As shown above, the user specifies a force­field implementation and a number of conformers for each molecule. By checking the “All” option, an exhaustive search is performed for all possible conformations of the molecule. Each conformer is assigned a probability according to the probability distribution (Eq. 1 in the main text). This probability is used during the generation of new scenes to favor usage of stable conformers in both the substrate and matrix molecules.</p>
+
+
+</div>
+
 
 
 

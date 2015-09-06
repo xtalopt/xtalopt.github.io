@@ -40,11 +40,11 @@ The interface opens to the "Structure Limits" tab, shown above. We
 will use a 6 formula unit supercell of titanium dioxide for this
 tutorial, so enter "Ti6 O12" for the cell composition. We will assume
 that we know nothing about the system and use very loose
-restraints. Set all cell length minima to 1 angstrom and maxima to 20
-angstrom. Constrain the angles to be between 60 and 120 degrees, and
-the volume from between 1 and 500 cubic angstrom. Specify a minimum
+restraints (however, note that a search is much more effective if chemically reasonable restraints are used). Set all cell length minima to 1 angstrom and maxima to 20
+angstroms. Constrain the angles to be between 60 and 120 degrees, and
+the volume from between 1 and 500 cubic angstroms. Specify a minimum
 interatomic distance of 0.5 angstrom. (Note that due to the angle
-adjustment described in the CPC 2010 publication, 60-120 degrees is
+adjustment described in CPC, 2011, 182, 372-387, 60-120 degrees is
 the largest range of cell angles that XtalOpt will generate.)
 
 @section opt Optimizer setup
@@ -60,14 +60,14 @@ optimizations. Each is detailed in its own section below.
 On the next tab, load the optimization scheme by clicking the "Load
 Opt Scheme" button and selecting the "samples/vasp-xtalopt.scheme"
 file that is distributed with the source code. If you do not have a
-copy of the source code, the scheme file can be obtained by clicking
-the <a href="http://xtalopt.github.io/samples/vasp-xtalopt.scheme">
+copy of the source code, the scheme file can be obtained by clicking 
+<a href="http://xtalopt.github.io/samples/vasp-xtalopt.scheme">
 here</a>.
 
 For more details on optimization schemes, see \ref optschemes.
 
 After loading the optimization scheme, XtalOpt will prompt for the
-POTCAR files to use. Select files appropriated for the prompted atom.
+POTCAR files to use. Select files appropriate for the prompted atom.
 XtalOpt will construct the POTCAR files on the local computer, and
 then copy them over to the cluster when the calculation is
 submitted. It is necessary to have the VASP POTCAR files for each
@@ -173,7 +173,7 @@ almost certain that the job.pbs file included with this scheme will
 not work on any cluster other than the Zurek group's "parity" cluster
 at SUNY Buffalo's Center for Computational Resources. It may take some
 experimentation to get jobs to submit successfully, and you may need
-to contact the mantainers of the cluster for assistance for
+to contact the system administrators of the cluster for assistance for
 information about MPI, executable locations, etc. Perhaps the easiest
 method to find the correct PBS script is to run some trial submissions
 by hand, and then replace the structure/search specific information
@@ -228,7 +228,7 @@ almost certain that the job.pbs file included with this scheme will
 not work on any cluster other than the Zurek group's "parity" cluster
 at SUNY Buffalo's Center for Computational Resources. It may take some
 experimentation to get jobs to submit successfully, and you may need
-to contact the mantainers of the cluster for assistance for
+to contact the system adiministrators of the cluster for assistance for
 information about MPI, executable locations, etc. Perhaps the easiest
 method to find the correct PBS script is to run some trial submissions
 by hand, and then replace the structure/search specific information
@@ -249,7 +249,7 @@ castep xtal
 \image html opt-set-siesta.png
 \image latex opt-set-siesta.png width=\textwidth
 
-On the next tab we choose GULP for the local optimizer and enter a template for SIESTA to use. Select "SIESTA" as the "Optimizer" and "xtal.fdf" as "Template".
+On the next tab we choose SIESTA for the local optimizer and enter a template for SIESTA to use. Select "SIESTA" as the "Optimizer" and "xtal.fdf" as "Template".
     
 Next, fill out the text field on the right with the following template:
 
@@ -337,9 +337,11 @@ AtomicCoordinatesFormat Fractional
 
 For more details on optimization schemes, see \ref optschemes.
 
- <p>After loading the optimization scheme, XtalOpt will prompt for the xtal.psf files to use. Select files appropriated for the prompted atom. XtalOpt will copy the individual files over to each structure directory when the calculation is submitted. See the SIESTA manual for information on obtaining the .psf files.</p>
+ <p>After loading the optimization scheme, XtalOpt will prompt for the xtal.psf files to use. Select files appropriate for the prompted atom. XtalOpt will copy the individual files over to each structure directory when the calculation is submitted. See the SIESTA manual for information on obtaining the .psf files.</p>
  
  <p>Notice the other %keyword% values in the xtal.fdf templates. These are used to enter information that is specific to a search or structure when the actual input files are written prior to job submission. Click the "Help" button for a full listing of the available keywords.</p>
+
+Note: that in the current implementation XtalOpt uses the Total Final Energy printed in the output to determine the fitness of a structure. If the user would like to use a different thermodynamic quantity for the fitness, please contact the XtalOpt developers.
 
  <p>XtalOpt expects SIESTA to use the following filenames:</p>
 
@@ -378,6 +380,7 @@ button. A new window will prompt for:
   - Path to qstat: Where to find the qstat executable on the remote
       cluster. Note that if qstat is in the cluster's $PATH, setting
       this to just 'qstat' will work.
+  - "Clean remote directories when finished": will remove all of the generated files from the cluster. Only the files on the local computer will be kept. If you do not want this to occur, make sure to uncheck this option.
 
 A new template, "job.pbs" is added to the list of available
 templates. This is the job submission script for PBS. This script
@@ -426,7 +429,7 @@ certain that the job.pbs file included with this scheme will not work
 on any cluster other than the Zurek group's "parity" cluster at SUNY
 Buffalo's Center for Computational Resources. It may take some
 experimentation to get jobs to submit successfully, and you may need
-to contact the mantainers of the cluster for assistance or information
+to contact the system administrators of the cluster for assistance or information
 about MPI, executable locations, etc. Perhaps the easiest method to
 find the correct PBS script is to run some trial submissions by hand,
 and then replace the structure/search specific information with the
@@ -470,13 +473,14 @@ button. A new window will prompt for:
   - Path to qstat: Where to find the qstat executable on the remote
       cluster. Note that if qstat is in the cluster's $PATH, setting
       this to just 'qstat' will work.
+  - "Clean remote directories when finished": will remove all of the generated files from the cluster. Only the files on the local computer will be kept. If you do not want this to occur, make sure to uncheck this option.
 
 @todo Get template for job.sge scripts
 
 A new template, "job.sge" is added to the list of available
 templates. This is the job submission script for SGE. It may take some
 experimentation to get jobs to submit successfully, and you may need
-to contact the mantainers of the cluster for assistance or information
+to contact the system administrators of the cluster for assistance or information
 about MPI, executable locations, etc. Perhaps the easiest method to
 find the correct SGE script is to run some trial submissions by hand,
 and then replace the structure/search specific information with the
@@ -509,13 +513,14 @@ button. A new window will prompt for:
   - Path to squeue: Where to find the squeue executable on the remote
       cluster. Note that if squeue is in the cluster's $PATH, setting
       this to just 'squeue' will work.
+  - "Clean remote directories when finished": will remove all of the generated files from the cluster. Only the files on the local computer will be kept. If you do not want this to occur, make sure to uncheck this option.
 
 @todo Get template for job.slurm scripts
 
 A new template, "job.slurm" is added to the list of available
 templates. This is the job submission script for SLURM. It may take
 some experimentation to get jobs to submit successfully, and you may
-need to contact the mantainers of the cluster for assistance or
+need to contact the system administrators of the cluster for assistance or
 information about MPI, executable locations, etc. Perhaps the easiest
 method to find the correct SLURM script is to run some trial
 submissions by hand, and then replace the structure/search specific
@@ -539,8 +544,9 @@ Select "LSF" from the list of Queues, and then click the "Configure..." button. 
 	- Path to bsub: Where to find the bsub executable on the remote cluster. Note that if bsub is in the cluster's $PATH, setting this to just 'bsub' will work.
 	- Path to bkill: Where to find the bkill executable on the remote cluster. Note that if bkill is in the cluster's $PATH, setting this to just 'bkill' will work.
 	- Path to bjobs: Where to find the bjobs executable on the remote cluster. Note that if bjobs is in the cluster's $PATH, setting this to just 'bjobs' will work.
+  - "Clean remote directories when finished": will remove all of the generated files from the cluster. Only the files on the local computer will be kept. If you do not want this to occur, make sure to uncheck this option.
 
-A new template, "job.lsf" is added to the list of available templates. This is the job submission script for LSF. It may take some experimentation to get jobs to submit successfully, and you may need to contact the mantainers of the cluster for assistance or information about MPI, executable locations, etc. Perhaps the easiest method to find the correct LSF script is to run some trial submissions by hand, and then replace the structure/search specific information with the appropriate keywords once a working script has been generated.
+A new template, "job.lsf" is added to the list of available templates. This is the job submission script for LSF. It may take some experimentation to get jobs to submit successfully, and you may need to contact the system administrators of the cluster for assistance or information about MPI, executable locations, etc. Perhaps the easiest method to find the correct LSF script is to run some trial submissions by hand, and then replace the structure/search specific information with the appropriate keywords once a working script has been generated.
 
 For more details on optimization schemes, see \ref optschemes.
 
@@ -559,8 +565,9 @@ Select "LoadLeveler" from the list of Queues, and then click the "Configure..." 
 	- Path to llsubmit: Where to find the llsubmit executable on the remote cluster. Note that if llsubmit is in the cluster's $PATH, setting this to just 'llsubmit' will work.
 	- Path to llcancel: Where to find the llcancel executable on the remote cluster. Note that if llcancel is in the cluster's $PATH, setting this to just 'llcancel' will work.
 	- Path to llq: Where to find the llq executable on the remote cluster. Note that if llq is in the cluster's $PATH, setting this to just 'llq' will work.
+  - "Clean remote directories when finished": will remove all of the generated files from the cluster. Only the files on the local computer will be kept. If you do not want this to occur, make sure to uncheck this option.
 
-A new template, "job.ll" is added to the list of available templates. This is the job submission script for LoadLeveler. It may take some experimentation to get jobs to submit successfully, and you may need to contact the mantainers of the cluster for assistance or information about MPI, executable locations, etc. Perhaps the easiest method to find the correct LoadLeveler script is to run some trial submissions by hand, and then replace the structure/search specific information with the appropriate keywords once a working script has been generated.
+A new template, "job.ll" is added to the list of available templates. This is the job submission script for LoadLeveler. It may take some experimentation to get jobs to submit successfully, and you may need to contact the system administrators of the cluster for assistance or information about MPI, executable locations, etc. Perhaps the easiest method to find the correct LoadLeveler script is to run some trial submissions by hand, and then replace the structure/search specific information with the appropriate keywords once a working script has been generated.
 
 For more details on optimization schemes, see \ref optschemes.
 
@@ -615,7 +622,7 @@ previous search.
 \image latex search-set.png width=\textwidth
 
 In the "Search Settings" tab, most of the default settings should
-suffice (See CPC 2010 publication). We arbitrarily set the initial
+suffice (See CPC, 2011, 182, 372-387). We arbitrarily set the initial
 structures to 20 and the continuous structures to 5, although these
 may need to be adjusted based on available resources. We will not
 specify initial seeds, but the option to do so exists on this screen.
@@ -627,7 +634,7 @@ control for us. If running locally, set the job limit no higher than
 processor, allow three jobs to run simultaneously). This allows one
 core to remain free for the system to run.
 
-There is now a termination criteria called "Total Number of Structures" that will end the run once a certain number of strcutures have been produced by XtalOpt.
+There is now a termination criteria called "Total Number of Structures" that will end the run once a certain number of structures have been produced by XtalOpt.
 
 \section begin "Begin"
 \image html prog-start.png "The ``Progress'' tab immediately after starting a search"
@@ -650,10 +657,10 @@ it is stopped by the user.
 As XtalOpt performs the search, the progress table continuously
 updates, providing information about each structure. We see
 individuals in various stages of completion: most are optimized (in
-blue), structure 2x7 has been automatically marked as a duplicate
-(dark green) of structure 3x3 and removed from the breeding pool,
-structure 4x4 is currently undergoing a local optimization (light
-green), while structure 4x5 is waiting to be optimized (light blue).
+blue), structure 2x72 has been automatically marked as a duplicate
+(dark green) of structure 1x2 and removed from the breeding pool,
+structure 3x4 is currently undergoing a local optimization (light
+green), while structure 2x10 is waiting to be optimized (light blue).
 
 Other useful information is displayed about each structure, such as
 the time spent in optimization, the optimized enthalpy, the cell
@@ -678,8 +685,8 @@ random individual.
 Three additional buttons found near the "Refresh All" button in this tab are also available. The "Print Results File" button generates a run-results.txt file that lists all of the information about each structure in order of generation and structure number (As compared to the results.txt file which ranks the structures). The "Remove Extra Files" button is used for VASP runs. It removes any extraneous files in each local subdirectory in order to reduce disk usage. Files kept are structure.state, POTCAR, CONTCAR, OSZICAR, job.slurm and OUTCAR. Finally, the "Rank All" button ranks all currently optimized structures and exports them to a subdirectory (Ranked) in two forms (depending on the optimizer): POSCAR/.got and .cif. Each can be found in separate directories. (Only works for GULP and VASP runs currently).
 
 \subsection trends View trends
-\image html trend-view.png "The ``Plot'' tab mid-run displaying enthalpy vs. volume. Each structure is labeled with its Hermann Mauguin spacegroup symbol."
-\image latex trend-view.png "The ``Plot'' tab mid-run displaying enthalpy vs. volume. Each structure is labeled with its Hermann Mauguin spacegroup symbol." width=\textwidth
+\image html trend-view.png "The ``Plot'' tab mid-run displaying enthalpy vs.\ volume. Each structure is labeled with its Hermann Mauguin spacegroup symbol."
+\image latex trend-view.png "The ``Plot'' tab mid-run displaying enthalpy vs.\ volume. Each structure is labeled with its Hermann Mauguin spacegroup symbol." width=\textwidth
 
 Another visualization and analysis tool available during the search is
 the interactive plot. The plot is capable of investigating trends in
@@ -687,16 +694,16 @@ the search by plotting a point for each individual using structure
 number, generation number, enthalpy, energy, $PV$ enthalpy term,
 lattice parameters, or cell volume on either axis. This powerful
 feature allows the user to visualize complex relationships present in
-the generated structures. E.g., a plot of enthalpy vs. structure
+the generated structures. E.g., a plot of enthalpy vs.\ structure
 number provides an overview of the search's progress. Or, recalling
-that H = U + PV, plotting enthalpy vs. PV enthalpy term or energy
+that H = U + PV, plotting enthalpy vs.\ PV enthalpy term or energy
 lends insight into whether the enthalpy (H) is dominated by atomic
 interactions (U) or cell parameters (PV). Further information is
 available by labeling the points with the individual's spacegroup
 number, Hermann Mauguin spacegroup symbol, enthalpy, energy, PV
 term, volume, generation, or index number.
 
-A particularly useful plot is that of enthalpy vs. cell volume, as
+A particularly useful plot is that of enthalpy vs.\ cell volume, as
 shown above. From this view, we see a general trend that enthalpy
 increases with volume (the effect is much more pronounced for systems
 at higher pressures), and also that below a certain volume enthalpy
