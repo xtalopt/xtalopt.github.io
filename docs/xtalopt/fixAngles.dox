@@ -40,7 +40,7 @@ highest integer from the absolute value of the scalar projection of
 ||\vec{v_j}||\,\right|\right)/||\vec{v_j}||\right)@f$)}. The sign of
 @f$n\vec{v_j}@f$ from is determined by
 @f$-\mbox{sign}(\vec{v_i}\cdot\vec{v_j})@f$, resulting in the
-transformation equation above. For clarification, see the preceeding
+transformation equation above. For clarification, see the preceding
 image.
 
 These equations differ somewhat from those provided by Oganov et al.,

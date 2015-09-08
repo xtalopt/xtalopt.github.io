@@ -118,7 +118,8 @@
        <li><a class="el" href="tut.html#sr_resuming">How to resume your session</a></li>
      </ul>   
      </li>
-        </ul>
+     <li><a class="el" href="tut.html#randomdock">RandomDock Tutorial</a></li>
+ </ul>
       </div>
 
       <a class="anchor" id="launch">
@@ -601,7 +602,7 @@ MD.TypeOfRun cg # Type of dynamics:</pre>
     <div class="jumbotron">
 <h2>Search Settings</h2>
 <div class="image">
-<img src="dist/img/search-set.png" alt="search-set.png"/>
+<img src="dist/img/search-set.png" alt="search-set.png" width="80%"/>
 </div>
  <p>In the "Search Settings" tab, most of the default settings should suffice (See <a href="preprints/2010-CPIP-lonie-zurek">CPC, 2011, 182, 372-387</a>). We arbitrarily set the initial structures to 20 and the continuous structures to 5, although these may need to be adjusted based on available resources. We will not specify initial seeds, but the option to do so exists on this screen.</p>
 <p>It is not neccessary to limit the number of running jobs unless running locally, as the PBS queue on the cluster will manage job control for us. If running locally, set the job limit no higher than [number of available processor cores] - 1 (e.g. for a quadcore processor, allow three jobs to run simultaneously). This allows one core to remain free for the system to run.</p>
@@ -617,7 +618,7 @@ MD.TypeOfRun cg # Type of dynamics:</pre>
     <div class="jumbotron">
 <h2>"Begin"</h2>
 <div class="image">
-<img src="dist/img/prog-start.png" alt="prog-start.png"/>
+<img src="dist/img/prog-start.png" alt="prog-start.png" width="80%"/>
 <div class="caption">
 The ``Progress'' tab immediately after starting a search</div></div>
 <p>XtalOpt has everything it needs to start its search at this point; click the "Begin" button in the lower right corner of the application to tell it to start the search algorithm. A progress bar appears as the random first generation is created. Switch to the "Progress" tab and 20 entries will appear, all with a status of "Waiting for
@@ -631,7 +632,7 @@ Optimization". Click "Refresh" on this tab to begin the local optimizations. Fro
     <div class="jumbotron">
 <h2>Monitor progress</h2>
 <div class="image">
-<img src="dist/img/prog-mon.png" alt="prog-mon.png"/>
+<img src="dist/img/prog-mon.png" alt="prog-mon.png" width="80%"/>
 <div class="caption">
 The ``Progress'' tab mid-run</div></div>
 <p>As XtalOpt performs the search, the progress table continuously updates, providing information about each structure. We see individuals in various stages of completion: most are optimized (in blue), structure 2x2 has been automatically marked as a duplicate (dark green) of structure 1x2 and removed from the breeding pool, structure 3x4 is currently undergoing a local optimization (light green), while structure 2x10 is waiting to be optimized (light blue).</p>
@@ -641,7 +642,7 @@ The ``Progress'' tab mid-run</div></div>
 <h3><a class="anchor" id="trends"></a>
 View trends</h3>
 <div class="image">
-<img src="dist/img/trend-view.png" alt="trend-view.png"/>
+<img src="dist/img/trend-view.png" alt="trend-view.png" width="80%"/>
 <div class="caption">
 The ``Plot'' tab mid-run displaying enthalpy vs. volume. Each structure is labeled with its Hermann Mauguin spacegroup symbol.</div></div>
 <p>Another visualization and analysis tool available during the search is the interactive plot. The plot is capable of investigating trends in the search by plotting a point for each individual using structure number, generation number, enthalpy, energy, $PV$ enthalpy term, lattice parameters, or cell volume on either axis. This powerful feature allows the user to visualize complex relationships present in the generated structures. E.g., a plot of enthalpy vs. structure number provides an overview of the search's progress. Or, recalling that H = U + PV, plotting enthalpy vs. PV enthalpy term or energy lends insight into whether the enthalpy (H) is dominated by atomic interactions (U) or cell parameters (PV). Further information is available by labeling the points with the individual's spacegroup number, Hermann Mauguin spacegroup symbol, enthalpy, energy, PV term, volume, generation, or index number.</p>
@@ -704,7 +705,7 @@ The ``Plot'' tab mid-run displaying enthalpy vs. volume. Each structure is label
 
     <br>
     <div class="image">
-<img src="dist/img/optschemes-numberededitor.png" alt="optschemes-numberededitor.png"/>
+<img src="dist/img/optschemes-numberededitor.png" alt="optschemes-numberededitor.png" width="80%"/>
 </div>
  <p>We will use the above screenshot as we describe the process of creating, saving, and loading optimization schemes. The numbers indicate:</p>
 <ol align=left style="text-align:-moz-left" type="1">
@@ -858,7 +859,7 @@ Scheme" button and select the .scheme file you wish to load. This will also upda
 
     <div class="jumbotron">
 <h2>Saving and Resuming Sessions in XtalOpt</h2>
-<img src="dist/img/xo-saveresume.png" alt="xo-saveresume.png"/>
+<img src="dist/img/xo-saveresume.png" alt="xo-saveresume.png" width="80%"/>
 
 
 
@@ -890,7 +891,7 @@ any local optimizations. If so, safely ignore this message.</pre>
  <p>The working directories for XtalOpt are relocatable, meaning that the directory containing xtalopt.state and the [gen]x[id] structure folders may be moved, tarred, zipped, etc. and still be resumed at a later time from a different location on the filesystem, or even a different computer. </p>
 </div>
 
-
+        <br><br>
 
     <a class="anchor" id="randomdock">
         <br><br>
@@ -904,35 +905,40 @@ any local optimizations. If so, safely ignore this message.</pre>
         </p>
       </div>
 
-
-
-     <a class="anchor" id="randomdock">
-        <br><br>
-     </a>  
-  
+     <br><br>
+     
      <div class="jumbotron">
-     <h2>RandomDock Tutorial</h2>
-
      <p>RandomDock generates random structures of ensembles of molecules by arranging them in 3D space subject to several constraints:
        <ul align=left style="text-align:-moz-left">
          <li>One molecule is specified as the substrate</li>
          <li>One or more matrix molecules are added. These molecules will be used to form a “cage” around the substrate. Their stoichiometries may be adjusted to control the relative quantities of each.</li>
 
-         <img src="dist/img/rd-struct.png" alt="rd-struct.png"/>
-         
+         <div class="image" align=center style="text-align:-moz-center"> 
+           <img src="dist/img/rd-struct.png" alt="rd-struct.png" width="80%"/>
+         </div>
+
          <li>The conformation and orientation of each matrix and substrate molecule is randomized in each scene.</li>
          <li>Matrix molecules are placed at random positions within a specified distance of the substrate's geometric center.</li>
          <li>One atom of each matrix molecule must be within a specified distance from any atom in the substrate.</li>
          <li>No two atoms from distinct molecules in the scene may be closer than a specified minimum distance.</li>
          <li>Optionally, it may be required that at least one possible hydrogen bond exists between each matrix molecule and any other molecule in the scene.</li>
-         <li>Several of the constraints are parametrized, and may be modified via the user interface shown below.</li>
-     </ul>    
+       </ul>    
      </p>
      
-     <p>After the scene has been generated, the atomic positions are optimized using either ADF, GAMESS, or MOPAC. The calculations may be performed on a remote supercomputing cluster by specifying SSH login details, or locally on the user's workstation. Remote calculations are automatically staged, copied, submitted, monitored, retrieved, and analyzed by RandomDock, making searches fully automatic. Configuration of remote computational resources and optimizer input files is performed using the same procedure as XtalOpt.</p>
+     <p>Several of the constraints are parametrized, and may be modified via the user interface shown below.</p>
+
+     <div class="image" align=center style="text-align:-moz-center"> 
+       <img src="dist/img/rd-search.png" alt="rd-search.png" width="80%"/>
+     </div>
+     
+     <p>After the scene has been generated, the atomic positions are optimized using either ADF, GAMESS, GAUSSIAN or MOPAC. The calculations may be performed on a remote supercomputing cluster by specifying SSH login details, or locally on the user's workstation. Remote calculations are automatically staged, copied, submitted, monitored, retrieved, and analyzed by RandomDock, making searches fully automatic. Configuration of remote computational resources and optimizer input files is performed using the same procedure as XtalOpt.</p>
 
      <p>The default behavior of RandomDock is to generate a single, possibly partial, shell of matrix molecules around the substrate, suitable for producing simple solvation models or studying binding interactions. Alternatively, it can be configured to generate molecular clusters. This mode produces clusters of molecules with randomized positions and orientations of molecules. A RandomDock search will continue until a specified number of scenes have been generated and optimized.
 
+     <div class="image" align=center style="text-align:-moz-center"> 
+       <img src="dist/img/rd-conformers.png" alt="rd-conformers.png" width="80%"/>
+     </div>
+     
      <p>Before any scenes are generated, a cached set of conformations for each molecule is generated. Conformers are relaxed and ranked using the force­field implementations in the OpenBabel library. As shown above, the user specifies a force­field implementation and a number of conformers for each molecule. By checking the “All” option, an exhaustive search is performed for all possible conformations of the molecule. Each conformer is assigned a probability according to the probability distribution (Eq. 1 in the main text). This probability is used during the generation of new scenes to favor usage of stable conformers in both the substrate and matrix molecules.</p>
 
 

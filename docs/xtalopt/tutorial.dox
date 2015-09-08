@@ -29,7 +29,7 @@ namespace XtalOpt {
 
 
 @section launch Launch XtalOpt
-Open avogadro, go to the "Extensions" menu and select
+Open Avogadro, go to the "Extensions" menu and select
 "XtalOpt".
 
 @section init Enter composition and restraints
@@ -228,7 +228,7 @@ almost certain that the job.pbs file included with this scheme will
 not work on any cluster other than the Zurek group's "parity" cluster
 at SUNY Buffalo's Center for Computational Resources. It may take some
 experimentation to get jobs to submit successfully, and you may need
-to contact the system adiministrators of the cluster for assistance for
+to contact the system administrators of the cluster for assistance for
 information about MPI, executable locations, etc. Perhaps the easiest
 method to find the correct PBS script is to run some trial submissions
 by hand, and then replace the structure/search specific information
@@ -573,7 +573,7 @@ For more details on optimization schemes, see \ref optschemes.
 
 \ref files "Skip to next section."
 
-@subsection localqi Running optimations locally
+@subsection localqi Running optimizations locally
 \image html opt-set-local.png
 \image latex opt-set-local.png width=.5\textwidth
 
@@ -627,7 +627,7 @@ structures to 20 and the continuous structures to 5, although these
 may need to be adjusted based on available resources. We will not
 specify initial seeds, but the option to do so exists on this screen.
 
- It is not neccessary to limit the number of running jobs unless
+ It is not necessary to limit the number of running jobs unless
 running locally, as the PBS queue on the cluster will manage job
 control for us. If running locally, set the job limit no higher than
 [number of available processor cores] - 1 (e.g. for a quadcore
@@ -664,7 +664,7 @@ green), while structure 2x10 is waiting to be optimized (light blue).
 
 Other useful information is displayed about each structure, such as
 the time spent in optimization, the optimized enthalpy, the cell
-volume, spacegroup, and each structure's ancestory (i.e. parent(s) and
+volume, spacegroup, and each structure's ancestry (i.e. parent(s) and
 parameters for the genetic operator that generated it). A status bar
 on the bottom of the window shows the number of structures that are
 optimized, running, and failing at any given time. This information is

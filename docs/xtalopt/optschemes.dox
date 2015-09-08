@@ -22,7 +22,7 @@ namespace GlobalSearch {
   - \ref suggest
     - \ref sug-xtal
 
-@section overview Overview: What are optimimization schemes, and why use them?
+@section overview Overview: What are optimization schemes, and why use them?
 
 @subsection quick-over In a nutshell..
 
@@ -31,7 +31,7 @@ that are to be performed in sequence on a structure. Each optimization
 step consists of a set of input file templates for the queuing system
 and optimizer to be used, and the structure is updated after each
 completes. So if an optimization scheme contains three optimization
-steps, a stucture's lifecycle is:
+steps, a structure's lifecycle is:
 
   -# Generation of initial structure
   -# Perform optstep 1 on initial structure
