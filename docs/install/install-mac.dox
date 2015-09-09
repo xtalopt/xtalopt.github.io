@@ -7,7 +7,7 @@ namespace XtalOpt {
 
 First, and foremost, Mac OS X users must install <a href="https://developer.apple.com/xcode/">Xcode</a> to begin compiling the following programs.
 
-        The following dependencies can be installed from the package manager <a href="https://www.macports.org">MacPorts</a> or <a href="http://brew.sh/">Homebrew</a>:
+The following dependencies can be installed from the package manager <a href="https://www.macports.org">MacPorts</a> or <a href="http://brew.sh/">Homebrew</a>:
 
   - \c cmake (and optionally the ncurses GUI, ccmake) >= 2.6
   - \c Qt >= 4.6.0

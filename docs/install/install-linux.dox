@@ -152,7 +152,7 @@ Note: if you see errors like
 
 during the compilation, follow the instructions <a href="http://lists.openmolecules.net/pipermail/xtalopt-devel-openmolecules.net/2011-August/000081.html">here</a>.
 
-Note: if you need to use Kerberos authentication to establish a SSH connection to the remote server, the <tt>libssh</tt> library used by XtalOpt will not work. There is a workaround for Linux (and possibly Mac) users, which will call the command line <tt>ssh</tt>/<tt>scp</tt> commands to communicate with the remote cluster. This can be enabled by adding <tt>-DUSE_CLI_SSH=true</tt> to the cmake command above. This <tt>ssh</tt> backend will not prompt for a password, and expects the <tt>ssh</tt> commands to "just work". Passwordless <tt>ssh</tt> logins can be enabled using the <a href="http://linux.die.net/man/1/ssh-copy-id">ssh-copy-id</a>command.
+Note: if you need to use Kerberos authentication to establish a SSH connection to the remote server, the <tt>libssh</tt> library used by XtalOpt will not work. There is a workaround for Linux (and possibly Mac) users, which will call the command line <tt>ssh</tt>/<tt>scp</tt> commands to communicate with the remote cluster. This can be enabled by adding <tt>-DUSE_CLI_SSH=true</tt> to the cmake command above. This <tt>ssh</tt> backend will not prompt for a password, and expects the <tt>ssh</tt> commands to "just work". Passwordless <tt>ssh</tt> logins can be enabled using the <a href="http://linux.die.net/man/1/ssh-copy-id">ssh-copy-id</a> command.
 
 XtalOpt is now installed.
 
