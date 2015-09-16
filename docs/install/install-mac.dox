@@ -105,7 +105,7 @@ cd avogadro/build
 Configure, build, and install Avogadro:
 
 \code
-cmake .. -DCMAKE_CXX_FLAGS=-stdlib=libstdc++ -DOPENBABEL2_INCLUDE_DIR=$HOME/include/openbabel-2.0 -DOPENBABEL2_LIBRARIES=$HOME/lib/libopenbabel.4.0.0.dylib -DOPENBABEL2_VERSION_MET=true -DOPENBABEL_IS_NEWER_THAN_2_2_99=true -DENABLE_PYTHON=false -DCMAKE_INSTALL_PREFIX=$HOME
+cmake .. -DCMAKE_CXX_FLAGS=-stdlib=libstdc++ -DOPENBABEL2_INCLUDE_DIR=$HOME/include/openbabel-2.0 -DOPENBABEL2_LIBRARIES=$HOME/lib/libopenbabel.4.0.0.dylib -DOPENBABEL2_VERSION_MET=true -DENABLE_PYTHON=false -DCMAKE_INSTALL_PREFIX=$HOME
 make -j3
 make install
 \endcode
@@ -136,7 +136,7 @@ cd xtalopt/build
 Configure, build, and install:
 
 \code
-cmake .. -DCMAKE_CXX_FLAGS=-stdlib=libstdc++ -DOPENBABEL2_INCLUDE_DIR=$HOME/include/openbabel-2.0 -DOPENBABEL2_LIBRARIES=$HOME/lib/libopenbabel.4.0.0.dylib -DOPENBABEL2_VERSION_MET=true -DOPENBABEL_IS_NEWER_THAN_2_2_99=true -DCMAKE_INSTALL_PREFIX=$HOME
+cmake .. -DCMAKE_CXX_FLAGS=-stdlib=libstdc++ -DOPENBABEL2_INCLUDE_DIR=$HOME/include/openbabel-2.0 -DOPENBABEL2_LIBRARIES=$HOME/lib/libopenbabel.4.0.0.dylib -DOPENBABEL2_VERSION_MET=true -DCMAKE_INSTALL_PREFIX=$HOME
 make -j3
 make install
 \endcode

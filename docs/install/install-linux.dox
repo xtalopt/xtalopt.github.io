@@ -26,7 +26,7 @@ pacman -S cmake git eigen glu qt4 libssh openssh
 On Ubuntu, one can use the command
 
 \code
-sudo apt-get cmake qt4-default qt4-dev-tools libeigen-3-dev git libssh-dev zlib1g-dev
+sudo apt-get install cmake qt4-default qt4-dev-tools libeigen3-dev git libssh-dev zlib1g-dev
 \endcode
 
 @section src Source Installations
@@ -104,7 +104,7 @@ cd avogadro/build
 Configure, build, and install Avogadro:
 
 \code
-cmake .. -DOPENBABEL2_INCLUDE_DIR=$HOME/include/openbabel-2.0 -DOPENBABEL2_LIBRARIES=$HOME/lib/libopenbabel.so -DOPENBABEL2_VERSION_MET=true -DOPENBABEL_IS_NEWER_THAN_2_2_99=true -DENABLE_PYTHON=false -DCMAKE_INSTALL_PREFIX=$HOME
+cmake .. -DOPENBABEL2_INCLUDE_DIR=$HOME/include/openbabel-2.0 -DOPENBABEL2_LIBRARIES=$HOME/lib/libopenbabel.so -DOPENBABEL2_VERSION_MET=true -DENABLE_PYTHON=false -DCMAKE_INSTALL_PREFIX=$HOME
 make -j3
 make install
 \endcode
@@ -135,7 +135,7 @@ cd xtalopt/build
 Configure, build, and install:
 
 \code
-cmake .. -DOPENBABEL2_INCLUDE_DIR=$HOME/include/openbabel-2.0 -DOPENBABEL2_LIBRARIES=$HOME/lib/libopenbabel.so -DOPENBABEL2_VERSION_MET=true -DOPENBABEL_IS_NEWER_THAN_2_2_99=true -DCMAKE_INSTALL_PREFIX=$HOME
+cmake .. -DOPENBABEL2_INCLUDE_DIR=$HOME/include/openbabel-2.0 -DOPENBABEL2_LIBRARIES=$HOME/lib/libopenbabel.so -DOPENBABEL2_VERSION_MET=true -DCMAKE_INSTALL_PREFIX=$HOME
 make -j3
 make install
 \endcode
