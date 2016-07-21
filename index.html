@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Github Page for XtalOpt, an evolutionary algortihm designed for a priori crystal structure prediction.">
   <meta name="author" content="Zackary Falls">
@@ -11,7 +11,7 @@
   <meta property="og:image" content="http://xtalopt.github.io/dist/img/xtalopt-logo.png">
   <title>
       XtalOpt
-  </title>  
+  </title>
 
   <!-- Scripts -->
   <script src="dist/js/jquery.js"></script>
@@ -27,12 +27,12 @@
   </script>
   <script type="text/javascript" src='dist/js/bootstrap.min.js'></script>
   <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
-  <script> 
+  <script>
     $(function(){
-      $("#navbar").load("navbar.html"); 
+      $("#navbar").load("navbar.html");
     });
-  </script> 
-  <script> 
+  </script>
+  <script>
     $(function() {
       var pgurl = window.location.href.substr(window.location.href.lastIndexOf("/")+1);
       $("#nav ul li a").each(function(){
@@ -40,13 +40,13 @@
           $(this).addClass("active");
       })
     });
-  </script> 
+  </script>
 
   <!-- Styles -->
   <link href="dist/css/bootstrap.css" rel="stylesheet">
   <link href="dist/css/bootstrap-responsive.css" rel="stylesheet">
   <link href="dist/css/style.css" rel="stylesheet">
-  
+
   <!-- Fav and touch icons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="dist/img/xtalopt-logo.png">
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="dist/img/xtalopt-logo.png">
@@ -73,28 +73,28 @@
       <br>
       <br>
       <a class="btn btn-large btn-default" href="#xtalopt">Learn more</a>
-    </div> 
+    </div>
 
-    <a class="anchor" id="spacegroup"> 
-      <br><br> 
+    <a class="anchor" id="spacegroup">
+      <br><br>
     </a>
       <br>
 
     <div class="jumbotron" id="spacegroup" style="background-color:#FFCCCC;broder-color:red">
       <h2>Space Group Generator</h2>
-        SpgGen is an algorithm developed by Patrick Avery. 
-        SpgGen generates random crystals of specific spacegroups and allows the user to specify a lot of information such as minimum interatomic distances, volume constraints, etc. 
+        RandSpg is an algorithm developed by Patrick Avery.
+        RandSpg generates random crystals of specific spacegroups and allows the user to specify a lot of information such as minimum interatomic distances, volume constraints, etc.
             <br><br>
-        The source code is available under the <a target='_blank' href="https://opensource.org/licenses/BSD-3-Clause">"New" BSD open source license</a> 
-        and may be viewed at its <a target='_blank' href="https://github.com/psavery/spgGen">Github repository</a>. 
+        The source code is available under the <a target='_blank' href="https://opensource.org/licenses/BSD-3-Clause">"New" BSD open source license</a>
+        and may be viewed at its <a target='_blank' href="https://github.com/psavery/randSpg">Github repository</a>.
             <br><br>
-        <a class="btn btn-large btn-danger" target="_blank" href="http://xtalopt.openmolecules.net/spgGen/spgGen.html">spgGen</a>
+        <a class="btn btn-large btn-danger" target="_blank" href="http://xtalopt.openmolecules.net/randSpg/randSpg.html">RandSpg</a>
             <br><br>
             If you encounter any bugs, please email <a href='mailto:psavery@buffalo.edu'>psavery@buffalo.edu</a>
     </div>
 
-    <a class="anchor" id="news"> 
-      <br><br> 
+    <a class="anchor" id="news">
+      <br><br>
     </a>
       <br>
 
@@ -102,7 +102,7 @@
       <h2 style="color:red">News</h2>
       <hr>
       <h3>Avogadro2 Updates</h3>
-        Our Ph.D. student, Patrick Avery, was accepted to the Google Summer of Code 2016!!! 
+        Our Ph.D. student, Patrick Avery, was accepted to the Google Summer of Code 2016!!!
             <br><br>
         He has been working on Avogadro2.
             <br><br>
@@ -118,7 +118,7 @@
               <a class="popup" target="_blank" href="dist/img/xtalopt-queue.png">
                 <img width="100%" src="dist/img/xtalopt-queue.png" alt="xtalopt-queue.png" max-width="85%">
               </a>
-            </center>  
+            </center>
             <li>Optional removal of unnecessary files for VASP calculations.</li>
             <li>Added a new "mitosis" function used to generate higher local order for initial structures.
             <br>
@@ -126,11 +126,11 @@
             <center>
               <a class="popup" target="_blank" href="dist/img/mitosis.png">
                 <img width="70%" src="dist/img/mitosis.png" alt="mitosis.png" style="border:2px solid grey;border-radius:10px">
-              </a>    
+              </a>
               <p style="font-size:10px">
                 Options for the "mitosis" function found in the "Structure Limits" tab.
               </p>
-            </center>   
+            </center>
             <li>Option to rank all current structures and export structures to a new subdirectory as .cml, CONTCAR, or .got.</li>
           </ul>
         </div>
@@ -154,16 +154,16 @@
             <li>Fix compilation against Qt 4.6.3 and 4.8.0.</li>
             <li>Updated space-group detection library to spglib 1.0.8.</li>
             <li>Bundled libssh library removed, now an optional dependency.</li>
-            <li>Added option to use command-line ssh/scp interfaces when libssh is unavailable or Kerberos authentication is needed.</li> 
-            <li>Implemented an extension for an automated stochastic docking program (RandomDock) that supports MOPAC, ADF, GAMESS and Gaussian as back-end molecular quantum chemistry engines. 
+            <li>Added option to use command-line ssh/scp interfaces when libssh is unavailable or Kerberos authentication is needed.</li>
+            <li>Implemented an extension for an automated stochastic docking program (RandomDock) that supports MOPAC, ADF, GAMESS and Gaussian as back-end molecular quantum chemistry engines.
             <li>Numerous misc bugfixes.</li>
           </ul>
         </div>
-      </div> 
-    </div> 
+      </div>
+    </div>
 
-    <a class="anchor" id="xtalopt"> 
-      <br><br> 
+    <a class="anchor" id="xtalopt">
+      <br><br>
     </a>
       <br>
 
@@ -172,12 +172,12 @@
       <br>
       <p class="lead">
          XtalOpt is implemented as an extension to the <a class="ext-link" href="http://avogadro.cc/wiki/Main_Page">Avogadro</a> molecular editor.
-      </p>    
+      </p>
       <p style="font-size:40px">
         <img src="dist/img/avogadro-logo.png" alt="avogadro-logo.png" style="max-width:72px">
         +
         <img src="dist/img/xtalopt-logo.png" alt="xtalopt-logo.png" style="max-width:72px">
-      </p>     
+      </p>
 
 
       <p class="lead">
@@ -194,13 +194,13 @@
         Screenshot of Avogadro visualizing a 16 x TiO<sub>2</sub> cell.
       </p>
     </div>
-    
-    <a class="anchor" id="interface"> 
-      <br><br> 
+
+    <a class="anchor" id="interface">
+      <br><br>
     </a>
       <br>
 
-    <div class="jumbotron">       
+    <div class="jumbotron">
       <h2>User Interface</h2>
       <h3>Structure Limits</h3>
       <div class="row-fluid">
@@ -222,7 +222,7 @@
           </ul>
         </div>
       </div>
-        
+
       <h3>Optimization Settings</h3>
       <div class="row-fluid">
         <div class="span6" align="left" style="text-align:-moz-left">
@@ -230,7 +230,7 @@
           <ul>
               <li style="padding-top:7px">Choose from several queueing systems and optimizer combinations.
             <li style="padding-top:7px">Queue systems supported include: SLURM, PBS, LSF, etc.
-            <li style="padding-top:7px">Optimizers include: VASP, GULP, CASTEP, etc.  
+            <li style="padding-top:7px">Optimizers include: VASP, GULP, CASTEP, etc.
           </ul>
         </div>
         <div class="span6">
@@ -260,7 +260,7 @@
               <li style="padding-top:7px">The number of randomly generated initial structures and number of concurrently running structures are controlled in this tab.
               <li style="padding-top:7px">The termination criteria of final number of structures can be set here, as well.
               <li style="padding-top:7px">Users can adjust the percentage of occurence of each operator type.
-              <li style="padding-top:7px">Furthermore, the individual parameters of each opertaor can be fine tuned (number of exchanges in a "permustrain" or minimum contribution from a parent during a "crossover").  
+              <li style="padding-top:7px">Furthermore, the individual parameters of each opertaor can be fine tuned (number of exchanges in a "permustrain" or minimum contribution from a parent during a "crossover").
               <li style="padding-top:7px">Duplicate matching parameters are also found here.
           </ul>
         </div>
@@ -268,16 +268,16 @@
 
       <h3>Progress</h3>
           <ul align="left" style="text-align:-moz-left">
-            <li style="padding-top:7px">As XtalOpt performs the search, the progress table continuously updates, providing information about each structure. 
+            <li style="padding-top:7px">As XtalOpt performs the search, the progress table continuously updates, providing information about each structure.
             <li style="padding-top:7px">In the figure we see individuals in various stages of completion:
             <ul align="left" style="text-align:-moz-left">
                 <li style="padding-top:7px">One structure XtalOpt displays is optimized (in blue), another structure has been automatically marked as a duplicate (dark green) and removed from the breeding pool, yet another structure is currently undergoing a local optimization (light green), while another structure is waiting to be optimized (light blue).
             </ul>
-            <li style="padding-top:7px">Other useful information is displayed about each structure, such as the time spent in optimization, the optimized enthalpy, the cell volume, spacegroup, and each structure’s ancestory (i.e. parent(s) and parameters for the evolutionary operator that generated it). 
-            <li style="padding-top:7px">A status bar on the bottom of the window shows the number of structures that are optimized, running, and failing at any given time. 
+            <li style="padding-top:7px">Other useful information is displayed about each structure, such as the time spent in optimization, the optimized enthalpy, the cell volume, spacegroup, and each structure’s ancestory (i.e. parent(s) and parameters for the evolutionary operator that generated it).
+            <li style="padding-top:7px">A status bar on the bottom of the window shows the number of structures that are optimized, running, and failing at any given time.
             <li style="padding-top:7px">This information is visible regardless of which tab is currently being viewed.
-            <li style="padding-top:7px">An additional feature of the progress table is the ability to immediately visualize any of the individuals in the Avogadro main window – simply clicking on a row in this table will display the three-dimensional structure in Avogadro, where it can be visualized, modified, or exported. 
-            <li style="padding-top:7px">If the user would like to add a bit of “intelligent design” to the evolutionary process, a structure can be modified and then resubmitted using a context (right-click) menu from the progress table. 
+            <li style="padding-top:7px">An additional feature of the progress table is the ability to immediately visualize any of the individuals in the Avogadro main window – simply clicking on a row in this table will display the three-dimensional structure in Avogadro, where it can be visualized, modified, or exported.
+            <li style="padding-top:7px">If the user would like to add a bit of “intelligent design” to the evolutionary process, a structure can be modified and then resubmitted using a context (right-click) menu from the progress table.
             <li style="padding-top:7px">The context menu provides tools to (un)kill a structure, resubmit for local optimization at an arbitrary optimization step, or replace a problematic structure with a new, random individual.
           </ul>
             <a class="popup" target="_blank" href="dist/img/xtalopt-prog.png">
@@ -286,14 +286,14 @@
             <p style="font-size:11px">
               The "Progress" tab
             </p>
-        
+
         <h3>Plot</h3>
         <ul align="left" style="text-align:-moz-left">
-            <li style="padding-bottom:7px">Another visualization and analysis tool available during the search is the interactive plot.</li> 
-            <li style="padding-bottom:7px">Allows investigation of various trends in the search by plotting a point for each individual.</li> 
-          <li style="padding-bottom:7px">Each point can be plotted based upon structure number, generation number, enthalpy, energy, PV enthalpy term, lattice parameters, or cell volume on either axis.</li> 
+            <li style="padding-bottom:7px">Another visualization and analysis tool available during the search is the interactive plot.</li>
+            <li style="padding-bottom:7px">Allows investigation of various trends in the search by plotting a point for each individual.</li>
+          <li style="padding-bottom:7px">Each point can be plotted based upon structure number, generation number, enthalpy, energy, PV enthalpy term, lattice parameters, or cell volume on either axis.</li>
           <li style="padding-bottom:7px">Further information is available by labeling the points with the individual’s spacegroup number, Hermann-Mauguin spacegroup symbol, enthalpy, energy, PV term, volume, generation, or index number.</li>
-          <li style="padding-bottom:7px">The plot is also interactive; zooming and panning are possible using simple mouse controls. 
+          <li style="padding-bottom:7px">The plot is also interactive; zooming and panning are possible using simple mouse controls.
           <li style="padding-bottom:7px">Clicking on a structure’s point in the plot will load it in the main Avogadro window, allowing all the same functionality as described above in the progress table section.
         </ul>
         <div class="row-fluid">
@@ -316,7 +316,7 @@
         </div>
       </div>
 
-    <a class="anchor" id="operators"> 
+    <a class="anchor" id="operators">
       <br><br>
     </a>
       <br>
@@ -373,21 +373,21 @@
           <p lang="latex">
             \Delta z = \rho\cos(2\pi\mu x+\theta_{x})\cos(2\pi\eta y+\theta_{y})~~~~~\mu\in\mathbb{Z},~\eta\in\mathbb{Z}
           </p>
-          </center> 
-          <li style="padding-bottom:7px">In this equation: 
+          </center>
+          <li style="padding-bottom:7px">In this equation:
           <ul align="left" style="text-align:-moz-left">
             <li style="padding-bottom:7px"><span lang="latex">\rho</span> is the maximum displacement of an atom along the axis.
             <li style="padding-bottom:7px"><span lang="latex">\mu</span> and <span lang="latex">\eta</span> determines the number of cosine waves in the orthogonal directions.
             <li style="padding-bottom:7px"><span lang="latex">\theta_{x}</span> and <span lang="latex">\theta_{y}</span> are randomly chosen values between 0 and 2<span lang="latex">\pi</span> that specify the strength of the ripple in various areas of the cell.
           </ul>
-        </ul> 
+        </ul>
       </p>
       <a class="popup" target="_blank" href="dist/img/xtalopt-ripple.png">
         <img src="dist/img/xtalopt-ripple.png" alt="xtalopt-ripple.png">
       </a>
       <br>
       <br>
-       
+
       <h3>Crossover</h3>
       <p>
         <ul align="left" style="text-align:-moz-left">
@@ -407,9 +407,9 @@
       </a>
     </div>
 
-    <a class="anchor" id="support"> 
-      <br> 
-      <br> 
+    <a class="anchor" id="support">
+      <br>
+      <br>
     </a>
 
     <div class="jumbotron">
