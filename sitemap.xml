@@ -5,32 +5,32 @@
   xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
     <url>
-        <loc>http://www.xtalopt.github.io/</loc>
+        <loc>http://xtalopt.github.io/</loc>
         <changefreq>weekly</changefreq>
         <priority>1.00</priority>
     </url>
     <url>
-        <loc>http://www.xtalopt.github.io.com/download.html</loc>
+        <loc>http://xtalopt.github.io.com/download.html</loc>
         <changefreq>weekly</changefreq>
         <priority>1.00</priority>
     </url>
     <url>
-        <loc>http://www.xtalopt.github.io.com/install.html</loc>
+        <loc>http://xtalopt.github.io.com/install.html</loc>
         <changefreq>weekly</changefreq>
         <priority>1.00</priority>
     </url>
     <url>
-        <loc>http://www.xtalopt.github.io.com/tut.html</loc>
+        <loc>http://xtalopt.github.io.com/tut.html</loc>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>http://www.xtalopt.github.io.com/pub.html</loc>
+        <loc>http://xtalopt.github.io.com/pub.html</loc>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>http://www.xtalopt.github.io.com/other.html</loc>
+        <loc>http://xtalopt.github.io.com/other.html</loc>
         <changefreq>weekly</changefreq>
         <priority>0.20</priority>
     </url>
