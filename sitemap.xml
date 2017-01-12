@@ -10,27 +10,27 @@ http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
         <priority>1.00</priority>
     </url>
     <url>
-        <loc>http://xtalopt.github.io.com/download.html</loc>
+        <loc>http://xtalopt.github.io/download.html</loc>
         <changefreq>weekly</changefreq>
         <priority>1.00</priority>
     </url>
     <url>
-        <loc>http://xtalopt.github.io.com/install.html</loc>
+        <loc>http://xtalopt.github.io/install.html</loc>
         <changefreq>weekly</changefreq>
         <priority>1.00</priority>
     </url>
     <url>
-        <loc>http://xtalopt.github.io.com/tut.html</loc>
+        <loc>http://xtalopt.github.io/tut.html</loc>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>http://xtalopt.github.io.com/pub.html</loc>
+        <loc>http://xtalopt.github.io/pub.html</loc>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>http://xtalopt.github.io.com/other.html</loc>
+        <loc>http://xtalopt.github.io/other.html</loc>
         <changefreq>weekly</changefreq>
         <priority>0.20</priority>
     </url>
