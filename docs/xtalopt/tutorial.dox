@@ -6,6 +6,12 @@ namespace XtalOpt {
 @section Contents
   - \ref launch
   - \ref init
+    - \ref init-comp
+    - \ref init-cell
+    - \ref init-iad
+    - \ref init-molunit
+    - \ref init-randspg
+    - \ref init-mitosis
   - \ref opt
     - \ref vasp-opt
     - \ref gulp-opt
@@ -28,6 +34,9 @@ namespace XtalOpt {
 
 
 
+
+
+
 @section launch Launch XtalOpt
 Open Avogadro, go to the "Extensions" menu and select
 "XtalOpt".
@@ -36,16 +45,63 @@ Open Avogadro, go to the "Extensions" menu and select
 @image html struct-lim.png
 @image latex struct-lim.png width=\textwidth
 
-The interface opens to the "Structure Limits" tab, shown above. We
-will use a 6 formula unit supercell of titanium dioxide for this
-tutorial, so enter "Ti6 O12" for the cell composition. We will assume
-that we know nothing about the system and use very loose
-restraints (however, note that a search is much more effective if chemically reasonable restraints are used). Set all cell length minima to 1 angstrom and maxima to 20
+The interface opens to the "Structure Limits" tab, shown above.
+
+@subsection init-comp Chemical Composition
+We will use a 6 formula unit supercell of titanium dioxide for this
+tutorial, so enter "Ti1 O2" for the "Empirical Formula". 
+Under the "Formula Units" we can type 6. If the user wants to search multiple
+formula units, they would only have to type in the range, or individual numbers
+they wish to search (e.g., 1-6; or 1-2, 4, 6).
+
+@subsection init-cell Cell Parameters
+We will assume that we know nothing about the system and use very loose
+restraints (however, note that a search is much more effective 
+if chemically reasonable restraints are used). 
+Set all cell length minima to 1 angstrom and maxima to 20
 angstroms. Constrain the angles to be between 60 and 120 degrees, and
-the volume from between 1 and 500 cubic angstroms. Specify a minimum
-interatomic distance of 0.5 angstrom. (Note that due to the angle
-adjustment described in CPC, 2011, 182, 372-387, 60-120 degrees is
+the volume from between 1 and 500 cubic angstroms. 
+(Note that due to the angle adjustment described in 
+CPC, 2011, 182, 372-387, 60-120 degrees is
 the largest range of cell angles that XtalOpt will generate.)
+Furthermore, the volume of the cell can be fixed, so that all cells 
+generated will have the exact same volume.
+
+@subsection init-iad Interatomic Distances
+The current version of XtalOpt defines minimum interatomic distances
+by multiplying the covalent radii of the given element type by a "Scale Factor".
+This "Scale Factor" can be defined by the user.
+Specify a minimum interatomic distance "Scale Factor" of 0.50. 
+
+@subsection init-molunit Molecular-Unit Builder
+If the user chooses to define specific molecular units, this option will 
+allow them to do so. Once the chemical composition has been defined, the user
+can choose the center and neighbor atoms to be set as single-center molecules.
+For example, with the 6 formula unit TiO2, we could set 6 Ti atoms to be the center
+of 2 O atoms in a linear geometry. We can also decide what the interatomic distance 
+between the center and neighboring atoms will be.
+
+@subsection init-randspg Random Spacegroup Generator
+@image html randspg-dialog.png
+@image latex randspg-dialog.png width=\textwidth
+
+With the implementation of randSpg, the initial generation of structures will 
+now be created fitting specific spacegroups (or a variety of spacegroups).
+The choice for spacegroups will be limited by the chemical composition and number 
+of formula units.
+
+For more information on randSpg, see <a href="https://doi.org/10.1016/j.cpc.2016.12.005">
+this paper</a>.
+
+
+
+@subsection init-mitosis Mitosis
+For structure with large unit cells/large number of atoms, one can use "Mitosis"
+to increase the local order of the initially generated structures. This will create a small
+subcell, then multiply the subcell in each direction to fulfill the stoichiometry 
+and unit cell size. "# of Divisions" defines how many subcells will be replicated, based upon
+the user defined number of "Formula Units",  
+and the a, b, c determine in which direction the cells are replicated.
 
 @section opt Optimizer setup
 
@@ -544,7 +600,7 @@ Select "LSF" from the list of Queues, and then click the "Configure..." button. 
 	- Path to bsub: Where to find the bsub executable on the remote cluster. Note that if bsub is in the cluster's $PATH, setting this to just 'bsub' will work.
 	- Path to bkill: Where to find the bkill executable on the remote cluster. Note that if bkill is in the cluster's $PATH, setting this to just 'bkill' will work.
 	- Path to bjobs: Where to find the bjobs executable on the remote cluster. Note that if bjobs is in the cluster's $PATH, setting this to just 'bjobs' will work.
-  - "Clean remote directories when finished": will remove all of the generated files from the cluster. Only the files on the local computer will be kept. If you do not want this to occur, make sure to uncheck this option.
+    - "Clean remote directories when finished": will remove all of the generated files from the cluster. Only the files on the local computer will be kept. If you do not want this to occur, make sure to uncheck this option.
 
 A new template, "job.lsf" is added to the list of available templates. This is the job submission script for LSF. It may take some experimentation to get jobs to submit successfully, and you may need to contact the system administrators of the cluster for assistance or information about MPI, executable locations, etc. Perhaps the easiest method to find the correct LSF script is to run some trial submissions by hand, and then replace the structure/search specific information with the appropriate keywords once a working script has been generated.
 
@@ -565,7 +621,7 @@ Select "LoadLeveler" from the list of Queues, and then click the "Configure..." 
 	- Path to llsubmit: Where to find the llsubmit executable on the remote cluster. Note that if llsubmit is in the cluster's $PATH, setting this to just 'llsubmit' will work.
 	- Path to llcancel: Where to find the llcancel executable on the remote cluster. Note that if llcancel is in the cluster's $PATH, setting this to just 'llcancel' will work.
 	- Path to llq: Where to find the llq executable on the remote cluster. Note that if llq is in the cluster's $PATH, setting this to just 'llq' will work.
-  - "Clean remote directories when finished": will remove all of the generated files from the cluster. Only the files on the local computer will be kept. If you do not want this to occur, make sure to uncheck this option.
+    - "Clean remote directories when finished": will remove all of the generated files from the cluster. Only the files on the local computer will be kept. If you do not want this to occur, make sure to uncheck this option.
 
 A new template, "job.ll" is added to the list of available templates. This is the job submission script for LoadLeveler. It may take some experimentation to get jobs to submit successfully, and you may need to contact the system administrators of the cluster for assistance or information about MPI, executable locations, etc. Perhaps the easiest method to find the correct LoadLeveler script is to run some trial submissions by hand, and then replace the structure/search specific information with the appropriate keywords once a working script has been generated.
 
