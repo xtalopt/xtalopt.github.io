@@ -159,7 +159,7 @@ be used to generate your own:
        problems are beyond the scope of this document.
     -# Reduce the convergence criteria of the current trial optstep
     -# Remove degrees of freedom, e.g. by fixing cell parameters,
-       atomic positions, etc
+       atomic positions, etc.
     -# Reduce the accuracy of the calculation in other ways (use a
        courser integration grid, etc).
     -# Change the minimizer (e.g. tell the optimizer to use conjugate
@@ -184,8 +184,12 @@ keywords. Click the "Help" button for the complete list of keywords.
 We have found that the optimization schemes are surprisingly
 transferable within an optimizer, so once you have a working
 optimization scheme for a given optimization code only minor tweaks
-(usually to the energy cutoffs, etc ) are necessary to use it on
+(usually to the energy cutoffs, etc.) are necessary to use it on
 a different chemical system.
+
+It is important to note that the optimization scheme does not have to perfectly
+converge your structures. A final post-processing optimization to refine any 
+structure found in the search is highly recommended.
 
 @section saving How to save an optimization scheme for later?
 

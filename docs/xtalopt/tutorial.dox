@@ -79,7 +79,10 @@ allow them to do so. Once the chemical composition has been defined, the user
 can choose the center and neighbor atoms to be set as single-center molecules.
 For example, with the 6 formula unit TiO2, we could set 6 Ti atoms to be the center
 of 2 O atoms in a linear geometry. We can also decide what the interatomic distance 
-between the center and neighboring atoms will be.
+between the center and neighboring atoms will be. If There are left over atoms, 
+they will be placed randomly after the molecular untis are added.
+
+Only applies the molecular units to the initial generation.
 
 @subsection init-randspg Random Spacegroup Generator
 @image html randspg-dialog.png
@@ -90,13 +93,16 @@ now be created fitting specific spacegroups (or a variety of spacegroups).
 The choice for spacegroups will be limited by the chemical composition and number 
 of formula units.
 
+Only applies the spacegroup constraints to the initial generation. Molunit and randSpg
+cannot be used simultaneously.
+
 For more information on randSpg, see <a href="https://doi.org/10.1016/j.cpc.2016.12.005">
 this paper</a>.
 
 
 
 @subsection init-mitosis Mitosis
-For structure with large unit cells/large number of atoms, one can use "Mitosis"
+For structures with large unit cells/large number of atoms, one can use "Mitosis"
 to increase the local order of the initially generated structures. This will create a small
 subcell, then multiply the subcell in each direction to fulfill the stoichiometry 
 and unit cell size. "# of Divisions" defines how many subcells will be replicated, based upon
@@ -108,6 +114,19 @@ and the a, b, c determine in which direction the cells are replicated.
 XtalOpt currently supports the \ref vasp-opt, \ref gulp-opt, \ref
 pwscf-opt, \ref castep-opt, and \ref siesta-opt codes for performing geometry
 optimizations. Each is detailed in its own section below.
+
+Be aware that program installation is different, and it is
+almost certain that the submit files included with these schemes will
+not work on any cluster other than the Zurek group's "parity" cluster
+at SUNY Buffalo's Center for Computational Resources. It may take some
+experimentation to get jobs to submit successfully, and you may need
+to contact the system administrators of the cluster for assistance for
+information about MPI, executable locations, etc. Perhaps the easiest
+method to find the correct submit script is to run some trial submissions
+by hand, and then replace the structure/search specific information
+with the appropriate keywords once a working script has been
+generated.
+
 
 @subsection vasp-opt VASP
 \image html opt-set-vasp.png
@@ -224,18 +243,6 @@ to enter information that is specific to a search or structure when
 the actual input files are written prior to job submission. Click the
 "Help" button for a full listing of the available keywords.
 
-Be aware that every PWscf/CASTEP installation is different, and it is
-almost certain that the job.pbs file included with this scheme will
-not work on any cluster other than the Zurek group's "parity" cluster
-at SUNY Buffalo's Center for Computational Resources. It may take some
-experimentation to get jobs to submit successfully, and you may need
-to contact the system administrators of the cluster for assistance for
-information about MPI, executable locations, etc. Perhaps the easiest
-method to find the correct PBS script is to run some trial submissions
-by hand, and then replace the structure/search specific information
-with the appropriate keywords once a working script has been
-generated.
-
 XtalOpt expects PWscf to use the following filenames:
 
 \code
@@ -278,18 +285,6 @@ Notice the %%keyword% values in the job.pbs templates. These are used
 to enter information that is specific to a search or structure when
 the actual input files are written prior to job submission. Click the
 "Help" button for a full listing of the available keywords.
-
-Be aware that every PWscf/CASTEP installation is different, and it is
-almost certain that the job.pbs file included with this scheme will
-not work on any cluster other than the Zurek group's "parity" cluster
-at SUNY Buffalo's Center for Computational Resources. It may take some
-experimentation to get jobs to submit successfully, and you may need
-to contact the system administrators of the cluster for assistance for
-information about MPI, executable locations, etc. Perhaps the easiest
-method to find the correct PBS script is to run some trial submissions
-by hand, and then replace the structure/search specific information
-with the appropriate keywords once a working script has been
-generated.
 
 XtalOpt expects CASTEP to use the following filenames:
 
@@ -480,17 +475,6 @@ cp $PBSTMPDIR/* $PBS_O_WORKDIR/
 
 For more details on optimization schemes, see \ref optschemes.
 
-Be aware that every installation is different, and it is almost
-certain that the job.pbs file included with this scheme will not work
-on any cluster other than the Zurek group's "parity" cluster at SUNY
-Buffalo's Center for Computational Resources. It may take some
-experimentation to get jobs to submit successfully, and you may need
-to contact the system administrators of the cluster for assistance or information
-about MPI, executable locations, etc. Perhaps the easiest method to
-find the correct PBS script is to run some trial submissions by hand,
-and then replace the structure/search specific information with the
-appropriate keywords once a working script has been generated.
-
 A handy trick for monitoring jobs outside of XtalOpt is to include the
 following line in job.pbs:
 
@@ -506,9 +490,8 @@ its second optimization step.
 \ref files "Skip to next section."
 
 @subsection remotesge Using a remote SGE cluster
-\image html opt-set-pbs.png
-\image latex opt-set-pbs.png width=\textwidth
-@todo Get screenshots of SGE config dialog
+\image html opt-set-sge.png
+\image latex opt-set-sge.png width=\textwidth
 
 Select "SGE" from the list of Queues, and then click the "Configure..."
 button. A new window will prompt for:
@@ -552,7 +535,7 @@ For more details on optimization schemes, see \ref optschemes.
 
 Select "SLURM" from the list of Queues, and then click the "Configure..."
 button. A new window will prompt for:
-  - host: The hostname of the SGE cluster's head node
+  - host: The hostname of the SLURM cluster's head node
   - user: The username used to log into the cluster
   - Working directory (Server): A directory that is readable/writable
       by "user" on the cluster, used when performing optimizations.
@@ -692,6 +675,10 @@ core to remain free for the system to run.
 
 There is now a termination criteria called "Total Number of Structures" that will end the run once a certain number of structures have been produced by XtalOpt.
 
+The tolerances for duplicate matching are also found in this tab. They can be adjusted
+at any point in the run and the results.txt file will update with the correct duplicates
+found based upon the new tolerances.
+
 \section begin "Begin"
 \image html prog-start.png "The ``Progress'' tab immediately after starting a search"
 \image latex prog-start.png "The ``Progress'' tab immediately after starting a search" width=\textwidth
@@ -726,6 +713,22 @@ on the bottom of the window shows the number of structures that are
 optimized, running, and failing at any given time. This information is
 visible regardless of which tab is currently being viewed.
 
+After every structure has been optimized, it is checked to see if it 
+is a super cell by performing a primitive reduction. If the primitive 
+reduction yields a crystal with fewer atoms that it originally had, 
+the original crystal is marked as a super cell and a new crystal is 
+generated that is labelled as a primitive reduction of the original. 
+This primitive-reduced crystal does not undergo optimization - it is 
+labelled with the same energy as the original crystal. And, if the 
+user is searching the formula units of the primitive-reduced crystal, 
+the primitive-reduced crystal becomes a part of that smaller 
+formula unit's gene pool.
+
+In addition, every time a new crystal is optimized, if the user is 
+searching multiple formula units and the crystal is found to be low 
+in energy, a supercell of the crystal may be generated and be added 
+to the higher formula unit's gene pool.
+
 An additional feature of the progress table is the ability to
 immediately visualize any of the individuals in the Avogadro main
 window -- simply clicking on a row in this table will display the
@@ -739,6 +742,10 @@ optimization step, or replace a problematic structure with a new,
 random individual.
 
 Three additional buttons found near the "Refresh All" button in this tab are also available. The "Print Results File" button generates a run-results.txt file that lists all of the information about each structure in order of generation and structure number (As compared to the results.txt file which ranks the structures). The "Remove Extra Files" button is used for VASP runs. It removes any extraneous files in each local subdirectory in order to reduce disk usage. Files kept are structure.state, POTCAR, CONTCAR, OSZICAR, job.slurm and OUTCAR. Finally, the "Rank All" button ranks all currently optimized structures and exports them to a subdirectory (Ranked) in two forms (depending on the optimizer): POSCAR/.got and .cif. Each can be found in separate directories. (Only works for GULP and VASP runs currently).
+
+To alter a run manually, right-clicking on any of the structures in the Progress tab
+will bring up a menu of options. These options include: Killing a structure, restarting a structure, replacing a structure, injecting a seed structure, etc. All of these can be 
+done mid-run.
 
 \subsection trends View trends
 \image html trend-view.png "The ``Plot'' tab mid-run displaying enthalpy vs.\ volume. Each structure is labeled with its Hermann Mauguin spacegroup symbol."
