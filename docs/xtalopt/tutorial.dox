@@ -3,7 +3,7 @@ namespace XtalOpt {
 
 @page tut-xo XtalOpt Tutorial
 
-@section Contents
+<!--@section Contents
   - \ref launch
   - \ref init
     - \ref init-comp
@@ -30,12 +30,7 @@ namespace XtalOpt {
   - \ref begin
   - \ref prog-mon
     - \ref trends
-
-
-
-
-
-
+-->
 
 @section launch Launch XtalOpt
 Open Avogadro, go to the "Extensions" menu and select
@@ -79,21 +74,21 @@ allow them to do so. Once the chemical composition has been defined, the user
 can choose the center and neighbor atoms to be set as single-center molecules.
 For example, with the 6 formula unit TiO2, we could set 6 Ti atoms to be the center
 of 2 O atoms in a linear geometry. We can also decide what the interatomic distance 
-between the center and neighboring atoms will be. If There are left over atoms, 
+between the center and neighboring atoms will be. If there are left over atoms, 
 they will be placed randomly after the molecular untis are added.
 
-Only applies the molecular units to the initial generation.
+The molecular units are only used in the initial generation.
 
 @subsection init-randspg Random Spacegroup Generator
 @image html randspg-dialog.png
 @image latex randspg-dialog.png width=\textwidth
 
-With the implementation of randSpg, the initial generation of structures will 
-now be created fitting specific spacegroups (or a variety of spacegroups).
+With the implementation of RandSpg, the initial generation of structures 
+can be created by using specific spacegroups (or a variety of spacegroups).
 The choice for spacegroups will be limited by the chemical composition and number 
 of formula units.
 
-Only applies the spacegroup constraints to the initial generation. Molunit and randSpg
+Spacegroup constraints can only be used in the intiial generation. Molunit and randSpg
 cannot be used simultaneously.
 
 For more information on randSpg, see <a href="https://doi.org/10.1016/j.cpc.2016.12.005">
@@ -118,7 +113,7 @@ optimizations. Each is detailed in its own section below.
 Be aware that program installation is different, and it is
 almost certain that the submit files included with these schemes will
 not work on any cluster other than the Zurek group's "parity" cluster
-at SUNY Buffalo's Center for Computational Resources. It may take some
+at SUNY Buffalo's Center for Computational Research. It may take some
 experimentation to get jobs to submit successfully, and you may need
 to contact the system administrators of the cluster for assistance for
 information about MPI, executable locations, etc. Perhaps the easiest
@@ -596,14 +591,14 @@ For more details on optimization schemes, see \ref optschemes.
 \image latex opt-set-ll.png width=\textwidth
 
 Select "LoadLeveler" from the list of Queues, and then click the "Configure..." button. A new window will prompt for:
-	- host: The hostname of the LoadLeveler cluster's head node
-	- user: The username used to log into the cluster
-	- Working directory (Server): A directory that is readable/writable by "user" on the cluster, used when performing optimizations.
-	- Working directory (Local): A directory that is readable/writable by the current user on the local computer. This is where the final structures and resume files are written.
-	- Description: Used for the %description% keyword in input templates.
-	- Path to llsubmit: Where to find the llsubmit executable on the remote cluster. Note that if llsubmit is in the cluster's $PATH, setting this to just 'llsubmit' will work.
-	- Path to llcancel: Where to find the llcancel executable on the remote cluster. Note that if llcancel is in the cluster's $PATH, setting this to just 'llcancel' will work.
-	- Path to llq: Where to find the llq executable on the remote cluster. Note that if llq is in the cluster's $PATH, setting this to just 'llq' will work.
+    - host: The hostname of the LoadLeveler cluster's head node
+    - user: The username used to log into the cluster
+    - Working directory (Server): A directory that is readable/writable by "user" on the cluster, used when performing optimizations.
+    - Working directory (Local): A directory that is readable/writable by the current user on the local computer. This is where the final structures and resume files are written.
+    - Description: Used for the %description% keyword in input templates.
+    - Path to llsubmit: Where to find the llsubmit executable on the remote cluster. Note that if llsubmit is in the cluster's $PATH, setting this to just 'llsubmit' will work.
+    - Path to llcancel: Where to find the llcancel executable on the remote cluster. Note that if llcancel is in the cluster's $PATH, setting this to just 'llcancel' will work.
+    - Path to llq: Where to find the llq executable on the remote cluster. Note that if llq is in the cluster's $PATH, setting this to just 'llq' will work.
     - "Clean remote directories when finished": will remove all of the generated files from the cluster. Only the files on the local computer will be kept. If you do not want this to occur, make sure to uncheck this option.
 
 A new template, "job.ll" is added to the list of available templates. This is the job submission script for LoadLeveler. It may take some experimentation to get jobs to submit successfully, and you may need to contact the system administrators of the cluster for assistance or information about MPI, executable locations, etc. Perhaps the easiest method to find the correct LoadLeveler script is to run some trial submissions by hand, and then replace the structure/search specific information with the appropriate keywords once a working script has been generated.
@@ -715,7 +710,7 @@ visible regardless of which tab is currently being viewed.
 
 After every structure has been optimized, it is checked to see if it 
 is a super cell by performing a primitive reduction. If the primitive 
-reduction yields a crystal with fewer atoms that it originally had, 
+reduction yields a crystal with fewer atoms than it originally had, 
 the original crystal is marked as a super cell and a new crystal is 
 generated that is labelled as a primitive reduction of the original. 
 This primitive-reduced crystal does not undergo optimization - it is 
@@ -748,7 +743,7 @@ will bring up a menu of options. These options include: Killing a structure, res
 done mid-run.
 
 \subsection trends View trends
-\image html trend-view.png "The ``Plot'' tab mid-run displaying enthalpy vs.\ volume. Each structure is labeled with its Hermann Mauguin spacegroup symbol."
+\image html trend-view.png "The ``Plot'' tab mid-run displaying enthalpy vs. volume. Each structure is labeled with its Hermann Mauguin spacegroup symbol."
 \image latex trend-view.png "The ``Plot'' tab mid-run displaying enthalpy vs.\ volume. Each structure is labeled with its Hermann Mauguin spacegroup symbol." width=\textwidth
 
 Another visualization and analysis tool available during the search is

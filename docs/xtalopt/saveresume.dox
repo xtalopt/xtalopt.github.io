@@ -3,10 +3,11 @@ namespace XtalOpt {
 
 @page xo_saveresume Saving and Resuming Sessions in XtalOpt
 
-@section sr_contents Contents
+<!--@section sr_contents Contents
 
   - \ref sr_saving
   - \ref sr_resuming
+-->
 
 @image html xo-saveresume.png
 @image latex xo-saveresume.png width=\textwidth

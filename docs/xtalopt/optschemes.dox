@@ -3,7 +3,7 @@ namespace GlobalSearch {
 
 @page optschemes Optimization Schemes
 
-@section Contents
+<!--@section Contents
   - \ref overview
     - \ref quick-over
     - \ref detailed-over
@@ -21,6 +21,7 @@ namespace GlobalSearch {
   - \ref format
   - \ref suggest
     - \ref sug-xtal
+-->
 
 @section overview Overview: What are optimization schemes, and why use them?
 
