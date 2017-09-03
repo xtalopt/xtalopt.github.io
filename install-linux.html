@@ -89,6 +89,9 @@
     <hr>
     <h2 id="Dependencies">Dependencies</h2>
     <hr>
+    <p>
+    First and foremost, a C++ compiler with C++11 is required to compile XtalOpt. GCC &gt;= 4.8.4 and Clang &gt;= 3.5 will both work.
+    </p>
     <h3 id="EasyDependencies">"Easy" Dependencies</h3>
     <p>
     The following dependencies can be installed from the package manager of most linux distributions:
@@ -142,7 +145,7 @@
     <pre class="wiki">mkdir xtalopt/build
 cd xtalopt/build</pre>
     <p>
-    Configure, build, and install:
+    Configure, build, and install (set the CMAKE_INSTALL_PREFIX to wherever you'd like):
     </p>
     <pre class="wiki">cmake .. -DCMAKE_INSTALL_PREFIX=&lt;wherever&gt;
 make -j3

@@ -3,14 +3,19 @@ namespace XtalOpt {
 
 @page install-linux Installation for Linux
 
+We encourage users to download and use XtalOpt pre-compiled from <a href="https://xtalopt.github.io/download.html">here</a>. However, you may continue reading if you wish to compile XtalOpt on your own.
+
 @section depend Dependencies
+
+First and foremost, a C++ compiler with C++11 is required to compile XtalOpt. GCC >= 4.8.4 and Clang >= 3.5 will both work.
 
 The following dependencies can be installed from the package manager of most linux distributions:
 
-  - \c cmake (and optionally the ncurses GUI, ccmake) >= 2.6
-  - \c Qt4 >= 4.6.0
-  - \c Eigen >= 2
-  - \c git, any version 
+  - \c git, any version
+  - \c cmake (and optionally the ncurses GUI, ccmake) >= 3.0
+  - \c Qt >= 5.2.1
+  - \c Qwt >= 6.1.3 (compiled with Qt5)
+  - \c Eigen >= 3
 
 If you wish to enable SSH (default), you will also need:
 
@@ -20,109 +25,29 @@ If you wish to enable SSH (default), you will also need:
 Using the package manager for your linux distribution, install the dependencies listed above. For example, on Arch Linux, one can use the command
 
 \code
-pacman -S cmake git eigen glu qt4 libssh openssh
+pacman -S git cmake glu qt5-base qwt eigen libssh openssh
 \endcode
 
-On Ubuntu, one can use the command
+On Ubuntu 16.04, one can use the command
 
 \code
-sudo apt-get install cmake qt4-default qt4-dev-tools libeigen3-dev git libssh-dev zlib1g-dev
+sudo apt-get install git cmake qt5-default libqwt-qt5-dev libeigen3-dev libssh-dev
 \endcode
 
-@section src Source Installations
+Note: if you are using Ubuntu 14.04, libqwt-qt5-dev may not be available. Installing Qwt that depends on Qt4 will not work. Therefore, you can either use the .deb file I have created <a href="https://github.com/psavery/qwt/releases/download/6.1.3-2.deb/qwt_6.1.3-2.deb">here</a>, or you can compile it yourself.
 
-Remember to uninstall any non-development installations of OpenBabel and Avogadro before installing the development versions.
+@section xo XtalOpt
 
-@subsection ob OpenBabel
-
-First, the development version of OpenBabel must be installed from source. These instructions will build and install the packages in your user's <tt>$HOME</tt> directory.
-
-Change to your users home directory:
-
-\code
-cd ~
-\endcode
-
-Make a directory to hold the source code and then enter it:
-
-\code
-mkdir src
-cd src
-\endcode
-
-Check out the OpenBabel trunk sources:
-
-\code
-git clone git://github.com/openbabel/openbabel.git
-\endcode
-
-Once the above command completes, make a build subdirectory and enter it:
-
-\code
-mkdir openbabel/build
-cd openbabel/build
-\endcode
-
-Configure OpenBabel:
-
-\code
-cmake .. -DCMAKE_INSTALL_PREFIX=$HOME
-\endcode
-
-Compile and install:
-
-\code
-make -j3
-make install
-\endcode
-
-OpenBabel should now be installed.
-
-@subsection avo Avogadro
-
-Next, Avogadro must be installed.
-
-First, change to the source directory created earlier:
+Once the dependencies are installed, installing XtalOpt is simple. First, change to your source directory:
 
 \code
 cd $HOME/src
 \endcode
 
-Check out the Avogadro branch from GitHub:
+Check out the master branch of the XtalOpt sources:
 
 \code
-git clone git://github.com/cryos/avogadro.git
-\endcode
-
-Just like with OpenBabel, make a build directory and enter it:
-
-\code
-mkdir avogadro/build
-cd avogadro/build
-\endcode
-
-Configure, build, and install Avogadro:
-
-\code
-cmake .. -DOPENBABEL2_INCLUDE_DIR=$HOME/include/openbabel-2.0 -DOPENBABEL2_LIBRARIES=$HOME/lib/libopenbabel.so -DOPENBABEL2_VERSION_MET=true -DENABLE_PYTHON=false -DCMAKE_INSTALL_PREFIX=$HOME
-make -j3
-make install
-\endcode
-
-Avogadro should now be installed.
-
-@subsection xo XtalOpt
-
-Installing XtalOpt from source is very similar to installing OpenBabel and Avogadro. Once again, change to your source directory:
-
-\code
-cd $HOME/src
-\endcode
-
-Check out the stable branch of the XtalOpt sources:
-
-\code
-git clone -b stable git://github.com/xtalopt/XtalOpt.git xtalopt
+git clone git://github.com/xtalopt/XtalOpt.git xtalopt
 \endcode
 
 Make a build directory and enter it:
@@ -132,25 +57,12 @@ mkdir xtalopt/build
 cd xtalopt/build
 \endcode
 
-Configure, build, and install:
-
+Configure, build, and install (set the CMAKE_INSTALL_PREFIX to wherever you'd like):
 \code
-cmake .. -DOPENBABEL2_INCLUDE_DIR=$HOME/include/openbabel-2.0 -DOPENBABEL2_LIBRARIES=$HOME/lib/libopenbabel.so -DOPENBABEL2_VERSION_MET=true -DCMAKE_INSTALL_PREFIX=$HOME
+cmake .. -DCMAKE_INSTALL_PREFIX=<wherever>
 make -j3
 make install
 \endcode
-
-Note: if you would like to install RandomDock, simply add <tt>-DENABLE_RANDOMDOCK=1</tt> to the <tt>cmake</tt> command.
-
-Note: if you see errors like
-
-\code
-/usr/bin/ld: cannot find -lbsdyengine
-/usr/bin/ld: cannot find -lnavigatetool
-/usr/bin/ld: cannot find -lelementcolor
-\endcode
-
-during the compilation, follow the instructions <a href="http://lists.openmolecules.net/pipermail/xtalopt-devel-openmolecules.net/2011-August/000081.html">here</a>.
 
 Note: if you need to use Kerberos authentication to establish a SSH connection to the remote server, the <tt>libssh</tt> library used by XtalOpt will not work. There is a workaround for Linux (and possibly Mac) users, which will call the command line <tt>ssh</tt>/<tt>scp</tt> commands to communicate with the remote cluster. This can be enabled by adding <tt>-DUSE_CLI_SSH=true</tt> to the cmake command above. This <tt>ssh</tt> backend will not prompt for a password, and expects the <tt>ssh</tt> commands to "just work". Passwordless <tt>ssh</tt> logins can be enabled using the <a href="http://linux.die.net/man/1/ssh-copy-id">ssh-copy-id</a> command.
 
@@ -158,12 +70,7 @@ XtalOpt is now installed.
 
 @section test Test the installation
 
-To use XtalOpt, you need to run the avogadro executable installed above. There are two ways to do this:
-
-  - Run <tt>$HOME/bin/avogadro</tt> from a terminal, or
-  - Add <tt>$HOME/bin</tt> to your <tt>$PATH</tt> environment variable and then just run avogadro.
-
-Once Avogadro is running, check for "XtalOpt" in the "Extensions" menu. If you see it, the installation completed successfully.
+Try running the resulting XtalOpt executable (either in the bin directory of your install directory or in the build directory). If a window opens and you are able to select options, then XtalOpt was successfully installed.
 
 */
 

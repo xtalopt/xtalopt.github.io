@@ -141,7 +141,7 @@
     <pre class="wiki">mkdir xtalopt/build
 cd xtalopt/build</pre>
     <p>
-    For Homebrew and at the time of writing this, Qt5 and Qwt headers are not included in the $PATH, and cmake will not find them. So we must show cmake where they are. Thus, we need to add the next few lines of code before running cmake. Also, you are able to install the program wherever you'd like, so please insert your own install location.
+    For Homebrew and at the time of writing this, Qt5 and Qwt headers are not included in the $PATH, and cmake will not find them. So we must show cmake where they are. Thus, we need to add the next few lines of code before running cmake. Set the CMAKE_INSTALL_PREFIX to wherever you'd like:
     <pre class="wiki">
       export CMAKE_FLAGS="$CMAKE_FLAGS -DCMAKE_PREFIX_PATH=/usr/local/opt/qt/"
       export CMAKE_FLAGS="$CMAKE_FLAGS -DQWT_INCLUDE_DIR=/usr/local/opt/qwt/lib/qwt.framework/Headers"
