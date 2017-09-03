@@ -2,16 +2,16 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="How to install XtalOpt on a Windows machine.">
     <meta name="author" content="Zackary Falls">
     <meta property="og:title" content="XtalOpt - Windows Install">
     <meta property="og:description" content="How to install XtalOpt on a Windows machine.">
     <meta property="og:image" content="http://xtalopt.github.io/dist/img/xtalopt-img.png">
-  <title>XtalOpt - Windows Install</title>    
- 
-  <!-- Scripts --> 
+  <title>XtalOpt - Windows Install</title>
+
+  <!-- Scripts -->
   <script src="dist/js/jquery.js"></script>
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -24,12 +24,12 @@
 
   </script>
   <script type="text/javascript" src='dist/js/bootstrap.min.js'></script>
-    <script> 
+    <script>
       $(function(){
-        $("#navbar").load("navbar.html"); 
+        $("#navbar").load("navbar.html");
       });
-    </script> 
-    <script> 
+    </script>
+    <script>
       $(function() {
         var pgurl = window.location.href.substr(window.location.href.lastIndexOf("/")+1);
         $("#nav ul li a").each(function(){
@@ -37,13 +37,13 @@
             $(this).addClass("active");
         })
       });
-    </script>     
-  
+    </script>
+
   <!-- Styles -->
   <link href="dist/css/bootstrap.css" rel="stylesheet">
   <link href="dist/css/bootstrap-responsive.css" rel="stylesheet">
   <link href="dist/css/style.css" rel="stylesheet">
-  
+
   <!-- Fav and touch icons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="dist/img/xtalopt-logo.png">
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="dist/img/xtalopt-logo.png">
@@ -56,7 +56,7 @@
   <body>
     <!--NavBar-->
     <div id="navbar"></div>
- 
+
   <div class="container">
     <div class="jumbotron">
       <h1>Installation</h1>
@@ -67,31 +67,52 @@
       <hr>
       <div class="row-fluid">
         <div class="span4">
-          <a class="btn btn-large btn-danger" href="install-win.html">Windows</a> 
+          <a class="btn btn-large btn-danger" href="install-win.html">Windows</a>
         </div>
         <div class="span4">
-          <a class="btn btn-large btn-primary" href="install-mac.html">Mac OS X</a> 
+          <a class="btn btn-large btn-primary" href="install-mac.html">Mac OS X</a>
         </div>
         <div class="span4">
-          <a class="btn btn-large btn-warning" href="install-linux.html">Linux</a> 
+          <a class="btn btn-large btn-warning" href="install-linux.html">Linux</a>
         </div>
       </div>
     </div>
-    
+
     <br>
-    
+
     <div class="jumbotron">
       <h2>Installation for Windows</h2>
-      <ol align="left" style="text-align:-moz-left">
-        <li>Download the Windows .exe installer <a href="download.html">here</a>.</li>
-        <li>Follow the instructions to install Avogadro with the XtalOpt extension.</li>
-        <li>Run the program.
-      </ol>
       <hr>
-<!--      <h2>Compiling</h2>
-      <P>
-        Section still under construction...
-      </p>-->
+      <p>
+        We encourage users to download and use XtalOpt pre-compiled from <a class="el" target="_blank" href="download.html">here</a>. In fact, we do not provide a complete set of compilation instructions for Windows. However, you may continue reading if you wish to attempt to compile XtalOpt on your own.
+      </p>
+      <hr>
+      <p>
+        One important point to remember when compiling for Windows is that you must use the same compiler for every dependency. So if MSVC 2017 64-bit Release is to be used for XtalOpt, all of the dependencies must be compiled with MSVC 2017 64-bit Release.<br><br>
+
+        Similar to the compilations for the other operating systems, the following dependencies are required:
+      </p>
+        <ul style="list-style-type:none">
+        <li><tt>git</tt>, any version</li>
+        <li><tt>cmake</tt> (and optionally the ncurses GUI, <tt>ccmake</tt>) &gt;= 3.0</li>
+        <li><tt>Qt</tt> &gt;= 5.2.1</li>
+        <li><tt>Qwt</tt> &gt;= 6.1.3 (compiled with Qt5)</li>
+        <li><tt>Eigen</tt> &gt;= 3</li>
+        <br><br>
+        <li><p>If you wish to enable SSH (default), you will also need:</p></li>
+        <li><tt>openssh</tt>, any version</li>
+        <li><tt>libssh</tt>, any version</li><br>
+      </ul>
+      <p>
+        For git and cmake, only the executables are used, so you may download them from their respective websites.<br><br>
+        For Qt, you may either download pre-compiled binaries for your specific compiler or compile it yourself. Qt typically has compiled versions for just about every compiler, so if you choose to download it, be sure to pick the compiled version that matches your compiler.<br><br>
+        Eigen is a header-only library, so it does not need to be compiled separately.<br><br>
+      OpenSSH, LibSSH, and Qwt need to all be compiled with your compiler of choice. If you wish to use MSVC 2015 (32-bit) or MSVC 2017 (64-bit), pre-compiled binaries <a class="el" target="_blank" href="https://github.com/xtalopt/XtalOpt/releases/tag/MSVC-deps">here</a>. Note that LibSSH has OpenSSH statically compiled within it in these binaries.<br><br>
+      You may also compile OpenSSH, LibSSH, and Qwt on your own, but we do not provide instructions for that. You must use their instructions to do so.
+      </p>
+      <h3 id="Compiling XtalOpt">Compiling XtalOpt</h3>
+      Once you have compiled all of the binaries, you need to run cmake with the locations of all of the dependencies defined. An example of this for MSVC can be found in the batch file in <a class="el" target="_blank" href="https://github.com/xtalopt/XtalOpt/blob/master/scripts/cmake-msvc2015.bat">scripts/cmake-msvc2015.bat</a> file in the XtalOpt repository. Afterwards, you must run "make" (or "nmake" in the case of MSVC) in the build directory. If the cmake option "-DBUILD_INDEPENDENT_PACKAGE" was used, a "make install" (or "nmake install" in the case of MSVC) will install XtalOpt and all of its dependencies into your cmake install directory.<br><br>
+    If the compilation was successful, the installed xtalopt.exe executable may be ran. It will only run successfully if all of the .dll dependencies are found, though, so you may need to manually find and place all of the .dll dependencies into the directory with XtalOpt.
     </div>
   </div>
 </body>
