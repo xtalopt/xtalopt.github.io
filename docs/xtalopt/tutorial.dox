@@ -63,7 +63,7 @@ the largest range of cell angles that XtalOpt will generate.)
 Furthermore, the volume of the cell can be fixed, so that all cells
 generated will have the exact same volume.
 
-@subsection init-iad Interatomic Distances
+@subsection init-iad Interatomic Distances (IAD)
 There are now two different kinds of interatomic distances available:
 scaled interatomic distances and custom interatomic distances.
 If "Use Scaled Interatomic Distances" is checked, the covalent radii of
@@ -75,14 +75,14 @@ check the "Use Scaled Interatomic Distances" checkbox and set "Scale factor"
 to 0.40 and "Minimum radius" to 0.25.
 
 Custom interatomic distances is an alternative option. If the
-"Use Custom Interatomic Distances" box is check instead, the user can specify
-the minimum interatomic distance between every pair of atom type in the table
+"Use Custom Interatomic Distances" box is checked instead, the user can specify
+the minimum interatomic distance between every pair of atom types in the table
 below the check box.
 
 Finally, a checkbox labelled "Check IAD Post-Optimization" is also now
 available. If this box is checked, the interatomic distances are checked
 after the optimization is complete, and if any structures fail the
-interatomic distance check, they will be marked as failured structures.
+interatomic distance check, they will be marked as failed structures.
 
 @subsection init-molunit Molecular-Unit Builder
 If the user chooses to define specific molecular units, this option will
@@ -741,10 +741,10 @@ in energy, a supercell of the crystal may be generated and be added
 to the higher formula unit's gene pool.
 
 An additional feature of the progress table is the ability to
-immediately visualize any of the individuals in the Avogadro2 main
-window (assuming Avogadro2 is running in the background with an RPC
-server up - more info in the \ref avogadro2rpc "Avogadro2 section")
- -- simply clicking on a row in this table will display the
+immediately visualize any of the structures in the Avogadro2 main
+window (assuming Avogadro2 is open with an Avogadro2 RPC server running
+- more info can be found in the \ref avogadro2rpc "Avogadro2
+section") -- simply clicking on a row in this table will display the
 three-dimensional structure in Avogadro2, where it can be visualized,
 modified, or exported. If the user would like to add a bit of
 "intelligent design" to the evolutionary process, a structure can be
@@ -794,8 +794,8 @@ algorithm.
 
 The plot is also interactive; zooming and panning are possible using
 simple mouse controls. Clicking on a structure's point on the plot
-will load it in the main Avogadro2 window (assuming Avogadro2 is running
-in the background with an RPC server up - more info in the
+will load it in the main Avogadro2 window (assuming Avogadro2 is open
+with an Avogadro2 RPC server running - more info in the
 \ref avogadro2rpc "Avogadro2 section"), allowing all the same
 functionality as described above in \ref prog-mon.
 
@@ -804,14 +804,15 @@ functionality as described above in \ref prog-mon.
 @image latex avogadro2rpc.png width=\textwidth
 As of release 11, while an XtalOpt window is open, the user may easily
 view the crystals in Avogadro2. As long as an Avogadro2 window is open and
-an Avogadro2 RPC server is running, when a user selects crystals in XtalOpt
-(either via the plot tab or the progress tab), the molecule in the Avogadro2
-window will automatically be set to the crystal the user selected. This allows
+an Avogadro2 Remote Procedure Call (RPC) server is running, when a user
+selects crystals in XtalOpt
+(either via the plot tab or the progress tab), the structure in the Avogadro2
+window will automatically display the crystal the user selected. This allows
 for quick and easy visualization when analyzing a run.
 
 \section cli Command Line Interface
 As of release 11, there is a command line interface (CLI) available
-within XtalOpt. This allows users to set settings and run searches without
+within XtalOpt. This allows users to choose settings and run searches without
 the use of the GUI.
 
 First of all, one can see all of the XtalOpt CLI options by running
@@ -819,7 +820,7 @@ First of all, one can see all of the XtalOpt CLI options by running
 of each one.
 
 When performing a CLI run, an input file for XtalOpt is required. An example
-which contains detailed explanations of various options is <a href="http://xtalopt.github.io/samples/commandLineInterface/xtalopt.in">
+which contains detailed explanations of various options can be found <a href="http://xtalopt.github.io/samples/commandLineInterface/xtalopt.in">
 here</a>.
 
 A CLI run is begun by entering into the terminal "xtalopt --cli". By default,
@@ -827,26 +828,26 @@ XtalOpt will search for an "xtalopt.in" file in the current directory to use
 for the input file. If a different input file is desired, the user may
 explicitly select an input file with "--input-file <file>".
 The vast majority of the options are taken
-from the GUI, so more information on these options can be seen by reading
-about them in their respective places in the manual. One difference is that
-template files need to be created to represent the different templates for
+from the GUI, and more information on these options can be be found in their
+respective places in the manual. One difference is that
+template files need to be created to for the different templates for
 queue interfaces and optimization schemes. These templates use the same
 %%keywords% that are used in the GUI, and an example of a GULP template
-can be seen <a href="http://xtalopt.github.io/samples/commandLineInterface/templates/gulp/gin1">here</a>.
+can be found <a href="http://xtalopt.github.io/samples/commandLineInterface/templates/gulp/gin1">here</a>.
 
 When a CLI run first begins, all of the options set by the user and XtalOpt's
 resulting settings will be printed
 to the terminal (and to an "xtaloptSettings.log" file in the local working
 directory). The user should glance over these printed options
 to ensure that they are set correctly.
-While a CLI run is going, the user is still able to update settings via
+While a CLI run is in progress, the user is still able to update settings via
 a file in their local working directory called "xtalopt-runtime-options.txt".
 The settings in the "xtalopt-runtime-options.txt" file are read every iteration
 of the event loop. Thus, if a setting is changed in that file, it will quickly
 be updated in the program.
 
-In addition, while the CLI run is going, job submissions, completions, and
-errors will be
+In addition, while the CLI run is in progress, job submissions, completions,
+and errors will be
 reported in the terminal. If one wishes to end the CLI run at any time, they
 just need to use "ctrl-C" or whatever their process interruption command is.
 
@@ -855,15 +856,15 @@ One is also able to resume a run via the CLI if they type in
 an "xtalopt.state" file is in the specified directory, and if it is, XtalOpt
 will attempt to resume the run.
 
-While a CLI run is going (or after any run is finished), the user may view
-the enthalpy/energy results via the "results.txt" file in the local working
-directory.
+While a CLI run is in progress (or after any run is finished), the user may
+view the enthalpy/energy results via the "results.txt" file in the local
+working directory.
 They may also generate a plot with the "xtalopt --plot --dir <path/to/dir>"
 command. This will immediately display a plot using the same code as that
 used to generate the plot tab in a GUI run. Similar to a GUI run, plot axes
-and other options may be changed. In addition, if Avogadro2 is running in the
-background with an RPC server running, XtalOpt will still also set the
-molecule in the Avogadro2 view to the crystals the user selects.
+and other options may be changed. In addition, if Avogadro2 is open in the
+background and an Avogadro2 RPC server is running, XtalOpt will still also set
+the structure in the Avogadro2 view to the crystals the user selects.
 
 A note for Linux users: if a window manager is not running on the computer
 attempting to use CLI mode, the program may still crash. One solution to get
