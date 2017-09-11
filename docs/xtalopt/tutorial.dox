@@ -30,11 +30,12 @@ namespace XtalOpt {
   - \ref begin
   - \ref prog-mon
     - \ref trends
+    - \ref avogadro2rpc
+  - \ref cli
 -->
 
 @section launch Launch XtalOpt
-Open Avogadro, go to the "Extensions" menu and select
-"XtalOpt".
+Simply run the "XtalOpt" executable (or in MacOS, open the XtalOpt.app file).
 
 @section init Enter composition and restraints
 @image html struct-lim.png
@@ -44,37 +45,52 @@ The interface opens to the "Structure Limits" tab, shown above.
 
 @subsection init-comp Chemical Composition
 We will use a 6 formula unit supercell of titanium dioxide for this
-tutorial, so enter "Ti1 O2" for the "Empirical Formula". 
+tutorial, so enter "Ti1 O2" for the "Empirical Formula".
 Under the "Formula Units" we can type 6. If the user wants to search multiple
 formula units, they would only have to type in the range, or individual numbers
 they wish to search (e.g., 1-6; or 1-2, 4, 6).
 
 @subsection init-cell Cell Parameters
 We will assume that we know nothing about the system and use very loose
-restraints (however, note that a search is much more effective 
-if chemically reasonable restraints are used). 
+restraints (however, note that a search is much more effective
+if chemically reasonable restraints are used).
 Set all cell length minima to 1 angstrom and maxima to 20
 angstroms. Constrain the angles to be between 60 and 120 degrees, and
-the volume from between 1 and 500 cubic angstroms. 
-(Note that due to the angle adjustment described in 
+the volume from between 1 and 500 cubic angstroms.
+(Note that due to the angle adjustment described in
 CPC, 2011, 182, 372-387, 60-120 degrees is
 the largest range of cell angles that XtalOpt will generate.)
-Furthermore, the volume of the cell can be fixed, so that all cells 
+Furthermore, the volume of the cell can be fixed, so that all cells
 generated will have the exact same volume.
 
 @subsection init-iad Interatomic Distances
-The current version of XtalOpt defines minimum interatomic distances
-by multiplying the covalent radii of the given element type by a "Scale Factor".
-This "Scale Factor" can be defined by the user.
-Specify a minimum interatomic distance "Scale Factor" of 0.50. 
+There are now two different kinds of interatomic distances available:
+scaled interatomic distances and custom interatomic distances.
+If "Use Scaled Interatomic Distances" is checked, the covalent radii of
+the elements will be multiplied by the "Scale factor", and any radii below
+the "Minimum radius" will be set to the "Minimum Radius." The minimum
+interatomic distance, then, between pairs of atoms in this setup is the sum
+of their radii. For our example,
+check the "Use Scaled Interatomic Distances" checkbox and set "Scale factor"
+to 0.40 and "Minimum radius" to 0.25.
+
+Custom interatomic distances is an alternative option. If the
+"Use Custom Interatomic Distances" box is check instead, the user can specify
+the minimum interatomic distance between every pair of atom type in the table
+below the check box.
+
+Finally, a checkbox labelled "Check IAD Post-Optimization" is also now
+available. If this box is checked, the interatomic distances are checked
+after the optimization is complete, and if any structures fail the
+interatomic distance check, they will be marked as failured structures.
 
 @subsection init-molunit Molecular-Unit Builder
-If the user chooses to define specific molecular units, this option will 
+If the user chooses to define specific molecular units, this option will
 allow them to do so. Once the chemical composition has been defined, the user
 can choose the center and neighbor atoms to be set as single-center molecules.
 For example, with the 6 formula unit TiO2, we could set 6 Ti atoms to be the center
-of 2 O atoms in a linear geometry. We can also decide what the interatomic distance 
-between the center and neighboring atoms will be. If there are left over atoms, 
+of 2 O atoms in a linear geometry. We can also decide what the interatomic distance
+between the center and neighboring atoms will be. If there are left over atoms,
 they will be placed randomly after the molecular untis are added.
 
 The molecular units are only used in the initial generation.
@@ -83,12 +99,12 @@ The molecular units are only used in the initial generation.
 @image html randspg-dialog.png
 @image latex randspg-dialog.png width=\textwidth
 
-With the implementation of RandSpg, the initial generation of structures 
+With the implementation of RandSpg, the initial generation of structures
 can be created by using specific spacegroups (or a variety of spacegroups).
-The choice for spacegroups will be limited by the chemical composition and number 
+The choice for spacegroups will be limited by the chemical composition and number
 of formula units.
 
-Spacegroup constraints can only be used in the intiial generation. Molunit and randSpg
+Spacegroup constraints can only be used in the initial generation. Molunit and randSpg
 cannot be used simultaneously.
 
 For more information on randSpg, see <a href="https://doi.org/10.1016/j.cpc.2016.12.005">
@@ -99,9 +115,9 @@ this paper</a>.
 @subsection init-mitosis Mitosis
 For structures with large unit cells/large number of atoms, one can use "Mitosis"
 to increase the local order of the initially generated structures. This will create a small
-subcell, then multiply the subcell in each direction to fulfill the stoichiometry 
+subcell, then multiply the subcell in each direction to fulfill the stoichiometry
 and unit cell size. "# of Divisions" defines how many subcells will be replicated, based upon
-the user defined number of "Formula Units",  
+the user defined number of "Formula Units",
 and the a, b, c determine in which direction the cells are replicated.
 
 @section opt Optimizer setup
@@ -130,7 +146,7 @@ generated.
 On the next tab, load the optimization scheme by clicking the "Load
 Opt Scheme" button and selecting the "samples/vasp-xtalopt.scheme"
 file that is distributed with the source code. If you do not have a
-copy of the source code, the scheme file can be obtained by clicking 
+copy of the source code, the scheme file can be obtained by clicking
 <a href="http://xtalopt.github.io/samples/vasp-xtalopt.scheme">
 here</a>.
 
@@ -269,9 +285,9 @@ E.g. Specification of the fractional coordinate block in the .cell
 template should look like:
 
 @code
-%percent%BLOCK POSITIONS_FRAC
+%block% POSITIONS_FRAC
 %coordsFrac%
-%percent%ENDBLOCK POSITIONS_FRAC
+%endblock% POSITIONS_FRAC
 @endcode
 
 Take a moment to look through each file for each optimization step.
@@ -296,7 +312,7 @@ castep xtal
 \image latex opt-set-siesta.png width=\textwidth
 
 On the next tab we choose SIESTA for the local optimizer and enter a template for SIESTA to use. Select "SIESTA" as the "Optimizer" and "xtal.fdf" as "Template".
-    
+
 Next, fill out the text field on the right with the following template:
 
 @code
@@ -384,8 +400,8 @@ AtomicCoordinatesFormat Fractional
 For more details on optimization schemes, see \ref optschemes.
 
  <p>After loading the optimization scheme, XtalOpt will prompt for the xtal.psf files to use. Select files appropriate for the prompted atom. XtalOpt will copy the individual files over to each structure directory when the calculation is submitted. See the SIESTA manual for information on obtaining the .psf files.</p>
- 
- <p>Notice the other %keyword% values in the xtal.fdf templates. These are used to enter information that is specific to a search or structure when the actual input files are written prior to job submission. Click the "Help" button for a full listing of the available keywords.</p>
+
+ <p>Notice the other %%keyword% values in the xtal.fdf templates. These are used to enter information that is specific to a search or structure when the actual input files are written prior to job submission. Click the "Help" button for a full listing of the available keywords.</p>
 
 Note: that in the current implementation XtalOpt uses the Total Final Energy printed in the output to determine the fitness of a structure. If the user would like to use a different thermodynamic quantity for the fitness, please contact the XtalOpt developers.
 
@@ -708,20 +724,20 @@ on the bottom of the window shows the number of structures that are
 optimized, running, and failing at any given time. This information is
 visible regardless of which tab is currently being viewed.
 
-After every structure has been optimized, it is checked to see if it 
-is a super cell by performing a primitive reduction. If the primitive 
-reduction yields a crystal with fewer atoms than it originally had, 
-the original crystal is marked as a super cell and a new crystal is 
-generated that is labelled as a primitive reduction of the original. 
-This primitive-reduced crystal does not undergo optimization - it is 
-labelled with the same energy as the original crystal. And, if the 
-user is searching the formula units of the primitive-reduced crystal, 
-the primitive-reduced crystal becomes a part of that smaller 
+After every structure has been optimized, it is checked to see if it
+is a super cell by performing a primitive reduction. If the primitive
+reduction yields a crystal with fewer atoms than it originally had,
+the original crystal is marked as a super cell and a new crystal is
+generated that is labelled as a primitive reduction of the original.
+This primitive-reduced crystal does not undergo optimization - it is
+labelled with the same energy as the original crystal. And, if the
+user is searching the formula units of the primitive-reduced crystal,
+the primitive-reduced crystal becomes a part of that smaller
 formula unit's gene pool.
 
-In addition, every time a new crystal is optimized, if the user is 
-searching multiple formula units and the crystal is found to be low 
-in energy, a supercell of the crystal may be generated and be added 
+In addition, every time a new crystal is optimized, if the user is
+searching multiple formula units and the crystal is found to be low
+in energy, a supercell of the crystal may be generated and be added
 to the higher formula unit's gene pool.
 
 An additional feature of the progress table is the ability to
@@ -739,7 +755,7 @@ random individual.
 Three additional buttons found near the "Refresh All" button in this tab are also available. The "Print Results File" button generates a run-results.txt file that lists all of the information about each structure in order of generation and structure number (As compared to the results.txt file which ranks the structures). The "Remove Extra Files" button is used for VASP runs. It removes any extraneous files in each local subdirectory in order to reduce disk usage. Files kept are structure.state, POTCAR, CONTCAR, OSZICAR, job.slurm and OUTCAR. Finally, the "Rank All" button ranks all currently optimized structures and exports them to a subdirectory (Ranked) in two forms (depending on the optimizer): POSCAR/.got and .cif. Each can be found in separate directories. (Only works for GULP and VASP runs currently).
 
 To alter a run manually, right-clicking on any of the structures in the Progress tab
-will bring up a menu of options. These options include: Killing a structure, restarting a structure, replacing a structure, injecting a seed structure, etc. All of these can be 
+will bring up a menu of options. These options include: Killing a structure, restarting a structure, replacing a structure, injecting a seed structure, etc. All of these can be
 done mid-run.
 
 \subsection trends View trends
@@ -779,7 +795,77 @@ simple mouse controls. Clicking on a structure's point on the plot
 will load it in the main Avogadro window, allow all the same
 functionality as described above in \ref prog-mon.
 
+\subsection avogadro2rpc View Crystals in Avogadro2
+@image html avogadro2rpc.png
+@image latex avogadro2rpc.png width=\textwidth
+As of release 11, while an XtalOpt window is open, the user may easily
+view the crystals in Avogadro2. As long as an Avogadro2 window is open and
+an Avogadro2 RPC server is running, when a user selects crystals in XtalOpt
+(either via the plot tab or the progress tab), the molecule in the Avogadro2
+window will automatically be set to the crystal the user selected. This allows
+for quick and easy visualization when analyzing a run.
 
+\section cli Command Line Interface
+As of release 11, there is a command line interface (CLI) available
+within XtalOpt. This allows users to set settings and run searches without
+the use of the GUI.
+
+First of all, one can see all of the XtalOpt CLI options by running
+"xtalopt --help" from a terminal. This prints all options and a description
+of each one.
+
+When performing a CLI run, an input file for XtalOpt is required. An example
+which contains detailed explanations of various options is <a href="http://xtalopt.github.io/samples/commandLineInterface/xtalopt.in">
+here</a>.
+
+A CLI run is begun by entering into the terminal "xtalopt --cli". By default,
+XtalOpt will search for an "xtalopt.in" file in the current directory to use
+for the input file. If a different input file is desired, the user may
+explicitly select an input file with "--input-file <file>".
+The vast majority of the options are taken
+from the GUI, so more information on these options can be seen by reading
+about them in their respective places in the manual. One difference is that
+template files need to be created to represent the different templates for
+queue interfaces and optimization schemes. These templates use the same
+%%keywords% that are used in the GUI, and an example of a GULP template
+can be seen <a href="http://xtalopt.github.io/samples/commandLineInterface/templates/gulp/gin1">here</a>.
+
+When a CLI run first begins, all of the options set by the user and XtalOpt's
+resulting settings will be printed
+to the terminal (and to an "xtaloptSettings.log" file in the local working
+directory). The user should glance over these printed options
+to ensure that they are set correctly.
+While a CLI run is going, the user is still able to update settings via
+a file in their local working directory called "xtalopt-runtime-options.txt".
+The settings in the "xtalopt-runtime-options.txt" file are read every iteration
+of the event loop. Thus, if a setting is changed in that file, it will quickly
+be updated in the program.
+
+In addition, while the CLI run is going, job submissions, completions, and
+errors will be
+reported in the terminal. If one wishes to end the CLI run at any time, they
+just need to use "ctrl-C" or whatever their process interruption command is.
+
+One is also able to resume a run via the CLI if they type in
+"xtalopt --resume --dir <path/to/resume/dir>". This will check to see if
+an "xtalopt.state" file is in the specified directory, and if it is, XtalOpt
+will attempt to resume the run.
+
+While a CLI run is going (or after any run is finished), the user may view
+the enthalpy/energy results via the "results.txt" file in the local working
+directory.
+They may also generate a plot with the "xtalopt --plot --dir <path/to/dir>"
+command. This will immediately display a plot using the same code as that
+used to generate the plot tab in a GUI run. Similar to a GUI run, plot axes
+and other options may be changed. In addition, if Avogadro2 is running in the
+background with an RPC server running, XtalOpt will still also set the
+molecule in the Avogadro2 view to the crystals the user selects.
+
+A note for Linux users: if a window manager is not running on the computer
+attempting to use CLI mode, the program may still crash. One solution to get
+around this is to add the "-platform offscreen" option to the command line
+arguments (this will only work if X11 is installed on the computer). This
+requirement will hopefully be removed in the next XtalOpt update.
 */
 
 }
