@@ -741,9 +741,11 @@ in energy, a supercell of the crystal may be generated and be added
 to the higher formula unit's gene pool.
 
 An additional feature of the progress table is the ability to
-immediately visualize any of the individuals in the Avogadro main
-window -- simply clicking on a row in this table will display the
-three-dimensional structure in Avogadro, where it can be visualized,
+immediately visualize any of the individuals in the Avogadro2 main
+window (assuming Avogadro2 is running in the background with an RPC
+server up - more info in the \ref avogadro2rpc "Avogadro2 section")
+ -- simply clicking on a row in this table will display the
+three-dimensional structure in Avogadro2, where it can be visualized,
 modified, or exported. If the user would like to add a bit of
 "intelligent design" to the evolutionary process, a structure can be
 modified and then resubmitted using a context (right-click) menu from
@@ -792,7 +794,9 @@ algorithm.
 
 The plot is also interactive; zooming and panning are possible using
 simple mouse controls. Clicking on a structure's point on the plot
-will load it in the main Avogadro window, allow all the same
+will load it in the main Avogadro2 window (assuming Avogadro2 is running
+in the background with an RPC server up - more info in the
+\ref avogadro2rpc "Avogadro2 section"), allowing all the same
 functionality as described above in \ref prog-mon.
 
 \subsection avogadro2rpc View Crystals in Avogadro2
