@@ -28,6 +28,7 @@ namespace XtalOpt {
     - \ref localqi
   - \ref files
   - \ref search-set
+    - \ref hardness
   - \ref begin
   - \ref prog-mon
     - \ref trends
@@ -787,7 +788,10 @@ The tolerances for duplicate matching are also found in this tab. They can be ad
 at any point in the run and the results.txt file will update with the correct duplicates
 found based upon the new tolerances.
 
-As of release 12, there are now options for calculating hardness on this tab.
+\subsection hardness Calculating Hardness
+
+As of release 12, there are now options for calculating hardness in the
+search settings tab.
 If "Calculate hardness with AFLOW ML?" is checked, when a structure is
 optimized, it will be submitted to <a href="http://aflow.org/aflow-ml/">
 aflow-ml</a> to have its bulk and shear moduli calculated using a machine
