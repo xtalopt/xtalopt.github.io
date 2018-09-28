@@ -133,6 +133,10 @@ which can potentially be used for many different kinds of optimizers.
 The generic optimizer is unique in many ways, and its details are given
 in the \ref generic-opt section.
 
+New to release 12 as well, a different optimizer may now be used for each
+optimization step. Simply click on the optimization step in the
+"Optimization Settings" tab before selecting the optimizer for that step.
+
 Be aware that program installation is different, and it is
 almost certain that the submit files included with these schemes will
 not work on any cluster other than the Zurek group's "parity" cluster
@@ -295,7 +299,7 @@ For more details on optimization schemes, see \ref optschemes.
 It is important to note that CASTEP input files require the "%"
 character to define blocks. The percent character is special in the
 XtalOpt input template parser to define keywords (see below). To
-insert a literal "%" into the input, use %percent%.
+insert a literal "%" into the input, use %%percent%.
 
 E.g. Specification of the fractional coordinate block in the .cell
 template should look like:
@@ -446,7 +450,7 @@ as "Template".
 
 We are going to use DFTB from ADF 2018 as an example. There is also
 a sample scheme for DFTB from ADF 2017 (located here
-"samples/generic-adf-dftb-2018-xtalopt.scheme"
+"samples/generic-adf-dftb-2017-xtalopt.scheme"
 in the XtalOpt source directory) if ADF 2018 is unavailable.
 
 Next, fill out the text field on the right with the following template:
@@ -512,13 +516,19 @@ remote SSH-accessible clusters, as well as an internal \ref localqi
 workstation. Each queueing interface is detailed in its own section
 below.
 
-@subsection remotepbs Using a remote PBS cluster
-\image html opt-set-pbs.png
-\image latex opt-set-pbs.png width=\textwidth
+New to release 12, a different queue interface (and a different optimizer)
+can be used for each optimization step. This can be particularly useful if a
+quick optimization is to be performed on the local computer before further
+optimizations are performed on the cluster.
 
-Select "PBS" from the list of Queues, and then click the "Configure..."
-button. A new window will prompt for:
-  - host: The hostname of the PBS cluster's head node
+In addition, the queue configure menu (accessed via the "Configure..." button
+next to the queue interface) is now divided into two different parts:
+global queue interface settings and step queue interface settings.
+The global queue interface
+settings are settings for all optimization steps. The step queue interface
+settings are settings for a particular optimization step. The global queue
+interface settings are as follows:
+  - host: The hostname of the cluster's head node
   - user: The username used to log into the cluster
   - Working directory (Server): A directory that is readable/writable
       by "user" on the cluster, used when performing optimizations.
@@ -526,6 +536,32 @@ button. A new window will prompt for:
       by the current user on the local computer. This is where the
       final structures and resume files are written.
   - Description: Used for the %%description% keyword in input templates.
+  - "Clean remote directories when finished": will remove all of the generated files from the cluster. Only the files on the local computer will be kept. If you do not want this to occur, make sure to uncheck this option.
+  - Log error directories: if checked, structures that produce an error will
+      have their directory saved within an "errorDirs" directory in the local
+      working directory. The structure's directory will be named
+      "<generation>x<idNumber>". This setting can be useful for debugging
+      errors. Note that a structure will overwrite it's error directory if
+      another error occurs.
+  - Automatically cancel job after: if checked, a job will be killed if the
+      specified number of hours are exceeded. The time checked is queue time +
+      running time. This can be useful for cases where XtalOpt can't check
+      whether a job is running or not, and too great a time has been exceeded.
+      It can also be useful for optimizers with bugs that occasionally cause
+      them to run forever.
+
+To change the step queue interface settings at a particular step, first
+select a step in the "Optimization Settings" tab, and then click "Configure..."
+next to the queue interface.
+
+A description for each of the different queue interfaces now follows.
+
+@subsection remotepbs Using a remote PBS cluster
+\image html opt-set-pbs.png
+\image latex opt-set-pbs.png width=\textwidth
+
+Select "PBS" from the list of Queues, and then click the "Configure..."
+button. The step queue interface settings are:
   - Path to qsub: Where to find the qsub executable on the remote
       cluster. Note that if qsub is in the cluster's $PATH, setting
       this to just 'qsub' will work.
@@ -535,7 +571,6 @@ button. A new window will prompt for:
   - Path to qstat: Where to find the qstat executable on the remote
       cluster. Note that if qstat is in the cluster's $PATH, setting
       this to just 'qstat' will work.
-  - "Clean remote directories when finished": will remove all of the generated files from the cluster. Only the files on the local computer will be kept. If you do not want this to occur, make sure to uncheck this option.
 
 A new template, "job.pbs" is added to the list of available
 templates. This is the job submission script for PBS. This script
@@ -598,15 +633,7 @@ its second optimization step.
 \image latex opt-set-sge.png width=\textwidth
 
 Select "SGE" from the list of Queues, and then click the "Configure..."
-button. A new window will prompt for:
-  - host: The hostname of the SGE cluster's head node
-  - user: The username used to log into the cluster
-  - Working directory (Server): A directory that is readable/writable
-      by "user" on the cluster, used when performing optimizations.
-  - Working directory (Local): A directory that is readable/writable
-      by the current user on the local computer. This is where the
-      final structures and resume files are written.
-  - Description: Used for the %%description% keyword in input templates.
+button. The step queue interface settings are:
   - Path to qsub: Where to find the qsub executable on the remote
       cluster. Note that if qsub is in the cluster's $PATH, setting
       this to just 'qsub' will work.
@@ -616,7 +643,6 @@ button. A new window will prompt for:
   - Path to qstat: Where to find the qstat executable on the remote
       cluster. Note that if qstat is in the cluster's $PATH, setting
       this to just 'qstat' will work.
-  - "Clean remote directories when finished": will remove all of the generated files from the cluster. Only the files on the local computer will be kept. If you do not want this to occur, make sure to uncheck this option.
 
 @todo Get template for job.sge scripts
 
@@ -638,15 +664,7 @@ For more details on optimization schemes, see \ref optschemes.
 \image latex opt-set-slurm.png width=\textwidth
 
 Select "SLURM" from the list of Queues, and then click the "Configure..."
-button. A new window will prompt for:
-  - host: The hostname of the SLURM cluster's head node
-  - user: The username used to log into the cluster
-  - Working directory (Server): A directory that is readable/writable
-      by "user" on the cluster, used when performing optimizations.
-  - Working directory (Local): A directory that is readable/writable
-      by the current user on the local computer. This is where the
-      final structures and resume files are written.
-  - Description: Used for the %%description% keyword in input templates.
+button. The step queue interface settings are:
   - Path to sbatch: Where to find the sbatch executable on the remote
       cluster. Note that if sbatch is in the cluster's $PATH, setting
       this to just 'sbatch' will work.
@@ -656,7 +674,6 @@ button. A new window will prompt for:
   - Path to squeue: Where to find the squeue executable on the remote
       cluster. Note that if squeue is in the cluster's $PATH, setting
       this to just 'squeue' will work.
-  - "Clean remote directories when finished": will remove all of the generated files from the cluster. Only the files on the local computer will be kept. If you do not want this to occur, make sure to uncheck this option.
 
 @todo Get template for job.slurm scripts
 
@@ -678,16 +695,11 @@ For more details on optimization schemes, see \ref optschemes.
 \image html opt-set-lsf.png
 \image latex opt-set-lsf.png width=\textwidth
 
-Select "LSF" from the list of Queues, and then click the "Configure..." button. A new window will prompt for:
-    - host: The hostname of the LSF cluster's head node
-    - user: The username used to log into the cluster
-    - Working directory (Server): A directory that is readable/writable by "user" on the cluster, used when performing optimizations.
-    - Working directory (Local): A directory that is readable/writable by the current user on the local computer. This is where the final structures and resume files are written.
-	- Description: Used for the %description% keyword in input templates.
+Select "LSF" from the list of Queues, and then click the "Configure..." button.
+The step queue interface settings are:
 	- Path to bsub: Where to find the bsub executable on the remote cluster. Note that if bsub is in the cluster's $PATH, setting this to just 'bsub' will work.
 	- Path to bkill: Where to find the bkill executable on the remote cluster. Note that if bkill is in the cluster's $PATH, setting this to just 'bkill' will work.
 	- Path to bjobs: Where to find the bjobs executable on the remote cluster. Note that if bjobs is in the cluster's $PATH, setting this to just 'bjobs' will work.
-    - "Clean remote directories when finished": will remove all of the generated files from the cluster. Only the files on the local computer will be kept. If you do not want this to occur, make sure to uncheck this option.
 
 A new template, "job.lsf" is added to the list of available templates. This is the job submission script for LSF. It may take some experimentation to get jobs to submit successfully, and you may need to contact the system administrators of the cluster for assistance or information about MPI, executable locations, etc. Perhaps the easiest method to find the correct LSF script is to run some trial submissions by hand, and then replace the structure/search specific information with the appropriate keywords once a working script has been generated.
 
@@ -699,16 +711,11 @@ For more details on optimization schemes, see \ref optschemes.
 \image html opt-set-ll.png
 \image latex opt-set-ll.png width=\textwidth
 
-Select "LoadLeveler" from the list of Queues, and then click the "Configure..." button. A new window will prompt for:
-    - host: The hostname of the LoadLeveler cluster's head node
-    - user: The username used to log into the cluster
-    - Working directory (Server): A directory that is readable/writable by "user" on the cluster, used when performing optimizations.
-    - Working directory (Local): A directory that is readable/writable by the current user on the local computer. This is where the final structures and resume files are written.
-    - Description: Used for the %description% keyword in input templates.
+Select "LoadLeveler" from the list of Queues, and then click the "Configure..."
+button. The step queue interface settings are:
     - Path to llsubmit: Where to find the llsubmit executable on the remote cluster. Note that if llsubmit is in the cluster's $PATH, setting this to just 'llsubmit' will work.
     - Path to llcancel: Where to find the llcancel executable on the remote cluster. Note that if llcancel is in the cluster's $PATH, setting this to just 'llcancel' will work.
     - Path to llq: Where to find the llq executable on the remote cluster. Note that if llq is in the cluster's $PATH, setting this to just 'llq' will work.
-    - "Clean remote directories when finished": will remove all of the generated files from the cluster. Only the files on the local computer will be kept. If you do not want this to occur, make sure to uncheck this option.
 
 A new template, "job.ll" is added to the list of available templates. This is the job submission script for LoadLeveler. It may take some experimentation to get jobs to submit successfully, and you may need to contact the system administrators of the cluster for assistance or information about MPI, executable locations, etc. Perhaps the easiest method to find the correct LoadLeveler script is to run some trial submissions by hand, and then replace the structure/search specific information with the appropriate keywords once a working script has been generated.
 
@@ -725,6 +732,14 @@ button. A new window will prompt for:
    - Local working directory: A directory that is readable/writable by
        the current user on the local computer. This is where the final
        structures and resume files are written.
+   - Search description: a name to be displayed at the top of the XtalOpt
+       window.
+   - Log error directories: if checked, structures that produce an error will
+       have their directory saved within an "errorDirs" directory in the local
+       working directory. The structure's directory will be named
+       "<generation>x<idNumber>". This setting can be useful for debugging
+       errors. Note that a structure will overwrite it's error directory if
+       another error occurs.
 
 If the optimizer's executable (vasp, gulp, pw.x, castep, etc) is not
 in your system path, you will need to specify the location of the

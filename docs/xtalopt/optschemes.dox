@@ -81,6 +81,12 @@ in the early optsteps and only optimizing everything once each
 component has individually converged to a reasonable
 parameterization. See \ref suggest for examples.
 
+Note that before release 12, only one optimizer could be used for all of
+the optimization steps. However, as of release 12, different optimizers can
+be used for different optimization steps. Simply select the optimization
+step in the "Optimization Settings" tab and then choose the optimizer for
+that optimization step.
+
 @section gui Optimization scheme user interface
 \image html optschemes-numberededitor.png
 \image latex optschemes-numberededitor.png width=\textwidth
@@ -189,7 +195,7 @@ optimization scheme for a given optimization code only minor tweaks
 a different chemical system.
 
 It is important to note that the optimization scheme does not have to perfectly
-converge your structures. A final post-processing optimization to refine any 
+converge your structures. A final post-processing optimization to refine any
 structure found in the search is highly recommended.
 
 @section saving How to save an optimization scheme for later?
