@@ -159,14 +159,6 @@ here</a>.
 
 For more details on optimization schemes, see \ref optschemes.
 
-After loading the optimization scheme, XtalOpt will prompt for the
-POTCAR files to use. Select files appropriate for the prompted atom.
-XtalOpt will construct the POTCAR files on the local computer, and
-then copy them over to the cluster when the calculation is
-submitted. It is necessary to have the VASP POTCAR files for each
-atomic species located somewhere on the local computer. See the VASP
-manual for information on obtaining the POTCAR files.
-
 Take a moment to look through each file for each optimization
 step. Notice that the INCAR template includes two user-specified
 values, %%user2% and %%user3% for the external pressure and the energy
@@ -178,6 +170,23 @@ Notice the other %%keyword% values in the job.pbs templates. These are
 used to enter information that is specific to a search or structure
 when the actual input files are written prior to job submission. Click
 the "Help" button for a full listing of the available keywords.
+
+For the POTCAR templates, the keyword %%fileContents:/path/to/file% is to
+be used for each POTCAR template. This is performed like so:
+
+\code
+%fileContents:/path/to/first/potcar/in/alphabetical/order%
+%fileContents:/path/to/second/potcar/in/alphabetical/order%
+\endcode
+
+The regions enclosed by the "%%" signs will be replaced with the contents of
+the files. The POTCAR files need to be in alphabetical order (based on the
+element symbol) because XtalOpt will order the elements in the POSCAR file in
+alphabetical order as well.
+
+It is necessary to have the VASP POTCAR files for each atomic species located
+somewhere on the local computer. See the VASP manual for information on
+obtaining the POTCAR files.
 
 XtalOpt expects VASP to use the default filenames, mainly POSCAR,
 CONTCAR, and OUTCAR.
@@ -323,90 +332,76 @@ On the next tab we choose SIESTA for the local optimizer and enter a template fo
 Next, fill out the text field on the right with the following template:
 
 @code
-SystemName          %description%-%gen%x%id%
-SystemLabel         xtal
-
-NumberOfAtoms       %numAtoms%
-NumberOfSpecies     %numSpecies%
-
+# TiO2 test
+#
+SystemName	%description%
+SystemLabel	%description%-%gen%x%id%
+NumberOfSpecies  %numSpecies%
+NumberOfAtoms    %numAtoms%
 %block% ChemicalSpeciesLabel
 %chemicalSpeciesLabel%
 %endblock% ChemicalSpeciesLabel
 
-%block% PAO.Basis                 # Define Basis set
-Ti    5      1.91
- n=3    0    1   E     93.95      5.20
-   5.69946662616249
-   1.00000000000000
- n=3    1    1   E     95.47      5.20
-   5.69941339465994
-   1.00000000000000
- n=4    0    2   E     96.47      5.60
-   6.09996398975307        5.09944363262274
-   1.00000000000000        1.00000000000000
- n=3    2    2   E     46.05      4.95
-   5.94327035784617        4.70009988294302
-   1.00000000000000        1.00000000000000
- n=4    1    1   E      0.50      1.77
-   3.05365979938936
-   1.00000000000000
-%endblock% PAO.Basis
+PAO.BasisSize  SZ
+Diag.Divide-and-Conquer F
 
-%block% PAO.BasisSizes
-        O      DZP
-%endblock% PAO.BasisSizes
-
-XC.functional GGA
-XC.authors    PBE
-
-LatticeConstant          1 Ang
+LatticeConstant     1.0 Ang
 %block% LatticeVectors
 %cellMatrixAngstrom%
 %endblock% LatticeVectors
 
-%block% kgrid_Monkhorst_Pack
-   3  0  0  0.5
-   0  3  0  0.5
-   0  0  3  0.5
-%endblock% Kgrid_Monkhorst_Pack
+AtomicCoordinatesFormat    Fractional
 
-MeshCutoff         100.0 Ry
-
-MaxSCFIterations     1000
-DM.MixingWeight      0.05
-DM.NumberPulay       3
-DM.Tolerance         1.d-4
-
-SolutionMethod       diagon
-
-SpinPolarized   true
-LongOutput true
-
-MD.TypeOfRun        cg
-MD.NumCGsteps       1000
-MD.VariableCell     true
-MD.MaxForceTol      0.01 eV/Ang  #0.005 eV/Ang
-WriteForces         true
-WriteCoorCerius     true
-WriteCoorXmol       false
-WriteDenchar        true
-WriteMullikenPop    1
-
-UseSaveData         true
-
-#Diag.ParallelOverK true
-
-AtomicCoordinatesFormat Fractional
 %block% AtomicCoordinatesAndAtomicSpecies
 %atomicCoordsAndAtomicSpecies%
 %endblock% AtomicCoordinatesAndAtomicSpecies
+
+kgrid_cutoff 15.0 Ang
+
+Solution.Method       diagon
+MeshCutoff             100 Ry
+DM.NumberBroyden       4
+DM.UseSaveDM           T
+DM.MixingWeight        0.1         # New DM amount for next SCF cycle
+DM.Tolerance           1.d-3       # Tolerance in maximum difference
+                                   # between input and output DM
+MaxSCFIterations       20
+
+WriteCoorStep      .true.
+WriteForces        .true.
+
+XC.functional       GGA
+XC.authors          PBE
+
+MD.TypeOfRun         Broyden
+MD.Variable-Cell      T
+MD.Target-pressure    0.0 GPa
+MD.Num-CG-steps	     30
+MD.Max-Stress-Tol    2.0 GPa
+
+MD.Broyden.Initial.Inverse.Jacobian 1.0
+MD.Broyden.History.Steps 6
+
+%copyFile:/path/to/first/psf%
+%copyFile:/path/to/second/psf%
 @endcode
 
 <p>Or load the optimization scheme by clicking the "Load Opt Scheme" button and selecting the "samples/siesta-TiO-xtalopt.scheme" file that is distributed with the source code. If the source code is not available, the scheme file can be obtained by clicking <a href="http://xtalopt.github.io/samples/siesta-TiO-xtalopt.scheme">here</a>.</p>
 
 For more details on optimization schemes, see \ref optschemes.
 
- <p>After loading the optimization scheme, XtalOpt will prompt for the xtal.psf files to use. Select files appropriate for the prompted atom. XtalOpt will copy the individual files over to each structure directory when the calculation is submitted. See the SIESTA manual for information on obtaining the .psf files.</p>
+For siesta, it is required that a ".psf" file (a pseudopotential file) be
+present for each element. This can be done using the %%copyFile:/path/to/file%
+keyword in the "xtal.fdf" template like so:
+
+\code
+%copyFile:/path/to/first/psf/file%
+%copyFile:/path/to/second/psf/file%
+\endcode
+
+The specified files will be copied to the structure's directory, and the
+region between the "%%" signs will be removed from the final "xtal.fdf" file.
+See the SIESTA manual for information on obtaining the psf files.
 
  <p>Notice the other %%keyword% values in the xtal.fdf templates. These are used to enter information that is specific to a search or structure when the actual input files are written prior to job submission. Click the "Help" button for a full listing of the available keywords.</p>
 
