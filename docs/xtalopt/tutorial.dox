@@ -787,6 +787,26 @@ The tolerances for duplicate matching are also found in this tab. They can be ad
 at any point in the run and the results.txt file will update with the correct duplicates
 found based upon the new tolerances.
 
+As of release 12, there are now options for calculating hardness on this tab.
+If "Calculate hardness with AFLOW ML?" is checked, when a structure is
+optimized, it will be submitted to <a href="http://aflow.org/aflow-ml/">
+aflow-ml</a> to have its bulk and shear moduli calculated using a machine
+learning algorithm. The Teter model (H = 0.151 * G where H is Vickers hardness
+and G is the shear modulus) is then used to estimate Vickers hardness.
+
+If "Calculate hardness with AFLOW ML?" is checked, then a modified version
+of the fitness function involving hardness also becomes available. The
+"Hardness fitness weight" (denoted as "w") gives the percentage of importance
+that hardness has on the fitness function. If "w" is 0%, then hardness has no
+impact on the fitness function (and the fitness is determined solely by
+enthalpy, as usual). If "w" is 100%, then enthalpy has no impact on the fitness
+function, and the fitness is determined solely by hardness. If "w" is 50%,
+then hardness and enthalpy are given equal importance. Any other value can be
+used to make hardness or enthalpy more important for the fitness.
+
+Note that an active internet connection is required in order for XtalOpt to
+calculate the hardness.
+
 \section begin "Begin"
 \image html prog-start.png "The ``Progress'' tab immediately after starting a search"
 \image latex prog-start.png "The ``Progress'' tab immediately after starting a search" width=\textwidth
