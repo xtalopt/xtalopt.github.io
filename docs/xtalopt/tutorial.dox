@@ -18,6 +18,7 @@ namespace XtalOpt {
     - \ref pwscf-opt
     - \ref castep-opt
     - \ref siesta-opt
+    - \ref generic-opt
   - \ref qisetup
     - \ref remotepbs
     - \ref remotesge
@@ -27,6 +28,7 @@ namespace XtalOpt {
     - \ref localqi
   - \ref files
   - \ref search-set
+    - \ref hardness
   - \ref begin
   - \ref prog-mon
     - \ref trends
@@ -122,9 +124,18 @@ and the a, b, c determine in which direction the cells are replicated.
 
 @section opt Optimizer setup
 
-XtalOpt currently supports the \ref vasp-opt, \ref gulp-opt, \ref
-pwscf-opt, \ref castep-opt, and \ref siesta-opt codes for performing geometry
+XtalOpt primarily supports the \ref vasp-opt, \ref gulp-opt, \ref pwscf-opt,
+\ref castep-opt, and \ref siesta-opt codes for performing geometry
 optimizations. Each is detailed in its own section below.
+
+As of release 12, however, XtalOpt now supports a generic optimizer as well,
+which can potentially be used for many different kinds of optimizers.
+The generic optimizer is unique in many ways, and its details are given
+in the \ref generic-opt section.
+
+New to release 12 as well, a different optimizer may now be used for each
+optimization step. Simply click on the optimization step in the
+"Optimization Settings" tab before selecting the optimizer for that step.
 
 Be aware that program installation is different, and it is
 almost certain that the submit files included with these schemes will
@@ -152,14 +163,6 @@ here</a>.
 
 For more details on optimization schemes, see \ref optschemes.
 
-After loading the optimization scheme, XtalOpt will prompt for the
-POTCAR files to use. Select files appropriate for the prompted atom.
-XtalOpt will construct the POTCAR files on the local computer, and
-then copy them over to the cluster when the calculation is
-submitted. It is necessary to have the VASP POTCAR files for each
-atomic species located somewhere on the local computer. See the VASP
-manual for information on obtaining the POTCAR files.
-
 Take a moment to look through each file for each optimization
 step. Notice that the INCAR template includes two user-specified
 values, %%user2% and %%user3% for the external pressure and the energy
@@ -171,6 +174,23 @@ Notice the other %%keyword% values in the job.pbs templates. These are
 used to enter information that is specific to a search or structure
 when the actual input files are written prior to job submission. Click
 the "Help" button for a full listing of the available keywords.
+
+For the POTCAR templates, the keyword %%fileContents:/path/to/file% is to
+be used for each POTCAR template. This is performed like so:
+
+\code
+%fileContents:/path/to/first/potcar/in/alphabetical/order%
+%fileContents:/path/to/second/potcar/in/alphabetical/order%
+\endcode
+
+The regions enclosed by the "%%" signs will be replaced with the contents of
+the files. The POTCAR files need to be in alphabetical order (based on the
+element symbol) because XtalOpt will order the elements in the POSCAR file in
+alphabetical order as well.
+
+It is necessary to have the VASP POTCAR files for each atomic species located
+somewhere on the local computer. See the VASP manual for information on
+obtaining the POTCAR files.
 
 XtalOpt expects VASP to use the default filenames, mainly POSCAR,
 CONTCAR, and OUTCAR.
@@ -279,7 +299,7 @@ For more details on optimization schemes, see \ref optschemes.
 It is important to note that CASTEP input files require the "%"
 character to define blocks. The percent character is special in the
 XtalOpt input template parser to define keywords (see below). To
-insert a literal "%" into the input, use %percent%.
+insert a literal "%" into the input, use %%percent%.
 
 E.g. Specification of the fractional coordinate block in the .cell
 template should look like:
@@ -316,90 +336,76 @@ On the next tab we choose SIESTA for the local optimizer and enter a template fo
 Next, fill out the text field on the right with the following template:
 
 @code
-SystemName          %description%-%gen%x%id%
-SystemLabel         xtal
-
-NumberOfAtoms       %numAtoms%
-NumberOfSpecies     %numSpecies%
-
+# TiO2 test
+#
+SystemName	%description%
+SystemLabel	%description%-%gen%x%id%
+NumberOfSpecies  %numSpecies%
+NumberOfAtoms    %numAtoms%
 %block% ChemicalSpeciesLabel
 %chemicalSpeciesLabel%
 %endblock% ChemicalSpeciesLabel
 
-%block% PAO.Basis                 # Define Basis set
-Ti    5      1.91
- n=3    0    1   E     93.95      5.20
-   5.69946662616249
-   1.00000000000000
- n=3    1    1   E     95.47      5.20
-   5.69941339465994
-   1.00000000000000
- n=4    0    2   E     96.47      5.60
-   6.09996398975307        5.09944363262274
-   1.00000000000000        1.00000000000000
- n=3    2    2   E     46.05      4.95
-   5.94327035784617        4.70009988294302
-   1.00000000000000        1.00000000000000
- n=4    1    1   E      0.50      1.77
-   3.05365979938936
-   1.00000000000000
-%endblock% PAO.Basis
+PAO.BasisSize  SZ
+Diag.Divide-and-Conquer F
 
-%block% PAO.BasisSizes
-        O      DZP
-%endblock% PAO.BasisSizes
-
-XC.functional GGA
-XC.authors    PBE
-
-LatticeConstant          1 Ang
+LatticeConstant     1.0 Ang
 %block% LatticeVectors
 %cellMatrixAngstrom%
 %endblock% LatticeVectors
 
-%block% kgrid_Monkhorst_Pack
-   3  0  0  0.5
-   0  3  0  0.5
-   0  0  3  0.5
-%endblock% Kgrid_Monkhorst_Pack
+AtomicCoordinatesFormat    Fractional
 
-MeshCutoff         100.0 Ry
-
-MaxSCFIterations     1000
-DM.MixingWeight      0.05
-DM.NumberPulay       3
-DM.Tolerance         1.d-4
-
-SolutionMethod       diagon
-
-SpinPolarized   true
-LongOutput true
-
-MD.TypeOfRun        cg
-MD.NumCGsteps       1000
-MD.VariableCell     true
-MD.MaxForceTol      0.01 eV/Ang  #0.005 eV/Ang
-WriteForces         true
-WriteCoorCerius     true
-WriteCoorXmol       false
-WriteDenchar        true
-WriteMullikenPop    1
-
-UseSaveData         true
-
-#Diag.ParallelOverK true
-
-AtomicCoordinatesFormat Fractional
 %block% AtomicCoordinatesAndAtomicSpecies
 %atomicCoordsAndAtomicSpecies%
 %endblock% AtomicCoordinatesAndAtomicSpecies
+
+kgrid_cutoff 15.0 Ang
+
+Solution.Method       diagon
+MeshCutoff             100 Ry
+DM.NumberBroyden       4
+DM.UseSaveDM           T
+DM.MixingWeight        0.1         # New DM amount for next SCF cycle
+DM.Tolerance           1.d-3       # Tolerance in maximum difference
+                                   # between input and output DM
+MaxSCFIterations       20
+
+WriteCoorStep      .true.
+WriteForces        .true.
+
+XC.functional       GGA
+XC.authors          PBE
+
+MD.TypeOfRun         Broyden
+MD.Variable-Cell      T
+MD.Target-pressure    0.0 GPa
+MD.Num-CG-steps	     30
+MD.Max-Stress-Tol    2.0 GPa
+
+MD.Broyden.Initial.Inverse.Jacobian 1.0
+MD.Broyden.History.Steps 6
+
+%copyFile:/path/to/first/psf%
+%copyFile:/path/to/second/psf%
 @endcode
 
 <p>Or load the optimization scheme by clicking the "Load Opt Scheme" button and selecting the "samples/siesta-TiO-xtalopt.scheme" file that is distributed with the source code. If the source code is not available, the scheme file can be obtained by clicking <a href="http://xtalopt.github.io/samples/siesta-TiO-xtalopt.scheme">here</a>.</p>
 
 For more details on optimization schemes, see \ref optschemes.
 
- <p>After loading the optimization scheme, XtalOpt will prompt for the xtal.psf files to use. Select files appropriate for the prompted atom. XtalOpt will copy the individual files over to each structure directory when the calculation is submitted. See the SIESTA manual for information on obtaining the .psf files.</p>
+For siesta, it is required that a ".psf" file (a pseudopotential file) be
+present for each element. This can be done using the %%copyFile:/path/to/file%
+keyword in the "xtal.fdf" template like so:
+
+\code
+%copyFile:/path/to/first/psf/file%
+%copyFile:/path/to/second/psf/file%
+\endcode
+
+The specified files will be copied to the structure's directory, and the
+region between the "%%" signs will be removed from the final "xtal.fdf" file.
+See the SIESTA manual for information on obtaining the psf files.
 
  <p>Notice the other %%keyword% values in the xtal.fdf templates. These are used to enter information that is specific to a search or structure when the actual input files are written prior to job submission. Click the "Help" button for a full listing of the available keywords.</p>
 
@@ -409,6 +415,97 @@ Note: that in the current implementation XtalOpt uses the Total Final Energy pri
 
  <pre>siesta < xtal.fdf > xtal.out</pre>
 
+@subsection generic-opt Generic Optimizer
+\image html opt-set-generic.png
+\image latex opt-set-generic.png width=\textwidth
+
+The "Generic Optimizer" can use many different kinds of optimizers. A certain
+set of rules must be followed, though, if the optimizer is to be used. Below
+are the rules of the generic optimizer.
+
+1. XtalOpt will only generate one input file with keywords, and it will be
+named "job.in". This file can be renamed with the job script. Other input files
+can also be created or copied in the job script (there is also a keyword
+called %%copyfile:% that tells XtalOpt to copy a file into the destination
+directory). But only one "job.in" file will be generated by XtalOpt.
+
+2. The main output file needs to ultimately be named "job.out". As with the
+"job.in" file, the normal output files can be renamed in the job script, and
+other output files can exist in the directory. But XtalOpt will only try to
+read a "job.out" file.
+
+3. The "job.out" file must be a registered ".out" format in Open Babel.
+Open Babel is used to automatically detect and read the format of the "job.out"
+file, so Open Babel must be able to read it correctly. Since Open Babel is
+an open source project, new ".out" formats can be added if Open Babel does not
+already have it.
+
+As long as the above 3 rules are followed, just about any optimizer can be
+used for the generic optimizer. In our example here, we will be using DFTB
+from ADF 2018. Instructions are as follows:
+
+On the next tab we choose generic for the local optimizer and enter a template
+for the optimizer to use. Select "generic" as the "Optimizer" and "job.in"
+as "Template".
+
+We are going to use DFTB from ADF 2018 as an example. There is also
+a sample scheme for DFTB from ADF 2017 (located here
+"samples/generic-adf-dftb-2017-xtalopt.scheme"
+in the XtalOpt source directory) if ADF 2018 is unavailable.
+
+Next, fill out the text field on the right with the following template:
+
+@code
+Task GeometryOptimization
+
+GeometryOptimization
+  MaxIterations 10000
+  OptimizeLattice true
+  Convergence Gradients=1e-3
+End
+
+System
+  FractionalCoords True
+  Atoms
+    %coordsFrac%
+  End
+
+  Lattice [Angstrom]
+    %cellMatrixAngstrom%
+  End
+End
+
+Engine DFTB
+   ResourcesDir Dresden
+   Model DFTB0
+   Periodic
+       kspace 5
+       nstar 5
+   End
+EndEngine
+@endcode
+
+<p>Or load the optimization scheme by clicking the "Load Opt Scheme" button and selecting the "samples/generic-adf-dftb-2018-xtalopt.scheme" file that is distributed with the source code. If the source code is not available, the scheme file can be obtained by clicking <a href="http://xtalopt.github.io/samples/generic-adf-dftb-2018-xtalopt.scheme">here</a>.</p>
+
+For more details on optimization schemes, see \ref optschemes.
+
+ <p>There are many %%keyword% values available for the generic optimizer. These are used to enter information that is specific to a search or structure when the actual input files are written prior to job submission. Click the "Help" button for a full listing of the available keywords.</p>
+
+ <p>XtalOpt expects the generic optimizer to use the following filenames:</p>
+
+ <pre>\<optimizer\> < job.in > job.out</pre>
+
+In our case with ADF 2018, the optimizer will be the "ams" executable located
+in the ADF bin directory. Make sure the ADF environment variables are set up,
+and call it like so:
+
+ <pre>$ADFBIN/ams < job.in > job.out</pre>
+
+As described in the rules for the generic optimizer above, a "job.in" file
+is created by XtalOpt, and this is to be used for the input. XtalOpt will
+try to read "job.out" when the job is complete, so the output must be named
+"job.out." Open Babel is responsible for determining the type of file of
+"job.out" and reading the values correctly.
 
 @section qisetup Queue setup
 
@@ -419,13 +516,19 @@ remote SSH-accessible clusters, as well as an internal \ref localqi
 workstation. Each queueing interface is detailed in its own section
 below.
 
-@subsection remotepbs Using a remote PBS cluster
-\image html opt-set-pbs.png
-\image latex opt-set-pbs.png width=\textwidth
+New to release 12, a different queue interface (and a different optimizer)
+can be used for each optimization step. This can be particularly useful if a
+quick optimization is to be performed on the local computer before further
+optimizations are performed on the cluster.
 
-Select "PBS" from the list of Queues, and then click the "Configure..."
-button. A new window will prompt for:
-  - host: The hostname of the PBS cluster's head node
+In addition, the queue configure menu (accessed via the "Configure..." button
+next to the queue interface) is now divided into two different parts:
+global queue interface settings and step queue interface settings.
+The global queue interface
+settings are settings for all optimization steps. The step queue interface
+settings are settings for a particular optimization step. The global queue
+interface settings are as follows:
+  - host: The hostname of the cluster's head node
   - user: The username used to log into the cluster
   - Working directory (Server): A directory that is readable/writable
       by "user" on the cluster, used when performing optimizations.
@@ -433,6 +536,32 @@ button. A new window will prompt for:
       by the current user on the local computer. This is where the
       final structures and resume files are written.
   - Description: Used for the %%description% keyword in input templates.
+  - "Clean remote directories when finished": will remove all of the generated files from the cluster. Only the files on the local computer will be kept. If you do not want this to occur, make sure to uncheck this option.
+  - Log error directories: if checked, structures that produce an error will
+      have their directory saved within an "errorDirs" directory in the local
+      working directory. The structure's directory will be named
+      "<generation>x<idNumber>". This setting can be useful for debugging
+      errors. Note that a structure will overwrite it's error directory if
+      another error occurs.
+  - Automatically cancel job after: if checked, a job will be killed if the
+      specified number of hours are exceeded. The time checked is queue time +
+      running time. This can be useful for cases where XtalOpt can't check
+      whether a job is running or not, and too great a time has been exceeded.
+      It can also be useful for optimizers with bugs that occasionally cause
+      them to run forever.
+
+To change the step queue interface settings at a particular step, first
+select a step in the "Optimization Settings" tab, and then click "Configure..."
+next to the queue interface.
+
+A description for each of the different queue interfaces now follows.
+
+@subsection remotepbs Using a remote PBS cluster
+\image html opt-set-pbs.png
+\image latex opt-set-pbs.png width=\textwidth
+
+Select "PBS" from the list of Queues, and then click the "Configure..."
+button. The step queue interface settings are:
   - Path to qsub: Where to find the qsub executable on the remote
       cluster. Note that if qsub is in the cluster's $PATH, setting
       this to just 'qsub' will work.
@@ -442,7 +571,6 @@ button. A new window will prompt for:
   - Path to qstat: Where to find the qstat executable on the remote
       cluster. Note that if qstat is in the cluster's $PATH, setting
       this to just 'qstat' will work.
-  - "Clean remote directories when finished": will remove all of the generated files from the cluster. Only the files on the local computer will be kept. If you do not want this to occur, make sure to uncheck this option.
 
 A new template, "job.pbs" is added to the list of available
 templates. This is the job submission script for PBS. This script
@@ -505,15 +633,7 @@ its second optimization step.
 \image latex opt-set-sge.png width=\textwidth
 
 Select "SGE" from the list of Queues, and then click the "Configure..."
-button. A new window will prompt for:
-  - host: The hostname of the SGE cluster's head node
-  - user: The username used to log into the cluster
-  - Working directory (Server): A directory that is readable/writable
-      by "user" on the cluster, used when performing optimizations.
-  - Working directory (Local): A directory that is readable/writable
-      by the current user on the local computer. This is where the
-      final structures and resume files are written.
-  - Description: Used for the %%description% keyword in input templates.
+button. The step queue interface settings are:
   - Path to qsub: Where to find the qsub executable on the remote
       cluster. Note that if qsub is in the cluster's $PATH, setting
       this to just 'qsub' will work.
@@ -523,7 +643,6 @@ button. A new window will prompt for:
   - Path to qstat: Where to find the qstat executable on the remote
       cluster. Note that if qstat is in the cluster's $PATH, setting
       this to just 'qstat' will work.
-  - "Clean remote directories when finished": will remove all of the generated files from the cluster. Only the files on the local computer will be kept. If you do not want this to occur, make sure to uncheck this option.
 
 @todo Get template for job.sge scripts
 
@@ -545,15 +664,7 @@ For more details on optimization schemes, see \ref optschemes.
 \image latex opt-set-slurm.png width=\textwidth
 
 Select "SLURM" from the list of Queues, and then click the "Configure..."
-button. A new window will prompt for:
-  - host: The hostname of the SLURM cluster's head node
-  - user: The username used to log into the cluster
-  - Working directory (Server): A directory that is readable/writable
-      by "user" on the cluster, used when performing optimizations.
-  - Working directory (Local): A directory that is readable/writable
-      by the current user on the local computer. This is where the
-      final structures and resume files are written.
-  - Description: Used for the %%description% keyword in input templates.
+button. The step queue interface settings are:
   - Path to sbatch: Where to find the sbatch executable on the remote
       cluster. Note that if sbatch is in the cluster's $PATH, setting
       this to just 'sbatch' will work.
@@ -563,7 +674,6 @@ button. A new window will prompt for:
   - Path to squeue: Where to find the squeue executable on the remote
       cluster. Note that if squeue is in the cluster's $PATH, setting
       this to just 'squeue' will work.
-  - "Clean remote directories when finished": will remove all of the generated files from the cluster. Only the files on the local computer will be kept. If you do not want this to occur, make sure to uncheck this option.
 
 @todo Get template for job.slurm scripts
 
@@ -585,16 +695,11 @@ For more details on optimization schemes, see \ref optschemes.
 \image html opt-set-lsf.png
 \image latex opt-set-lsf.png width=\textwidth
 
-Select "LSF" from the list of Queues, and then click the "Configure..." button. A new window will prompt for:
-    - host: The hostname of the LSF cluster's head node
-    - user: The username used to log into the cluster
-    - Working directory (Server): A directory that is readable/writable by "user" on the cluster, used when performing optimizations.
-    - Working directory (Local): A directory that is readable/writable by the current user on the local computer. This is where the final structures and resume files are written.
-	- Description: Used for the %description% keyword in input templates.
+Select "LSF" from the list of Queues, and then click the "Configure..." button.
+The step queue interface settings are:
 	- Path to bsub: Where to find the bsub executable on the remote cluster. Note that if bsub is in the cluster's $PATH, setting this to just 'bsub' will work.
 	- Path to bkill: Where to find the bkill executable on the remote cluster. Note that if bkill is in the cluster's $PATH, setting this to just 'bkill' will work.
 	- Path to bjobs: Where to find the bjobs executable on the remote cluster. Note that if bjobs is in the cluster's $PATH, setting this to just 'bjobs' will work.
-    - "Clean remote directories when finished": will remove all of the generated files from the cluster. Only the files on the local computer will be kept. If you do not want this to occur, make sure to uncheck this option.
 
 A new template, "job.lsf" is added to the list of available templates. This is the job submission script for LSF. It may take some experimentation to get jobs to submit successfully, and you may need to contact the system administrators of the cluster for assistance or information about MPI, executable locations, etc. Perhaps the easiest method to find the correct LSF script is to run some trial submissions by hand, and then replace the structure/search specific information with the appropriate keywords once a working script has been generated.
 
@@ -606,16 +711,11 @@ For more details on optimization schemes, see \ref optschemes.
 \image html opt-set-ll.png
 \image latex opt-set-ll.png width=\textwidth
 
-Select "LoadLeveler" from the list of Queues, and then click the "Configure..." button. A new window will prompt for:
-    - host: The hostname of the LoadLeveler cluster's head node
-    - user: The username used to log into the cluster
-    - Working directory (Server): A directory that is readable/writable by "user" on the cluster, used when performing optimizations.
-    - Working directory (Local): A directory that is readable/writable by the current user on the local computer. This is where the final structures and resume files are written.
-    - Description: Used for the %description% keyword in input templates.
+Select "LoadLeveler" from the list of Queues, and then click the "Configure..."
+button. The step queue interface settings are:
     - Path to llsubmit: Where to find the llsubmit executable on the remote cluster. Note that if llsubmit is in the cluster's $PATH, setting this to just 'llsubmit' will work.
     - Path to llcancel: Where to find the llcancel executable on the remote cluster. Note that if llcancel is in the cluster's $PATH, setting this to just 'llcancel' will work.
     - Path to llq: Where to find the llq executable on the remote cluster. Note that if llq is in the cluster's $PATH, setting this to just 'llq' will work.
-    - "Clean remote directories when finished": will remove all of the generated files from the cluster. Only the files on the local computer will be kept. If you do not want this to occur, make sure to uncheck this option.
 
 A new template, "job.ll" is added to the list of available templates. This is the job submission script for LoadLeveler. It may take some experimentation to get jobs to submit successfully, and you may need to contact the system administrators of the cluster for assistance or information about MPI, executable locations, etc. Perhaps the easiest method to find the correct LoadLeveler script is to run some trial submissions by hand, and then replace the structure/search specific information with the appropriate keywords once a working script has been generated.
 
@@ -632,6 +732,14 @@ button. A new window will prompt for:
    - Local working directory: A directory that is readable/writable by
        the current user on the local computer. This is where the final
        structures and resume files are written.
+   - Search description: a name to be displayed at the top of the XtalOpt
+       window.
+   - Log error directories: if checked, structures that produce an error will
+       have their directory saved within an "errorDirs" directory in the local
+       working directory. The structure's directory will be named
+       "<generation>x<idNumber>". This setting can be useful for debugging
+       errors. Note that a structure will overwrite it's error directory if
+       another error occurs.
 
 If the optimizer's executable (vasp, gulp, pw.x, castep, etc) is not
 in your system path, you will need to specify the location of the
@@ -689,6 +797,29 @@ There is now a termination criteria called "Total Number of Structures" that wil
 The tolerances for duplicate matching are also found in this tab. They can be adjusted
 at any point in the run and the results.txt file will update with the correct duplicates
 found based upon the new tolerances.
+
+\subsection hardness Calculating Hardness
+
+As of release 12, there are now options for calculating hardness in the
+search settings tab.
+If "Calculate hardness with AFLOW ML?" is checked, when a structure is
+optimized, it will be submitted to <a href="http://aflow.org/aflow-ml/">
+aflow-ml</a> to have its bulk and shear moduli calculated using a machine
+learning algorithm. The Teter model (H = 0.151 * G where H is Vickers hardness
+and G is the shear modulus) is then used to estimate Vickers hardness.
+
+If "Calculate hardness with AFLOW ML?" is checked, then a modified version
+of the fitness function involving hardness also becomes available. The
+"Hardness fitness weight" (denoted as "w") gives the percentage of importance
+that hardness has on the fitness function. If "w" is 0%, then hardness has no
+impact on the fitness function (and the fitness is determined solely by
+enthalpy, as usual). If "w" is 100%, then enthalpy has no impact on the fitness
+function, and the fitness is determined solely by hardness. If "w" is 50%,
+then hardness and enthalpy are given equal importance. Any other value can be
+used to make hardness or enthalpy more important for the fitness.
+
+Note that an active internet connection is required in order for XtalOpt to
+calculate the hardness.
 
 \section begin "Begin"
 \image html prog-start.png "The ``Progress'' tab immediately after starting a search"
