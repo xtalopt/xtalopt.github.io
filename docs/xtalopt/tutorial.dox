@@ -507,6 +507,38 @@ try to read "job.out" when the job is complete, so the output must be named
 "job.out." Open Babel is responsible for determining the type of file of
 "job.out" and reading the values correctly.
 
+<b>Important Note:</b> For the generic optimizer, XtalOpt will consider
+the optimization to be a success if Open Babel reads atoms, a unit cell,
+and an energy/enthalpy from the file. However, Open Babel being able to
+read these components does not always mean that the optimization was a
+success. To ensure that XtalOpt does not report a failed optimization as
+a success, a user can add something like this to the end of their job script:
+
+@code
+COMPLETION_STRING="Some string that indicates the job succeeded"
+if grep -Fxq "$COMPLETION_STRING" job.out
+then
+  # The completion string was found
+  echo "Job complete"
+else
+  # The completion string was not found
+  # XtalOpt only checks for job.out, so rename it to cause an error
+  mv job.out job_failed.out
+
+  # The presence of a job.out file may indicate to XtalOpt that the
+  # job is complete if XtalOpt is unable to check a job's status.
+  touch job.out
+fi
+@endcode
+
+The "$COMPLETION_STRING" here is some string in the output file that is
+only present if the optimization was successful.
+
+Renaming the "job.out" file at the end of the job script will cause the
+job to fail since XtalOpt will only try to read "job.out". This can
+ensure that only successful optimizations will be reported as
+"Optimized", and the rest will fail.
+
 @section qisetup Queue setup
 
 XtalOpt currently supports using the \ref remotepbs "PBS", \ref
