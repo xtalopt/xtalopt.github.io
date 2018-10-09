@@ -58,7 +58,7 @@ restraints (however, note that a search is much more effective
 if chemically reasonable restraints are used).
 Set all cell length minima to 1 angstrom and maxima to 20
 angstroms. Constrain the angles to be between 60 and 120 degrees, and
-the volume from between 1 and 500 cubic angstroms.
+the volume from 1 to 500 cubic angstroms.
 (Note that due to the angle adjustment described in
 CPC, 2011, 182, 372-387, 60-120 degrees is
 the largest range of cell angles that XtalOpt will generate.)
@@ -70,7 +70,7 @@ There are now two different kinds of interatomic distances available:
 scaled interatomic distances and custom interatomic distances.
 If "Use Scaled Interatomic Distances" is checked, the covalent radii of
 the elements will be multiplied by the "Scale factor", and any radii below
-the "Minimum radius" will be set to the "Minimum Radius." The minimum
+the "Minimum radius" will be set to the "Minimum radius." The minimum
 interatomic distance, then, between pairs of atoms in this setup is the sum
 of their radii. For our example,
 check the "Use Scaled Interatomic Distances" checkbox and set "Scale factor"
@@ -79,7 +79,7 @@ to 0.40 and "Minimum radius" to 0.25.
 Custom interatomic distances is an alternative option. If the
 "Use Custom Interatomic Distances" box is checked instead, the user can specify
 the minimum interatomic distance between every pair of atom types in the table
-below the check box.
+below the checkbox.
 
 Finally, a checkbox labelled "Check IAD Post-Optimization" is also now
 available. If this box is checked, the interatomic distances are checked
@@ -89,7 +89,7 @@ interatomic distance check, they will be marked as failed structures.
 @subsection init-molunit Molecular-Unit Builder
 If the user chooses to define specific molecular units, this option will
 allow them to do so. Once the chemical composition has been defined, the user
-can choose the center and neighbor atoms to be set as single-center molecules.
+can define a single-center molecule that assumes one of the VSEPR geometries.
 For example, with the 6 formula unit TiO2, we could set 6 Ti atoms to be the center
 of 2 O atoms in a linear geometry. We can also decide what the interatomic distance
 between the center and neighboring atoms will be. If there are left over atoms,
@@ -106,8 +106,8 @@ can be created by using specific spacegroups (or a variety of spacegroups).
 The choice for spacegroups will be limited by the chemical composition and number
 of formula units.
 
-Spacegroup constraints can only be used in the initial generation. Molunit and randSpg
-cannot be used simultaneously.
+Spacegroup constraints can only be used in the initial generation. Randspg
+cannot be used simultaneously with molunit nor with mitosis.
 
 For more information on randSpg, see <a href="https://doi.org/10.1016/j.cpc.2016.12.005">
 this paper</a>.
@@ -144,7 +144,8 @@ at SUNY Buffalo's Center for Computational Research. It may take some
 experimentation to get jobs to submit successfully, and you may need
 to contact the system administrators of the cluster for assistance for
 information about MPI, executable locations, etc. Perhaps the easiest
-method to find the correct submit script is to run some trial submissions
+method to construct a submit script that works for your specific
+situation is to run some trial submissions
 by hand, and then replace the structure/search specific information
 with the appropriate keywords once a working script has been
 generated.
@@ -256,8 +257,7 @@ gulp < xtal.gin > xtal.got
 On the next tab, load the optimization scheme that is distributed with
 the source code under the samples/ directory. The scheme that we want
 is named "pwscf-xtalopt.scheme". If the source code is not available,
-the scheme file can be obtained by clicking the "Original Format" link
-at the bottom of the page <a
+the scheme file can be obtained by clicking <a
 href="http://xtalopt.github.io/samples/pwscf-xtalopt.scheme">
 here</a>.
 
@@ -289,8 +289,7 @@ pw.x < xtal.in > xtal.out
 On the next tab, load the optimization scheme that is distributed with
 the source code under the samples/ directory. The scheme that we want
 is named "castep-xtalopt.scheme". If the source code is not available,
-the scheme file can be obtained by clicking the "Original Format" link
-at the bottom of the page <a
+the scheme file can be obtained by clicking <a
 href="http://xtalopt.github.io/samples/castep-xtalopt.scheme">
 here</a>.
 
@@ -568,7 +567,9 @@ interface settings are as follows:
       by the current user on the local computer. This is where the
       final structures and resume files are written.
   - Description: Used for the %%description% keyword in input templates.
-  - "Clean remote directories when finished": will remove all of the generated files from the cluster. Only the files on the local computer will be kept. If you do not want this to occur, make sure to uncheck this option.
+  - Queue refresh interval: The number of seconds to wait before querying
+      the jobs' statuses again with the queue interface.
+  - Clean remote directories when finished: will remove all of the generated files from the cluster. Only the files on the local computer will be kept. If you do not want this to occur, make sure to uncheck this option.
   - Log error directories: if checked, structures that produce an error will
       have their directory saved within an "errorDirs" directory in the local
       working directory. The structure's directory will be named
@@ -644,8 +645,6 @@ done
 cp $PBSTMPDIR/* $PBS_O_WORKDIR/
 @endcode
 
-For more details on optimization schemes, see \ref optschemes.
-
 A handy trick for monitoring jobs outside of XtalOpt is to include the
 following line in job.pbs:
 
@@ -657,6 +656,17 @@ This will name each job, for example, xtalSearch-3x4-2, where
 xtalSearch is a user-specified description of the search, and 3x4-2
 means that it is the fourth structure in the third generation running
 its second optimization step.
+
+It may take
+some experimentation to get jobs to submit successfully, and you may
+need to contact the system administrators of the cluster for assistance or
+information about MPI, executable locations, etc. Perhaps the easiest
+method to find the correct PBS script is to run some trial
+submissions by hand, and then replace the structure/search specific
+information with the appropriate keywords once a working script has
+been generated.
+
+For more details on optimization schemes, see \ref optschemes.
 
 \ref files "Skip to next section."
 
@@ -818,7 +828,7 @@ may need to be adjusted based on available resources. We will not
 specify initial seeds, but the option to do so exists on this screen.
 
  It is not necessary to limit the number of running jobs unless
-running locally, as the PBS queue on the cluster will manage job
+running locally, as the queueing system on the cluster will manage job
 control for us. If running locally, set the job limit no higher than
 [number of available processor cores] - 1 (e.g. for a quadcore
 processor, allow three jobs to run simultaneously). This allows one
@@ -874,7 +884,7 @@ it is stopped by the user.
 As XtalOpt performs the search, the progress table continuously
 updates, providing information about each structure. We see
 individuals in various stages of completion: most are optimized (in
-blue), structure 2x72 has been automatically marked as a duplicate
+blue), structure 2x2 has been automatically marked as a duplicate
 (dark green) of structure 1x2 and removed from the breeding pool,
 structure 3x4 is currently undergoing a local optimization (light
 green), while structure 2x10 is waiting to be optimized (light blue).
