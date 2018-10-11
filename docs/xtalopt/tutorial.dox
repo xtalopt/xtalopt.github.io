@@ -817,6 +817,10 @@ enthalpy. The latter file is handy for offline analysis, since there
 is no need to open XtalOpt to find the most stable structures of a
 previous search.
 
+In case either the "xtalopt.state" file or the "results.txt" file become
+corrupted, a previous copy of these files is also saved as
+"xtalopt.state.old" and "results_old.txt", respectively.
+
 \section search-set Search Settings
 \image html search-set.png
 \image latex search-set.png width=\textwidth
