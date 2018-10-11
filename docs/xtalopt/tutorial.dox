@@ -128,12 +128,12 @@ XtalOpt primarily supports the \ref vasp-opt, \ref gulp-opt, \ref pwscf-opt,
 \ref castep-opt, and \ref siesta-opt codes for performing geometry
 optimizations. Each is detailed in its own section below.
 
-As of release 12, however, XtalOpt now supports a generic optimizer as well,
+As of release 12, however, XtalOpt now supports a generic optimizer,
 which can potentially be used for many different kinds of optimizers.
 The generic optimizer is unique in many ways, and its details are given
 in the \ref generic-opt section.
 
-New to release 12 as well, a different optimizer may now be used for each
+New to release 12 as well, a different optimizer may be used for each
 optimization step. Simply click on the optimization step in the
 "Optimization Settings" tab before selecting the optimizer for that step.
 
@@ -393,7 +393,7 @@ MD.Broyden.History.Steps 6
 
 For more details on optimization schemes, see \ref optschemes.
 
-For siesta, it is required that a ".psf" file (a pseudopotential file) be
+For SIESTA, it is required that a ".psf" file (a pseudopotential file) be
 present for each element. This can be done using the %%copyFile:/path/to/file%
 keyword in the "xtal.fdf" template like so:
 
@@ -419,7 +419,7 @@ Note: that in the current implementation XtalOpt uses the Total Final Energy pri
 \image latex opt-set-generic.png width=\textwidth
 
 The "Generic Optimizer" can use many different kinds of optimizers. A certain
-set of rules must be followed, though, if the optimizer is to be used. Below
+set of rules must be followed, though, for an optimizer to be compatible. Below
 are the rules of the generic optimizer.
 
 1. XtalOpt will only generate one input file with keywords, and it will be
@@ -559,8 +559,8 @@ The global queue interface
 settings are settings for all optimization steps. The step queue interface
 settings are settings for a particular optimization step. The global queue
 interface settings are as follows:
-  - host: The hostname of the cluster's head node
-  - user: The username used to log into the cluster
+  - host: The hostname of the cluster's head node.
+  - user: The username used to log into the cluster.
   - Working directory (Server): A directory that is readable/writable
       by "user" on the cluster, used when performing optimizations.
   - Working directory (Local): A directory that is readable/writable
@@ -827,6 +827,11 @@ structures to 20 and the continuous structures to 5, although these
 may need to be adjusted based on available resources. We will not
 specify initial seeds, but the option to do so exists on this screen.
 
+Note: when using RandSpg, our
+<a href="https://doi.org/10.1016/j.cpc.2016.12.005">tests</a>
+have shown that it is beneficial to create more initial structures,
+such as 50.
+
  It is not necessary to limit the number of running jobs unless
 running locally, as the queueing system on the cluster will manage job
 control for us. If running locally, set the job limit no higher than
@@ -852,7 +857,7 @@ and G is the shear modulus) is then used to estimate Vickers hardness.
 
 If "Calculate hardness with AFLOW ML?" is checked, then a modified version
 of the fitness function involving hardness also becomes available. The
-"Hardness fitness weight" (denoted as "w") gives the percentage of importance
+"Hardness fitness weight" (denoted as "w") gives the percentage contribution
 that hardness has on the fitness function. If "w" is 0%, then hardness has no
 impact on the fitness function (and the fitness is determined solely by
 enthalpy, as usual). If "w" is 100%, then enthalpy has no impact on the fitness
@@ -915,8 +920,8 @@ to the higher formula unit's gene pool.
 
 An additional feature of the progress table is the ability to
 immediately visualize any of the structures in the Avogadro2 main
-window (assuming Avogadro2 is open with an Avogadro2 RPC server running
-- more info can be found in the \ref avogadro2rpc "Avogadro2 section")
+window (assuming Avogadro2 is open with an Avogadro2 RPC server running --
+more info can be found in the \ref avogadro2rpc "Avogadro2 section")
 -- simply clicking on a row in this table will display the
 three-dimensional structure in Avogadro2, where it can be visualized,
 modified, or exported. If the user would like to add a bit of
@@ -936,25 +941,25 @@ done mid-run.
 
 \subsection trends View trends
 \image html trend-view.png "The ``Plot'' tab mid-run displaying enthalpy vs. volume. Each structure is labeled with its Hermann Mauguin spacegroup symbol."
-\image latex trend-view.png "The ``Plot'' tab mid-run displaying enthalpy vs.\ volume. Each structure is labeled with its Hermann Mauguin spacegroup symbol." width=\textwidth
+\image latex trend-view.png "The ``Plot'' tab mid-run displaying enthalpy vs. volume. Each structure is labeled with its Hermann Mauguin spacegroup symbol." width=\textwidth
 
 Another visualization and analysis tool available during the search is
 the interactive plot. The plot is capable of investigating trends in
 the search by plotting a point for each individual using structure
-number, generation number, enthalpy, energy, $PV$ enthalpy term,
+number, generation number, enthalpy, energy, PV enthalpy term,
 lattice parameters, or cell volume on either axis. This powerful
 feature allows the user to visualize complex relationships present in
-the generated structures. E.g., a plot of enthalpy vs.\ structure
+the generated structures. E.g., a plot of enthalpy vs. structure
 number provides an overview of the search's progress. Or, recalling
-that H = U + PV, plotting enthalpy vs.\ PV enthalpy term or energy
+that H = U + PV, plotting enthalpy vs. PV enthalpy term or energy
 lends insight into whether the enthalpy (H) is dominated by atomic
 interactions (U) or cell parameters (PV). Further information is
 available by labeling the points with the individual's spacegroup
 number, Hermann Mauguin spacegroup symbol, enthalpy, energy, PV
 term, volume, generation, or index number.
 
-A particularly useful plot is that of enthalpy vs.\ cell volume, as
-shown above. From this view, we see a general trend that enthalpy
+A particularly useful plot is that of enthalpy vs. cell volume.
+From this view, we see a general trend that enthalpy
 increases with volume (the effect is much more pronounced for systems
 at higher pressures), and also that below a certain volume enthalpy
 rises sharply. From this data set, we see that there is a cluster of
@@ -1025,9 +1030,9 @@ XtalOpt will search for an "xtalopt.in" file in the current directory to use
 for the input file. If a different input file is desired, the user may
 explicitly select an input file with "--input-file <file>".
 The vast majority of the options are taken
-from the GUI, and more information on these options can be be found in their
+from the GUI, and more information on these options can be found in their
 respective places in the manual. One difference is that
-template files need to be created to for the different templates for
+template files need to be created for the different templates for
 queue interfaces and optimization schemes. These templates use the same
 %%keywords% that are used in the GUI, and an example of a GULP template
 can be found <a href="http://xtalopt.github.io/samples/commandLineInterface/templates/gulp/gin1">here</a>.

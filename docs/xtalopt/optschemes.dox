@@ -25,7 +25,7 @@ namespace GlobalSearch {
 
 @section overview Overview: What are optimization schemes, and why use them?
 
-@subsection quick-over In a nutshell..
+@subsection quick-over In a nutshell...
 
 An optimization scheme is a series of optimization steps ("optsteps")
 that are to be performed in sequence on a structure. Each optimization
@@ -42,7 +42,7 @@ steps, a structure's lifecycle is:
   -# Perform optstep 3 on current structure (result of optstep 2)
   -# Update structure from the results of optstep 3
   -# Current structure (result of optstep 3) is either accepted into
-     the breeding pool or discarded, depending on its enthalpy
+     the breeding pool or discarded, depending on its enthalpy (or hardness)
      relative to the other optimized structures.
 
 @subsection detailed-over More details
@@ -146,7 +146,7 @@ This button will prompt for an existing .scheme file to load.
 
 Creating a working scheme from scratch may take some time. We
 recommend checking the samples/ directory of the source code to obtain
-sample scheme for each optimizer (see \ref loading) and verifying that
+a sample scheme for each optimizer (see \ref loading) and verifying that
 they are appropriate for the system under consideration before
 starting a search.
 
@@ -157,20 +157,20 @@ be used to generate your own:
      consideration. This may be done by hand, or by running a search
      just long enough to create the first random generation and saving
      one of the structures.
-  -# Create a starting optstep with the desired convergence criteria
-  -# Manually submit the optimization
+  -# Create a starting optstep with the desired convergence criteria.
+  -# Manually submit the optimization.
   -# If the optimization fails:
     -# First determine why -- if the maximum iterations were exceeded
        or the optimization was aborted due to a badly performing
        minimizer, try one of the ideas below. Other optimization
        problems are beyond the scope of this document.
-    -# Reduce the convergence criteria of the current trial optstep
+    -# Reduce the convergence criteria of the current trial optstep.
     -# Remove degrees of freedom, e.g. by fixing cell parameters,
        atomic positions, etc.
     -# Reduce the accuracy of the calculation in other ways (use a
        courser integration grid, etc).
     -# Change the minimizer (e.g. tell the optimizer to use conjugate
-       gradients rather than BFGS, etc)
+       gradients rather than BFGS, etc).
   -# Once the optimization succeeds, create another set of input files
      with the desired convergence criteria for all degrees of freedom.
   -# Manually submit the new optimization step. If it fails, try the
