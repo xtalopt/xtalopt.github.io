@@ -27,6 +27,7 @@ namespace XtalOpt {
     - \ref remotell
     - \ref localqi
   - \ref files
+    - \ref reading-results-txt
   - \ref search-set
     - \ref hardness
   - \ref begin
@@ -824,7 +825,7 @@ corrupted, a previous copy of these files is also saved as
 @subsection reading-results-txt Reading the results.txt File
 
 The "results.txt" file is written in the local working directory, and
-it contains a lot of information that is useful for offline analysis.
+it contains a lot of information that can be useful for offline analysis.
 
 The results.txt file will typically look something like the following:
 
@@ -871,9 +872,13 @@ The following is a description of each column:
    - Status: The current status of the structure. If the status is a
              duplicate/supercell, the structure of which it is a
              duplicate/supercell will follow in parentheses as
-             \<generation\>x\<IDNumber\>. If the status says
+             \<generation\>x\<idNumber\>. If the status says
              "Skipped Optimization", then, most likely, the structure is
              a primitive reduction of another structure.
+
+The output files for any structure can be examined by looking into its
+corresponding \<generation\>x\<idNumber\> directory within the local
+working directory (see \ref files for more information).
 
 \section search-set Search Settings
 \image html search-set.png
