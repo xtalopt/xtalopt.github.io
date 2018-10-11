@@ -1060,7 +1060,10 @@ just need to use "ctrl-C" or whatever their process interruption command is.
 One is also able to resume a run via the CLI if they type in
 "xtalopt --resume --dir <path/to/resume/dir>". This will check to see if
 an "xtalopt.state" file is in the specified directory, and if it is, XtalOpt
-will attempt to resume the run.
+will attempt to resume the run. Alternatively, XtalOpt can resume a CLI run
+in the GUI mode if that is desired instead: simply start up the GUI and
+resume the run using the "xtalopt.state" file as one would normally do
+for resuming a run started in the GUI mode.
 
 While a CLI run is in progress (or after any run is finished), the user may
 view the enthalpy/energy results via the "results.txt" file in the local
