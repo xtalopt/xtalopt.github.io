@@ -1067,12 +1067,6 @@ used to generate the plot tab in a GUI run. Similar to a GUI run, plot axes
 and other options may be changed. In addition, if Avogadro2 is open in the
 background and an Avogadro2 RPC server is running, XtalOpt will still also set
 the structure in the Avogadro2 view to the crystals the user selects.
-
-A note for Linux users: if a window manager is not running on the computer
-attempting to use CLI mode, the program may still crash. One solution to get
-around this is to add the "-platform offscreen" option to the command line
-arguments (this will only work if X11 is installed on the computer). This
-requirement will hopefully be removed in the next XtalOpt update.
 */
 
 }
