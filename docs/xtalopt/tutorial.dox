@@ -301,7 +301,7 @@ character to define blocks. The percent character is special in the
 XtalOpt input template parser to define keywords (see below). To
 insert a literal "%" into the input, use %%percent%.
 
-E.\ g.\ Specification of the fractional coordinate block in the .cell
+E.\ g., specification of the fractional coordinate block in the .cell
 template should look like:
 
 @code
@@ -1003,8 +1003,8 @@ will bring up a menu of options. These options include: Killing a structure, res
 done mid-run.
 
 \subsection trends View trends
-\image html trend-view.png "The ``Plot'' tab mid-run displaying enthalpy vs.\ volume. Each structure is labeled with its Hermann Mauguin spacegroup symbol."
-\image latex trend-view.png "The ``Plot'' tab mid-run displaying enthalpy vs.\ volume. Each structure is labeled with its Hermann Mauguin spacegroup symbol." width=\textwidth
+\image html trend-view.png "The ``Plot'' tab mid-run displaying enthalpy vs. volume. Each structure is labeled with its Hermann Mauguin spacegroup symbol."
+\image latex trend-view.png "The ``Plot'' tab mid-run displaying enthalpy vs. volume. Each structure is labeled with its Hermann Mauguin spacegroup symbol." width=\textwidth
 
 Another visualization and analysis tool available during the search is
 the interactive plot. The plot is capable of investigating trends in
@@ -1012,16 +1012,16 @@ the search by plotting a point for each individual using structure
 number, generation number, enthalpy, energy, PV enthalpy term,
 lattice parameters, or cell volume on either axis. This powerful
 feature allows the user to visualize complex relationships present in
-the generated structures. E.\ g.\, a plot of enthalpy vs.\ structure
+the generated structures. E.\ g., a plot of enthalpy \f$\mbox{vs.}\f$ structure
 number provides an overview of the search's progress. Or, recalling
-that H = U + PV, plotting enthalpy vs.\ PV enthalpy term or energy
+that H = U + PV, plotting enthalpy \f$\mbox{vs.}\f$ PV enthalpy term or energy
 lends insight into whether the enthalpy (H) is dominated by atomic
 interactions (U) or cell parameters (PV). Further information is
 available by labeling the points with the individual's spacegroup
 number, Hermann Mauguin spacegroup symbol, enthalpy, energy, PV
 term, volume, generation, or index number.
 
-A particularly useful plot is that of enthalpy vs.\ cell volume.
+A particularly useful plot is that of enthalpy \f$\mbox{vs.}\f$ cell volume.
 With such a view, we can see a general trend that enthalpy
 increases with volume (the effect is much more pronounced for systems
 at higher pressures), and also that below a certain volume, enthalpy
