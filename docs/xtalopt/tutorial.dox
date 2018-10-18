@@ -110,7 +110,7 @@ of formula units.
 Spacegroup constraints can only be used in the initial generation. Randspg
 cannot be used simultaneously with molunit nor with mitosis.
 
-For more information on randSpg, see <a href="https://doi.org/10.1016/j.cpc.2016.12.005">
+For more information on RandSpg, see <a href="https://doi.org/10.1016/j.cpc.2016.12.005">
 this paper</a>.
 
 
@@ -301,7 +301,7 @@ character to define blocks. The percent character is special in the
 XtalOpt input template parser to define keywords (see below). To
 insert a literal "%" into the input, use %%percent%.
 
-E.g. Specification of the fractional coordinate block in the .cell
+E.\ g.\ Specification of the fractional coordinate block in the .cell
 template should look like:
 
 @code
@@ -409,7 +409,7 @@ See the SIESTA manual for information on obtaining the psf files.
 
  <p>Notice the other %%keyword% values in the xtal.fdf templates. These are used to enter information that is specific to a search or structure when the actual input files are written prior to job submission. Click the "Help" button for a full listing of the available keywords.</p>
 
-Note: that in the current implementation XtalOpt uses the Total Final Energy printed in the output to determine the fitness of a structure. If the user would like to use a different thermodynamic quantity for the fitness, please contact the XtalOpt developers.
+Note: that in the current implementation XtalOpt uses the "Total Final Energy" printed in the output to determine the fitness of a structure. If the user would like to use a different thermodynamic quantity for the fitness, please contact the XtalOpt developers.
 
  <p>XtalOpt expects SIESTA to use the following filenames:</p>
 
@@ -959,7 +959,7 @@ green), while structure 2x10 is waiting to be optimized (light blue).
 
 Other useful information is displayed about each structure, such as
 the time spent in optimization, the optimized enthalpy, the cell
-volume, spacegroup, and each structure's ancestry (i.e. parent(s) and
+volume, spacegroup, and each structure's ancestry (i.\ e.\ parent(s) and
 parameters for the genetic operator that generated it). A status bar
 on the bottom of the window shows the number of structures that are
 optimized, running, and failing at any given time. This information is
@@ -1003,8 +1003,8 @@ will bring up a menu of options. These options include: Killing a structure, res
 done mid-run.
 
 \subsection trends View trends
-\image html trend-view.png "The ``Plot'' tab mid-run displaying enthalpy vs. volume. Each structure is labeled with its Hermann Mauguin spacegroup symbol."
-\image latex trend-view.png "The ``Plot'' tab mid-run displaying enthalpy vs. volume. Each structure is labeled with its Hermann Mauguin spacegroup symbol." width=\textwidth
+\image html trend-view.png "The ``Plot'' tab mid-run displaying enthalpy vs.\ volume. Each structure is labeled with its Hermann Mauguin spacegroup symbol."
+\image latex trend-view.png "The ``Plot'' tab mid-run displaying enthalpy vs.\ volume. Each structure is labeled with its Hermann Mauguin spacegroup symbol." width=\textwidth
 
 Another visualization and analysis tool available during the search is
 the interactive plot. The plot is capable of investigating trends in
@@ -1012,24 +1012,24 @@ the search by plotting a point for each individual using structure
 number, generation number, enthalpy, energy, PV enthalpy term,
 lattice parameters, or cell volume on either axis. This powerful
 feature allows the user to visualize complex relationships present in
-the generated structures. E.g., a plot of enthalpy vs. structure
+the generated structures. E.\ g.\, a plot of enthalpy vs.\ structure
 number provides an overview of the search's progress. Or, recalling
-that H = U + PV, plotting enthalpy vs. PV enthalpy term or energy
+that H = U + PV, plotting enthalpy vs.\ PV enthalpy term or energy
 lends insight into whether the enthalpy (H) is dominated by atomic
 interactions (U) or cell parameters (PV). Further information is
 available by labeling the points with the individual's spacegroup
 number, Hermann Mauguin spacegroup symbol, enthalpy, energy, PV
 term, volume, generation, or index number.
 
-A particularly useful plot is that of enthalpy vs. cell volume.
-From this view, we see a general trend that enthalpy
+A particularly useful plot is that of enthalpy vs.\ cell volume.
+With such a view, we can see a general trend that enthalpy
 increases with volume (the effect is much more pronounced for systems
-at higher pressures), and also that below a certain volume enthalpy
-rises sharply. From this data set, we see that there is a cluster of
-very low enthalpy structures with cell volumes around 180 cubic
-angstroms. Armed with this data, we can update the starting volume on
-the Cell Initialization tab mid-run to reflect this new piece of
-information that the search has provided us. Many of the other
+at higher pressures), and also that below a certain volume, enthalpy
+rises sharply. There will typically be a cluster of very low enthalpy
+structures that have a relatively small volume.
+Armed with this data, we can update the starting volume on
+the "Structure Limits" tab mid-run to reflect this new piece of
+information that the search has provided for us. Many of the other
 parameters governing structure generation and algorithm specifics can
 be similarly modified during a search without the need to restart the
 algorithm.
@@ -1085,7 +1085,7 @@ First of all, one can see all of the XtalOpt CLI options by running
 of each one.
 
 When performing a CLI run, an input file for XtalOpt is required. An example
-which contains detailed explanations of various options can be found <a href="http://xtalopt.github.io/samples/commandLineInterface/xtalopt.in">
+that contains detailed explanations of various options can be found <a href="http://xtalopt.github.io/samples/commandLineInterface/xtalopt.in">
 here</a>.
 
 A CLI run is begun by entering into the terminal "xtalopt --cli". By default,
