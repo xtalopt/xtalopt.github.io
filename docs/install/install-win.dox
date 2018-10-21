@@ -34,7 +34,7 @@ You may also compile OpenSSH, LibSSH, and Qwt on your own, but we do not provide
 
 @section xtalopt XtalOpt
 
-Once you have compiled all of the binaries, you need to run cmake with the locations of all of the dependencies defined. An example of this for MSVC can be found in the batch file in  <a href="https://github.com/xtalopt/XtalOpt/blob/master/scripts/cmake-msvc2015.bat">scripts/cmake-msvc2015.bat</a> file in the XtalOpt repository. Afterwards, you must run "make" (or "nmake" in the case of MSVC) in the build directory. If the cmake option "-DBUILD_INDEPENDENT_PACKAGE" was used, a "make install" (or "nmake install" in the case of MSVC) will install XtalOpt and all of its dependencies into your cmake install directory.
+Once you have compiled all of the binaries, you need to run cmake with the locations of all of the dependencies defined. An example of this for MSVC can be found in the batch file in  <a href="https://github.com/xtalopt/XtalOpt/blob/master/scripts/cmake-msvc.bat">scripts/cmake-msvc.bat</a> file in the XtalOpt repository. Afterwards, you must run "make" (or "nmake" in the case of MSVC) in the build directory. If the cmake option "-DBUILD_INDEPENDENT_PACKAGE" was used, a "make install" (or "nmake install" in the case of MSVC) will install XtalOpt and all of its dependencies into your cmake install directory.
 
 @section test Test the installation
 
