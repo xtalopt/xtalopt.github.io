@@ -516,13 +516,14 @@ a success, a user can add something like this to the end of their job script:
 
 @code
 COMPLETION_STRING="Some string that indicates the job succeeded"
-if grep -Fxq "$COMPLETION_STRING" job.out
+if grep -Fq "$COMPLETION_STRING" job.out
 then
   # The completion string was found
-  echo "Job complete"
+  echo "Completion string was found!"
 else
   # The completion string was not found
   # XtalOpt only checks for job.out, so rename it to cause an error
+  echo "Completion string was not found!"
   mv job.out job_failed.out
 
   # The presence of a job.out file may indicate to XtalOpt that the
