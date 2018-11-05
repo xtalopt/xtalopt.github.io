@@ -823,6 +823,12 @@ In case either the "xtalopt.state" file or the "results.txt" file become
 corrupted, a previous copy of these files is also saved as
 "xtalopt.state.old" and "results_old.txt", respectively.
 
+Note: If a user wishes to change some XtalOpt options before resuming
+a session, the "xtalopt.state" file may be directly edited before
+resuming. Note also, however, that if the "saveSuccessful" keyword in
+the "xtalopt.state" file is equal to "false", the "xtalopt.state.old"
+file will be automatically loaded instead.
+
 @subsection reading-results-txt Reading the results.txt File
 
 The "results.txt" file is written in the local working directory, and
