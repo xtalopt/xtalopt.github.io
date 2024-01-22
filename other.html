@@ -13,6 +13,8 @@
 
   <!-- Scripts -->
   <script src="dist/js/jquery.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -24,7 +26,6 @@
 
   </script>
   <script type="text/javascript" src='dist/js/bootstrap.min.js'></script>
-  <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
     <script> 
       $(function(){
         $("#navbar").load("navbar.html"); 
@@ -128,16 +129,15 @@
         <br>
         <li>Conformers of the substrate and/or matrix molecules are generated and pre–optimized using one of the force field implementations in the OpenBabel library. Either an exhaustive search can be performed, or a specified number of conformers may be created. The latter option does not guarantee that the most stable conformers will be found, since the conformer­generating algorithm stops once the specified number has been reached.</li>
         <br>
-        <li>Conformers of the matrix and/or substrate molecules are chosen such that the probability <a lang="latex">p_{i}</a> of selecting a given individual is calculated from its energy <a lang="latex">E_{i}</sub></a> (evaluated via the specified force field) as:
+        <li>Conformers of the matrix and/or substrate molecules are chosen such that the probability \(p_i\) of selecting a given individual is calculated from its energy \(E_i\) (evaluated via the specified force field) as:
         <br>
         <br>
         <center>      
-          <p lang="latex">
-            \centering
-            p_{i} = N(1 - \frac{E_{i} - E_{min}}{E_{max} - E_{min}})
+          <p>
+          \(p_{i}=N\left(1-\frac{E_{i}-E_\mathrm{min}}{E_\mathrm{max}-E_\mathrm{min}}\right)\)
           </p>
         </center>
-        where <a lang="latex">E_{min}</a> and <a lang="latex">E_{max}</a> are the energies of the most stable and the least stable conformer, and <a lang="latex">N</a> is a normalization factor ensuring that <a lang="latex">\Sigma p_{i} = 1</a>.</li>
+        where \(E_\mathrm{min}\) and \(E_\mathrm{max}\) are the energies of the most stable and the least stable conformer, and \(N\) is a normalization factor ensuring that \(\Sigma p_i = 1\).</li>
         <br>
         <li>The matrix molecules are placed randomly about the substrate subject to user–specified distance constraints. A range for the interatomic distances (IAD) between all atoms in the matrix and substrate molecules may be specified. This ensures that all atoms between any template­matrix pair are separated by at least the minimum IAD (in angstroms), but at least one pair, from each matrix molecule, must be closer than the IAD maximum value.</li>
  </div>
