@@ -12,6 +12,59 @@
   <title>XtalOpt - Zurek Lab</title>
 
   <!-- Scripts -->
+  <!-- Back to Top -->
+  <style>
+  .top {
+    --offset: 50px;
+    position: sticky;
+    bottom: 20px;
+    margin-right: 10px;
+    margin-top: calc(100vh + var(--offset));
+  }
+  .top, .top:link, .top:visited, .top:hover, .top:active {
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 100px;
+    white-space: nowrap;
+    opacity: .5;
+    background: #808080;
+    color: #fff;
+    text-decoration: none;
+  }
+  </style>
+
+  <!-- Collapsibles -->
+  <style>
+  details {
+    user-select: none;
+  }
+  details > summary {
+    display: flex;
+  }
+  details > summary::after {
+    padding-top: 10px;
+    padding-left: 10px;
+    font-style: italic;
+    content: "[show more]";
+  }
+  details[open] > summary::after {
+    content: "[show less]";
+  }
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
+  </style>
+
+  <style>
+  .content {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  }
+  </style>
+
   <script src="dist/js/jquery.js"></script>
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -63,226 +116,246 @@
       <img src="dist/img/xtalopt-banner.png" width="auto">
       <hr>
       <p class="lead">XtalOpt is a free and truly <a href="http://opensource.org/">open source</a> evolutionary algorithm designed for a priori crystal structure prediction. </p>
-
-      <div class="row-fluid">
-        <div class="span4">
-          <a class="btn btn-large btn-primary" href="download.html">Download today</a>
-        </div>
-        <div class="span4">
-          <a class="btn btn-large btn-danger" href="#news">What is new?</a>
-        </div>
-        <div class="span4">
-          <a class="btn btn-large btn-default" href="xtalopt.html">Learn more</a>
-        </div>
-      </div>
+      <br>
+      <center>
+        <a class="popup" target="_blank" href="dist/img/xtalopt-moes.png">
+          <img width="70%" src="dist/img/xtalopt-moes.png" alt="xtalopt-moes.png" >
+        </a>
+          <br>
+          <br>
+          <p class="lead">Using features (properties) calculated by external codes, XtalOpt can perform multi-objective global optimization to find novel (meta)stable phases of functional materials.
+          <div class="row-fluid">
+            <div class="span6">
+              <a class="btn btn-large btn-basic" href="xtalopt.html">Learn more</a>
+            </div>
+            <div class="span6">
+              <a class="btn btn-large btn-basic" href="download.html">Download</a>
+            </div>
+          </div>
+    </div>
 
     <a class="anchor" id="news">
       <br><br>
     </a>
-      <br>
 
     <div class="jumbotron" id="news">
       <h2>News</h2>
       <hr>
-      <h3>XtalOpt Version r12.0 Released!</h3>
-      <div class="row-fluid">
-        <div class="span6">
-          <ul align="left" style="text-align:-moz-left">
-            <li>Added a hardness calculation via AFLOW-ML (Automatic FLOW for Materials Discovery - Machine Learning).</li>
-            <li>Added a hardness fitness function, which allows for the prediction of hard structures.</li>
-            <li>Added a generic optimizer, which allows the user to employ many previously unsupported optimizers for minimizing the geometry of an extended system.</li>
-            <br>
-            <center>
-              <a class="popup" target="_blank" href="dist/img/xtalopt-hardness-enthalpy-plot.png">
-                <img width="90%" src="dist/img/xtalopt-hardness-enthalpy-plot.png" alt="xtalopt-hardness-enthalpy-plot.png" style="border:2px solid grey;border-radius:10px">
-              </a>
-              <p style="font-size:10px">
+      <details>
+        <summary><h4>&#x2752; Oct 21, 2018: XtalOpt Version r12.0 Released</h4></summary>
+        <div class="row-fluid">
+          <div class="span6">
+            <ul align="left" style="text-align:-moz-left">
+              <li>Added a hardness calculation via AFLOW-ML (Automatic FLOW for Materials Discovery - Machine Learning).</li>
+              <li>Added a hardness fitness function, which allows for the prediction of hard structures.</li>
+              <li>Added a generic optimizer, which allows the user to employ many previously unsupported optimizers for minimizing the geometry of an extended system.</li>
+              <br>
+              <center>
+                <a class="popup" target="_blank" href="dist/img/xtalopt-hardness-enthalpy-plot.png">
+                  <img width="70%" src="dist/img/xtalopt-hardness-enthalpy-plot.png" alt="xtalopt-hardness-enthalpy-plot.png" style="border:2px solid grey;border-radius:10px">
+                </a>
+                <p style="font-size:10px">
                 Example of a Hardness vs. Energy plot generated during a hardness search with XtalOpt.
-              </p>
-            </center>
-          </ul>
-        </div>
-        <div class="span6">
-          <ul align="left" style="text-align:-moz-left">
-            <center>
-              <a class="popup" target="_blank" href="dist/img/theoreticalXRDPattern.png">
-                <img width="80%" src="dist/img/theoreticalXRDPattern.png" alt="theoreticalXRDPattern.png" style="border:2px solid grey;border-radius:10px">
-              </a>
-              <p style="font-size:10px">
+                </p>
+              </center>
+            </ul>
+          </div>
+          <div class="span6">
+            <ul align="left" style="text-align:-moz-left">
+              <center>
+                <a class="popup" target="_blank" href="dist/img/theoreticalXRDPattern.png">
+                  <img width="55%" src="dist/img/theoreticalXRDPattern.png" alt="theoreticalXRDPattern.png" style="border:2px solid grey;border-radius:10px">
+                </a>
+                <p style="font-size:10px">
                 Example of a simulated XRD pattern generated with XtalOpt.
-              </p>
-            </center>
-            <li>Added the ability to generate a simulated XRD (X-Ray Diffraction) pattern.</li>
-           <li>Added the ability to use different optimizers and queuing interfaces for each optimization step.</li>
-           <li>Implemented various bug fixes.</li>
-          </ul>
+                </p>
+              </center>
+              <li>Added the ability to generate a simulated XRD (X-Ray Diffraction) pattern.</li>
+              <li>Added the ability to use different optimizers and queuing interfaces for each optimization step.</li>
+              <li>Implemented various bug fixes.</li>
+            </ul>
+          </div>
         </div>
-      </div>
-      <hr>
-      <h3>XtalOpt Version r11.0 Released!</h3>
-      <div class="row-fluid">
-        <div class="span6">
-          <ul align="left" style="text-align:-moz-left">
-            <li>Removed dependence on Avogadro and Open Babel, making XtalOpt a stand-alone program rather than an extension.</li>
-            <li>Changed the license from GPLv2 to a 3-Clause BSD license.</li>
-            <li>Added the optional use of Avogadro2 to render crystals through a remote procedure call (RPC) protocol.</li>
-            <br>
-            <center>
-              <a class="popup" target="_blank" href="dist/img/avogadro2rpc.png">
-                <img width="70%" src="dist/img/avogadro2rpc.png" alt="avogadro2rpc.png" style="border:2px solid grey;border-radius:10px">
-              </a>
-              <p style="font-size:10px">
+        <hr>
+      </details>
+
+      <details>
+        <summary><h4>&#x2752; Sep 11, 2017: XtalOpt Version r11.0 Released</h4></summary>
+        <div class="row-fluid">
+          <div class="span6">
+            <ul align="left" style="text-align:-moz-left">
+              <li>Removed dependence on Avogadro and Open Babel, making XtalOpt a stand-alone program rather than an extension.</li>
+              <li>Changed the license from GPLv2 to a 3-Clause BSD license.</li>
+              <li>Added the optional use of Avogadro2 to render crystals through a remote procedure call (RPC) protocol.</li>
+              <br>
+              <center>
+                <a class="popup" target="_blank" href="dist/img/avogadro2rpc.png">
+                  <img width="70%" src="dist/img/avogadro2rpc.png" alt="avogadro2rpc.png" style="border:2px solid grey;border-radius:10px">
+                </a>
+                <p style="font-size:10px">
                 Example of using Avogadro2 to render a crystal via RPC.
-              </p>
-            </center>
-          </ul>
-        </div>
-        <div class="span6">
-          <ul align="left" style="text-align:-moz-left">
-            <center>
-              <a class="popup" target="_blank" href="dist/img/cli-example.png">
-                <img width="70%" src="dist/img/cli-example.png" alt="cli-example.png" style="border:2px solid grey;border-radius:10px">
-              </a>
-              <p style="font-size:10px">
+                </p>
+              </center>
+            </ul>
+          </div>
+          <div class="span6">
+            <ul align="left" style="text-align:-moz-left">
+              <center>
+                <a class="popup" target="_blank" href="dist/img/cli-example.png">
+                  <img width="70%" src="dist/img/cli-example.png" alt="cli-example.png" style="border:2px solid grey;border-radius:10px">
+                </a>
+                <p style="font-size:10px">
                 Example of using the CLI mode of XtalOpt.
-              </p>
-            </center>
-            <li>Added a command-line interface (CLI) to run the program and generate plots.</li>
-           <li>Added the ability for the user to define custom minimum inter-atomic distances (IAD) between pairs of atom types.</li>
-           <li>Implemented various bug fixes.</li>
-          </ul>
+                </p>
+              </center>
+              <li>Added a command-line interface (CLI) to run the program and generate plots.</li>
+              <li>Added the ability for the user to define custom minimum inter-atomic distances (IAD) between pairs of atom types.</li>
+              <li>Implemented various bug fixes.</li>
+            </ul>
+          </div>
         </div>
-      </div>
-      <hr>
-      <h3>XtalOpt Version r10.0 Released!</h3>
-      <center>
-        <a class="popup" target="_blank" href="dist/img/xtalopt-r10.png">
-          <img width="60%" src="dist/img/xtalopt-r10.png" alt="xtalopt-r10" max-width="85%">
-        </a>
-      </center>
-      <div class="row-fluid">
-        <div class="span6">
-          <ul align="left" style="text-align:-moz-left">
-            <center>
-              <a class="popup" target="_blank" href="dist/img/randspg-cb.png">
-                <img width="100%" src="dist/img/randspg-cb.png" alt="randspg-cb" max-width="85%" style="border:2px solid grey;border-radius:10px">
-              </a>
-            </center>
-            <br>
-            <br>
-            <li>Implementation of RandSpg, an algorithm that generates random crystals with specific spacegroups. This algorithm can optionally be used to create symmetric structures in the initial random generation.</li>
-            <br>
-            <br>
-            <center>
-              <a class="popup" target="_blank" href="dist/img/randspg-dialog.png">
-                <img width="80%" src="dist/img/randspg-dialog.png" alt="randspg-dialog" max-width="85%">
-              </a>
-            </center>
-          </ul>
+        <hr>
+      </details>
+
+      <details>
+        <summary><h4>&#x2752; Jun 14, 2017: XtalOpt Version r10.0 Released</h4></summary>
+        <center>
+          <a class="popup" target="_blank" href="dist/img/xtalopt-r10.png">
+            <img width="45%" src="dist/img/xtalopt-r10.png" alt="xtalopt-r10" max-width="85%">
+          </a>
+        </center>
+        <div class="row-fluid">
+          <div class="span6">
+            <ul align="left" style="text-align:-moz-left">
+              <center>
+                <a class="popup" target="_blank" href="dist/img/randspg-cb.png">
+                  <img width="80%" src="dist/img/randspg-cb.png" alt="randspg-cb" max-width="85%" style="border:2px solid grey;border-radius:10px">
+                </a>
+              </center>
+              <br>
+              <br>
+              <li>Implementation of RandSpg, an algorithm that generates random crystals with specific spacegroups. This algorithm can optionally be used to create symmetric structures in the initial random generation.</li>
+              <br>
+              <br>
+              <center>
+                <a class="popup" target="_blank" href="dist/img/randspg-dialog.png">
+                  <img width="80%" src="dist/img/randspg-dialog.png" alt="randspg-dialog" max-width="85%">
+                </a>
+              </center>
+            </ul>
+          </div>
+          <div class="span6">
+            <ul align="left" style="text-align:-moz-left">
+              <li>Inclusion of variable forumla units within XtalOpt enables the search for cells with multiple numbers of formula units within a single run.</li>
+              <br>
+              <br>
+              <center>
+                <a class="popup" target="_blank" href="dist/img/fu.png">
+                  <img width="80%" src="dist/img/fu.png" alt="formula units" max-width="85%" style="border:2px solid grey;border-radius:10px">
+                </a>
+              </center>
+              <br>
+              <br>
+              <li>A molecular-unit generator permits users to create single-center molecules in the unit cell during the initial generation step.</li>
+              <br>
+              <br>
+              <center>
+                <a class="popup" target="_blank" href="dist/img/molunit.png">
+                  <img width="70%" src="dist/img/molunit.png" alt="molUnit" max-width="85%" style="border:2px solid grey;border-radius:10px">
+                </a>
+              </center>
+            </ul>
+          </div>
         </div>
-        <div class="span6">
-          <ul align="left" style="text-align:-moz-left">
-            <li>Inclusion of variable forumla units within XtalOpt enables the search for cells with multiple numbers of formula units within a single run.</li>
-            <br>
-            <br>
-            <center>
-              <a class="popup" target="_blank" href="dist/img/fu.png">
-                <img width="100%" src="dist/img/fu.png" alt="formula units" max-width="85%" style="border:2px solid grey;border-radius:10px">
-              </a>
-            </center>
-            <br>
-            <br>
-            <li>A molecular-unit generator permits users to create single-center molecules in the unit cell during the initial generation step.</li>
-            <br>
-            <br>
-            <center>
-              <a class="popup" target="_blank" href="dist/img/molunit.png">
-                <img width="100%" src="dist/img/molunit.png" alt="molUnit" max-width="85%" style="border:2px solid grey;border-radius:10px">
-              </a>
-            </center>
-          </ul>
-        </div>
-      </div>
-      <hr>
-      <h3>Avogadro2 Updates</h3>
+        <hr>
+      </details>
+
+      <details>
+        <summary><h4>&#x2752; Avogadro2 Updates</h4></summary>
         Our Ph.D. student, Patrick Avery, was accepted to the Google Summer of Code 2016!!!
-            <br><br>
+        <br><br>
         He has been working on Avogadro2.
-            <br><br>
+        <br><br>
         You can read about his most recent work on his <a target='_blank' href="http://avogadro2crystals.blogspot.com/2016/06/recently-those-of-us-in-google-summer.html?m=1">blog</a>.
-      <hr>
-      <h3>XtalOpt Version r9.0 Released!</h3>
-      <div class="row-fluid">
-        <div class="span6">
-          <ul align="left" style="text-align:-moz-left">
-            <li>Customizable polling interval for updating remote queue information.</li>
-            <li>Automatic removal of remote working files optional.</li>
-            <center>
-              <a class="popup" target="_blank" href="dist/img/xtalopt-queue.png">
-                <img width="100%" src="dist/img/xtalopt-queue.png" alt="xtalopt-queue.png" max-width="85%">
-              </a>
-            </center>
-            <li>Optional removal of unnecessary files for VASP calculations.</li>
-            <li>Added a new "mitosis" function used to generate higher local order for initial structures.
-            <br>
-            <br>
-            <center>
-              <a class="popup" target="_blank" href="dist/img/mitosis.png">
-                <img width="70%" src="dist/img/mitosis.png" alt="mitosis.png" style="border:2px solid grey;border-radius:10px">
-              </a>
-              <p style="font-size:10px">
-                Options for the "mitosis" function found in the "Structure Limits" tab.
-              </p>
-            </center>
-            <li>Option to rank all current structures and export structures to a new subdirectory as .cml, CONTCAR, or .got.</li>
-          </ul>
+        <hr>
+      </details>
+
+      <details>
+        <summary><h4>&#x2752; Aug 11, 2016: XtalOpt Version r9.1 Released</h4></summary>
+        <div class="row-fluid">
+          <div class="span6">
+            <ul align="left" style="text-align:-moz-left">
+              <li>Customizable polling interval for updating remote queue information.</li>
+              <li>Automatic removal of remote working files optional.</li>
+              <center>
+                <a class="popup" target="_blank" href="dist/img/xtalopt-queue.png">
+                  <img width="90%" src="dist/img/xtalopt-queue.png" alt="xtalopt-queue.png" max-width="85%">
+                </a>
+              </center>
+              <li>Optional removal of unnecessary files for VASP calculations.</li>
+              <li>Added a new "mitosis" function used to generate higher local order for initial structures.
+                <br>
+                <br>
+                <center>
+                  <a class="popup" target="_blank" href="dist/img/mitosis.png">
+                    <img width="70%" src="dist/img/mitosis.png" alt="mitosis.png" style="border:2px solid grey;border-radius:10px">
+                  </a>
+                  <p style="font-size:10px">
+                  Options for the "mitosis" function found in the "Structure Limits" tab.
+                  </p>
+                </center>
+                <li>Option to rank all current structures and export structures to a new subdirectory as .cml, CONTCAR, or .got.</li>
+            </ul>
+          </div>
+          <div class="span6">
+            <ul align="left" style="text-align:-moz-left">
+              <li>Limit the total number of structures created during a run.</li>
+              <li>New option to replace a failing structure with a new offspring.</li>
+              <li>Ability to “inject” (seed) a structure mid-run</li>
+              <li>Minimum atomic separation now specified as a fraction of the sum of atomic radii, with a hard minimum.</li>
+              <li>Submission of remote calculations is throttled to ease DRMS load.</li>
+              <li>More server-friendly method of fetching queue data.</li>
+              <li>Support for GULP shell/core calculations added.</li>
+              <li>Incorporated the XtalComp library for duplicate structure removal (niching).</li>
+              <br>
+              <center>
+                <a class="popup" target="_blank" href="dist/img/xtalopt-dup.png">
+                  <img width="40%" src="dist/img/xtalopt-dup.png" alt="xtalopt-dup.png" style="border:2px solid grey;border-radius:10px">
+                </a>
+              </center>
+              <br>
+              <li>Fix compilation against Qt 4.6.3 and 4.8.0.</li>
+              <li>Updated space-group detection library to spglib 1.0.8.</li>
+              <li>Bundled libssh library removed, now an optional dependency.</li>
+              <li>Added option to use command-line ssh/scp interfaces when libssh is unavailable or Kerberos authentication is needed.</li>
+              <li>Implemented an extension for an automated stochastic docking program (RandomDock) that supports MOPAC, ADF, GAMESS and Gaussian as back-end molecular quantum chemistry engines.
+                <li>Numerous misc bugfixes.</li>
+            </ul>
+          </div>
         </div>
-        <div class="span6">
-          <ul align="left" style="text-align:-moz-left">
-            <li>Limit the total number of structures created during a run.</li>
-            <li>New option to replace a failing structure with a new offspring.</li>
-            <li>Ability to “inject” (seed) a structure mid-run</li>
-            <li>Minimum atomic separation now specified as a fraction of the sum of atomic radii, with a hard minimum.</li>
-            <li>Submission of remote calculations is throttled to ease DRMS load.</li>
-            <li>More server-friendly method of fetching queue data.</li>
-            <li>Support for GULP shell/core calculations added.</li>
-            <li>Incorporated the XtalComp library for duplicate structure removal (niching).</li>
-            <br>
-            <center>
-              <a class="popup" target="_blank" href="dist/img/xtalopt-dup.png">
-                <img width="50%" src="dist/img/xtalopt-dup.png" alt="xtalopt-dup.png" style="border:2px solid grey;border-radius:10px">
-              </a>
-            </center>
-            <br>
-            <li>Fix compilation against Qt 4.6.3 and 4.8.0.</li>
-            <li>Updated space-group detection library to spglib 1.0.8.</li>
-            <li>Bundled libssh library removed, now an optional dependency.</li>
-            <li>Added option to use command-line ssh/scp interfaces when libssh is unavailable or Kerberos authentication is needed.</li>
-            <li>Implemented an extension for an automated stochastic docking program (RandomDock) that supports MOPAC, ADF, GAMESS and Gaussian as back-end molecular quantum chemistry engines.
-            <li>Numerous misc bugfixes.</li>
-          </ul>
-        </div>
-      </div>
+      </details>
     </div>
 
     <a class="anchor" id="support">
-      <br>
-      <br>
+      <br><br>
     </a>
 
     <div class="jumbotron">
       <h2>Supporters</h2>
-      <img src="dist/img/ub-logo.png" alt="ub-logo.png" style="max-width:15%">
-      <img src="dist/img/nsf_seal_scaled.png" alt="nsf_seal_scaled.png" style="max-width:15%">
+      <hr>
+      <img src="dist/img/ub-logo.png" alt="ub-logo.png" style="max-width:8%">
+      <img src="dist/img/nsf_seal_scaled.png" alt="nsf_seal_scaled.png" style="max-width:8%">
       <br>
       <img src="dist/img/ub-ccr-logo.jpg" alt="ub-ccr-logo.jpg" style="max-width:70%">
     </div>
+
+    <a href="#" class="top">Back to Top &#x21E7;</a>
   </div>
 
   <!-- Javascript
-  ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script src="dist/js/jquery.js"></script>
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="dist/js/jquery.js"></script>
 
 </body>
 </html>

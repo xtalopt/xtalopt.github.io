@@ -6,10 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="XtalOpt, an open-source evolutionary algorithm designed for a priori crystal structure prediction.">
   <meta name="author" content="Zackary Falls">
-  <meta property="og:title" content="XtalOpt - Zurek Lab">
+  <meta property="og:title" content="XtalOpt - About XtalOpt">
   <meta property="og:description" content="XtalOpt, an open-source evolutionary algorithm designed for a priori crystal structure prediction.">
   <meta property="og:image" content="http://xtalopt.github.io/dist/img/xtalopt-img.png">
-  <title>XtalOpt - Zurek Lab</title>
+  <title>XtalOpt - About XtalOpt</title>
 
   <!-- Scripts -->
   <script src="dist/js/jquery.js"></script>
@@ -40,11 +40,31 @@
       })
     });
   </script>
-
   <!-- Styles -->
   <link href="dist/css/bootstrap.css" rel="stylesheet">
   <link href="dist/css/bootstrap-responsive.css" rel="stylesheet">
   <link href="dist/css/style.css" rel="stylesheet">
+
+  <!-- Back to Top -->
+  <style>
+  .top {
+    --offset: 50px;
+    position: sticky;
+    bottom: 20px;
+    margin-right: 10px;
+    margin-top: calc(100vh + var(--offset));
+  }
+  .top, .top:link, .top:visited, .top:hover, .top:active {
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 100px;
+    white-space: nowrap;
+    opacity: .5;
+    background: #808080;
+    color: #fff;
+    text-decoration: none;
+  }
+  </style>
 
   <!-- Fav and touch icons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="dist/img/xtalopt-logo.png">
@@ -65,41 +85,33 @@
       <img src="dist/img/xtalopt-banner.png" width="auto">
       <hr>
       <p class="lead">
-        XtalOpt is a free and truly <a href="http://opensource.org/">open source</a> evolutionary algorithm designed for a priori crystal structure prediction.
-      </p>
-
-      <p style="font-size:40px">
-        <img src="dist/img/avogadro-logo.png" alt="avogadro-logo.png" style="max-width:72px">
-        +
-        <img src="dist/img/xtalopt-logo.png" alt="xtalopt-logo.png" style="max-width:72px">
+      XtalOpt is a free and truly open source evolutionary algorithm designed for a priori crystal structure prediction.
       </p>
 
       <p class="lead">
-        XtalOpt is implemented as an extension to the <a class="ext-link" href="http://avogadro.cc/wiki/Main_Page">Avogadro</a> molecular editor.
+      A detailed description of XtalOpt setup and usage:
       </p>
+      <a target="_blank" class="btn btn-large btn-basic" href="docs/xtalopt/latex/refman.pdf" onclick="ga('send','event','PDF','Download','tutorial');">User Manual</a>
+      <br>
+      <br>
 
       <p class="lead">
-        Check out a few of the features:
+      A quick overview of the XtalOpt code features:
       </p>
-      <a class="btn btn-large btn-inverse" href="#interface">User Interface</a>
-      <a class="btn btn-large btn-inverse" href="#operators">Mutation Operators</a>
+      <a class="btn btn-large btn-basic" href="#interface">User Interface</a>
+      <a class="btn btn-large btn-basic" href="#operators">Evolutionary Operations</a>
       <br>
       <br>
-      <a class="popup" target="_blank" href="dist/img/avogadro-screenshot.png">
-        <img src="dist/img/avogadro-screenshot.png" alt="avogadro-screenshot.png" width="100%">
-      </a>
-      <p style="font-size:11px">
-        Screenshot of Avogadro visualizing a 16 x TiO<sub>2</sub> cell.
-      </p>
     </div>
+
 
     <a class="anchor" id="interface">
       <br><br>
     </a>
-      <br>
 
     <div class="jumbotron">
       <h2>User Interface</h2>
+      <hr>
       <h3>Structure Limits</h3>
       <div class="row-fluid">
         <div class="span6">
@@ -107,16 +119,16 @@
             <img width="100%" src="dist/img/xtalopt-init.png" alt="xtalopt-init.png">
           </a>
           <p style="font-size:11px">
-            The "Structure Limits" tab
+          The "Structure Limits" tab
           </p>
         </div>
         <div class="span6" align="left" style="text-align:-moz-left">
           <ul>
             <li style="padding-top:7px">This tab is where the user defines the parameters of the each cell generated during the search.
-            <li style="padding-top:7px">The user can specify the stoichiometry for each cell (e.g., 16 x Ti and 32 x O).
-            <li style="padding-top:7px">A range can be set for the length of each cell vector (a, b, and c) and the corresponding angles (&#945, &#946, and &#947).
-            <li style="padding-top:7px">The combination of the cell vector lengths determines the cell volume, but the user can set a limited range for the volume, or even a fixed volume.
-            <li style="padding-top:7px">Limiting the interatomic distances ensures the program is not generating nonsensical structures.
+              <li style="padding-top:7px">The user can specify the stoichiometry for each cell (e.g., 4 x Ti and 8 x O).
+                <li style="padding-top:7px">A range can be set for the length of each cell vector (a, b, and c) and the corresponding angles (&#945, &#946, and &#947).
+                  <li style="padding-top:7px">The combination of the cell vector lengths determines the cell volume, but the user can set a limited range for the volume, or even a fixed volume.
+                    <li style="padding-top:7px">Limiting the interatomic distances ensures the program is not generating nonsensical structures.
           </ul>
         </div>
       </div>
@@ -126,9 +138,9 @@
         <div class="span6" align="left" style="text-align:-moz-left">
           <br>
           <ul>
-              <li style="padding-top:7px">Choose from several queueing systems and optimizer combinations.
-            <li style="padding-top:7px">Queue systems supported include: SLURM, PBS, LSF, etc.
-            <li style="padding-top:7px">Optimizers include: VASP, GULP, CASTEP, etc.
+            <li style="padding-top:7px">Choose from several queueing systems and optimizer combinations.
+              <li style="padding-top:7px">Queue systems supported include: SLURM, PBS, LSF, etc.
+                <li style="padding-top:7px">Optimizers include: VASP, GULP, CASTEP, etc.
           </ul>
         </div>
         <div class="span6">
@@ -136,7 +148,7 @@
             <img width="100%" src="dist/img/xtalopt-opt.png" alt="xtalopt-opt.png">
           </a>
           <p style="font-size:11px">
-            The "Optimization Settings" tab
+          The "Optimization Settings" tab
           </p>
         </div>
       </div>
@@ -148,101 +160,96 @@
             <img width="100%" src="dist/img/xtalopt-search.png" alt="xtalopt-search.png">
           </a>
           <p style="font-size:11px">
-            The "Search Settings" tab
+          The "Search Settings" tab
           </p>
         </div>
         <div class="span6" align="left" style="text-align:-moz-left">
           <br>
           <ul>
-              <li style="padding-top:7px">"Search Settings" is where the user can alter how the search will procede.
+            <li style="padding-top:7px">"Search Settings" is where the user can alter how the search will procede.
               <li style="padding-top:7px">The number of randomly generated initial structures and number of concurrently running structures are controlled in this tab.
-              <li style="padding-top:7px">The termination criteria of final number of structures can be set here, as well.
-              <li style="padding-top:7px">Users can adjust the percentage of occurence of each operator type.
-              <li style="padding-top:7px">Furthermore, the individual parameters of each opertaor can be fine tuned (number of exchanges in a "permustrain" or minimum contribution from a parent during a "crossover").
-              <li style="padding-top:7px">Duplicate matching parameters are also found here.
+                <li style="padding-top:7px">The termination criteria of final number of structures can be set here, as well.
+                  <li style="padding-top:7px">Users can adjust the percentage of occurence of each operator type.
+                    <li style="padding-top:7px">Furthermore, the individual parameters of each opertaor can be fine tuned (number of exchanges in a "permustrain" or minimum contribution from a parent during a "crossover").
+                      <li style="padding-top:7px">Duplicate matching parameters are also found here.
           </ul>
         </div>
       </div>
 
       <h3>Progress</h3>
-          <ul align="left" style="text-align:-moz-left">
-            <li style="padding-top:7px">As XtalOpt performs the search, the progress table continuously updates, providing information about each structure.
-            <li style="padding-top:7px">In the figure we see individuals in various stages of completion:
+      <ul align="left" style="text-align:-moz-left">
+        <li style="padding-top:7px">As XtalOpt performs the search, the progress table continuously updates, providing information about each structure.
+          <li style="padding-top:7px">In the figure we see individuals in various stages of completion:
             <ul align="left" style="text-align:-moz-left">
-                <li style="padding-top:7px">One structure XtalOpt displays is optimized (in blue), another structure has been automatically marked as a duplicate (dark green) and removed from the breeding pool, yet another structure is currently undergoing a local optimization (light green), while another structure is waiting to be optimized (light blue).
+              <li style="padding-top:7px">One structure XtalOpt displays is optimized (in blue), another structure has been automatically marked as a duplicate (dark green) and removed from the breeding pool, yet another structure is currently undergoing a local optimization (light green), while another structure is waiting to be optimized (light blue).
             </ul>
             <li style="padding-top:7px">Other useful information is displayed about each structure, such as the time spent in optimization, the optimized enthalpy, the cell volume, spacegroup, and each structure’s ancestory (i.e. parent(s) and parameters for the evolutionary operator that generated it).
-            <li style="padding-top:7px">A status bar on the bottom of the window shows the number of structures that are optimized, running, and failing at any given time.
-            <li style="padding-top:7px">This information is visible regardless of which tab is currently being viewed.
-            <li style="padding-top:7px">An additional feature of the progress table is the ability to immediately visualize any of the individuals in the Avogadro main window – simply clicking on a row in this table will display the three-dimensional structure in Avogadro, where it can be visualized, modified, or exported.
-            <li style="padding-top:7px">If the user would like to add a bit of “intelligent design” to the evolutionary process, a structure can be modified and then resubmitted using a context (right-click) menu from the progress table.
-            <li style="padding-top:7px">The context menu provides tools to (un)kill a structure, resubmit for local optimization at an arbitrary optimization step, or replace a problematic structure with a new, random individual.
-          </ul>
-            <a class="popup" target="_blank" href="dist/img/xtalopt-prog.png">
-              <img src="dist/img/xtalopt-prog.png" alt="xtalopt-prog.png" width="100%">
-            </a>
-            <p style="font-size:11px">
-              The "Progress" tab
-            </p>
+              <li style="padding-top:7px">A status bar on the bottom of the window shows the number of structures that are optimized, running, and failing at any given time.
+                <li style="padding-top:7px">This information is visible regardless of which tab is currently being viewed.
+                  <li style="padding-top:7px">An additional feature of the progress table is the ability to immediately visualize any of the individuals in the Avogadro main window – simply clicking on a row in this table will display the three-dimensional structure in Avogadro, where it can be visualized, modified, or exported.
+                    <li style="padding-top:7px">If the user would like to add a bit of “intelligent design” to the evolutionary process, a structure can be modified and then resubmitted using a context (right-click) menu from the progress table.
+                      <li style="padding-top:7px">The context menu provides tools to (un)kill a structure, resubmit for local optimization at an arbitrary optimization step, or replace a problematic structure with a new, random individual.
+      </ul>
+      <a class="popup" target="_blank" href="dist/img/xtalopt-prog.png">
+        <img src="dist/img/xtalopt-prog.png" alt="xtalopt-prog.png" width="50%">
+      </a>
+      <p style="font-size:11px">
+      The "Progress" tab
+      </p>
 
-        <h3>Plot</h3>
-        <ul align="left" style="text-align:-moz-left">
-            <li style="padding-bottom:7px">Another visualization and analysis tool available during the search is the interactive plot.</li>
-            <li style="padding-bottom:7px">Allows investigation of various trends in the search by plotting a point for each individual.</li>
-          <li style="padding-bottom:7px">Each point can be plotted based upon structure number, generation number, enthalpy, energy, PV enthalpy term, lattice parameters, or cell volume on either axis.</li>
-          <li style="padding-bottom:7px">Further information is available by labeling the points with the individual’s spacegroup number, Hermann-Mauguin spacegroup symbol, enthalpy, energy, PV term, volume, generation, or index number.</li>
-          <li style="padding-bottom:7px">The plot is also interactive; zooming and panning are possible using simple mouse controls.
+      <h3>Plot</h3>
+      <ul align="left" style="text-align:-moz-left">
+        <li style="padding-bottom:7px">Another visualization and analysis tool available during the search is the interactive plot.</li>
+        <li style="padding-bottom:7px">Allows investigation of various trends in the search by plotting a point for each individual.</li>
+        <li style="padding-bottom:7px">Each point can be plotted based upon structure number, generation number, enthalpy, energy, PV enthalpy term, lattice parameters, or cell volume on either axis.</li>
+        <li style="padding-bottom:7px">Further information is available by labeling the points with the individual’s spacegroup number, Hermann-Mauguin spacegroup symbol, enthalpy, energy, PV term, volume, generation, or index number.</li>
+        <li style="padding-bottom:7px">The plot is also interactive; zooming and panning are possible using simple mouse controls.
           <li style="padding-bottom:7px">Clicking on a structure’s point in the plot will load it in the main Avogadro window, allowing all the same functionality as described above in the progress table section.
-        </ul>
-        <div class="row-fluid">
-          <div class="span6">
-            <a class="popup" target="_blank" href="dist/img/xtalopt-plot-opt.png">
-              <img src="dist/img/xtalopt-plot-opt.png" alt="xtalopt-plot-opt.png" width="100%">
-            </a>
-            <p style="font-size:11px">
-              The "Plot" tab showing optimized (blue) structures
-            </p>
-          </div>
-          <div class="span6">
-            <a class="popup" target="_blank" href="dist/img/xtalopt-plot-opt+dup.png">
-              <img src="dist/img/xtalopt-plot-opt+dup.png" alt="xtalopt-plot-opt+dup.png" width="100%">
-            </a>
-            <p style="font-size:11px">
-              The "Plot" tab showing optimized (blue) and duplicate (green) structures
-            </P>
-          </div>
+      </ul>
+      <div class="row-fluid">
+        <div class="span6">
+          <a class="popup" target="_blank" href="dist/img/xtalopt-plot-opt.png">
+            <img src="dist/img/xtalopt-plot-opt.png" alt="xtalopt-plot-opt.png" width="100%">
+          </a>
+          <p style="font-size:11px">
+          The "Plot" tab showing optimized (blue) structures
+          </p>
+        </div>
+        <div class="span6">
+          <a class="popup" target="_blank" href="dist/img/xtalopt-plot-opt+dup.png">
+            <img src="dist/img/xtalopt-plot-opt+dup.png" alt="xtalopt-plot-opt+dup.png" width="100%">
+          </a>
+          <p style="font-size:11px">
+          The "Plot" tab showing optimized (triangles) and duplicate (squares) structures
+          </P>
         </div>
       </div>
+    </div>
 
     <a class="anchor" id="operators">
       <br><br>
     </a>
-      <br>
-    <a class="anchor" id="operators">
-      <br><br>
-    </a>
-      <br>
 
     <div class="jumbotron">
-      <h2>Mutation Operators</h2>
-      <br>
+      <h2>Evolutionary Operations</h2>
+      <hr>
       <h3>Strain</h3>
       <p>
-        <ul align="left" style="text-align:-moz-left">
-          <li style="padding-bottom:7px">The strain operator allows XtalOpt to mutate the unit cell parameters, but not the fractional positions of the atoms.
+      <ul align="left" style="text-align:-moz-left">
+        <li style="padding-bottom:7px">The strain operator allows XtalOpt to mutate the unit cell parameters, but not the fractional positions of the atoms.
           <li style="padding-bottom:7px">One can multiply the cell row vectors by the symmetric voight matrix, as shown below,
-          <center>
-            <p>
-            \( \vec{\textrm{v}}_{\textrm{new}} = \vec{\textrm{v}}
-            \begin{bmatrix}
+            <center>
+              <p>
+              \( \vec{\textrm{v}}_{\textrm{new}} = \vec{\textrm{v}}
+              \begin{bmatrix}
               1+\varepsilon_{11} & \frac{\varepsilon_{12}}{2} & \frac{\varepsilon_{13}}{2} \\
               \frac{\varepsilon_{12}}{2} & 1+\varepsilon_{22} & \frac{\varepsilon_{32}}{2} \\
               \frac{\varepsilon_{13}}{2} & \frac{\varepsilon_{23}}{2} & 1+\varepsilon_{33}
-            \end{bmatrix} \)
-            </p>
-          </center>
-          where \(\varepsilon_{i,j}\) is a random selected value, taken from a zero-centered normal distribution.
-        </ul>
+              \end{bmatrix} \)
+              </p>
+            </center>
+            where \(\varepsilon_{i,j}\) is a random selected value, taken from a zero-centered normal distribution.
+      </ul>
       </p>
       <br>
       <a class="popup" target="_blank" href="dist/img/xtalopt-strain.png">
@@ -253,9 +260,9 @@
 
       <h3>Exchange</h3>
       <p>
-        <ul align="left" style="text-align:-moz-left">
-          <li style="padding-bottom:7px">Exchange is the simpliest operator that exchanges two atoms of different types in a cell.
-        </ul>
+      <ul align="left" style="text-align:-moz-left">
+        <li style="padding-bottom:7px">Exchange is the simpliest operator that exchanges two atoms of different types in a cell.
+      </ul>
       </p>
       <a class="popup" target="_blank" href="dist/img/xtalopt-exchange.png">
         <img src="dist/img/xtalopt-exchange.png" alt="xtalopt-exchange.png">
@@ -265,23 +272,23 @@
 
       <h3>Ripple</h3>
       <p>
-        <ul align="left" style="text-align:-moz-left">
-          <li style="padding-bottom:7px">The ripple operator acts as a periodic displacement of the atomic coordinates in a cell.
-            <li style="padding-bottom:7px">A random axis is chosen (for this example the \(z\) axis will be chosen) and the atoms along this axis are shifted by an amount, \(\Delta z\), where the new coordinate along that axis will be \( z_\mathrm{new} = z + \Delta z \).
-          <li style="padding-bottom:7px">The displacement along the axis chosen is dependent on atomic placement in the orthogonal plane (\(x\) and \(y\) axes for this example) following the formula:
-          <center>
-          <br>
-          <p>
-          \( \Delta z = \rho\cos(2\pi\mu x+\theta_{x})\cos(2\pi\eta y+\theta_{y})~~~~~\mu\in\mathbb{Z},~\eta\in\mathbb{Z} \)
-          </p>
-          </center>
-          <li style="padding-bottom:7px">In this equation:
-          <ul align="left" style="text-align:-moz-left">
-            <li style="padding-bottom:7px">\(\rho\) is the maximum displacement of an atom along the axis.
-            <li style="padding-bottom:7px">\(\mu\) and \(\eta\) determines the number of cosine waves in the orthogonal directions.
-              <li style="padding-bottom:7px">\(\theta_{x}\) and \(\theta_{y}\) are randomly chosen values between \(0\) and \(2 \pi\) that specify the strength of the ripple in various areas of the cell.
-          </ul>
-        </ul>
+      <ul align="left" style="text-align:-moz-left">
+        <li style="padding-bottom:7px">The ripple operator acts as a periodic displacement of the atomic coordinates in a cell.
+          <li style="padding-bottom:7px">A random axis is chosen (for this example the \(z\) axis will be chosen) and the atoms along this axis are shifted by an amount, \(\Delta z\), where the new coordinate along that axis will be \( z_\mathrm{new} = z + \Delta z \).
+            <li style="padding-bottom:7px">The displacement along the axis chosen is dependent on atomic placement in the orthogonal plane (\(x\) and \(y\) axes for this example) following the formula:
+              <center>
+                <br>
+                <p>
+                \( \Delta z = \rho\cos(2\pi\mu x+\theta_{x})\cos(2\pi\eta y+\theta_{y})~~~~~\mu\in\mathbb{Z},~\eta\in\mathbb{Z} \)
+                </p>
+              </center>
+              <li style="padding-bottom:7px">In this equation:
+                <ul align="left" style="text-align:-moz-left">
+                  <li style="padding-bottom:7px">\(\rho\) is the maximum displacement of an atom along the axis.
+                    <li style="padding-bottom:7px">\(\mu\) and \(\eta\) determines the number of cosine waves in the orthogonal directions.
+                      <li style="padding-bottom:7px">\(\theta_{x}\) and \(\theta_{y}\) are randomly chosen values between \(0\) and \(2 \pi\) that specify the strength of the ripple in various areas of the cell.
+                </ul>
+      </ul>
       </p>
       <a class="popup" target="_blank" href="dist/img/xtalopt-ripple.png">
         <img src="dist/img/xtalopt-ripple.png" alt="xtalopt-ripple.png">
@@ -291,16 +298,16 @@
 
       <h3>Crossover</h3>
       <p>
-        <ul align="left" style="text-align:-moz-left">
-          <li style="padding-bottom:7px">The crossover, or "cut and splice", operator is the equivalent of breeding in biology of breeding in which two parents are combined to form an offspring.
+      <ul align="left" style="text-align:-moz-left">
+        <li style="padding-bottom:7px">The crossover, or "cut and splice", operator is the equivalent of breeding in biology of breeding in which two parents are combined to form an offspring.
           <li style="padding-bottom:7px">This is the only operator in XtalOpt that requires two parents to generate an offspring.
-          <li style="padding-bottom:7px">For XtalOpt's implentation, two parents are selected from the breeding pool.
-          <li style="padding-bottom:7px">The atoms in both parent structures are randomly reflected and rotated to avoid biasing one given orientation.
-          <li style="padding-bottom:7px">Each newly mutated parent is then "cut" to form the two halves of what will be the offspring structure.
-          <li style="padding-bottom:7px">Finally, the two halves are "spliced" together.
-          <li style="padding-bottom:7px">This occurs through first joining the atomic positions in fractional coordinates.
-          <li style="padding-bottom:7px">The cell dimensions are defined through random weighting of each of the parents' cell vectors.
-        </ul>
+            <li style="padding-bottom:7px">For XtalOpt's implentation, two parents are selected from the breeding pool.
+              <li style="padding-bottom:7px">The atoms in both parent structures are randomly reflected and rotated to avoid biasing one given orientation.
+                <li style="padding-bottom:7px">Each newly mutated parent is then "cut" to form the two halves of what will be the offspring structure.
+                  <li style="padding-bottom:7px">Finally, the two halves are "spliced" together.
+                    <li style="padding-bottom:7px">This occurs through first joining the atomic positions in fractional coordinates.
+                      <li style="padding-bottom:7px">The cell dimensions are defined through random weighting of each of the parents' cell vectors.
+      </ul>
       </p>
       <br>
       <a class="popup" target="_blank" href="dist/img/xtalopt-crossover.png">
@@ -308,10 +315,13 @@
       </a>
     </div>
 
+    <a href="#" class="top">Back to Top &#x21E7;</a>
+  </div>
+
   <!-- Javascript
-  ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script src="dist/js/jquery.js"></script>
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="dist/js/jquery.js"></script>
 
 </body>
 </html>

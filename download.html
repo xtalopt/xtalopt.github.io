@@ -6,10 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Download XtalOpt for Linux, Windows, and Mac OS X">
   <meta name="author" content="Zackary Falls">
-  <meta property="og:title" content="XtalOpt - Downloads">
+  <meta property="og:title" content="XtalOpt - Download">
   <meta property="og:description" content="Download XtalOpt for Linux, Windows, and Mac OS X">
-  <meta property="og:image" content="http://xtalopt.github.io/dist/img/xtalopt-logo.png">
-  <title>XtalOpt - Downloads</title>
+  <meta property="og:image" content="http://xtalopt.github.io/dist/img/xtalopt-img.png">
+  <title>XtalOpt - Download</title>
 
   <!-- Scripts -->
   <script src="dist/js/jquery.js"></script>
@@ -24,7 +24,6 @@
 
   </script>
   <script type="text/javascript" src='dist/js/bootstrap.min.js'></script>
-  <!-- <script type="text/javascript" src='dist/js/bootstrap.js'></script> -->
   <script>
     $(function(){
       $("#navbar").load("navbar.html");
@@ -41,10 +40,30 @@
   </script>
 
   <!-- Styles -->
-  <!--  <link href="dist/css/bootstrap.css" rel="stylesheet"> -->
   <link href="dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="dist/css/bootstrap-responsive.css" rel="stylesheet">
   <link href="dist/css/style.css" rel="stylesheet">
+
+  <!-- Back to Top -->
+  <style>
+  .top {
+    --offset: 50px;
+    position: sticky;
+    bottom: 20px;
+    margin-right: 10px;
+    margin-top: calc(100vh + var(--offset));
+  }
+  .top, .top:link, .top:visited, .top:hover, .top:active {
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 100px;
+    white-space: nowrap;
+    opacity: .5;
+    background: #808080;
+    color: #fff;
+    text-decoration: none;
+  }
+  </style>
 
   <!-- Fav and touch icons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="dist/img/xtalopt-logo.png">
@@ -56,111 +75,61 @@
 
 </head>
 
-  <body>
-    <!--NavBar-->
-    <div id="navbar"></div>
+<body>
+  <!--NavBar-->
+  <div id="navbar"></div>
 
   <div class="container">
     <div class="jumbotron">
-      <h1>Downloads</h1>
+      <h1>Download</h1>
       <hr>
+      <div class="row-fluid">
+        <h2>Latest Release (12.3)</h2>
+        <h4>Binaries</h4>
+        <!--<a class="btn btn-medium btn-success" href="https://github.com/xtalopt/XtalOpt/releases/download/r12.1/XtalOpt-12.1.0-win32.exe" onclick="ga('send','event','Windows','Download','r12.1');">Windows</a>-->
+        <!--<a class="btn btn-medium btn-primary" href="https://github.com/xtalopt/XtalOpt/releases/download/r12.1/osx-xtalopt.zip" onclick="ga('send','event','Mac','Download','r12.1');">MacOS (intel)</a>-->
+        <!--<a class="btn btn-medium btn-info" href="https://github.com/xtalopt/XtalOpt/releases/download/r12.1/osx-xtalopt.zip" onclick="ga('send','event','Mac','Download','r12.1');">MacOS (silicon)</a>-->
+        <!--<a class="btn btn-medium btn-danger" href="https://github.com/xtalopt/XtalOpt/releases/download/r12.3/linux-xtalopt.tgz" onclick="ga('send','event','Linux','Download','r12.3');">Linux (64-bit)</a>-->
+        <!--<a class="btn btn-medium btn-warning" href="https://github.com/xtalopt/XtalOpt/releases/download/r12.1/linux-xtalopt.tgz" onclick="ga('send','event','Linux','Download','r12.1');">Linux (arm64)</a>-->
+        <a class="btn btn-medium btn-danger" href="https://github.com/xtalopt/XtalOpt/releases/download/r12.3/linux-xtalopt.tgz" onclick="ga('send','event','Linux','Download','r12.3');">Linux</a>
+        <br>
+      </div>
+      <br>
+      <h4>Source-Code</h4>
+      <a class="btn btn-medium btn-inverse" href="https://github.com/xtalopt/XtalOpt/archive/refs/tags/r12.3.zip" onclick="ga('send','event','Linux','Download','r12.3');">Source-Code</a>
+      <br>
+      <br>
+      <h2>Release History</h2>
       <p>
-        The code hosted here is for convenience only. To obtain the most recent code, see our <a class="ext-link" href="http://github.com/xtalopt/XtalOpt"><span class="icon"> </span>Github repository</a>.
+      A complete archive of the binaries and source-codes of all releases of XtalOpt can be found <a class="ext-link" target="_blank" href="http://github.com/xtalopt/XtalOpt/releases"><span class="icon"> </span>here</a> (under the "Assets" section for each release).
       </p>
+      <h2>Github Repository</h2>
+      The most recent version of the XtalOpt source-code can be obtained from <a class="ext-link" target="_blank" href="http://github.com/xtalopt/XtalOpt"><span class="icon"> </span>Github repository</a>. This, however, should be treated with caution as this repository includes development and experimental versions of XtalOpt. In general, it is recommended to use the source-code and pre-compiled binaries provided in the above "Latest Release" section, or those available in the archive of release history.
       <p>
-        <tt>git clone https://github.com/xtalopt/XtalOpt</tt>
       </p>
-  </div>
-  <br>
-    <div class="jumbotron">
-      <div class="row-fluid">
-        <div class="span4">
-          <h2>Windows</h2>
-          <a class="btn btn-medium btn-danger" href="https://github.com/xtalopt/XtalOpt/releases/download/r12.1/XtalOpt-12.1.0-win32.exe" onclick="ga('send','event','Windows','Download','r12.1');">release 12.1</a>
-          <br>
-          <br>
-        </div>
-
-        <div class="span4">
-          <h2>Mac OS X</h2>
-          <a class="btn btn-medium btn-primary" href="https://github.com/xtalopt/XtalOpt/releases/download/r12.1/osx-xtalopt.zip" onclick="ga('send','event','Mac','Download','r12.1');">release 12.1</a>
-          <br>
-          <br>
-        </div>
-
-        <div class="span4">
-          <h2>Linux</h2>
-          <a class="btn btn-medium btn-warning" href="https://github.com/xtalopt/XtalOpt/releases/download/r12.1/linux-xtalopt.tgz" onclick="ga('send','event','Linux','Download','r12.1');">release 12.1</a>
-          <br>
-          <br>
-        </div>
-      </div>
     </div>
-  <br>
+
+    <a class="anchor" id="install">
+      <br><br>
+    </a>
+
     <div class="jumbotron">
+      <h1>Installation</h1>
+      <hr>
+      The provided guidelines are for compiling XtalOpt on various operating systems. However, please note that due to the diversity of operating systems and architectures (hence, libraries and compilers), it is challenging to offer general and complete instructions for compiling the code. The user might need to refer to the dedicated references for the compilers and libraries if any issue arises during the compilation process.
+      <br>
+      <br>
       <div class="row-fluid">
-        <div class="span4">
-          <h2>Windows</h2>
-          <a class="btn btn-medium btn-danger" href="https://github.com/xtalopt/XtalOpt/releases/download/r11.0/XtalOpt-11.0.0-win32.exe" onclick="ga('send','event','Windows','Download','r11.0');">release 11.0</a>
-          <br>
-          <br>
-        </div>
-
-        <div class="span4">
-          <h2>Mac OS X</h2>
-          <a class="btn btn-medium btn-primary" href="https://github.com/xtalopt/XtalOpt/releases/download/r11.0/osx-xtalopt.zip" onclick="ga('send','event','Mac','Download','r11.0');">release 11.0</a>
-          <br>
-          <br>
-        </div>
-
-        <div class="span4">
-          <h2>Linux</h2>
-          <a class="btn btn-medium btn-warning" href="https://github.com/xtalopt/XtalOpt/releases/download/r11.0/linux-xtalopt.tgz" onclick="ga('send','event','Linux','Download','r11.0');">release 11.0</a>
-          <br>
-          <br>
-        </div>
-      </div>
-    </div>
-    <br>
-    <div class="jumbotron">
-      <div class="row-fluid">
-        <div class="span4">
-          <h2>Windows</h2>
-          <a class="btn btn-medium btn-danger" href="https://github.com/xtalopt/XtalOpt/releases/download/r10.0/xtalopt.randomdock-r10.0_avogadro-1.2.0_win32.exe" onclick="ga('send','event','Windows','Download','r10.0');">release 10.0</a>
-          <br>
-          <br>
-        </div>
-
-        <div class="span4">
-          <h2>Mac OS X</h2>
-          <a class="btn btn-medium btn-primary" href="https://github.com/xtalopt/XtalOpt/releases/download/r10.0/xtalopt.randomdock-r10.0_avogadro-1.2.0_macosx.zip" onclick="ga('send','event','Mac','Download','r10.0');">release 10.0</a>
-          <br>
-          <br>
-        </div>
-
-        <div class="span4">
-          <h2>Linux</h2>
-          <a class="btn btn-medium btn-warning" href="https://github.com/xtalopt/XtalOpt/releases/download/r10.0/xtalopt.randomdock-r10.0_avogadro-1.2.0_linux.tar.gz" onclick="ga('send','event','Linux','Download','r10.0');">release 10.0</a>
-          <br>
-          <br>
-        </div>
+        <a class="btn btn-medium btn-success" href="install-win.html">Windows</a>
+        <a class="btn btn-medium btn-primary" href="install-mac.html">MacOS</a>
+        <a class="btn btn-medium btn-danger"  href="install-linux.html">Linux</a>
+        <br>
+        <br>
       </div>
     </div>
 
-    <br>
-
-    <div class="jumbotron">
-      <h2>Source Code<h2>
-      <a class="btn btn-medium btn-default" href="https://github.com/xtalopt/XtalOpt/archive/r12.1.tar.gz" onclick="ga('send','event','Linux','Download','r12.1');">release 12.1</a>
-      <br>
-
-      <h2>Previous Versions</h2>
-      <a class="btn btn-medium btn-default" href="https://github.com/xtalopt/XtalOpt/archive/r11.0.tar.gz" onclick="ga('send','event','Linux','Download','r11.0');">release 11.0</a>
-      <a class="btn btn-medium btn-default" href="https://github.com/xtalopt/XtalOpt/archive/r10.0.tar.gz" onclick="ga('send','event','Linux','Download','r10.0');">release 10.0</a>
-      <br>
-      <br>
-    </div>
+    <a href="#" class="top">Back to Top &#x21E7;</a>
   </div>
 
-  </body>
+</body>
 </html>

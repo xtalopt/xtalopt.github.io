@@ -61,19 +61,16 @@
     <div class="jumbotron">
       <h1>Installation</h1>
       <br>
-        <p>
-        PDF format available <a class="el" target="_blank" href="docs/install/latex/refman.pdf" onclick="ga('send','event','PDF','Download','installation');">here</a>
-        </p>
       <hr>
       <div class="row-fluid">
         <div class="span4">
-          <a class="btn btn-large btn-danger" href="install-win.html">Windows</a>
+          <a class="btn btn-medium btn-success" href="install-win.html">Windows</a>
         </div>
         <div class="span4">
-          <a class="btn btn-large btn-primary" href="install-mac.html">Mac OS X</a>
+          <a class="btn btn-medium btn-primary" href="install-mac.html">MacOS</a>
         </div>
         <div class="span4">
-          <a class="btn btn-large btn-warning" href="install-linux.html">Linux</a>
+          <a class="btn btn-medium btn-danger" href="install-linux.html">Linux</a>
         </div>
       </div>
     </div>
@@ -84,7 +81,7 @@
       <h2>Installation for Windows</h2>
       <hr>
       <p>
-        We encourage users to download and use XtalOpt pre-compiled from <a class="el" target="_blank" href="download.html">here</a>. In fact, we do not provide a complete set of compilation instructions for Windows. However, you may continue reading if you wish to attempt to compile XtalOpt on your own.
+        We encourage users to download and use XtalOpt pre-compiled from <a class="el" href="download.html">here</a>. In fact, we do not provide a complete set of compilation instructions for Windows. However, you may continue reading if you wish to attempt to compile XtalOpt on your own.
       </p>
       <hr>
       <p>
@@ -107,8 +104,7 @@
         For git and cmake, only the executables are used, so you may download them from their respective websites.<br><br>
         For Qt, you may either download pre-compiled binaries for your specific compiler or compile it yourself. Qt typically has compiled versions for just about every compiler, so if you choose to download it, be sure to pick the compiled version that matches your compiler.<br><br>
         Eigen is a header-only library, so it does not need to be compiled separately.<br><br>
-      OpenSSH, LibSSH, and Qwt need to all be compiled with your compiler of choice. If you wish to use MSVC 2015 (32-bit) or MSVC 2017 (64-bit), pre-compiled binaries <a class="el" target="_blank" href="https://github.com/xtalopt/XtalOpt/releases/tag/MSVC-deps">here</a>. Note that LibSSH has OpenSSH statically compiled within it in these binaries.<br><br>
-      You may also compile OpenSSH, LibSSH, and Qwt on your own, but we do not provide instructions for that. You must use their instructions to do so.
+      OpenSSH, LibSSH, and Qwt need to all be compiled with your compiler of choice, but we do not provide instructions for that. You must use their instructions to do so.
       </p>
       <h3 id="Compiling XtalOpt">Compiling XtalOpt</h3>
       Once you have compiled all of the binaries, you need to run cmake with the locations of all of the dependencies defined. An example of this for MSVC can be found in the batch file in <a class="el" target="_blank" href="https://github.com/xtalopt/XtalOpt/blob/master/scripts/cmake-msvc.bat">scripts/cmake-msvc.bat</a> file in the XtalOpt repository. Afterwards, you must run "make" (or "nmake" in the case of MSVC) in the build directory. If the cmake option "-DBUILD_INDEPENDENT_PACKAGE" was used, a "make install" (or "nmake install" in the case of MSVC) will install XtalOpt and all of its dependencies into your cmake install directory.<br><br>

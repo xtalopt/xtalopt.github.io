@@ -61,19 +61,16 @@
     <div class="jumbotron">
       <h1>Installation</h1>
       <br>
-        <p>
-        PDF format available <a class="el" target="_blank" href="docs/install/latex/refman.pdf" onclick="ga('send','event','PDF','Download','installation');">here</a>
-        </p>
       <hr>
       <div class="row-fluid">
         <div class="span4">
-          <a class="btn btn-large btn-danger" href="install-win.html">Windows</a>
+          <a class="btn btn-medium btn-success" href="install-win.html">Windows</a>
         </div>
         <div class="span4">
-          <a class="btn btn-large btn-primary" href="install-mac.html">Mac OS X</a>
+          <a class="btn btn-medium btn-primary" href="install-mac.html">MacOS</a>
         </div>
         <div class="span4">
-          <a class="btn btn-large btn-warning" href="install-linux.html">Linux</a>
+          <a class="btn btn-medium btn-danger" href="install-linux.html">Linux</a>
         </div>
       </div>
     </div>
@@ -84,16 +81,16 @@
       <h2 class="text">Installation for Mac OS X</h2>
       <hr>
       <p>
-        We encourage users to download and use XtalOpt pre-compiled from <a class="el" target="_blank" href="download.html">here</a>. However, you may continue reading if you wish to compile XtalOpt on your own.
+        We encourage users to download and use XtalOpt pre-compiled from <a class="el" href="download.html">here</a>. However, you may continue reading if you wish to compile XtalOpt on your own.
       </p>
       <hr>
       <h3 id="Dependencies">Dependencies</h3>
       <hr>
       <p>
-        First, and foremost, Mac OS X users must install <a class="ext-link" href="https://developer.apple.com/xcode/">Xcode</a> to begin compiling the following programs. Xcode 8 or later is required because Apple did not start including some of the C++11 features that XtalOpt uses until then.
+        First, and foremost, Mac OS X users must install <a class="ext-link" target="_blank" href="https://developer.apple.com/xcode/">Xcode</a> to begin compiling the following programs. Xcode 8 or later is required because Apple did not start including some of the C++11 features that XtalOpt uses until then.
       </p>
       <p>
-        The following dependencies can be installed from the package manager <a class="ext-link" href="https://www.macports.org">MacPorts</a> or <a class="ext-link" href="http://brew.sh/">Homebrew</a>:
+        The following dependencies can be installed from the package manager <a class="ext-link" target="_blank" href="https://www.macports.org">MacPorts</a> or <a class="ext-link" target="_blank" href="http://brew.sh/">Homebrew</a>:
       </p>
       <ul style="list-style-type:none">
         <li><tt>git</tt>, any version</li>
@@ -109,13 +106,13 @@
 
 
       <p>
-      Using the package manager for your mac distribution, install the dependencies listed above. For example, using <a class="ext-link" href="https://www.macports.org">MacPorts</a>,
+      Using the package manager for your mac distribution, install the dependencies listed above. For example, using <a class="ext-link" target="_blank" href="https://www.macports.org">MacPorts</a>,
       </p>
 
       <pre class="wiki">port install git cmake qt5-mac qwt61 eigen libssh</pre>
 
       <p>
-        or using <a class="ext-link" href="http://brew.sh/">Homebrew</a>,
+        or using <a class="ext-link" target="_blank" href="http://brew.sh/">Homebrew</a>,
       </p>
 
       <pre class="wiki">brew install git cmake qt5 qwt eigen libssh</pre>
@@ -152,7 +149,7 @@ cd xtalopt/build</pre>
 make -j3
 sudo make install</pre>
     <p>
-    Note: if you need to use Kerberos authentication to establish a SSH connection to the remote server, the <tt>libssh</tt> library used by XtalOpt will not work. There is a workaround for Linux (and possibly Mac) users, which will call the command line <tt>ssh</tt>/<tt>scp</tt> commands to communicate with the remote cluster. This can be enabled by adding <tt>-DUSE_CLI_SSH=true</tt> to the cmake command above. This ssh backend will not prompt for a password, and expects the ssh commands to "just work". Passwordless ssh logins can be enabled using the <a class="ext-link" href="http://linux.die.net/man/1/ssh-copy-id"><span class="icon"> </span>ssh-copy-id</a> command.
+    Note: if you need to use Kerberos authentication to establish a SSH connection to the remote server, the <tt>libssh</tt> library used by XtalOpt will not work. There is a workaround for Linux (and possibly Mac) users, which will call the command line <tt>ssh</tt>/<tt>scp</tt> commands to communicate with the remote cluster. This can be enabled by adding <tt>-DUSE_CLI_SSH=true</tt> to the cmake command above. This ssh backend will not prompt for a password, and expects the ssh commands to "just work". Passwordless ssh logins can be enabled using the <a class="ext-link" target="_blank" href="http://linux.die.net/man/1/ssh-copy-id"><span class="icon"> </span>ssh-copy-id</a> command.
     </p>
     <hr>
     <p>
@@ -163,6 +160,7 @@ sudo make install</pre>
     <p>
     An xtalopt.app directory will be created wherever your cmake install prefix pointed to. You can test the program by opening this .app file. If it opens successfully and the dialog box appears, you have successfully installed XtalOpt.
     </p>
+</div>
 </div>
 </body>
 </html>
