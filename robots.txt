@@ -1,1 +1,1 @@
-Sitemap: http://xtalopt.github.io/sitemap.xml
+Sitemap: https://xtalopt.github.io/sitemap.xml

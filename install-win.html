@@ -1,48 +1,77 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="How to install XtalOpt on a Windows machine.">
-    <meta name="author" content="Zackary Falls">
-    <meta property="og:title" content="XtalOpt - Windows Install">
-    <meta property="og:description" content="How to install XtalOpt on a Windows machine.">
-    <meta property="og:image" content="http://xtalopt.github.io/dist/img/xtalopt-img.png">
-  <title>XtalOpt - Windows Install</title>
+  <meta name="description" content="How to install XtalOpt on a Windows machine.">
+  <meta name="author" content="Zackary Falls">
+  <meta property="og:title" content="XtalOpt - Installation on Windows">
+  <meta property="og:description" content="How to install XtalOpt on a Windows machine.">
+  <meta property="og:image" content="https://xtalopt.github.io/dist/img/xtalopt-logo.png">
+  <title>XtalOpt - Installation on Windows</title>
 
   <!-- Scripts -->
   <script src="dist/js/jquery.js"></script>
   <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-         })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-  ga('create', 'UA-67403311-1', 'auto');
+    ga('create', 'UA-67403311-1', 'auto');
     ga('send', 'pageview');
 
   </script>
   <script type="text/javascript" src='dist/js/bootstrap.min.js'></script>
-    <script>
-      $(function(){
-        $("#navbar").load("navbar.html");
-      });
-    </script>
-    <script>
-      $(function() {
-        var pgurl = window.location.href.substr(window.location.href.lastIndexOf("/")+1);
-        $("#nav ul li a").each(function(){
-          if($(this).attr("href") == pgurl || $(this).attr("href") == '' )
-            $(this).addClass("active");
-        })
-      });
-    </script>
+  <script>
+    $(function () {
+      $("#navbar").load("navbar.html");
+    });
+  </script>
+  <script>
+    $(function () {
+      var pgurl = window.location.href.substr(window.location.href.lastIndexOf("/") + 1);
+      $("#nav ul li a").each(function () {
+        if ($(this).attr("href") == pgurl || $(this).attr("href") == '')
+          $(this).addClass("active");
+      })
+    });
+  </script>
 
   <!-- Styles -->
   <link href="dist/css/bootstrap.css" rel="stylesheet">
   <link href="dist/css/bootstrap-responsive.css" rel="stylesheet">
   <link href="dist/css/style.css" rel="stylesheet">
+
+  <!-- Back to Top -->
+  <style>
+    .top {
+      --offset: 50px;
+      position: sticky;
+      bottom: 20px;
+      margin-right: 10px;
+      margin-top: calc(100vh + var(--offset));
+    }
+
+    .top,
+    .top:link,
+    .top:visited,
+    .top:hover,
+    .top:active {
+      font-size: 14px;
+      padding: 10px;
+      border-radius: 100px;
+      white-space: nowrap;
+      opacity: .5;
+      background: #005BBB;
+      color: #fff;
+      text-decoration: none;
+    }
+  </style>
 
   <!-- Fav and touch icons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="dist/img/xtalopt-logo.png">
@@ -53,24 +82,23 @@
   <link rel="icon" href="dist/img/xtalopt-logo.png">
 </head>
 
-  <body>
-    <!--NavBar-->
-    <div id="navbar"></div>
+<body>
+  <!--NavBar-->
+  <div id="navbar"></div>
 
   <div class="container">
     <div class="jumbotron">
-      <h1>Installation</h1>
+      <h1>Install From Source</h1>
       <br>
-      <hr>
       <div class="row-fluid">
         <div class="span4">
-          <a class="btn btn-medium btn-success" href="install-win.html">Windows</a>
+          <a class="btn btn-medium btn-success" href="install-win.html">Installation on Windows</a>
         </div>
         <div class="span4">
-          <a class="btn btn-medium btn-primary" href="install-mac.html">MacOS</a>
+          <a class="btn btn-medium btn-primary" href="install-mac.html">Installation on MacOS</a>
         </div>
         <div class="span4">
-          <a class="btn btn-medium btn-danger" href="install-linux.html">Linux</a>
+          <a class="btn btn-medium btn-danger" href="install-linux.html">Installation on Linux</a>
         </div>
       </div>
     </div>
@@ -78,38 +106,279 @@
     <br>
 
     <div class="jumbotron">
-      <h2>Installation for Windows</h2>
+      <h2>Installation on Windows</h2>
+      We encourage users to download and use XtalOpt pre-compiled binaries from the
+      <a class="el" href="download.html">download</a> page.
+      The following notes are not "instructions"; they are just meant to give you a
+      picture of the overall compilation process. Depending on the compiler and installation details of
+      dependencies, you might need to adjust them or adopt another approach.
+      <br><br>
+      <b><em>Note: these are merely general guidelines and come with no warranty whatsoever. The user is
+          responssible in case their computer system incures any damage as a result of using, in part or in whole,
+          the following materials.</em></b>
+      <br><br>
+      To obtain the source-code of XtalOpt see the <a class="el" href="download.html">download</a> page. 
       <hr>
-      <p>
-        We encourage users to download and use XtalOpt pre-compiled from <a class="el" href="download.html">here</a>. In fact, we do not provide a complete set of compilation instructions for Windows. However, you may continue reading if you wish to attempt to compile XtalOpt on your own.
-      </p>
-      <hr>
-      <p>
-        First and foremost, a C++ compiler with C++11 is required to compile XtalOpt. MSVC &gt;=2015 will work. One important point to remember when compiling for Windows is that you must use the same compiler for every dependency. So if MSVC 2017 64-bit Release is to be used for XtalOpt, all of the dependencies must be compiled with MSVC 2017 64-bit Release.<br><br>
 
-        Similar to the compilations for the other operating systems, the following dependencies are required:
+      <h3>Compiler and dependencies</h3>
+      <p style="text-align: left;">
+      A C++ compiler with C++11 support is necessary to compile the program, e.g., MSVC versions 2015 or later.
+      <br><br>
+      Moreover, compiling XtalOpt requires the following dependencies:
+      <br><br>
+      (1) <tt>git</tt> (any version),<br>
+      (2) <tt>cmake</tt> (any version)<br>
+      (3) <tt>Qt</tt> framework (version 5.2.1 or later of <tt>Qt5</tt>),<br>
+      (4) <tt>Qwt</tt> libraries (version 6.1.3 or later, and compiled with the same version of the installed
+      <tt>Qt</tt>),<br>
+      (5) <tt>Eigen</tt> library (version 3 or later),<br>
+      (6) <tt>libssh</tt> and <tt>openssh</tt> (this is not required if you disable the ssh; which is enabled by
+      default).
+      <br><br>
+      The MSVC compiler can be downloaded and installed from its website.
+      Required dependencies can be downloaded and installed from their website or existing package managers. For
+      instance, <tt>Qt</tt> can be downloaded from its website, and the <tt>Eigen</tt> and <tt>libssh</tt> may be
+      installed using the <tt>vcpkg</tt>.
+			<br>
+			Once the compiler and <tt>Qt</tt> are available, the <tt>Qwt</tt> can be
+      easily built from source. As an example, on our system (with the "MSVC
+      2017" compiler and <tt>Qt</tt> 5.12.12 installed), we were able to build <tt>Qwt</tt> by simply running the
+      following batch file in "Qt 5.12.12 (MSVC 2017 64-bit)" command prompt in the root of the Qwt source-code. The
+      <tt>Qwt</tt> was then installed in its default location "<tt>C:\Qwt-6.2.0</tt>".
       </p>
-        <ul style="list-style-type:none">
-        <li><tt>git</tt>, any version</li>
-        <li><tt>cmake</tt> (and optionally the ncurses GUI, <tt>ccmake</tt>) &gt;= 3.0</li>
-        <li><tt>Qt</tt> &gt;= 5.2.1</li>
-        <li><tt>Qwt</tt> &gt;= 6.1.3 (compiled with Qt5)</li>
-        <li><tt>Eigen</tt> &gt;= 3</li>
-        <br><br>
-        <li><p>If you wish to enable SSH (default), you will also need:</p></li>
-        <li><tt>openssh</tt>, any version</li>
-        <li><tt>libssh</tt>, any version</li><br>
-      </ul>
-      <p>
-        For git and cmake, only the executables are used, so you may download them from their respective websites.<br><br>
-        For Qt, you may either download pre-compiled binaries for your specific compiler or compile it yourself. Qt typically has compiled versions for just about every compiler, so if you choose to download it, be sure to pick the compiled version that matches your compiler.<br><br>
-        Eigen is a header-only library, so it does not need to be compiled separately.<br><br>
-      OpenSSH, LibSSH, and Qwt need to all be compiled with your compiler of choice, but we do not provide instructions for that. You must use their instructions to do so.
+      <div class="box" style="text-align:left;">
+        <pre>
+call "C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Auxiliary\Build\vcvarsall.bat" x64
+set PATH="C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\bin";%PATH%
+qmake qwt.pro
+nmake
+nmake install</pre>
+      </div>
+      <br><br>
+      <p style="text-align: left;">
+      A few comments about installing dependencies:
+      <br><br>
+      <b>About <tt>Eigen</tt> library:</b> In principle the <tt>Eigen</tt> library does not need to be installed!
+      One can simply download its source-code, unpack it at the desired location, and point the <tt>cmake</tt> to
+      that path.
+			<br>
+      <b>Dependencies installed using <tt>vcpkg</tt>:</b> After installing packages with <tt>vcpkg</tt>, we needed
+      to:
+      <br>
+      (1) Appy the user-wide integration for the installed packages,
+      <br>
+      (2) When running <tt>cmake</tt>, add the "<tt>-DCMAKE_TOOLCHAIN_FILE</tt>" with the path to the
+      <tt>vcpkg.cmake</tt> (suggested by the package itself), and add the path to "<tt>installed</tt>" directory in
+      the <tt>vcpkg</tt> location to the "<tt>-DCMAKE_PREFIX_PATH</tt>" flag.
+      <br>
+      For more information, especially updates on integration details, see the <tt>vcpkg</tt> website.
       </p>
-      <h3 id="Compiling XtalOpt">Compiling XtalOpt</h3>
-      Once you have compiled all of the binaries, you need to run cmake with the locations of all of the dependencies defined. An example of this for MSVC can be found in the batch file in <a class="el" target="_blank" href="https://github.com/xtalopt/XtalOpt/blob/master/scripts/cmake-msvc.bat">scripts/cmake-msvc.bat</a> file in the XtalOpt repository. Afterwards, you must run "make" (or "nmake" in the case of MSVC) in the build directory. If the cmake option "-DBUILD_INDEPENDENT_PACKAGE" was used, a "make install" (or "nmake install" in the case of MSVC) will install XtalOpt and all of its dependencies into your cmake install directory.<br><br>
-    If the compilation was successful, the installed xtalopt.exe executable may be ran. It will only run successfully if all of the .dll dependencies are found, though, so you may need to manually find and place all of the .dll dependencies into the directory with XtalOpt.
+
+      <br>
+      <h3>Configuring the build</h3>
+      <p style="text-align: left;">
+      Once all required packages are installed, the user should create a "build" directory in the root of the
+      XtalOpt source-code directory. In the "build" directory, then one can configure the build using
+      </p>
+      <div class="box" style="text-align: left;">
+        <pre>cmake .. [-G &lt;generator-name&gt;]</pre>
+      </div>
+
+      <p style="text-align: left;">
+      If the dependencies are installed in standard locations or available through environment variables, there is a
+      chance that <tt>cmake</tt> will find them (or at least some of them!).
+      If the configuration fails, however, you may inspect the output of the <tt>cmake</tt> command to see what are
+      the missing libraries/packages. You need to redo the build with providing the correct path to required
+      dependencies using the appropriate configuration flags:
+      </p>
+      <div class="box" style="text-align: left;">
+        <pre>cmake .. [-G &lt;generator-name&gt;] [-D&lt;flag1&gt;=&lt;value1&gt; -D&lt;flag2&gt;=&lt;value2&gt; ...]</pre>
+      </div>
+
+      <p style="text-align: left;">
+      To our experience, those which are most likely to be a source of trouble (along with their corresponding <tt>cmake</tt> flags) are as follows:
+      </p>
+
+      <style type="text/css">
+.tg {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+        .tg td {
+          border-color: black;
+          border-style: solid;
+          border-width: 1px;
+          font-family: Arial, sans-serif;
+          font-size: 14px;
+          overflow: hidden;
+          padding: 10px 5px;
+          word-break: normal;
+        }
+
+        .tg th {
+          border-color: black;
+          border-style: solid;
+          border-width: 1px;
+          font-family: Arial, sans-serif;
+          font-size: 14px;
+          font-weight: normal;
+          overflow: hidden;
+          padding: 10px 5px;
+          word-break: normal;
+        }
+
+        .tg .tg-kftd {
+          background-color: #efefef;
+          text-align: left;
+          vertical-align: top
+        }
+      </style>
+      <table class="tg">
+          <tr>
+            <td class="tg-kftd"><b>Package</b></td>
+            <td class="tg-kftd"><b><tt>cmake</tt> flag</b></td>
+            <td class="tg-kftd"><b>Value</b></td>
+          </tr>
+        <tbody>
+          <tr>
+            <td class="tg-kftd"><tt>Qt5</tt> directory</td>
+            <td class="tg-kftd"><tt>-DCMAKE_PREFIX_PATH</tt></td>
+            <td class="tg-kftd">&lt;path to Qt5 installation&gt;/lib/cmake/Qt5</td>
+          </tr>
+          <tr>
+            <td class="tg-kftd"><tt>Qwt</tt> include directory</td>
+            <td class="tg-kftd"><tt>-DQWT_INCLUDE_DIR</tt></td>
+            <td class="tg-kftd">&lt;path to Qwt installation&gt;/lib/qwt.framework/Headers</td>
+          </tr>
+          <tr>
+            <td class="tg-kftd"><tt>Qwt</tt> library</td>
+            <td class="tg-kftd"><tt>-DQWT_LIBRARY</tt></td>
+            <td class="tg-kftd">&lt;path to Qwt installation&gt;/lib/qwt.framework/qwt</td>
+          </tr>
+          <tr>
+            <td class="tg-kftd"><tt>Eigen</tt> include directory</td>
+            <td class="tg-kftd"><tt>-DEIGEN3_INCLUDE_DIR</tt></td>
+            <td class="tg-kftd">&lt;path to Eigen installation&gt; OR "the parent folder of the Eigen/ subfolder"</td>
+          </tr>
+          <tr>
+            <td class="tg-kftd"><tt>libssh</tt> include directory</td>
+            <td class="tg-kftd"><tt>-DLIBSSH_INCLUDE_DIRS</tt></td>
+            <td class="tg-kftd">&lt;path to libssh installation&gt;/include</td>
+          </tr>
+          <tr>
+            <td class="tg-kftd"><tt>libssh</tt> library</td>
+            <td class="tg-kftd"><tt>-DLIBSSH_LIBRARIES</tt></td>
+            <td class="tg-kftd">&lt;path to libssh installation&gt;/lib/&lt;libssh library filename&gt;</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <br>
+      <h3>Compiling XtalOpt</h3>
+      <p style="text-align: left;">
+      After configuring the build, you can compile the code with
+      the "<tt>make</tt>" (or "<tt>nmake</tt>" in the case of MSVC) command.
+      <br><br>
+      Upon successful compilation, there should be a directory named "<tt>bin</tt>" in the build directory which
+      contains the <tt>xtalopt.exe</tt> file. Note that this executable will run successfully only if all required
+      "<tt>.dll</tt>" files are present in the same "<tt>bin</tt>" directory. Basically, you can manually find and
+      copy those libraries there. However, the proper (and easy) way would be to configure the build for
+      installation before compiling it (see the next section).
+      </p>
+
+      <br>
+      <h3>Installing XtalOpt</h3>
+      <p style="text-align: left;">
+      Installing the code will create a standalone directory in which the XtalOpt executable and required libraries
+      are properly collected. In order to configure the code for installation, you should add the
+      "<tt>-DBUILD_INDEPENDENT_PACKAGE=ON</tt>" and "<tt>-DCMAKE_BUILD_TYPE=Release</tt>" configuration flags to the <tt>cmake</tt> command.
+      <br><br>
+      Note that the default installation location is the "<tt>C:/Program Files (x86)/XtalOpt/bin</tt>" directory.
+      Writing files to that location requires administrative privileges, i.e., the command prompt must be started
+      with "Run as Administrator". Alternatively, you can specify another location which does not require such
+      privileges. To do so, you can add the "<tt>-DCMAKE_INSTALL_PREFIX=&lt;desired/path/for/installation&gt;</tt>" flag
+      to the <tt>cmake</tt> command.
+      <br><br>
+      Finally, after compiling the code with the above installation-related <tt>cmake</tt> flags, you need to run
+      "<tt>make install</tt>" (or, "<tt>nmake install</tt>" for MSVC compiler). If everything goes well, you will
+      find the XtalOpt executable along with required libraries collected in the "<tt>bin/</tt>" directory in the
+      installation location.
+      </p>
+
+      <br>
+      <h3>Example of a complete build script</h3>
+      <p style="text-align: left;">
+      The details of the <tt>cmake</tt> and <tt>make/nmake</tt> setup would depend on the compiler and the installed
+      dependencies. With that in mind, we are providing the following batch file just
+      as an example of a possible setup to build the code on Windows operating system.
+      <br><br>
+      In the reference system, the "MSVC 2017 64-bit" compiler, Qt 5.12.12, and Qwt 6.2.0 were installed. <tt>Eigen</tt> and
+      <tt>libssh</tt> dependencies were installed using <tt>vcpkg</tt> package manager. The following batch file was run
+      inside the <tt>build</tt> directory (located in the root of the XtalOpt source-code) in the developer command
+      prompt, i.e., "x64 Native Tools Command Prompt for VS 2017". At the end, XtalOpt was installed in
+      "<tt>C:\xtalopt_windows</tt>" directory.
+      </p>
+      <div class="box" style="text-align:left;">
+        <pre>
+@echo off
+
+REM Written by Patrick Avery
+
+REM ***NOTE: This script was used in "x64 Native Tools Command Prompt for VS 2017"***
+REM ***NOTE: Run this script inside the build folder in the source directory***
+
+
+REM *********************************************************
+REM **** Set all variables to their correct directories  ****
+REM *********************************************************
+
+set qt5dir=C:\Qt\Qt5.12.12\5.12.12\msvc2017_64
+set qwtdir=C:\Qwt-6.2.0
+set insdir=C:\xtalopt_windows
+
+REM *********************************************************
+REM **** Configure the build                             ****
+REM *********************************************************
+
+cmake .. -G "NMake Makefiles" ^
+-DCMAKE_PREFIX_PATH="%qt5dir%;C:\Develop\vcpkg\installed\arm64-windows" ^
+-DQWT_LIBRARY=%qwtdir%\lib\qwt.lib ^
+-DQWT_INCLUDE_DIR=%qwtdir%\include ^
+-DBUILD_INDEPENDENT_PACKAGE=ON ^
+-DCMAKE_BUILD_TYPE=Release ^
+-DCMAKE_INSTALL_PREFIX=%insdir% ^
+-DCMAKE_TOOLCHAIN_FILE="C:\Develop\vcpkg\scripts\buildsystems\vcpkg.cmake" ^
+-DHAVE_EXECINFO_H=OFF
+
+REM *********************************************************
+REM **** Compile XtalOpt                                 ****
+REM *********************************************************
+
+nmake
+
+REM *********************************************************
+REM **** Install XtalOpt                                 ****
+REM *********************************************************
+
+nmake install</pre>
+      </div>
+
+      <br>
+      <h3>To SSH or not to SSH?!</h3>
+      <p style="text-align: left;">
+      By default, XtalOpt is ssh-enabled to facilitate a remote server access. That's, to let you running XtalOpt on your
+      personal computer while the structure optimizations are performed on a remote server. If you don't need this
+      option and plan to use the code only on your computer, then the ssh feature can be disabled by setting
+      "<tt>-DENABLE_SSH=OFF</tt>" at the configuration time. In that case, all ssh-related configuration flags
+      are irrelevant and can be removed, and XtalOpt build does not depend on <tt>libssh</tt>.
+      </p>
+
     </div>
+
+    <!-- Back to Top -->
+    <a href="#" class="top">Back to Top &#x21E7;</a>
   </div>
 </body>
+
 </html>

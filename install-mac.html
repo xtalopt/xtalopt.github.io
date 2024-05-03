@@ -1,48 +1,77 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="How to install XtalOpt on a Mac OS X machine.">
-    <meta name="author" content="Zackary Falls">
-    <meta property="og:title" content="XtalOpt - Mac Install">
-    <meta property="og:description" content="How to install XtalOpt on a Mac OS X machine.">
-    <meta property="og:image" content="http://xtalopt.github.io/dist/img/xtalopt-img.png">
-  <title>XtalOpt - Mac Install</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="How to install XtalOpt on a MacOS machine.">
+  <meta name="author" content="Zackary Falls">
+  <meta property="og:title" content="XtalOpt - Installation on MacOS">
+  <meta property="og:description" content="How to install XtalOpt on a MacOS machine.">
+  <meta property="og:image" content="https://xtalopt.github.io/dist/img/xtalopt-logo.png">
+  <title>XtalOpt - Installation on MacOS</title>
 
   <!-- Scripts -->
   <script src="dist/js/jquery.js"></script>
   <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-         })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-  ga('create', 'UA-67403311-1', 'auto');
+    ga('create', 'UA-67403311-1', 'auto');
     ga('send', 'pageview');
 
   </script>
   <script type="text/javascript" src='dist/js/bootstrap.min.js'></script>
-    <script>
-      $(function(){
-        $("#navbar").load("navbar.html");
-      });
-    </script>
-    <script>
-      $(function() {
-        var pgurl = window.location.href.substr(window.location.href.lastIndexOf("/")+1);
-        $("#nav ul li a").each(function(){
-          if($(this).attr("href") == pgurl || $(this).attr("href") == '' )
-            $(this).addClass("active");
-        })
-      });
-    </script>
+  <script>
+    $(function () {
+      $("#navbar").load("navbar.html");
+    });
+  </script>
+  <script>
+    $(function () {
+      var pgurl = window.location.href.substr(window.location.href.lastIndexOf("/") + 1);
+      $("#nav ul li a").each(function () {
+        if ($(this).attr("href") == pgurl || $(this).attr("href") == '')
+          $(this).addClass("active");
+      })
+    });
+  </script>
 
   <!-- Styles -->
   <link href="dist/css/bootstrap.css" rel="stylesheet">
   <link href="dist/css/bootstrap-responsive.css" rel="stylesheet">
   <link href="dist/css/style.css" rel="stylesheet">
+
+  <!-- Back to Top -->
+  <style>
+    .top {
+      --offset: 50px;
+      position: sticky;
+      bottom: 20px;
+      margin-right: 10px;
+      margin-top: calc(100vh + var(--offset));
+    }
+
+    .top,
+    .top:link,
+    .top:visited,
+    .top:hover,
+    .top:active {
+      font-size: 14px;
+      padding: 10px;
+      border-radius: 100px;
+      white-space: nowrap;
+      opacity: .5;
+      background: #005BBB;
+      color: #fff;
+      text-decoration: none;
+    }
+  </style>
 
   <!-- Fav and touch icons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="dist/img/xtalopt-logo.png">
@@ -53,24 +82,23 @@
   <link rel="icon" href="dist/img/xtalopt-logo.png">
 </head>
 
-  <body>
-    <!--NavBar-->
-    <div id="navbar"></div>
+<body>
+  <!--NavBar-->
+  <div id="navbar"></div>
 
   <div class="container">
     <div class="jumbotron">
-      <h1>Installation</h1>
+      <h1>Install From Source</h1>
       <br>
-      <hr>
       <div class="row-fluid">
         <div class="span4">
-          <a class="btn btn-medium btn-success" href="install-win.html">Windows</a>
+          <a class="btn btn-medium btn-success" href="install-win.html">Installation on Windows</a>
         </div>
         <div class="span4">
-          <a class="btn btn-medium btn-primary" href="install-mac.html">MacOS</a>
+          <a class="btn btn-medium btn-primary" href="install-mac.html">Installation on MacOS</a>
         </div>
         <div class="span4">
-          <a class="btn btn-medium btn-danger" href="install-linux.html">Linux</a>
+          <a class="btn btn-medium btn-danger" href="install-linux.html">Installation on Linux</a>
         </div>
       </div>
     </div>
@@ -78,89 +106,269 @@
     <br>
 
     <div class="jumbotron">
-      <h2 class="text">Installation for Mac OS X</h2>
+      <h2>Installation on MacOS</h2>
+      We encourage users to download and use XtalOpt pre-compiled binaries from the
+      <a class="el" href="download.html">download</a> page.
+      The following notes are not "instructions"; they are just meant to give you a
+      picture of the overall compilation process. Depending on the compiler and installation details of
+      dependencies, you might need to adjust them or adopt another approach.
+      <br><br>
+      <b><em>Note: these are merely general guidelines and come with no warranty whatsoever. The user is
+          responssible in case their computer system incures any damage as a result of using, in part or in whole,
+          the following materials.</em></b>
+      <br><br>
+      To obtain the source-code of XtalOpt see the <a class="el" href="download.html">download</a> page.
       <hr>
-      <p>
-        We encourage users to download and use XtalOpt pre-compiled from <a class="el" href="download.html">here</a>. However, you may continue reading if you wish to compile XtalOpt on your own.
-      </p>
-      <hr>
-      <h3 id="Dependencies">Dependencies</h3>
-      <hr>
-      <p>
-        First, and foremost, Mac OS X users must install <a class="ext-link" target="_blank" href="https://developer.apple.com/xcode/">Xcode</a> to begin compiling the following programs. Xcode 8 or later is required because Apple did not start including some of the C++11 features that XtalOpt uses until then.
-      </p>
-      <p>
-        The following dependencies can be installed from the package manager <a class="ext-link" target="_blank" href="https://www.macports.org">MacPorts</a> or <a class="ext-link" target="_blank" href="http://brew.sh/">Homebrew</a>:
-      </p>
-      <ul style="list-style-type:none">
-        <li><tt>git</tt>, any version</li>
-        <li><tt>cmake</tt> (and optionally the ncurses GUI, <tt>ccmake</tt>) &gt;= 3.0</li>
-        <li><tt>Qt</tt> &gt;= 5.2.1</li>
-        <li><tt>Qwt</tt> &gt;= 6.1.3 (compiled with Qt5)</li>
-        <li><tt>Eigen</tt> &gt;= 3</li>
-        <br><br>
-        <li><p>If you wish to enable SSH (default), you will also need:</p></li>
-        <li><tt>openssh</tt>, any version</li>
-        <li><tt>libssh</tt>, any version</li><br>
-      </ul>
 
-
-      <p>
-      Using the package manager for your mac distribution, install the dependencies listed above. For example, using <a class="ext-link" target="_blank" href="https://www.macports.org">MacPorts</a>,
+      <h3>Compiler and dependencies</h3>
+      <p style="text-align: left;">
+      MacOS X users must install Xcode to compile the program. Since C++11 support is necessary, Xcode 8 or later is
+      needed.
+      <br><br>
+      Moreover, compiling XtalOpt requires the following dependencies:
+      <br><br>
+      (1) <tt>git</tt> (any version),<br>
+      (2) <tt>cmake</tt> (any version)<br>
+      (3) <tt>Qt</tt> framework (version 5.2.1 or later of <tt>Qt5</tt>),<br>
+      (4) <tt>Qwt</tt> libraries (version 6.1.3 or later, and compiled with the same version of the installed
+      <tt>Qt</tt>),<br>
+      (5) <tt>Eigen</tt> library (version 3 or later),<br>
+      (6) <tt>libssh</tt> and <tt>openssh</tt> (this is not required if you disable the ssh; which is enabled by
+      default).
+      <br><br>
+      The Xcode can be installed from its
+      <a class="ext-link" target="_blank"  href="https://developer.apple.com/xcode/">website</a>.
+      Required dependencies can be downloaded and installed from their websites (sometimes that requires compiling
+      them from source). However, they are most easily installed using package managers, e.g.,
+      <a class="ext-link" target="_blank" href="https://brew.sh/">Homebrew</a> and
+      <a class="ext-link" target="_blank" href="https://www.macports.org">MacPorts</a>.
+      For instance, the following command will install the listed packages from Homebrew:
       </p>
 
-      <pre class="wiki">port install git cmake qt5-mac qwt61 eigen libssh</pre>
-
-      <p>
-        or using <a class="ext-link" target="_blank" href="http://brew.sh/">Homebrew</a>,
+      <div class="box" style="text-align: left;">
+        <pre>
+brew install git cmake qt@5 qwt-qt5 eigen libssh</pre>
+      </div>
+      <p style="text-align: left;">
+      Note that the package names or syntax might change as the package managers and their content evolve and update
+      over time!
       </p>
 
-      <pre class="wiki">brew install git cmake qt5 qwt eigen libssh</pre>
-
-      <hr>
-      <h3 id="SourceInstallations">Source Installations</h3>
-      <hr>
-      <p>
-      None. Before release 11, XtalOpt needed Open Babel and Avogadro. But there are currently no source installations required.
+      <br>
+      <h3>Configuring the build</h3>
+      <p style="text-align: left;">
+      Once all required packages are installed, the user should create a "build" directory in the root of the XtalOpt
+      source-code directory. In the "build" directory, then one can configure the build using
       </p>
-    <hr>
-    <h3 id="XtalOpt">XtalOpt</h3>
-    Once the dependencies are installed, installing XtalOpt is simple. First, change to your source directory:
-    </p>
-    <pre class="wiki">cd $HOME/src</pre>
-    <p>
-    Check out the master branch of the XtalOpt sources:
-    </p>
-    <pre class="wiki">git clone git://github.com/xtalopt/XtalOpt.git xtalopt</pre>
-    <p>
-    Make a build directory and enter it:
-    </p>
-    <pre class="wiki">mkdir xtalopt/build
-cd xtalopt/build</pre>
-    <p>
-    For Homebrew and at the time of writing this, Qt5 and Qwt headers are not included in the $PATH, and cmake will not find them. So we must show cmake where they are. Thus, we need to add the next few lines of code before running cmake. Set the CMAKE_INSTALL_PREFIX to wherever you'd like:
-    <pre class="wiki">
-      export CMAKE_FLAGS="$CMAKE_FLAGS -DCMAKE_PREFIX_PATH=/usr/local/opt/qt/"
-      export CMAKE_FLAGS="$CMAKE_FLAGS -DQWT_INCLUDE_DIR=/usr/local/opt/qwt/lib/qwt.framework/Headers"
-      export CMAKE_FLAGS="$CMAKE_FLAGS -DCMAKE_INSTALL_PREFIX=&lt;wherever&gt;"</pre>
-    Configure, build, and install:
-    </p>
-    <pre class="wiki">cmake ${CMAKE_FLAGS} ..
-make -j3
-sudo make install</pre>
-    <p>
-    Note: if you need to use Kerberos authentication to establish a SSH connection to the remote server, the <tt>libssh</tt> library used by XtalOpt will not work. There is a workaround for Linux (and possibly Mac) users, which will call the command line <tt>ssh</tt>/<tt>scp</tt> commands to communicate with the remote cluster. This can be enabled by adding <tt>-DUSE_CLI_SSH=true</tt> to the cmake command above. This ssh backend will not prompt for a password, and expects the ssh commands to "just work". Passwordless ssh logins can be enabled using the <a class="ext-link" target="_blank" href="http://linux.die.net/man/1/ssh-copy-id"><span class="icon"> </span>ssh-copy-id</a> command.
-    </p>
-    <hr>
-    <p>
-    <h4>XtalOpt is now installed.</h4>
-    </p>
-    <hr>
-    <h3 id="Testtheinstallation">Test the installation</h3>
-    <p>
-    An xtalopt.app directory will be created wherever your cmake install prefix pointed to. You can test the program by opening this .app file. If it opens successfully and the dialog box appears, you have successfully installed XtalOpt.
-    </p>
-</div>
-</div>
+      <div class="box" style="text-align: left;">
+        <pre>cmake ..</pre>
+      </div>
+
+      <p style="text-align: left;">
+      If the dependencies are installed in standard locations or available through environment variables, there is a
+      chance that <tt>cmake</tt> will find them (or at least some of them!).
+      If the configuration fails, however, you may inspect the output of the <tt>cmake</tt> command to see what are
+      the missing libraries/packages. You need to redo the build with providing the correct path to required
+      dependencies using the appropriate configuration flags:
+      </p>
+      <div class="box" style="text-align: left;">
+        <pre>cmake .. [-D&lt;flag1&gt;=&lt;value1&gt; -D&lt;flag2&gt;=&lt;value2&gt; ...]</pre>
+      </div>
+
+      <p style="text-align: left;">
+      To our experience, those which are most likely to be a source of trouble (along with their corresponding <tt>cmake</tt> flags) are as follows:
+      </p>
+
+      <style type="text/css">
+.tg {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+        .tg td {
+          border-color: black;
+          border-style: solid;
+          border-width: 1px;
+          font-family: Arial, sans-serif;
+          font-size: 14px;
+          overflow: hidden;
+          padding: 10px 5px;
+          word-break: normal;
+        }
+
+        .tg th {
+          border-color: black;
+          border-style: solid;
+          border-width: 1px;
+          font-family: Arial, sans-serif;
+          font-size: 14px;
+          font-weight: normal;
+          overflow: hidden;
+          padding: 10px 5px;
+          word-break: normal;
+        }
+
+        .tg .tg-kftd {
+          background-color: #efefef;
+          text-align: left;
+          vertical-align: top
+        }
+      </style>
+      <table class="tg">
+          <tr>
+            <td class="tg-kftd"><b>Package</b></td>
+            <td class="tg-kftd"><b><tt>cmake</tt> flag</b></td>
+            <td class="tg-kftd"><b>Value</b></td>
+          </tr>
+        <tbody>
+          <tr>
+            <td class="tg-kftd"><tt>Qt5</tt> directory</td>
+            <td class="tg-kftd"><tt>-DCMAKE_PREFIX_PATH</tt></td>
+            <td class="tg-kftd">&lt;path to Qt5 installation&gt;/lib/cmake/Qt5</td>
+          </tr>
+          <tr>
+            <td class="tg-kftd"><tt>Qwt</tt> include directory</td>
+            <td class="tg-kftd"><tt>-DQWT_INCLUDE_DIR</tt></td>
+            <td class="tg-kftd">&lt;path to Qwt installation&gt;/lib/qwt.framework/Headers</td>
+          </tr>
+          <tr>
+            <td class="tg-kftd"><tt>Qwt</tt> library</td>
+            <td class="tg-kftd"><tt>-DQWT_LIBRARY</tt></td>
+            <td class="tg-kftd">&lt;path to Qwt installation&gt;/lib/qwt.framework/qwt</td>
+          </tr>
+          <tr>
+            <td class="tg-kftd"><tt>Eigen</tt> include directory</td>
+            <td class="tg-kftd"><tt>-DEIGEN3_INCLUDE_DIR</tt></td>
+            <td class="tg-kftd">&lt;path to Eigen installation&gt; OR "the parent folder of the Eigen/ subfolder"</td>
+          </tr>
+          <tr>
+            <td class="tg-kftd"><tt>libssh</tt> include directory</td>
+            <td class="tg-kftd"><tt>-DLIBSSH_INCLUDE_DIRS</tt></td>
+            <td class="tg-kftd">&lt;path to libssh installation&gt;/include</td>
+          </tr>
+          <tr>
+            <td class="tg-kftd"><tt>libssh</tt> library</td>
+            <td class="tg-kftd"><tt>-DLIBSSH_LIBRARIES</tt></td>
+            <td class="tg-kftd">&lt;path to libssh installation&gt;/lib/&lt;libssh library filename&gt;</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <br><br>
+
+      <h3>Compiling XtalOpt</h3>
+
+      <p style="text-align: left;">
+      After configuring the build, you can compile the code with
+      the "<tt>make</tt>" command (or, "<tt>make -jN</tt>" for parallel compilation using "N" processes).
+      <br><br>
+      Upon successful compilation, there should be a directory named "<tt>bin</tt>" in the build directory which
+      contains the <tt>xtalopt.app/</tt> directory. You can run the XtalOpt in various ways. For example, if you're in
+      the build directory:
+      <br>
+      (1) <em>GUI mode:</em> run "<tt>open ./bin/xtalopt.app</tt>" or
+      "<tt>./bin/xtalopt.app/Contents/MacOS/xtalopt</tt>" command in terminal; or click on the "xtalopt.app" in the
+      Finder app,
+      <br>
+      (2) <em>CLI mode:</em> run "<tt>./bin/xtalopt.app/Contents/MacOS/xtalopt --cli</tt>" in terminal.
+      </p>
+
+      <br>
+      <h3>Installing XtalOpt</h3>
+      <p style="text-align: left;">
+      <em><b>Before proceeding to read this section, note that apparently MacOS will prevent all installed packages
+          from running unless they are signed by a valid certificate. For more information about code-signing, start
+          from <a class="ext-link" target="_blank" href="https://developer.apple.com/support/code-signing/">here</a></b></em>.
+      <br><br>
+      Although you can run the compiled program, you might want to install it to have a standalone package (in which
+      the XtalOpt executable and required libraries are properly collected) to place it in you "<tt>Application</tt>"
+      directory for easy access. In order to configure the code for installation, you should add the
+      "<tt>-DBUILD_INDEPENDENT_PACKAGE=ON</tt>" flag to the <tt>cmake</tt> command.
+      <br><br>
+      Note that the default installation location is the "<tt>$HOME/</tt>" directory. Alternatively, you can specify
+      another location by adding the "<tt>-DCMAKE_INSTALL_PREFIX=&lt;desired/path/for/installation&gt;</tt>" flag to
+      the <tt>cmake</tt> command.
+      <br><br>
+      Finally, after compiling the code with the above installation-related <tt>cmake</tt> flags, you need to run
+      "<tt>make install</tt>" (or, "<tt>sudo make install</tt>" if the specified installation directory requires root
+      access). After installation, you will find the XtalOpt package in the installation location. Before running
+      the installed program, consider the code-signing (noted above).
+      </p>
+
+      <br>
+
+      <h3>Example of a complete build script</h3>
+      <p style="text-align: left;">
+      The details of the <tt>cmake</tt> and <tt>make</tt> setup would depend on the compiler and the installed
+      dependencies. With that in mind, we are providing the following batch file just
+      an example of a possible setup to build the code on MacOS.
+      <br><br>
+      In the reference system, the required dependencies were installed using the Homebrew package manager. The
+      following script was run in terminal, inside the <tt>build</tt> directory (located in the root of the XtalOpt
+      source-code):
+      </p>
+      <div class="box" style="text-align:left;">
+        <pre>
+#!/bin/bash
+
+# *********************************************************
+# **** Set all variables to their correct directories  ****
+# *********************************************************
+
+qt5dir=/opt/homebrew/opt/qt5
+qwtdir=/opt/homebrew/opt/qwt-qt5
+libssh=/opt/homebrew/opt/libssh
+
+# *********************************************************
+# **** Configure the build                             ****
+# *********************************************************
+
+cmake -DCMAKE_PREFIX_PATH=$qt5dir/lib/cmake/Qt5 \
+      -DQWT_LIBRARY=$qwtdir/lib/qwt.framework/qwt \
+      -DQWT_INCLUDE_DIR=$qwtdir/lib/qwt.framework/Headers \
+      -DLIBSSH_INCLUDE_DIRS=$libssh/include \
+      -DLIBSSH_LIBRARIES=$libssh/lib/libssh.dylib \
+      ..
+
+# *********************************************************
+# **** Compile XtalOpt                                 ****
+# *********************************************************
+
+make -j3</pre>
+      </div>
+      <br>
+      <p style="text-align: left;">
+      This script compiles the XtalOpt code. If you desire to install it, you should adjust the script according to
+      above comments about the installation.
+      </p>
+      <br><br>
+      <h3>To SSH or not to SSH?!</h3>
+
+      <p style="text-align: left;">
+      By default, XtalOpt is ssh-enabled to facilitate a remote server access. That's, to let you running XtalOpt on your
+      personal computer while the structure optimizations are performed on a remote server. If you don't need this
+      option and plan to use the code only on your computer, then the ssh feature can be disabled by setting
+      "<tt>-DENABLE_SSH=OFF</tt>" at the configuration time. In that case, all ssh-related configuration flags
+      are irrelevant and can be removed, and XtalOpt build does not depend on <tt>libssh</tt>.
+      </p>
+
+      <br>
+      <h3>About Kerberos authentication</h3>
+      <p style="text-align: left;">
+      If you need to use Kerberos authentication to establish a ssh connection to the remote server, the
+      <tt>libssh</tt> library used by XtalOpt will not work. There is a workaround for Unix-like system (Linux and
+      possibly Mac) users, which will call the command line <tt>ssh</tt>/<tt>scp</tt> commands to communicate with the
+      remote cluster. This can be utilized by adding <tt>-DUSE_CLI_SSH=ON</tt> to the cmake command above, while the
+      ssh is enabled in the build. This ssh backend will not prompt for a password, and expects the ssh commands to
+      "just work". Passwordless ssh logins can be enabled using the
+      <a class="ext-link" target="_blank" href="http://linux.die.net/man/1/ssh-copy-id"><span class="icon"> </span>ssh-copy-id</a> command.
+      </p>
+
+    </div>
+
+    <!-- Back to Top -->
+    <a href="#" class="top">Back to Top &#x21E7;</a>
+  </div>
 </body>
+
 </html>

@@ -8,7 +8,7 @@
   <meta name="author" content="Zackary Falls">
   <meta property="og:title" content="XtalOpt - Download">
   <meta property="og:description" content="Download XtalOpt for Linux, Windows, and Mac OS X">
-  <meta property="og:image" content="http://xtalopt.github.io/dist/img/xtalopt-img.png">
+  <meta property="og:image" content="https://xtalopt.github.io/dist/img/xtalopt-logo.png">
   <title>XtalOpt - Download</title>
 
   <!-- Scripts -->
@@ -59,7 +59,7 @@
     border-radius: 100px;
     white-space: nowrap;
     opacity: .5;
-    background: #808080;
+    background: #005BBB;
     color: #fff;
     text-decoration: none;
   }
@@ -86,10 +86,10 @@
       <div class="row-fluid">
         <h2>Latest Release (12.3)</h2>
         <h4>Binaries</h4>
-        <a class="btn btn-medium btn-success" href="https://github.com/xtalopt/XtalOpt/releases/download/r12.3/windows-xtalopt.zip" onclick="ga('send','event','Windows','Download','r12.3');">Windows</a>
-        <a class="btn btn-medium btn-primary" href="https://github.com/xtalopt/XtalOpt/releases/download/r12.3/mac-intel-xtalopt.zip" onclick="ga('send','event','Mac','Download','r12.3');">MacOS (intel)</a>
-        <a class="btn btn-medium btn-info" href="https://github.com/xtalopt/XtalOpt/releases/download/r12.3/mac-silicon-xtalopt.zip" onclick="ga('send','event','Mac','Download','r12.3');">MacOS (silicon)</a>
-        <a class="btn btn-medium btn-danger" href="https://github.com/xtalopt/XtalOpt/releases/download/r12.3/linux-xtalopt.tgz" onclick="ga('send','event','Linux','Download','r12.3');">Linux (64-bit)</a>
+        <a class="btn btn-medium btn-success" href="https://github.com/xtalopt/XtalOpt/releases/download/r12.3/windows-xtalopt.zip" onclick="ga('send','event','Windows','Download','r12.3');">Windows (64-bit)</a>
+        <a class="btn btn-medium btn-primary" href="https://github.com/xtalopt/XtalOpt/releases/download/r12.3/mac-intel-xtalopt.zip" onclick="ga('send','event','Mac','Download','r12.3');">MacOS (x64)</a>
+        <a class="btn btn-medium btn-info" href="https://github.com/xtalopt/XtalOpt/releases/download/r12.3/mac-silicon-xtalopt.zip" onclick="ga('send','event','Mac','Download','r12.3');">MacOS (arm64)</a>
+        <a class="btn btn-medium btn-danger" href="https://github.com/xtalopt/XtalOpt/releases/download/r12.3/linux-xtalopt.tgz" onclick="ga('send','event','Linux','Download','r12.3');">Linux (x64)</a>
         <a class="btn btn-medium btn-warning" href="https://github.com/xtalopt/XtalOpt/releases/download/r12.3/linux-arm64-xtalopt.tgz" onclick="ga('send','event','Linux','Download','r12.3');">Linux (arm64)</a>
         <!--<a class="btn btn-medium btn-danger" href="https://github.com/xtalopt/XtalOpt/releases/download/r12.3/linux-xtalopt.tgz" onclick="ga('send','event','Linux','Download','r12.3');">Linux</a>-->
         <br>
@@ -111,18 +111,30 @@
     </a>
 
     <div class="jumbotron">
-      <h1>Installation</h1>
+      <h1>Install From Source</h1>
       <hr>
-      The provided guidelines are for compiling XtalOpt on various operating systems. However, please note that due to the diversity of operating systems and architectures (hence, libraries and compilers), it is challenging to offer general and complete instructions for compiling the code. The user might need to refer to the dedicated references for the compilers and libraries if any issue arises during the compilation process.
+
+      <p style="text-align:justify">
+      In order to build Xtalopt from source, a C++ compiler (with C++11 support) and the following dependencies are needed:
+      <tt>git</tt>, <tt>cmake</tt>, <tt>Qt</tt> framework, <tt>Qwt</tt> libraries, <tt>Eigen</tt> library, <tt>libssh</tt> and <tt>openssh</tt>.
+      A brief guideline is provided for each operating system through the following links.
+      <br><br>
+      <em>Note: Due to the diversity of operating systems and architectures (hence, libraries and compilers), it is challenging to offer complete and general compilation instructions. The user might need to refer to the dedicated references for their system/setup if any issue arises during the compilation process.</em>
       <br><br>
       <div class="row-fluid">
-        <a class="btn btn-medium btn-success" href="install-win.html">Windows</a>
-        <a class="btn btn-medium btn-primary" href="install-mac.html">MacOS</a>
-        <a class="btn btn-medium btn-danger"  href="install-linux.html">Linux</a>
-        <br><br>
+        <div class="span4">
+          <a class="btn btn-medium btn-success" href="install-win.html">Installation on Windows</a>
+        </div>
+        <div class="span4">
+          <a class="btn btn-medium btn-primary" href="install-mac.html">Installation on MacOS</a>
+        </div>
+        <div class="span4">
+          <a class="btn btn-medium btn-danger"  href="install-linux.html">Installation on Linux</a>
+        </div>
       </div>
     </div>
 
+    <!-- Back to Top -->
     <a href="#" class="top">Back to Top &#x21E7;</a>
   </div>
 

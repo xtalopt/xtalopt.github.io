@@ -8,7 +8,7 @@
   <meta name="author" content="Zackary Falls">
   <meta property="og:title" content="XtalOpt - Zurek Lab">
   <meta property="og:description" content="XtalOpt, an open-source evolutionary algorithm designed for a priori crystal structure prediction.">
-  <meta property="og:image" content="http://xtalopt.github.io/dist/img/xtalopt-img.png">
+  <meta property="og:image" content="https://xtalopt.github.io/dist/img/xtalopt-logo.png">
   <title>XtalOpt - Zurek Lab</title>
 
   <!-- Scripts -->
@@ -27,7 +27,7 @@
     border-radius: 100px;
     white-space: nowrap;
     opacity: .5;
-    background: #808080;
+    background: #005BBB;
     color: #fff;
     text-decoration: none;
   }
@@ -113,17 +113,17 @@
   <!--Content-->
   <div class="container">
     <div class="jumbotron">
-      <img src="dist/img/xtalopt-banner.png" width="auto">
+      <img src="dist/img/xtalopt-banner.png" style="max-width:400px;width:100%">
       <hr>
-      <p class="lead">XtalOpt is a free and truly <a href="http://opensource.org/">open source</a> evolutionary algorithm designed for a priori crystal structure prediction.</p>
+      <p class="lead">XtalOpt is a free and truly open source evolutionary algorithm designed for a priori crystal structure prediction.</p>
       <br>
       <center>
-        <a class="popup" target="_blank" href="dist/img/xtalopt-moes.png">
-          <img width="70%" src="dist/img/xtalopt-moes.png" alt="xtalopt-moes.png" >
+        <a class="popup" target="_blank" href="dist/img/xtalopt-flow.png">
+          <img src="dist/img/xtalopt-flow.png" style="max-width:550px;width:100%">
         </a>
           <br><br>
           <p class="lead">
-          Using features (properties) calculated by external codes, XtalOpt can perform multi-objective global optimization to find novel (meta)stable phases of functional materials.
+          Using objectives (properties) calculated by external codes, XtalOpt can perform multi-objective global optimization to find novel (meta)stable phases of functional materials.
           </p>
           <div class="row-fluid">
             <div class="span6">
@@ -142,6 +142,50 @@
     <div class="jumbotron" id="news">
       <h2>News</h2>
       <hr>
+      <!-- Version 13 Announcement -->
+      <details>
+        <summary><h4>&#x2752; TBA: XtalOpt Version 13.0</h4></summary>
+        <div class="row-fluid">
+          <div class="span6">
+            <ul align="left" style="text-align:-moz-left">
+              <li>Added the multi-objective evolutionary search (MOES) functionality to search for novel functional materials through:
+                <br>
+                (1) optimization of a desired set of user-specified objectives (including the AFLOW-ML hardness),
+                <br>
+                (2) constrained evolutionary search.</li>
+              <br>
+              <center>
+                <a class="popup" target="_blank" href="dist/img/xtalopt-moes-tab.png">
+                  <img width="70%" src="dist/img/xtalopt-moes-tab.png" alt="xtalopt-moes-tab.png" style="border:2px solid grey;border-radius:10px">
+                </a>
+                <p style="font-size:10px">
+                MOES tab in the graphical user interface of XtalOpt version 13.
+                </p>
+              </center>
+            </ul>
+            <li>Implemented the "localQueue" option to run XtalOpt locally on a computational cluster with local optimizations submitted to a queue.</li>
+          </div>
+          <div class="span6">
+            <ul align="left" style="text-align:-moz-left">
+              <center>
+                <a class="popup" target="_blank" href="dist/img/xtalopt-scaled-volume.png">
+                  <img width="55%" src="dist/img/xtalopt-scaled-volume.png" alt="xtalopt-scaled-volume.png" style="border:2px solid grey;border-radius:10px">
+                </a>
+                <p style="font-size:10px">
+                Setting the volume limits using the scaled volume option in the graphical user interface of XtalOpt version 13.
+                </p>
+              </center>
+              <li>Added the scaled volume option to set the minimum and maximum volume limits for the search.</li>
+              <li>Added the "softExit" and "hardExit" options to command-line interface for terminating the XtalOpt run once desired number of structures are generated.</li>
+              <li>Added the support for the VASP machine learning OUTCAR output files.</li>
+              <li>Various bug fixes.</li>
+            </ul>
+          </div>
+        </div>
+        <hr>
+      </details>
+
+      <!-- Version 12 Announcement -->
       <details>
         <summary><h4>&#x2752; Oct 21, 2018: XtalOpt Version r12.0 Released</h4></summary>
         <div class="row-fluid">
@@ -180,6 +224,7 @@
         <hr>
       </details>
 
+      <!-- Version 11 Announcement -->
       <details>
         <summary><h4>&#x2752; Sep 11, 2017: XtalOpt Version r11.0 Released</h4></summary>
         <div class="row-fluid">
@@ -218,6 +263,7 @@
         <hr>
       </details>
 
+      <!-- Version 10 Announcement -->
       <details>
         <summary><h4>&#x2752; Jun 14, 2017: XtalOpt Version r10.0 Released</h4></summary>
         <center>
@@ -245,7 +291,7 @@
           </div>
           <div class="span6">
             <ul align="left" style="text-align:-moz-left">
-              <li>Inclusion of variable forumla units within XtalOpt enables the search for cells with multiple numbers of formula units within a single run.</li>
+              <li>Inclusion of variable formula units within XtalOpt enables the search for cells with multiple numbers of formula units within a single run.</li>
               <br><br>
               <center>
                 <a class="popup" target="_blank" href="dist/img/fu.png">
@@ -266,6 +312,7 @@
         <hr>
       </details>
 
+      <!-- Avogadro2 Announcement -->
       <details>
         <summary><h4>&#x2752; Avogadro2 Updates</h4></summary>
         Our Ph.D. student, Patrick Avery, was accepted to the Google Summer of Code 2016!!!
@@ -276,6 +323,7 @@
         <hr>
       </details>
 
+      <!-- Version 9 Announcement -->
       <details>
         <summary><h4>&#x2752; Aug 11, 2016: XtalOpt Version r9.1 Released</h4></summary>
         <div class="row-fluid">
@@ -324,7 +372,7 @@
               <li>Bundled libssh library removed, now an optional dependency.</li>
               <li>Added option to use command-line ssh/scp interfaces when libssh is unavailable or Kerberos authentication is needed.</li>
               <li>Implemented an extension for an automated stochastic docking program (RandomDock) that supports MOPAC, ADF, GAMESS and Gaussian as back-end molecular quantum chemistry engines.</li>
-              <li>Numerous misc bugfixes.</li>
+              <li>Numerous misc bug fixes.</li>
             </ul>
           </div>
         </div>
@@ -344,6 +392,7 @@
       <img src="dist/img/ub-ccr-logo.jpg" alt="ub-ccr-logo.jpg" style="max-width:70%">
     </div>
 
+    <!-- Back to Top -->
     <a href="#" class="top">Back to Top &#x21E7;</a>
   </div>
 
