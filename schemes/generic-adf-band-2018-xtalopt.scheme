@@ -1,6 +1,6 @@
 [xtalopt]
 edit\description=band
-edit\localpath=path/to/dir
+edit\locWorkDir=path/to/dir
 edit\logErrorDirs=true
 edit\numOptSteps=1
 edit\optimizer\0=generic
@@ -13,7 +13,7 @@ edit\remote\host=host
 edit\remote\hoursForCancelJobAfterTime=100
 edit\remote\port=22
 edit\remote\queueRefreshInterval=10
-edit\remote\rempath=/path/to/dir
+edit\remote\remWorkDir=/path/to/dir
 edit\remote\username=user
 edit\user1=
 edit\user2=

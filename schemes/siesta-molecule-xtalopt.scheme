@@ -1,6 +1,6 @@
 [xtalopt]
 edit\description=test
-edit\localpath=/home/patrick/xtalopt-runs/siesta/test
+edit\locWorkDir=/home/patrick/xtalopt-runs/siesta/test
 edit\logErrorDirs=false
 edit\numOptSteps=1
 edit\optimizer\0=siesta
@@ -11,7 +11,7 @@ edit\remote\cleanRemoteOnStop=false
 edit\remote\host=rush.ccr.buffalo.edu
 edit\remote\port=22
 edit\remote\queueRefreshInterval=10
-edit\remote\rempath=/path/to/dir/
+edit\remote\remWorkDir=/path/to/dir/
 edit\remote\username=name
 edit\user1=
 edit\user2=

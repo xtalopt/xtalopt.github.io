@@ -2,11 +2,11 @@
 edit\version=2
 edit\description=
 edit\rempath=
-edit\localpath=
+edit\locWorkDir=
 edit\remote\host=
 edit\remote\port=22
 edit\remote\username=
-edit\remote\rempath=
+edit\remote\remWorkDir=
 edit\optimizer=gamess
 edit\queueInterface=pbs
 optimizer\GAMESS\job.inp_list="!   File created by the GAMESS Input Deck Generator Plugin for Avogadro\n $BASIS GBASIS=PM3 $END\n $CONTRL SCFTYP=RHF RUNTYP=OPTIMIZE MAXIT=200 $END\n $SCF DAMP=.T. $END\n $STATPT OPTTOL=0.0001 NSTEP=999 DXMAX=0.6 STSTEP=0.05 $END\n\n $DATA\nTitle\nC1\n%coordsId%\n $END\n\n"

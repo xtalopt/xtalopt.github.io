@@ -2,11 +2,11 @@
 edit\version=2
 edit\description=
 edit\rempath=
-edit\localpath=
+edit\locWorkDir=
 edit\remote\host=
 edit\remote\port=22
 edit\remote\username=
-edit\remote\rempath=
+edit\remote\remWorkDir=
 edit\optimizer=adf
 edit\queueInterface=pbs
 optimizer\ADF\job.adfin_list=Basis\nAu $ADFHOME/atomicdata/ZORA/DZ/Au.4f\nEnd\n\nXC\nLDA Xalpha\nEND\n\nmetagga \n\nrelativistic zora\n\nCHARGE -1 \nINTEGRATION 4.0\n\ngeometry\n converge 5e-3\n iterations 200\n optim cartesian\nend\n\nATOMS\n%coords%\nEND\n                                                                                                                                                                                   \nSCF\n  iterations 300\n  converge 1e-4\nEND\n\nNOPRINT Bas EigSFO Ekin SFO\nEPRINT\nSCF NoEigvec\nEND\n\nend input\n

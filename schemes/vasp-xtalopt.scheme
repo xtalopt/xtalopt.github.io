@@ -1,11 +1,11 @@
 [xtalopt]
 edit\description=test
-edit\localpath=/path/to/dir/
+edit\locWorkDir=/path/to/dir/
 edit\logErrorDirs=false
 edit\numOptSteps=6
 edit\optimizer\0=vasp
 edit\optimizer\0\vasp\INCAR="%filename%\n\n# output options\nLWAVE  = .FALSE. # write or don't write WAVECAR\nLCHARG = .FALSE. # write or don't write CHG and CHGCAR\nLELF   = .FALSE. # write ELF\n\n# ionic relaxation\nNSW = 20         # number of ionic steps\nIBRION = 2       # 2=conjucate gradient, 1=Newton like\nISIF = 2         # 3=relax everything, 2=relax ions only, 4=keep volume fixed\n\n# precision parameters\nEDIFF = 1E-3     # 1E-3 very low precision for pre-relaxation, use 1E-5 next\nEDIFFG = 1E-2    # usually: 10 * EDIFF\nPREC = med       # precision low, med, high, accurate\n\n# electronic relaxation\nISMEAR = -5      # -5 = tetraedon, 1..N = Methfessel\nENCUT = %user3%      # cutoff energy\nPSTRESS = %user2%\nISYM=0"
-edit\optimizer\0\vasp\KPOINTS="%filename%\n\n# output options\nLWAVE  = .FALSE. # write or don't write WAVECAR\nLCHARG = .FALSE. # write or don't write CHG and CHGCAR\nLELF   = .FALSE. # write ELF\n\n# ionic relaxation\nNSW = 20         # number of ionic steps\nIBRION = 2       # 2=conjucate gradient, 1=Newton like\nISIF = 2         # 3=relax everything, 2=relax ions only, 4=keep volume fixed\n\n# precision parameters\nEDIFF = 1E-3     # 1E-3 very low precision for pre-relaxation, use 1E-5 next\nEDIFFG = 1E-2    # usually: 10 * EDIFF\nPREC = med       # precision low, med, high, accurate\n\n# electronic relaxation\nISMEAR = -5      # -5 = tetraedon, 1..N = Methfessel\nENCUT = %user3%      # cutoff energy\nPSTRESS = %user2%\nISYM=0"
+edit\optimizer\0\vasp\KPOINTS=Automatic generation\n0\nAuto\n20
 edit\optimizer\0\vasp\POTCAR=%filecontents:/path/to/first/potcar/alphabetical/order%\n%filecontents:/path/to/second/potcar/alphabetical/order%
 edit\optimizer\1=vasp
 edit\optimizer\1\vasp\INCAR="%filename%\n\n# output options\nLWAVE  = .FALSE. # write or don't write WAVECAR\nLCHARG = .FALSE. # write or don't write CHG and CHGCAR\nLELF   = .FALSE. # write ELF\n\n# ionic relaxation\nNSW = 20         # number of ionic steps\nIBRION = 2       # 2=conjucate gradient, 1=Newton like\nISIF = 4         # 3=relax everything, 2=relax ions only, 4=keep volume fixed\n\n# precision parameters\nEDIFF = 1E-3     # 1E-3 very low precision for pre-relaxation, use 1E-5 next\nEDIFFG = 1E-2    # usually: 10 * EDIFF\nPREC = med       # precision low, med, high, accurate\n\n# electronic relaxation\nISMEAR = -5      # -5 = tetraedon, 1..N = Methfessel\nENCUT = %user3%      # cutoff energy\nPSTRESS = %user2%\nISYM=0"
@@ -45,7 +45,7 @@ edit\remote\host=rush.ccr.buffalo.edu
 edit\remote\hoursForCancelJobAfterTime=100
 edit\remote\port=22
 edit\remote\queueRefreshInterval=10
-edit\remote\rempath=/path/to/dir/
+edit\remote\remWorkDir=/path/to/dir/
 edit\remote\username=name
 edit\user1=
 edit\user2=

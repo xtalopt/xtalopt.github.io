@@ -1,6 +1,6 @@
 [xtalopt]
 edit\description=
-edit\localpath=
+edit\locWorkDir=
 edit\logErrorDirs=false
 edit\numOptSteps=6
 edit\optimizer\0=pwscf
@@ -31,6 +31,6 @@ edit\remote\cleanRemoteOnStop=false
 edit\remote\host=
 edit\remote\port=22
 edit\remote\queueRefreshInterval=10
-edit\remote\rempath=
+edit\remote\remWorkDir=
 edit\remote\username=
 edit\version=3

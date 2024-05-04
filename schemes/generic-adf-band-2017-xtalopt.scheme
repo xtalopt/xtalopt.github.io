@@ -1,6 +1,6 @@
 [xtalopt]
 edit\description=test
-edit\localpath=/path/to/working/dir
+edit\locWorkDir=/path/to/working/dir
 edit\logErrorDirs=true
 edit\numOptSteps=1
 edit\optimizer\0=generic
@@ -11,7 +11,7 @@ edit\remote\cleanRemoteOnStop=false
 edit\remote\host=host
 edit\remote\port=22
 edit\remote\queueRefreshInterval=10
-edit\remote\rempath=/path/to/working/dir
+edit\remote\remWorkDir=/path/to/working/dir
 edit\remote\username=name
 edit\user1=
 edit\user2=
