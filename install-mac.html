@@ -107,7 +107,7 @@
 
     <div class="jumbotron">
       <h2>Installation on MacOS</h2>
-      We encourage users to download and use XtalOpt pre-compiled binaries from the
+      Users can download and use XtalOpt pre-compiled binaries from the
       <a class="el" href="download.html">download</a> page.
       The following notes are not "instructions"; they are just meant to give you a
       picture of the overall compilation process. Depending on the compiler and installation details of
@@ -116,13 +116,19 @@
       <b><em>Note: these are merely general guidelines and come with no warranty whatsoever. The user is
           responssible in case their computer system incures any damage as a result of using, in part or in whole,
           the following materials.</em></b>
-      <br><br>
-      To obtain the source-code of XtalOpt see the <a class="el" href="download.html">download</a> page.
       <hr>
+
+      <h3>Obtaining the source code</h3>
+      <p style="text-align: left;">
+      To obtain the source-code of the latest stable version (or previous releases) of XtalOpt
+      see the <a class="el" href="download.html">download</a> page.
+      </p>
+
+      <br>
 
       <h3>Compiler and dependencies</h3>
       <p style="text-align: left;">
-      MacOS X users must install Xcode to compile the program. Since C++11 support is necessary, Xcode 8 or later is
+      MacOS users must install Xcode to compile the program. Since C++11 support is necessary, Xcode 8 or later is
       needed.
       <br><br>
       Moreover, compiling XtalOpt requires the following dependencies:
@@ -300,8 +306,8 @@ brew install git cmake qt@5 qwt-qt5 eigen libssh</pre>
       <h3>Example of a complete build script</h3>
       <p style="text-align: left;">
       The details of the <tt>cmake</tt> and <tt>make</tt> setup would depend on the compiler and the installed
-      dependencies. With that in mind, we are providing the following batch file just
-      an example of a possible setup to build the code on MacOS.
+      dependencies. With that in mind, we are providing the following bash script just
+      as an example of a possible setup to build the code on MacOS.
       <br><br>
       In the reference system, the required dependencies were installed using the Homebrew package manager. The
       following script was run in terminal, inside the <tt>build</tt> directory (located in the root of the XtalOpt
