@@ -85,21 +85,16 @@
       <img src="dist/img/xtalopt-banner.png" style="max-width:400px;width:100%">
       <hr>
       <p class="lead">
-      XtalOpt is a free and truly open source evolutionary algorithm designed for a priori crystal structure prediction.
+      XtalOpt is a free and truly open source multi-objective evolutionary algorithm designed for a priori prediction of functional materials with a fixed or variable composition.
       </p>
-
       <p class="lead">
-      A detailed user guide for the XtalOpt setup and usage:
+      Detailed user guide for the latest version of XtalOpt and the description of the implemented methodology:
       </p>
-      <a target="_blank" class="btn btn-large btn-basic" href="files/user_guide.pdf" onclick="ga('send','event','PDF','Download','tutorial');">User Guide</a>
-      <br><br>
-      <p class="lead">
-        Full description of the implemented methodology:
-      </p>
+      <a target="_blank" class="btn btn-large btn-basic" href="userguides/user_guide_14.0.pdf" onclick="ga('send','event','PDF','Download','tutorial');">User Guide</a>
       <a class="btn btn-large btn-basic" href="pub.html#methods">Methodology</a>
       <br><br>
       <p class="lead">
-      A quick overview of the XtalOpt code features:
+      Quick overview of the XtalOpt code features:
       </p>
       <a class="btn btn-large btn-basic" href="#interface">Graphical User Interface</a>
       <a class="btn btn-large btn-basic" href="#moes">Multi-Objective Search</a>
@@ -128,12 +123,13 @@
         </div>
         <div class="span6" align="left" style="text-align:-moz-left">
           <ul>
-            <li style="padding-top:7px">This tab is where the user defines the parameters of the each cell generated during the search.</li>
-            <li style="padding-top:7px">The user can specify the stoichiometry for each cell (e.g., 4 x Ti and 8 x O).</li>
+            <li style="padding-top:7px">This tab is where the user defines the reference chemical system, search type, and parameters of the each cell generated during the search.</li>
+            <li style="padding-top:7px">The user can specify a list of chemical formulas for the first generation of structures (e.g., Ti1O2, Ti2O3).</li>
+            <li style="padding-top:7px">Also, the search type can be chosen from fixed, multi, or variable composition.</li>
             <li style="padding-top:7px">A range can be set for the length of each cell vector (a, b, and c) and the corresponding angles (&#945, &#946, and &#947).</li>
-            <li style="padding-top:7px">The combination of the cell vector lengths determines the cell volume, but the user can set a limited range for the volume, or even a fixed volume.</li>
+            <li style="padding-top:7px">The combination of the cell vector lengths determines the cell volume, but the user can set a limited range for the volume per atom, limits for elemental volumes, or factors of estimated covalent volume.</li>
             <li style="padding-top:7px">Limiting the interatomic distances ensures the program is not generating nonsensical structures.</li>
-            <li style="padding-top:7px">Choosing the scaled volume sets the volume range based on total volume of van der Waals spheres of atoms in the cell.</li>
+            <li style="padding-top:7px">RandSpg or molecular unit builder can be used to generate the first population of structures.</li>
           </ul>
         </div>
       </div>
@@ -174,9 +170,9 @@
             <li style="padding-top:7px">"Search Settings" is where the user can alter how the search will proceed.</li>
             <li style="padding-top:7px">The number of randomly generated initial structures and number of concurrently running structures are controlled in this tab.</li>
             <li style="padding-top:7px">The termination criteria of final number of structures can be set here, as well.</li>
-            <li style="padding-top:7px">Users can adjust the percentage of occurrence of each operator type.</li>
+            <li style="padding-top:7px">Users can adjust the relative chance of occurrence of each operator type.</li>
             <li style="padding-top:7px">Furthermore, the individual parameters of each operator can be fine tuned (number of exchanges in a "permustrain" or minimum contribution from a parent during a "crossover").</li>
-            <li style="padding-top:7px">Duplicate matching parameters are also found here.</li>
+            <li style="padding-top:7px">Similarity check schemes and their parameters are also found here.</li>
           </ul>
         </div>
       </div>
@@ -188,16 +184,18 @@
           <ul>
             <li style="padding-top:7px">To utilize the multi-objective search functionality of XtalOpt, the user can add desired "objectives", i.e., any property that can be calculated for a structure, for simultaneous optimization with total enthalpy.</li>
             <li style="padding-top:7px">The "Multiobjective Search" tab allows the user to specify for each objective: <ul>
-              <li>the optimization type,</li>
+              <li>the objective type,</li>
               <li>corresponding weight,</li>
               <li>path to the (potentially) external code or script that calculates that objective,</li>
               <li>the output file name of the external code for reading the corresponding calculated value.</li>
             </ul></li>
+            <li style="padding-top:7px">In this tab, the user can also choose the global optimization type from "Basic"
+            or "Pareto", and fine-tune relevant parameters.</li>
           </ul>
         </div>
         <div class="span6">
-          <a class="popup" target="_blank" href="dist/img/xtalopt-moes-tab.png">
-            <img width="100%" src="dist/img/xtalopt-moes-tab.png" alt="xtalopt-moes-tab.png">
+          <a class="popup" target="_blank" href="dist/img/xtalopt-moes.png">
+            <img width="100%" src="dist/img/xtalopt-moes.png" alt="xtalopt-moes.png">
           </a>
           <p style="font-size:11px">
           The "Multiobjective Search" tab
@@ -210,11 +208,11 @@
         <li style="padding-top:7px">As XtalOpt performs the search, the progress table continuously updates, providing information about each structure.</li>
         <li style="padding-top:7px">In the figure we see individuals in various stages of completion:</li>
         <ul align="left" style="text-align:-moz-left">
-          <li style="padding-top:7px">One structure XtalOpt displays is optimized (in blue), another structure has been automatically marked as a duplicate (dark green) and removed from the breeding pool, yet another structure is currently undergoing a local optimization (light green), while another structure is waiting to be optimized (light blue). For a multi-objective run, while the objectives are being calculated, the structure is marked as calculating objectives (yellow). If these objective calculations fail, then the structure will be marked as objective fail (gray).</li>
+          <li style="padding-top:7px">One structure XtalOpt displays is optimized (in blue), another structure has been automatically marked as a "similarity" (dark green) and removed from the breeding pool, yet another structure is currently undergoing a local optimization (light green), while another structure is waiting to be optimized. For a multi-objective run, while the objectives are being calculated, the structure is marked as calculating objectives (yellow). If these objective calculations fail, then the structure will be marked as objective fail (gray).</li>
         </ul>
-        <li style="padding-top:7px">Other useful information is displayed about each structure, such as the time spent in optimization, the optimized enthalpy, the cell volume, spacegroup, and each structure’s ancestry (i.e. parent(s) and parameters for the evolutionary operator that generated it).</li>
-        <li style="padding-top:7px">A status bar on the bottom of the window shows the number of structures that are optimized, running, and failing at any given time.</li>
-        <li style="padding-top:7px">This information is visible regardless of which tab is currently being viewed.</li>
+        <li style="padding-top:7px">Other useful information is displayed about each structure, such as the time spent in optimization, the optimized enthalpy per atom, calculated distance above hull and Pareto front (rank), the volume per atom, spacegroup, and each structure's ancestry (i.e. parent(s) and parameters for the evolutionary operator that generated it).</li>
+        <li style="padding-top:7px">A status bar on the bottom of the window shows the total number of generated structures, number of structures that are optimized, running, and failing at any given time.</li>
+        <li style="padding-top:7px">This information is updated regardless of which tab is currently being viewed.</li>
         <li style="padding-top:7px">An additional feature of the progress table is the ability to immediately visualize any of the individuals in the Avogadro main window – simply clicking on a row in this table will display the three-dimensional structure in Avogadro, where it can be visualized, modified, or exported.</li>
         <li style="padding-top:7px">If the user would like to add a bit of “intelligent design” to the evolutionary process, a structure can be modified and then resubmitted using a context (right-click) menu from the progress table.</li>
         <li style="padding-top:7px">The context menu provides tools to (un)kill a structure, resubmit for local optimization at an arbitrary optimization step, or replace a problematic structure with a new, random individual.</li>
@@ -230,8 +228,8 @@
       <ul align="left" style="text-align:-moz-left">
         <li style="padding-bottom:7px">Another visualization and analysis tool available during the search is the interactive plot.</li>
         <li style="padding-bottom:7px">Allows investigation of various trends in the search by plotting a point for each individual.</li>
-        <li style="padding-bottom:7px">Each point can be plotted based upon structure number, generation number, enthalpy, energy, PV enthalpy term, lattice parameters, cell volume, or objectives (in a multi-objective search) on either axis.</li>
-        <li style="padding-bottom:7px">Further information is available by labeling the points with the individual’s structure ID, spacegroup number, Hermann-Mauguin spacegroup symbol, enthalpy, energy, PV term, volume, generation, or index number.</li>
+        <li style="padding-bottom:7px">Each point can be plotted based upon distance above hull, Pareto front, structure index, generation number, enthalpy, energy, PV enthalpy term, lattice parameters, cell volume, or objectives (in a multi-objective search) on either axis.</li>
+        <li style="padding-bottom:7px">Further information is available by labeling the points with the individual’s structure tag, spacegroup number, Hermann-Mauguin spacegroup symbol, enthalpy, energy, PV term, volume, generation, or index number.</li>
         <li style="padding-bottom:7px">The plot is also interactive; zooming and panning are possible using simple mouse controls.</li>
         <li style="padding-bottom:7px">Clicking on a structure’s point in the plot will load it in the main Avogadro window, allowing all the same functionality as described above in the progress table section.</li>
       </ul>
@@ -249,7 +247,7 @@
             <img src="dist/img/xtalopt-plot-opt+dup.png" alt="xtalopt-plot-opt+dup.png" width="100%">
           </a>
           <p style="font-size:11px">
-          The "Plot" tab showing optimized (triangles) and duplicate and supercell (squares) structures
+          The "Plot" tab showing optimized structures (blue triangles) and those marked as similar (green squares).
           </p>
         </div>
       </div>
@@ -272,7 +270,7 @@
         <li style="padding-bottom:7px">Performing the multi-objective optimization, requires the user to further specify the optimization type and a weight for each objective to be used in calculating the generalized fitness function.</li>
         </ul>
       </p>
-      <h3>Generalized fitness function</h3>
+      <h3>Basic generalized fitness function</h3>
       <p>
         <ul align="left" style="text-align:-moz-left">
         <li style="padding-bottom:7px">XtalOpt uses a scalar generalized fitness function to assess the suitability of each structure in a multi-objective optimization.</li>
@@ -287,6 +285,19 @@
         where \(\{X_s\}\) and \(\{Y_s\}\) are the values of the corresponding objectives calculated for the \(s^\textrm{th}\) structure, and \(\{w\}\) is the set of weights associated with the objectives chosen to reflect their relative significance
         <li style="padding-bottom:7px">With the total objective weights' equal to 1.0, the fitness function will be a value between 0 and 1.</li>
         <li style="padding-bottom:7px">Choosing as many structures as the user-specified pool size according to the fitness value of candidate structures, an accumulative probability is being calculated. This probability will be used to chose a structure randomly for procreation by means of evolutionary operations.</li>
+        </ul>
+      </p>
+
+      <h3>Pareto optimization</h3>
+      <p>
+        <ul align="left" style="text-align:-moz-left">
+        <li style="padding-bottom:7px">Regardless of the number of objectives, XtalOpt can perform global optimization
+               through Pareto optimization.</li>
+        <li style="padding-bottom:7px">Within the NSGA-II algorithm, a non-dominated sorting is performed to obtain the
+               ranks and (scaled) crowding distances of structures pool.</li>
+        <li style="padding-bottom:7px">A new parent is then chosen through a "binary tournament selection".</li>
+        <li style="padding-bottom:7px">Further, XtalOpt can -optionally- convert the rank-distance information
+            to a scalar fitness measure and use that for parent selection.</li>
         </ul>
       </p>
     </div>
@@ -375,6 +386,52 @@
       <a class="popup" target="_blank" href="dist/img/xtalopt-crossover.png">
         <img src="dist/img/xtalopt-crossover.png" alt="xtalopt-crossover.png">
       </a>
+      <br><br>
+
+      <h3>Permutomic</h3>
+      <p>
+      <ul align="left" style="text-align:-moz-left">
+        <li style="padding-bottom:7px">The permutomic operator perfroms an atomic mutation in the parent cell.</li>
+        <li style="padding-bottom:7px">After applying a small strain to the parent cell, an atom is randomly
+                                       added or removed, to produce the offspring.</li>
+        <li style="padding-bottom:7px">This operation is designed for the variable-composition search.</li>
+      </ul>
+      </p>
+      <a class="popup" target="_blank" href="dist/img/xtalopt-permutomic.png">
+        <img src="dist/img/xtalopt-permutomic.png" alt="xtalopt-permutomic.png" style="max-width: 390px;width: 100%">
+      </a>
+      <br><br>
+
+      <h3>Permucomp</h3>
+      <p>
+      <ul align="left" style="text-align:-moz-left">
+        <li style="padding-bottom:7px">The permucomp, mutation of composition, is a genetic operation aimed at
+                                       diversifying the structures pool by creating new random compositions.</li>
+        <li style="padding-bottom:7px">It is applicable only to variable-composition searches.</li>
+        <li style="padding-bottom:7px">Starting with slightly distorted parent cell, a new random composition
+                                       is produced, and atoms are distributed in the cell accordingly.</li>
+      </ul>
+      </p>
+      <a class="popup" target="_blank" href="dist/img/xtalopt-permucomp.png">
+        <img src="dist/img/xtalopt-permucomp.png" alt="xtalopt-permucomp.png" style="max-width: 430px;width: 100%">
+      </a>
+      <br><br>
+
+      <h3>Supercell Mutation</h3>
+      <p>
+      <ul align="left" style="text-align:-moz-left">
+        <li style="padding-bottom:7px">Supercell mutation is a "pseudo"-genetic operation, which is applied to the
+        outcome of the above genetic operations, according to a user-specified probability.
+        <li style="padding-bottom:7px">Considering the total number of atoms in the starting cell and maximum number of
+        atoms specified by the user, three random expansion factors are determined for a supercell expansion.
+        <li style="padding-bottom:7px">In the produced supercell, an atom is chosen and displaced randomly,
+        subject to the minimum inter-atomic distance constrains.
+      </ul>
+      </p>
+      <a class="popup" target="_blank" href="dist/img/xtalopt-supercell.png">
+        <img src="dist/img/xtalopt-supercell.png" alt="xtalopt-supercell.png" style="max-width: 420px;width: 100%">
+      </a>
+
     </div>
 
     <!-- Back to Top -->
