@@ -278,8 +278,8 @@
         <center>
           <p>
             \(f_s=
-            \sum_i w^i_X \left( \frac{X^i_{max} - X^i_{s}  }{X^i_{max}-X^i_{min}} \right) +
-            \sum_j w^j_Y \left( \frac{Y^j_{s}   - Y^j_{min}}{Y^j_{max}-Y^j_{min}} \right) \)
+            \sum_i w^i_X \left( \frac{X^i_{max} - X^i_{s}  }{X^i_{max}-X^i_{min}} \right) + \)
+            \( \sum_j w^j_Y \left( \frac{Y^j_{s}   - Y^j_{min}}{Y^j_{max}-Y^j_{min}} \right) \)
           </p>
         </center>
         where \(\{X_s\}\) and \(\{Y_s\}\) are the values of the corresponding objectives calculated for the \(s^\textrm{th}\) structure, and \(\{w\}\) is the set of weights associated with the objectives chosen to reflect their relative significance
@@ -308,12 +308,49 @@
 
     <div class="jumbotron">
       <h2>Evolutionary Operations</h2>
+
       <hr>
-      <h3>Strain</h3>
+
+
+<ul align="left" style="text-align:-moz-left">
+XtalOpt algorithm relies on various evolutionary operations to produce a new structure.
+Generally, these operation include
+"mating" of two parent structures (<a href="#opcrossover"><b>crossover</b></a>)
+and "mutating" a parent structure
+(<a href="#oppermustrain"><b>permustrain</b></a>,
+<a href="#opstripple"><b>stripple</b></a>,
+<a href="#oppermutomic"><b>permutomic</b></a>,
+<a href="#oppermucomp"><b>permucomp</b></a>, and
+<a href="#opsupercell"><b>supercell mutation</b></a>)
+to generate an offspring.
+<br>
+The mutation operators are, often, comprised of successive steps of
+"<a href="#elemexchange"><b>elementary mutators</b></a>".
+<br>
+These elementary mutators and XtalOpt evolutionary operations are as follows.
+</ul>
+
+
+
+
+
+      <h5 id="elemexchange">Elementary mutator: Exchange</h5>
       <p>
       <ul align="left" style="text-align:-moz-left">
-        <li style="padding-bottom:7px">The strain operator allows XtalOpt to mutate the unit cell parameters, but not the fractional positions of the atoms.</li>
-        <li style="padding-bottom:7px">One can multiply the cell row vectors by the symmetric voight matrix, as shown below,</li>
+        <li style="padding-bottom:7px">Exchange is the simplest mutator that exchanges two atoms of
+        different types in a cell.</li>
+      </ul>
+      </p>
+      <a class="popup" target="_blank" href="dist/img/xtalopt-exchange.png">
+        <img src="dist/img/xtalopt-exchange.png" alt="xtalopt-exchange.png" style="max-width: 400px;width: 100%">
+      </a>
+      <br><br>
+
+      <h5 id="elemstrain">Elementary mutator: Strain</h5>
+      <ul align="left" style="text-align:-moz-left">
+        <li style="padding-bottom:7px">The strain mutator allows XtalOpt to mutate the unit cell parameters,
+        but not the fractional positions of the atoms.
+        One can multiply the cell row vectors by the symmetric voight matrix, as shown below,</li>
         <center>
           <p>
           \( \vec{\textrm{v}}_{\textrm{new}} = \vec{\textrm{v}}
@@ -329,34 +366,28 @@
       </p>
       <br>
       <a class="popup" target="_blank" href="dist/img/xtalopt-strain.png">
-        <img src="dist/img/xtalopt-strain.png" alt="xtalopt-strain.png">
+        <img src="dist/img/xtalopt-strain.png" alt="xtalopt-strain.png" style="max-width: 420px;width: 100%">
       </a>
       <br><br>
 
-      <h3>Exchange</h3>
+      <h5 id="elemripple">Elementary mutator: Ripple</h5>
       <p>
       <ul align="left" style="text-align:-moz-left">
-        <li style="padding-bottom:7px">Exchange is the simpliest operator that exchanges two atoms of different types in a cell.</li>
-      </ul>
-      </p>
-      <a class="popup" target="_blank" href="dist/img/xtalopt-exchange.png">
-        <img src="dist/img/xtalopt-exchange.png" alt="xtalopt-exchange.png">
-      </a>
-      <br><br>
-
-      <h3>Ripple</h3>
-      <p>
-      <ul align="left" style="text-align:-moz-left">
-        <li style="padding-bottom:7px">The ripple operator acts as a periodic displacement of the atomic coordinates in a cell.</li>
-        <li style="padding-bottom:7px">A random axis is chosen (for this example the \(z\) axis will be chosen) and the atoms along this axis are shifted by an amount, \(\Delta z\), where the new coordinate along that axis will be \( z_\mathrm{new} = z + \Delta z \).</li>
-        <li style="padding-bottom:7px">The displacement along the axis chosen is dependent on atomic placement in the orthogonal plane (\(x\) and \(y\) axes for this example) following the formula:</li>
+        <li style="padding-bottom:7px">The ripple mutator acts as a periodic displacement of the atomic
+        coordinates in a cell. A random axis is chosen (e.g., the \(z\) axis) and
+        the atoms along this axis are shifted by an amount, \(\Delta z\), where the new coordinate along that
+        axis will be \( z_\mathrm{new} = z + \Delta z \).
+        <br>
+        The displacement along the axis chosen is dependent on atomic placement in the orthogonal plane
+        (\(x\) and \(y\) axes for this example) following the formula:
         <center>
           <br>
           <p>
-          \( \Delta z = \rho\cos(2\pi\mu x+\theta_{x})\cos(2\pi\eta y+\theta_{y})~~~~~\mu\in\mathbb{Z},~\eta\in\mathbb{Z} \)
+          \( \Delta z = \rho\cos(2\pi\mu x+\theta_{x})\cos(2\pi\eta y+\theta_{y}), \)
+          \(~~~~~\mu\in\mathbb{Z},~\eta\in\mathbb{Z} \)
           </p>
         </center>
-        <li style="padding-bottom:7px">In this equation:</li>
+        In this equation:
         <ul align="left" style="text-align:-moz-left">
           <li style="padding-bottom:7px">\(\rho\) is the maximum displacement of an atom along the axis.</li>
           <li style="padding-bottom:7px">\(\mu\) and \(\eta\) determines the number of cosine waves in the orthogonal directions.</li>
@@ -365,11 +396,86 @@
       </ul>
       </p>
       <a class="popup" target="_blank" href="dist/img/xtalopt-ripple.png">
-        <img src="dist/img/xtalopt-ripple.png" alt="xtalopt-ripple.png">
+        <img src="dist/img/xtalopt-ripple.png" alt="xtalopt-ripple.png" style="max-width: 500px;width: 100%">
+      </a>
+
+
+      <br><br>
+
+      <h3 id="oppermustrain">Permustrain</h3>
+      <p>
+      <ul align="left" style="text-align:-moz-left">
+        <li style="padding-bottom:7px">The permustrain evolutionary operation combines two of the basic mutations,
+        <a href="#elemstrain">strain</a> and <a href="#elemexchange">exchange</a>,
+        to produce an offspring from a given parent structure.
+        <li style="padding-bottom:7px">The specifications of the strain operation can be set by the user,
+        and the atoms to be exchanged are being selected randomly.
+      </ul>
+      </p>
+      <br><br>
+
+      <h3 id="opstripple">Stripple</h3>
+      <p>
+      <ul align="left" style="text-align:-moz-left">
+        <li style="padding-bottom:7px">Another evolutionary operation that mutates the parent structure,
+        stripple, applies an <a href="#elemstrain">strain</a> followed by
+        a <a href="#elemripple">ripple</a> mutation to the selected parent cell.
+        <li style="padding-bottom:7px">The strain and ripple operations are performed according to the
+        user-defined details for these steps.
+      </ul>
+      </p>
+      <br><br>
+
+      <h3 id="oppermutomic">Permutomic</h3>
+      <p>
+      <ul align="left" style="text-align:-moz-left">
+        <li style="padding-bottom:7px">The permutomic operator performs an atomic mutation in the parent cell.</li>
+        <li style="padding-bottom:7px">After applying a small <a href="#elemstrain">strain</a> to the parent cell,
+        an atom is randomly added or removed, to produce the offspring.</li>
+        <li style="padding-bottom:7px">This operation is designed for the variable-composition search.</li>
+      </ul>
+      </p>
+      <a class="popup" target="_blank" href="dist/img/xtalopt-permutomic.png">
+        <img src="dist/img/xtalopt-permutomic.png" alt="xtalopt-permutomic.png" style="max-width: 390px;width: 100%">
       </a>
       <br><br>
 
-      <h3>Crossover</h3>
+      <h3 id="oppermucomp">Permucomp</h3>
+      <p>
+      <ul align="left" style="text-align:-moz-left">
+        <li style="padding-bottom:7px">The permucomp, mutation of composition, is a genetic operation aimed at
+                                       diversifying the structures pool by creating new random compositions.</li>
+        <li style="padding-bottom:7px">This can be considered an "exotic permutomic"! While permutomic adds or removes
+        one atom in the cell; permucomp creates a brand new composition.</li>
+        <li style="padding-bottom:7px">Starting with slightly distorted parent cell through applying
+        <a href="#elemstrain">strain</a>, a new random composition
+        is produced and atoms are distributed in the cell accordingly.</li>
+        <li style="padding-bottom:7px">As an operation that changes the composition, this is applicable only to variable-composition searches.</li>
+      </ul>
+      </p>
+      <a class="popup" target="_blank" href="dist/img/xtalopt-permucomp.png">
+        <img src="dist/img/xtalopt-permucomp.png" alt="xtalopt-permucomp.png" style="max-width: 430px;width: 100%">
+      </a>
+      <br><br>
+
+      <h3 id="opsupercell">Supercell Mutation</h3>
+      <p>
+      <ul align="left" style="text-align:-moz-left">
+        <li style="padding-bottom:7px">Supercell mutation is a "pseudo"-genetic operation, which is applied to the
+        outcome of the above genetic operations, according to a user-specified probability.
+        <li style="padding-bottom:7px">Considering the total number of atoms in the starting cell and maximum number of
+        atoms specified by the user, three random expansion factors are determined for a supercell expansion.
+        <li style="padding-bottom:7px">In the produced supercell, an atom is chosen and displaced randomly,
+        subject to the minimum inter-atomic distance constrains.
+      </ul>
+      </p>
+      <a class="popup" target="_blank" href="dist/img/xtalopt-supercell.png">
+        <img src="dist/img/xtalopt-supercell.png" alt="xtalopt-supercell.png" style="max-width: 420px;width: 100%">
+      </a>
+      <br><br>
+
+
+      <h3 id="opcrossover">Crossover</h3>
       <p>
       <ul align="left" style="text-align:-moz-left">
         <li style="padding-bottom:7px">The crossover, or "cut and splice", operator is the equivalent of breeding in biology of breeding in which two parents are combined to form an offspring.</li>
@@ -384,53 +490,9 @@
       </p>
       <br>
       <a class="popup" target="_blank" href="dist/img/xtalopt-crossover.png">
-        <img src="dist/img/xtalopt-crossover.png" alt="xtalopt-crossover.png">
+        <img src="dist/img/xtalopt-crossover.png" alt="xtalopt-crossover.png" style="max-width: 500px;width: 100%">
       </a>
-      <br><br>
 
-      <h3>Permutomic</h3>
-      <p>
-      <ul align="left" style="text-align:-moz-left">
-        <li style="padding-bottom:7px">The permutomic operator perfroms an atomic mutation in the parent cell.</li>
-        <li style="padding-bottom:7px">After applying a small strain to the parent cell, an atom is randomly
-                                       added or removed, to produce the offspring.</li>
-        <li style="padding-bottom:7px">This operation is designed for the variable-composition search.</li>
-      </ul>
-      </p>
-      <a class="popup" target="_blank" href="dist/img/xtalopt-permutomic.png">
-        <img src="dist/img/xtalopt-permutomic.png" alt="xtalopt-permutomic.png" style="max-width: 390px;width: 100%">
-      </a>
-      <br><br>
-
-      <h3>Permucomp</h3>
-      <p>
-      <ul align="left" style="text-align:-moz-left">
-        <li style="padding-bottom:7px">The permucomp, mutation of composition, is a genetic operation aimed at
-                                       diversifying the structures pool by creating new random compositions.</li>
-        <li style="padding-bottom:7px">It is applicable only to variable-composition searches.</li>
-        <li style="padding-bottom:7px">Starting with slightly distorted parent cell, a new random composition
-                                       is produced, and atoms are distributed in the cell accordingly.</li>
-      </ul>
-      </p>
-      <a class="popup" target="_blank" href="dist/img/xtalopt-permucomp.png">
-        <img src="dist/img/xtalopt-permucomp.png" alt="xtalopt-permucomp.png" style="max-width: 430px;width: 100%">
-      </a>
-      <br><br>
-
-      <h3>Supercell Mutation</h3>
-      <p>
-      <ul align="left" style="text-align:-moz-left">
-        <li style="padding-bottom:7px">Supercell mutation is a "pseudo"-genetic operation, which is applied to the
-        outcome of the above genetic operations, according to a user-specified probability.
-        <li style="padding-bottom:7px">Considering the total number of atoms in the starting cell and maximum number of
-        atoms specified by the user, three random expansion factors are determined for a supercell expansion.
-        <li style="padding-bottom:7px">In the produced supercell, an atom is chosen and displaced randomly,
-        subject to the minimum inter-atomic distance constrains.
-      </ul>
-      </p>
-      <a class="popup" target="_blank" href="dist/img/xtalopt-supercell.png">
-        <img src="dist/img/xtalopt-supercell.png" alt="xtalopt-supercell.png" style="max-width: 420px;width: 100%">
-      </a>
 
     </div>
 
