@@ -320,9 +320,9 @@ and "mutating" a parent structure
 (<a href="#oppermustrain"><b>permustrain</b></a>,
 <a href="#opstripple"><b>stripple</b></a>,
 <a href="#oppermutomic"><b>permutomic</b></a>,
-<a href="#oppermucomp"><b>permucomp</b></a>, and
-<a href="#opsupercell"><b>supercell mutation</b></a>)
-to generate an offspring.
+<a href="#oppermucomp"><b>permucomp</b></a>, and) to generate an offspring;
+while the structures produced by these operations can be further mutated
+through a <a href="#opsupercell"><b>random supercell expansion</b></a>.
 <br>
 The mutation operators are, often, comprised of successive steps of
 "<a href="#elemexchange"><b>elementary mutators</b></a>".
@@ -336,7 +336,7 @@ These elementary mutators and XtalOpt evolutionary operations are as follows.
 <div style="background-color: Gainsboro;">
 <br>
 
-      <h5 id="elemexchange">Elementary mutator: Exchange</h5>
+      <h5 id="elemexchange">Elementary Mutator: Exchange</h5>
       <p>
       <ul align="left" style="text-align:-moz-left">
         <li style="padding-bottom:7px">Exchange is the simplest mutator that exchanges two atoms of
@@ -348,7 +348,7 @@ These elementary mutators and XtalOpt evolutionary operations are as follows.
       </a>
       <br><br>
 
-      <h5 id="elemstrain">Elementary mutator: Strain</h5>
+      <h5 id="elemstrain">Elementary Mutator: Strain</h5>
       <ul align="left" style="text-align:-moz-left">
         <li style="padding-bottom:7px">The strain mutator allows XtalOpt to mutate the unit cell parameters,
         but not the fractional positions of the atoms.
@@ -372,7 +372,7 @@ These elementary mutators and XtalOpt evolutionary operations are as follows.
       </a>
       <br><br>
 
-      <h5 id="elemripple">Elementary mutator: Ripple</h5>
+      <h5 id="elemripple">Elementary Mutator: Ripple</h5>
       <p>
       <ul align="left" style="text-align:-moz-left">
         <li style="padding-bottom:7px">The ripple mutator acts as a periodic displacement of the atomic
@@ -460,22 +460,6 @@ These elementary mutators and XtalOpt evolutionary operations are as follows.
       </a>
       <br><br>
 
-      <h3 id="opsupercell">Supercell Mutation</h3>
-      <p>
-      <ul align="left" style="text-align:-moz-left">
-        <li style="padding-bottom:7px">Supercell mutation is a "pseudo"-genetic operation, which is applied to the
-        outcome of the above genetic operations, according to a user-specified probability.
-        <li style="padding-bottom:7px">Considering the total number of atoms in the starting cell and maximum number of
-        atoms specified by the user, three random expansion factors are determined for a supercell expansion.
-        <li style="padding-bottom:7px">In the produced supercell, an atom is chosen and displaced randomly,
-        subject to the minimum inter-atomic distance constrains.
-      </ul>
-      </p>
-      <a class="popup" target="_blank" href="dist/img/xtalopt-supercell.png">
-        <img src="dist/img/xtalopt-supercell.png" alt="xtalopt-supercell.png" style="max-width: 420px;width: 100%">
-      </a>
-      <br><br>
-
 
       <h3 id="opcrossover">Crossover</h3>
       <p>
@@ -488,13 +472,32 @@ These elementary mutators and XtalOpt evolutionary operations are as follows.
         <li style="padding-bottom:7px">Finally, the two halves are "spliced" together.</li>
         <li style="padding-bottom:7px">This occurs through first joining the atomic positions in fractional coordinates.</li>
         <li style="padding-bottom:7px">The cell dimensions are defined through random weighting of each of the parents' cell vectors.</li>
+        <li style="padding-bottom:7px">The composition of offspring produced in crossover depends on the search type:
+        for a fixed- or multi-composition search it is forced the have one of the parent structures' composition;
+        while there is no such a restriction in a variable-composition search.</li>
       </ul>
       </p>
       <br>
       <a class="popup" target="_blank" href="dist/img/xtalopt-crossover.png">
         <img src="dist/img/xtalopt-crossover.png" alt="xtalopt-crossover.png" style="max-width: 500px;width: 100%">
       </a>
+      <br><br>
 
+
+      <h3 id="opsupercell">Random Supercell Expansion</h3>
+      <p>
+      <ul align="left" style="text-align:-moz-left">
+        <li style="padding-bottom:7px">Random supercell expansion is a "pseudo"-genetic operation: it can be applied to the
+        outcome of the above genetic operations, according to a user-specified probability.
+        <li style="padding-bottom:7px">Considering the total number of atoms in the starting cell and the maximum number of
+        atoms specified by the user, three random expansion factors are determined and applied to obtain a supercell.
+        <li style="padding-bottom:7px">In the produced supercell, an atom is chosen and displaced randomly,
+        subject to the minimum inter-atomic distance constrains.
+      </ul>
+      </p>
+      <a class="popup" target="_blank" href="dist/img/xtalopt-supercell.png">
+        <img src="dist/img/xtalopt-supercell.png" alt="xtalopt-supercell.png" style="max-width: 420px;width: 100%">
+      </a>
 
     </div>
 
