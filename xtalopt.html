@@ -320,14 +320,15 @@ and "mutating" a parent structure
 (<a href="#oppermustrain"><b>permustrain</b></a>,
 <a href="#opstripple"><b>stripple</b></a>,
 <a href="#oppermutomic"><b>permutomic</b></a>,
-<a href="#oppermucomp"><b>permucomp</b></a>, and) to generate an offspring;
-while the structures produced by these operations can be further mutated
-through a <a href="#opsupercell"><b>random supercell expansion</b></a>.
-<br>
+<a href="#oppermucomp"><b>permucomp</b></a>, and) to generate an offspring.
+<br><br>
 The mutation operators are, often, comprised of successive steps of
 "<a href="#elemexchange"><b>elementary mutators</b></a>".
-<br>
-These elementary mutators and XtalOpt evolutionary operations are as follows.
+<br><br>
+Moreover, and for a structure generated with any of the evolutionary operations,
+the user can optionally instruct XtalOpt to apply a
+"<a href="#opsupercell"><b>secondary mutator</b></a>" that randomly expands the
+offspring to a supercell, and randomly moves an atom therein in the produced structure.
 <br><br>
 </ul>
 
@@ -484,7 +485,9 @@ These elementary mutators and XtalOpt evolutionary operations are as follows.
       <br><br>
 
 
-      <h3 id="opsupercell">Random Supercell Expansion</h3>
+<div style="background-color: Gainsboro;">
+<br>
+      <h5 id="opsupercell">Secondary Mutator: Random Supercell Expansion</h5>
       <p>
       <ul align="left" style="text-align:-moz-left">
         <li style="padding-bottom:7px">Random supercell expansion is a "pseudo"-genetic operation: it can be applied to the
@@ -498,6 +501,9 @@ These elementary mutators and XtalOpt evolutionary operations are as follows.
       <a class="popup" target="_blank" href="dist/img/xtalopt-supercell.png">
         <img src="dist/img/xtalopt-supercell.png" alt="xtalopt-supercell.png" style="max-width: 420px;width: 100%">
       </a>
+</div>
+
+
 
     </div>
 
