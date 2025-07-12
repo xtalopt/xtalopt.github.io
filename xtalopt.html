@@ -90,7 +90,7 @@
       <p class="lead">
       Detailed user guide for the latest version of XtalOpt and the description of the implemented methodology:
       </p>
-      <a target="_blank" class="btn btn-large btn-basic" href="userguides/user_guide_14.0.pdf" onclick="ga('send','event','PDF','Download','tutorial');">User Guide</a>
+      <a target="_blank" class="btn btn-large btn-basic" href="userguides/user_guide_14.1.pdf" onclick="ga('send','event','PDF','Download','tutorial');">User Guide</a>
       <a class="btn btn-large btn-basic" href="pub.html#methods">Methodology</a>
       <br><br>
       <p class="lead">
@@ -476,6 +476,10 @@ offspring to a supercell, and randomly moves an atom therein in the produced str
         <li style="padding-bottom:7px">The composition of offspring produced in crossover depends on the search type:
         for a fixed- or multi-composition search it is forced the have one of the parent structures' composition;
         while there is no such a restriction in a variable-composition search.</li>
+        <li style="padding-bottom:7px">By default XtalOpt uses a "single-cut" crossover operation. The user has
+        the option to instruct the code to perform a "multi-cut" crossover, where parent cells are divided into
+        a user-defined number of "ribbons" and atoms in the offspring are selected from alternative ribbons of
+        each parent structure.
       </ul>
       </p>
       <br>
